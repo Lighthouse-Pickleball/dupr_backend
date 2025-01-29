@@ -46,7 +46,8 @@ class RoleResponse(object):
         self._role = None
         self.discriminator = None
         self.id = id
-        self.permissions = permissions
+        if permissions is not None:
+            self.permissions = permissions
         self.role = role
 
     @property
@@ -90,8 +91,6 @@ class RoleResponse(object):
         :param permissions: The permissions of this RoleResponse.  # noqa: E501
         :type: dict(str, list[str])
         """
-        if permissions is None:
-            raise ValueError("Invalid value for `permissions`, must not be `None`")  # noqa: E501
 
         self._permissions = permissions
 
