@@ -29,43 +29,25 @@ class AuthResponse0(object):
     """
     swagger_types = {
         'access_token': 'str',
-        'email': 'str',
-        'full_name': 'str',
-        'id': 'int',
-        'image_url': 'str',
         'refresh_token': 'str',
-        'role': 'RoleResponse'
+        'user': 'UserResponse'
     }
 
     attribute_map = {
         'access_token': 'accessToken',
-        'email': 'email',
-        'full_name': 'fullName',
-        'id': 'id',
-        'image_url': 'imageUrl',
         'refresh_token': 'refreshToken',
-        'role': 'role'
+        'user': 'user'
     }
 
-    def __init__(self, access_token=None, email=None, full_name=None, id=None, image_url=None, refresh_token=None, role=None):  # noqa: E501
+    def __init__(self, access_token=None, refresh_token=None, user=None):  # noqa: E501
         """AuthResponse0 - a model defined in Swagger"""  # noqa: E501
         self._access_token = None
-        self._email = None
-        self._full_name = None
-        self._id = None
-        self._image_url = None
         self._refresh_token = None
-        self._role = None
+        self._user = None
         self.discriminator = None
         self.access_token = access_token
-        self.email = email
-        self.full_name = full_name
-        self.id = id
-        if image_url is not None:
-            self.image_url = image_url
         self.refresh_token = refresh_token
-        if role is not None:
-            self.role = role
+        self.user = user
 
     @property
     def access_token(self):
@@ -91,96 +73,6 @@ class AuthResponse0(object):
         self._access_token = access_token
 
     @property
-    def email(self):
-        """Gets the email of this AuthResponse0.  # noqa: E501
-
-
-        :return: The email of this AuthResponse0.  # noqa: E501
-        :rtype: str
-        """
-        return self._email
-
-    @email.setter
-    def email(self, email):
-        """Sets the email of this AuthResponse0.
-
-
-        :param email: The email of this AuthResponse0.  # noqa: E501
-        :type: str
-        """
-        if email is None:
-            raise ValueError("Invalid value for `email`, must not be `None`")  # noqa: E501
-
-        self._email = email
-
-    @property
-    def full_name(self):
-        """Gets the full_name of this AuthResponse0.  # noqa: E501
-
-
-        :return: The full_name of this AuthResponse0.  # noqa: E501
-        :rtype: str
-        """
-        return self._full_name
-
-    @full_name.setter
-    def full_name(self, full_name):
-        """Sets the full_name of this AuthResponse0.
-
-
-        :param full_name: The full_name of this AuthResponse0.  # noqa: E501
-        :type: str
-        """
-        if full_name is None:
-            raise ValueError("Invalid value for `full_name`, must not be `None`")  # noqa: E501
-
-        self._full_name = full_name
-
-    @property
-    def id(self):
-        """Gets the id of this AuthResponse0.  # noqa: E501
-
-
-        :return: The id of this AuthResponse0.  # noqa: E501
-        :rtype: int
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this AuthResponse0.
-
-
-        :param id: The id of this AuthResponse0.  # noqa: E501
-        :type: int
-        """
-        if id is None:
-            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
-
-        self._id = id
-
-    @property
-    def image_url(self):
-        """Gets the image_url of this AuthResponse0.  # noqa: E501
-
-
-        :return: The image_url of this AuthResponse0.  # noqa: E501
-        :rtype: str
-        """
-        return self._image_url
-
-    @image_url.setter
-    def image_url(self, image_url):
-        """Sets the image_url of this AuthResponse0.
-
-
-        :param image_url: The image_url of this AuthResponse0.  # noqa: E501
-        :type: str
-        """
-
-        self._image_url = image_url
-
-    @property
     def refresh_token(self):
         """Gets the refresh_token of this AuthResponse0.  # noqa: E501
 
@@ -204,25 +96,27 @@ class AuthResponse0(object):
         self._refresh_token = refresh_token
 
     @property
-    def role(self):
-        """Gets the role of this AuthResponse0.  # noqa: E501
+    def user(self):
+        """Gets the user of this AuthResponse0.  # noqa: E501
 
 
-        :return: The role of this AuthResponse0.  # noqa: E501
-        :rtype: RoleResponse
+        :return: The user of this AuthResponse0.  # noqa: E501
+        :rtype: UserResponse
         """
-        return self._role
+        return self._user
 
-    @role.setter
-    def role(self, role):
-        """Sets the role of this AuthResponse0.
+    @user.setter
+    def user(self, user):
+        """Sets the user of this AuthResponse0.
 
 
-        :param role: The role of this AuthResponse0.  # noqa: E501
-        :type: RoleResponse
+        :param user: The user of this AuthResponse0.  # noqa: E501
+        :type: UserResponse
         """
+        if user is None:
+            raise ValueError("Invalid value for `user`, must not be `None`")  # noqa: E501
 
-        self._role = role
+        self._user = user
 
     def to_dict(self):
         """Returns the model properties as a dict"""

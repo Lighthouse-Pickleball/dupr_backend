@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **default_max_waitlist** | **int** |  | 
 **description** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
 **divisions** | [**list[MILPDivisionRequest]**](MILPDivisionRequest.md) |  | 
-**duration** | [**list[ErrorModelNamenamespacejavaTimeNameLocalDate]**](ErrorModelNamenamespacejavaTimeNameLocalDate.md) |  | 
+**duration** | **list[date]** |  | 
 **event_name** | **str** |  | 
 **event_type** | **str** |  | 
 **organizers** | [**list[MILPEventOrganizerRequest]**](MILPEventOrganizerRequest.md) |  | 

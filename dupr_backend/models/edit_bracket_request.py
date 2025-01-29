@@ -33,7 +33,7 @@ class EditBracketRequest(object):
         'courts': 'int',
         'custom_code': 'str',
         'description': 'LeagueContentRequest',
-        'duration': 'list[ErrorModelNamenamespacejavaTimeNameLocalDate]',
+        'duration': 'list[date]',
         'duration_date_time': 'list[str]',
         'elimination': 'str',
         'format': 'str',
@@ -45,7 +45,7 @@ class EditBracketRequest(object):
         'non_member_fee': 'float',
         'player_group': 'str',
         'rating_bracket': 'list[float]',
-        'registration_date': 'list[ErrorModelNamenamespacejavaTimeNameLocalDate]',
+        'registration_date': 'list[date]',
         'registration_date_time': 'list[str]',
         'score_format': 'int',
         'status': 'str',
@@ -266,7 +266,7 @@ class EditBracketRequest(object):
 
 
         :return: The duration of this EditBracketRequest.  # noqa: E501
-        :rtype: list[ErrorModelNamenamespacejavaTimeNameLocalDate]
+        :rtype: list[date]
         """
         return self._duration
 
@@ -276,7 +276,7 @@ class EditBracketRequest(object):
 
 
         :param duration: The duration of this EditBracketRequest.  # noqa: E501
-        :type: list[ErrorModelNamenamespacejavaTimeNameLocalDate]
+        :type: list[date]
         """
 
         self._duration = duration
@@ -540,7 +540,7 @@ class EditBracketRequest(object):
 
 
         :return: The registration_date of this EditBracketRequest.  # noqa: E501
-        :rtype: list[ErrorModelNamenamespacejavaTimeNameLocalDate]
+        :rtype: list[date]
         """
         return self._registration_date
 
@@ -550,7 +550,7 @@ class EditBracketRequest(object):
 
 
         :param registration_date: The registration_date of this EditBracketRequest.  # noqa: E501
-        :type: list[ErrorModelNamenamespacejavaTimeNameLocalDate]
+        :type: list[date]
         """
 
         self._registration_date = registration_date

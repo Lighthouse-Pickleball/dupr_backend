@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **courts** | **int** |  | [optional] 
 **custom_code** | **str** |  | [optional] 
 **description** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
-**duration** | [**list[ErrorModelNamenamespacejavaTimeNameLocalDate]**](ErrorModelNamenamespacejavaTimeNameLocalDate.md) |  | 
+**duration** | **list[date]** |  | 
 **duration_date_time** | **list[str]** |  | [optional] 
 **elimination** | **str** |  | 
 **format** | **str** |  | 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **non_member_fee** | **float** |  | [optional] 
 **player_group** | **str** |  | 
 **rating_bracket** | **list[float]** |  | [optional] 
-**registration_date** | [**list[ErrorModelNamenamespacejavaTimeNameLocalDate]**](ErrorModelNamenamespacejavaTimeNameLocalDate.md) |  | [optional] 
+**registration_date** | **list[date]** |  | [optional] 
 **registration_date_time** | **list[str]** |  | [optional] 
 **score_format** | **int** |  | 
 **time_zone** | **str** |  | [optional] 

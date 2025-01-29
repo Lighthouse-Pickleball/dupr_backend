@@ -33,7 +33,7 @@ class DraftBracketRequest(object):
         'courts': 'int',
         'custom_code': 'str',
         'description': 'LeagueContentRequest',
-        'duration': 'list[ErrorModelNamenamespacejavaTimeNameLocalDate]',
+        'duration': 'list[date]',
         'duration_date_time': 'list[str]',
         'elimination': 'str',
         'format': 'str',
@@ -45,7 +45,7 @@ class DraftBracketRequest(object):
         'non_member_fee': 'float',
         'player_group': 'str',
         'rating_bracket': 'list[float]',
-        'registration_date': 'list[ErrorModelNamenamespacejavaTimeNameLocalDate]',
+        'registration_date': 'list[date]',
         'registration_date_time': 'list[str]',
         'score_format': 'int',
         'time_zone': 'str',
@@ -264,7 +264,7 @@ class DraftBracketRequest(object):
 
 
         :return: The duration of this DraftBracketRequest.  # noqa: E501
-        :rtype: list[ErrorModelNamenamespacejavaTimeNameLocalDate]
+        :rtype: list[date]
         """
         return self._duration
 
@@ -274,7 +274,7 @@ class DraftBracketRequest(object):
 
 
         :param duration: The duration of this DraftBracketRequest.  # noqa: E501
-        :type: list[ErrorModelNamenamespacejavaTimeNameLocalDate]
+        :type: list[date]
         """
 
         self._duration = duration
@@ -534,7 +534,7 @@ class DraftBracketRequest(object):
 
 
         :return: The registration_date of this DraftBracketRequest.  # noqa: E501
-        :rtype: list[ErrorModelNamenamespacejavaTimeNameLocalDate]
+        :rtype: list[date]
         """
         return self._registration_date
 
@@ -544,7 +544,7 @@ class DraftBracketRequest(object):
 
 
         :param registration_date: The registration_date of this DraftBracketRequest.  # noqa: E501
-        :type: list[ErrorModelNamenamespacejavaTimeNameLocalDate]
+        :type: list[date]
         """
 
         self._registration_date = registration_date

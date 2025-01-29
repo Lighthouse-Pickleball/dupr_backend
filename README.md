@@ -211,7 +211,7 @@ except ApiException as e:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://backend.mydupr.com*
+All URIs are relative to *https://backend.mydupr.com/*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

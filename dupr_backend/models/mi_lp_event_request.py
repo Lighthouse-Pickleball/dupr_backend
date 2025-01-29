@@ -35,7 +35,7 @@ class MiLPEventRequest(object):
         'default_max_waitlist': 'int',
         'description': 'LeagueContentRequest',
         'divisions': 'list[MILPDivisionRequest]',
-        'duration': 'list[ErrorModelNamenamespacejavaTimeNameLocalDate]',
+        'duration': 'list[date]',
         'event_name': 'str',
         'event_type': 'str',
         'organizers': 'list[MILPEventOrganizerRequest]',
@@ -256,7 +256,7 @@ class MiLPEventRequest(object):
 
 
         :return: The duration of this MiLPEventRequest.  # noqa: E501
-        :rtype: list[ErrorModelNamenamespacejavaTimeNameLocalDate]
+        :rtype: list[date]
         """
         return self._duration
 
@@ -266,7 +266,7 @@ class MiLPEventRequest(object):
 
 
         :param duration: The duration of this MiLPEventRequest.  # noqa: E501
-        :type: list[ErrorModelNamenamespacejavaTimeNameLocalDate]
+        :type: list[date]
         """
         if duration is None:
             raise ValueError("Invalid value for `duration`, must not be `None`")  # noqa: E501

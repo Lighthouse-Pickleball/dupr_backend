@@ -33,7 +33,7 @@ class BracketRequest(object):
         'courts': 'int',
         'custom_code': 'str',
         'description': 'LeagueContentRequest',
-        'duration': 'list[ErrorModelNamenamespacejavaTimeNameLocalDate]',
+        'duration': 'list[date]',
         'duration_date_time': 'list[str]',
         'elimination': 'str',
         'format': 'str',
@@ -45,7 +45,7 @@ class BracketRequest(object):
         'non_member_fee': 'float',
         'player_group': 'str',
         'rating_bracket': 'list[float]',
-        'registration_date': 'list[ErrorModelNamenamespacejavaTimeNameLocalDate]',
+        'registration_date': 'list[date]',
         'registration_date_time': 'list[str]',
         'score_format': 'int',
         'time_zone': 'str',
@@ -258,7 +258,7 @@ class BracketRequest(object):
 
 
         :return: The duration of this BracketRequest.  # noqa: E501
-        :rtype: list[ErrorModelNamenamespacejavaTimeNameLocalDate]
+        :rtype: list[date]
         """
         return self._duration
 
@@ -268,7 +268,7 @@ class BracketRequest(object):
 
 
         :param duration: The duration of this BracketRequest.  # noqa: E501
-        :type: list[ErrorModelNamenamespacejavaTimeNameLocalDate]
+        :type: list[date]
         """
         if duration is None:
             raise ValueError("Invalid value for `duration`, must not be `None`")  # noqa: E501
@@ -536,7 +536,7 @@ class BracketRequest(object):
 
 
         :return: The registration_date of this BracketRequest.  # noqa: E501
-        :rtype: list[ErrorModelNamenamespacejavaTimeNameLocalDate]
+        :rtype: list[date]
         """
         return self._registration_date
 
@@ -546,7 +546,7 @@ class BracketRequest(object):
 
 
         :param registration_date: The registration_date of this BracketRequest.  # noqa: E501
-        :type: list[ErrorModelNamenamespacejavaTimeNameLocalDate]
+        :type: list[date]
         """
 
         self._registration_date = registration_date

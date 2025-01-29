@@ -36,7 +36,7 @@ class MILPDivisionRequest(object):
         'max_teams': 'int',
         'max_waitlist': 'int',
         'prize': 'float',
-        'registration_period': 'list[ErrorModelNamenamespacejavaTimeNameLocalDate]'
+        'registration_period': 'list[date]'
     }
 
     attribute_map = {
@@ -264,7 +264,7 @@ class MILPDivisionRequest(object):
 
 
         :return: The registration_period of this MILPDivisionRequest.  # noqa: E501
-        :rtype: list[ErrorModelNamenamespacejavaTimeNameLocalDate]
+        :rtype: list[date]
         """
         return self._registration_period
 
@@ -274,7 +274,7 @@ class MILPDivisionRequest(object):
 
 
         :param registration_period: The registration_period of this MILPDivisionRequest.  # noqa: E501
-        :type: list[ErrorModelNamenamespacejavaTimeNameLocalDate]
+        :type: list[date]
         """
         if registration_period is None:
             raise ValueError("Invalid value for `registration_period`, must not be `None`")  # noqa: E501

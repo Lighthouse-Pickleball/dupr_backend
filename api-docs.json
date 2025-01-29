@@ -22224,9 +22224,7 @@
             "type": "object",
             "required": [
                 "accessToken",
-                "email",
-                "fullName",
-                "id",
+                "user",
                 "refreshToken"
             ],
             "properties": {
@@ -22234,29 +22232,12 @@
                     "type": "string",
                     "example": "eyJhbGciOiJSUzUxMiJ9."
                 },
-                "email": {
-                    "type": "string",
-                    "example": "user@exmaple.com"
-                },
-                "fullName": {
-                    "type": "string",
-                    "example": "John Doe"
-                },
-                "id": {
-                    "type": "integer",
-                    "format": "int64",
-                    "example": 45785789
-                },
-                "imageUrl": {
-                    "type": "string",
-                    "example": "https://dupr-dev.s3.us-east-1.amazonaws.com/users/profile.jpg"
-                },
                 "refreshToken": {
                     "type": "string",
                     "example": "eyJhbGciOiJSUzUxMiJ9."
                 },
-                "role": {
-                    "$ref": "#/definitions/RoleResponse"
+                "user": {
+                    "$ref": "#/definitions/UserResponse"
                 }
             },
             "title": "AuthResponse0"
@@ -22665,7 +22646,8 @@
                         "yyyy-mm-dd"
                     ],
                     "items": {
-                        "$ref": "#/definitions/Error-ModelName{namespace='java.time', name='LocalDate'}"
+                      "type": "string",
+                      "format": "date"
                     }
                 },
                 "durationDateTime": {
@@ -22752,7 +22734,8 @@
                         "yyyy-mm-dd"
                     ],
                     "items": {
-                        "$ref": "#/definitions/Error-ModelName{namespace='java.time', name='LocalDate'}"
+                      "type": "string",
+                      "format": "date"
                     }
                 },
                 "registrationDateTime": {
@@ -25038,7 +25021,8 @@
                         "yyyy-mm-dd"
                     ],
                     "items": {
-                        "$ref": "#/definitions/Error-ModelName{namespace='java.time', name='LocalDate'}"
+                      "type": "string",
+                      "format": "date"
                     }
                 },
                 "durationDateTime": {
@@ -25125,7 +25109,8 @@
                         "yyyy-mm-dd"
                     ],
                     "items": {
-                        "$ref": "#/definitions/Error-ModelName{namespace='java.time', name='LocalDate'}"
+                      "type": "string",
+                      "format": "date"
                     }
                 },
                 "registrationDateTime": {
@@ -25401,7 +25386,8 @@
                         "yyyy-mm-dd"
                     ],
                     "items": {
-                        "$ref": "#/definitions/Error-ModelName{namespace='java.time', name='LocalDate'}"
+                      "type": "string",
+                      "format": "date"
                     }
                 },
                 "durationDateTime": {
@@ -25488,7 +25474,8 @@
                         "yyyy-mm-dd"
                     ],
                     "items": {
-                        "$ref": "#/definitions/Error-ModelName{namespace='java.time', name='LocalDate'}"
+                      "type": "string",
+                      "format": "date"
                     }
                 },
                 "registrationDateTime": {
@@ -28396,7 +28383,8 @@
                         "yyyy-mm-dd"
                     ],
                     "items": {
-                        "$ref": "#/definitions/Error-ModelName{namespace='java.time', name='LocalDate'}"
+                      "type": "string",
+                      "format": "date"
                     }
                 }
             },
@@ -29600,7 +29588,8 @@
                         "yyyy-mm-dd"
                     ],
                     "items": {
-                        "$ref": "#/definitions/Error-ModelName{namespace='java.time', name='LocalDate'}"
+                      "type": "string",
+                      "format": "date"
                     }
                 },
                 "eventName": {

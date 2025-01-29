@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **max_teams** | **int** |  | [optional] 
 **max_waitlist** | **int** |  | [optional] 
 **prize** | **float** |  | 
-**registration_period** | [**list[ErrorModelNamenamespacejavaTimeNameLocalDate]**](ErrorModelNamenamespacejavaTimeNameLocalDate.md) |  | 
+**registration_period** | **list[date]** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
