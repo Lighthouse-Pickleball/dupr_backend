@@ -1,6 +1,6 @@
 # dupr_backend.MiLPEventsApi
 
-All URIs are relative to *//https://backend.mydupr.com/*
+All URIs are relative to *https://backend.mydupr.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
