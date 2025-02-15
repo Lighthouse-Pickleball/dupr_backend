@@ -1,6 +1,8 @@
 # Team0
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **delta** | **float** |  | [optional] 
@@ -17,7 +19,7 @@ Name | Type | Description | Notes
 **player2** | [**Player**](Player.md) |  | [optional] 
 **player2_doubles_rating** | **float** |  | [optional] 
 **player2_singles_rating** | **float** |  | [optional] 
-**player_ids** | **list[int]** |  | 
+**player_ids** | **List[int]** |  | 
 **pre_match_rating_and_impact** | [**PreMatchRatingAndImpact**](PreMatchRatingAndImpact.md) |  | [optional] 
 **priority** | **int** |  | 
 **team_player1** | [**TeamPlayer**](TeamPlayer.md) |  | [optional] 
@@ -25,5 +27,23 @@ Name | Type | Description | Notes
 **team_rating** | **float** |  | [optional] 
 **winner** | **bool** |  | 
 
+## Example
+
+```python
+from dupr_backend.models.team0 import Team0
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of Team0 from a JSON string
+team0_instance = Team0.from_json(json)
+# print the JSON string representation of the object
+print(Team0.to_json())
+
+# convert the object into a dict
+team0_dict = team0_instance.to_dict()
+# create an instance of Team0 from a dict
+team0_from_dict = Team0.from_dict(team0_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

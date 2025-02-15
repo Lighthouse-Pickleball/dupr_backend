@@ -1,6 +1,6 @@
 # dupr_backend.EventsApi
 
-All URIs are relative to *https://backend.mydupr.com/*
+All URIs are relative to *http://https://backend.mydupr.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,41 +24,56 @@ Method | HTTP request | Description
 [**save_using_post1**](EventsApi.md#save_using_post1) | **POST** /event/{version}/save | save
 [**search_leagues_using_post**](EventsApi.md#search_leagues_using_post) | **POST** /event/{version}/search | searchLeagues
 
+
 # **checkout_event_using_get**
 > SingleWrapperOfSessionResponse checkout_event_using_get(authorization, league_id, version, x_forwarded_for=x_forwarded_for)
 
 checkoutEvent
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_session_response import SingleWrapperOfSessionResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.EventsApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-league_id = 789 # int | leagueId
-version = 'version_example' # str | version
-x_forwarded_for = 'x_forwarded_for_example' # str | x-forwarded-for (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # checkoutEvent
-    api_response = api_instance.checkout_event_using_get(authorization, league_id, version, x_forwarded_for=x_forwarded_for)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling EventsApi->checkout_event_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.EventsApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    league_id = 56 # int | leagueId
+    version = 'v1.0' # str | version (default to 'v1.0')
+    x_forwarded_for = 'x_forwarded_for_example' # str | x-forwarded-for (optional)
+
+    try:
+        # checkoutEvent
+        api_response = api_instance.checkout_event_using_get(authorization, league_id, version, x_forwarded_for=x_forwarded_for)
+        print("The response of EventsApi->checkout_event_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->checkout_event_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **league_id** | **int**| leagueId | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
  **x_forwarded_for** | **str**| x-forwarded-for | [optional] 
 
 ### Return type
@@ -74,6 +89,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_league_using_delete1**
@@ -82,34 +104,48 @@ No authorization required
 deleteLeague
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.EventsApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-league_id = 789 # int | leagueId
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # deleteLeague
-    api_response = api_instance.delete_league_using_delete1(authorization, league_id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling EventsApi->delete_league_using_delete1: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.EventsApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    league_id = 56 # int | leagueId
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # deleteLeague
+        api_response = api_instance.delete_league_using_delete1(authorization, league_id, version)
+        print("The response of EventsApi->delete_league_using_delete1:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->delete_league_using_delete1: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **league_id** | **int**| leagueId | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -124,42 +160,64 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_text_content_using_delete**
-> Wrapper delete_text_content_using_delete(body, authorization, version)
+> Wrapper delete_text_content_using_delete(authorization, version, request)
 
 deleteTextContent
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.delete_event_media_request import DeleteEventMediaRequest
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.EventsApi()
-body = dupr_backend.DeleteEventMediaRequest() # DeleteEventMediaRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # deleteTextContent
-    api_response = api_instance.delete_text_content_using_delete(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling EventsApi->delete_text_content_using_delete: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.EventsApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.DeleteEventMediaRequest() # DeleteEventMediaRequest | request
+
+    try:
+        # deleteTextContent
+        api_response = api_instance.delete_text_content_using_delete(authorization, version, request)
+        print("The response of EventsApi->delete_text_content_using_delete:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->delete_text_content_using_delete: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteEventMediaRequest**](DeleteEventMediaRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**DeleteEventMediaRequest**](DeleteEventMediaRequest.md)| request | 
 
 ### Return type
 
@@ -171,45 +229,67 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: */*
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **draft_using_post1**
-> Wrapper draft_using_post1(body, authorization, version)
+> Wrapper draft_using_post1(authorization, version, request)
 
 draft
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.draft_league_request import DraftLeagueRequest
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.EventsApi()
-body = dupr_backend.DraftLeagueRequest() # DraftLeagueRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # draft
-    api_response = api_instance.draft_using_post1(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling EventsApi->draft_using_post1: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.EventsApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.DraftLeagueRequest() # DraftLeagueRequest | request
+
+    try:
+        # draft
+        api_response = api_instance.draft_using_post1(authorization, version, request)
+        print("The response of EventsApi->draft_using_post1:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->draft_using_post1: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DraftLeagueRequest**](DraftLeagueRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**DraftLeagueRequest**](DraftLeagueRequest.md)| request | 
 
 ### Return type
 
@@ -224,42 +304,64 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **edit_league_using_put**
-> SingleWrapperOfLeagueResponse edit_league_using_put(body, authorization, version)
+> SingleWrapperOfLeagueResponse edit_league_using_put(authorization, version, request)
 
 editLeague
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.edit_league_request import EditLeagueRequest
+from dupr_backend.models.single_wrapper_of_league_response import SingleWrapperOfLeagueResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.EventsApi()
-body = dupr_backend.EditLeagueRequest() # EditLeagueRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # editLeague
-    api_response = api_instance.edit_league_using_put(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling EventsApi->edit_league_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.EventsApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.EditLeagueRequest() # EditLeagueRequest | request
+
+    try:
+        # editLeague
+        api_response = api_instance.edit_league_using_put(authorization, version, request)
+        print("The response of EventsApi->edit_league_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->edit_league_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EditLeagueRequest**](EditLeagueRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**EditLeagueRequest**](EditLeagueRequest.md)| request | 
 
 ### Return type
 
@@ -274,6 +376,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **end_league_using_get1**
@@ -282,34 +391,48 @@ No authorization required
 endLeague
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.EventsApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-league_id = 789 # int | leagueId
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # endLeague
-    api_response = api_instance.end_league_using_get1(authorization, league_id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling EventsApi->end_league_using_get1: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.EventsApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    league_id = 56 # int | leagueId
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # endLeague
+        api_response = api_instance.end_league_using_get1(authorization, league_id, version)
+        print("The response of EventsApi->end_league_using_get1:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->end_league_using_get1: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **league_id** | **int**| leagueId | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -324,6 +447,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **export_event_participants_using_get**
@@ -332,34 +462,48 @@ No authorization required
 exportEventParticipants
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_download_s3_response import SingleWrapperOfDownloadS3Response
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.EventsApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-league_id = 789 # int | leagueId
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # exportEventParticipants
-    api_response = api_instance.export_event_participants_using_get(authorization, league_id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling EventsApi->export_event_participants_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.EventsApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    league_id = 56 # int | leagueId
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # exportEventParticipants
+        api_response = api_instance.export_event_participants_using_get(authorization, league_id, version)
+        print("The response of EventsApi->export_event_participants_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->export_event_participants_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **league_id** | **int**| leagueId | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -374,42 +518,64 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **export_event_payments_using_post**
-> SingleWrapperOfDownloadS3Response export_event_payments_using_post(body, authorization, version)
+> SingleWrapperOfDownloadS3Response export_event_payments_using_post(authorization, version, request)
 
 exportEventPayments
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.export_event_payment_request import ExportEventPaymentRequest
+from dupr_backend.models.single_wrapper_of_download_s3_response import SingleWrapperOfDownloadS3Response
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.EventsApi()
-body = dupr_backend.ExportEventPaymentRequest() # ExportEventPaymentRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # exportEventPayments
-    api_response = api_instance.export_event_payments_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling EventsApi->export_event_payments_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.EventsApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.ExportEventPaymentRequest() # ExportEventPaymentRequest | request
+
+    try:
+        # exportEventPayments
+        api_response = api_instance.export_event_payments_using_post(authorization, version, request)
+        print("The response of EventsApi->export_event_payments_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->export_event_payments_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ExportEventPaymentRequest**](ExportEventPaymentRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**ExportEventPaymentRequest**](ExportEventPaymentRequest.md)| request | 
 
 ### Return type
 
@@ -424,46 +590,68 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_all_event_players_using_post1**
-> SingleWrapperOfPageOfPlayerPaymentResponse get_all_event_players_using_post1(body, authorization, limit, offset, version)
+> SingleWrapperOfPageOfPlayerPaymentResponse get_all_event_players_using_post1(authorization, limit, offset, version, search_league_player_request)
 
 getAllEventPlayers
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.search_league_player_request import SearchLeaguePlayerRequest
+from dupr_backend.models.single_wrapper_of_page_of_player_payment_response import SingleWrapperOfPageOfPlayerPaymentResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.EventsApi()
-body = dupr_backend.SearchLeaguePlayerRequest() # SearchLeaguePlayerRequest | searchLeaguePlayerRequest
-authorization = 'Bearer ' # str |  (default to Bearer )
-limit = 56 # int | limit
-offset = 56 # int | offset
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getAllEventPlayers
-    api_response = api_instance.get_all_event_players_using_post1(body, authorization, limit, offset, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling EventsApi->get_all_event_players_using_post1: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.EventsApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    limit = 56 # int | limit
+    offset = 56 # int | offset
+    version = 'v1.0' # str | version (default to 'v1.0')
+    search_league_player_request = dupr_backend.SearchLeaguePlayerRequest() # SearchLeaguePlayerRequest | searchLeaguePlayerRequest
+
+    try:
+        # getAllEventPlayers
+        api_response = api_instance.get_all_event_players_using_post1(authorization, limit, offset, version, search_league_player_request)
+        print("The response of EventsApi->get_all_event_players_using_post1:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->get_all_event_players_using_post1: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchLeaguePlayerRequest**](SearchLeaguePlayerRequest.md)| searchLeaguePlayerRequest | 
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **limit** | **int**| limit | 
  **offset** | **int**| offset | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **search_league_player_request** | [**SearchLeaguePlayerRequest**](SearchLeaguePlayerRequest.md)| searchLeaguePlayerRequest | 
 
 ### Return type
 
@@ -478,6 +666,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_city_autocomplete_using_get**
@@ -486,33 +681,47 @@ No authorization required
 getCityAutocomplete
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.array_wrapper_ofstring import ArrayWrapperOfstring
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.EventsApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
-search = 'search_example' # str | search (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getCityAutocomplete
-    api_response = api_instance.get_city_autocomplete_using_get(authorization, version, search=search)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling EventsApi->get_city_autocomplete_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.EventsApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    search = 'search_example' # str | search (optional)
+
+    try:
+        # getCityAutocomplete
+        api_response = api_instance.get_city_autocomplete_using_get(authorization, version, search=search)
+        print("The response of EventsApi->get_city_autocomplete_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->get_city_autocomplete_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
  **search** | **str**| search | [optional] 
 
 ### Return type
@@ -528,6 +737,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_club_leagues_using_get**
@@ -536,39 +752,53 @@ No authorization required
 getClubLeagues
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_page_of_league_response import SingleWrapperOfPageOfLeagueResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.EventsApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-club_id = 789 # int | clubId
-limit = 56 # int | limit
-offset = 56 # int | offset
-version = 'version_example' # str | version
-include_draft_events = true # bool | includeDraftEvents (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getClubLeagues
-    api_response = api_instance.get_club_leagues_using_get(authorization, club_id, limit, offset, version, include_draft_events=include_draft_events)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling EventsApi->get_club_leagues_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.EventsApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    club_id = 56 # int | clubId
+    limit = 56 # int | limit
+    offset = 56 # int | offset
+    version = 'v1.0' # str | version (default to 'v1.0')
+    include_draft_events = True # bool | includeDraftEvents (optional)
+
+    try:
+        # getClubLeagues
+        api_response = api_instance.get_club_leagues_using_get(authorization, club_id, limit, offset, version, include_draft_events=include_draft_events)
+        print("The response of EventsApi->get_club_leagues_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->get_club_leagues_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **club_id** | **int**| clubId | 
  **limit** | **int**| limit | 
  **offset** | **int**| offset | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
  **include_draft_events** | **bool**| includeDraftEvents | [optional] 
 
 ### Return type
@@ -584,6 +814,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_league_policy_using_get**
@@ -592,32 +829,46 @@ No authorization required
 getLeaguePolicy
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_policy_details_response import SingleWrapperOfPolicyDetailsResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.EventsApi()
-league_id = 789 # int | leagueId
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getLeaguePolicy
-    api_response = api_instance.get_league_policy_using_get(league_id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling EventsApi->get_league_policy_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.EventsApi(api_client)
+    league_id = 56 # int | leagueId
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # getLeaguePolicy
+        api_response = api_instance.get_league_policy_using_get(league_id, version)
+        print("The response of EventsApi->get_league_policy_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->get_league_policy_using_get: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **league_id** | **int**| leagueId | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -632,6 +883,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_league_using_get**
@@ -640,34 +898,48 @@ No authorization required
 getLeague
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_league_response import SingleWrapperOfLeagueResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.EventsApi()
-league_id = 789 # int | leagueId
-version = 'version_example' # str | version
-authorization = 'Bearer ' # str |  (optional) (default to Bearer )
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getLeague
-    api_response = api_instance.get_league_using_get(league_id, version, authorization=authorization)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling EventsApi->get_league_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.EventsApi(api_client)
+    league_id = 56 # int | leagueId
+    version = 'v1.0' # str | version (default to 'v1.0')
+    authorization = 'Bearer ' # str |  (optional) (default to 'Bearer ')
+
+    try:
+        # getLeague
+        api_response = api_instance.get_league_using_get(league_id, version, authorization=authorization)
+        print("The response of EventsApi->get_league_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->get_league_using_get: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **league_id** | **int**| leagueId | 
- **version** | **str**| version | 
- **authorization** | **str**|  | [optional] [default to Bearer ]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **authorization** | **str**|  | [optional] [default to &#39;Bearer &#39;]
 
 ### Return type
 
@@ -682,44 +954,66 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_leagues_by_user_id_using_post**
-> SingleWrapperOfPageOfLeagueResponse get_leagues_by_user_id_using_post(body, authorization, id, version)
+> SingleWrapperOfPageOfLeagueResponse get_leagues_by_user_id_using_post(authorization, id, version, request)
 
 getLeaguesByUserId
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.my_league_request import MyLeagueRequest
+from dupr_backend.models.single_wrapper_of_page_of_league_response import SingleWrapperOfPageOfLeagueResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.EventsApi()
-body = dupr_backend.MyLeagueRequest() # MyLeagueRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 789 # int | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getLeaguesByUserId
-    api_response = api_instance.get_leagues_by_user_id_using_post(body, authorization, id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling EventsApi->get_leagues_by_user_id_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.EventsApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 56 # int | id
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.MyLeagueRequest() # MyLeagueRequest | request
+
+    try:
+        # getLeaguesByUserId
+        api_response = api_instance.get_leagues_by_user_id_using_post(authorization, id, version, request)
+        print("The response of EventsApi->get_leagues_by_user_id_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->get_leagues_by_user_id_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MyLeagueRequest**](MyLeagueRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **int**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**MyLeagueRequest**](MyLeagueRequest.md)| request | 
 
 ### Return type
 
@@ -733,43 +1027,65 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_my_leagues_using_post**
-> SingleWrapperOfPageOfLeagueResponse get_my_leagues_using_post(body, authorization, version)
+> SingleWrapperOfPageOfLeagueResponse get_my_leagues_using_post(authorization, version, request)
 
 getMyLeagues
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.my_league_request import MyLeagueRequest
+from dupr_backend.models.single_wrapper_of_page_of_league_response import SingleWrapperOfPageOfLeagueResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.EventsApi()
-body = dupr_backend.MyLeagueRequest() # MyLeagueRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getMyLeagues
-    api_response = api_instance.get_my_leagues_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling EventsApi->get_my_leagues_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.EventsApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.MyLeagueRequest() # MyLeagueRequest | request
+
+    try:
+        # getMyLeagues
+        api_response = api_instance.get_my_leagues_using_post(authorization, version, request)
+        print("The response of EventsApi->get_my_leagues_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->get_my_leagues_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MyLeagueRequest**](MyLeagueRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**MyLeagueRequest**](MyLeagueRequest.md)| request | 
 
 ### Return type
 
@@ -784,44 +1100,66 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **join_event_using_post**
-> SingleWrapperOfJoinLeagueResponse join_event_using_post(body, authorization, league_id, version)
+> SingleWrapperOfJoinLeagueResponse join_event_using_post(authorization, league_id, version, request)
 
 joinEvent
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.join_league_request import JoinLeagueRequest
+from dupr_backend.models.single_wrapper_of_join_league_response import SingleWrapperOfJoinLeagueResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.EventsApi()
-body = [dupr_backend.JoinLeagueRequest()] # list[JoinLeagueRequest] | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-league_id = 789 # int | leagueId
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # joinEvent
-    api_response = api_instance.join_event_using_post(body, authorization, league_id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling EventsApi->join_event_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.EventsApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    league_id = 56 # int | leagueId
+    version = 'v1.1' # str | version (default to 'v1.1')
+    request = [dupr_backend.JoinLeagueRequest()] # List[JoinLeagueRequest] | request
+
+    try:
+        # joinEvent
+        api_response = api_instance.join_event_using_post(authorization, league_id, version, request)
+        print("The response of EventsApi->join_event_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->join_event_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[JoinLeagueRequest]**](JoinLeagueRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **league_id** | **int**| leagueId | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.1&#39;]
+ **request** | [**List[JoinLeagueRequest]**](JoinLeagueRequest.md)| request | 
 
 ### Return type
 
@@ -836,45 +1174,67 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **register_event_using_post**
-> SingleWrapperOfSessionResponse register_event_using_post(body, authorization, league_id, version, x_forwarded_for=x_forwarded_for)
+> SingleWrapperOfSessionResponse register_event_using_post(authorization, league_id, version, requests, x_forwarded_for=x_forwarded_for)
 
 registerEvent
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.join_league_request import JoinLeagueRequest
+from dupr_backend.models.single_wrapper_of_session_response import SingleWrapperOfSessionResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.EventsApi()
-body = [dupr_backend.JoinLeagueRequest()] # list[JoinLeagueRequest] | requests
-authorization = 'Bearer ' # str |  (default to Bearer )
-league_id = 789 # int | leagueId
-version = 'version_example' # str | version
-x_forwarded_for = 'x_forwarded_for_example' # str | x-forwarded-for (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # registerEvent
-    api_response = api_instance.register_event_using_post(body, authorization, league_id, version, x_forwarded_for=x_forwarded_for)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling EventsApi->register_event_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.EventsApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    league_id = 56 # int | leagueId
+    version = 'v1.0' # str | version (default to 'v1.0')
+    requests = [dupr_backend.JoinLeagueRequest()] # List[JoinLeagueRequest] | requests
+    x_forwarded_for = 'x_forwarded_for_example' # str | x-forwarded-for (optional)
+
+    try:
+        # registerEvent
+        api_response = api_instance.register_event_using_post(authorization, league_id, version, requests, x_forwarded_for=x_forwarded_for)
+        print("The response of EventsApi->register_event_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->register_event_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[JoinLeagueRequest]**](JoinLeagueRequest.md)| requests | 
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **league_id** | **int**| leagueId | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **requests** | [**List[JoinLeagueRequest]**](JoinLeagueRequest.md)| requests | 
  **x_forwarded_for** | **str**| x-forwarded-for | [optional] 
 
 ### Return type
@@ -890,42 +1250,64 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **save_using_post1**
-> Wrapper save_using_post1(body, authorization, version)
+> Wrapper save_using_post1(authorization, version, request)
 
 save
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.league_request import LeagueRequest
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.EventsApi()
-body = dupr_backend.LeagueRequest() # LeagueRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # save
-    api_response = api_instance.save_using_post1(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling EventsApi->save_using_post1: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.EventsApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.LeagueRequest() # LeagueRequest | request
+
+    try:
+        # save
+        api_response = api_instance.save_using_post1(authorization, version, request)
+        print("The response of EventsApi->save_using_post1:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->save_using_post1: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**LeagueRequest**](LeagueRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**LeagueRequest**](LeagueRequest.md)| request | 
 
 ### Return type
 
@@ -940,42 +1322,64 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_leagues_using_post**
-> SingleWrapperOfPageOfLeagueResponse search_leagues_using_post(body, version, authorization=authorization)
+> SingleWrapperOfPageOfLeagueResponse search_leagues_using_post(version, request, authorization=authorization)
 
 searchLeagues
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.search_leagues_request import SearchLeaguesRequest
+from dupr_backend.models.single_wrapper_of_page_of_league_response import SingleWrapperOfPageOfLeagueResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.EventsApi()
-body = dupr_backend.SearchLeaguesRequest() # SearchLeaguesRequest | request
-version = 'version_example' # str | version
-authorization = 'Bearer ' # str |  (optional) (default to Bearer )
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # searchLeagues
-    api_response = api_instance.search_leagues_using_post(body, version, authorization=authorization)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling EventsApi->search_leagues_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.EventsApi(api_client)
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.SearchLeaguesRequest() # SearchLeaguesRequest | request
+    authorization = 'Bearer ' # str |  (optional) (default to 'Bearer ')
+
+    try:
+        # searchLeagues
+        api_response = api_instance.search_leagues_using_post(version, request, authorization=authorization)
+        print("The response of EventsApi->search_leagues_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EventsApi->search_leagues_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchLeaguesRequest**](SearchLeaguesRequest.md)| request | 
- **version** | **str**| version | 
- **authorization** | **str**|  | [optional] [default to Bearer ]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**SearchLeaguesRequest**](SearchLeaguesRequest.md)| request | 
+ **authorization** | **str**|  | [optional] [default to &#39;Bearer &#39;]
 
 ### Return type
 
@@ -989,6 +1393,13 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

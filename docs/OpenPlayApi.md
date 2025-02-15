@@ -1,6 +1,6 @@
 # dupr_backend.OpenPlayApi
 
-All URIs are relative to *https://backend.mydupr.com/*
+All URIs are relative to *http://https://backend.mydupr.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,40 +17,55 @@ Method | HTTP request | Description
 [**update_using_put**](OpenPlayApi.md#update_using_put) | **PUT** /event/{version}/open-play/{id}/{version}/update | update
 [**withdraw_event_using_delete**](OpenPlayApi.md#withdraw_event_using_delete) | **DELETE** /event/{version}/open-play/{id}/withdraw | withdrawEvent
 
+
 # **accept_invitation_using_post**
 > SingleWrapperOfUnit accept_invitation_using_post(authorization, id, version)
 
 acceptInvitation
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.OpenPlayApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 789 # int | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # acceptInvitation
-    api_response = api_instance.accept_invitation_using_post(authorization, id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OpenPlayApi->accept_invitation_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.OpenPlayApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 56 # int | id
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # acceptInvitation
+        api_response = api_instance.accept_invitation_using_post(authorization, id, version)
+        print("The response of OpenPlayApi->accept_invitation_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OpenPlayApi->accept_invitation_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **int**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -65,42 +80,64 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_using_post**
-> SingleWrapperOfUnit create_using_post(body, authorization, version)
+> SingleWrapperOfUnit create_using_post(authorization, version, request)
 
 create
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.open_play_create_request import OpenPlayCreateRequest
+from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.OpenPlayApi()
-body = dupr_backend.OpenPlayCreateRequest() # OpenPlayCreateRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # create
-    api_response = api_instance.create_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OpenPlayApi->create_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.OpenPlayApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.OpenPlayCreateRequest() # OpenPlayCreateRequest | request
+
+    try:
+        # create
+        api_response = api_instance.create_using_post(authorization, version, request)
+        print("The response of OpenPlayApi->create_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OpenPlayApi->create_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OpenPlayCreateRequest**](OpenPlayCreateRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**OpenPlayCreateRequest**](OpenPlayCreateRequest.md)| request | 
 
 ### Return type
 
@@ -115,6 +152,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_event_detail_using_get**
@@ -123,34 +167,48 @@ No authorization required
 getEventDetail
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_open_play_event import SingleWrapperOfOpenPlayEvent
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.OpenPlayApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 789 # int | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getEventDetail
-    api_response = api_instance.get_event_detail_using_get(authorization, id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OpenPlayApi->get_event_detail_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.OpenPlayApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 56 # int | id
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # getEventDetail
+        api_response = api_instance.get_event_detail_using_get(authorization, id, version)
+        print("The response of OpenPlayApi->get_event_detail_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OpenPlayApi->get_event_detail_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **int**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -165,6 +223,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_events_members_using_get**
@@ -173,38 +238,52 @@ No authorization required
 getEventsMembers
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_page_of_open_play_member import SingleWrapperOfPageOfOpenPlayMember
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.OpenPlayApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 789 # int | id
-limit = 56 # int | limit
-offset = 56 # int | offset
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getEventsMembers
-    api_response = api_instance.get_events_members_using_get(authorization, id, limit, offset, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OpenPlayApi->get_events_members_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.OpenPlayApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 56 # int | id
+    limit = 56 # int | limit
+    offset = 56 # int | offset
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # getEventsMembers
+        api_response = api_instance.get_events_members_using_get(authorization, id, limit, offset, version)
+        print("The response of OpenPlayApi->get_events_members_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OpenPlayApi->get_events_members_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **int**| id | 
  **limit** | **int**| limit | 
  **offset** | **int**| offset | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -219,6 +298,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_events_near_by_using_get**
@@ -227,40 +313,54 @@ No authorization required
 getEventsNearBy
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_page_of_open_play_event import SingleWrapperOfPageOfOpenPlayEvent
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.OpenPlayApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-limit = 56 # int | limit
-offset = 56 # int | offset
-version = 'version_example' # str | version
-latitude = 1.2 # float | latitude (optional)
-longitude = 1.2 # float | longitude (optional)
-query = 'query_example' # str | query (optional)
-radius = 1.2 # float | radius (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getEventsNearBy
-    api_response = api_instance.get_events_near_by_using_get(authorization, limit, offset, version, latitude=latitude, longitude=longitude, query=query, radius=radius)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OpenPlayApi->get_events_near_by_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.OpenPlayApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    limit = 56 # int | limit
+    offset = 56 # int | offset
+    version = 'v1.0' # str | version (default to 'v1.0')
+    latitude = 3.4 # float | latitude (optional)
+    longitude = 3.4 # float | longitude (optional)
+    query = 'query_example' # str | query (optional)
+    radius = 3.4 # float | radius (optional)
+
+    try:
+        # getEventsNearBy
+        api_response = api_instance.get_events_near_by_using_get(authorization, limit, offset, version, latitude=latitude, longitude=longitude, query=query, radius=radius)
+        print("The response of OpenPlayApi->get_events_near_by_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OpenPlayApi->get_events_near_by_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **limit** | **int**| limit | 
  **offset** | **int**| offset | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
  **latitude** | **float**| latitude | [optional] 
  **longitude** | **float**| longitude | [optional] 
  **query** | **str**| query | [optional] 
@@ -279,6 +379,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_invitation_by_player_using_get**
@@ -287,36 +394,50 @@ No authorization required
 getInvitationByPlayer
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_page_of_player_queue import SingleWrapperOfPageOfPlayerQueue
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.OpenPlayApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-limit = 56 # int | limit
-offset = 56 # int | offset
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getInvitationByPlayer
-    api_response = api_instance.get_invitation_by_player_using_get(authorization, limit, offset, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OpenPlayApi->get_invitation_by_player_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.OpenPlayApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    limit = 56 # int | limit
+    offset = 56 # int | offset
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # getInvitationByPlayer
+        api_response = api_instance.get_invitation_by_player_using_get(authorization, limit, offset, version)
+        print("The response of OpenPlayApi->get_invitation_by_player_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OpenPlayApi->get_invitation_by_player_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **limit** | **int**| limit | 
  **offset** | **int**| offset | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -330,6 +451,13 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -339,36 +467,50 @@ No authorization required
 getWaitlistByPlayer
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_page_of_player_queue import SingleWrapperOfPageOfPlayerQueue
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.OpenPlayApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-limit = 56 # int | limit
-offset = 56 # int | offset
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getWaitlistByPlayer
-    api_response = api_instance.get_waitlist_by_player_using_get(authorization, limit, offset, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OpenPlayApi->get_waitlist_by_player_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.OpenPlayApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    limit = 56 # int | limit
+    offset = 56 # int | offset
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # getWaitlistByPlayer
+        api_response = api_instance.get_waitlist_by_player_using_get(authorization, limit, offset, version)
+        print("The response of OpenPlayApi->get_waitlist_by_player_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OpenPlayApi->get_waitlist_by_player_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **limit** | **int**| limit | 
  **offset** | **int**| offset | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -383,6 +525,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **join_waitlist_using_post**
@@ -391,34 +540,48 @@ No authorization required
 joinWaitlist
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_open_play_event_waitlist import SingleWrapperOfOpenPlayEventWaitlist
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.OpenPlayApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 789 # int | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # joinWaitlist
-    api_response = api_instance.join_waitlist_using_post(authorization, id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OpenPlayApi->join_waitlist_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.OpenPlayApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 56 # int | id
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # joinWaitlist
+        api_response = api_instance.join_waitlist_using_post(authorization, id, version)
+        print("The response of OpenPlayApi->join_waitlist_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OpenPlayApi->join_waitlist_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **int**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -433,6 +596,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **register_event_using_post1**
@@ -441,34 +611,48 @@ No authorization required
 registerEvent
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.OpenPlayApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 789 # int | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # registerEvent
-    api_response = api_instance.register_event_using_post1(authorization, id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OpenPlayApi->register_event_using_post1: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.OpenPlayApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 56 # int | id
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # registerEvent
+        api_response = api_instance.register_event_using_post1(authorization, id, version)
+        print("The response of OpenPlayApi->register_event_using_post1:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OpenPlayApi->register_event_using_post1: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **int**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -482,6 +666,13 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -491,34 +682,48 @@ No authorization required
 rejectInvitation
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.OpenPlayApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 789 # int | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # rejectInvitation
-    api_response = api_instance.reject_invitation_using_post(authorization, id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OpenPlayApi->reject_invitation_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.OpenPlayApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 56 # int | id
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # rejectInvitation
+        api_response = api_instance.reject_invitation_using_post(authorization, id, version)
+        print("The response of OpenPlayApi->reject_invitation_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OpenPlayApi->reject_invitation_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **int**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -533,44 +738,66 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_using_put**
-> SingleWrapperOfUnit update_using_put(body, authorization, id, version)
+> SingleWrapperOfUnit update_using_put(authorization, id, version, request)
 
 update
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.open_play_update_request import OpenPlayUpdateRequest
+from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.OpenPlayApi()
-body = dupr_backend.OpenPlayUpdateRequest() # OpenPlayUpdateRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 789 # int | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # update
-    api_response = api_instance.update_using_put(body, authorization, id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OpenPlayApi->update_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.OpenPlayApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 56 # int | id
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.OpenPlayUpdateRequest() # OpenPlayUpdateRequest | request
+
+    try:
+        # update
+        api_response = api_instance.update_using_put(authorization, id, version, request)
+        print("The response of OpenPlayApi->update_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OpenPlayApi->update_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OpenPlayUpdateRequest**](OpenPlayUpdateRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **int**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**OpenPlayUpdateRequest**](OpenPlayUpdateRequest.md)| request | 
 
 ### Return type
 
@@ -585,6 +812,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **withdraw_event_using_delete**
@@ -593,34 +827,48 @@ No authorization required
 withdrawEvent
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.OpenPlayApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 789 # int | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # withdrawEvent
-    api_response = api_instance.withdraw_event_using_delete(authorization, id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OpenPlayApi->withdraw_event_using_delete: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.OpenPlayApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 56 # int | id
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # withdrawEvent
+        api_response = api_instance.withdraw_event_using_delete(authorization, id, version)
+        print("The response of OpenPlayApi->withdraw_event_using_delete:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OpenPlayApi->withdraw_event_using_delete: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **int**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -634,6 +882,13 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -1,6 +1,8 @@
 # Match
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bracket_id** | **int** |  | [optional] 
@@ -24,17 +26,35 @@ Name | Type | Description | Notes
 **match_source** | **str** |  | [optional] 
 **match_type** | **str** |  | [optional] 
 **modified** | **datetime** |  | [optional] 
-**player_ids** | **list[int]** |  | 
+**player_ids** | **List[int]** |  | 
 **pre_elo_match** | **bool** |  | 
 **pro_match** | **bool** |  | 
 **score_format** | [**ScoreFormat**](ScoreFormat.md) |  | [optional] 
 **status** | **str** |  | [optional] 
-**teams** | [**list[Team]**](Team.md) |  | 
+**teams** | [**List[Team]**](Team.md) |  | 
 **tournament** | **str** |  | [optional] 
 **used_in_initialization** | **bool** |  | 
 **user_id** | **int** |  | [optional] 
 **validator** | [**BasicUserInfo**](BasicUserInfo.md) |  | [optional] 
 **venue** | **str** |  | [optional] 
 
+## Example
+
+```python
+from dupr_backend.models.match import Match
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of Match from a JSON string
+match_instance = Match.from_json(json)
+# print the JSON string representation of the object
+print(Match.to_json())
+
+# convert the object into a dict
+match_dict = match_instance.to_dict()
+# create an instance of Match from a dict
+match_from_dict = Match.from_dict(match_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

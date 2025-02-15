@@ -1,6 +1,8 @@
 # PlayerReq
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **age** | **int** |  | [optional] 
@@ -47,5 +49,23 @@ Name | Type | Description | Notes
 **verified_email** | **bool** |  | [optional] 
 **verified_phone** | **bool** |  | [optional] 
 
+## Example
+
+```python
+from dupr_backend.models.player_req import PlayerReq
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of PlayerReq from a JSON string
+player_req_instance = PlayerReq.from_json(json)
+# print the JSON string representation of the object
+print(PlayerReq.to_json())
+
+# convert the object into a dict
+player_req_dict = player_req_instance.to_dict()
+# create an instance of PlayerReq from a dict
+player_req_from_dict = PlayerReq.from_dict(player_req_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

@@ -1,6 +1,8 @@
 # ClubMemberResponse
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **age** | **int** |  | [optional] 
@@ -34,7 +36,7 @@ Name | Type | Description | Notes
 **provisional_doubles_rating** | **float** |  | [optional] 
 **provisional_singles_rating** | **float** |  | [optional] 
 **requested_by** | **int** |  | [optional] 
-**roles** | [**list[ClubRole]**](ClubRole.md) |  | 
+**roles** | [**List[ClubRole]**](ClubRole.md) |  | 
 **short_address** | **str** |  | [optional] 
 **singles** | **str** |  | [optional] 
 **singles_provisional** | **bool** |  | [optional] 
@@ -45,5 +47,23 @@ Name | Type | Description | Notes
 **verified_email** | **bool** |  | [optional] 
 **verified_phone** | **bool** |  | [optional] 
 
+## Example
+
+```python
+from dupr_backend.models.club_member_response import ClubMemberResponse
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of ClubMemberResponse from a JSON string
+club_member_response_instance = ClubMemberResponse.from_json(json)
+# print the JSON string representation of the object
+print(ClubMemberResponse.to_json())
+
+# convert the object into a dict
+club_member_response_dict = club_member_response_instance.to_dict()
+# create an instance of ClubMemberResponse from a dict
+club_member_response_from_dict = ClubMemberResponse.from_dict(club_member_response_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

@@ -1,5 +1,3 @@
-from __future__ import absolute_import
-
 # flake8: noqa
 
 # import apis into api package
@@ -31,3 +29,4 @@ from dupr_backend.api.subscriptions_api import SubscriptionsApi
 from dupr_backend.api.user_api import UserApi
 from dupr_backend.api.user_subscriptions_api import UserSubscriptionsApi
 from dupr_backend.api.root_path_controller_api import RootPathControllerApi
+

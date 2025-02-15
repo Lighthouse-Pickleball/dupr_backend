@@ -1,6 +1,6 @@
 # dupr_backend.AdminApi
 
-All URIs are relative to *https://backend.mydupr.com/*
+All URIs are relative to *http://https://backend.mydupr.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -97,40 +97,56 @@ Method | HTTP request | Description
 [**user_lookup_using_post**](AdminApi.md#user_lookup_using_post) | **POST** /admin/{version}/panel/user/lookup | userLookup
 [**verify_email_using_post**](AdminApi.md#verify_email_using_post) | **POST** /admin/{version}/panel/email/verify | verifyEmail
 
+
 # **activate_match_using_post**
-> Wrapper activate_match_using_post(body, authorization, version)
+> Wrapper activate_match_using_post(authorization, version, request)
 
 activateMatch
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.delete_match_request import DeleteMatchRequest
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.DeleteMatchRequest() # DeleteMatchRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # activateMatch
-    api_response = api_instance.activate_match_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->activate_match_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.DeleteMatchRequest() # DeleteMatchRequest | request
+
+    try:
+        # activateMatch
+        api_response = api_instance.activate_match_using_post(authorization, version, request)
+        print("The response of AdminApi->activate_match_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->activate_match_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteMatchRequest**](DeleteMatchRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**DeleteMatchRequest**](DeleteMatchRequest.md)| request | 
 
 ### Return type
 
@@ -145,43 +161,64 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **add_key_to_external_client_using_post**
-> object add_key_to_external_client_using_post(body, authorization, version, x_forwarded_for=x_forwarded_for)
+> object add_key_to_external_client_using_post(authorization, version, request, x_forwarded_for=x_forwarded_for)
 
 addKeyToExternalClient
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.add_client_key_request import AddClientKeyRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.AddClientKeyRequest() # AddClientKeyRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
-x_forwarded_for = 'x_forwarded_for_example' # str | x-forwarded-for (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # addKeyToExternalClient
-    api_response = api_instance.add_key_to_external_client_using_post(body, authorization, version, x_forwarded_for=x_forwarded_for)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->add_key_to_external_client_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.AddClientKeyRequest() # AddClientKeyRequest | request
+    x_forwarded_for = 'x_forwarded_for_example' # str | x-forwarded-for (optional)
+
+    try:
+        # addKeyToExternalClient
+        api_response = api_instance.add_key_to_external_client_using_post(authorization, version, request, x_forwarded_for=x_forwarded_for)
+        print("The response of AdminApi->add_key_to_external_client_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->add_key_to_external_client_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AddClientKeyRequest**](AddClientKeyRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**AddClientKeyRequest**](AddClientKeyRequest.md)| request | 
  **x_forwarded_for** | **str**| x-forwarded-for | [optional] 
 
 ### Return type
@@ -197,42 +234,64 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **adjust_rating_using_put**
-> Wrapper adjust_rating_using_put(body, authorization, version)
+> Wrapper adjust_rating_using_put(authorization, version, request)
 
 adjustRating
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.adjust_rating_request import AdjustRatingRequest
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.AdjustRatingRequest() # AdjustRatingRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # adjustRating
-    api_response = api_instance.adjust_rating_using_put(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->adjust_rating_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.AdjustRatingRequest() # AdjustRatingRequest | request
+
+    try:
+        # adjustRating
+        api_response = api_instance.adjust_rating_using_put(authorization, version, request)
+        print("The response of AdminApi->adjust_rating_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->adjust_rating_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AdjustRatingRequest**](AdjustRatingRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**AdjustRatingRequest**](AdjustRatingRequest.md)| request | 
 
 ### Return type
 
@@ -247,6 +306,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **admin_verified_match_history_using_get**
@@ -255,36 +321,50 @@ No authorization required
 adminVerifiedMatchHistory
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_page_of_match_response import SingleWrapperOfPageOfMatchResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-limit = 56 # int | limit
-offset = 56 # int | offset
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # adminVerifiedMatchHistory
-    api_response = api_instance.admin_verified_match_history_using_get(authorization, limit, offset, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->admin_verified_match_history_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    limit = 56 # int | limit
+    offset = 56 # int | offset
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # adminVerifiedMatchHistory
+        api_response = api_instance.admin_verified_match_history_using_get(authorization, limit, offset, version)
+        print("The response of AdminApi->admin_verified_match_history_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->admin_verified_match_history_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **limit** | **int**| limit | 
  **offset** | **int**| offset | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -299,41 +379,61 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **batch_calculated_statistics_using_put**
-> batch_calculated_statistics_using_put(body, authorization, version)
+> batch_calculated_statistics_using_put(authorization, version, s3_object)
 
 batchCalculatedStatistics
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.s3_object import S3Object
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.S3Object() # S3Object | s3Object
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # batchCalculatedStatistics
-    api_instance.batch_calculated_statistics_using_put(body, authorization, version)
-except ApiException as e:
-    print("Exception when calling AdminApi->batch_calculated_statistics_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    s3_object = dupr_backend.S3Object() # S3Object | s3Object
+
+    try:
+        # batchCalculatedStatistics
+        api_instance.batch_calculated_statistics_using_put(authorization, version, s3_object)
+    except Exception as e:
+        print("Exception when calling AdminApi->batch_calculated_statistics_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**S3Object**](S3Object.md)| s3Object | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **s3_object** | [**S3Object**](S3Object.md)| s3Object | 
 
 ### Return type
 
@@ -347,45 +447,67 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **batch_club_matches_using_post**
-> SingleWrapperOfUnit batch_club_matches_using_post(body, authorization, club_id, version)
+> SingleWrapperOfUnit batch_club_matches_using_post(authorization, club_id, version, request)
 
 batchClubMatches
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.s3_object import S3Object
+from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.S3Object() # S3Object | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-club_id = 789 # int | clubId
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # batchClubMatches
-    api_response = api_instance.batch_club_matches_using_post(body, authorization, club_id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->batch_club_matches_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    club_id = 56 # int | clubId
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.S3Object() # S3Object | request
+
+    try:
+        # batchClubMatches
+        api_response = api_instance.batch_club_matches_using_post(authorization, club_id, version, request)
+        print("The response of AdminApi->batch_club_matches_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->batch_club_matches_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**S3Object**](S3Object.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **club_id** | **int**| clubId | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**S3Object**](S3Object.md)| request | 
 
 ### Return type
 
@@ -399,43 +521,65 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **batch_manual_club_matches_using_post**
-> SingleWrapperOfUnit batch_manual_club_matches_using_post(body, authorization, version)
+> SingleWrapperOfUnit batch_manual_club_matches_using_post(authorization, version, request)
 
 batchManualClubMatches
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.s3_object import S3Object
+from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.S3Object() # S3Object | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # batchManualClubMatches
-    api_response = api_instance.batch_manual_club_matches_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->batch_manual_club_matches_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.S3Object() # S3Object | request
+
+    try:
+        # batchManualClubMatches
+        api_response = api_instance.batch_manual_club_matches_using_post(authorization, version, request)
+        print("The response of AdminApi->batch_manual_club_matches_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->batch_manual_club_matches_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**S3Object**](S3Object.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**S3Object**](S3Object.md)| request | 
 
 ### Return type
 
@@ -449,43 +593,65 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **batch_manual_matches_using_post**
-> SingleWrapperOfUnit batch_manual_matches_using_post(body, authorization, version)
+> SingleWrapperOfUnit batch_manual_matches_using_post(authorization, version, request)
 
 batchManualMatches
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.s3_object import S3Object
+from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.S3Object() # S3Object | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # batchManualMatches
-    api_response = api_instance.batch_manual_matches_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->batch_manual_matches_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.S3Object() # S3Object | request
+
+    try:
+        # batchManualMatches
+        api_response = api_instance.batch_manual_matches_using_post(authorization, version, request)
+        print("The response of AdminApi->batch_manual_matches_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->batch_manual_matches_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**S3Object**](S3Object.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**S3Object**](S3Object.md)| request | 
 
 ### Return type
 
@@ -500,42 +666,64 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **batch_player_rating_provisional_using_put**
-> SingleWrapperOfUnit batch_player_rating_provisional_using_put(body, authorization, version)
+> SingleWrapperOfUnit batch_player_rating_provisional_using_put(authorization, version, request)
 
 batchPlayerRatingProvisional
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.batch_player_rating_provisional_request import BatchPlayerRatingProvisionalRequest
+from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.BatchPlayerRatingProvisionalRequest() # BatchPlayerRatingProvisionalRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # batchPlayerRatingProvisional
-    api_response = api_instance.batch_player_rating_provisional_using_put(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->batch_player_rating_provisional_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.BatchPlayerRatingProvisionalRequest() # BatchPlayerRatingProvisionalRequest | request
+
+    try:
+        # batchPlayerRatingProvisional
+        api_response = api_instance.batch_player_rating_provisional_using_put(authorization, version, request)
+        print("The response of AdminApi->batch_player_rating_provisional_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->batch_player_rating_provisional_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BatchPlayerRatingProvisionalRequest**](BatchPlayerRatingProvisionalRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**BatchPlayerRatingProvisionalRequest**](BatchPlayerRatingProvisionalRequest.md)| request | 
 
 ### Return type
 
@@ -549,43 +737,65 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: */*
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **batch_player_rating_using_put**
-> SingleWrapperOfUnit batch_player_rating_using_put(body, authorization, version)
+> SingleWrapperOfUnit batch_player_rating_using_put(authorization, version, request)
 
 batchPlayerRating
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.batch_player_rating_request import BatchPlayerRatingRequest
+from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.BatchPlayerRatingRequest() # BatchPlayerRatingRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # batchPlayerRating
-    api_response = api_instance.batch_player_rating_using_put(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->batch_player_rating_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.BatchPlayerRatingRequest() # BatchPlayerRatingRequest | request
+
+    try:
+        # batchPlayerRating
+        api_response = api_instance.batch_player_rating_using_put(authorization, version, request)
+        print("The response of AdminApi->batch_player_rating_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->batch_player_rating_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BatchPlayerRatingRequest**](BatchPlayerRatingRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**BatchPlayerRatingRequest**](BatchPlayerRatingRequest.md)| request | 
 
 ### Return type
 
@@ -600,41 +810,61 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **batch_set_reliability_scores_using_post**
-> batch_set_reliability_scores_using_post(body, authorization, version)
+> batch_set_reliability_scores_using_post(authorization, version, s3_object)
 
 batchSetReliabilityScores
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.s3_object import S3Object
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.S3Object() # S3Object | s3Object
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # batchSetReliabilityScores
-    api_instance.batch_set_reliability_scores_using_post(body, authorization, version)
-except ApiException as e:
-    print("Exception when calling AdminApi->batch_set_reliability_scores_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    s3_object = dupr_backend.S3Object() # S3Object | s3Object
+
+    try:
+        # batchSetReliabilityScores
+        api_instance.batch_set_reliability_scores_using_post(authorization, version, s3_object)
+    except Exception as e:
+        print("Exception when calling AdminApi->batch_set_reliability_scores_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**S3Object**](S3Object.md)| s3Object | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **s3_object** | [**S3Object**](S3Object.md)| s3Object | 
 
 ### Return type
 
@@ -648,6 +878,13 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -657,34 +894,47 @@ No authorization required
 blockAdminApis
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-flag = true # bool | flag
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # blockAdminApis
-    api_response = api_instance.block_admin_apis_using_put(authorization, flag, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->block_admin_apis_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    flag = True # bool | flag
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # blockAdminApis
+        api_response = api_instance.block_admin_apis_using_put(authorization, flag, version)
+        print("The response of AdminApi->block_admin_apis_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->block_admin_apis_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **flag** | **bool**| flag | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -699,6 +949,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bulk_delete_matches_using_put**
@@ -707,36 +964,50 @@ No authorization required
 bulkDeleteMatches
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-type = 'type_example' # str | type
-version = 'version_example' # str | version
-document = 'document_example' # str |  (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # bulkDeleteMatches
-    api_response = api_instance.bulk_delete_matches_using_put(authorization, type, version, document=document)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->bulk_delete_matches_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    type = 'type_example' # str | type
+    version = 'v1.0' # str | version (default to 'v1.0')
+    document = None # bytearray |  (optional)
+
+    try:
+        # bulkDeleteMatches
+        api_response = api_instance.bulk_delete_matches_using_put(authorization, type, version, document=document)
+        print("The response of AdminApi->bulk_delete_matches_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->bulk_delete_matches_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **type** | **str**| type | 
- **version** | **str**| version | 
- **document** | **str**|  | [optional] 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **document** | **bytearray**|  | [optional] 
 
 ### Return type
 
@@ -750,6 +1021,13 @@ No authorization required
 
  - **Content-Type**: multipart/form-data
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -759,34 +1037,48 @@ No authorization required
 bulkReliabilityScore
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
-request = 'request_example' # str |  (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # bulkReliabilityScore
-    api_response = api_instance.bulk_reliability_score_using_put(authorization, version, request=request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->bulk_reliability_score_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = None # bytearray |  (optional)
+
+    try:
+        # bulkReliabilityScore
+        api_response = api_instance.bulk_reliability_score_using_put(authorization, version, request=request)
+        print("The response of AdminApi->bulk_reliability_score_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->bulk_reliability_score_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
- **request** | **str**|  | [optional] 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | **bytearray**|  | [optional] 
 
 ### Return type
 
@@ -801,42 +1093,63 @@ No authorization required
  - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bulk_send_coppa_email_using_post**
-> object bulk_send_coppa_email_using_post(body, authorization, version)
+> object bulk_send_coppa_email_using_post(authorization, version, request)
 
 bulkSendCoppaEmail
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.bulk_coppa_email_request import BulkCoppaEmailRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.BulkCoppaEmailRequest() # BulkCoppaEmailRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # bulkSendCoppaEmail
-    api_response = api_instance.bulk_send_coppa_email_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->bulk_send_coppa_email_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.BulkCoppaEmailRequest() # BulkCoppaEmailRequest | request
+
+    try:
+        # bulkSendCoppaEmail
+        api_response = api_instance.bulk_send_coppa_email_using_post(authorization, version, request)
+        print("The response of AdminApi->bulk_send_coppa_email_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->bulk_send_coppa_email_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BulkCoppaEmailRequest**](BulkCoppaEmailRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**BulkCoppaEmailRequest**](BulkCoppaEmailRequest.md)| request | 
 
 ### Return type
 
@@ -850,43 +1163,64 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: */*
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bulk_send_wrapped_email_using_post**
-> object bulk_send_wrapped_email_using_post(body, authorization, version)
+> object bulk_send_wrapped_email_using_post(authorization, version, request)
 
 bulkSendWrappedEmail
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.bulk_coppa_email_request import BulkCoppaEmailRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.BulkCoppaEmailRequest() # BulkCoppaEmailRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # bulkSendWrappedEmail
-    api_response = api_instance.bulk_send_wrapped_email_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->bulk_send_wrapped_email_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.BulkCoppaEmailRequest() # BulkCoppaEmailRequest | request
+
+    try:
+        # bulkSendWrappedEmail
+        api_response = api_instance.bulk_send_wrapped_email_using_post(authorization, version, request)
+        print("The response of AdminApi->bulk_send_wrapped_email_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->bulk_send_wrapped_email_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BulkCoppaEmailRequest**](BulkCoppaEmailRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**BulkCoppaEmailRequest**](BulkCoppaEmailRequest.md)| request | 
 
 ### Return type
 
@@ -901,42 +1235,64 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **change_email_using_put**
-> Wrapper change_email_using_put(body, authorization, version)
+> Wrapper change_email_using_put(authorization, version, request)
 
 changeEmail
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.change_email_admin_request import ChangeEmailAdminRequest
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.ChangeEmailAdminRequest() # ChangeEmailAdminRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # changeEmail
-    api_response = api_instance.change_email_using_put(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->change_email_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.ChangeEmailAdminRequest() # ChangeEmailAdminRequest | request
+
+    try:
+        # changeEmail
+        api_response = api_instance.change_email_using_put(authorization, version, request)
+        print("The response of AdminApi->change_email_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->change_email_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ChangeEmailAdminRequest**](ChangeEmailAdminRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**ChangeEmailAdminRequest**](ChangeEmailAdminRequest.md)| request | 
 
 ### Return type
 
@@ -951,42 +1307,64 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **change_role_using_post**
-> Wrapper change_role_using_post(body, authorization, version)
+> Wrapper change_role_using_post(authorization, version, request)
 
 changeRole
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.change_role_request import ChangeRoleRequest
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.ChangeRoleRequest() # ChangeRoleRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # changeRole
-    api_response = api_instance.change_role_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->change_role_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.ChangeRoleRequest() # ChangeRoleRequest | request
+
+    try:
+        # changeRole
+        api_response = api_instance.change_role_using_post(authorization, version, request)
+        print("The response of AdminApi->change_role_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->change_role_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| request | 
 
 ### Return type
 
@@ -1001,42 +1379,64 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **club_create_using_put**
-> Wrapper club_create_using_put(body, authorization, version)
+> Wrapper club_create_using_put(authorization, version, request)
 
 clubCreate
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.create_clubs_request import CreateClubsRequest
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.CreateClubsRequest() # CreateClubsRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # clubCreate
-    api_response = api_instance.club_create_using_put(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->club_create_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.CreateClubsRequest() # CreateClubsRequest | request
+
+    try:
+        # clubCreate
+        api_response = api_instance.club_create_using_put(authorization, version, request)
+        print("The response of AdminApi->club_create_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->club_create_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateClubsRequest**](CreateClubsRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**CreateClubsRequest**](CreateClubsRequest.md)| request | 
 
 ### Return type
 
@@ -1051,42 +1451,64 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_banner_using_post**
-> SingleWrapperOfUnit create_banner_using_post(body, authorization, version)
+> SingleWrapperOfUnit create_banner_using_post(authorization, version, create_banner_request)
 
 createBanner
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.create_banner_request import CreateBannerRequest
+from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.CreateBannerRequest() # CreateBannerRequest | createBannerRequest
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # createBanner
-    api_response = api_instance.create_banner_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->create_banner_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    create_banner_request = dupr_backend.CreateBannerRequest() # CreateBannerRequest | createBannerRequest
+
+    try:
+        # createBanner
+        api_response = api_instance.create_banner_using_post(authorization, version, create_banner_request)
+        print("The response of AdminApi->create_banner_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->create_banner_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateBannerRequest**](CreateBannerRequest.md)| createBannerRequest | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **create_banner_request** | [**CreateBannerRequest**](CreateBannerRequest.md)| createBannerRequest | 
 
 ### Return type
 
@@ -1101,6 +1523,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_clubs_batch_using_put**
@@ -1109,34 +1538,48 @@ No authorization required
 createClubsBatch
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_ofstring import SingleWrapperOfstring
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
-document = 'document_example' # str |  (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # createClubsBatch
-    api_response = api_instance.create_clubs_batch_using_put(authorization, version, document=document)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->create_clubs_batch_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    document = None # bytearray |  (optional)
+
+    try:
+        # createClubsBatch
+        api_response = api_instance.create_clubs_batch_using_put(authorization, version, document=document)
+        print("The response of AdminApi->create_clubs_batch_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->create_clubs_batch_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
- **document** | **str**|  | [optional] 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **document** | **bytearray**|  | [optional] 
 
 ### Return type
 
@@ -1151,43 +1594,65 @@ No authorization required
  - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_external_client_using_post**
-> SingleWrapperOfCreateClientResponse create_external_client_using_post(body, authorization, version, x_forwarded_for=x_forwarded_for)
+> SingleWrapperOfCreateClientResponse create_external_client_using_post(authorization, version, request, x_forwarded_for=x_forwarded_for)
 
 createExternalClient
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.create_client_request import CreateClientRequest
+from dupr_backend.models.single_wrapper_of_create_client_response import SingleWrapperOfCreateClientResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.CreateClientRequest() # CreateClientRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
-x_forwarded_for = 'x_forwarded_for_example' # str | x-forwarded-for (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # createExternalClient
-    api_response = api_instance.create_external_client_using_post(body, authorization, version, x_forwarded_for=x_forwarded_for)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->create_external_client_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.CreateClientRequest() # CreateClientRequest | request
+    x_forwarded_for = 'x_forwarded_for_example' # str | x-forwarded-for (optional)
+
+    try:
+        # createExternalClient
+        api_response = api_instance.create_external_client_using_post(authorization, version, request, x_forwarded_for=x_forwarded_for)
+        print("The response of AdminApi->create_external_client_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->create_external_client_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateClientRequest**](CreateClientRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**CreateClientRequest**](CreateClientRequest.md)| request | 
  **x_forwarded_for** | **str**| x-forwarded-for | [optional] 
 
 ### Return type
@@ -1203,6 +1668,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **decode_using_get**
@@ -1211,32 +1683,45 @@ No authorization required
 decode
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 'id_example' # str | id (optional)
-ids = 'ids_example' # str | ids (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # decode
-    api_response = api_instance.decode_using_get(authorization, id=id, ids=ids)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->decode_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 'id_example' # str | id (optional)
+    ids = 'ids_example' # str | ids (optional)
+
+    try:
+        # decode
+        api_response = api_instance.decode_using_get(authorization, id=id, ids=ids)
+        print("The response of AdminApi->decode_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->decode_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **str**| id | [optional] 
  **ids** | **str**| ids | [optional] 
 
@@ -1253,6 +1738,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_club_using_delete**
@@ -1261,34 +1753,48 @@ No authorization required
 deleteClub
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-club_id = 789 # int | clubId
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # deleteClub
-    api_response = api_instance.delete_club_using_delete(authorization, club_id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->delete_club_using_delete: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    club_id = 56 # int | clubId
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # deleteClub
+        api_response = api_instance.delete_club_using_delete(authorization, club_id, version)
+        print("The response of AdminApi->delete_club_using_delete:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->delete_club_using_delete: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **club_id** | **int**| clubId | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -1303,42 +1809,64 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_match_using_post**
-> Wrapper delete_match_using_post(body, authorization, version)
+> Wrapper delete_match_using_post(authorization, version, request)
 
 deleteMatch
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.delete_match_request import DeleteMatchRequest
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.DeleteMatchRequest() # DeleteMatchRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # deleteMatch
-    api_response = api_instance.delete_match_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->delete_match_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.DeleteMatchRequest() # DeleteMatchRequest | request
+
+    try:
+        # deleteMatch
+        api_response = api_instance.delete_match_using_post(authorization, version, request)
+        print("The response of AdminApi->delete_match_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->delete_match_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteMatchRequest**](DeleteMatchRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**DeleteMatchRequest**](DeleteMatchRequest.md)| request | 
 
 ### Return type
 
@@ -1353,6 +1881,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_user_using_put**
@@ -1361,34 +1896,48 @@ No authorization required
 deleteUser
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
-input = 'input_example' # str |  (optional)
-type = 'type_example' # str |  (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # deleteUser
-    api_response = api_instance.delete_user_using_put(authorization, version, input=input, type=type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->delete_user_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    input = 'input_example' # str |  (optional)
+    type = 'type_example' # str |  (optional)
+
+    try:
+        # deleteUser
+        api_response = api_instance.delete_user_using_put(authorization, version, input=input, type=type)
+        print("The response of AdminApi->delete_user_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->delete_user_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
  **input** | **str**|  | [optional] 
  **type** | **str**|  | [optional] 
 
@@ -1405,6 +1954,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_wix_user_using_delete**
@@ -1413,34 +1969,48 @@ No authorization required
 deleteWixUser
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-user_id = 789 # int | userId
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # deleteWixUser
-    api_response = api_instance.delete_wix_user_using_delete(authorization, user_id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->delete_wix_user_using_delete: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    user_id = 56 # int | userId
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # deleteWixUser
+        api_response = api_instance.delete_wix_user_using_delete(authorization, user_id, version)
+        print("The response of AdminApi->delete_wix_user_using_delete:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->delete_wix_user_using_delete: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **user_id** | **int**| userId | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -1455,6 +2025,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dupr_id_using_get**
@@ -1463,35 +2040,49 @@ No authorization required
 duprId
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_admin_user_profile import SingleWrapperOfAdminUserProfile
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
-dupr_id = 'dupr_id_example' # str | duprId (optional)
-external_id = 'external_id_example' # str | externalId (optional)
-user_id = 789 # int | userId (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # duprId
-    api_response = api_instance.dupr_id_using_get(authorization, version, dupr_id=dupr_id, external_id=external_id, user_id=user_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->dupr_id_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    dupr_id = 'dupr_id_example' # str | duprId (optional)
+    external_id = 'external_id_example' # str | externalId (optional)
+    user_id = 56 # int | userId (optional)
+
+    try:
+        # duprId
+        api_response = api_instance.dupr_id_using_get(authorization, version, dupr_id=dupr_id, external_id=external_id, user_id=user_id)
+        print("The response of AdminApi->dupr_id_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->dupr_id_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
  **dupr_id** | **str**| duprId | [optional] 
  **external_id** | **str**| externalId | [optional] 
  **user_id** | **int**| userId | [optional] 
@@ -1509,42 +2100,64 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **edit_club_staff_using_post**
-> Wrapper edit_club_staff_using_post(body, authorization, version)
+> Wrapper edit_club_staff_using_post(authorization, version, edit_club_staff_request)
 
 editClubStaff
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.edit_club_staff_request import EditClubStaffRequest
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.EditClubStaffRequest() # EditClubStaffRequest | editClubStaffRequest
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # editClubStaff
-    api_response = api_instance.edit_club_staff_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->edit_club_staff_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    edit_club_staff_request = dupr_backend.EditClubStaffRequest() # EditClubStaffRequest | editClubStaffRequest
+
+    try:
+        # editClubStaff
+        api_response = api_instance.edit_club_staff_using_post(authorization, version, edit_club_staff_request)
+        print("The response of AdminApi->edit_club_staff_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->edit_club_staff_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EditClubStaffRequest**](EditClubStaffRequest.md)| editClubStaffRequest | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **edit_club_staff_request** | [**EditClubStaffRequest**](EditClubStaffRequest.md)| editClubStaffRequest | 
 
 ### Return type
 
@@ -1559,6 +2172,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **encode_using_get**
@@ -1567,32 +2187,45 @@ No authorization required
 encode
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 789 # int | id (optional)
-ids = 'ids_example' # str | ids (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # encode
-    api_response = api_instance.encode_using_get(authorization, id=id, ids=ids)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->encode_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 56 # int | id (optional)
+    ids = 'ids_example' # str | ids (optional)
+
+    try:
+        # encode
+        api_response = api_instance.encode_using_get(authorization, id=id, ids=ids)
+        print("The response of AdminApi->encode_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->encode_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **int**| id | [optional] 
  **ids** | **str**| ids | [optional] 
 
@@ -1609,6 +2242,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **export_matches_missing_team_player_using_get**
@@ -1617,32 +2257,46 @@ No authorization required
 exportMatchesMissingTeamPlayer
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # exportMatchesMissingTeamPlayer
-    api_response = api_instance.export_matches_missing_team_player_using_get(authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->export_matches_missing_team_player_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # exportMatchesMissingTeamPlayer
+        api_response = api_instance.export_matches_missing_team_player_using_get(authorization, version)
+        print("The response of AdminApi->export_matches_missing_team_player_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->export_matches_missing_team_player_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -1656,6 +2310,13 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1665,32 +2326,46 @@ No authorization required
 exportUsersViaMail
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # exportUsersViaMail
-    api_response = api_instance.export_users_via_mail_using_post(authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->export_users_via_mail_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # exportUsersViaMail
+        api_response = api_instance.export_users_via_mail_using_post(authorization, version)
+        print("The response of AdminApi->export_users_via_mail_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->export_users_via_mail_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -1705,6 +2380,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **find_duplicated_account_for_players_using_post**
@@ -1713,32 +2395,46 @@ No authorization required
 findDuplicatedAccountForPlayers
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.array_wrapper_of_duplicated_account_response import ArrayWrapperOfDuplicatedAccountResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # findDuplicatedAccountForPlayers
-    api_response = api_instance.find_duplicated_account_for_players_using_post(authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->find_duplicated_account_for_players_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # findDuplicatedAccountForPlayers
+        api_response = api_instance.find_duplicated_account_for_players_using_post(authorization, version)
+        print("The response of AdminApi->find_duplicated_account_for_players_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->find_duplicated_account_for_players_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -1753,6 +2449,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_active_banner_using_get**
@@ -1761,32 +2464,46 @@ No authorization required
 getActiveBanner
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.array_wrapper_of_informative_banner_responce import ArrayWrapperOfInformativeBannerResponce
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getActiveBanner
-    api_response = api_instance.get_active_banner_using_get(authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->get_active_banner_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # getActiveBanner
+        api_response = api_instance.get_active_banner_using_get(authorization, version)
+        print("The response of AdminApi->get_active_banner_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->get_active_banner_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -1800,6 +2517,13 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1809,32 +2533,46 @@ No authorization required
 getAllBanner
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.array_wrapper_of_informative_banner_responce import ArrayWrapperOfInformativeBannerResponce
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getAllBanner
-    api_response = api_instance.get_all_banner_using_get(authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->get_all_banner_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # getAllBanner
+        api_response = api_instance.get_all_banner_using_get(authorization, version)
+        print("The response of AdminApi->get_all_banner_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->get_all_banner_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -1849,6 +2587,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_all_roles_using_get**
@@ -1857,32 +2602,46 @@ No authorization required
 getAllRoles
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.array_wrapper_of_role_response import ArrayWrapperOfRoleResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getAllRoles
-    api_response = api_instance.get_all_roles_using_get(authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->get_all_roles_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # getAllRoles
+        api_response = api_instance.get_all_roles_using_get(authorization, version)
+        print("The response of AdminApi->get_all_roles_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->get_all_roles_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -1897,42 +2656,63 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_club_restrictions_using_post**
-> object get_club_restrictions_using_post(body, authorization, version)
+> object get_club_restrictions_using_post(authorization, version, request)
 
 getClubRestrictions
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.get_club_restrictions_request import GetClubRestrictionsRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.GetClubRestrictionsRequest() # GetClubRestrictionsRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getClubRestrictions
-    api_response = api_instance.get_club_restrictions_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->get_club_restrictions_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.GetClubRestrictionsRequest() # GetClubRestrictionsRequest | request
+
+    try:
+        # getClubRestrictions
+        api_response = api_instance.get_club_restrictions_using_post(authorization, version, request)
+        print("The response of AdminApi->get_club_restrictions_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->get_club_restrictions_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetClubRestrictionsRequest**](GetClubRestrictionsRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**GetClubRestrictionsRequest**](GetClubRestrictionsRequest.md)| request | 
 
 ### Return type
 
@@ -1946,43 +2726,64 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_club_settings_using_post**
-> object get_club_settings_using_post(body, authorization, version)
+> object get_club_settings_using_post(authorization, version, request)
 
 getClubSettings
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.get_club_settings_request import GetClubSettingsRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.GetClubSettingsRequest() # GetClubSettingsRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getClubSettings
-    api_response = api_instance.get_club_settings_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->get_club_settings_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.GetClubSettingsRequest() # GetClubSettingsRequest | request
+
+    try:
+        # getClubSettings
+        api_response = api_instance.get_club_settings_using_post(authorization, version, request)
+        print("The response of AdminApi->get_club_settings_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->get_club_settings_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetClubSettingsRequest**](GetClubSettingsRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**GetClubSettingsRequest**](GetClubSettingsRequest.md)| request | 
 
 ### Return type
 
@@ -1997,43 +2798,64 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_external_client_permissions_using_post**
-> object get_external_client_permissions_using_post(body, authorization, version, x_forwarded_for=x_forwarded_for)
+> object get_external_client_permissions_using_post(authorization, version, request, x_forwarded_for=x_forwarded_for)
 
 getExternalClientPermissions
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.get_client_permissions_request import GetClientPermissionsRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.GetClientPermissionsRequest() # GetClientPermissionsRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
-x_forwarded_for = 'x_forwarded_for_example' # str | x-forwarded-for (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getExternalClientPermissions
-    api_response = api_instance.get_external_client_permissions_using_post(body, authorization, version, x_forwarded_for=x_forwarded_for)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->get_external_client_permissions_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.GetClientPermissionsRequest() # GetClientPermissionsRequest | request
+    x_forwarded_for = 'x_forwarded_for_example' # str | x-forwarded-for (optional)
+
+    try:
+        # getExternalClientPermissions
+        api_response = api_instance.get_external_client_permissions_using_post(authorization, version, request, x_forwarded_for=x_forwarded_for)
+        print("The response of AdminApi->get_external_client_permissions_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->get_external_client_permissions_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetClientPermissionsRequest**](GetClientPermissionsRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**GetClientPermissionsRequest**](GetClientPermissionsRequest.md)| request | 
  **x_forwarded_for** | **str**| x-forwarded-for | [optional] 
 
 ### Return type
@@ -2049,6 +2871,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_match_using_get**
@@ -2057,34 +2886,48 @@ No authorization required
 getMatch
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_match_response import SingleWrapperOfMatchResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 'id_example' # str | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getMatch
-    api_response = api_instance.get_match_using_get(authorization, id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->get_match_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 'id_example' # str | id
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # getMatch
+        api_response = api_instance.get_match_using_get(authorization, id, version)
+        print("The response of AdminApi->get_match_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->get_match_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **str**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -2099,42 +2942,64 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_user_bracket_using_post**
-> SingleWrapperOfPageOfBracketResponse get_user_bracket_using_post(body, authorization, version)
+> SingleWrapperOfPageOfBracketResponse get_user_bracket_using_post(authorization, version, user_bracket_admin_request)
 
 getUserBracket
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_page_of_bracket_response import SingleWrapperOfPageOfBracketResponse
+from dupr_backend.models.user_bracket_admin_request import UserBracketAdminRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.UserBracketAdminRequest() # UserBracketAdminRequest | userBracketAdminRequest
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getUserBracket
-    api_response = api_instance.get_user_bracket_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->get_user_bracket_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    user_bracket_admin_request = dupr_backend.UserBracketAdminRequest() # UserBracketAdminRequest | userBracketAdminRequest
+
+    try:
+        # getUserBracket
+        api_response = api_instance.get_user_bracket_using_post(authorization, version, user_bracket_admin_request)
+        print("The response of AdminApi->get_user_bracket_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->get_user_bracket_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserBracketAdminRequest**](UserBracketAdminRequest.md)| userBracketAdminRequest | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **user_bracket_admin_request** | [**UserBracketAdminRequest**](UserBracketAdminRequest.md)| userBracketAdminRequest | 
 
 ### Return type
 
@@ -2149,6 +3014,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_user_profile_using_get**
@@ -2157,34 +3029,48 @@ No authorization required
 getUserProfile
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_user_response import SingleWrapperOfUserResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-user_id = 789 # int | userId
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getUserProfile
-    api_response = api_instance.get_user_profile_using_get(authorization, user_id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->get_user_profile_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    user_id = 56 # int | userId
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # getUserProfile
+        api_response = api_instance.get_user_profile_using_get(authorization, user_id, version)
+        print("The response of AdminApi->get_user_profile_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->get_user_profile_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **user_id** | **int**| userId | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -2199,6 +3085,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **index_club_members_using_post**
@@ -2207,32 +3100,46 @@ No authorization required
 indexClubMembers
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # indexClubMembers
-    api_response = api_instance.index_club_members_using_post(authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->index_club_members_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # indexClubMembers
+        api_response = api_instance.index_club_members_using_post(authorization, version)
+        print("The response of AdminApi->index_club_members_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->index_club_members_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -2246,6 +3153,13 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: */*
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2255,32 +3169,46 @@ No authorization required
 indexClubs
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # indexClubs
-    api_response = api_instance.index_clubs_using_put(authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->index_clubs_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # indexClubs
+        api_response = api_instance.index_clubs_using_put(authorization, version)
+        print("The response of AdminApi->index_clubs_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->index_clubs_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -2295,6 +3223,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **index_player_using_patch**
@@ -2303,34 +3238,47 @@ No authorization required
 indexPlayer
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 'id_example' # str | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # indexPlayer
-    api_response = api_instance.index_player_using_patch(authorization, id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->index_player_using_patch: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 'id_example' # str | id
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # indexPlayer
+        api_response = api_instance.index_player_using_patch(authorization, id, version)
+        print("The response of AdminApi->index_player_using_patch:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->index_player_using_patch: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **str**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -2345,6 +3293,12 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **index_players_using_patch**
@@ -2353,32 +3307,46 @@ No authorization required
 indexPlayers
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # indexPlayers
-    api_response = api_instance.index_players_using_patch(authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->index_players_using_patch: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # indexPlayers
+        api_response = api_instance.index_players_using_patch(authorization, version)
+        print("The response of AdminApi->index_players_using_patch:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->index_players_using_patch: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -2392,6 +3360,12 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2401,34 +3375,48 @@ No authorization required
 matchCodesExport
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
-sources = ['sources_example'] # list[str] | sources (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # matchCodesExport
-    api_response = api_instance.match_codes_export_using_get(authorization, version, sources=sources)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->match_codes_export_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    sources = ['sources_example'] # List[str] | sources (optional)
+
+    try:
+        # matchCodesExport
+        api_response = api_instance.match_codes_export_using_get(authorization, version, sources=sources)
+        print("The response of AdminApi->match_codes_export_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->match_codes_export_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
- **sources** | [**list[str]**](str.md)| sources | [optional] 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **sources** | [**List[str]**](str.md)| sources | [optional] 
 
 ### Return type
 
@@ -2443,44 +3431,65 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **match_reassign_batch_using_post**
-> SingleWrapperOfstring match_reassign_batch_using_post(authorization, version, document=document, notify=notify)
+> SingleWrapperOfstring match_reassign_batch_using_post(authorization, version, notify=notify, document=document)
 
 matchReassignBatch
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_ofstring import SingleWrapperOfstring
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
-document = 'document_example' # str |  (optional)
-notify = true # bool | notify (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # matchReassignBatch
-    api_response = api_instance.match_reassign_batch_using_post(authorization, version, document=document, notify=notify)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->match_reassign_batch_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    notify = True # bool | notify (optional)
+    document = None # bytearray |  (optional)
+
+    try:
+        # matchReassignBatch
+        api_response = api_instance.match_reassign_batch_using_post(authorization, version, notify=notify, document=document)
+        print("The response of AdminApi->match_reassign_batch_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->match_reassign_batch_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
- **document** | **str**|  | [optional] 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
  **notify** | **bool**| notify | [optional] 
+ **document** | **bytearray**|  | [optional] 
 
 ### Return type
 
@@ -2495,42 +3504,64 @@ No authorization required
  - **Content-Type**: multipart/form-data
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **match_reassign_using_post**
-> SingleWrapperOfUnit match_reassign_using_post(body, authorization, version)
+> SingleWrapperOfUnit match_reassign_using_post(authorization, version, matches_reassign_request)
 
 matchReassign
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.matches_reassign_request import MatchesReassignRequest
+from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.MatchesReassignRequest() # MatchesReassignRequest | matchesReassignRequest
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # matchReassign
-    api_response = api_instance.match_reassign_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->match_reassign_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    matches_reassign_request = dupr_backend.MatchesReassignRequest() # MatchesReassignRequest | matchesReassignRequest
+
+    try:
+        # matchReassign
+        api_response = api_instance.match_reassign_using_post(authorization, version, matches_reassign_request)
+        print("The response of AdminApi->match_reassign_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->match_reassign_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MatchesReassignRequest**](MatchesReassignRequest.md)| matchesReassignRequest | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **matches_reassign_request** | [**MatchesReassignRequest**](MatchesReassignRequest.md)| matchesReassignRequest | 
 
 ### Return type
 
@@ -2545,6 +3576,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **matches_export_using_get**
@@ -2553,36 +3591,50 @@ No authorization required
 matchesExport
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-all = true # bool | all
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
-sources = ['sources_example'] # list[str] | sources (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # matchesExport
-    api_response = api_instance.matches_export_using_get(all, authorization, version, sources=sources)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->matches_export_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    all = True # bool | all
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    sources = ['sources_example'] # List[str] | sources (optional)
+
+    try:
+        # matchesExport
+        api_response = api_instance.matches_export_using_get(all, authorization, version, sources=sources)
+        print("The response of AdminApi->matches_export_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->matches_export_using_get: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **all** | **bool**| all | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
- **sources** | [**list[str]**](str.md)| sources | [optional] 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **sources** | [**List[str]**](str.md)| sources | [optional] 
 
 ### Return type
 
@@ -2597,6 +3649,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **merge_users_batch_using_post**
@@ -2605,34 +3664,48 @@ No authorization required
 mergeUsersBatch
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_ofstring import SingleWrapperOfstring
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
-document = 'document_example' # str |  (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # mergeUsersBatch
-    api_response = api_instance.merge_users_batch_using_post(authorization, version, document=document)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->merge_users_batch_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    document = None # bytearray |  (optional)
+
+    try:
+        # mergeUsersBatch
+        api_response = api_instance.merge_users_batch_using_post(authorization, version, document=document)
+        print("The response of AdminApi->merge_users_batch_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->merge_users_batch_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
- **document** | **str**|  | [optional] 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **document** | **bytearray**|  | [optional] 
 
 ### Return type
 
@@ -2647,42 +3720,64 @@ No authorization required
  - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **merge_users_using_post**
-> SingleWrapperOfMergeUsersResponse merge_users_using_post(body, authorization, version)
+> SingleWrapperOfMergeUsersResponse merge_users_using_post(authorization, version, merge_users_request)
 
 mergeUsers
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.merge_users_request import MergeUsersRequest
+from dupr_backend.models.single_wrapper_of_merge_users_response import SingleWrapperOfMergeUsersResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.MergeUsersRequest() # MergeUsersRequest | mergeUsersRequest
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # mergeUsers
-    api_response = api_instance.merge_users_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->merge_users_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    merge_users_request = dupr_backend.MergeUsersRequest() # MergeUsersRequest | mergeUsersRequest
+
+    try:
+        # mergeUsers
+        api_response = api_instance.merge_users_using_post(authorization, version, merge_users_request)
+        print("The response of AdminApi->merge_users_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->merge_users_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MergeUsersRequest**](MergeUsersRequest.md)| mergeUsersRequest | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **merge_users_request** | [**MergeUsersRequest**](MergeUsersRequest.md)| mergeUsersRequest | 
 
 ### Return type
 
@@ -2697,6 +3792,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **obfuscate_match_id_using_get**
@@ -2705,32 +3807,45 @@ No authorization required
 obfuscateMatchId
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-to_type = 'to_type_example' # str | toType
-ids = 'ids_example' # str | ids (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # obfuscateMatchId
-    api_response = api_instance.obfuscate_match_id_using_get(authorization, to_type, ids=ids)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->obfuscate_match_id_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    to_type = 'to_type_example' # str | toType
+    ids = 'ids_example' # str | ids (optional)
+
+    try:
+        # obfuscateMatchId
+        api_response = api_instance.obfuscate_match_id_using_get(authorization, to_type, ids=ids)
+        print("The response of AdminApi->obfuscate_match_id_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->obfuscate_match_id_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **to_type** | **str**| toType | 
  **ids** | **str**| ids | [optional] 
 
@@ -2747,6 +3862,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **obfuscate_using_get**
@@ -2755,33 +3877,46 @@ No authorization required
 obfuscate
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-type = 'type_example' # str | type
-id = 789 # int | id (optional)
-ids = 'ids_example' # str | ids (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # obfuscate
-    api_response = api_instance.obfuscate_using_get(authorization, type, id=id, ids=ids)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->obfuscate_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    type = 'type_example' # str | type
+    id = 56 # int | id (optional)
+    ids = 'ids_example' # str | ids (optional)
+
+    try:
+        # obfuscate
+        api_response = api_instance.obfuscate_using_get(authorization, type, id=id, ids=ids)
+        print("The response of AdminApi->obfuscate_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->obfuscate_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **type** | **str**| type | 
  **id** | **int**| id | [optional] 
  **ids** | **str**| ids | [optional] 
@@ -2799,6 +3934,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **populate_unknown_player_pre_ratings_using_post**
@@ -2807,30 +3949,44 @@ No authorization required
 populateUnknownPlayerPreRatings
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # populateUnknownPlayerPreRatings
-    api_response = api_instance.populate_unknown_player_pre_ratings_using_post(authorization)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->populate_unknown_player_pre_ratings_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+
+    try:
+        # populateUnknownPlayerPreRatings
+        api_response = api_instance.populate_unknown_player_pre_ratings_using_post(authorization)
+        print("The response of AdminApi->populate_unknown_player_pre_ratings_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->populate_unknown_player_pre_ratings_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
 
 ### Return type
 
@@ -2844,6 +4000,13 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: */*
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2853,34 +4016,48 @@ No authorization required
 reCreateESIndex
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 'id_example' # str | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # reCreateESIndex
-    api_response = api_instance.re_create_es_index_using_post(authorization, id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->re_create_es_index_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 'id_example' # str | id
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # reCreateESIndex
+        api_response = api_instance.re_create_es_index_using_post(authorization, id, version)
+        print("The response of AdminApi->re_create_es_index_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->re_create_es_index_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **str**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -2895,6 +4072,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **recalculate_match_elo_ratings_bulk_using_post**
@@ -2903,36 +4087,50 @@ No authorization required
 recalculateMatchELORatingsBulk
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-type = 'type_example' # str | type
-version = 'version_example' # str | version
-document = 'document_example' # str |  (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # recalculateMatchELORatingsBulk
-    api_response = api_instance.recalculate_match_elo_ratings_bulk_using_post(authorization, type, version, document=document)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->recalculate_match_elo_ratings_bulk_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    type = 'type_example' # str | type
+    version = 'v1.0' # str | version (default to 'v1.0')
+    document = None # bytearray |  (optional)
+
+    try:
+        # recalculateMatchELORatingsBulk
+        api_response = api_instance.recalculate_match_elo_ratings_bulk_using_post(authorization, type, version, document=document)
+        print("The response of AdminApi->recalculate_match_elo_ratings_bulk_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->recalculate_match_elo_ratings_bulk_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **type** | **str**| type | 
- **version** | **str**| version | 
- **document** | **str**|  | [optional] 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **document** | **bytearray**|  | [optional] 
 
 ### Return type
 
@@ -2947,42 +4145,64 @@ No authorization required
  - **Content-Type**: multipart/form-data
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **recalculate_pre_match_ratings_using_post**
-> Wrapper recalculate_pre_match_ratings_using_post(body, authorization, version)
+> Wrapper recalculate_pre_match_ratings_using_post(authorization, version, request)
 
 recalculatePreMatchRatings
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.calculate_matches_range import CalculateMatchesRange
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.CalculateMatchesRange() # CalculateMatchesRange | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # recalculatePreMatchRatings
-    api_response = api_instance.recalculate_pre_match_ratings_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->recalculate_pre_match_ratings_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.CalculateMatchesRange() # CalculateMatchesRange | request
+
+    try:
+        # recalculatePreMatchRatings
+        api_response = api_instance.recalculate_pre_match_ratings_using_post(authorization, version, request)
+        print("The response of AdminApi->recalculate_pre_match_ratings_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->recalculate_pre_match_ratings_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CalculateMatchesRange**](CalculateMatchesRange.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**CalculateMatchesRange**](CalculateMatchesRange.md)| request | 
 
 ### Return type
 
@@ -2997,6 +4217,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **recalculate_pre_match_ratings_using_post1**
@@ -3005,36 +4232,50 @@ No authorization required
 recalculatePreMatchRatings
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-type = 'type_example' # str | type
-version = 'version_example' # str | version
-document = 'document_example' # str |  (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # recalculatePreMatchRatings
-    api_response = api_instance.recalculate_pre_match_ratings_using_post1(authorization, type, version, document=document)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->recalculate_pre_match_ratings_using_post1: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    type = 'type_example' # str | type
+    version = 'v1.0' # str | version (default to 'v1.0')
+    document = None # bytearray |  (optional)
+
+    try:
+        # recalculatePreMatchRatings
+        api_response = api_instance.recalculate_pre_match_ratings_using_post1(authorization, type, version, document=document)
+        print("The response of AdminApi->recalculate_pre_match_ratings_using_post1:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->recalculate_pre_match_ratings_using_post1: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **type** | **str**| type | 
- **version** | **str**| version | 
- **document** | **str**|  | [optional] 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **document** | **bytearray**|  | [optional] 
 
 ### Return type
 
@@ -3049,42 +4290,63 @@ No authorization required
  - **Content-Type**: multipart/form-data
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **remove_all_club_restrictions_using_delete**
-> object remove_all_club_restrictions_using_delete(body, authorization, version)
+> object remove_all_club_restrictions_using_delete(authorization, version, request)
 
 removeAllClubRestrictions
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.remove_all_club_restrictions_request import RemoveAllClubRestrictionsRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.RemoveAllClubRestrictionsRequest() # RemoveAllClubRestrictionsRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # removeAllClubRestrictions
-    api_response = api_instance.remove_all_club_restrictions_using_delete(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->remove_all_club_restrictions_using_delete: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.RemoveAllClubRestrictionsRequest() # RemoveAllClubRestrictionsRequest | request
+
+    try:
+        # removeAllClubRestrictions
+        api_response = api_instance.remove_all_club_restrictions_using_delete(authorization, version, request)
+        print("The response of AdminApi->remove_all_club_restrictions_using_delete:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->remove_all_club_restrictions_using_delete: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RemoveAllClubRestrictionsRequest**](RemoveAllClubRestrictionsRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**RemoveAllClubRestrictionsRequest**](RemoveAllClubRestrictionsRequest.md)| request | 
 
 ### Return type
 
@@ -3096,45 +4358,66 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: */*
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **remove_club_restrictions_using_delete**
-> object remove_club_restrictions_using_delete(body, authorization, version)
+> object remove_club_restrictions_using_delete(authorization, version, request)
 
 removeClubRestrictions
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.remove_club_restrictions_request import RemoveClubRestrictionsRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.RemoveClubRestrictionsRequest() # RemoveClubRestrictionsRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # removeClubRestrictions
-    api_response = api_instance.remove_club_restrictions_using_delete(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->remove_club_restrictions_using_delete: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.RemoveClubRestrictionsRequest() # RemoveClubRestrictionsRequest | request
+
+    try:
+        # removeClubRestrictions
+        api_response = api_instance.remove_club_restrictions_using_delete(authorization, version, request)
+        print("The response of AdminApi->remove_club_restrictions_using_delete:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->remove_club_restrictions_using_delete: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RemoveClubRestrictionsRequest**](RemoveClubRestrictionsRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**RemoveClubRestrictionsRequest**](RemoveClubRestrictionsRequest.md)| request | 
 
 ### Return type
 
@@ -3146,8 +4429,15 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: */*
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3157,35 +4447,49 @@ No authorization required
 resetClientSecret
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_create_client_response import SingleWrapperOfCreateClientResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-client_id = 789 # int | clientId
-version = 'version_example' # str | version
-x_forwarded_for = 'x_forwarded_for_example' # str | x-forwarded-for (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # resetClientSecret
-    api_response = api_instance.reset_client_secret_using_get(authorization, client_id, version, x_forwarded_for=x_forwarded_for)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->reset_client_secret_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    client_id = 56 # int | clientId
+    version = 'v1.0' # str | version (default to 'v1.0')
+    x_forwarded_for = 'x_forwarded_for_example' # str | x-forwarded-for (optional)
+
+    try:
+        # resetClientSecret
+        api_response = api_instance.reset_client_secret_using_get(authorization, client_id, version, x_forwarded_for=x_forwarded_for)
+        print("The response of AdminApi->reset_client_secret_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->reset_client_secret_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **client_id** | **int**| clientId | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
  **x_forwarded_for** | **str**| x-forwarded-for | [optional] 
 
 ### Return type
@@ -3201,44 +4505,66 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **restrict_using_post**
-> Wrapper restrict_using_post(body, authorization, id, version)
+> Wrapper restrict_using_post(authorization, id, version, request)
 
 restrict
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.user_restrict_request import UserRestrictRequest
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.UserRestrictRequest() # UserRestrictRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 789 # int | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # restrict
-    api_response = api_instance.restrict_using_post(body, authorization, id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->restrict_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 56 # int | id
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.UserRestrictRequest() # UserRestrictRequest | request
+
+    try:
+        # restrict
+        api_response = api_instance.restrict_using_post(authorization, id, version, request)
+        print("The response of AdminApi->restrict_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->restrict_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserRestrictRequest**](UserRestrictRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **int**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**UserRestrictRequest**](UserRestrictRequest.md)| request | 
 
 ### Return type
 
@@ -3253,42 +4579,64 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **save_topic_using_post**
-> SingleWrapperOfTopicResponse save_topic_using_post(body, authorization, version)
+> SingleWrapperOfTopicResponse save_topic_using_post(authorization, version, request)
 
 saveTopic
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_topic_response import SingleWrapperOfTopicResponse
+from dupr_backend.models.topic_request import TopicRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.TopicRequest() # TopicRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # saveTopic
-    api_response = api_instance.save_topic_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->save_topic_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.TopicRequest() # TopicRequest | request
+
+    try:
+        # saveTopic
+        api_response = api_instance.save_topic_using_post(authorization, version, request)
+        print("The response of AdminApi->save_topic_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->save_topic_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TopicRequest**](TopicRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**TopicRequest**](TopicRequest.md)| request | 
 
 ### Return type
 
@@ -3303,42 +4651,64 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **save_verified_match_using_put**
-> Wrapper save_verified_match_using_put(body, authorization, version)
+> Wrapper save_verified_match_using_put(authorization, version, request)
 
 saveVerifiedMatch
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.match_request import MatchRequest
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.MatchRequest() # MatchRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # saveVerifiedMatch
-    api_response = api_instance.save_verified_match_using_put(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->save_verified_match_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.MatchRequest() # MatchRequest | request
+
+    try:
+        # saveVerifiedMatch
+        api_response = api_instance.save_verified_match_using_put(authorization, version, request)
+        print("The response of AdminApi->save_verified_match_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->save_verified_match_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MatchRequest**](MatchRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**MatchRequest**](MatchRequest.md)| request | 
 
 ### Return type
 
@@ -3353,42 +4723,63 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_club_restrictions_using_put**
-> object set_club_restrictions_using_put(body, authorization, version)
+> object set_club_restrictions_using_put(authorization, version, request)
 
 setClubRestrictions
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.set_club_restrictions_request import SetClubRestrictionsRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.SetClubRestrictionsRequest() # SetClubRestrictionsRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # setClubRestrictions
-    api_response = api_instance.set_club_restrictions_using_put(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->set_club_restrictions_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.SetClubRestrictionsRequest() # SetClubRestrictionsRequest | request
+
+    try:
+        # setClubRestrictions
+        api_response = api_instance.set_club_restrictions_using_put(authorization, version, request)
+        print("The response of AdminApi->set_club_restrictions_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->set_club_restrictions_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SetClubRestrictionsRequest**](SetClubRestrictionsRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**SetClubRestrictionsRequest**](SetClubRestrictionsRequest.md)| request | 
 
 ### Return type
 
@@ -3402,43 +4793,64 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_club_settings_using_put**
-> object set_club_settings_using_put(body, authorization, version)
+> object set_club_settings_using_put(authorization, version, request)
 
 setClubSettings
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.set_club_settings_request import SetClubSettingsRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.SetClubSettingsRequest() # SetClubSettingsRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # setClubSettings
-    api_response = api_instance.set_club_settings_using_put(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->set_club_settings_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.SetClubSettingsRequest() # SetClubSettingsRequest | request
+
+    try:
+        # setClubSettings
+        api_response = api_instance.set_club_settings_using_put(authorization, version, request)
+        print("The response of AdminApi->set_club_settings_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->set_club_settings_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SetClubSettingsRequest**](SetClubSettingsRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**SetClubSettingsRequest**](SetClubSettingsRequest.md)| request | 
 
 ### Return type
 
@@ -3452,6 +4864,13 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3461,34 +4880,48 @@ No authorization required
 signupBatch
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_map_ofstring_andstring import SingleWrapperOfMapOfstringAndstring
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
-document = 'document_example' # str |  (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # signupBatch
-    api_response = api_instance.signup_batch_using_put(authorization, version, document=document)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->signup_batch_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    document = None # bytearray |  (optional)
+
+    try:
+        # signupBatch
+        api_response = api_instance.signup_batch_using_put(authorization, version, document=document)
+        print("The response of AdminApi->signup_batch_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->signup_batch_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
- **document** | **str**|  | [optional] 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **document** | **bytearray**|  | [optional] 
 
 ### Return type
 
@@ -3503,42 +4936,64 @@ No authorization required
  - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **signup_using_put**
-> SingleWrapperOfstring signup_using_put(body, authorization, version)
+> SingleWrapperOfstring signup_using_put(authorization, version, request)
 
 signup
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.sign_up_request import SignUpRequest
+from dupr_backend.models.single_wrapper_ofstring import SingleWrapperOfstring
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.SignUpRequest() # SignUpRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # signup
-    api_response = api_instance.signup_using_put(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->signup_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.SignUpRequest() # SignUpRequest | request
+
+    try:
+        # signup
+        api_response = api_instance.signup_using_put(authorization, version, request)
+        print("The response of AdminApi->signup_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->signup_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SignUpRequest**](SignUpRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**SignUpRequest**](SignUpRequest.md)| request | 
 
 ### Return type
 
@@ -3553,6 +5008,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **trigger_missing_elo_rating_for_players_using_post**
@@ -3561,32 +5023,46 @@ No authorization required
 triggerMissingEloRatingForPlayers
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # triggerMissingEloRatingForPlayers
-    api_response = api_instance.trigger_missing_elo_rating_for_players_using_post(authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->trigger_missing_elo_rating_for_players_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # triggerMissingEloRatingForPlayers
+        api_response = api_instance.trigger_missing_elo_rating_for_players_using_post(authorization, version)
+        print("The response of AdminApi->trigger_missing_elo_rating_for_players_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->trigger_missing_elo_rating_for_players_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -3601,6 +5077,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unclaim_user_using_put**
@@ -3609,34 +5092,48 @@ No authorization required
 unclaimUser
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
-input = 'input_example' # str |  (optional)
-type = 'type_example' # str |  (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # unclaimUser
-    api_response = api_instance.unclaim_user_using_put(authorization, version, input=input, type=type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->unclaim_user_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    input = 'input_example' # str |  (optional)
+    type = 'type_example' # str |  (optional)
+
+    try:
+        # unclaimUser
+        api_response = api_instance.unclaim_user_using_put(authorization, version, input=input, type=type)
+        print("The response of AdminApi->unclaim_user_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->unclaim_user_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
  **input** | **str**|  | [optional] 
  **type** | **str**|  | [optional] 
 
@@ -3653,6 +5150,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unobfuscate_match_code_using_get**
@@ -3661,31 +5165,44 @@ No authorization required
 unobfuscateMatchCode
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-matches = 'matches_example' # str | matches (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # unobfuscateMatchCode
-    api_response = api_instance.unobfuscate_match_code_using_get(authorization, matches=matches)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->unobfuscate_match_code_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    matches = 'matches_example' # str | matches (optional)
+
+    try:
+        # unobfuscateMatchCode
+        api_response = api_instance.unobfuscate_match_code_using_get(authorization, matches=matches)
+        print("The response of AdminApi->unobfuscate_match_code_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->unobfuscate_match_code_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **matches** | **str**| matches | [optional] 
 
 ### Return type
@@ -3701,6 +5218,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unobfuscate_using_get**
@@ -3709,33 +5233,46 @@ No authorization required
 unobfuscate
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-type = 'type_example' # str | type
-id = 789 # int | id (optional)
-ids = 'ids_example' # str | ids (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # unobfuscate
-    api_response = api_instance.unobfuscate_using_get(authorization, type, id=id, ids=ids)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->unobfuscate_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    type = 'type_example' # str | type
+    id = 56 # int | id (optional)
+    ids = 'ids_example' # str | ids (optional)
+
+    try:
+        # unobfuscate
+        api_response = api_instance.unobfuscate_using_get(authorization, type, id=id, ids=ids)
+        print("The response of AdminApi->unobfuscate_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->unobfuscate_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **type** | **str**| type | 
  **id** | **int**| id | [optional] 
  **ids** | **str**| ids | [optional] 
@@ -3753,42 +5290,64 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_banner_using_put**
-> SingleWrapperOfUnit update_banner_using_put(body, authorization, version)
+> SingleWrapperOfUnit update_banner_using_put(authorization, version, create_banner_request)
 
 updateBanner
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.create_banner_request import CreateBannerRequest
+from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.CreateBannerRequest() # CreateBannerRequest | createBannerRequest
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # updateBanner
-    api_response = api_instance.update_banner_using_put(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->update_banner_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    create_banner_request = dupr_backend.CreateBannerRequest() # CreateBannerRequest | createBannerRequest
+
+    try:
+        # updateBanner
+        api_response = api_instance.update_banner_using_put(authorization, version, create_banner_request)
+        print("The response of AdminApi->update_banner_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->update_banner_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateBannerRequest**](CreateBannerRequest.md)| createBannerRequest | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **create_banner_request** | [**CreateBannerRequest**](CreateBannerRequest.md)| createBannerRequest | 
 
 ### Return type
 
@@ -3802,45 +5361,67 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: */*
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_club_currency_using_put**
-> SingleWrapperOfUnit update_club_currency_using_put(body, authorization, club_id, version)
+> SingleWrapperOfUnit update_club_currency_using_put(authorization, club_id, version, request)
 
 updateClubCurrency
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.club_currency_request import ClubCurrencyRequest
+from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.ClubCurrencyRequest() # ClubCurrencyRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-club_id = 789 # int | clubId
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # updateClubCurrency
-    api_response = api_instance.update_club_currency_using_put(body, authorization, club_id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->update_club_currency_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    club_id = 56 # int | clubId
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.ClubCurrencyRequest() # ClubCurrencyRequest | request
+
+    try:
+        # updateClubCurrency
+        api_response = api_instance.update_club_currency_using_put(authorization, club_id, version, request)
+        print("The response of AdminApi->update_club_currency_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->update_club_currency_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ClubCurrencyRequest**](ClubCurrencyRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **club_id** | **int**| clubId | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**ClubCurrencyRequest**](ClubCurrencyRequest.md)| request | 
 
 ### Return type
 
@@ -3855,44 +5436,66 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_club_revenue_model_using_put**
-> SingleWrapperOfRevenueModel update_club_revenue_model_using_put(body, authorization, club_id, version)
+> SingleWrapperOfRevenueModel update_club_revenue_model_using_put(authorization, club_id, version, request)
 
 updateClubRevenueModel
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.club_revenue_model_request import ClubRevenueModelRequest
+from dupr_backend.models.single_wrapper_of_revenue_model import SingleWrapperOfRevenueModel
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.ClubRevenueModelRequest() # ClubRevenueModelRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-club_id = 789 # int | clubId
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # updateClubRevenueModel
-    api_response = api_instance.update_club_revenue_model_using_put(body, authorization, club_id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->update_club_revenue_model_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    club_id = 56 # int | clubId
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.ClubRevenueModelRequest() # ClubRevenueModelRequest | request
+
+    try:
+        # updateClubRevenueModel
+        api_response = api_instance.update_club_revenue_model_using_put(authorization, club_id, version, request)
+        print("The response of AdminApi->update_club_revenue_model_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->update_club_revenue_model_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ClubRevenueModelRequest**](ClubRevenueModelRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **club_id** | **int**| clubId | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**ClubRevenueModelRequest**](ClubRevenueModelRequest.md)| request | 
 
 ### Return type
 
@@ -3907,6 +5510,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_currency_rates_using_get**
@@ -3915,32 +5525,46 @@ No authorization required
 updateCurrencyRates
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # updateCurrencyRates
-    api_response = api_instance.update_currency_rates_using_get(authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->update_currency_rates_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # updateCurrencyRates
+        api_response = api_instance.update_currency_rates_using_get(authorization, version)
+        print("The response of AdminApi->update_currency_rates_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->update_currency_rates_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -3955,44 +5579,65 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_es_index_using_put**
-> Wrapper update_es_index_using_put(body, authorization, id, version)
+> Wrapper update_es_index_using_put(authorization, id, version, request)
 
 updateESIndex
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = 'body_example' # str | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 'id_example' # str | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # updateESIndex
-    api_response = api_instance.update_es_index_using_put(body, authorization, id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->update_es_index_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 'id_example' # str | id
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = 'request_example' # str | request
+
+    try:
+        # updateESIndex
+        api_response = api_instance.update_es_index_using_put(authorization, id, version, request)
+        print("The response of AdminApi->update_es_index_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->update_es_index_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**str**](str.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **str**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | **str**| request | 
 
 ### Return type
 
@@ -4007,43 +5652,65 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_external_client_permissions_using_post**
-> SingleWrapperOfUpdateClientPermissionsResponse update_external_client_permissions_using_post(body, authorization, version, x_forwarded_for=x_forwarded_for)
+> SingleWrapperOfUpdateClientPermissionsResponse update_external_client_permissions_using_post(authorization, version, request, x_forwarded_for=x_forwarded_for)
 
 updateExternalClientPermissions
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_update_client_permissions_response import SingleWrapperOfUpdateClientPermissionsResponse
+from dupr_backend.models.update_client_permissions_request import UpdateClientPermissionsRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.UpdateClientPermissionsRequest() # UpdateClientPermissionsRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
-x_forwarded_for = 'x_forwarded_for_example' # str | x-forwarded-for (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # updateExternalClientPermissions
-    api_response = api_instance.update_external_client_permissions_using_post(body, authorization, version, x_forwarded_for=x_forwarded_for)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->update_external_client_permissions_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.UpdateClientPermissionsRequest() # UpdateClientPermissionsRequest | request
+    x_forwarded_for = 'x_forwarded_for_example' # str | x-forwarded-for (optional)
+
+    try:
+        # updateExternalClientPermissions
+        api_response = api_instance.update_external_client_permissions_using_post(authorization, version, request, x_forwarded_for=x_forwarded_for)
+        print("The response of AdminApi->update_external_client_permissions_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->update_external_client_permissions_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateClientPermissionsRequest**](UpdateClientPermissionsRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**UpdateClientPermissionsRequest**](UpdateClientPermissionsRequest.md)| request | 
  **x_forwarded_for** | **str**| x-forwarded-for | [optional] 
 
 ### Return type
@@ -4059,42 +5726,63 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_external_id_cron_using_put**
-> object update_external_id_cron_using_put(body, authorization, version)
+> object update_external_id_cron_using_put(authorization, version, request)
 
 updateExternalIdCron
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.s3_object import S3Object
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.S3Object() # S3Object | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # updateExternalIdCron
-    api_response = api_instance.update_external_id_cron_using_put(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->update_external_id_cron_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.S3Object() # S3Object | request
+
+    try:
+        # updateExternalIdCron
+        api_response = api_instance.update_external_id_cron_using_put(authorization, version, request)
+        print("The response of AdminApi->update_external_id_cron_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->update_external_id_cron_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**S3Object**](S3Object.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**S3Object**](S3Object.md)| request | 
 
 ### Return type
 
@@ -4109,44 +5797,66 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_lucra_connection_using_put**
-> Wrapper update_lucra_connection_using_put(body, authorization, id, version)
+> Wrapper update_lucra_connection_using_put(authorization, id, version, request)
 
 updateLucraConnection
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.user_lucra_request import UserLucraRequest
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.UserLucraRequest() # UserLucraRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 789 # int | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # updateLucraConnection
-    api_response = api_instance.update_lucra_connection_using_put(body, authorization, id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->update_lucra_connection_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 56 # int | id
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.UserLucraRequest() # UserLucraRequest | request
+
+    try:
+        # updateLucraConnection
+        api_response = api_instance.update_lucra_connection_using_put(authorization, id, version, request)
+        print("The response of AdminApi->update_lucra_connection_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->update_lucra_connection_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserLucraRequest**](UserLucraRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **int**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**UserLucraRequest**](UserLucraRequest.md)| request | 
 
 ### Return type
 
@@ -4161,42 +5871,64 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_match_using_put**
-> SingleWrapperOfMatchResponse update_match_using_put(body, authorization, version)
+> SingleWrapperOfMatchResponse update_match_using_put(authorization, version, match_update_request)
 
 updateMatch
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.match_update_request import MatchUpdateRequest
+from dupr_backend.models.single_wrapper_of_match_response import SingleWrapperOfMatchResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.MatchUpdateRequest() # MatchUpdateRequest | matchUpdateRequest
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # updateMatch
-    api_response = api_instance.update_match_using_put(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->update_match_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    match_update_request = dupr_backend.MatchUpdateRequest() # MatchUpdateRequest | matchUpdateRequest
+
+    try:
+        # updateMatch
+        api_response = api_instance.update_match_using_put(authorization, version, match_update_request)
+        print("The response of AdminApi->update_match_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->update_match_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MatchUpdateRequest**](MatchUpdateRequest.md)| matchUpdateRequest | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **match_update_request** | [**MatchUpdateRequest**](MatchUpdateRequest.md)| matchUpdateRequest | 
 
 ### Return type
 
@@ -4211,42 +5943,64 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_payment_status_using_post**
-> Wrapper update_payment_status_using_post(body, authorization, version)
+> Wrapper update_payment_status_using_post(authorization, version, request)
 
 updatePaymentStatus
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.update_registration_request import UpdateRegistrationRequest
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = [dupr_backend.UpdateRegistrationRequest()] # list[UpdateRegistrationRequest] | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # updatePaymentStatus
-    api_response = api_instance.update_payment_status_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->update_payment_status_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = [dupr_backend.UpdateRegistrationRequest()] # List[UpdateRegistrationRequest] | request
+
+    try:
+        # updatePaymentStatus
+        api_response = api_instance.update_payment_status_using_post(authorization, version, request)
+        print("The response of AdminApi->update_payment_status_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->update_payment_status_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[UpdateRegistrationRequest]**](UpdateRegistrationRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**List[UpdateRegistrationRequest]**](UpdateRegistrationRequest.md)| request | 
 
 ### Return type
 
@@ -4261,44 +6015,66 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_player_rating_using_put**
-> SingleWrapperOfUnit update_player_rating_using_put(body, authorization, id, version)
+> SingleWrapperOfUnit update_player_rating_using_put(authorization, id, version, request)
 
 updatePlayerRating
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.player_rating_update_request import PlayerRatingUpdateRequest
+from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.PlayerRatingUpdateRequest() # PlayerRatingUpdateRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 789 # int | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # updatePlayerRating
-    api_response = api_instance.update_player_rating_using_put(body, authorization, id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->update_player_rating_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 56 # int | id
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.PlayerRatingUpdateRequest() # PlayerRatingUpdateRequest | request
+
+    try:
+        # updatePlayerRating
+        api_response = api_instance.update_player_rating_using_put(authorization, id, version, request)
+        print("The response of AdminApi->update_player_rating_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->update_player_rating_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PlayerRatingUpdateRequest**](PlayerRatingUpdateRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **int**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**PlayerRatingUpdateRequest**](PlayerRatingUpdateRequest.md)| request | 
 
 ### Return type
 
@@ -4313,42 +6089,64 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_player_statistics_using_put**
-> SingleWrapperOfboolean update_player_statistics_using_put(body, authorization, version)
+> SingleWrapperOfboolean update_player_statistics_using_put(authorization, version, request)
 
 updatePlayerStatistics
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.player_statistics_update_request import PlayerStatisticsUpdateRequest
+from dupr_backend.models.single_wrapper_ofboolean import SingleWrapperOfboolean
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.PlayerStatisticsUpdateRequest() # PlayerStatisticsUpdateRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # updatePlayerStatistics
-    api_response = api_instance.update_player_statistics_using_put(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->update_player_statistics_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.PlayerStatisticsUpdateRequest() # PlayerStatisticsUpdateRequest | request
+
+    try:
+        # updatePlayerStatistics
+        api_response = api_instance.update_player_statistics_using_put(authorization, version, request)
+        print("The response of AdminApi->update_player_statistics_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->update_player_statistics_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PlayerStatisticsUpdateRequest**](PlayerStatisticsUpdateRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**PlayerStatisticsUpdateRequest**](PlayerStatisticsUpdateRequest.md)| request | 
 
 ### Return type
 
@@ -4363,42 +6161,64 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_ratings_cron_using_put**
-> Wrapper update_ratings_cron_using_put(body, authorization, version)
+> Wrapper update_ratings_cron_using_put(authorization, version, s3)
 
 updateRatingsCron
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.s3_object import S3Object
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.S3Object() # S3Object | s3
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # updateRatingsCron
-    api_response = api_instance.update_ratings_cron_using_put(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->update_ratings_cron_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    s3 = dupr_backend.S3Object() # S3Object | s3
+
+    try:
+        # updateRatingsCron
+        api_response = api_instance.update_ratings_cron_using_put(authorization, version, s3)
+        print("The response of AdminApi->update_ratings_cron_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->update_ratings_cron_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**S3Object**](S3Object.md)| s3 | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **s3** | [**S3Object**](S3Object.md)| s3 | 
 
 ### Return type
 
@@ -4413,6 +6233,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_referral_code_using_patch**
@@ -4421,32 +6248,46 @@ No authorization required
 updateReferralCode
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # updateReferralCode
-    api_response = api_instance.update_referral_code_using_patch(authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->update_referral_code_using_patch: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # updateReferralCode
+        api_response = api_instance.update_referral_code_using_patch(authorization, version)
+        print("The response of AdminApi->update_referral_code_using_patch:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->update_referral_code_using_patch: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -4461,42 +6302,62 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_status_using_post**
-> object update_status_using_post(body, authorization, version)
+> object update_status_using_post(authorization, version, request)
 
 updateStatus
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.user_status_update_request import UserStatusUpdateRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.UserStatusUpdateRequest() # UserStatusUpdateRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # updateStatus
-    api_response = api_instance.update_status_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->update_status_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.UserStatusUpdateRequest() # UserStatusUpdateRequest | request
+
+    try:
+        # updateStatus
+        api_response = api_instance.update_status_using_post(authorization, version, request)
+        print("The response of AdminApi->update_status_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->update_status_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserStatusUpdateRequest**](UserStatusUpdateRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**UserStatusUpdateRequest**](UserStatusUpdateRequest.md)| request | 
 
 ### Return type
 
@@ -4511,44 +6372,66 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_user_profile_using_put**
-> SingleWrapperOfUserResponse update_user_profile_using_put(body, authorization, user_id, version)
+> SingleWrapperOfUserResponse update_user_profile_using_put(authorization, user_id, version, request)
 
 updateUserProfile
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.player_profile_request import PlayerProfileRequest
+from dupr_backend.models.single_wrapper_of_user_response import SingleWrapperOfUserResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.PlayerProfileRequest() # PlayerProfileRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-user_id = 789 # int | userId
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # updateUserProfile
-    api_response = api_instance.update_user_profile_using_put(body, authorization, user_id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->update_user_profile_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    user_id = 56 # int | userId
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.PlayerProfileRequest() # PlayerProfileRequest | request
+
+    try:
+        # updateUserProfile
+        api_response = api_instance.update_user_profile_using_put(authorization, user_id, version, request)
+        print("The response of AdminApi->update_user_profile_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->update_user_profile_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PlayerProfileRequest**](PlayerProfileRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **user_id** | **int**| userId | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**PlayerProfileRequest**](PlayerProfileRequest.md)| request | 
 
 ### Return type
 
@@ -4563,42 +6446,64 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload_dupr_performance_chart_data_using_put**
-> Wrapper upload_dupr_performance_chart_data_using_put(body, authorization, version)
+> Wrapper upload_dupr_performance_chart_data_using_put(authorization, version, request)
 
 uploadDuprPerformanceChartData
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.s3_object import S3Object
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.S3Object() # S3Object | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # uploadDuprPerformanceChartData
-    api_response = api_instance.upload_dupr_performance_chart_data_using_put(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->upload_dupr_performance_chart_data_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.S3Object() # S3Object | request
+
+    try:
+        # uploadDuprPerformanceChartData
+        api_response = api_instance.upload_dupr_performance_chart_data_using_put(authorization, version, request)
+        print("The response of AdminApi->upload_dupr_performance_chart_data_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->upload_dupr_performance_chart_data_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**S3Object**](S3Object.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**S3Object**](S3Object.md)| request | 
 
 ### Return type
 
@@ -4613,42 +6518,64 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **user_lookup_using_post**
-> SingleWrapperOfPageOfUserLookupResponse user_lookup_using_post(body, authorization, version)
+> SingleWrapperOfPageOfUserLookupResponse user_lookup_using_post(authorization, version, user_lookup_request)
 
 userLookup
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_page_of_user_lookup_response import SingleWrapperOfPageOfUserLookupResponse
+from dupr_backend.models.user_search_request import UserSearchRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.UserSearchRequest() # UserSearchRequest | userLookupRequest
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # userLookup
-    api_response = api_instance.user_lookup_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->user_lookup_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    user_lookup_request = dupr_backend.UserSearchRequest() # UserSearchRequest | userLookupRequest
+
+    try:
+        # userLookup
+        api_response = api_instance.user_lookup_using_post(authorization, version, user_lookup_request)
+        print("The response of AdminApi->user_lookup_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->user_lookup_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserSearchRequest**](UserSearchRequest.md)| userLookupRequest | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **user_lookup_request** | [**UserSearchRequest**](UserSearchRequest.md)| userLookupRequest | 
 
 ### Return type
 
@@ -4663,42 +6590,64 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **verify_email_using_post**
-> Wrapper verify_email_using_post(body, authorization, version)
+> Wrapper verify_email_using_post(authorization, version, request)
 
 verifyEmail
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.verify_email_request import VerifyEmailRequest
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.AdminApi()
-body = dupr_backend.VerifyEmailRequest() # VerifyEmailRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # verifyEmail
-    api_response = api_instance.verify_email_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminApi->verify_email_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.VerifyEmailRequest() # VerifyEmailRequest | request
+
+    try:
+        # verifyEmail
+        api_response = api_instance.verify_email_using_post(authorization, version, request)
+        print("The response of AdminApi->verify_email_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->verify_email_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**VerifyEmailRequest**](VerifyEmailRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**VerifyEmailRequest**](VerifyEmailRequest.md)| request | 
 
 ### Return type
 
@@ -4712,6 +6661,13 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: */*
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

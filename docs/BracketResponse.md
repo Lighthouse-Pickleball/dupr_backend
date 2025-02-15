@@ -1,22 +1,24 @@
 # BracketResponse
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**age_bracket** | **list[int]** |  | [optional] 
+**age_bracket** | **List[int]** |  | [optional] 
 **bracket_id** | **int** |  | 
 **can_show_standings** | **bool** |  | [optional] 
 **club_id** | **int** |  | 
 **club_name** | **str** |  | 
-**contact_details** | [**list[LeagueContactDetailResponse]**](LeagueContactDetailResponse.md) |  | [optional] 
+**contact_details** | [**List[LeagueContactDetailResponse]**](LeagueContactDetailResponse.md) |  | [optional] 
 **courts** | **int** |  | [optional] 
 **currency_details** | [**CurrencyDetailsResponse**](CurrencyDetailsResponse.md) |  | [optional] 
 **custom_code** | **str** |  | [optional] 
 **description** | [**LeagueContentResponse**](LeagueContentResponse.md) |  | [optional] 
 **display_status** | **str** |  | [optional] 
 **draw_impacted** | **bool** |  | [optional] 
-**duration** | **list[str]** |  | 
-**duration_date_time** | **list[str]** |  | [optional] 
+**duration** | **List[str]** |  | 
+**duration_date_time** | **List[str]** |  | [optional] 
 **duration_status** | **str** |  | [optional] 
 **elimination** | **str** |  | [optional] 
 **format** | **str** |  | [optional] 
@@ -39,11 +41,11 @@ Name | Type | Description | Notes
 **payment_details** | [**PaymentDetailsResponse**](PaymentDetailsResponse.md) |  | [optional] 
 **payment_status** | **str** |  | 
 **player_group** | **str** |  | [optional] 
-**rating_bracket** | **list[float]** |  | [optional] 
+**rating_bracket** | **List[float]** |  | [optional] 
 **reg_user_id** | **int** |  | [optional] 
 **registered_members** | **int** |  | [optional] 
-**registration_date** | **list[str]** |  | [optional] 
-**registration_date_time** | **list[str]** |  | [optional] 
+**registration_date** | **List[str]** |  | [optional] 
+**registration_date_time** | **List[str]** |  | [optional] 
 **registration_details** | [**RegistrationResponse**](RegistrationResponse.md) |  | [optional] 
 **registration_status** | **str** |  | [optional] 
 **score_format** | **str** |  | 
@@ -54,5 +56,23 @@ Name | Type | Description | Notes
 **wait_list** | **int** |  | 
 **zone_name** | **str** |  | [optional] 
 
+## Example
+
+```python
+from dupr_backend.models.bracket_response import BracketResponse
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of BracketResponse from a JSON string
+bracket_response_instance = BracketResponse.from_json(json)
+# print the JSON string representation of the object
+print(BracketResponse.to_json())
+
+# convert the object into a dict
+bracket_response_dict = bracket_response_instance.to_dict()
+# create an instance of BracketResponse from a dict
+bracket_response_from_dict = BracketResponse.from_dict(bracket_response_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

@@ -1,6 +1,8 @@
 # LeagueMatchResponse
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bracket_id** | **int** |  | 
@@ -34,9 +36,27 @@ Name | Type | Description | Notes
 **tag** | **str** |  | [optional] 
 **tbd_1** | **int** |  | 
 **tbd_2** | **int** |  | 
-**teams** | [**list[TeamResponse]**](TeamResponse.md) |  | 
+**teams** | [**List[TeamResponse]**](TeamResponse.md) |  | 
 **user_id** | **int** |  | [optional] 
 **venue** | **str** |  | 
 
+## Example
+
+```python
+from dupr_backend.models.league_match_response import LeagueMatchResponse
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of LeagueMatchResponse from a JSON string
+league_match_response_instance = LeagueMatchResponse.from_json(json)
+# print the JSON string representation of the object
+print(LeagueMatchResponse.to_json())
+
+# convert the object into a dict
+league_match_response_dict = league_match_response_instance.to_dict()
+# create an instance of LeagueMatchResponse from a dict
+league_match_response_from_dict = LeagueMatchResponse.from_dict(league_match_response_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

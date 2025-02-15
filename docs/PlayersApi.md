@@ -1,6 +1,6 @@
 # dupr_backend.PlayersApi
 
-All URIs are relative to *https://backend.mydupr.com/*
+All URIs are relative to *http://https://backend.mydupr.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,42 +15,58 @@ Method | HTTP request | Description
 [**search_using_post**](PlayersApi.md#search_using_post) | **POST** /player/{version}/search | search
 [**unclaimed_player_using_get**](PlayersApi.md#unclaimed_player_using_get) | **GET** /player/{version}/claim/{id} | unclaimedPlayer
 
+
 # **get_player_rating_history_overtime_using_post**
-> SingleWrapperOfPlayerRatingOvertime get_player_rating_history_overtime_using_post(body, authorization, id, version)
+> SingleWrapperOfPlayerRatingOvertime get_player_rating_history_overtime_using_post(authorization, id, version, request)
 
 getPlayerRatingHistoryOvertime
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.player_rating_history_overtime_request import PlayerRatingHistoryOvertimeRequest
+from dupr_backend.models.single_wrapper_of_player_rating_overtime import SingleWrapperOfPlayerRatingOvertime
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.PlayersApi()
-body = dupr_backend.PlayerRatingHistoryOvertimeRequest() # PlayerRatingHistoryOvertimeRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 789 # int | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getPlayerRatingHistoryOvertime
-    api_response = api_instance.get_player_rating_history_overtime_using_post(body, authorization, id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PlayersApi->get_player_rating_history_overtime_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.PlayersApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 56 # int | id
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.PlayerRatingHistoryOvertimeRequest() # PlayerRatingHistoryOvertimeRequest | request
+
+    try:
+        # getPlayerRatingHistoryOvertime
+        api_response = api_instance.get_player_rating_history_overtime_using_post(authorization, id, version, request)
+        print("The response of PlayersApi->get_player_rating_history_overtime_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PlayersApi->get_player_rating_history_overtime_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PlayerRatingHistoryOvertimeRequest**](PlayerRatingHistoryOvertimeRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **int**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**PlayerRatingHistoryOvertimeRequest**](PlayerRatingHistoryOvertimeRequest.md)| request | 
 
 ### Return type
 
@@ -65,6 +81,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_statistics_using_get**
@@ -73,34 +96,48 @@ No authorization required
 getStatistics
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_user_statistic_response import SingleWrapperOfUserStatisticResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.PlayersApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 789 # int | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getStatistics
-    api_response = api_instance.get_statistics_using_get(authorization, id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PlayersApi->get_statistics_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.PlayersApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 56 # int | id
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # getStatistics
+        api_response = api_instance.get_statistics_using_get(authorization, id, version)
+        print("The response of PlayersApi->get_statistics_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PlayersApi->get_statistics_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **int**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -115,42 +152,64 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **invite_using_post**
-> SingleWrapperOfPlayerResponse invite_using_post(body, authorization, version)
+> SingleWrapperOfPlayerResponse invite_using_post(authorization, version, request)
 
 invite
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.invite_request import InviteRequest
+from dupr_backend.models.single_wrapper_of_player_response import SingleWrapperOfPlayerResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.PlayersApi()
-body = dupr_backend.InviteRequest() # InviteRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # invite
-    api_response = api_instance.invite_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PlayersApi->invite_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.PlayersApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.InviteRequest() # InviteRequest | request
+
+    try:
+        # invite
+        api_response = api_instance.invite_using_post(authorization, version, request)
+        print("The response of PlayersApi->invite_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PlayersApi->invite_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InviteRequest**](InviteRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**InviteRequest**](InviteRequest.md)| request | 
 
 ### Return type
 
@@ -165,44 +224,66 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **match_history_by_filters_using_post**
-> SingleWrapperOfPageOfMatchResponse match_history_by_filters_using_post(body, authorization, id, version)
+> SingleWrapperOfPageOfMatchResponse match_history_by_filters_using_post(authorization, id, version, request)
 
 matchHistoryByFilters
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.match_search_request import MatchSearchRequest
+from dupr_backend.models.single_wrapper_of_page_of_match_response import SingleWrapperOfPageOfMatchResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.PlayersApi()
-body = dupr_backend.MatchSearchRequest() # MatchSearchRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 789 # int | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # matchHistoryByFilters
-    api_response = api_instance.match_history_by_filters_using_post(body, authorization, id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PlayersApi->match_history_by_filters_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.PlayersApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 56 # int | id
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.MatchSearchRequest() # MatchSearchRequest | request
+
+    try:
+        # matchHistoryByFilters
+        api_response = api_instance.match_history_by_filters_using_post(authorization, id, version, request)
+        print("The response of PlayersApi->match_history_by_filters_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PlayersApi->match_history_by_filters_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MatchSearchRequest**](MatchSearchRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **int**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**MatchSearchRequest**](MatchSearchRequest.md)| request | 
 
 ### Return type
 
@@ -216,6 +297,13 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -225,38 +313,52 @@ No authorization required
 matchHistory
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_page_of_match_response import SingleWrapperOfPageOfMatchResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.PlayersApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 789 # int | id
-limit = 56 # int | limit
-offset = 56 # int | offset
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # matchHistory
-    api_response = api_instance.match_history_using_get(authorization, id, limit, offset, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PlayersApi->match_history_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.PlayersApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 56 # int | id
+    limit = 56 # int | limit
+    offset = 56 # int | offset
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # matchHistory
+        api_response = api_instance.match_history_using_get(authorization, id, limit, offset, version)
+        print("The response of PlayersApi->match_history_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PlayersApi->match_history_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **int**| id | 
  **limit** | **int**| limit | 
  **offset** | **int**| offset | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -271,6 +373,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **player_info_using_get**
@@ -279,34 +388,48 @@ No authorization required
 playerInfo
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_player_response import SingleWrapperOfPlayerResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.PlayersApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 789 # int | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # playerInfo
-    api_response = api_instance.player_info_using_get(authorization, id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PlayersApi->player_info_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.PlayersApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 56 # int | id
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # playerInfo
+        api_response = api_instance.player_info_using_get(authorization, id, version)
+        print("The response of PlayersApi->player_info_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PlayersApi->player_info_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **int**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -321,40 +444,62 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **public_search_using_post**
-> SingleWrapperOfPageOfPlayerResponse public_search_using_post(body, version)
+> SingleWrapperOfPageOfPlayerResponse public_search_using_post(version, request)
 
 publicSearch
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.search_request import SearchRequest
+from dupr_backend.models.single_wrapper_of_page_of_player_response import SingleWrapperOfPageOfPlayerResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.PlayersApi()
-body = dupr_backend.SearchRequest() # SearchRequest | request
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # publicSearch
-    api_response = api_instance.public_search_using_post(body, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PlayersApi->public_search_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.PlayersApi(api_client)
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.SearchRequest() # SearchRequest | request
+
+    try:
+        # publicSearch
+        api_response = api_instance.public_search_using_post(version, request)
+        print("The response of PlayersApi->public_search_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PlayersApi->public_search_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchRequest**](SearchRequest.md)| request | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**SearchRequest**](SearchRequest.md)| request | 
 
 ### Return type
 
@@ -369,40 +514,62 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_claim_player_using_post**
-> SingleWrapperOfPageOfUnclaimedPlayerResponse search_claim_player_using_post(body, version)
+> SingleWrapperOfPageOfUnclaimedPlayerResponse search_claim_player_using_post(version, request)
 
 searchClaimPlayer
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.claim_player_search_request import ClaimPlayerSearchRequest
+from dupr_backend.models.single_wrapper_of_page_of_unclaimed_player_response import SingleWrapperOfPageOfUnclaimedPlayerResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.PlayersApi()
-body = dupr_backend.ClaimPlayerSearchRequest() # ClaimPlayerSearchRequest | request
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # searchClaimPlayer
-    api_response = api_instance.search_claim_player_using_post(body, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PlayersApi->search_claim_player_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.PlayersApi(api_client)
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.ClaimPlayerSearchRequest() # ClaimPlayerSearchRequest | request
+
+    try:
+        # searchClaimPlayer
+        api_response = api_instance.search_claim_player_using_post(version, request)
+        print("The response of PlayersApi->search_claim_player_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PlayersApi->search_claim_player_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ClaimPlayerSearchRequest**](ClaimPlayerSearchRequest.md)| request | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**ClaimPlayerSearchRequest**](ClaimPlayerSearchRequest.md)| request | 
 
 ### Return type
 
@@ -417,42 +584,64 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_using_post**
-> SingleWrapperOfPageOfPlayerResponse search_using_post(body, authorization, version)
+> SingleWrapperOfPageOfPlayerResponse search_using_post(authorization, version, request)
 
 search
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.search_request import SearchRequest
+from dupr_backend.models.single_wrapper_of_page_of_player_response import SingleWrapperOfPageOfPlayerResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.PlayersApi()
-body = dupr_backend.SearchRequest() # SearchRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # search
-    api_response = api_instance.search_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PlayersApi->search_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.PlayersApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.SearchRequest() # SearchRequest | request
+
+    try:
+        # search
+        api_response = api_instance.search_using_post(authorization, version, request)
+        print("The response of PlayersApi->search_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PlayersApi->search_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchRequest**](SearchRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**SearchRequest**](SearchRequest.md)| request | 
 
 ### Return type
 
@@ -467,6 +656,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unclaimed_player_using_get**
@@ -475,32 +671,46 @@ No authorization required
 unclaimedPlayer
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_unclaimed_player_response import SingleWrapperOfUnclaimedPlayerResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.PlayersApi()
-id = 789 # int | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # unclaimedPlayer
-    api_response = api_instance.unclaimed_player_using_get(id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PlayersApi->unclaimed_player_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.PlayersApi(api_client)
+    id = 56 # int | id
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # unclaimedPlayer
+        api_response = api_instance.unclaimed_player_using_get(id, version)
+        print("The response of PlayersApi->unclaimed_player_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PlayersApi->unclaimed_player_using_get: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -514,6 +724,13 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

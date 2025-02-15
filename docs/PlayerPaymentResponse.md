@@ -1,10 +1,12 @@
 # PlayerPaymentResponse
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **age** | **int** |  | [optional] 
-**brackets** | [**list[BracketResponse]**](BracketResponse.md) |  | [optional] 
+**brackets** | [**List[BracketResponse]**](BracketResponse.md) |  | [optional] 
 **display_username** | **bool** |  | [optional] 
 **distance** | **str** |  | [optional] 
 **distance_in_miles** | **float** |  | [optional] 
@@ -37,5 +39,23 @@ Name | Type | Description | Notes
 **username** | **str** |  | [optional] 
 **verified_email** | **bool** |  | [optional] 
 
+## Example
+
+```python
+from dupr_backend.models.player_payment_response import PlayerPaymentResponse
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of PlayerPaymentResponse from a JSON string
+player_payment_response_instance = PlayerPaymentResponse.from_json(json)
+# print the JSON string representation of the object
+print(PlayerPaymentResponse.to_json())
+
+# convert the object into a dict
+player_payment_response_dict = player_payment_response_instance.to_dict()
+# create an instance of PlayerPaymentResponse from a dict
+player_payment_response_from_dict = PlayerPaymentResponse.from_dict(player_payment_response_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

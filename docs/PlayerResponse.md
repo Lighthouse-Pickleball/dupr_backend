@@ -1,6 +1,8 @@
 # PlayerResponse
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **age** | **int** |  | [optional] 
@@ -35,10 +37,28 @@ Name | Type | Description | Notes
 **show_rating_banner** | **bool** |  | [optional] 
 **sponsor** | [**SponsorLogoResponse**](SponsorLogoResponse.md) |  | [optional] 
 **status** | **str** |  | [optional] 
-**substitution_details** | [**list[PlayerResponse]**](PlayerResponse.md) |  | [optional] 
+**substitution_details** | [**List[PlayerResponse]**](PlayerResponse.md) |  | [optional] 
 **team_status** | **str** |  | [optional] 
 **username** | **str** |  | [optional] 
 **verified_email** | **bool** |  | [optional] 
 
+## Example
+
+```python
+from dupr_backend.models.player_response import PlayerResponse
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of PlayerResponse from a JSON string
+player_response_instance = PlayerResponse.from_json(json)
+# print the JSON string representation of the object
+print(PlayerResponse.to_json())
+
+# convert the object into a dict
+player_response_dict = player_response_instance.to_dict()
+# create an instance of PlayerResponse from a dict
+player_response_from_dict = PlayerResponse.from_dict(player_response_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

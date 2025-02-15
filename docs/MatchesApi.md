@@ -1,6 +1,6 @@
 # dupr_backend.MatchesApi
 
-All URIs are relative to *https://backend.mydupr.com/*
+All URIs are relative to *http://https://backend.mydupr.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,40 +20,56 @@ Method | HTTP request | Description
 [**user_match_history_by_filters_using_post**](MatchesApi.md#user_match_history_by_filters_using_post) | **POST** /match/{version}/history | userMatchHistoryByFilters
 [**user_match_history_using_get**](MatchesApi.md#user_match_history_using_get) | **GET** /match/{version}/history | userMatchHistory
 
+
 # **confirm_match_using_post1**
-> Wrapper confirm_match_using_post1(body, authorization, version)
+> Wrapper confirm_match_using_post1(authorization, version, request)
 
 confirmMatch
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.match_confirm_request import MatchConfirmRequest
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.MatchesApi()
-body = dupr_backend.MatchConfirmRequest() # MatchConfirmRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # confirmMatch
-    api_response = api_instance.confirm_match_using_post1(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MatchesApi->confirm_match_using_post1: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.MatchesApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.MatchConfirmRequest() # MatchConfirmRequest | request
+
+    try:
+        # confirmMatch
+        api_response = api_instance.confirm_match_using_post1(authorization, version, request)
+        print("The response of MatchesApi->confirm_match_using_post1:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MatchesApi->confirm_match_using_post1: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MatchConfirmRequest**](MatchConfirmRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**MatchConfirmRequest**](MatchConfirmRequest.md)| request | 
 
 ### Return type
 
@@ -68,6 +84,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_match_using_delete**
@@ -76,34 +99,48 @@ No authorization required
 deleteMatch
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.MatchesApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 789 # int | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # deleteMatch
-    api_response = api_instance.delete_match_using_delete(authorization, id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MatchesApi->delete_match_using_delete: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.MatchesApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 56 # int | id
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # deleteMatch
+        api_response = api_instance.delete_match_using_delete(authorization, id, version)
+        print("The response of MatchesApi->delete_match_using_delete:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MatchesApi->delete_match_using_delete: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **int**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -118,6 +155,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_dupr_performance_data_user_using_get**
@@ -126,34 +170,48 @@ No authorization required
 getDuprPerformanceDataUser
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.array_wrapper_ofobject import ArrayWrapperOfobject
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.MatchesApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 789 # int | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getDuprPerformanceDataUser
-    api_response = api_instance.get_dupr_performance_data_user_using_get(authorization, id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MatchesApi->get_dupr_performance_data_user_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.MatchesApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 56 # int | id
+    version = 'v1.2' # str | version (default to 'v1.2')
+
+    try:
+        # getDuprPerformanceDataUser
+        api_response = api_instance.get_dupr_performance_data_user_using_get(authorization, id, version)
+        print("The response of MatchesApi->get_dupr_performance_data_user_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MatchesApi->get_dupr_performance_data_user_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **int**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.2&#39;]
 
 ### Return type
 
@@ -167,6 +225,13 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -176,32 +241,46 @@ No authorization required
 getDuprPerformanceData
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.array_wrapper_ofobject import ArrayWrapperOfobject
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.MatchesApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getDuprPerformanceData
-    api_response = api_instance.get_dupr_performance_data_using_get(authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MatchesApi->get_dupr_performance_data_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.MatchesApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.2' # str | version (default to 'v1.2')
+
+    try:
+        # getDuprPerformanceData
+        api_response = api_instance.get_dupr_performance_data_using_get(authorization, version)
+        print("The response of MatchesApi->get_dupr_performance_data_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MatchesApi->get_dupr_performance_data_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.2&#39;]
 
 ### Return type
 
@@ -216,41 +295,63 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_match_rating_simulator_using_post**
-> SingleWrapperOfMatchRatingSimulatorResponse get_match_rating_simulator_using_post(body, version, x_forwarded_for=x_forwarded_for)
+> SingleWrapperOfMatchRatingSimulatorResponse get_match_rating_simulator_using_post(version, request, x_forwarded_for=x_forwarded_for)
 
 getMatchRatingSimulator
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.match_rating_simulator_request import MatchRatingSimulatorRequest
+from dupr_backend.models.single_wrapper_of_match_rating_simulator_response import SingleWrapperOfMatchRatingSimulatorResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.MatchesApi()
-body = dupr_backend.MatchRatingSimulatorRequest() # MatchRatingSimulatorRequest | request
-version = 'version_example' # str | version
-x_forwarded_for = 'x_forwarded_for_example' # str | x-forwarded-for (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getMatchRatingSimulator
-    api_response = api_instance.get_match_rating_simulator_using_post(body, version, x_forwarded_for=x_forwarded_for)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MatchesApi->get_match_rating_simulator_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.MatchesApi(api_client)
+    version = 'v1.2' # str | version (default to 'v1.2')
+    request = dupr_backend.MatchRatingSimulatorRequest() # MatchRatingSimulatorRequest | request
+    x_forwarded_for = 'x_forwarded_for_example' # str | x-forwarded-for (optional)
+
+    try:
+        # getMatchRatingSimulator
+        api_response = api_instance.get_match_rating_simulator_using_post(version, request, x_forwarded_for=x_forwarded_for)
+        print("The response of MatchesApi->get_match_rating_simulator_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MatchesApi->get_match_rating_simulator_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MatchRatingSimulatorRequest**](MatchRatingSimulatorRequest.md)| request | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.2&#39;]
+ **request** | [**MatchRatingSimulatorRequest**](MatchRatingSimulatorRequest.md)| request | 
  **x_forwarded_for** | **str**| x-forwarded-for | [optional] 
 
 ### Return type
@@ -266,6 +367,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_user_match_history_using_get**
@@ -274,37 +382,51 @@ No authorization required
 getUserMatchHistory
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_page_of_match_response import SingleWrapperOfPageOfMatchResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.MatchesApi()
-id = 789 # int | id
-limit = 56 # int | limit
-offset = 56 # int | offset
-version = 'version_example' # str | version
-x_forwarded_for = 'x_forwarded_for_example' # str | x-forwarded-for (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getUserMatchHistory
-    api_response = api_instance.get_user_match_history_using_get(id, limit, offset, version, x_forwarded_for=x_forwarded_for)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MatchesApi->get_user_match_history_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.MatchesApi(api_client)
+    id = 56 # int | id
+    limit = 56 # int | limit
+    offset = 56 # int | offset
+    version = 'v1.0' # str | version (default to 'v1.0')
+    x_forwarded_for = 'x_forwarded_for_example' # str | x-forwarded-for (optional)
+
+    try:
+        # getUserMatchHistory
+        api_response = api_instance.get_user_match_history_using_get(id, limit, offset, version, x_forwarded_for=x_forwarded_for)
+        print("The response of MatchesApi->get_user_match_history_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MatchesApi->get_user_match_history_using_get: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| id | 
  **limit** | **int**| limit | 
  **offset** | **int**| offset | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
  **x_forwarded_for** | **str**| x-forwarded-for | [optional] 
 
 ### Return type
@@ -320,6 +442,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **match_details_using_get**
@@ -328,31 +457,45 @@ No authorization required
 matchDetails
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_match_response import SingleWrapperOfMatchResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.MatchesApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 789 # int | id
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # matchDetails
-    api_response = api_instance.match_details_using_get(authorization, id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MatchesApi->match_details_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.MatchesApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 56 # int | id
+
+    try:
+        # matchDetails
+        api_response = api_instance.match_details_using_get(authorization, id)
+        print("The response of MatchesApi->match_details_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MatchesApi->match_details_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **int**| id | 
 
 ### Return type
@@ -368,6 +511,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **pending_match_details_using_get**
@@ -376,32 +526,46 @@ No authorization required
 pendingMatchDetails
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.array_wrapper_oflong import ArrayWrapperOflong
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.MatchesApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # pendingMatchDetails
-    api_response = api_instance.pending_match_details_using_get(authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MatchesApi->pending_match_details_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.MatchesApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # pendingMatchDetails
+        api_response = api_instance.pending_match_details_using_get(authorization, version)
+        print("The response of MatchesApi->pending_match_details_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MatchesApi->pending_match_details_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -416,42 +580,64 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **save_match_using_put**
-> SingleWrapperOflong save_match_using_put(body, authorization, version)
+> SingleWrapperOflong save_match_using_put(authorization, version, request)
 
 saveMatch
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.match_request import MatchRequest
+from dupr_backend.models.single_wrapper_oflong import SingleWrapperOflong
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.MatchesApi()
-body = dupr_backend.MatchRequest() # MatchRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # saveMatch
-    api_response = api_instance.save_match_using_put(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MatchesApi->save_match_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.MatchesApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.MatchRequest() # MatchRequest | request
+
+    try:
+        # saveMatch
+        api_response = api_instance.save_match_using_put(authorization, version, request)
+        print("The response of MatchesApi->save_match_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MatchesApi->save_match_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MatchRequest**](MatchRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**MatchRequest**](MatchRequest.md)| request | 
 
 ### Return type
 
@@ -466,6 +652,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **save_verified_match_cvs_using_put**
@@ -474,34 +667,48 @@ No authorization required
 saveVerifiedMatchCVS
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.MatchesApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
-request = 'request_example' # str |  (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # saveVerifiedMatchCVS
-    api_response = api_instance.save_verified_match_cvs_using_put(authorization, version, request=request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MatchesApi->save_verified_match_cvs_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.MatchesApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = None # bytearray |  (optional)
+
+    try:
+        # saveVerifiedMatchCVS
+        api_response = api_instance.save_verified_match_cvs_using_put(authorization, version, request=request)
+        print("The response of MatchesApi->save_verified_match_cvs_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MatchesApi->save_verified_match_cvs_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
- **request** | **str**|  | [optional] 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | **bytearray**|  | [optional] 
 
 ### Return type
 
@@ -516,42 +723,64 @@ No authorization required
  - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **save_verified_match_using_put1**
-> Wrapper save_verified_match_using_put1(body, authorization, version)
+> Wrapper save_verified_match_using_put1(authorization, version, request)
 
 saveVerifiedMatch
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.verified_match_request import VerifiedMatchRequest
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.MatchesApi()
-body = dupr_backend.VerifiedMatchRequest() # VerifiedMatchRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # saveVerifiedMatch
-    api_response = api_instance.save_verified_match_using_put1(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MatchesApi->save_verified_match_using_put1: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.MatchesApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.VerifiedMatchRequest() # VerifiedMatchRequest | request
+
+    try:
+        # saveVerifiedMatch
+        api_response = api_instance.save_verified_match_using_put1(authorization, version, request)
+        print("The response of MatchesApi->save_verified_match_using_put1:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MatchesApi->save_verified_match_using_put1: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**VerifiedMatchRequest**](VerifiedMatchRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**VerifiedMatchRequest**](VerifiedMatchRequest.md)| request | 
 
 ### Return type
 
@@ -566,6 +795,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **score_formats_using_get**
@@ -574,32 +810,46 @@ No authorization required
 scoreFormats
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.array_wrapper_of_score_format_response import ArrayWrapperOfScoreFormatResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.MatchesApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # scoreFormats
-    api_response = api_instance.score_formats_using_get(authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MatchesApi->score_formats_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.MatchesApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # scoreFormats
+        api_response = api_instance.score_formats_using_get(authorization, version)
+        print("The response of MatchesApi->score_formats_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MatchesApi->score_formats_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -614,44 +864,66 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **share_match_using_post**
-> SingleWrapperOfPostResponse share_match_using_post(body, authorization, id, version)
+> SingleWrapperOfPostResponse share_match_using_post(authorization, id, version, share_request)
 
 shareMatch
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.share_match_request import ShareMatchRequest
+from dupr_backend.models.single_wrapper_of_post_response import SingleWrapperOfPostResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.MatchesApi()
-body = dupr_backend.ShareMatchRequest() # ShareMatchRequest | shareRequest
-authorization = 'Bearer ' # str |  (default to Bearer )
-id = 789 # int | id
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # shareMatch
-    api_response = api_instance.share_match_using_post(body, authorization, id, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MatchesApi->share_match_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.MatchesApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    id = 56 # int | id
+    version = 'v1.0' # str | version (default to 'v1.0')
+    share_request = dupr_backend.ShareMatchRequest() # ShareMatchRequest | shareRequest
+
+    try:
+        # shareMatch
+        api_response = api_instance.share_match_using_post(authorization, id, version, share_request)
+        print("The response of MatchesApi->share_match_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MatchesApi->share_match_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ShareMatchRequest**](ShareMatchRequest.md)| shareRequest | 
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **id** | **int**| id | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **share_request** | [**ShareMatchRequest**](ShareMatchRequest.md)| shareRequest | 
 
 ### Return type
 
@@ -666,42 +938,64 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: */*
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **user_match_history_by_filters_using_post**
-> SingleWrapperOfPageOfMatchResponse user_match_history_by_filters_using_post(body, authorization, version)
+> SingleWrapperOfPageOfMatchResponse user_match_history_by_filters_using_post(authorization, version, request)
 
 userMatchHistoryByFilters
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.match_search_request import MatchSearchRequest
+from dupr_backend.models.single_wrapper_of_page_of_match_response import SingleWrapperOfPageOfMatchResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.MatchesApi()
-body = dupr_backend.MatchSearchRequest() # MatchSearchRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # userMatchHistoryByFilters
-    api_response = api_instance.user_match_history_by_filters_using_post(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MatchesApi->user_match_history_by_filters_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.MatchesApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.MatchSearchRequest() # MatchSearchRequest | request
+
+    try:
+        # userMatchHistoryByFilters
+        api_response = api_instance.user_match_history_by_filters_using_post(authorization, version, request)
+        print("The response of MatchesApi->user_match_history_by_filters_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MatchesApi->user_match_history_by_filters_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MatchSearchRequest**](MatchSearchRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**MatchSearchRequest**](MatchSearchRequest.md)| request | 
 
 ### Return type
 
@@ -716,6 +1010,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **user_match_history_using_get**
@@ -724,36 +1025,50 @@ No authorization required
 userMatchHistory
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.single_wrapper_of_page_of_match_response import SingleWrapperOfPageOfMatchResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.MatchesApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-limit = 56 # int | limit
-offset = 56 # int | offset
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # userMatchHistory
-    api_response = api_instance.user_match_history_using_get(authorization, limit, offset, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MatchesApi->user_match_history_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.MatchesApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    limit = 56 # int | limit
+    offset = 56 # int | offset
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # userMatchHistory
+        api_response = api_instance.user_match_history_using_get(authorization, limit, offset, version)
+        print("The response of MatchesApi->user_match_history_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MatchesApi->user_match_history_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **limit** | **int**| limit | 
  **offset** | **int**| offset | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -767,6 +1082,13 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

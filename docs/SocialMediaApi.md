@@ -1,6 +1,6 @@
 # dupr_backend.SocialMediaApi
 
-All URIs are relative to *https://backend.mydupr.com/*
+All URIs are relative to *http://https://backend.mydupr.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,40 +10,55 @@ Method | HTTP request | Description
 [**get_share_messages_using_get**](SocialMediaApi.md#get_share_messages_using_get) | **GET** /social/share/{version}/message | getShareMessages
 [**update_social_login_details_using_put**](SocialMediaApi.md#update_social_login_details_using_put) | **PUT** /social/{version}/login | updateSocialLoginDetails
 
+
 # **delete_provider_data_using_post**
-> DeleteUserResponse delete_provider_data_using_post(body, provider, version)
+> DeleteUserResponse delete_provider_data_using_post(provider, version, request)
 
 deleteProviderData
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.delete_user_response import DeleteUserResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.SocialMediaApi()
-body = 'body_example' # str | request
-provider = 'provider_example' # str | provider
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # deleteProviderData
-    api_response = api_instance.delete_provider_data_using_post(body, provider, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SocialMediaApi->delete_provider_data_using_post: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.SocialMediaApi(api_client)
+    provider = 'provider_example' # str | provider
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = 'request_example' # str | request
+
+    try:
+        # deleteProviderData
+        api_response = api_instance.delete_provider_data_using_post(provider, version, request)
+        print("The response of SocialMediaApi->delete_provider_data_using_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SocialMediaApi->delete_provider_data_using_post: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**str**](str.md)| request | 
  **provider** | **str**| provider | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | **str**| request | 
 
 ### Return type
 
@@ -58,6 +73,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_instagram_login_using_get**
@@ -66,37 +88,50 @@ No authorization required
 getInstagramLogin
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.SocialMediaApi()
-code = 'code_example' # str | code
-state = 789 # int | state
-version = 'version_example' # str | version
-error = 'error_example' # str | error (optional)
-error_description = 'error_description_example' # str | error_description (optional)
-error_reason = 'error_reason_example' # str | error_reason (optional)
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getInstagramLogin
-    api_response = api_instance.get_instagram_login_using_get(code, state, version, error=error, error_description=error_description, error_reason=error_reason)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SocialMediaApi->get_instagram_login_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.SocialMediaApi(api_client)
+    code = 'code_example' # str | code
+    state = 56 # int | state
+    version = 'v1.0' # str | version (default to 'v1.0')
+    error = 'error_example' # str | error (optional)
+    error_description = 'error_description_example' # str | error_description (optional)
+    error_reason = 'error_reason_example' # str | error_reason (optional)
+
+    try:
+        # getInstagramLogin
+        api_response = api_instance.get_instagram_login_using_get(code, state, version, error=error, error_description=error_description, error_reason=error_reason)
+        print("The response of SocialMediaApi->get_instagram_login_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SocialMediaApi->get_instagram_login_using_get: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **code** | **str**| code | 
  **state** | **int**| state | 
- **version** | **str**| version | 
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
  **error** | **str**| error | [optional] 
  **error_description** | **str**| error_description | [optional] 
  **error_reason** | **str**| error_reason | [optional] 
@@ -114,6 +149,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_login_detail_using_get**
@@ -122,32 +164,46 @@ No authorization required
 getLoginDetail
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.SocialMediaApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getLoginDetail
-    api_response = api_instance.get_login_detail_using_get(authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SocialMediaApi->get_login_detail_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.SocialMediaApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # getLoginDetail
+        api_response = api_instance.get_login_detail_using_get(authorization, version)
+        print("The response of SocialMediaApi->get_login_detail_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SocialMediaApi->get_login_detail_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -161,6 +217,13 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -170,32 +233,46 @@ No authorization required
 getShareMessages
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.SocialMediaApi()
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # getShareMessages
-    api_response = api_instance.get_share_messages_using_get(authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SocialMediaApi->get_share_messages_using_get: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.SocialMediaApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+
+    try:
+        # getShareMessages
+        api_response = api_instance.get_share_messages_using_get(authorization, version)
+        print("The response of SocialMediaApi->get_share_messages_using_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SocialMediaApi->get_share_messages_using_get: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -210,42 +287,64 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_social_login_details_using_put**
-> Wrapper update_social_login_details_using_put(body, authorization, version)
+> Wrapper update_social_login_details_using_put(authorization, version, request)
 
 updateSocialLoginDetails
 
 ### Example
+
+
 ```python
-from __future__ import print_function
-import time
 import dupr_backend
+from dupr_backend.models.user_auth_provider_request import UserAuthProviderRequest
+from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = dupr_backend.SocialMediaApi()
-body = dupr_backend.UserAuthProviderRequest() # UserAuthProviderRequest | request
-authorization = 'Bearer ' # str |  (default to Bearer )
-version = 'version_example' # str | version
+# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "http://https://backend.mydupr.com"
+)
 
-try:
-    # updateSocialLoginDetails
-    api_response = api_instance.update_social_login_details_using_put(body, authorization, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SocialMediaApi->update_social_login_details_using_put: %s\n" % e)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.SocialMediaApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'v1.0' # str | version (default to 'v1.0')
+    request = dupr_backend.UserAuthProviderRequest() # UserAuthProviderRequest | request
+
+    try:
+        # updateSocialLoginDetails
+        api_response = api_instance.update_social_login_details_using_put(authorization, version, request)
+        print("The response of SocialMediaApi->update_social_login_details_using_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SocialMediaApi->update_social_login_details_using_put: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserAuthProviderRequest**](UserAuthProviderRequest.md)| request | 
- **authorization** | **str**|  | [default to Bearer ]
- **version** | **str**| version | 
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **request** | [**UserAuthProviderRequest**](UserAuthProviderRequest.md)| request | 
 
 ### Return type
 
@@ -259,6 +358,13 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

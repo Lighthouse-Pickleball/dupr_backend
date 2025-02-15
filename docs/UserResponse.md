@@ -1,10 +1,12 @@
 # UserResponse
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **bool** |  | 
-**addresses** | [**list[AddressResponse]**](AddressResponse.md) |  | [optional] 
+**addresses** | [**List[AddressResponse]**](AddressResponse.md) |  | [optional] 
 **apparel_brand** | **str** |  | [optional] 
 **birthdate** | **str** |  | [optional] 
 **display_username** | **bool** |  | [optional] 
@@ -32,5 +34,23 @@ Name | Type | Description | Notes
 **user_preferences** | [**UserPreferencesResponse**](UserPreferencesResponse.md) |  | [optional] 
 **username** | **str** |  | [optional] 
 
+## Example
+
+```python
+from dupr_backend.models.user_response import UserResponse
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of UserResponse from a JSON string
+user_response_instance = UserResponse.from_json(json)
+# print the JSON string representation of the object
+print(UserResponse.to_json())
+
+# convert the object into a dict
+user_response_dict = user_response_instance.to_dict()
+# create an instance of UserResponse from a dict
+user_response_from_dict = UserResponse.from_dict(user_response_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 
