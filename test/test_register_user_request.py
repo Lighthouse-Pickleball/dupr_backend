@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.register_user_request import RegisterUserRequest
+import dupr_backend
+from dupr_backend.models.register_user_request import RegisterUserRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestRegisterUserRequest(unittest.TestCase):
     """RegisterUserRequest unit test stubs"""
@@ -25,20 +28,20 @@ class TestRegisterUserRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> RegisterUserRequest:
+    def make_instance(self, include_optional):
         """Test RegisterUserRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `RegisterUserRequest`
         """
-        model = RegisterUserRequest()
-        if include_optional:
+        model = dupr_backend.models.register_user_request.RegisterUserRequest()  # noqa: E501
+        if include_optional :
             return RegisterUserRequest(
-                is_club_member = True,
+                is_club_member = True, 
                 user_id = 45785789
             )
-        else:
+        else :
             return RegisterUserRequest(
                 is_club_member = True,
                 user_id = 45785789,

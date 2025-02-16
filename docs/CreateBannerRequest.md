@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **banner_id** | **int** |  | 
@@ -23,12 +22,12 @@ json = "{}"
 # create an instance of CreateBannerRequest from a JSON string
 create_banner_request_instance = CreateBannerRequest.from_json(json)
 # print the JSON string representation of the object
-print(CreateBannerRequest.to_json())
+print CreateBannerRequest.to_json()
 
 # convert the object into a dict
 create_banner_request_dict = create_banner_request_instance.to_dict()
 # create an instance of CreateBannerRequest from a dict
-create_banner_request_from_dict = CreateBannerRequest.from_dict(create_banner_request_dict)
+create_banner_request_form_dict = create_banner_request.from_dict(create_banner_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.milp_division_request import MILPDivisionRequest
+import dupr_backend
+from dupr_backend.models.milp_division_request import MILPDivisionRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestMILPDivisionRequest(unittest.TestCase):
     """MILPDivisionRequest unit test stubs"""
@@ -25,27 +28,27 @@ class TestMILPDivisionRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> MILPDivisionRequest:
+    def make_instance(self, include_optional):
         """Test MILPDivisionRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MILPDivisionRequest`
         """
-        model = MILPDivisionRequest()
-        if include_optional:
+        model = dupr_backend.models.milp_division_request.MILPDivisionRequest()  # noqa: E501
+        if include_optional :
             return MILPDivisionRequest(
-                day1_start = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                day2_start = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                division_name = 'Stillwater Pickleball',
-                division_type = 'DUPR12/DUPR_OPEN/DUPR14/DUPR16/DUPR18/DUPR20/DUPR22',
-                entry_fee = 50.0,
-                max_teams = 10,
-                max_waitlist = 3,
-                prize = 500.0,
+                day1_start = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                day2_start = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                division_name = 'Stillwater Pickleball', 
+                division_type = 'DUPR12/DUPR_OPEN/DUPR14/DUPR16/DUPR18/DUPR20/DUPR22', 
+                entry_fee = 50.0, 
+                max_teams = 10, 
+                max_waitlist = 3, 
+                prize = 500.0, 
                 registration_period = [yyyy-mm-dd, yyyy-mm-dd]
             )
-        else:
+        else :
             return MILPDivisionRequest(
                 day1_start = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 division_type = 'DUPR12/DUPR_OPEN/DUPR14/DUPR16/DUPR18/DUPR20/DUPR22',

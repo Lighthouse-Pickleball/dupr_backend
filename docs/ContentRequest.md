@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **content** | **str** |  | 
@@ -23,12 +22,12 @@ json = "{}"
 # create an instance of ContentRequest from a JSON string
 content_request_instance = ContentRequest.from_json(json)
 # print the JSON string representation of the object
-print(ContentRequest.to_json())
+print ContentRequest.to_json()
 
 # convert the object into a dict
 content_request_dict = content_request_instance.to_dict()
 # create an instance of ContentRequest from a dict
-content_request_from_dict = ContentRequest.from_dict(content_request_dict)
+content_request_form_dict = content_request.from_dict(content_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

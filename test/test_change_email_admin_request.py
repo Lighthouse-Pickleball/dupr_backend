@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.change_email_admin_request import ChangeEmailAdminRequest
+import dupr_backend
+from dupr_backend.models.change_email_admin_request import ChangeEmailAdminRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestChangeEmailAdminRequest(unittest.TestCase):
     """ChangeEmailAdminRequest unit test stubs"""
@@ -25,20 +28,20 @@ class TestChangeEmailAdminRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ChangeEmailAdminRequest:
+    def make_instance(self, include_optional):
         """Test ChangeEmailAdminRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ChangeEmailAdminRequest`
         """
-        model = ChangeEmailAdminRequest()
-        if include_optional:
+        model = dupr_backend.models.change_email_admin_request.ChangeEmailAdminRequest()  # noqa: E501
+        if include_optional :
             return ChangeEmailAdminRequest(
-                new_email = '',
+                new_email = '', 
                 old_email = ''
             )
-        else:
+        else :
             return ChangeEmailAdminRequest(
                 new_email = '',
                 old_email = '',

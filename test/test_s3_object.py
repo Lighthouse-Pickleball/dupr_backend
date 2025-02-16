@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.s3_object import S3Object
+import dupr_backend
+from dupr_backend.models.s3_object import S3Object  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestS3Object(unittest.TestCase):
     """S3Object unit test stubs"""
@@ -25,20 +28,20 @@ class TestS3Object(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> S3Object:
+    def make_instance(self, include_optional):
         """Test S3Object
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `S3Object`
         """
-        model = S3Object()
-        if include_optional:
+        model = dupr_backend.models.s3_object.S3Object()  # noqa: E501
+        if include_optional :
             return S3Object(
-                bucket = '',
+                bucket = '', 
                 key = ''
             )
-        else:
+        else :
             return S3Object(
                 bucket = '',
                 key = '',

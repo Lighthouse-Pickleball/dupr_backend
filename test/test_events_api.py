@@ -14,148 +14,150 @@
 
 import unittest
 
-from dupr_backend.api.events_api import EventsApi
+import dupr_backend
+from dupr_backend.api.events_api import EventsApi  # noqa: E501
+from dupr_backend.rest import ApiException
 
 
 class TestEventsApi(unittest.TestCase):
     """EventsApi unit test stubs"""
 
-    def setUp(self) -> None:
-        self.api = EventsApi()
+    def setUp(self):
+        self.api = dupr_backend.api.events_api.EventsApi()  # noqa: E501
 
-    def tearDown(self) -> None:
+    def tearDown(self):
         pass
 
-    def test_checkout_event_using_get(self) -> None:
+    def test_checkout_event_using_get(self):
         """Test case for checkout_event_using_get
 
-        checkoutEvent
+        checkoutEvent  # noqa: E501
         """
         pass
 
-    def test_delete_league_using_delete1(self) -> None:
+    def test_delete_league_using_delete1(self):
         """Test case for delete_league_using_delete1
 
-        deleteLeague
+        deleteLeague  # noqa: E501
         """
         pass
 
-    def test_delete_text_content_using_delete(self) -> None:
+    def test_delete_text_content_using_delete(self):
         """Test case for delete_text_content_using_delete
 
-        deleteTextContent
+        deleteTextContent  # noqa: E501
         """
         pass
 
-    def test_draft_using_post1(self) -> None:
+    def test_draft_using_post1(self):
         """Test case for draft_using_post1
 
-        draft
+        draft  # noqa: E501
         """
         pass
 
-    def test_edit_league_using_put(self) -> None:
+    def test_edit_league_using_put(self):
         """Test case for edit_league_using_put
 
-        editLeague
+        editLeague  # noqa: E501
         """
         pass
 
-    def test_end_league_using_get1(self) -> None:
+    def test_end_league_using_get1(self):
         """Test case for end_league_using_get1
 
-        endLeague
+        endLeague  # noqa: E501
         """
         pass
 
-    def test_export_event_participants_using_get(self) -> None:
+    def test_export_event_participants_using_get(self):
         """Test case for export_event_participants_using_get
 
-        exportEventParticipants
+        exportEventParticipants  # noqa: E501
         """
         pass
 
-    def test_export_event_payments_using_post(self) -> None:
+    def test_export_event_payments_using_post(self):
         """Test case for export_event_payments_using_post
 
-        exportEventPayments
+        exportEventPayments  # noqa: E501
         """
         pass
 
-    def test_get_all_event_players_using_post1(self) -> None:
+    def test_get_all_event_players_using_post1(self):
         """Test case for get_all_event_players_using_post1
 
-        getAllEventPlayers
+        getAllEventPlayers  # noqa: E501
         """
         pass
 
-    def test_get_city_autocomplete_using_get(self) -> None:
+    def test_get_city_autocomplete_using_get(self):
         """Test case for get_city_autocomplete_using_get
 
-        getCityAutocomplete
+        getCityAutocomplete  # noqa: E501
         """
         pass
 
-    def test_get_club_leagues_using_get(self) -> None:
+    def test_get_club_leagues_using_get(self):
         """Test case for get_club_leagues_using_get
 
-        getClubLeagues
+        getClubLeagues  # noqa: E501
         """
         pass
 
-    def test_get_league_policy_using_get(self) -> None:
+    def test_get_league_policy_using_get(self):
         """Test case for get_league_policy_using_get
 
-        getLeaguePolicy
+        getLeaguePolicy  # noqa: E501
         """
         pass
 
-    def test_get_league_using_get(self) -> None:
+    def test_get_league_using_get(self):
         """Test case for get_league_using_get
 
-        getLeague
+        getLeague  # noqa: E501
         """
         pass
 
-    def test_get_leagues_by_user_id_using_post(self) -> None:
+    def test_get_leagues_by_user_id_using_post(self):
         """Test case for get_leagues_by_user_id_using_post
 
-        getLeaguesByUserId
+        getLeaguesByUserId  # noqa: E501
         """
         pass
 
-    def test_get_my_leagues_using_post(self) -> None:
+    def test_get_my_leagues_using_post(self):
         """Test case for get_my_leagues_using_post
 
-        getMyLeagues
+        getMyLeagues  # noqa: E501
         """
         pass
 
-    def test_join_event_using_post(self) -> None:
+    def test_join_event_using_post(self):
         """Test case for join_event_using_post
 
-        joinEvent
+        joinEvent  # noqa: E501
         """
         pass
 
-    def test_register_event_using_post(self) -> None:
+    def test_register_event_using_post(self):
         """Test case for register_event_using_post
 
-        registerEvent
+        registerEvent  # noqa: E501
         """
         pass
 
-    def test_save_using_post1(self) -> None:
+    def test_save_using_post1(self):
         """Test case for save_using_post1
 
-        save
+        save  # noqa: E501
         """
         pass
 
-    def test_search_leagues_using_post(self) -> None:
+    def test_search_leagues_using_post(self):
         """Test case for search_leagues_using_post
 
-        searchLeagues
+        searchLeagues  # noqa: E501
         """
         pass
 

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.switch_bracket_request import SwitchBracketRequest
+import dupr_backend
+from dupr_backend.models.switch_bracket_request import SwitchBracketRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSwitchBracketRequest(unittest.TestCase):
     """SwitchBracketRequest unit test stubs"""
@@ -25,27 +28,27 @@ class TestSwitchBracketRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SwitchBracketRequest:
+    def make_instance(self, include_optional):
         """Test SwitchBracketRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SwitchBracketRequest`
         """
-        model = SwitchBracketRequest()
-        if include_optional:
+        model = dupr_backend.models.switch_bracket_request.SwitchBracketRequest()  # noqa: E501
+        if include_optional :
             return SwitchBracketRequest(
-                club_id = 904958585,
-                event_id = 904958585,
-                event_name = 'Event name',
-                player_id = 904958585,
-                re_seed_bracket = True,
-                source_bracket_id = 904958585,
-                source_bracket_name = 'bracket 1',
-                target_bracket_id = 904958585,
+                club_id = 904958585, 
+                event_id = 904958585, 
+                event_name = 'Event name', 
+                player_id = 904958585, 
+                re_seed_bracket = True, 
+                source_bracket_id = 904958585, 
+                source_bracket_name = 'bracket 1', 
+                target_bracket_id = 904958585, 
                 target_bracket_name = 'bracket 2'
             )
-        else:
+        else :
             return SwitchBracketRequest(
                 club_id = 904958585,
                 event_id = 904958585,

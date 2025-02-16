@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.substitute_player_request import SubstitutePlayerRequest
+import dupr_backend
+from dupr_backend.models.substitute_player_request import SubstitutePlayerRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSubstitutePlayerRequest(unittest.TestCase):
     """SubstitutePlayerRequest unit test stubs"""
@@ -25,23 +28,23 @@ class TestSubstitutePlayerRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SubstitutePlayerRequest:
+    def make_instance(self, include_optional):
         """Test SubstitutePlayerRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SubstitutePlayerRequest`
         """
-        model = SubstitutePlayerRequest()
-        if include_optional:
+        model = dupr_backend.models.substitute_player_request.SubstitutePlayerRequest()  # noqa: E501
+        if include_optional :
             return SubstitutePlayerRequest(
-                bracket_id = 904958585,
-                is_club_member = True,
-                league_match_id = 904958585,
-                player_id = 904958585,
+                bracket_id = 904958585, 
+                is_club_member = True, 
+                league_match_id = 904958585, 
+                player_id = 904958585, 
                 sub_player_id = 904958585
             )
-        else:
+        else :
             return SubstitutePlayerRequest(
                 bracket_id = 904958585,
                 is_club_member = True,

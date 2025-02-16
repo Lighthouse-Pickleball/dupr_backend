@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.match_rating_simulator_request import MatchRatingSimulatorRequest
+import dupr_backend
+from dupr_backend.models.match_rating_simulator_request import MatchRatingSimulatorRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestMatchRatingSimulatorRequest(unittest.TestCase):
     """MatchRatingSimulatorRequest unit test stubs"""
@@ -25,20 +28,20 @@ class TestMatchRatingSimulatorRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> MatchRatingSimulatorRequest:
+    def make_instance(self, include_optional):
         """Test MatchRatingSimulatorRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MatchRatingSimulatorRequest`
         """
-        model = MatchRatingSimulatorRequest()
-        if include_optional:
+        model = dupr_backend.models.match_rating_simulator_request.MatchRatingSimulatorRequest()  # noqa: E501
+        if include_optional :
             return MatchRatingSimulatorRequest(
                 match = dupr_backend.models.match_info.MatchInfo(
                     event_format = 'DOUBLES', 
                     event_name = '', 
-                    match_source = 'CLUB', ),
+                    match_source = 'CLUB', ), 
                 team1 = dupr_backend.models.team_info.TeamInfo(
                     game1 = 56, 
                     game2 = 56, 
@@ -47,7 +50,7 @@ class TestMatchRatingSimulatorRequest(unittest.TestCase):
                     game5 = 56, 
                     player1_id = 56, 
                     player2_id = 56, 
-                    winner = True, ),
+                    winner = True, ), 
                 team2 = dupr_backend.models.team_info.TeamInfo(
                     game1 = 56, 
                     game2 = 56, 
@@ -58,7 +61,7 @@ class TestMatchRatingSimulatorRequest(unittest.TestCase):
                     player2_id = 56, 
                     winner = True, )
             )
-        else:
+        else :
             return MatchRatingSimulatorRequest(
                 match = dupr_backend.models.match_info.MatchInfo(
                     event_format = 'DOUBLES', 

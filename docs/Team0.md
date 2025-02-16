@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **delta** | **float** |  | [optional] 
@@ -37,12 +36,12 @@ json = "{}"
 # create an instance of Team0 from a JSON string
 team0_instance = Team0.from_json(json)
 # print the JSON string representation of the object
-print(Team0.to_json())
+print Team0.to_json()
 
 # convert the object into a dict
 team0_dict = team0_instance.to_dict()
 # create an instance of Team0 from a dict
-team0_from_dict = Team0.from_dict(team0_dict)
+team0_form_dict = team0.from_dict(team0_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

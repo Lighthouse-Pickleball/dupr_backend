@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **create_at** | **str** |  | [optional] 
@@ -23,12 +22,12 @@ json = "{}"
 # create an instance of OpenPlayMember from a JSON string
 open_play_member_instance = OpenPlayMember.from_json(json)
 # print the JSON string representation of the object
-print(OpenPlayMember.to_json())
+print OpenPlayMember.to_json()
 
 # convert the object into a dict
 open_play_member_dict = open_play_member_instance.to_dict()
 # create an instance of OpenPlayMember from a dict
-open_play_member_from_dict = OpenPlayMember.from_dict(open_play_member_dict)
+open_play_member_form_dict = open_play_member.from_dict(open_play_member_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

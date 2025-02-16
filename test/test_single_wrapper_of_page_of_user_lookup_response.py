@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.single_wrapper_of_page_of_user_lookup_response import SingleWrapperOfPageOfUserLookupResponse
+import dupr_backend
+from dupr_backend.models.single_wrapper_of_page_of_user_lookup_response import SingleWrapperOfPageOfUserLookupResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSingleWrapperOfPageOfUserLookupResponse(unittest.TestCase):
     """SingleWrapperOfPageOfUserLookupResponse unit test stubs"""
@@ -25,17 +28,17 @@ class TestSingleWrapperOfPageOfUserLookupResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperOfPageOfUserLookupResponse:
+    def make_instance(self, include_optional):
         """Test SingleWrapperOfPageOfUserLookupResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfPageOfUserLookupResponse`
         """
-        model = SingleWrapperOfPageOfUserLookupResponse()
-        if include_optional:
+        model = dupr_backend.models.single_wrapper_of_page_of_user_lookup_response.SingleWrapperOfPageOfUserLookupResponse()  # noqa: E501
+        if include_optional :
             return SingleWrapperOfPageOfUserLookupResponse(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 result = dupr_backend.models.page_of_user_lookup_response.PageOfUserLookupResponse(
                     empty = False, 
                     has_more = False, 
@@ -66,10 +69,10 @@ class TestSingleWrapperOfPageOfUserLookupResponse(unittest.TestCase):
                     limit = 10, 
                     offset = 90, 
                     total = 100, 
-                    total_value_relation = 'GREATER_THAN_OR_EQUAL_TO', ),
+                    total_value_relation = 'GREATER_THAN_OR_EQUAL_TO', ), 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return SingleWrapperOfPageOfUserLookupResponse(
         )
         """

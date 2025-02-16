@@ -17,74 +17,58 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List, Optional, Union
+
+from typing import Optional, Union
+from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr, validator
 from dupr_backend.models.age_range_filter import AgeRangeFilter
 from dupr_backend.models.rating_filter import RatingFilter
-from typing import Optional, Set
-from typing_extensions import Self
 
 class SearchFilter(BaseModel):
     """
     SearchFilter
-    """ # noqa: E501
-    age_range: Optional[AgeRangeFilter] = Field(default=None, alias="ageRange")
+    """
+    age_range: Optional[AgeRangeFilter] = Field(None, alias="ageRange")
     gender: Optional[StrictStr] = None
     lat: Optional[Union[StrictFloat, StrictInt]] = None
     lng: Optional[Union[StrictFloat, StrictInt]] = None
-    radius_in_meters: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="radiusInMeters")
+    radius_in_meters: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="radiusInMeters")
     rating: Optional[RatingFilter] = None
-    __properties: ClassVar[List[str]] = ["ageRange", "gender", "lat", "lng", "radiusInMeters", "rating"]
+    __properties = ["ageRange", "gender", "lat", "lng", "radiusInMeters", "rating"]
 
-    @field_validator('gender')
+    @validator('gender')
     def gender_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['FEMALE', 'MALE']):
+        if value not in ('FEMALE', 'MALE'):
             raise ValueError("must be one of enum values ('FEMALE', 'MALE')")
         return value
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
+    class Config:
+        """Pydantic configuration"""
+        allow_population_by_field_name = True
+        validate_assignment = True
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+        return pprint.pformat(self.dict(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
+    def from_json(cls, json_str: str) -> SearchFilter:
         """Create an instance of SearchFilter from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
+    def to_dict(self):
+        """Returns the dictionary representation of the model using alias"""
+        _dict = self.dict(by_alias=True,
+                          exclude={
+                          },
+                          exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of age_range
         if self.age_range:
             _dict['ageRange'] = self.age_range.to_dict()
@@ -94,21 +78,21 @@ class SearchFilter(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+    def from_dict(cls, obj: dict) -> SearchFilter:
         """Create an instance of SearchFilter from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+            return SearchFilter.parse_obj(obj)
 
-        _obj = cls.model_validate({
-            "ageRange": AgeRangeFilter.from_dict(obj["ageRange"]) if obj.get("ageRange") is not None else None,
+        _obj = SearchFilter.parse_obj({
+            "age_range": AgeRangeFilter.from_dict(obj.get("ageRange")) if obj.get("ageRange") is not None else None,
             "gender": obj.get("gender"),
             "lat": obj.get("lat"),
             "lng": obj.get("lng"),
-            "radiusInMeters": obj.get("radiusInMeters"),
-            "rating": RatingFilter.from_dict(obj["rating"]) if obj.get("rating") is not None else None
+            "radius_in_meters": obj.get("radiusInMeters"),
+            "rating": RatingFilter.from_dict(obj.get("rating")) if obj.get("rating") is not None else None
         })
         return _obj
 

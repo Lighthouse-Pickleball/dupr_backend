@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.pre_match_rating_and_impact import PreMatchRatingAndImpact
+import dupr_backend
+from dupr_backend.models.pre_match_rating_and_impact import PreMatchRatingAndImpact  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestPreMatchRatingAndImpact(unittest.TestCase):
     """PreMatchRatingAndImpact unit test stubs"""
@@ -25,26 +28,26 @@ class TestPreMatchRatingAndImpact(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PreMatchRatingAndImpact:
+    def make_instance(self, include_optional):
         """Test PreMatchRatingAndImpact
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PreMatchRatingAndImpact`
         """
-        model = PreMatchRatingAndImpact()
-        if include_optional:
+        model = dupr_backend.models.pre_match_rating_and_impact.PreMatchRatingAndImpact()  # noqa: E501
+        if include_optional :
             return PreMatchRatingAndImpact(
-                match_double_rating_impact_player1 = 1.337,
-                match_double_rating_impact_player2 = 1.337,
-                match_single_rating_impact_player1 = 1.337,
-                match_single_rating_impact_player2 = 1.337,
-                pre_match_double_rating_player1 = 1.337,
-                pre_match_double_rating_player2 = 1.337,
-                pre_match_single_rating_player1 = 1.337,
+                match_double_rating_impact_player1 = 1.337, 
+                match_double_rating_impact_player2 = 1.337, 
+                match_single_rating_impact_player1 = 1.337, 
+                match_single_rating_impact_player2 = 1.337, 
+                pre_match_double_rating_player1 = 1.337, 
+                pre_match_double_rating_player2 = 1.337, 
+                pre_match_single_rating_player1 = 1.337, 
                 pre_match_single_rating_player2 = 1.337
             )
-        else:
+        else :
             return PreMatchRatingAndImpact(
         )
         """

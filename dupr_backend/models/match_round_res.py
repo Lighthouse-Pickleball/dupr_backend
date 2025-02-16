@@ -18,86 +18,69 @@ import re  # noqa: F401
 import json
 
 from datetime import date
-from pydantic import BaseModel, ConfigDict, Field, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import List, Optional
+from pydantic import BaseModel, Field, StrictInt, conlist
 from dupr_backend.models.seed_match_res import SeedMatchRes
-from typing import Optional, Set
-from typing_extensions import Self
 
 class MatchRoundRes(BaseModel):
     """
     MatchRoundRes
-    """ # noqa: E501
-    end_date: Optional[date] = Field(default=None, alias="endDate")
-    matches: List[SeedMatchRes]
-    serial: StrictInt
-    start_date: date = Field(alias="startDate")
-    team_ids: Optional[List[StrictInt]] = Field(default=None, alias="teamIds")
-    __properties: ClassVar[List[str]] = ["endDate", "matches", "serial", "startDate", "teamIds"]
+    """
+    end_date: Optional[date] = Field(None, alias="endDate")
+    matches: conlist(SeedMatchRes) = Field(...)
+    serial: StrictInt = Field(...)
+    start_date: date = Field(..., alias="startDate")
+    team_ids: Optional[conlist(StrictInt)] = Field(None, alias="teamIds")
+    __properties = ["endDate", "matches", "serial", "startDate", "teamIds"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
+    class Config:
+        """Pydantic configuration"""
+        allow_population_by_field_name = True
+        validate_assignment = True
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+        return pprint.pformat(self.dict(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
+    def from_json(cls, json_str: str) -> MatchRoundRes:
         """Create an instance of MatchRoundRes from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
+    def to_dict(self):
+        """Returns the dictionary representation of the model using alias"""
+        _dict = self.dict(by_alias=True,
+                          exclude={
+                          },
+                          exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of each item in matches (list)
         _items = []
         if self.matches:
-            for _item_matches in self.matches:
-                if _item_matches:
-                    _items.append(_item_matches.to_dict())
+            for _item in self.matches:
+                if _item:
+                    _items.append(_item.to_dict())
             _dict['matches'] = _items
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+    def from_dict(cls, obj: dict) -> MatchRoundRes:
         """Create an instance of MatchRoundRes from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+            return MatchRoundRes.parse_obj(obj)
 
-        _obj = cls.model_validate({
-            "endDate": obj.get("endDate"),
-            "matches": [SeedMatchRes.from_dict(_item) for _item in obj["matches"]] if obj.get("matches") is not None else None,
+        _obj = MatchRoundRes.parse_obj({
+            "end_date": obj.get("endDate"),
+            "matches": [SeedMatchRes.from_dict(_item) for _item in obj.get("matches")] if obj.get("matches") is not None else None,
             "serial": obj.get("serial"),
-            "startDate": obj.get("startDate"),
-            "teamIds": obj.get("teamIds")
+            "start_date": obj.get("startDate"),
+            "team_ids": obj.get("teamIds")
         })
         return _obj
 

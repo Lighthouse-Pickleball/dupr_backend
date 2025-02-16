@@ -17,114 +17,98 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List, Optional, Union
-from typing import Optional, Set
-from typing_extensions import Self
+
+from typing import List, Optional, Union
+from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr, conlist, validator
 
 class Division(BaseModel):
     """
     Division
-    """ # noqa: E501
-    day1_start: Optional[StrictStr] = Field(default=None, alias="day1Start")
-    day2_start: Optional[StrictStr] = Field(default=None, alias="day2Start")
-    division_code: StrictStr = Field(alias="divisionCode")
-    division_id: StrictInt = Field(alias="divisionId")
-    division_name: StrictStr = Field(alias="divisionName")
-    division_type: StrictStr = Field(alias="divisionType")
-    entry_fee: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="entryFee")
-    event_id: StrictInt = Field(alias="eventId")
-    max_teams: Optional[StrictInt] = Field(default=None, alias="maxTeams")
-    max_waitlist: Optional[StrictInt] = Field(default=None, alias="maxWaitlist")
-    prize: Union[StrictFloat, StrictInt]
-    registration_end: Optional[StrictStr] = Field(default=None, alias="registrationEnd")
-    registration_period: Optional[List[StrictStr]] = Field(default=None, alias="registrationPeriod")
-    registration_start: Optional[StrictStr] = Field(default=None, alias="registrationStart")
+    """
+    day1_start: Optional[StrictStr] = Field(None, alias="day1Start")
+    day2_start: Optional[StrictStr] = Field(None, alias="day2Start")
+    division_code: StrictStr = Field(..., alias="divisionCode")
+    division_id: StrictInt = Field(..., alias="divisionId")
+    division_name: StrictStr = Field(..., alias="divisionName")
+    division_type: StrictStr = Field(..., alias="divisionType")
+    entry_fee: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="entryFee")
+    event_id: StrictInt = Field(..., alias="eventId")
+    max_teams: Optional[StrictInt] = Field(None, alias="maxTeams")
+    max_waitlist: Optional[StrictInt] = Field(None, alias="maxWaitlist")
+    prize: Union[StrictFloat, StrictInt] = Field(...)
+    registration_end: Optional[StrictStr] = Field(None, alias="registrationEnd")
+    registration_period: Optional[conlist(StrictStr)] = Field(None, alias="registrationPeriod")
+    registration_start: Optional[StrictStr] = Field(None, alias="registrationStart")
     status: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["day1Start", "day2Start", "divisionCode", "divisionId", "divisionName", "divisionType", "entryFee", "eventId", "maxTeams", "maxWaitlist", "prize", "registrationEnd", "registrationPeriod", "registrationStart", "status"]
+    __properties = ["day1Start", "day2Start", "divisionCode", "divisionId", "divisionName", "divisionType", "entryFee", "eventId", "maxTeams", "maxWaitlist", "prize", "registrationEnd", "registrationPeriod", "registrationStart", "status"]
 
-    @field_validator('division_type')
+    @validator('division_type')
     def division_type_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['DUPR12', 'DUPR14', 'DUPR16', 'DUPR18', 'DUPR20', 'DUPR22', 'DUPR_OPEN']):
+        if value not in ('DUPR12', 'DUPR14', 'DUPR16', 'DUPR18', 'DUPR20', 'DUPR22', 'DUPR_OPEN'):
             raise ValueError("must be one of enum values ('DUPR12', 'DUPR14', 'DUPR16', 'DUPR18', 'DUPR20', 'DUPR22', 'DUPR_OPEN')")
         return value
 
-    @field_validator('status')
+    @validator('status')
     def status_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING']):
+        if value not in ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING'):
             raise ValueError("must be one of enum values ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING')")
         return value
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
+    class Config:
+        """Pydantic configuration"""
+        allow_population_by_field_name = True
+        validate_assignment = True
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+        return pprint.pformat(self.dict(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
+    def from_json(cls, json_str: str) -> Division:
         """Create an instance of Division from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
+    def to_dict(self):
+        """Returns the dictionary representation of the model using alias"""
+        _dict = self.dict(by_alias=True,
+                          exclude={
+                          },
+                          exclude_none=True)
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+    def from_dict(cls, obj: dict) -> Division:
         """Create an instance of Division from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+            return Division.parse_obj(obj)
 
-        _obj = cls.model_validate({
-            "day1Start": obj.get("day1Start"),
-            "day2Start": obj.get("day2Start"),
-            "divisionCode": obj.get("divisionCode"),
-            "divisionId": obj.get("divisionId"),
-            "divisionName": obj.get("divisionName"),
-            "divisionType": obj.get("divisionType"),
-            "entryFee": obj.get("entryFee"),
-            "eventId": obj.get("eventId"),
-            "maxTeams": obj.get("maxTeams"),
-            "maxWaitlist": obj.get("maxWaitlist"),
+        _obj = Division.parse_obj({
+            "day1_start": obj.get("day1Start"),
+            "day2_start": obj.get("day2Start"),
+            "division_code": obj.get("divisionCode"),
+            "division_id": obj.get("divisionId"),
+            "division_name": obj.get("divisionName"),
+            "division_type": obj.get("divisionType"),
+            "entry_fee": obj.get("entryFee"),
+            "event_id": obj.get("eventId"),
+            "max_teams": obj.get("maxTeams"),
+            "max_waitlist": obj.get("maxWaitlist"),
             "prize": obj.get("prize"),
-            "registrationEnd": obj.get("registrationEnd"),
-            "registrationPeriod": obj.get("registrationPeriod"),
-            "registrationStart": obj.get("registrationStart"),
+            "registration_end": obj.get("registrationEnd"),
+            "registration_period": obj.get("registrationPeriod"),
+            "registration_start": obj.get("registrationStart"),
             "status": obj.get("status")
         })
         return _obj

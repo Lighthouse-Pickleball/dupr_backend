@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.player_rating_history import PlayerRatingHistory
+import dupr_backend
+from dupr_backend.models.player_rating_history import PlayerRatingHistory  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestPlayerRatingHistory(unittest.TestCase):
     """PlayerRatingHistory unit test stubs"""
@@ -25,30 +28,30 @@ class TestPlayerRatingHistory(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PlayerRatingHistory:
+    def make_instance(self, include_optional):
         """Test PlayerRatingHistory
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PlayerRatingHistory`
         """
-        model = PlayerRatingHistory()
-        if include_optional:
+        model = dupr_backend.models.player_rating_history.PlayerRatingHistory()  # noqa: E501
+        if include_optional :
             return PlayerRatingHistory(
-                changed_by_admin = True,
-                created = '',
-                doubles = 1.337,
-                doubles_provisional = True,
-                match_date = '',
-                rating_history_id = 56,
-                singles = 1.337,
-                singles_provisional = True,
-                status = '',
-                user_email = '',
-                user_id = 56,
+                changed_by_admin = True, 
+                created = '', 
+                doubles = 1.337, 
+                doubles_provisional = True, 
+                match_date = '', 
+                rating_history_id = 56, 
+                singles = 1.337, 
+                singles_provisional = True, 
+                status = '', 
+                user_email = '', 
+                user_id = 56, 
                 user_name = ''
             )
-        else:
+        else :
             return PlayerRatingHistory(
                 changed_by_admin = True,
                 created = '',

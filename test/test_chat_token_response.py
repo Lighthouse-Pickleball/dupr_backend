@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.chat_token_response import ChatTokenResponse
+import dupr_backend
+from dupr_backend.models.chat_token_response import ChatTokenResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestChatTokenResponse(unittest.TestCase):
     """ChatTokenResponse unit test stubs"""
@@ -25,22 +28,22 @@ class TestChatTokenResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ChatTokenResponse:
+    def make_instance(self, include_optional):
         """Test ChatTokenResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ChatTokenResponse`
         """
-        model = ChatTokenResponse()
-        if include_optional:
+        model = dupr_backend.models.chat_token_response.ChatTokenResponse()  # noqa: E501
+        if include_optional :
             return ChatTokenResponse(
-                full_name = 'Brian Lara',
-                id = 26518181881,
-                image_url = 'https://dupr-dev.s3.amazonaws.com/profile/image.png',
+                full_name = 'Brian Lara', 
+                id = 26518181881, 
+                image_url = 'https://dupr-dev.s3.amazonaws.com/profile/image.png', 
                 token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.'
             )
-        else:
+        else :
             return ChatTokenResponse(
                 full_name = 'Brian Lara',
                 token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.',

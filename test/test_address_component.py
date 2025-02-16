@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.address_component import AddressComponent
+import dupr_backend
+from dupr_backend.models.address_component import AddressComponent  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestAddressComponent(unittest.TestCase):
     """AddressComponent unit test stubs"""
@@ -25,23 +28,23 @@ class TestAddressComponent(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AddressComponent:
+    def make_instance(self, include_optional):
         """Test AddressComponent
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `AddressComponent`
         """
-        model = AddressComponent()
-        if include_optional:
+        model = dupr_backend.models.address_component.AddressComponent()  # noqa: E501
+        if include_optional :
             return AddressComponent(
-                long_name = '',
-                short_name = '',
+                long_name = '', 
+                short_name = '', 
                 types = [
                     'ADMINISTRATIVE_AREA_LEVEL_1'
                     ]
             )
-        else:
+        else :
             return AddressComponent(
         )
         """

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.page_of_club_member_response import PageOfClubMemberResponse
+import dupr_backend
+from dupr_backend.models.page_of_club_member_response import PageOfClubMemberResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestPageOfClubMemberResponse(unittest.TestCase):
     """PageOfClubMemberResponse unit test stubs"""
@@ -25,19 +28,19 @@ class TestPageOfClubMemberResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PageOfClubMemberResponse:
+    def make_instance(self, include_optional):
         """Test PageOfClubMemberResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PageOfClubMemberResponse`
         """
-        model = PageOfClubMemberResponse()
-        if include_optional:
+        model = dupr_backend.models.page_of_club_member_response.PageOfClubMemberResponse()  # noqa: E501
+        if include_optional :
             return PageOfClubMemberResponse(
-                empty = False,
-                has_more = False,
-                has_previous = True,
+                empty = False, 
+                has_more = False, 
+                has_previous = True, 
                 hits = [
                     dupr_backend.models.club_member_response.ClubMemberResponse(
                         age = 56, 
@@ -90,13 +93,13 @@ class TestPageOfClubMemberResponse(unittest.TestCase):
                         username = '', 
                         verified_email = True, 
                         verified_phone = True, )
-                    ],
-                limit = 10,
-                offset = 90,
-                total = 100,
+                    ], 
+                limit = 10, 
+                offset = 90, 
+                total = 100, 
                 total_value_relation = 'GREATER_THAN_OR_EQUAL_TO'
             )
-        else:
+        else :
             return PageOfClubMemberResponse(
                 empty = False,
                 has_more = False,

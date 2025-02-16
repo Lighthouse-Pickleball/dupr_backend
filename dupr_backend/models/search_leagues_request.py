@@ -17,89 +17,72 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional, Union
-from typing_extensions import Annotated
+
+from typing import Optional, Union
+from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr, conint
 from dupr_backend.models.league_filter import LeagueFilter
-from typing import Optional, Set
-from typing_extensions import Self
 
 class SearchLeaguesRequest(BaseModel):
     """
     SearchLeaguesRequest
-    """ # noqa: E501
+    """
     filters: Optional[LeagueFilter] = None
-    is_near_me: Optional[StrictBool] = Field(default=None, alias="isNearMe")
+    is_near_me: Optional[StrictBool] = Field(None, alias="isNearMe")
     lat: Optional[Union[StrictFloat, StrictInt]] = None
-    limit: Annotated[int, Field(le=25, strict=True)]
+    limit: conint(strict=True, le=25) = Field(...)
     lng: Optional[Union[StrictFloat, StrictInt]] = None
-    offset: StrictInt
-    query: StrictStr
-    radius_in_meters: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="radiusInMeters")
-    __properties: ClassVar[List[str]] = ["filters", "isNearMe", "lat", "limit", "lng", "offset", "query", "radiusInMeters"]
+    offset: StrictInt = Field(...)
+    query: StrictStr = Field(...)
+    radius_in_meters: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="radiusInMeters")
+    __properties = ["filters", "isNearMe", "lat", "limit", "lng", "offset", "query", "radiusInMeters"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
+    class Config:
+        """Pydantic configuration"""
+        allow_population_by_field_name = True
+        validate_assignment = True
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+        return pprint.pformat(self.dict(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
+    def from_json(cls, json_str: str) -> SearchLeaguesRequest:
         """Create an instance of SearchLeaguesRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
+    def to_dict(self):
+        """Returns the dictionary representation of the model using alias"""
+        _dict = self.dict(by_alias=True,
+                          exclude={
+                          },
+                          exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of filters
         if self.filters:
             _dict['filters'] = self.filters.to_dict()
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+    def from_dict(cls, obj: dict) -> SearchLeaguesRequest:
         """Create an instance of SearchLeaguesRequest from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+            return SearchLeaguesRequest.parse_obj(obj)
 
-        _obj = cls.model_validate({
-            "filters": LeagueFilter.from_dict(obj["filters"]) if obj.get("filters") is not None else None,
-            "isNearMe": obj.get("isNearMe"),
+        _obj = SearchLeaguesRequest.parse_obj({
+            "filters": LeagueFilter.from_dict(obj.get("filters")) if obj.get("filters") is not None else None,
+            "is_near_me": obj.get("isNearMe"),
             "lat": obj.get("lat"),
             "limit": obj.get("limit"),
             "lng": obj.get("lng"),
             "offset": obj.get("offset"),
             "query": obj.get("query"),
-            "radiusInMeters": obj.get("radiusInMeters")
+            "radius_in_meters": obj.get("radiusInMeters")
         })
         return _obj
 

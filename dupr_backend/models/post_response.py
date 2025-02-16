@@ -17,138 +17,122 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List
+
+from typing import Any, Dict, List
+from pydantic import BaseModel, Field, StrictInt, StrictStr, conlist, validator
 from dupr_backend.models.activity_user import ActivityUser
 from dupr_backend.models.match import Match
 from dupr_backend.models.post_reaction_response import PostReactionResponse
-from typing import Optional, Set
-from typing_extensions import Self
 
 class PostResponse(BaseModel):
     """
     PostResponse
-    """ # noqa: E501
-    activity_id: StrictStr = Field(alias="activityId")
-    actor: ActivityUser
-    content: StrictStr
-    created_at: StrictInt = Field(alias="createdAt")
-    hashtags: List[StrictStr]
-    id: StrictStr
-    images: List[StrictStr]
-    location: Dict[str, Any]
-    matches: List[Match]
-    own_reactions: Dict[str, List[PostReactionResponse]] = Field(alias="ownReactions")
-    reaction_counts: Dict[str, Dict[str, Any]] = Field(alias="reactionCounts")
-    tags: List[ActivityUser]
-    updated_at: StrictInt = Field(alias="updatedAt")
-    verb: StrictStr
-    __properties: ClassVar[List[str]] = ["activityId", "actor", "content", "createdAt", "hashtags", "id", "images", "location", "matches", "ownReactions", "reactionCounts", "tags", "updatedAt", "verb"]
+    """
+    activity_id: StrictStr = Field(..., alias="activityId")
+    actor: ActivityUser = Field(...)
+    content: StrictStr = Field(...)
+    created_at: StrictInt = Field(..., alias="createdAt")
+    hashtags: conlist(StrictStr) = Field(...)
+    id: StrictStr = Field(...)
+    images: conlist(StrictStr) = Field(...)
+    location: Dict[str, Any] = Field(...)
+    matches: conlist(Match) = Field(...)
+    own_reactions: Dict[str, conlist(PostReactionResponse)] = Field(..., alias="ownReactions")
+    reaction_counts: Dict[str, Dict[str, Any]] = Field(..., alias="reactionCounts")
+    tags: conlist(ActivityUser) = Field(...)
+    updated_at: StrictInt = Field(..., alias="updatedAt")
+    verb: StrictStr = Field(...)
+    __properties = ["activityId", "actor", "content", "createdAt", "hashtags", "id", "images", "location", "matches", "ownReactions", "reactionCounts", "tags", "updatedAt", "verb"]
 
-    @field_validator('verb')
+    @validator('verb')
     def verb_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['MATCH', 'POST']):
+        if value not in ('MATCH', 'POST'):
             raise ValueError("must be one of enum values ('MATCH', 'POST')")
         return value
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
+    class Config:
+        """Pydantic configuration"""
+        allow_population_by_field_name = True
+        validate_assignment = True
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+        return pprint.pformat(self.dict(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
+    def from_json(cls, json_str: str) -> PostResponse:
         """Create an instance of PostResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
+    def to_dict(self):
+        """Returns the dictionary representation of the model using alias"""
+        _dict = self.dict(by_alias=True,
+                          exclude={
+                          },
+                          exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of actor
         if self.actor:
             _dict['actor'] = self.actor.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in matches (list)
         _items = []
         if self.matches:
-            for _item_matches in self.matches:
-                if _item_matches:
-                    _items.append(_item_matches.to_dict())
+            for _item in self.matches:
+                if _item:
+                    _items.append(_item.to_dict())
             _dict['matches'] = _items
         # override the default output from pydantic by calling `to_dict()` of each value in own_reactions (dict of array)
         _field_dict_of_array = {}
         if self.own_reactions:
-            for _key_own_reactions in self.own_reactions:
-                if self.own_reactions[_key_own_reactions] is not None:
-                    _field_dict_of_array[_key_own_reactions] = [
-                        _item.to_dict() for _item in self.own_reactions[_key_own_reactions]
+            for _key in self.own_reactions:
+                if self.own_reactions[_key]:
+                    _field_dict_of_array[_key] = [
+                        _item.to_dict() for _item in self.own_reactions[_key]
                     ]
             _dict['ownReactions'] = _field_dict_of_array
         # override the default output from pydantic by calling `to_dict()` of each item in tags (list)
         _items = []
         if self.tags:
-            for _item_tags in self.tags:
-                if _item_tags:
-                    _items.append(_item_tags.to_dict())
+            for _item in self.tags:
+                if _item:
+                    _items.append(_item.to_dict())
             _dict['tags'] = _items
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+    def from_dict(cls, obj: dict) -> PostResponse:
         """Create an instance of PostResponse from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+            return PostResponse.parse_obj(obj)
 
-        _obj = cls.model_validate({
-            "activityId": obj.get("activityId"),
-            "actor": ActivityUser.from_dict(obj["actor"]) if obj.get("actor") is not None else None,
+        _obj = PostResponse.parse_obj({
+            "activity_id": obj.get("activityId"),
+            "actor": ActivityUser.from_dict(obj.get("actor")) if obj.get("actor") is not None else None,
             "content": obj.get("content"),
-            "createdAt": obj.get("createdAt"),
+            "created_at": obj.get("createdAt"),
             "hashtags": obj.get("hashtags"),
             "id": obj.get("id"),
             "images": obj.get("images"),
             "location": obj.get("location"),
-            "matches": [Match.from_dict(_item) for _item in obj["matches"]] if obj.get("matches") is not None else None,
-            "ownReactions": dict(
+            "matches": [Match.from_dict(_item) for _item in obj.get("matches")] if obj.get("matches") is not None else None,
+            "own_reactions": dict(
                 (_k,
                         [PostReactionResponse.from_dict(_item) for _item in _v]
                         if _v is not None
                         else None
                 )
-                for _k, _v in obj.get("ownReactions", {}).items()
+                for _k, _v in obj.get("ownReactions").items()
             ),
-            "reactionCounts": obj.get("reactionCounts"),
-            "tags": [ActivityUser.from_dict(_item) for _item in obj["tags"]] if obj.get("tags") is not None else None,
-            "updatedAt": obj.get("updatedAt"),
+            "reaction_counts": obj.get("reactionCounts"),
+            "tags": [ActivityUser.from_dict(_item) for _item in obj.get("tags")] if obj.get("tags") is not None else None,
+            "updated_at": obj.get("updatedAt"),
             "verb": obj.get("verb")
         })
         return _obj

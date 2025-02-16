@@ -14,85 +14,87 @@
 
 import unittest
 
-from dupr_backend.api.players_api import PlayersApi
+import dupr_backend
+from dupr_backend.api.players_api import PlayersApi  # noqa: E501
+from dupr_backend.rest import ApiException
 
 
 class TestPlayersApi(unittest.TestCase):
     """PlayersApi unit test stubs"""
 
-    def setUp(self) -> None:
-        self.api = PlayersApi()
+    def setUp(self):
+        self.api = dupr_backend.api.players_api.PlayersApi()  # noqa: E501
 
-    def tearDown(self) -> None:
+    def tearDown(self):
         pass
 
-    def test_get_player_rating_history_overtime_using_post(self) -> None:
+    def test_get_player_rating_history_overtime_using_post(self):
         """Test case for get_player_rating_history_overtime_using_post
 
-        getPlayerRatingHistoryOvertime
+        getPlayerRatingHistoryOvertime  # noqa: E501
         """
         pass
 
-    def test_get_statistics_using_get(self) -> None:
+    def test_get_statistics_using_get(self):
         """Test case for get_statistics_using_get
 
-        getStatistics
+        getStatistics  # noqa: E501
         """
         pass
 
-    def test_invite_using_post(self) -> None:
+    def test_invite_using_post(self):
         """Test case for invite_using_post
 
-        invite
+        invite  # noqa: E501
         """
         pass
 
-    def test_match_history_by_filters_using_post(self) -> None:
+    def test_match_history_by_filters_using_post(self):
         """Test case for match_history_by_filters_using_post
 
-        matchHistoryByFilters
+        matchHistoryByFilters  # noqa: E501
         """
         pass
 
-    def test_match_history_using_get(self) -> None:
+    def test_match_history_using_get(self):
         """Test case for match_history_using_get
 
-        matchHistory
+        matchHistory  # noqa: E501
         """
         pass
 
-    def test_player_info_using_get(self) -> None:
+    def test_player_info_using_get(self):
         """Test case for player_info_using_get
 
-        playerInfo
+        playerInfo  # noqa: E501
         """
         pass
 
-    def test_public_search_using_post(self) -> None:
+    def test_public_search_using_post(self):
         """Test case for public_search_using_post
 
-        publicSearch
+        publicSearch  # noqa: E501
         """
         pass
 
-    def test_search_claim_player_using_post(self) -> None:
+    def test_search_claim_player_using_post(self):
         """Test case for search_claim_player_using_post
 
-        searchClaimPlayer
+        searchClaimPlayer  # noqa: E501
         """
         pass
 
-    def test_search_using_post(self) -> None:
+    def test_search_using_post(self):
         """Test case for search_using_post
 
-        search
+        search  # noqa: E501
         """
         pass
 
-    def test_unclaimed_player_using_get(self) -> None:
+    def test_unclaimed_player_using_get(self):
         """Test case for unclaimed_player_using_get
 
-        unclaimedPlayer
+        unclaimedPlayer  # noqa: E501
         """
         pass
 

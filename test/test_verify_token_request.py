@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.verify_token_request import VerifyTokenRequest
+import dupr_backend
+from dupr_backend.models.verify_token_request import VerifyTokenRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestVerifyTokenRequest(unittest.TestCase):
     """VerifyTokenRequest unit test stubs"""
@@ -25,19 +28,19 @@ class TestVerifyTokenRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> VerifyTokenRequest:
+    def make_instance(self, include_optional):
         """Test VerifyTokenRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `VerifyTokenRequest`
         """
-        model = VerifyTokenRequest()
-        if include_optional:
+        model = dupr_backend.models.verify_token_request.VerifyTokenRequest()  # noqa: E501
+        if include_optional :
             return VerifyTokenRequest(
                 token = 'eyJhbGciOiJSUzUxMiJ9.eyJ'
             )
-        else:
+        else :
             return VerifyTokenRequest(
                 token = 'eyJhbGciOiJSUzUxMiJ9.eyJ',
         )

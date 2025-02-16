@@ -14,414 +14,416 @@
 
 import unittest
 
-from dupr_backend.api.brackets_api import BracketsApi
+import dupr_backend
+from dupr_backend.api.brackets_api import BracketsApi  # noqa: E501
+from dupr_backend.rest import ApiException
 
 
 class TestBracketsApi(unittest.TestCase):
     """BracketsApi unit test stubs"""
 
-    def setUp(self) -> None:
-        self.api = BracketsApi()
+    def setUp(self):
+        self.api = dupr_backend.api.brackets_api.BracketsApi()  # noqa: E501
 
-    def tearDown(self) -> None:
+    def tearDown(self):
         pass
 
-    def test_add_match_score_by_director_using_post(self) -> None:
+    def test_add_match_score_by_director_using_post(self):
         """Test case for add_match_score_by_director_using_post
 
-        addMatchScoreByDirector
+        addMatchScoreByDirector  # noqa: E501
         """
         pass
 
-    def test_add_match_score_using_post(self) -> None:
+    def test_add_match_score_using_post(self):
         """Test case for add_match_score_using_post
 
-        addMatchScore
+        addMatchScore  # noqa: E501
         """
         pass
 
-    def test_confirm_match_director_using_post(self) -> None:
+    def test_confirm_match_director_using_post(self):
         """Test case for confirm_match_director_using_post
 
-        confirmMatchDirector
+        confirmMatchDirector  # noqa: E501
         """
         pass
 
-    def test_confirm_match_using_post(self) -> None:
+    def test_confirm_match_using_post(self):
         """Test case for confirm_match_using_post
 
-        confirmMatch
+        confirmMatch  # noqa: E501
         """
         pass
 
-    def test_confirm_team_by_director_using_post(self) -> None:
+    def test_confirm_team_by_director_using_post(self):
         """Test case for confirm_team_by_director_using_post
 
-        confirmTeamByDirector
+        confirmTeamByDirector  # noqa: E501
         """
         pass
 
-    def test_delete_league_using_delete(self) -> None:
+    def test_delete_league_using_delete(self):
         """Test case for delete_league_using_delete
 
-        deleteLeague
+        deleteLeague  # noqa: E501
         """
         pass
 
-    def test_edit_bracket_status_using_put(self) -> None:
+    def test_edit_bracket_status_using_put(self):
         """Test case for edit_bracket_status_using_put
 
-        editBracketStatus
+        editBracketStatus  # noqa: E501
         """
         pass
 
-    def test_edit_bracket_using_put(self) -> None:
+    def test_edit_bracket_using_put(self):
         """Test case for edit_bracket_using_put
 
-        editBracket
+        editBracket  # noqa: E501
         """
         pass
 
-    def test_edit_confirmed_matches_using_post(self) -> None:
+    def test_edit_confirmed_matches_using_post(self):
         """Test case for edit_confirmed_matches_using_post
 
-        editConfirmedMatches
+        editConfirmedMatches  # noqa: E501
         """
         pass
 
-    def test_edit_match_score_by_director_using_post(self) -> None:
+    def test_edit_match_score_by_director_using_post(self):
         """Test case for edit_match_score_by_director_using_post
 
-        editMatchScoreByDirector
+        editMatchScoreByDirector  # noqa: E501
         """
         pass
 
-    def test_edit_match_score_using_post(self) -> None:
+    def test_edit_match_score_using_post(self):
         """Test case for edit_match_score_using_post
 
-        editMatchScore
+        editMatchScore  # noqa: E501
         """
         pass
 
-    def test_edit_partner_using_post(self) -> None:
+    def test_edit_partner_using_post(self):
         """Test case for edit_partner_using_post
 
-        editPartner
+        editPartner  # noqa: E501
         """
         pass
 
-    def test_edit_player_wait_list_using_post(self) -> None:
+    def test_edit_player_wait_list_using_post(self):
         """Test case for edit_player_wait_list_using_post
 
-        editPlayerWaitList
+        editPlayerWaitList  # noqa: E501
         """
         pass
 
-    def test_edit_teams_using_post(self) -> None:
+    def test_edit_teams_using_post(self):
         """Test case for edit_teams_using_post
 
-        editTeams
+        editTeams  # noqa: E501
         """
         pass
 
-    def test_end_league_using_get(self) -> None:
+    def test_end_league_using_get(self):
         """Test case for end_league_using_get
 
-        endLeague
+        endLeague  # noqa: E501
         """
         pass
 
-    def test_export_bracket_participants_using_get(self) -> None:
+    def test_export_bracket_participants_using_get(self):
         """Test case for export_bracket_participants_using_get
 
-        exportBracketParticipants
+        exportBracketParticipants  # noqa: E501
         """
         pass
 
-    def test_forfeit_match_using_post(self) -> None:
+    def test_forfeit_match_using_post(self):
         """Test case for forfeit_match_using_post
 
-        forfeitMatch
+        forfeitMatch  # noqa: E501
         """
         pass
 
-    def test_get_all_bracket_matches_using_get(self) -> None:
+    def test_get_all_bracket_matches_using_get(self):
         """Test case for get_all_bracket_matches_using_get
 
-        getAllBracketMatches
+        getAllBracketMatches  # noqa: E501
         """
         pass
 
-    def test_get_all_event_players_using_post(self) -> None:
+    def test_get_all_event_players_using_post(self):
         """Test case for get_all_event_players_using_post
 
-        getAllEventPlayers
+        getAllEventPlayers  # noqa: E501
         """
         pass
 
-    def test_get_bracket_by_id_using_get(self) -> None:
+    def test_get_bracket_by_id_using_get(self):
         """Test case for get_bracket_by_id_using_get
 
-        getBracketById
+        getBracketById  # noqa: E501
         """
         pass
 
-    def test_get_bracket_details_teams_using_get(self) -> None:
+    def test_get_bracket_details_teams_using_get(self):
         """Test case for get_bracket_details_teams_using_get
 
-        getBracketDetailsTeams
+        getBracketDetailsTeams  # noqa: E501
         """
         pass
 
-    def test_get_bracket_match_queue_using_get(self) -> None:
+    def test_get_bracket_match_queue_using_get(self):
         """Test case for get_bracket_match_queue_using_get
 
-        getBracketMatchQueue
+        getBracketMatchQueue  # noqa: E501
         """
         pass
 
-    def test_get_bracket_matches_post_using_post(self) -> None:
+    def test_get_bracket_matches_post_using_post(self):
         """Test case for get_bracket_matches_post_using_post
 
-        getBracketMatchesPost
+        getBracketMatchesPost  # noqa: E501
         """
         pass
 
-    def test_get_bracket_matches_using_get(self) -> None:
+    def test_get_bracket_matches_using_get(self):
         """Test case for get_bracket_matches_using_get
 
-        getBracketMatches
+        getBracketMatches  # noqa: E501
         """
         pass
 
-    def test_get_bracket_players_using_get(self) -> None:
+    def test_get_bracket_players_using_get(self):
         """Test case for get_bracket_players_using_get
 
-        getBracketPlayers
+        getBracketPlayers  # noqa: E501
         """
         pass
 
-    def test_get_bracket_players_using_post(self) -> None:
+    def test_get_bracket_players_using_post(self):
         """Test case for get_bracket_players_using_post
 
-        getBracketPlayers
+        getBracketPlayers  # noqa: E501
         """
         pass
 
-    def test_get_bracket_standing_using_get(self) -> None:
+    def test_get_bracket_standing_using_get(self):
         """Test case for get_bracket_standing_using_get
 
-        getBracketStanding
+        getBracketStanding  # noqa: E501
         """
         pass
 
-    def test_get_bracket_teams_using_get(self) -> None:
+    def test_get_bracket_teams_using_get(self):
         """Test case for get_bracket_teams_using_get
 
-        getBracketTeams
+        getBracketTeams  # noqa: E501
         """
         pass
 
-    def test_get_bracket_teams_using_post(self) -> None:
+    def test_get_bracket_teams_using_post(self):
         """Test case for get_bracket_teams_using_post
 
-        getBracketTeams
+        getBracketTeams  # noqa: E501
         """
         pass
 
-    def test_get_bracket_waitlisted_teams_using_post(self) -> None:
+    def test_get_bracket_waitlisted_teams_using_post(self):
         """Test case for get_bracket_waitlisted_teams_using_post
 
-        getBracketWaitlistedTeams
+        getBracketWaitlistedTeams  # noqa: E501
         """
         pass
 
-    def test_get_director_bracket_teams_using_get(self) -> None:
+    def test_get_director_bracket_teams_using_get(self):
         """Test case for get_director_bracket_teams_using_get
 
-        getDirectorBracketTeams
+        getDirectorBracketTeams  # noqa: E501
         """
         pass
 
-    def test_get_pending_confirmation_using_get(self) -> None:
+    def test_get_pending_confirmation_using_get(self):
         """Test case for get_pending_confirmation_using_get
 
-        getPendingConfirmation
+        getPendingConfirmation  # noqa: E501
         """
         pass
 
-    def test_get_pending_teams_to_replace_using_get(self) -> None:
+    def test_get_pending_teams_to_replace_using_get(self):
         """Test case for get_pending_teams_to_replace_using_get
 
-        getPendingTeamsToReplace
+        getPendingTeamsToReplace  # noqa: E501
         """
         pass
 
-    def test_get_registration_details_using_get(self) -> None:
+    def test_get_registration_details_using_get(self):
         """Test case for get_registration_details_using_get
 
-        getRegistrationDetails
+        getRegistrationDetails  # noqa: E501
         """
         pass
 
-    def test_get_unmatched_players_using_get(self) -> None:
+    def test_get_unmatched_players_using_get(self):
         """Test case for get_unmatched_players_using_get
 
-        getUnmatchedPlayers
+        getUnmatchedPlayers  # noqa: E501
         """
         pass
 
-    def test_get_unmatched_players_using_post(self) -> None:
+    def test_get_unmatched_players_using_post(self):
         """Test case for get_unmatched_players_using_post
 
-        getUnmatchedPlayers
+        getUnmatchedPlayers  # noqa: E501
         """
         pass
 
-    def test_get_user_brackets_using_get(self) -> None:
+    def test_get_user_brackets_using_get(self):
         """Test case for get_user_brackets_using_get
 
-        getUserBrackets
+        getUserBrackets  # noqa: E501
         """
         pass
 
-    def test_get_user_club_role_using_post(self) -> None:
+    def test_get_user_club_role_using_post(self):
         """Test case for get_user_club_role_using_post
 
-        getUserClubRole
+        getUserClubRole  # noqa: E501
         """
         pass
 
-    def test_get_user_event_brackets_using_get(self) -> None:
+    def test_get_user_event_brackets_using_get(self):
         """Test case for get_user_event_brackets_using_get
 
-        getUserEventBrackets
+        getUserEventBrackets  # noqa: E501
         """
         pass
 
-    def test_get_user_matches_using_post(self) -> None:
+    def test_get_user_matches_using_post(self):
         """Test case for get_user_matches_using_post
 
-        getUserMatches
+        getUserMatches  # noqa: E501
         """
         pass
 
-    def test_get_valid_user_bracket_id_using_get(self) -> None:
+    def test_get_valid_user_bracket_id_using_get(self):
         """Test case for get_valid_user_bracket_id_using_get
 
-        getValidUserBracketId
+        getValidUserBracketId  # noqa: E501
         """
         pass
 
-    def test_get_waterfall_matches_using_get(self) -> None:
+    def test_get_waterfall_matches_using_get(self):
         """Test case for get_waterfall_matches_using_get
 
-        getWaterfallMatches
+        getWaterfallMatches  # noqa: E501
         """
         pass
 
-    def test_player_withdraw_by_director_using_post(self) -> None:
+    def test_player_withdraw_by_director_using_post(self):
         """Test case for player_withdraw_by_director_using_post
 
-        playerWithdrawByDirector
+        playerWithdrawByDirector  # noqa: E501
         """
         pass
 
-    def test_player_withdraw_using_post(self) -> None:
+    def test_player_withdraw_using_post(self):
         """Test case for player_withdraw_using_post
 
-        playerWithdraw
+        playerWithdraw  # noqa: E501
         """
         pass
 
-    def test_process_refunds_using_post(self) -> None:
+    def test_process_refunds_using_post(self):
         """Test case for process_refunds_using_post
 
-        processRefunds
+        processRefunds  # noqa: E501
         """
         pass
 
-    def test_register_users_to_bracket_using_post(self) -> None:
+    def test_register_users_to_bracket_using_post(self):
         """Test case for register_users_to_bracket_using_post
 
-        registerUsersToBracket
+        registerUsersToBracket  # noqa: E501
         """
         pass
 
-    def test_remove_match_from_queue_using_get(self) -> None:
+    def test_remove_match_from_queue_using_get(self):
         """Test case for remove_match_from_queue_using_get
 
-        removeMatchFromQueue
+        removeMatchFromQueue  # noqa: E501
         """
         pass
 
-    def test_save_bracket_using_put(self) -> None:
+    def test_save_bracket_using_put(self):
         """Test case for save_bracket_using_put
 
-        saveBracket
+        saveBracket  # noqa: E501
         """
         pass
 
-    def test_save_match_seeding_using_post(self) -> None:
+    def test_save_match_seeding_using_post(self):
         """Test case for save_match_seeding_using_post
 
-        saveMatchSeeding
+        saveMatchSeeding  # noqa: E501
         """
         pass
 
-    def test_save_teams_using_post(self) -> None:
+    def test_save_teams_using_post(self):
         """Test case for save_teams_using_post
 
-        saveTeams
+        saveTeams  # noqa: E501
         """
         pass
 
-    def test_seed_matches_using_get(self) -> None:
+    def test_seed_matches_using_get(self):
         """Test case for seed_matches_using_get
 
-        seedMatches
+        seedMatches  # noqa: E501
         """
         pass
 
-    def test_substitute_players_using_post(self) -> None:
+    def test_substitute_players_using_post(self):
         """Test case for substitute_players_using_post
 
-        substitutePlayers
+        substitutePlayers  # noqa: E501
         """
         pass
 
-    def test_switch_player_using_post(self) -> None:
+    def test_switch_player_using_post(self):
         """Test case for switch_player_using_post
 
-        switchPlayer
+        switchPlayer  # noqa: E501
         """
         pass
 
-    def test_switch_teams_using_post(self) -> None:
+    def test_switch_teams_using_post(self):
         """Test case for switch_teams_using_post
 
-        switchTeams
+        switchTeams  # noqa: E501
         """
         pass
 
-    def test_switch_wait_listed_teams_using_post(self) -> None:
+    def test_switch_wait_listed_teams_using_post(self):
         """Test case for switch_wait_listed_teams_using_post
 
-        switchWaitListedTeams
+        switchWaitListedTeams  # noqa: E501
         """
         pass
 
-    def test_switch_wait_listed_using_post(self) -> None:
+    def test_switch_wait_listed_using_post(self):
         """Test case for switch_wait_listed_using_post
 
-        switchWaitListed
+        switchWaitListed  # noqa: E501
         """
         pass
 
-    def test_update_bracket_approval_using_get(self) -> None:
+    def test_update_bracket_approval_using_get(self):
         """Test case for update_bracket_approval_using_get
 
-        updateBracketApproval
+        updateBracketApproval  # noqa: E501
         """
         pass
 

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.permission import Permission
+import dupr_backend
+from dupr_backend.models.permission import Permission  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestPermission(unittest.TestCase):
     """Permission unit test stubs"""
@@ -25,22 +28,22 @@ class TestPermission(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> Permission:
+    def make_instance(self, include_optional):
         """Test Permission
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `Permission`
         """
-        model = Permission()
-        if include_optional:
+        model = dupr_backend.models.permission.Permission()  # noqa: E501
+        if include_optional :
             return Permission(
                 operations = [
                     'ADD'
-                    ],
+                    ], 
                 resource = 'BRACKET'
             )
-        else:
+        else :
             return Permission(
                 resource = 'BRACKET',
         )

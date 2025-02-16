@@ -14,36 +14,38 @@
 
 import unittest
 
-from dupr_backend.api.chat_api import ChatApi
+import dupr_backend
+from dupr_backend.api.chat_api import ChatApi  # noqa: E501
+from dupr_backend.rest import ApiException
 
 
 class TestChatApi(unittest.TestCase):
     """ChatApi unit test stubs"""
 
-    def setUp(self) -> None:
-        self.api = ChatApi()
+    def setUp(self):
+        self.api = dupr_backend.api.chat_api.ChatApi()  # noqa: E501
 
-    def tearDown(self) -> None:
+    def tearDown(self):
         pass
 
-    def test_chat_token_using_get(self) -> None:
+    def test_chat_token_using_get(self):
         """Test case for chat_token_using_get
 
-        chatToken
+        chatToken  # noqa: E501
         """
         pass
 
-    def test_get_self_token_using_get(self) -> None:
+    def test_get_self_token_using_get(self):
         """Test case for get_self_token_using_get
 
-        getSelfToken
+        getSelfToken  # noqa: E501
         """
         pass
 
-    def test_update_user_using_post(self) -> None:
+    def test_update_user_using_post(self):
         """Test case for update_user_using_post
 
-        updateUser
+        updateUser  # noqa: E501
         """
         pass
 

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.member_ranking import MemberRanking
+import dupr_backend
+from dupr_backend.models.member_ranking import MemberRanking  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestMemberRanking(unittest.TestCase):
     """MemberRanking unit test stubs"""
@@ -25,24 +28,24 @@ class TestMemberRanking(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> MemberRanking:
+    def make_instance(self, include_optional):
         """Test MemberRanking
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MemberRanking`
         """
-        model = MemberRanking()
-        if include_optional:
+        model = dupr_backend.models.member_ranking.MemberRanking()  # noqa: E501
+        if include_optional :
             return MemberRanking(
-                full_name = '',
-                id = 56,
-                image_url = '',
-                ranking = 56,
-                rating = '',
+                full_name = '', 
+                id = 56, 
+                image_url = '', 
+                ranking = 56, 
+                rating = '', 
                 reliability = 56
             )
-        else:
+        else :
             return MemberRanking(
                 full_name = '',
                 id = 56,

@@ -17,104 +17,88 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List, Optional, Union
-from typing import Optional, Set
-from typing_extensions import Self
+
+from typing import Optional, Union
+from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr, validator
 
 class UpdateRegistrationRequest(BaseModel):
     """
     UpdateRegistrationRequest
-    """ # noqa: E501
-    bracket_fees_paid: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="bracketFeesPaid")
-    bracket_id: Optional[StrictInt] = Field(default=None, alias="bracketId")
-    event_fees_paid: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="eventFeesPaid")
-    is_registered: Optional[StrictBool] = Field(default=None, alias="isRegistered")
-    league_id: Optional[StrictInt] = Field(default=None, alias="leagueId")
-    payment_status: Optional[StrictStr] = Field(default=None, alias="paymentStatus")
-    registration_status: Optional[StrictStr] = Field(default=None, alias="registrationStatus")
-    user_id: Optional[StrictInt] = Field(default=None, alias="userId")
-    __properties: ClassVar[List[str]] = ["bracketFeesPaid", "bracketId", "eventFeesPaid", "isRegistered", "leagueId", "paymentStatus", "registrationStatus", "userId"]
+    """
+    bracket_fees_paid: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="bracketFeesPaid")
+    bracket_id: Optional[StrictInt] = Field(None, alias="bracketId")
+    event_fees_paid: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="eventFeesPaid")
+    is_registered: Optional[StrictBool] = Field(None, alias="isRegistered")
+    league_id: Optional[StrictInt] = Field(None, alias="leagueId")
+    payment_status: Optional[StrictStr] = Field(None, alias="paymentStatus")
+    registration_status: Optional[StrictStr] = Field(None, alias="registrationStatus")
+    user_id: Optional[StrictInt] = Field(None, alias="userId")
+    __properties = ["bracketFeesPaid", "bracketId", "eventFeesPaid", "isRegistered", "leagueId", "paymentStatus", "registrationStatus", "userId"]
 
-    @field_validator('payment_status')
+    @validator('payment_status')
     def payment_status_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING']):
+        if value not in ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING'):
             raise ValueError("must be one of enum values ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING')")
         return value
 
-    @field_validator('registration_status')
+    @validator('registration_status')
     def registration_status_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING']):
+        if value not in ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING'):
             raise ValueError("must be one of enum values ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING')")
         return value
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
+    class Config:
+        """Pydantic configuration"""
+        allow_population_by_field_name = True
+        validate_assignment = True
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+        return pprint.pformat(self.dict(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
+    def from_json(cls, json_str: str) -> UpdateRegistrationRequest:
         """Create an instance of UpdateRegistrationRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
+    def to_dict(self):
+        """Returns the dictionary representation of the model using alias"""
+        _dict = self.dict(by_alias=True,
+                          exclude={
+                          },
+                          exclude_none=True)
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+    def from_dict(cls, obj: dict) -> UpdateRegistrationRequest:
         """Create an instance of UpdateRegistrationRequest from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+            return UpdateRegistrationRequest.parse_obj(obj)
 
-        _obj = cls.model_validate({
-            "bracketFeesPaid": obj.get("bracketFeesPaid"),
-            "bracketId": obj.get("bracketId"),
-            "eventFeesPaid": obj.get("eventFeesPaid"),
-            "isRegistered": obj.get("isRegistered"),
-            "leagueId": obj.get("leagueId"),
-            "paymentStatus": obj.get("paymentStatus"),
-            "registrationStatus": obj.get("registrationStatus"),
-            "userId": obj.get("userId")
+        _obj = UpdateRegistrationRequest.parse_obj({
+            "bracket_fees_paid": obj.get("bracketFeesPaid"),
+            "bracket_id": obj.get("bracketId"),
+            "event_fees_paid": obj.get("eventFeesPaid"),
+            "is_registered": obj.get("isRegistered"),
+            "league_id": obj.get("leagueId"),
+            "payment_status": obj.get("paymentStatus"),
+            "registration_status": obj.get("registrationStatus"),
+            "user_id": obj.get("userId")
         })
         return _obj
 

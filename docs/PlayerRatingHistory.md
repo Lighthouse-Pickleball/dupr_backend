@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **changed_by_admin** | **bool** |  | 
@@ -28,12 +27,12 @@ json = "{}"
 # create an instance of PlayerRatingHistory from a JSON string
 player_rating_history_instance = PlayerRatingHistory.from_json(json)
 # print the JSON string representation of the object
-print(PlayerRatingHistory.to_json())
+print PlayerRatingHistory.to_json()
 
 # convert the object into a dict
 player_rating_history_dict = player_rating_history_instance.to_dict()
 # create an instance of PlayerRatingHistory from a dict
-player_rating_history_from_dict = PlayerRatingHistory.from_dict(player_rating_history_dict)
+player_rating_history_form_dict = player_rating_history.from_dict(player_rating_history_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

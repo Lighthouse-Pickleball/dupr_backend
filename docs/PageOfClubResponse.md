@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **empty** | **bool** | Are results empty | 
@@ -24,12 +23,12 @@ json = "{}"
 # create an instance of PageOfClubResponse from a JSON string
 page_of_club_response_instance = PageOfClubResponse.from_json(json)
 # print the JSON string representation of the object
-print(PageOfClubResponse.to_json())
+print PageOfClubResponse.to_json()
 
 # convert the object into a dict
 page_of_club_response_dict = page_of_club_response_instance.to_dict()
 # create an instance of PageOfClubResponse from a dict
-page_of_club_response_from_dict = PageOfClubResponse.from_dict(page_of_club_response_dict)
+page_of_club_response_form_dict = page_of_club_response.from_dict(page_of_club_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.user_list_request import UserListRequest
+import dupr_backend
+from dupr_backend.models.user_list_request import UserListRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestUserListRequest(unittest.TestCase):
     """UserListRequest unit test stubs"""
@@ -25,19 +28,19 @@ class TestUserListRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> UserListRequest:
+    def make_instance(self, include_optional):
         """Test UserListRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `UserListRequest`
         """
-        model = UserListRequest()
-        if include_optional:
+        model = dupr_backend.models.user_list_request.UserListRequest()  # noqa: E501
+        if include_optional :
             return UserListRequest(
                 user_ids = [1231231, 9999999]
             )
-        else:
+        else :
             return UserListRequest(
                 user_ids = [1231231, 9999999],
         )

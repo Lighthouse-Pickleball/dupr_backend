@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.payment_details_response import PaymentDetailsResponse
+import dupr_backend
+from dupr_backend.models.payment_details_response import PaymentDetailsResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestPaymentDetailsResponse(unittest.TestCase):
     """PaymentDetailsResponse unit test stubs"""
@@ -25,27 +28,27 @@ class TestPaymentDetailsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PaymentDetailsResponse:
+    def make_instance(self, include_optional):
         """Test PaymentDetailsResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PaymentDetailsResponse`
         """
-        model = PaymentDetailsResponse()
-        if include_optional:
+        model = dupr_backend.models.payment_details_response.PaymentDetailsResponse()  # noqa: E501
+        if include_optional :
             return PaymentDetailsResponse(
-                amount_paid = 100.0,
-                event_fee = 1.337,
-                is_club_member = True,
-                is_registered = True,
-                is_wait_listed = True,
-                payment_capture = True,
-                payment_status = 'ACTIVE',
-                player_status = 'ACTIVE',
+                amount_paid = 100.0, 
+                event_fee = 1.337, 
+                is_club_member = True, 
+                is_registered = True, 
+                is_wait_listed = True, 
+                payment_capture = True, 
+                payment_status = 'ACTIVE', 
+                player_status = 'ACTIVE', 
                 refunded_amount = 10.0
             )
-        else:
+        else :
             return PaymentDetailsResponse(
                 amount_paid = 100.0,
                 event_fee = 1.337,

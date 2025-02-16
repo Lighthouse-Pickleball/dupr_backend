@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.revenue_model import RevenueModel
+import dupr_backend
+from dupr_backend.models.revenue_model import RevenueModel  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestRevenueModel(unittest.TestCase):
     """RevenueModel unit test stubs"""
@@ -25,20 +28,20 @@ class TestRevenueModel(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> RevenueModel:
+    def make_instance(self, include_optional):
         """Test RevenueModel
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `RevenueModel`
         """
-        model = RevenueModel()
-        if include_optional:
+        model = dupr_backend.models.revenue_model.RevenueModel()  # noqa: E501
+        if include_optional :
             return RevenueModel(
-                type = 'ABSOLUTE',
+                type = 'ABSOLUTE', 
                 value = 1.337
             )
-        else:
+        else :
             return RevenueModel(
                 type = 'ABSOLUTE',
                 value = 1.337,

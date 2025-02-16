@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **empty** | **bool** | Are results empty | 
@@ -24,12 +23,12 @@ json = "{}"
 # create an instance of PageOfMemberRanking from a JSON string
 page_of_member_ranking_instance = PageOfMemberRanking.from_json(json)
 # print the JSON string representation of the object
-print(PageOfMemberRanking.to_json())
+print PageOfMemberRanking.to_json()
 
 # convert the object into a dict
 page_of_member_ranking_dict = page_of_member_ranking_instance.to_dict()
 # create an instance of PageOfMemberRanking from a dict
-page_of_member_ranking_from_dict = PageOfMemberRanking.from_dict(page_of_member_ranking_dict)
+page_of_member_ranking_form_dict = page_of_member_ranking.from_dict(page_of_member_ranking_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

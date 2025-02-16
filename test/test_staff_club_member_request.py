@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.staff_club_member_request import StaffClubMemberRequest
+import dupr_backend
+from dupr_backend.models.staff_club_member_request import StaffClubMemberRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestStaffClubMemberRequest(unittest.TestCase):
     """StaffClubMemberRequest unit test stubs"""
@@ -25,25 +28,25 @@ class TestStaffClubMemberRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> StaffClubMemberRequest:
+    def make_instance(self, include_optional):
         """Test StaffClubMemberRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `StaffClubMemberRequest`
         """
-        model = StaffClubMemberRequest()
-        if include_optional:
+        model = dupr_backend.models.staff_club_member_request.StaffClubMemberRequest()  # noqa: E501
+        if include_optional :
             return StaffClubMemberRequest(
-                club_id = 1231231,
-                email = 'john@xyz.com',
-                iso_alpha2_code = 'US',
-                name = 'John Doe',
-                phone = '211564789',
-                role_id = 1231231,
+                club_id = 1231231, 
+                email = 'john@xyz.com', 
+                iso_alpha2_code = 'US', 
+                name = 'John Doe', 
+                phone = '211564789', 
+                role_id = 1231231, 
                 user_id = 1231231
             )
-        else:
+        else :
             return StaffClubMemberRequest(
                 club_id = 1231231,
                 email = 'john@xyz.com',

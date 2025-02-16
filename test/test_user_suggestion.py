@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.user_suggestion import UserSuggestion
+import dupr_backend
+from dupr_backend.models.user_suggestion import UserSuggestion  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestUserSuggestion(unittest.TestCase):
     """UserSuggestion unit test stubs"""
@@ -25,30 +28,30 @@ class TestUserSuggestion(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> UserSuggestion:
+    def make_instance(self, include_optional):
         """Test UserSuggestion
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `UserSuggestion`
         """
-        model = UserSuggestion()
-        if include_optional:
+        model = dupr_backend.models.user_suggestion.UserSuggestion()  # noqa: E501
+        if include_optional :
             return UserSuggestion(
-                address = '',
+                address = '', 
                 brief_followers = [
                     dupr_backend.models.user_follow.UserFollow(
                         name = '', 
                         user_id = 56, )
-                    ],
-                dupr_id = '',
-                follower_count = 56,
-                image_url = '',
-                name = '',
-                status = 'ACTIVE',
+                    ], 
+                dupr_id = '', 
+                follower_count = 56, 
+                image_url = '', 
+                name = '', 
+                status = 'ACTIVE', 
                 user_id = 56
             )
-        else:
+        else :
             return UserSuggestion(
                 dupr_id = '',
                 name = '',

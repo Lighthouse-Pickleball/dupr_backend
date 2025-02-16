@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.club_role_response import ClubRoleResponse
+import dupr_backend
+from dupr_backend.models.club_role_response import ClubRoleResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestClubRoleResponse(unittest.TestCase):
     """ClubRoleResponse unit test stubs"""
@@ -25,20 +28,20 @@ class TestClubRoleResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ClubRoleResponse:
+    def make_instance(self, include_optional):
         """Test ClubRoleResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ClubRoleResponse`
         """
-        model = ClubRoleResponse()
-        if include_optional:
+        model = dupr_backend.models.club_role_response.ClubRoleResponse()  # noqa: E501
+        if include_optional :
             return ClubRoleResponse(
-                role = '',
+                role = '', 
                 role_id = 56
             )
-        else:
+        else :
             return ClubRoleResponse(
         )
         """

@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **failed_reason** | **str** |  | [optional] 
@@ -22,12 +21,12 @@ json = "{}"
 # create an instance of SwitchBracketResponse from a JSON string
 switch_bracket_response_instance = SwitchBracketResponse.from_json(json)
 # print the JSON string representation of the object
-print(SwitchBracketResponse.to_json())
+print SwitchBracketResponse.to_json()
 
 # convert the object into a dict
 switch_bracket_response_dict = switch_bracket_response_instance.to_dict()
 # create an instance of SwitchBracketResponse from a dict
-switch_bracket_response_from_dict = SwitchBracketResponse.from_dict(switch_bracket_response_dict)
+switch_bracket_response_form_dict = switch_bracket_response.from_dict(switch_bracket_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

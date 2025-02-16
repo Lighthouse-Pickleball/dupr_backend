@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.page_of_league_teams_response import PageOfLeagueTeamsResponse
+import dupr_backend
+from dupr_backend.models.page_of_league_teams_response import PageOfLeagueTeamsResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestPageOfLeagueTeamsResponse(unittest.TestCase):
     """PageOfLeagueTeamsResponse unit test stubs"""
@@ -25,19 +28,19 @@ class TestPageOfLeagueTeamsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PageOfLeagueTeamsResponse:
+    def make_instance(self, include_optional):
         """Test PageOfLeagueTeamsResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PageOfLeagueTeamsResponse`
         """
-        model = PageOfLeagueTeamsResponse()
-        if include_optional:
+        model = dupr_backend.models.page_of_league_teams_response.PageOfLeagueTeamsResponse()  # noqa: E501
+        if include_optional :
             return PageOfLeagueTeamsResponse(
-                empty = False,
-                has_more = False,
-                has_previous = True,
+                empty = False, 
+                has_more = False, 
+                has_previous = True, 
                 hits = [
                     dupr_backend.models.league_teams_response.LeagueTeamsResponse(
                         partner_status = 'ACTIVE', 
@@ -156,13 +159,13 @@ class TestPageOfLeagueTeamsResponse(unittest.TestCase):
                         player2 = , 
                         registration_id = 56, 
                         team_status = 'ACTIVE', )
-                    ],
-                limit = 10,
-                offset = 90,
-                total = 100,
+                    ], 
+                limit = 10, 
+                offset = 90, 
+                total = 100, 
                 total_value_relation = 'GREATER_THAN_OR_EQUAL_TO'
             )
-        else:
+        else :
             return PageOfLeagueTeamsResponse(
                 empty = False,
                 has_more = False,

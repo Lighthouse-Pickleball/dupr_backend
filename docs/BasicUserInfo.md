@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **email** | **str** |  | 
@@ -20,12 +19,12 @@ json = "{}"
 # create an instance of BasicUserInfo from a JSON string
 basic_user_info_instance = BasicUserInfo.from_json(json)
 # print the JSON string representation of the object
-print(BasicUserInfo.to_json())
+print BasicUserInfo.to_json()
 
 # convert the object into a dict
 basic_user_info_dict = basic_user_info_instance.to_dict()
 # create an instance of BasicUserInfo from a dict
-basic_user_info_from_dict = BasicUserInfo.from_dict(basic_user_info_dict)
+basic_user_info_form_dict = basic_user_info.from_dict(basic_user_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

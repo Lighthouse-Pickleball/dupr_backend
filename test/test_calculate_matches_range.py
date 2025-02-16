@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.calculate_matches_range import CalculateMatchesRange
+import dupr_backend
+from dupr_backend.models.calculate_matches_range import CalculateMatchesRange  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestCalculateMatchesRange(unittest.TestCase):
     """CalculateMatchesRange unit test stubs"""
@@ -25,20 +28,20 @@ class TestCalculateMatchesRange(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> CalculateMatchesRange:
+    def make_instance(self, include_optional):
         """Test CalculateMatchesRange
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `CalculateMatchesRange`
         """
-        model = CalculateMatchesRange()
-        if include_optional:
+        model = dupr_backend.models.calculate_matches_range.CalculateMatchesRange()  # noqa: E501
+        if include_optional :
             return CalculateMatchesRange(
-                var_from = 56,
+                var_from = 56, 
                 to = 56
             )
-        else:
+        else :
             return CalculateMatchesRange(
         )
         """

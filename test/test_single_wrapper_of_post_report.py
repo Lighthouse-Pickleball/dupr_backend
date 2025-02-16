@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.single_wrapper_of_post_report import SingleWrapperOfPostReport
+import dupr_backend
+from dupr_backend.models.single_wrapper_of_post_report import SingleWrapperOfPostReport  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSingleWrapperOfPostReport(unittest.TestCase):
     """SingleWrapperOfPostReport unit test stubs"""
@@ -25,17 +28,17 @@ class TestSingleWrapperOfPostReport(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperOfPostReport:
+    def make_instance(self, include_optional):
         """Test SingleWrapperOfPostReport
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfPostReport`
         """
-        model = SingleWrapperOfPostReport()
-        if include_optional:
+        model = dupr_backend.models.single_wrapper_of_post_report.SingleWrapperOfPostReport()  # noqa: E501
+        if include_optional :
             return SingleWrapperOfPostReport(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 result = dupr_backend.models.post_report.PostReport(
                     count_report = 56, 
                     created_at = 56, 
@@ -46,10 +49,10 @@ class TestSingleWrapperOfPostReport(unittest.TestCase):
                     reported_id = '', 
                     reporter_id = 56, 
                     status = 'APPROVED', 
-                    updated_at = 56, ),
+                    updated_at = 56, ), 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return SingleWrapperOfPostReport(
         )
         """

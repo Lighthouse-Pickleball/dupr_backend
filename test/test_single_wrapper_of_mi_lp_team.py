@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.single_wrapper_of_mi_lp_team import SingleWrapperOfMiLPTeam
+import dupr_backend
+from dupr_backend.models.single_wrapper_of_mi_lp_team import SingleWrapperOfMiLPTeam  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSingleWrapperOfMiLPTeam(unittest.TestCase):
     """SingleWrapperOfMiLPTeam unit test stubs"""
@@ -25,17 +28,17 @@ class TestSingleWrapperOfMiLPTeam(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperOfMiLPTeam:
+    def make_instance(self, include_optional):
         """Test SingleWrapperOfMiLPTeam
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfMiLPTeam`
         """
-        model = SingleWrapperOfMiLPTeam()
-        if include_optional:
+        model = dupr_backend.models.single_wrapper_of_mi_lp_team.SingleWrapperOfMiLPTeam()  # noqa: E501
+        if include_optional :
             return SingleWrapperOfMiLPTeam(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 result = dupr_backend.models.mi_lp_team.MiLPTeam(
                     created = '', 
                     status = 'ACTIVE', 
@@ -53,10 +56,10 @@ class TestSingleWrapperOfMiLPTeam(unittest.TestCase):
                             team_id = 56, 
                             user_id = 56, )
                         ], 
-                    team_name = '', ),
+                    team_name = '', ), 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return SingleWrapperOfMiLPTeam(
         )
         """

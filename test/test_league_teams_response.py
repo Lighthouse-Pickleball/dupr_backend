@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.league_teams_response import LeagueTeamsResponse
+import dupr_backend
+from dupr_backend.models.league_teams_response import LeagueTeamsResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestLeagueTeamsResponse(unittest.TestCase):
     """LeagueTeamsResponse unit test stubs"""
@@ -25,17 +28,17 @@ class TestLeagueTeamsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> LeagueTeamsResponse:
+    def make_instance(self, include_optional):
         """Test LeagueTeamsResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `LeagueTeamsResponse`
         """
-        model = LeagueTeamsResponse()
-        if include_optional:
+        model = dupr_backend.models.league_teams_response.LeagueTeamsResponse()  # noqa: E501
+        if include_optional :
             return LeagueTeamsResponse(
-                partner_status = 'ACTIVE',
+                partner_status = 'ACTIVE', 
                 player1 = dupr_backend.models.player_response.PlayerResponse(
                     age = 55, 
                     display_username = True, 
@@ -147,7 +150,7 @@ class TestLeagueTeamsResponse(unittest.TestCase):
                         ], 
                     team_status = 'ACTIVE/INACTIVE', 
                     username = 'X AE A-XII', 
-                    verified_email = False, ),
+                    verified_email = False, ), 
                 player2 = dupr_backend.models.player_response.PlayerResponse(
                     age = 55, 
                     display_username = True, 
@@ -259,11 +262,11 @@ class TestLeagueTeamsResponse(unittest.TestCase):
                         ], 
                     team_status = 'ACTIVE/INACTIVE', 
                     username = 'X AE A-XII', 
-                    verified_email = False, ),
-                registration_id = 56,
+                    verified_email = False, ), 
+                registration_id = 56, 
                 team_status = 'ACTIVE'
             )
-        else:
+        else :
             return LeagueTeamsResponse(
                 player1 = dupr_backend.models.player_response.PlayerResponse(
                     age = 55, 

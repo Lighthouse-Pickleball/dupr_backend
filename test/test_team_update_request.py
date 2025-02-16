@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.team_update_request import TeamUpdateRequest
+import dupr_backend
+from dupr_backend.models.team_update_request import TeamUpdateRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestTeamUpdateRequest(unittest.TestCase):
     """TeamUpdateRequest unit test stubs"""
@@ -25,27 +28,27 @@ class TestTeamUpdateRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> TeamUpdateRequest:
+    def make_instance(self, include_optional):
         """Test TeamUpdateRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `TeamUpdateRequest`
         """
-        model = TeamUpdateRequest()
-        if include_optional:
+        model = dupr_backend.models.team_update_request.TeamUpdateRequest()  # noqa: E501
+        if include_optional :
             return TeamUpdateRequest(
-                game1 = 11,
-                game2 = -1,
-                game3 = -1,
-                game4 = -1,
-                game5 = -1,
-                id = 56,
-                player1 = 56,
-                player2 = 56,
+                game1 = 11, 
+                game2 = -1, 
+                game3 = -1, 
+                game4 = -1, 
+                game5 = -1, 
+                id = 56, 
+                player1 = 56, 
+                player2 = 56, 
                 winner = True
             )
-        else:
+        else :
             return TeamUpdateRequest(
                 player1 = 56,
         )

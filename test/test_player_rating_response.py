@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.player_rating_response import PlayerRatingResponse
+import dupr_backend
+from dupr_backend.models.player_rating_response import PlayerRatingResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestPlayerRatingResponse(unittest.TestCase):
     """PlayerRatingResponse unit test stubs"""
@@ -25,30 +28,30 @@ class TestPlayerRatingResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PlayerRatingResponse:
+    def make_instance(self, include_optional):
         """Test PlayerRatingResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PlayerRatingResponse`
         """
-        model = PlayerRatingResponse()
-        if include_optional:
+        model = dupr_backend.models.player_rating_response.PlayerRatingResponse()  # noqa: E501
+        if include_optional :
             return PlayerRatingResponse(
-                default_rating = 'DOUBLES',
-                doubles = '2.864',
-                doubles_provisional = True,
-                doubles_reliability_score = 10.0,
-                doubles_verified = '2.75',
+                default_rating = 'DOUBLES', 
+                doubles = '2.864', 
+                doubles_provisional = True, 
+                doubles_reliability_score = 10.0, 
+                doubles_verified = '2.75', 
                 provisional_ratings = dupr_backend.models.provisional_rating.ProvisionalRating(
                     doubles_rating = 3.5, 
-                    singles_rating = 3.5, ),
-                singles = '4.125',
-                singles_provisional = True,
-                singles_reliability_score = 10.0,
+                    singles_rating = 3.5, ), 
+                singles = '4.125', 
+                singles_provisional = True, 
+                singles_reliability_score = 10.0, 
                 singles_verified = '4.1'
             )
-        else:
+        else :
             return PlayerRatingResponse(
         )
         """

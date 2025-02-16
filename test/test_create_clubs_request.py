@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.create_clubs_request import CreateClubsRequest
+import dupr_backend
+from dupr_backend.models.create_clubs_request import CreateClubsRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestCreateClubsRequest(unittest.TestCase):
     """CreateClubsRequest unit test stubs"""
@@ -25,30 +28,30 @@ class TestCreateClubsRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> CreateClubsRequest:
+    def make_instance(self, include_optional):
         """Test CreateClubsRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `CreateClubsRequest`
         """
-        model = CreateClubsRequest()
-        if include_optional:
+        model = dupr_backend.models.create_clubs_request.CreateClubsRequest()  # noqa: E501
+        if include_optional :
             return CreateClubsRequest(
-                club_name = 'Pickleball Club',
-                currency_code = 'USD',
-                director_email = 'john.doe@mmm.com',
-                director_name = 'John Doe',
-                director_phone = '+123456789',
-                dupr_id = 'K1RRD1',
-                iso_code_club = 'CA',
-                iso_code_director = 'US',
-                phone_number = '+123456789',
-                place_id = 'ChIJQabAAlSEj4ARYHQBAw8MY7A=',
-                revenue_type = 'ABSOLUTE/RELATIVE',
+                club_name = 'Pickleball Club', 
+                currency_code = 'USD', 
+                director_email = 'john.doe@mmm.com', 
+                director_name = 'John Doe', 
+                director_phone = '+123456789', 
+                dupr_id = 'K1RRD1', 
+                iso_code_club = 'CA', 
+                iso_code_director = 'US', 
+                phone_number = '+123456789', 
+                place_id = 'ChIJQabAAlSEj4ARYHQBAw8MY7A=', 
+                revenue_type = 'ABSOLUTE/RELATIVE', 
                 revenue_value = 1.0
             )
-        else:
+        else :
             return CreateClubsRequest(
                 club_name = 'Pickleball Club',
                 currency_code = 'USD',

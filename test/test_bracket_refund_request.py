@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.bracket_refund_request import BracketRefundRequest
+import dupr_backend
+from dupr_backend.models.bracket_refund_request import BracketRefundRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestBracketRefundRequest(unittest.TestCase):
     """BracketRefundRequest unit test stubs"""
@@ -25,24 +28,24 @@ class TestBracketRefundRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> BracketRefundRequest:
+    def make_instance(self, include_optional):
         """Test BracketRefundRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `BracketRefundRequest`
         """
-        model = BracketRefundRequest()
-        if include_optional:
+        model = dupr_backend.models.bracket_refund_request.BracketRefundRequest()  # noqa: E501
+        if include_optional :
             return BracketRefundRequest(
-                bracket_id = 45785789,
-                bracket_name = '45785789',
-                process_refund = False,
-                refund_amount = 45785789,
-                registration_id = 45785789,
+                bracket_id = 45785789, 
+                bracket_name = '45785789', 
+                process_refund = False, 
+                refund_amount = 45785789, 
+                registration_id = 45785789, 
                 withdraw_player = False
             )
-        else:
+        else :
             return BracketRefundRequest(
                 bracket_id = 45785789,
                 bracket_name = '45785789',

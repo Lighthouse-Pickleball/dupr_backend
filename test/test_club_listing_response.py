@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.club_listing_response import ClubListingResponse
+import dupr_backend
+from dupr_backend.models.club_listing_response import ClubListingResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestClubListingResponse(unittest.TestCase):
     """ClubListingResponse unit test stubs"""
@@ -25,26 +28,26 @@ class TestClubListingResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ClubListingResponse:
+    def make_instance(self, include_optional):
         """Test ClubListingResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ClubListingResponse`
         """
-        model = ClubListingResponse()
-        if include_optional:
+        model = dupr_backend.models.club_listing_response.ClubListingResponse()  # noqa: E501
+        if include_optional :
             return ClubListingResponse(
-                club_id = 1231231,
-                club_member_count = 12,
-                club_name = 'Stillwater Pickleball',
-                created = '2020-03-04T17:21:16.000Z',
-                media_url = '4684651981',
+                club_id = 1231231, 
+                club_member_count = 12, 
+                club_name = 'Stillwater Pickleball', 
+                created = '2020-03-04T17:21:16.000Z', 
+                media_url = '4684651981', 
                 role = dupr_backend.models.club_role_response.ClubRoleResponse(
-                    role_id = 56, ),
+                    role_id = 56, ), 
                 short_address = 'Miami-Dade County, FL, US'
             )
-        else:
+        else :
             return ClubListingResponse(
                 club_id = 1231231,
                 club_name = 'Stillwater Pickleball',

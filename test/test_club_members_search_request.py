@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.club_members_search_request import ClubMembersSearchRequest
+import dupr_backend
+from dupr_backend.models.club_members_search_request import ClubMembersSearchRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestClubMembersSearchRequest(unittest.TestCase):
     """ClubMembersSearchRequest unit test stubs"""
@@ -25,17 +28,17 @@ class TestClubMembersSearchRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ClubMembersSearchRequest:
+    def make_instance(self, include_optional):
         """Test ClubMembersSearchRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ClubMembersSearchRequest`
         """
-        model = ClubMembersSearchRequest()
-        if include_optional:
+        model = dupr_backend.models.club_members_search_request.ClubMembersSearchRequest()  # noqa: E501
+        if include_optional :
             return ClubMembersSearchRequest(
-                exclude = [7828935307],
+                exclude = [7828935307], 
                 filter = dupr_backend.models.club_members_search_filter.ClubMembersSearchFilter(
                     age = dupr_backend.models.club_members_age_filter.ClubMembersAgeFilter(
                         max_age = 25.0, 
@@ -53,17 +56,17 @@ class TestClubMembersSearchRequest(unittest.TestCase):
                         singles = dupr_backend.models.club_members_rating_range.ClubMembersRatingRange(
                             max_rating = 3.3, 
                             min_rating = 2.3, ), ), 
-                    status = 'ACTIVE', ),
-                include_pending_players = True,
-                include_staff = True,
-                limit = 10,
-                offset = 0,
-                query = '*',
+                    status = 'ACTIVE', ), 
+                include_pending_players = True, 
+                include_staff = True, 
+                limit = 10, 
+                offset = 0, 
+                query = '*', 
                 sort = dupr_backend.models.club_members_search_sort.ClubMembersSearchSort(
                     order = 'ASC/DESC', 
                     parameter = 'fullNameSort/doubles/doublesVerified/singles/singlesVerified/created', )
             )
-        else:
+        else :
             return ClubMembersSearchRequest(
                 limit = 10,
                 offset = 0,

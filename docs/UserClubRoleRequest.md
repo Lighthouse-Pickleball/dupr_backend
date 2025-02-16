@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bracket_id** | **int** |  | 
@@ -18,12 +17,12 @@ json = "{}"
 # create an instance of UserClubRoleRequest from a JSON string
 user_club_role_request_instance = UserClubRoleRequest.from_json(json)
 # print the JSON string representation of the object
-print(UserClubRoleRequest.to_json())
+print UserClubRoleRequest.to_json()
 
 # convert the object into a dict
 user_club_role_request_dict = user_club_role_request_instance.to_dict()
 # create an instance of UserClubRoleRequest from a dict
-user_club_role_request_from_dict = UserClubRoleRequest.from_dict(user_club_role_request_dict)
+user_club_role_request_form_dict = user_club_role_request.from_dict(user_club_role_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

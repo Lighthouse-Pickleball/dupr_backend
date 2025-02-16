@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.auth_response import AuthResponse
+import dupr_backend
+from dupr_backend.models.auth_response import AuthResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestAuthResponse(unittest.TestCase):
     """AuthResponse unit test stubs"""
@@ -25,18 +28,18 @@ class TestAuthResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AuthResponse:
+    def make_instance(self, include_optional):
         """Test AuthResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `AuthResponse`
         """
-        model = AuthResponse()
-        if include_optional:
+        model = dupr_backend.models.auth_response.AuthResponse()  # noqa: E501
+        if include_optional :
             return AuthResponse(
-                access_token = 'eyJhbGciOiJSUzUxMiJ9.',
-                refresh_token = 'eyJhbGciOiJSUzUxMiJ9.',
+                access_token = 'eyJhbGciOiJSUzUxMiJ9.', 
+                refresh_token = 'eyJhbGciOiJSUzUxMiJ9.', 
                 user = dupr_backend.models.user_response.UserResponse(
                     active = True, 
                     addresses = [
@@ -100,7 +103,7 @@ class TestAuthResponse(unittest.TestCase):
                         enable_sms = False, ), 
                     username = 'X AE A-XII', )
             )
-        else:
+        else :
             return AuthResponse(
                 access_token = 'eyJhbGciOiJSUzUxMiJ9.',
                 refresh_token = 'eyJhbGciOiJSUzUxMiJ9.',

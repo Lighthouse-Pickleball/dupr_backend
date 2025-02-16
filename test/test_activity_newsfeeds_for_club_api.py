@@ -14,120 +14,122 @@
 
 import unittest
 
-from dupr_backend.api.activity_newsfeeds_for_club_api import ActivityNewsfeedsForClubApi
+import dupr_backend
+from dupr_backend.api.activity_newsfeeds_for_club_api import ActivityNewsfeedsForClubApi  # noqa: E501
+from dupr_backend.rest import ApiException
 
 
 class TestActivityNewsfeedsForClubApi(unittest.TestCase):
     """ActivityNewsfeedsForClubApi unit test stubs"""
 
-    def setUp(self) -> None:
-        self.api = ActivityNewsfeedsForClubApi()
+    def setUp(self):
+        self.api = dupr_backend.api.activity_newsfeeds_for_club_api.ActivityNewsfeedsForClubApi()  # noqa: E501
 
-    def tearDown(self) -> None:
+    def tearDown(self):
         pass
 
-    def test_comments_using_get(self) -> None:
+    def test_comments_using_get(self):
         """Test case for comments_using_get
 
-        comments
+        comments  # noqa: E501
         """
         pass
 
-    def test_create_post_using_post1(self) -> None:
+    def test_create_post_using_post1(self):
         """Test case for create_post_using_post1
 
-        createPost
+        createPost  # noqa: E501
         """
         pass
 
-    def test_delete_comment_using_delete(self) -> None:
+    def test_delete_comment_using_delete(self):
         """Test case for delete_comment_using_delete
 
-        deleteComment
+        deleteComment  # noqa: E501
         """
         pass
 
-    def test_edit_post_using_put(self) -> None:
+    def test_edit_post_using_put(self):
         """Test case for edit_post_using_put
 
-        editPost
+        editPost  # noqa: E501
         """
         pass
 
-    def test_fetch_feeds_using_get1(self) -> None:
+    def test_fetch_feeds_using_get1(self):
         """Test case for fetch_feeds_using_get1
 
-        fetchFeeds
+        fetchFeeds  # noqa: E501
         """
         pass
 
-    def test_follow_using_post1(self) -> None:
+    def test_follow_using_post1(self):
         """Test case for follow_using_post1
 
-        follow
+        follow  # noqa: E501
         """
         pass
 
-    def test_get_pinned_posts_using_get(self) -> None:
+    def test_get_pinned_posts_using_get(self):
         """Test case for get_pinned_posts_using_get
 
-        getPinnedPosts
+        getPinnedPosts  # noqa: E501
         """
         pass
 
-    def test_get_post_detail_using_get(self) -> None:
+    def test_get_post_detail_using_get(self):
         """Test case for get_post_detail_using_get
 
-        getPostDetail
+        getPostDetail  # noqa: E501
         """
         pass
 
-    def test_pin_post_using_post(self) -> None:
+    def test_pin_post_using_post(self):
         """Test case for pin_post_using_post
 
-        pinPost
+        pinPost  # noqa: E501
         """
         pass
 
-    def test_react_using_post1(self) -> None:
+    def test_react_using_post1(self):
         """Test case for react_using_post1
 
-        react
+        react  # noqa: E501
         """
         pass
 
-    def test_reactions_using_get(self) -> None:
+    def test_reactions_using_get(self):
         """Test case for reactions_using_get
 
-        reactions
+        reactions  # noqa: E501
         """
         pass
 
-    def test_remove_post_using_delete(self) -> None:
+    def test_remove_post_using_delete(self):
         """Test case for remove_post_using_delete
 
-        removePost
+        removePost  # noqa: E501
         """
         pass
 
-    def test_unfollow_using_delete1(self) -> None:
+    def test_unfollow_using_delete1(self):
         """Test case for unfollow_using_delete1
 
-        unfollow
+        unfollow  # noqa: E501
         """
         pass
 
-    def test_unpin_post_using_delete(self) -> None:
+    def test_unpin_post_using_delete(self):
         """Test case for unpin_post_using_delete
 
-        unpinPost
+        unpinPost  # noqa: E501
         """
         pass
 
-    def test_update_comment_using_put(self) -> None:
+    def test_update_comment_using_put(self):
         """Test case for update_comment_using_put
 
-        updateComment
+        updateComment  # noqa: E501
         """
         pass
 

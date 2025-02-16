@@ -17,184 +17,168 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List, Optional
+
+from typing import List, Optional
+from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist, validator
 from dupr_backend.models.score_format_response import ScoreFormatResponse
 from dupr_backend.models.team_response import TeamResponse
-from typing import Optional, Set
-from typing_extensions import Self
 
 class LeagueMatchResponse(BaseModel):
     """
     LeagueMatchResponse
-    """ # noqa: E501
-    bracket_id: StrictInt = Field(alias="bracketId")
-    bracket_name: StrictStr = Field(alias="bracketName")
+    """
+    bracket_id: StrictInt = Field(..., alias="bracketId")
+    bracket_name: StrictStr = Field(..., alias="bracketName")
     confirmed: Optional[StrictBool] = None
-    display_identity: StrictStr = Field(alias="displayIdentity")
-    end_date: StrictStr = Field(alias="endDate")
-    event_format: StrictStr = Field(alias="eventFormat")
-    impacted_draw: StrictBool = Field(alias="impactedDraw")
-    in_queue: Optional[StrictBool] = Field(default=None, alias="inQueue")
-    is_bye_match: StrictBool = Field(alias="isByeMatch")
-    is_forfeited: Optional[StrictBool] = Field(default=None, alias="isForfeited")
-    is_next_round_confirmed: StrictBool = Field(alias="isNextRoundConfirmed")
+    display_identity: StrictStr = Field(..., alias="displayIdentity")
+    end_date: StrictStr = Field(..., alias="endDate")
+    event_format: StrictStr = Field(..., alias="eventFormat")
+    impacted_draw: StrictBool = Field(..., alias="impactedDraw")
+    in_queue: Optional[StrictBool] = Field(None, alias="inQueue")
+    is_bye_match: StrictBool = Field(..., alias="isByeMatch")
+    is_forfeited: Optional[StrictBool] = Field(None, alias="isForfeited")
+    is_next_round_confirmed: StrictBool = Field(..., alias="isNextRoundConfirmed")
     is_team_1_tbd: Optional[StrictBool] = None
     is_team_2_tbd: Optional[StrictBool] = None
-    league_id: StrictInt = Field(alias="leagueId")
-    league_match_id: StrictInt = Field(alias="leagueMatchId")
-    league_match_status: Optional[StrictStr] = Field(default=None, alias="leagueMatchStatus")
-    league_name: StrictStr = Field(alias="leagueName")
-    location: StrictStr
-    match_date: StrictStr = Field(alias="matchDate")
-    match_id: Optional[StrictInt] = Field(default=None, alias="matchId")
-    match_score_added: Optional[StrictBool] = Field(default=None, alias="matchScoreAdded")
-    match_slot: StrictInt = Field(alias="matchSlot")
-    no_of_games: Optional[StrictInt] = Field(default=None, alias="noOfGames")
-    registration_id: StrictInt = Field(alias="registrationId")
+    league_id: StrictInt = Field(..., alias="leagueId")
+    league_match_id: StrictInt = Field(..., alias="leagueMatchId")
+    league_match_status: Optional[StrictStr] = Field(None, alias="leagueMatchStatus")
+    league_name: StrictStr = Field(..., alias="leagueName")
+    location: StrictStr = Field(...)
+    match_date: StrictStr = Field(..., alias="matchDate")
+    match_id: Optional[StrictInt] = Field(None, alias="matchId")
+    match_score_added: Optional[StrictBool] = Field(None, alias="matchScoreAdded")
+    match_slot: StrictInt = Field(..., alias="matchSlot")
+    no_of_games: Optional[StrictInt] = Field(None, alias="noOfGames")
+    registration_id: StrictInt = Field(..., alias="registrationId")
     round: Optional[StrictInt] = None
-    score_format: ScoreFormatResponse = Field(alias="scoreFormat")
-    start_date: StrictStr = Field(alias="startDate")
+    score_format: ScoreFormatResponse = Field(..., alias="scoreFormat")
+    start_date: StrictStr = Field(..., alias="startDate")
     status: Optional[StrictStr] = None
     tag: Optional[StrictStr] = None
-    tbd_1: StrictInt
-    tbd_2: StrictInt
-    teams: List[TeamResponse]
-    user_id: Optional[StrictInt] = Field(default=None, alias="userId")
-    venue: StrictStr
-    __properties: ClassVar[List[str]] = ["bracketId", "bracketName", "confirmed", "displayIdentity", "endDate", "eventFormat", "impactedDraw", "inQueue", "isByeMatch", "isForfeited", "isNextRoundConfirmed", "is_team_1_tbd", "is_team_2_tbd", "leagueId", "leagueMatchId", "leagueMatchStatus", "leagueName", "location", "matchDate", "matchId", "matchScoreAdded", "matchSlot", "noOfGames", "registrationId", "round", "scoreFormat", "startDate", "status", "tag", "tbd_1", "tbd_2", "teams", "userId", "venue"]
+    tbd_1: StrictInt = Field(...)
+    tbd_2: StrictInt = Field(...)
+    teams: conlist(TeamResponse) = Field(...)
+    user_id: Optional[StrictInt] = Field(None, alias="userId")
+    venue: StrictStr = Field(...)
+    __properties = ["bracketId", "bracketName", "confirmed", "displayIdentity", "endDate", "eventFormat", "impactedDraw", "inQueue", "isByeMatch", "isForfeited", "isNextRoundConfirmed", "is_team_1_tbd", "is_team_2_tbd", "leagueId", "leagueMatchId", "leagueMatchStatus", "leagueName", "location", "matchDate", "matchId", "matchScoreAdded", "matchSlot", "noOfGames", "registrationId", "round", "scoreFormat", "startDate", "status", "tag", "tbd_1", "tbd_2", "teams", "userId", "venue"]
 
-    @field_validator('event_format')
+    @validator('event_format')
     def event_format_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['DOUBLES', 'SINGLES']):
+        if value not in ('DOUBLES', 'SINGLES'):
             raise ValueError("must be one of enum values ('DOUBLES', 'SINGLES')")
         return value
 
-    @field_validator('league_match_status')
+    @validator('league_match_status')
     def league_match_status_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING']):
+        if value not in ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING'):
             raise ValueError("must be one of enum values ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING')")
         return value
 
-    @field_validator('status')
+    @validator('status')
     def status_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING']):
+        if value not in ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING'):
             raise ValueError("must be one of enum values ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING')")
         return value
 
-    @field_validator('tag')
+    @validator('tag')
     def tag_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['EAST', 'NORTH', 'NORTH_EAST', 'NORTH_WEST', 'SOUTH', 'SOUTH_EAST', 'SOUTH_WEST', 'WEST']):
+        if value not in ('EAST', 'NORTH', 'NORTH_EAST', 'NORTH_WEST', 'SOUTH', 'SOUTH_EAST', 'SOUTH_WEST', 'WEST'):
             raise ValueError("must be one of enum values ('EAST', 'NORTH', 'NORTH_EAST', 'NORTH_WEST', 'SOUTH', 'SOUTH_EAST', 'SOUTH_WEST', 'WEST')")
         return value
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
+    class Config:
+        """Pydantic configuration"""
+        allow_population_by_field_name = True
+        validate_assignment = True
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+        return pprint.pformat(self.dict(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
+    def from_json(cls, json_str: str) -> LeagueMatchResponse:
         """Create an instance of LeagueMatchResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
+    def to_dict(self):
+        """Returns the dictionary representation of the model using alias"""
+        _dict = self.dict(by_alias=True,
+                          exclude={
+                          },
+                          exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of score_format
         if self.score_format:
             _dict['scoreFormat'] = self.score_format.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in teams (list)
         _items = []
         if self.teams:
-            for _item_teams in self.teams:
-                if _item_teams:
-                    _items.append(_item_teams.to_dict())
+            for _item in self.teams:
+                if _item:
+                    _items.append(_item.to_dict())
             _dict['teams'] = _items
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+    def from_dict(cls, obj: dict) -> LeagueMatchResponse:
         """Create an instance of LeagueMatchResponse from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+            return LeagueMatchResponse.parse_obj(obj)
 
-        _obj = cls.model_validate({
-            "bracketId": obj.get("bracketId"),
-            "bracketName": obj.get("bracketName"),
+        _obj = LeagueMatchResponse.parse_obj({
+            "bracket_id": obj.get("bracketId"),
+            "bracket_name": obj.get("bracketName"),
             "confirmed": obj.get("confirmed"),
-            "displayIdentity": obj.get("displayIdentity"),
-            "endDate": obj.get("endDate"),
-            "eventFormat": obj.get("eventFormat"),
-            "impactedDraw": obj.get("impactedDraw"),
-            "inQueue": obj.get("inQueue"),
-            "isByeMatch": obj.get("isByeMatch"),
-            "isForfeited": obj.get("isForfeited"),
-            "isNextRoundConfirmed": obj.get("isNextRoundConfirmed"),
+            "display_identity": obj.get("displayIdentity"),
+            "end_date": obj.get("endDate"),
+            "event_format": obj.get("eventFormat"),
+            "impacted_draw": obj.get("impactedDraw"),
+            "in_queue": obj.get("inQueue"),
+            "is_bye_match": obj.get("isByeMatch"),
+            "is_forfeited": obj.get("isForfeited"),
+            "is_next_round_confirmed": obj.get("isNextRoundConfirmed"),
             "is_team_1_tbd": obj.get("is_team_1_tbd"),
             "is_team_2_tbd": obj.get("is_team_2_tbd"),
-            "leagueId": obj.get("leagueId"),
-            "leagueMatchId": obj.get("leagueMatchId"),
-            "leagueMatchStatus": obj.get("leagueMatchStatus"),
-            "leagueName": obj.get("leagueName"),
+            "league_id": obj.get("leagueId"),
+            "league_match_id": obj.get("leagueMatchId"),
+            "league_match_status": obj.get("leagueMatchStatus"),
+            "league_name": obj.get("leagueName"),
             "location": obj.get("location"),
-            "matchDate": obj.get("matchDate"),
-            "matchId": obj.get("matchId"),
-            "matchScoreAdded": obj.get("matchScoreAdded"),
-            "matchSlot": obj.get("matchSlot"),
-            "noOfGames": obj.get("noOfGames"),
-            "registrationId": obj.get("registrationId"),
+            "match_date": obj.get("matchDate"),
+            "match_id": obj.get("matchId"),
+            "match_score_added": obj.get("matchScoreAdded"),
+            "match_slot": obj.get("matchSlot"),
+            "no_of_games": obj.get("noOfGames"),
+            "registration_id": obj.get("registrationId"),
             "round": obj.get("round"),
-            "scoreFormat": ScoreFormatResponse.from_dict(obj["scoreFormat"]) if obj.get("scoreFormat") is not None else None,
-            "startDate": obj.get("startDate"),
+            "score_format": ScoreFormatResponse.from_dict(obj.get("scoreFormat")) if obj.get("scoreFormat") is not None else None,
+            "start_date": obj.get("startDate"),
             "status": obj.get("status"),
             "tag": obj.get("tag"),
             "tbd_1": obj.get("tbd_1"),
             "tbd_2": obj.get("tbd_2"),
-            "teams": [TeamResponse.from_dict(_item) for _item in obj["teams"]] if obj.get("teams") is not None else None,
-            "userId": obj.get("userId"),
+            "teams": [TeamResponse.from_dict(_item) for _item in obj.get("teams")] if obj.get("teams") is not None else None,
+            "user_id": obj.get("userId"),
             "venue": obj.get("venue")
         })
         return _obj

@@ -17,86 +17,70 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
-from typing import Optional, Set
-from typing_extensions import Self
+
+from typing import Optional
+from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
 
 class SwitchBracketRequest(BaseModel):
     """
     SwitchBracketRequest
-    """ # noqa: E501
-    club_id: StrictInt = Field(alias="clubId")
-    event_id: StrictInt = Field(alias="eventId")
-    event_name: StrictStr = Field(alias="eventName")
-    player_id: StrictInt = Field(alias="playerId")
-    re_seed_bracket: Optional[StrictBool] = Field(default=None, alias="reSeedBracket")
-    source_bracket_id: StrictInt = Field(alias="sourceBracketId")
-    source_bracket_name: StrictStr = Field(alias="sourceBracketName")
-    target_bracket_id: StrictInt = Field(alias="targetBracketId")
-    target_bracket_name: StrictStr = Field(alias="targetBracketName")
-    __properties: ClassVar[List[str]] = ["clubId", "eventId", "eventName", "playerId", "reSeedBracket", "sourceBracketId", "sourceBracketName", "targetBracketId", "targetBracketName"]
+    """
+    club_id: StrictInt = Field(..., alias="clubId")
+    event_id: StrictInt = Field(..., alias="eventId")
+    event_name: StrictStr = Field(..., alias="eventName")
+    player_id: StrictInt = Field(..., alias="playerId")
+    re_seed_bracket: Optional[StrictBool] = Field(None, alias="reSeedBracket")
+    source_bracket_id: StrictInt = Field(..., alias="sourceBracketId")
+    source_bracket_name: StrictStr = Field(..., alias="sourceBracketName")
+    target_bracket_id: StrictInt = Field(..., alias="targetBracketId")
+    target_bracket_name: StrictStr = Field(..., alias="targetBracketName")
+    __properties = ["clubId", "eventId", "eventName", "playerId", "reSeedBracket", "sourceBracketId", "sourceBracketName", "targetBracketId", "targetBracketName"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
+    class Config:
+        """Pydantic configuration"""
+        allow_population_by_field_name = True
+        validate_assignment = True
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+        return pprint.pformat(self.dict(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
+    def from_json(cls, json_str: str) -> SwitchBracketRequest:
         """Create an instance of SwitchBracketRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
+    def to_dict(self):
+        """Returns the dictionary representation of the model using alias"""
+        _dict = self.dict(by_alias=True,
+                          exclude={
+                          },
+                          exclude_none=True)
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+    def from_dict(cls, obj: dict) -> SwitchBracketRequest:
         """Create an instance of SwitchBracketRequest from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+            return SwitchBracketRequest.parse_obj(obj)
 
-        _obj = cls.model_validate({
-            "clubId": obj.get("clubId"),
-            "eventId": obj.get("eventId"),
-            "eventName": obj.get("eventName"),
-            "playerId": obj.get("playerId"),
-            "reSeedBracket": obj.get("reSeedBracket"),
-            "sourceBracketId": obj.get("sourceBracketId"),
-            "sourceBracketName": obj.get("sourceBracketName"),
-            "targetBracketId": obj.get("targetBracketId"),
-            "targetBracketName": obj.get("targetBracketName")
+        _obj = SwitchBracketRequest.parse_obj({
+            "club_id": obj.get("clubId"),
+            "event_id": obj.get("eventId"),
+            "event_name": obj.get("eventName"),
+            "player_id": obj.get("playerId"),
+            "re_seed_bracket": obj.get("reSeedBracket"),
+            "source_bracket_id": obj.get("sourceBracketId"),
+            "source_bracket_name": obj.get("sourceBracketName"),
+            "target_bracket_id": obj.get("targetBracketId"),
+            "target_bracket_name": obj.get("targetBracketName")
         })
         return _obj
 

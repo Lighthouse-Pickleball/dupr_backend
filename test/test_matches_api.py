@@ -14,120 +14,122 @@
 
 import unittest
 
-from dupr_backend.api.matches_api import MatchesApi
+import dupr_backend
+from dupr_backend.api.matches_api import MatchesApi  # noqa: E501
+from dupr_backend.rest import ApiException
 
 
 class TestMatchesApi(unittest.TestCase):
     """MatchesApi unit test stubs"""
 
-    def setUp(self) -> None:
-        self.api = MatchesApi()
+    def setUp(self):
+        self.api = dupr_backend.api.matches_api.MatchesApi()  # noqa: E501
 
-    def tearDown(self) -> None:
+    def tearDown(self):
         pass
 
-    def test_confirm_match_using_post1(self) -> None:
+    def test_confirm_match_using_post1(self):
         """Test case for confirm_match_using_post1
 
-        confirmMatch
+        confirmMatch  # noqa: E501
         """
         pass
 
-    def test_delete_match_using_delete(self) -> None:
+    def test_delete_match_using_delete(self):
         """Test case for delete_match_using_delete
 
-        deleteMatch
+        deleteMatch  # noqa: E501
         """
         pass
 
-    def test_get_dupr_performance_data_user_using_get(self) -> None:
+    def test_get_dupr_performance_data_user_using_get(self):
         """Test case for get_dupr_performance_data_user_using_get
 
-        getDuprPerformanceDataUser
+        getDuprPerformanceDataUser  # noqa: E501
         """
         pass
 
-    def test_get_dupr_performance_data_using_get(self) -> None:
+    def test_get_dupr_performance_data_using_get(self):
         """Test case for get_dupr_performance_data_using_get
 
-        getDuprPerformanceData
+        getDuprPerformanceData  # noqa: E501
         """
         pass
 
-    def test_get_match_rating_simulator_using_post(self) -> None:
+    def test_get_match_rating_simulator_using_post(self):
         """Test case for get_match_rating_simulator_using_post
 
-        getMatchRatingSimulator
+        getMatchRatingSimulator  # noqa: E501
         """
         pass
 
-    def test_get_user_match_history_using_get(self) -> None:
+    def test_get_user_match_history_using_get(self):
         """Test case for get_user_match_history_using_get
 
-        getUserMatchHistory
+        getUserMatchHistory  # noqa: E501
         """
         pass
 
-    def test_match_details_using_get(self) -> None:
+    def test_match_details_using_get(self):
         """Test case for match_details_using_get
 
-        matchDetails
+        matchDetails  # noqa: E501
         """
         pass
 
-    def test_pending_match_details_using_get(self) -> None:
+    def test_pending_match_details_using_get(self):
         """Test case for pending_match_details_using_get
 
-        pendingMatchDetails
+        pendingMatchDetails  # noqa: E501
         """
         pass
 
-    def test_save_match_using_put(self) -> None:
+    def test_save_match_using_put(self):
         """Test case for save_match_using_put
 
-        saveMatch
+        saveMatch  # noqa: E501
         """
         pass
 
-    def test_save_verified_match_cvs_using_put(self) -> None:
+    def test_save_verified_match_cvs_using_put(self):
         """Test case for save_verified_match_cvs_using_put
 
-        saveVerifiedMatchCVS
+        saveVerifiedMatchCVS  # noqa: E501
         """
         pass
 
-    def test_save_verified_match_using_put1(self) -> None:
+    def test_save_verified_match_using_put1(self):
         """Test case for save_verified_match_using_put1
 
-        saveVerifiedMatch
+        saveVerifiedMatch  # noqa: E501
         """
         pass
 
-    def test_score_formats_using_get(self) -> None:
+    def test_score_formats_using_get(self):
         """Test case for score_formats_using_get
 
-        scoreFormats
+        scoreFormats  # noqa: E501
         """
         pass
 
-    def test_share_match_using_post(self) -> None:
+    def test_share_match_using_post(self):
         """Test case for share_match_using_post
 
-        shareMatch
+        shareMatch  # noqa: E501
         """
         pass
 
-    def test_user_match_history_by_filters_using_post(self) -> None:
+    def test_user_match_history_by_filters_using_post(self):
         """Test case for user_match_history_by_filters_using_post
 
-        userMatchHistoryByFilters
+        userMatchHistoryByFilters  # noqa: E501
         """
         pass
 
-    def test_user_match_history_using_get(self) -> None:
+    def test_user_match_history_using_get(self):
         """Test case for user_match_history_using_get
 
-        userMatchHistory
+        userMatchHistory  # noqa: E501
         """
         pass
 

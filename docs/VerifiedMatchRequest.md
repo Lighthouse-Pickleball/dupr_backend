@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **club_id** | **int** |  | [optional] 
@@ -41,12 +40,12 @@ json = "{}"
 # create an instance of VerifiedMatchRequest from a JSON string
 verified_match_request_instance = VerifiedMatchRequest.from_json(json)
 # print the JSON string representation of the object
-print(VerifiedMatchRequest.to_json())
+print VerifiedMatchRequest.to_json()
 
 # convert the object into a dict
 verified_match_request_dict = verified_match_request_instance.to_dict()
 # create an instance of VerifiedMatchRequest from a dict
-verified_match_request_from_dict = VerifiedMatchRequest.from_dict(verified_match_request_dict)
+verified_match_request_form_dict = verified_match_request.from_dict(verified_match_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

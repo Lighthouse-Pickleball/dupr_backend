@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.club_match_filters import ClubMatchFilters
+import dupr_backend
+from dupr_backend.models.club_match_filters import ClubMatchFilters  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestClubMatchFilters(unittest.TestCase):
     """ClubMatchFilters unit test stubs"""
@@ -25,24 +28,24 @@ class TestClubMatchFilters(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ClubMatchFilters:
+    def make_instance(self, include_optional):
         """Test ClubMatchFilters
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ClubMatchFilters`
         """
-        model = ClubMatchFilters()
-        if include_optional:
+        model = dupr_backend.models.club_match_filters.ClubMatchFilters()  # noqa: E501
+        if include_optional :
             return ClubMatchFilters(
                 event_date = dupr_backend.models.date_range.DateRange(
                     end_date = 'yyyy-MM-dd', 
-                    start_date = 'yyyy-MM-dd', ),
-                event_format = [SINGLES, DOUBLES],
-                event_name = 'Pickle ball',
+                    start_date = 'yyyy-MM-dd', ), 
+                event_format = [SINGLES, DOUBLES], 
+                event_name = 'Pickle ball', 
                 player_id = 215254148
             )
-        else:
+        else :
             return ClubMatchFilters(
         )
         """

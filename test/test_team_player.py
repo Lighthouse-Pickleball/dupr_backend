@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.team_player import TeamPlayer
+import dupr_backend
+from dupr_backend.models.team_player import TeamPlayer  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestTeamPlayer(unittest.TestCase):
     """TeamPlayer unit test stubs"""
@@ -25,30 +28,30 @@ class TestTeamPlayer(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> TeamPlayer:
+    def make_instance(self, include_optional):
         """Test TeamPlayer
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `TeamPlayer`
         """
-        model = TeamPlayer()
-        if include_optional:
+        model = dupr_backend.models.team_player.TeamPlayer()  # noqa: E501
+        if include_optional :
             return TeamPlayer(
-                allow_substitution = True,
-                email = '',
-                full_name = '',
-                id = 56,
-                image_url = '',
+                allow_substitution = True, 
+                email = '', 
+                full_name = '', 
+                id = 56, 
+                image_url = '', 
                 post_match_rating = dupr_backend.models.post_match_rating.PostMatchRating(
                     doubles = 1.337, 
-                    singles = 1.337, ),
-                referral_code = '',
-                status = 'ACTIVE',
-                validated_match = True,
+                    singles = 1.337, ), 
+                referral_code = '', 
+                status = 'ACTIVE', 
+                validated_match = True, 
                 verified_email = True
             )
-        else:
+        else :
             return TeamPlayer(
                 allow_substitution = True,
                 email = '',

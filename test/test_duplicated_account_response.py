@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.duplicated_account_response import DuplicatedAccountResponse
+import dupr_backend
+from dupr_backend.models.duplicated_account_response import DuplicatedAccountResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestDuplicatedAccountResponse(unittest.TestCase):
     """DuplicatedAccountResponse unit test stubs"""
@@ -25,15 +28,15 @@ class TestDuplicatedAccountResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> DuplicatedAccountResponse:
+    def make_instance(self, include_optional):
         """Test DuplicatedAccountResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `DuplicatedAccountResponse`
         """
-        model = DuplicatedAccountResponse()
-        if include_optional:
+        model = dupr_backend.models.duplicated_account_response.DuplicatedAccountResponse()  # noqa: E501
+        if include_optional :
             return DuplicatedAccountResponse(
                 player1 = dupr_backend.models.duplicated_player.DuplicatedPlayer(
                     birthday = '', 
@@ -46,7 +49,7 @@ class TestDuplicatedAccountResponse(unittest.TestCase):
                     id = 56, 
                     last_name = '', 
                     status = 'ACTIVE', 
-                    verified_email = True, ),
+                    verified_email = True, ), 
                 player2 = dupr_backend.models.duplicated_player.DuplicatedPlayer(
                     birthday = '', 
                     dupr_id = '', 
@@ -58,10 +61,10 @@ class TestDuplicatedAccountResponse(unittest.TestCase):
                     id = 56, 
                     last_name = '', 
                     status = 'ACTIVE', 
-                    verified_email = True, ),
+                    verified_email = True, ), 
                 probability = ''
             )
-        else:
+        else :
             return DuplicatedAccountResponse(
                 player1 = dupr_backend.models.duplicated_player.DuplicatedPlayer(
                     birthday = '', 

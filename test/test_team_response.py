@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.team_response import TeamResponse
+import dupr_backend
+from dupr_backend.models.team_response import TeamResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestTeamResponse(unittest.TestCase):
     """TeamResponse unit test stubs"""
@@ -25,23 +28,23 @@ class TestTeamResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> TeamResponse:
+    def make_instance(self, include_optional):
         """Test TeamResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `TeamResponse`
         """
-        model = TeamResponse()
-        if include_optional:
+        model = dupr_backend.models.team_response.TeamResponse()  # noqa: E501
+        if include_optional :
             return TeamResponse(
-                delta = '-0.682',
-                game1 = 11,
-                game2 = -1,
-                game3 = -1,
-                game4 = -1,
-                game5 = -1,
-                id = 56,
+                delta = '-0.682', 
+                game1 = 11, 
+                game2 = -1, 
+                game3 = -1, 
+                game4 = -1, 
+                game5 = -1, 
+                id = 56, 
                 player1 = dupr_backend.models.team_player_response.TeamPlayerResponse(
                     allow_substitution = True, 
                     dupr_id = 'https://dupr-dev.s3.amazonaws.com/profile/image.png', 
@@ -51,7 +54,7 @@ class TestTeamResponse(unittest.TestCase):
                     post_match_rating = dupr_backend.models.post_match_rating.PostMatchRating(
                         doubles = 1.337, 
                         singles = 1.337, ), 
-                    validated_match = True, ),
+                    validated_match = True, ), 
                 player2 = dupr_backend.models.team_player_response.TeamPlayerResponse(
                     allow_substitution = True, 
                     dupr_id = 'https://dupr-dev.s3.amazonaws.com/profile/image.png', 
@@ -61,7 +64,7 @@ class TestTeamResponse(unittest.TestCase):
                     post_match_rating = dupr_backend.models.post_match_rating.PostMatchRating(
                         doubles = 1.337, 
                         singles = 1.337, ), 
-                    validated_match = True, ),
+                    validated_match = True, ), 
                 pre_match_rating_and_impact = dupr_backend.models.pre_match_rating_and_impact.PreMatchRatingAndImpact(
                     match_double_rating_impact_player1 = 1.337, 
                     match_double_rating_impact_player2 = 1.337, 
@@ -70,12 +73,12 @@ class TestTeamResponse(unittest.TestCase):
                     pre_match_double_rating_player1 = 1.337, 
                     pre_match_double_rating_player2 = 1.337, 
                     pre_match_single_rating_player1 = 1.337, 
-                    pre_match_single_rating_player2 = 1.337, ),
-                serial = 1,
-                team_rating = '4.659',
+                    pre_match_single_rating_player2 = 1.337, ), 
+                serial = 1, 
+                team_rating = '4.659', 
                 winner = True
             )
-        else:
+        else :
             return TeamResponse(
                 delta = '-0.682',
                 game1 = 11,

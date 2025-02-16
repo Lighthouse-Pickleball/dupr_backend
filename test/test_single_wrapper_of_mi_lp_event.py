@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.single_wrapper_of_mi_lp_event import SingleWrapperOfMiLPEvent
+import dupr_backend
+from dupr_backend.models.single_wrapper_of_mi_lp_event import SingleWrapperOfMiLPEvent  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSingleWrapperOfMiLPEvent(unittest.TestCase):
     """SingleWrapperOfMiLPEvent unit test stubs"""
@@ -25,17 +28,17 @@ class TestSingleWrapperOfMiLPEvent(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperOfMiLPEvent:
+    def make_instance(self, include_optional):
         """Test SingleWrapperOfMiLPEvent
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfMiLPEvent`
         """
-        model = SingleWrapperOfMiLPEvent()
-        if include_optional:
+        model = dupr_backend.models.single_wrapper_of_mi_lp_event.SingleWrapperOfMiLPEvent()  # noqa: E501
+        if include_optional :
             return SingleWrapperOfMiLPEvent(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 result = dupr_backend.models.mi_lp_event.MiLPEvent(
                     address_str = '', 
                     club_id = 56, 
@@ -79,10 +82,10 @@ class TestSingleWrapperOfMiLPEvent(unittest.TestCase):
                     event_id = 56, 
                     event_name = '', 
                     event_type = 'MARQUE', 
-                    status = 'ACTIVE', ),
+                    status = 'ACTIVE', ), 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return SingleWrapperOfMiLPEvent(
         )
         """

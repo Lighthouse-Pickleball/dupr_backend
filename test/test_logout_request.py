@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.logout_request import LogoutRequest
+import dupr_backend
+from dupr_backend.models.logout_request import LogoutRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestLogoutRequest(unittest.TestCase):
     """LogoutRequest unit test stubs"""
@@ -25,20 +28,20 @@ class TestLogoutRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> LogoutRequest:
+    def make_instance(self, include_optional):
         """Test LogoutRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `LogoutRequest`
         """
-        model = LogoutRequest()
-        if include_optional:
+        model = dupr_backend.models.logout_request.LogoutRequest()  # noqa: E501
+        if include_optional :
             return LogoutRequest(
-                platform = 'android/ios/webapp',
+                platform = 'android/ios/webapp', 
                 uuid = 'unique-device-identity'
             )
-        else:
+        else :
             return LogoutRequest(
                 platform = 'android/ios/webapp',
                 uuid = 'unique-device-identity',

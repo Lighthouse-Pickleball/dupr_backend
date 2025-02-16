@@ -14,659 +14,661 @@
 
 import unittest
 
-from dupr_backend.api.admin_api import AdminApi
+import dupr_backend
+from dupr_backend.api.admin_api import AdminApi  # noqa: E501
+from dupr_backend.rest import ApiException
 
 
 class TestAdminApi(unittest.TestCase):
     """AdminApi unit test stubs"""
 
-    def setUp(self) -> None:
-        self.api = AdminApi()
+    def setUp(self):
+        self.api = dupr_backend.api.admin_api.AdminApi()  # noqa: E501
 
-    def tearDown(self) -> None:
+    def tearDown(self):
         pass
 
-    def test_activate_match_using_post(self) -> None:
+    def test_activate_match_using_post(self):
         """Test case for activate_match_using_post
 
-        activateMatch
+        activateMatch  # noqa: E501
         """
         pass
 
-    def test_add_key_to_external_client_using_post(self) -> None:
+    def test_add_key_to_external_client_using_post(self):
         """Test case for add_key_to_external_client_using_post
 
-        addKeyToExternalClient
+        addKeyToExternalClient  # noqa: E501
         """
         pass
 
-    def test_adjust_rating_using_put(self) -> None:
+    def test_adjust_rating_using_put(self):
         """Test case for adjust_rating_using_put
 
-        adjustRating
+        adjustRating  # noqa: E501
         """
         pass
 
-    def test_admin_verified_match_history_using_get(self) -> None:
+    def test_admin_verified_match_history_using_get(self):
         """Test case for admin_verified_match_history_using_get
 
-        adminVerifiedMatchHistory
+        adminVerifiedMatchHistory  # noqa: E501
         """
         pass
 
-    def test_batch_calculated_statistics_using_put(self) -> None:
+    def test_batch_calculated_statistics_using_put(self):
         """Test case for batch_calculated_statistics_using_put
 
-        batchCalculatedStatistics
+        batchCalculatedStatistics  # noqa: E501
         """
         pass
 
-    def test_batch_club_matches_using_post(self) -> None:
+    def test_batch_club_matches_using_post(self):
         """Test case for batch_club_matches_using_post
 
-        batchClubMatches
+        batchClubMatches  # noqa: E501
         """
         pass
 
-    def test_batch_manual_club_matches_using_post(self) -> None:
+    def test_batch_manual_club_matches_using_post(self):
         """Test case for batch_manual_club_matches_using_post
 
-        batchManualClubMatches
+        batchManualClubMatches  # noqa: E501
         """
         pass
 
-    def test_batch_manual_matches_using_post(self) -> None:
+    def test_batch_manual_matches_using_post(self):
         """Test case for batch_manual_matches_using_post
 
-        batchManualMatches
+        batchManualMatches  # noqa: E501
         """
         pass
 
-    def test_batch_player_rating_provisional_using_put(self) -> None:
+    def test_batch_player_rating_provisional_using_put(self):
         """Test case for batch_player_rating_provisional_using_put
 
-        batchPlayerRatingProvisional
+        batchPlayerRatingProvisional  # noqa: E501
         """
         pass
 
-    def test_batch_player_rating_using_put(self) -> None:
+    def test_batch_player_rating_using_put(self):
         """Test case for batch_player_rating_using_put
 
-        batchPlayerRating
+        batchPlayerRating  # noqa: E501
         """
         pass
 
-    def test_batch_set_reliability_scores_using_post(self) -> None:
+    def test_batch_set_reliability_scores_using_post(self):
         """Test case for batch_set_reliability_scores_using_post
 
-        batchSetReliabilityScores
+        batchSetReliabilityScores  # noqa: E501
         """
         pass
 
-    def test_block_admin_apis_using_put(self) -> None:
+    def test_block_admin_apis_using_put(self):
         """Test case for block_admin_apis_using_put
 
-        blockAdminApis
+        blockAdminApis  # noqa: E501
         """
         pass
 
-    def test_bulk_delete_matches_using_put(self) -> None:
+    def test_bulk_delete_matches_using_put(self):
         """Test case for bulk_delete_matches_using_put
 
-        bulkDeleteMatches
+        bulkDeleteMatches  # noqa: E501
         """
         pass
 
-    def test_bulk_reliability_score_using_put(self) -> None:
+    def test_bulk_reliability_score_using_put(self):
         """Test case for bulk_reliability_score_using_put
 
-        bulkReliabilityScore
+        bulkReliabilityScore  # noqa: E501
         """
         pass
 
-    def test_bulk_send_coppa_email_using_post(self) -> None:
+    def test_bulk_send_coppa_email_using_post(self):
         """Test case for bulk_send_coppa_email_using_post
 
-        bulkSendCoppaEmail
+        bulkSendCoppaEmail  # noqa: E501
         """
         pass
 
-    def test_bulk_send_wrapped_email_using_post(self) -> None:
+    def test_bulk_send_wrapped_email_using_post(self):
         """Test case for bulk_send_wrapped_email_using_post
 
-        bulkSendWrappedEmail
+        bulkSendWrappedEmail  # noqa: E501
         """
         pass
 
-    def test_change_email_using_put(self) -> None:
+    def test_change_email_using_put(self):
         """Test case for change_email_using_put
 
-        changeEmail
+        changeEmail  # noqa: E501
         """
         pass
 
-    def test_change_role_using_post(self) -> None:
+    def test_change_role_using_post(self):
         """Test case for change_role_using_post
 
-        changeRole
+        changeRole  # noqa: E501
         """
         pass
 
-    def test_club_create_using_put(self) -> None:
+    def test_club_create_using_put(self):
         """Test case for club_create_using_put
 
-        clubCreate
+        clubCreate  # noqa: E501
         """
         pass
 
-    def test_create_banner_using_post(self) -> None:
+    def test_create_banner_using_post(self):
         """Test case for create_banner_using_post
 
-        createBanner
+        createBanner  # noqa: E501
         """
         pass
 
-    def test_create_clubs_batch_using_put(self) -> None:
+    def test_create_clubs_batch_using_put(self):
         """Test case for create_clubs_batch_using_put
 
-        createClubsBatch
+        createClubsBatch  # noqa: E501
         """
         pass
 
-    def test_create_external_client_using_post(self) -> None:
+    def test_create_external_client_using_post(self):
         """Test case for create_external_client_using_post
 
-        createExternalClient
+        createExternalClient  # noqa: E501
         """
         pass
 
-    def test_decode_using_get(self) -> None:
+    def test_decode_using_get(self):
         """Test case for decode_using_get
 
-        decode
+        decode  # noqa: E501
         """
         pass
 
-    def test_delete_club_using_delete(self) -> None:
+    def test_delete_club_using_delete(self):
         """Test case for delete_club_using_delete
 
-        deleteClub
+        deleteClub  # noqa: E501
         """
         pass
 
-    def test_delete_match_using_post(self) -> None:
+    def test_delete_match_using_post(self):
         """Test case for delete_match_using_post
 
-        deleteMatch
+        deleteMatch  # noqa: E501
         """
         pass
 
-    def test_delete_user_using_put(self) -> None:
+    def test_delete_user_using_put(self):
         """Test case for delete_user_using_put
 
-        deleteUser
+        deleteUser  # noqa: E501
         """
         pass
 
-    def test_delete_wix_user_using_delete(self) -> None:
+    def test_delete_wix_user_using_delete(self):
         """Test case for delete_wix_user_using_delete
 
-        deleteWixUser
+        deleteWixUser  # noqa: E501
         """
         pass
 
-    def test_dupr_id_using_get(self) -> None:
+    def test_dupr_id_using_get(self):
         """Test case for dupr_id_using_get
 
-        duprId
+        duprId  # noqa: E501
         """
         pass
 
-    def test_edit_club_staff_using_post(self) -> None:
+    def test_edit_club_staff_using_post(self):
         """Test case for edit_club_staff_using_post
 
-        editClubStaff
+        editClubStaff  # noqa: E501
         """
         pass
 
-    def test_encode_using_get(self) -> None:
+    def test_encode_using_get(self):
         """Test case for encode_using_get
 
-        encode
+        encode  # noqa: E501
         """
         pass
 
-    def test_export_matches_missing_team_player_using_get(self) -> None:
+    def test_export_matches_missing_team_player_using_get(self):
         """Test case for export_matches_missing_team_player_using_get
 
-        exportMatchesMissingTeamPlayer
+        exportMatchesMissingTeamPlayer  # noqa: E501
         """
         pass
 
-    def test_export_users_via_mail_using_post(self) -> None:
+    def test_export_users_via_mail_using_post(self):
         """Test case for export_users_via_mail_using_post
 
-        exportUsersViaMail
+        exportUsersViaMail  # noqa: E501
         """
         pass
 
-    def test_find_duplicated_account_for_players_using_post(self) -> None:
+    def test_find_duplicated_account_for_players_using_post(self):
         """Test case for find_duplicated_account_for_players_using_post
 
-        findDuplicatedAccountForPlayers
+        findDuplicatedAccountForPlayers  # noqa: E501
         """
         pass
 
-    def test_get_active_banner_using_get(self) -> None:
+    def test_get_active_banner_using_get(self):
         """Test case for get_active_banner_using_get
 
-        getActiveBanner
+        getActiveBanner  # noqa: E501
         """
         pass
 
-    def test_get_all_banner_using_get(self) -> None:
+    def test_get_all_banner_using_get(self):
         """Test case for get_all_banner_using_get
 
-        getAllBanner
+        getAllBanner  # noqa: E501
         """
         pass
 
-    def test_get_all_roles_using_get(self) -> None:
+    def test_get_all_roles_using_get(self):
         """Test case for get_all_roles_using_get
 
-        getAllRoles
+        getAllRoles  # noqa: E501
         """
         pass
 
-    def test_get_club_restrictions_using_post(self) -> None:
+    def test_get_club_restrictions_using_post(self):
         """Test case for get_club_restrictions_using_post
 
-        getClubRestrictions
+        getClubRestrictions  # noqa: E501
         """
         pass
 
-    def test_get_club_settings_using_post(self) -> None:
+    def test_get_club_settings_using_post(self):
         """Test case for get_club_settings_using_post
 
-        getClubSettings
+        getClubSettings  # noqa: E501
         """
         pass
 
-    def test_get_external_client_permissions_using_post(self) -> None:
+    def test_get_external_client_permissions_using_post(self):
         """Test case for get_external_client_permissions_using_post
 
-        getExternalClientPermissions
+        getExternalClientPermissions  # noqa: E501
         """
         pass
 
-    def test_get_match_using_get(self) -> None:
+    def test_get_match_using_get(self):
         """Test case for get_match_using_get
 
-        getMatch
+        getMatch  # noqa: E501
         """
         pass
 
-    def test_get_user_bracket_using_post(self) -> None:
+    def test_get_user_bracket_using_post(self):
         """Test case for get_user_bracket_using_post
 
-        getUserBracket
+        getUserBracket  # noqa: E501
         """
         pass
 
-    def test_get_user_profile_using_get(self) -> None:
+    def test_get_user_profile_using_get(self):
         """Test case for get_user_profile_using_get
 
-        getUserProfile
+        getUserProfile  # noqa: E501
         """
         pass
 
-    def test_index_club_members_using_post(self) -> None:
+    def test_index_club_members_using_post(self):
         """Test case for index_club_members_using_post
 
-        indexClubMembers
+        indexClubMembers  # noqa: E501
         """
         pass
 
-    def test_index_clubs_using_put(self) -> None:
+    def test_index_clubs_using_put(self):
         """Test case for index_clubs_using_put
 
-        indexClubs
+        indexClubs  # noqa: E501
         """
         pass
 
-    def test_index_player_using_patch(self) -> None:
+    def test_index_player_using_patch(self):
         """Test case for index_player_using_patch
 
-        indexPlayer
+        indexPlayer  # noqa: E501
         """
         pass
 
-    def test_index_players_using_patch(self) -> None:
+    def test_index_players_using_patch(self):
         """Test case for index_players_using_patch
 
-        indexPlayers
+        indexPlayers  # noqa: E501
         """
         pass
 
-    def test_match_codes_export_using_get(self) -> None:
+    def test_match_codes_export_using_get(self):
         """Test case for match_codes_export_using_get
 
-        matchCodesExport
+        matchCodesExport  # noqa: E501
         """
         pass
 
-    def test_match_reassign_batch_using_post(self) -> None:
+    def test_match_reassign_batch_using_post(self):
         """Test case for match_reassign_batch_using_post
 
-        matchReassignBatch
+        matchReassignBatch  # noqa: E501
         """
         pass
 
-    def test_match_reassign_using_post(self) -> None:
+    def test_match_reassign_using_post(self):
         """Test case for match_reassign_using_post
 
-        matchReassign
+        matchReassign  # noqa: E501
         """
         pass
 
-    def test_matches_export_using_get(self) -> None:
+    def test_matches_export_using_get(self):
         """Test case for matches_export_using_get
 
-        matchesExport
+        matchesExport  # noqa: E501
         """
         pass
 
-    def test_merge_users_batch_using_post(self) -> None:
+    def test_merge_users_batch_using_post(self):
         """Test case for merge_users_batch_using_post
 
-        mergeUsersBatch
+        mergeUsersBatch  # noqa: E501
         """
         pass
 
-    def test_merge_users_using_post(self) -> None:
+    def test_merge_users_using_post(self):
         """Test case for merge_users_using_post
 
-        mergeUsers
+        mergeUsers  # noqa: E501
         """
         pass
 
-    def test_obfuscate_match_id_using_get(self) -> None:
+    def test_obfuscate_match_id_using_get(self):
         """Test case for obfuscate_match_id_using_get
 
-        obfuscateMatchId
+        obfuscateMatchId  # noqa: E501
         """
         pass
 
-    def test_obfuscate_using_get(self) -> None:
+    def test_obfuscate_using_get(self):
         """Test case for obfuscate_using_get
 
-        obfuscate
+        obfuscate  # noqa: E501
         """
         pass
 
-    def test_populate_unknown_player_pre_ratings_using_post(self) -> None:
+    def test_populate_unknown_player_pre_ratings_using_post(self):
         """Test case for populate_unknown_player_pre_ratings_using_post
 
-        populateUnknownPlayerPreRatings
+        populateUnknownPlayerPreRatings  # noqa: E501
         """
         pass
 
-    def test_re_create_es_index_using_post(self) -> None:
+    def test_re_create_es_index_using_post(self):
         """Test case for re_create_es_index_using_post
 
-        reCreateESIndex
+        reCreateESIndex  # noqa: E501
         """
         pass
 
-    def test_recalculate_match_elo_ratings_bulk_using_post(self) -> None:
+    def test_recalculate_match_elo_ratings_bulk_using_post(self):
         """Test case for recalculate_match_elo_ratings_bulk_using_post
 
-        recalculateMatchELORatingsBulk
+        recalculateMatchELORatingsBulk  # noqa: E501
         """
         pass
 
-    def test_recalculate_pre_match_ratings_using_post(self) -> None:
+    def test_recalculate_pre_match_ratings_using_post(self):
         """Test case for recalculate_pre_match_ratings_using_post
 
-        recalculatePreMatchRatings
+        recalculatePreMatchRatings  # noqa: E501
         """
         pass
 
-    def test_recalculate_pre_match_ratings_using_post1(self) -> None:
+    def test_recalculate_pre_match_ratings_using_post1(self):
         """Test case for recalculate_pre_match_ratings_using_post1
 
-        recalculatePreMatchRatings
+        recalculatePreMatchRatings  # noqa: E501
         """
         pass
 
-    def test_remove_all_club_restrictions_using_delete(self) -> None:
+    def test_remove_all_club_restrictions_using_delete(self):
         """Test case for remove_all_club_restrictions_using_delete
 
-        removeAllClubRestrictions
+        removeAllClubRestrictions  # noqa: E501
         """
         pass
 
-    def test_remove_club_restrictions_using_delete(self) -> None:
+    def test_remove_club_restrictions_using_delete(self):
         """Test case for remove_club_restrictions_using_delete
 
-        removeClubRestrictions
+        removeClubRestrictions  # noqa: E501
         """
         pass
 
-    def test_reset_client_secret_using_get(self) -> None:
+    def test_reset_client_secret_using_get(self):
         """Test case for reset_client_secret_using_get
 
-        resetClientSecret
+        resetClientSecret  # noqa: E501
         """
         pass
 
-    def test_restrict_using_post(self) -> None:
+    def test_restrict_using_post(self):
         """Test case for restrict_using_post
 
-        restrict
+        restrict  # noqa: E501
         """
         pass
 
-    def test_save_topic_using_post(self) -> None:
+    def test_save_topic_using_post(self):
         """Test case for save_topic_using_post
 
-        saveTopic
+        saveTopic  # noqa: E501
         """
         pass
 
-    def test_save_verified_match_using_put(self) -> None:
+    def test_save_verified_match_using_put(self):
         """Test case for save_verified_match_using_put
 
-        saveVerifiedMatch
+        saveVerifiedMatch  # noqa: E501
         """
         pass
 
-    def test_set_club_restrictions_using_put(self) -> None:
+    def test_set_club_restrictions_using_put(self):
         """Test case for set_club_restrictions_using_put
 
-        setClubRestrictions
+        setClubRestrictions  # noqa: E501
         """
         pass
 
-    def test_set_club_settings_using_put(self) -> None:
+    def test_set_club_settings_using_put(self):
         """Test case for set_club_settings_using_put
 
-        setClubSettings
+        setClubSettings  # noqa: E501
         """
         pass
 
-    def test_signup_batch_using_put(self) -> None:
+    def test_signup_batch_using_put(self):
         """Test case for signup_batch_using_put
 
-        signupBatch
+        signupBatch  # noqa: E501
         """
         pass
 
-    def test_signup_using_put(self) -> None:
+    def test_signup_using_put(self):
         """Test case for signup_using_put
 
-        signup
+        signup  # noqa: E501
         """
         pass
 
-    def test_trigger_missing_elo_rating_for_players_using_post(self) -> None:
+    def test_trigger_missing_elo_rating_for_players_using_post(self):
         """Test case for trigger_missing_elo_rating_for_players_using_post
 
-        triggerMissingEloRatingForPlayers
+        triggerMissingEloRatingForPlayers  # noqa: E501
         """
         pass
 
-    def test_unclaim_user_using_put(self) -> None:
+    def test_unclaim_user_using_put(self):
         """Test case for unclaim_user_using_put
 
-        unclaimUser
+        unclaimUser  # noqa: E501
         """
         pass
 
-    def test_unobfuscate_match_code_using_get(self) -> None:
+    def test_unobfuscate_match_code_using_get(self):
         """Test case for unobfuscate_match_code_using_get
 
-        unobfuscateMatchCode
+        unobfuscateMatchCode  # noqa: E501
         """
         pass
 
-    def test_unobfuscate_using_get(self) -> None:
+    def test_unobfuscate_using_get(self):
         """Test case for unobfuscate_using_get
 
-        unobfuscate
+        unobfuscate  # noqa: E501
         """
         pass
 
-    def test_update_banner_using_put(self) -> None:
+    def test_update_banner_using_put(self):
         """Test case for update_banner_using_put
 
-        updateBanner
+        updateBanner  # noqa: E501
         """
         pass
 
-    def test_update_club_currency_using_put(self) -> None:
+    def test_update_club_currency_using_put(self):
         """Test case for update_club_currency_using_put
 
-        updateClubCurrency
+        updateClubCurrency  # noqa: E501
         """
         pass
 
-    def test_update_club_revenue_model_using_put(self) -> None:
+    def test_update_club_revenue_model_using_put(self):
         """Test case for update_club_revenue_model_using_put
 
-        updateClubRevenueModel
+        updateClubRevenueModel  # noqa: E501
         """
         pass
 
-    def test_update_currency_rates_using_get(self) -> None:
+    def test_update_currency_rates_using_get(self):
         """Test case for update_currency_rates_using_get
 
-        updateCurrencyRates
+        updateCurrencyRates  # noqa: E501
         """
         pass
 
-    def test_update_es_index_using_put(self) -> None:
+    def test_update_es_index_using_put(self):
         """Test case for update_es_index_using_put
 
-        updateESIndex
+        updateESIndex  # noqa: E501
         """
         pass
 
-    def test_update_external_client_permissions_using_post(self) -> None:
+    def test_update_external_client_permissions_using_post(self):
         """Test case for update_external_client_permissions_using_post
 
-        updateExternalClientPermissions
+        updateExternalClientPermissions  # noqa: E501
         """
         pass
 
-    def test_update_external_id_cron_using_put(self) -> None:
+    def test_update_external_id_cron_using_put(self):
         """Test case for update_external_id_cron_using_put
 
-        updateExternalIdCron
+        updateExternalIdCron  # noqa: E501
         """
         pass
 
-    def test_update_lucra_connection_using_put(self) -> None:
+    def test_update_lucra_connection_using_put(self):
         """Test case for update_lucra_connection_using_put
 
-        updateLucraConnection
+        updateLucraConnection  # noqa: E501
         """
         pass
 
-    def test_update_match_using_put(self) -> None:
+    def test_update_match_using_put(self):
         """Test case for update_match_using_put
 
-        updateMatch
+        updateMatch  # noqa: E501
         """
         pass
 
-    def test_update_payment_status_using_post(self) -> None:
+    def test_update_payment_status_using_post(self):
         """Test case for update_payment_status_using_post
 
-        updatePaymentStatus
+        updatePaymentStatus  # noqa: E501
         """
         pass
 
-    def test_update_player_rating_using_put(self) -> None:
+    def test_update_player_rating_using_put(self):
         """Test case for update_player_rating_using_put
 
-        updatePlayerRating
+        updatePlayerRating  # noqa: E501
         """
         pass
 
-    def test_update_player_statistics_using_put(self) -> None:
+    def test_update_player_statistics_using_put(self):
         """Test case for update_player_statistics_using_put
 
-        updatePlayerStatistics
+        updatePlayerStatistics  # noqa: E501
         """
         pass
 
-    def test_update_ratings_cron_using_put(self) -> None:
+    def test_update_ratings_cron_using_put(self):
         """Test case for update_ratings_cron_using_put
 
-        updateRatingsCron
+        updateRatingsCron  # noqa: E501
         """
         pass
 
-    def test_update_referral_code_using_patch(self) -> None:
+    def test_update_referral_code_using_patch(self):
         """Test case for update_referral_code_using_patch
 
-        updateReferralCode
+        updateReferralCode  # noqa: E501
         """
         pass
 
-    def test_update_status_using_post(self) -> None:
+    def test_update_status_using_post(self):
         """Test case for update_status_using_post
 
-        updateStatus
+        updateStatus  # noqa: E501
         """
         pass
 
-    def test_update_user_profile_using_put(self) -> None:
+    def test_update_user_profile_using_put(self):
         """Test case for update_user_profile_using_put
 
-        updateUserProfile
+        updateUserProfile  # noqa: E501
         """
         pass
 
-    def test_upload_dupr_performance_chart_data_using_put(self) -> None:
+    def test_upload_dupr_performance_chart_data_using_put(self):
         """Test case for upload_dupr_performance_chart_data_using_put
 
-        uploadDuprPerformanceChartData
+        uploadDuprPerformanceChartData  # noqa: E501
         """
         pass
 
-    def test_user_lookup_using_post(self) -> None:
+    def test_user_lookup_using_post(self):
         """Test case for user_lookup_using_post
 
-        userLookup
+        userLookup  # noqa: E501
         """
         pass
 
-    def test_verify_email_using_post(self) -> None:
+    def test_verify_email_using_post(self):
         """Test case for verify_email_using_post
 
-        verifyEmail
+        verifyEmail  # noqa: E501
         """
         pass
 

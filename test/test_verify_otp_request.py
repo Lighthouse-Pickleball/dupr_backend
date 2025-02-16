@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.verify_otp_request import VerifyOtpRequest
+import dupr_backend
+from dupr_backend.models.verify_otp_request import VerifyOtpRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestVerifyOtpRequest(unittest.TestCase):
     """VerifyOtpRequest unit test stubs"""
@@ -25,21 +28,21 @@ class TestVerifyOtpRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> VerifyOtpRequest:
+    def make_instance(self, include_optional):
         """Test VerifyOtpRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `VerifyOtpRequest`
         """
-        model = VerifyOtpRequest()
-        if include_optional:
+        model = dupr_backend.models.verify_otp_request.VerifyOtpRequest()  # noqa: E501
+        if include_optional :
             return VerifyOtpRequest(
-                iso_code = 'US',
-                otp = '012345',
+                iso_code = 'US', 
+                otp = '012345', 
                 phone_number = '+918087XXXXXX'
             )
-        else:
+        else :
             return VerifyOtpRequest(
                 iso_code = 'US',
                 otp = '012345',

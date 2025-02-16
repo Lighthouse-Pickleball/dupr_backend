@@ -18,141 +18,124 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List, Optional, Union
+from typing import Any, Dict, List, Optional, Union
+from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr, conlist, validator
 from dupr_backend.models.address_response import AddressResponse
 from dupr_backend.models.bracket_response import BracketResponse
 from dupr_backend.models.currency_details_response import CurrencyDetailsResponse
 from dupr_backend.models.league_contact_detail_response import LeagueContactDetailResponse
 from dupr_backend.models.league_content_response import LeagueContentResponse
-from typing import Optional, Set
-from typing_extensions import Self
 
 class LeagueResponse(BaseModel):
     """
     LeagueResponse
-    """ # noqa: E501
-    additional_information: Optional[LeagueContentResponse] = Field(default=None, alias="additionalInformation")
+    """
+    additional_information: Optional[LeagueContentResponse] = Field(None, alias="additionalInformation")
     address: Optional[AddressResponse] = None
-    age_string: Optional[StrictStr] = Field(default=None, alias="ageString")
+    age_string: Optional[StrictStr] = Field(None, alias="ageString")
     attributes: Optional[Dict[str, Any]] = None
-    brackets: List[BracketResponse]
-    can_show_standings: Optional[StrictBool] = Field(default=None, alias="canShowStandings")
-    club_id: StrictInt = Field(alias="clubId")
-    club_name: Optional[StrictStr] = Field(default=None, alias="clubName")
-    contact_details: Optional[List[LeagueContactDetailResponse]] = Field(default=None, alias="contactDetails")
-    currency_details: Optional[CurrencyDetailsResponse] = Field(default=None, alias="currencyDetails")
-    display_status: Optional[StrictStr] = Field(default=None, alias="displayStatus")
+    brackets: conlist(BracketResponse) = Field(...)
+    can_show_standings: Optional[StrictBool] = Field(None, alias="canShowStandings")
+    club_id: StrictInt = Field(..., alias="clubId")
+    club_name: Optional[StrictStr] = Field(None, alias="clubName")
+    contact_details: Optional[conlist(LeagueContactDetailResponse)] = Field(None, alias="contactDetails")
+    currency_details: Optional[CurrencyDetailsResponse] = Field(None, alias="currencyDetails")
+    display_status: Optional[StrictStr] = Field(None, alias="displayStatus")
     distance: Optional[StrictStr] = None
-    distance_in_miles: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="distanceInMiles")
-    duration: List[StrictStr]
-    duration_date_time: Optional[List[StrictStr]] = Field(default=None, alias="durationDateTime")
-    duration_date_time_utc: Optional[List[StrictStr]] = Field(default=None, alias="durationDateTimeUTC")
-    duration_status: Optional[StrictStr] = Field(default=None, alias="durationStatus")
-    duration_string: Optional[StrictStr] = Field(default=None, alias="durationString")
-    elimination_string: Optional[StrictStr] = Field(default=None, alias="eliminationString")
-    end_date: datetime = Field(alias="endDate")
-    event_format_string: Optional[StrictStr] = Field(default=None, alias="eventFormatString")
-    is_registered: Optional[StrictBool] = Field(default=None, alias="isRegistered")
-    league_id: StrictInt = Field(alias="leagueId")
-    league_name: StrictStr = Field(alias="leagueName")
-    league_price: Optional[StrictStr] = Field(default=None, alias="leaguePrice")
-    liability_waiver_id: StrictInt = Field(alias="liabilityWaiverId")
-    liability_waiver_url: Optional[StrictStr] = Field(default=None, alias="liabilityWaiverUrl")
-    long_description: Optional[LeagueContentResponse] = Field(default=None, alias="longDescription")
-    media_id: StrictInt = Field(alias="mediaId")
-    media_url: Optional[StrictStr] = Field(default=None, alias="mediaUrl")
-    member_fee: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="memberFee")
-    membership_permission: Optional[StrictStr] = Field(default=None, alias="membershipPermission")
-    non_member_fee: Union[StrictFloat, StrictInt] = Field(alias="nonMemberFee")
-    player_group: Optional[StrictStr] = Field(default=None, alias="playerGroup")
-    refund_policy: Optional[LeagueContentResponse] = Field(default=None, alias="refundPolicy")
-    registered_members: Optional[StrictInt] = Field(default=None, alias="registeredMembers")
-    registration_date: List[StrictStr] = Field(alias="registrationDate")
-    registration_date_time: Optional[List[StrictStr]] = Field(default=None, alias="registrationDateTime")
-    registration_date_time_utc: Optional[List[StrictStr]] = Field(default=None, alias="registrationDateTimeUTC")
-    registration_status: Optional[StrictStr] = Field(default=None, alias="registrationStatus")
-    registration_string: Optional[StrictStr] = Field(default=None, alias="registrationString")
-    registration_url: Optional[StrictStr] = Field(default=None, alias="registrationUrl")
-    safety_policy: Optional[LeagueContentResponse] = Field(default=None, alias="safetyPolicy")
-    short_address: Optional[StrictStr] = Field(default=None, alias="shortAddress")
-    short_description: Optional[LeagueContentResponse] = Field(default=None, alias="shortDescription")
-    skill_level: Optional[StrictStr] = Field(default=None, alias="skillLevel")
-    start_date: datetime = Field(alias="startDate")
+    distance_in_miles: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="distanceInMiles")
+    duration: conlist(StrictStr) = Field(...)
+    duration_date_time: Optional[conlist(StrictStr)] = Field(None, alias="durationDateTime")
+    duration_date_time_utc: Optional[conlist(StrictStr)] = Field(None, alias="durationDateTimeUTC")
+    duration_status: Optional[StrictStr] = Field(None, alias="durationStatus")
+    duration_string: Optional[StrictStr] = Field(None, alias="durationString")
+    elimination_string: Optional[StrictStr] = Field(None, alias="eliminationString")
+    end_date: datetime = Field(..., alias="endDate")
+    event_format_string: Optional[StrictStr] = Field(None, alias="eventFormatString")
+    is_registered: Optional[StrictBool] = Field(None, alias="isRegistered")
+    league_id: StrictInt = Field(..., alias="leagueId")
+    league_name: StrictStr = Field(..., alias="leagueName")
+    league_price: Optional[StrictStr] = Field(None, alias="leaguePrice")
+    liability_waiver_id: StrictInt = Field(..., alias="liabilityWaiverId")
+    liability_waiver_url: Optional[StrictStr] = Field(None, alias="liabilityWaiverUrl")
+    long_description: Optional[LeagueContentResponse] = Field(None, alias="longDescription")
+    media_id: StrictInt = Field(..., alias="mediaId")
+    media_url: Optional[StrictStr] = Field(None, alias="mediaUrl")
+    member_fee: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="memberFee")
+    membership_permission: Optional[StrictStr] = Field(None, alias="membershipPermission")
+    non_member_fee: Union[StrictFloat, StrictInt] = Field(..., alias="nonMemberFee")
+    player_group: Optional[StrictStr] = Field(None, alias="playerGroup")
+    refund_policy: Optional[LeagueContentResponse] = Field(None, alias="refundPolicy")
+    registered_members: Optional[StrictInt] = Field(None, alias="registeredMembers")
+    registration_date: conlist(StrictStr) = Field(..., alias="registrationDate")
+    registration_date_time: Optional[conlist(StrictStr)] = Field(None, alias="registrationDateTime")
+    registration_date_time_utc: Optional[conlist(StrictStr)] = Field(None, alias="registrationDateTimeUTC")
+    registration_status: Optional[StrictStr] = Field(None, alias="registrationStatus")
+    registration_string: Optional[StrictStr] = Field(None, alias="registrationString")
+    registration_url: Optional[StrictStr] = Field(None, alias="registrationUrl")
+    safety_policy: Optional[LeagueContentResponse] = Field(None, alias="safetyPolicy")
+    short_address: Optional[StrictStr] = Field(None, alias="shortAddress")
+    short_description: Optional[LeagueContentResponse] = Field(None, alias="shortDescription")
+    skill_level: Optional[StrictStr] = Field(None, alias="skillLevel")
+    start_date: datetime = Field(..., alias="startDate")
     status: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
-    user_id: StrictInt = Field(alias="userId")
-    __properties: ClassVar[List[str]] = ["additionalInformation", "address", "ageString", "attributes", "brackets", "canShowStandings", "clubId", "clubName", "contactDetails", "currencyDetails", "displayStatus", "distance", "distanceInMiles", "duration", "durationDateTime", "durationDateTimeUTC", "durationStatus", "durationString", "eliminationString", "endDate", "eventFormatString", "isRegistered", "leagueId", "leagueName", "leaguePrice", "liabilityWaiverId", "liabilityWaiverUrl", "longDescription", "mediaId", "mediaUrl", "memberFee", "membershipPermission", "nonMemberFee", "playerGroup", "refundPolicy", "registeredMembers", "registrationDate", "registrationDateTime", "registrationDateTimeUTC", "registrationStatus", "registrationString", "registrationUrl", "safetyPolicy", "shortAddress", "shortDescription", "skillLevel", "startDate", "status", "type", "userId"]
+    user_id: StrictInt = Field(..., alias="userId")
+    __properties = ["additionalInformation", "address", "ageString", "attributes", "brackets", "canShowStandings", "clubId", "clubName", "contactDetails", "currencyDetails", "displayStatus", "distance", "distanceInMiles", "duration", "durationDateTime", "durationDateTimeUTC", "durationStatus", "durationString", "eliminationString", "endDate", "eventFormatString", "isRegistered", "leagueId", "leagueName", "leaguePrice", "liabilityWaiverId", "liabilityWaiverUrl", "longDescription", "mediaId", "mediaUrl", "memberFee", "membershipPermission", "nonMemberFee", "playerGroup", "refundPolicy", "registeredMembers", "registrationDate", "registrationDateTime", "registrationDateTimeUTC", "registrationStatus", "registrationString", "registrationUrl", "safetyPolicy", "shortAddress", "shortDescription", "skillLevel", "startDate", "status", "type", "userId"]
 
-    @field_validator('membership_permission')
+    @validator('membership_permission')
     def membership_permission_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['CLUB_MEMBERS', 'OPEN_TO_ALL']):
+        if value not in ('CLUB_MEMBERS', 'OPEN_TO_ALL'):
             raise ValueError("must be one of enum values ('CLUB_MEMBERS', 'OPEN_TO_ALL')")
         return value
 
-    @field_validator('status')
+    @validator('status')
     def status_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING']):
+        if value not in ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING'):
             raise ValueError("must be one of enum values ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING')")
         return value
 
-    @field_validator('type')
+    @validator('type')
     def type_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['FLEX']):
+        if value not in ('FLEX'):
             raise ValueError("must be one of enum values ('FLEX')")
         return value
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
+    class Config:
+        """Pydantic configuration"""
+        allow_population_by_field_name = True
+        validate_assignment = True
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+        return pprint.pformat(self.dict(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
+    def from_json(cls, json_str: str) -> LeagueResponse:
         """Create an instance of LeagueResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
+    def to_dict(self):
+        """Returns the dictionary representation of the model using alias"""
+        _dict = self.dict(by_alias=True,
+                          exclude={
+                          },
+                          exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of additional_information
         if self.additional_information:
             _dict['additionalInformation'] = self.additional_information.to_dict()
@@ -162,16 +145,16 @@ class LeagueResponse(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in brackets (list)
         _items = []
         if self.brackets:
-            for _item_brackets in self.brackets:
-                if _item_brackets:
-                    _items.append(_item_brackets.to_dict())
+            for _item in self.brackets:
+                if _item:
+                    _items.append(_item.to_dict())
             _dict['brackets'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in contact_details (list)
         _items = []
         if self.contact_details:
-            for _item_contact_details in self.contact_details:
-                if _item_contact_details:
-                    _items.append(_item_contact_details.to_dict())
+            for _item in self.contact_details:
+                if _item:
+                    _items.append(_item.to_dict())
             _dict['contactDetails'] = _items
         # override the default output from pydantic by calling `to_dict()` of currency_details
         if self.currency_details:
@@ -191,65 +174,65 @@ class LeagueResponse(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+    def from_dict(cls, obj: dict) -> LeagueResponse:
         """Create an instance of LeagueResponse from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+            return LeagueResponse.parse_obj(obj)
 
-        _obj = cls.model_validate({
-            "additionalInformation": LeagueContentResponse.from_dict(obj["additionalInformation"]) if obj.get("additionalInformation") is not None else None,
-            "address": AddressResponse.from_dict(obj["address"]) if obj.get("address") is not None else None,
-            "ageString": obj.get("ageString"),
+        _obj = LeagueResponse.parse_obj({
+            "additional_information": LeagueContentResponse.from_dict(obj.get("additionalInformation")) if obj.get("additionalInformation") is not None else None,
+            "address": AddressResponse.from_dict(obj.get("address")) if obj.get("address") is not None else None,
+            "age_string": obj.get("ageString"),
             "attributes": obj.get("attributes"),
-            "brackets": [BracketResponse.from_dict(_item) for _item in obj["brackets"]] if obj.get("brackets") is not None else None,
-            "canShowStandings": obj.get("canShowStandings"),
-            "clubId": obj.get("clubId"),
-            "clubName": obj.get("clubName"),
-            "contactDetails": [LeagueContactDetailResponse.from_dict(_item) for _item in obj["contactDetails"]] if obj.get("contactDetails") is not None else None,
-            "currencyDetails": CurrencyDetailsResponse.from_dict(obj["currencyDetails"]) if obj.get("currencyDetails") is not None else None,
-            "displayStatus": obj.get("displayStatus"),
+            "brackets": [BracketResponse.from_dict(_item) for _item in obj.get("brackets")] if obj.get("brackets") is not None else None,
+            "can_show_standings": obj.get("canShowStandings"),
+            "club_id": obj.get("clubId"),
+            "club_name": obj.get("clubName"),
+            "contact_details": [LeagueContactDetailResponse.from_dict(_item) for _item in obj.get("contactDetails")] if obj.get("contactDetails") is not None else None,
+            "currency_details": CurrencyDetailsResponse.from_dict(obj.get("currencyDetails")) if obj.get("currencyDetails") is not None else None,
+            "display_status": obj.get("displayStatus"),
             "distance": obj.get("distance"),
-            "distanceInMiles": obj.get("distanceInMiles"),
+            "distance_in_miles": obj.get("distanceInMiles"),
             "duration": obj.get("duration"),
-            "durationDateTime": obj.get("durationDateTime"),
-            "durationDateTimeUTC": obj.get("durationDateTimeUTC"),
-            "durationStatus": obj.get("durationStatus"),
-            "durationString": obj.get("durationString"),
-            "eliminationString": obj.get("eliminationString"),
-            "endDate": obj.get("endDate"),
-            "eventFormatString": obj.get("eventFormatString"),
-            "isRegistered": obj.get("isRegistered"),
-            "leagueId": obj.get("leagueId"),
-            "leagueName": obj.get("leagueName"),
-            "leaguePrice": obj.get("leaguePrice"),
-            "liabilityWaiverId": obj.get("liabilityWaiverId"),
-            "liabilityWaiverUrl": obj.get("liabilityWaiverUrl"),
-            "longDescription": LeagueContentResponse.from_dict(obj["longDescription"]) if obj.get("longDescription") is not None else None,
-            "mediaId": obj.get("mediaId"),
-            "mediaUrl": obj.get("mediaUrl"),
-            "memberFee": obj.get("memberFee"),
-            "membershipPermission": obj.get("membershipPermission"),
-            "nonMemberFee": obj.get("nonMemberFee"),
-            "playerGroup": obj.get("playerGroup"),
-            "refundPolicy": LeagueContentResponse.from_dict(obj["refundPolicy"]) if obj.get("refundPolicy") is not None else None,
-            "registeredMembers": obj.get("registeredMembers"),
-            "registrationDate": obj.get("registrationDate"),
-            "registrationDateTime": obj.get("registrationDateTime"),
-            "registrationDateTimeUTC": obj.get("registrationDateTimeUTC"),
-            "registrationStatus": obj.get("registrationStatus"),
-            "registrationString": obj.get("registrationString"),
-            "registrationUrl": obj.get("registrationUrl"),
-            "safetyPolicy": LeagueContentResponse.from_dict(obj["safetyPolicy"]) if obj.get("safetyPolicy") is not None else None,
-            "shortAddress": obj.get("shortAddress"),
-            "shortDescription": LeagueContentResponse.from_dict(obj["shortDescription"]) if obj.get("shortDescription") is not None else None,
-            "skillLevel": obj.get("skillLevel"),
-            "startDate": obj.get("startDate"),
+            "duration_date_time": obj.get("durationDateTime"),
+            "duration_date_time_utc": obj.get("durationDateTimeUTC"),
+            "duration_status": obj.get("durationStatus"),
+            "duration_string": obj.get("durationString"),
+            "elimination_string": obj.get("eliminationString"),
+            "end_date": obj.get("endDate"),
+            "event_format_string": obj.get("eventFormatString"),
+            "is_registered": obj.get("isRegistered"),
+            "league_id": obj.get("leagueId"),
+            "league_name": obj.get("leagueName"),
+            "league_price": obj.get("leaguePrice"),
+            "liability_waiver_id": obj.get("liabilityWaiverId"),
+            "liability_waiver_url": obj.get("liabilityWaiverUrl"),
+            "long_description": LeagueContentResponse.from_dict(obj.get("longDescription")) if obj.get("longDescription") is not None else None,
+            "media_id": obj.get("mediaId"),
+            "media_url": obj.get("mediaUrl"),
+            "member_fee": obj.get("memberFee"),
+            "membership_permission": obj.get("membershipPermission"),
+            "non_member_fee": obj.get("nonMemberFee"),
+            "player_group": obj.get("playerGroup"),
+            "refund_policy": LeagueContentResponse.from_dict(obj.get("refundPolicy")) if obj.get("refundPolicy") is not None else None,
+            "registered_members": obj.get("registeredMembers"),
+            "registration_date": obj.get("registrationDate"),
+            "registration_date_time": obj.get("registrationDateTime"),
+            "registration_date_time_utc": obj.get("registrationDateTimeUTC"),
+            "registration_status": obj.get("registrationStatus"),
+            "registration_string": obj.get("registrationString"),
+            "registration_url": obj.get("registrationUrl"),
+            "safety_policy": LeagueContentResponse.from_dict(obj.get("safetyPolicy")) if obj.get("safetyPolicy") is not None else None,
+            "short_address": obj.get("shortAddress"),
+            "short_description": LeagueContentResponse.from_dict(obj.get("shortDescription")) if obj.get("shortDescription") is not None else None,
+            "skill_level": obj.get("skillLevel"),
+            "start_date": obj.get("startDate"),
             "status": obj.get("status"),
             "type": obj.get("type"),
-            "userId": obj.get("userId")
+            "user_id": obj.get("userId")
         })
         return _obj
 

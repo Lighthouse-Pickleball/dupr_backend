@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.single_wrapper_of_open_play_event_waitlist import SingleWrapperOfOpenPlayEventWaitlist
+import dupr_backend
+from dupr_backend.models.single_wrapper_of_open_play_event_waitlist import SingleWrapperOfOpenPlayEventWaitlist  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSingleWrapperOfOpenPlayEventWaitlist(unittest.TestCase):
     """SingleWrapperOfOpenPlayEventWaitlist unit test stubs"""
@@ -25,24 +28,24 @@ class TestSingleWrapperOfOpenPlayEventWaitlist(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperOfOpenPlayEventWaitlist:
+    def make_instance(self, include_optional):
         """Test SingleWrapperOfOpenPlayEventWaitlist
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfOpenPlayEventWaitlist`
         """
-        model = SingleWrapperOfOpenPlayEventWaitlist()
-        if include_optional:
+        model = dupr_backend.models.single_wrapper_of_open_play_event_waitlist.SingleWrapperOfOpenPlayEventWaitlist()  # noqa: E501
+        if include_optional :
             return SingleWrapperOfOpenPlayEventWaitlist(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 result = dupr_backend.models.open_play_event_waitlist.OpenPlayEventWaitlist(
                     event_id = 56, 
                     message = '', 
-                    waitlist_position = 56, ),
+                    waitlist_position = 56, ), 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return SingleWrapperOfOpenPlayEventWaitlist(
         )
         """

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.post_reaction_response import PostReactionResponse
+import dupr_backend
+from dupr_backend.models.post_reaction_response import PostReactionResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestPostReactionResponse(unittest.TestCase):
     """PostReactionResponse unit test stubs"""
@@ -25,22 +28,22 @@ class TestPostReactionResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PostReactionResponse:
+    def make_instance(self, include_optional):
         """Test PostReactionResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PostReactionResponse`
         """
-        model = PostReactionResponse()
-        if include_optional:
+        model = dupr_backend.models.post_reaction_response.PostReactionResponse()  # noqa: E501
+        if include_optional :
             return PostReactionResponse(
-                activity_id = '',
+                activity_id = '', 
                 actor = dupr_backend.models.activity_user.ActivityUser(
                     id = 56, 
                     is_follow = True, 
                     name = '', 
-                    profile_image = '', ),
+                    profile_image = '', ), 
                 children = {
                     'key' : [
                         dupr_backend.models.post_reaction_response.PostReactionResponse(
@@ -344,14 +347,14 @@ class TestPostReactionResponse(unittest.TestCase):
                                 ], 
                             updated_at = 56, )
                         ]
-                    },
-                comment = '',
-                created_at = 56,
-                getstream_id = '',
-                id = '',
+                    }, 
+                comment = '', 
+                created_at = 56, 
+                getstream_id = '', 
+                id = '', 
                 images = [
                     ''
-                    ],
+                    ], 
                 matches = [
                     dupr_backend.models.match.Match(
                         bracket_id = 56, 
@@ -548,23 +551,23 @@ class TestPostReactionResponse(unittest.TestCase):
                             name = '', 
                             referral_code = '', ), 
                         venue = '', )
-                    ],
-                parent_id = '',
-                post_id = '',
-                react = 'COMMENT',
+                    ], 
+                parent_id = '', 
+                post_id = '', 
+                react = 'COMMENT', 
                 reaction_counts = {
                     'key' : dupr_backend.models.number.Number()
-                    },
+                    }, 
                 tags = [
                     dupr_backend.models.activity_user.ActivityUser(
                         id = 56, 
                         is_follow = True, 
                         name = '', 
                         profile_image = '', )
-                    ],
+                    ], 
                 updated_at = 56
             )
-        else:
+        else :
             return PostReactionResponse(
                 activity_id = '',
                 actor = dupr_backend.models.activity_user.ActivityUser(

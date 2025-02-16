@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.single_wrapper_of_array_of_autocomplete_prediction import SingleWrapperOfArrayOfAutocompletePrediction
+import dupr_backend
+from dupr_backend.models.single_wrapper_of_array_of_autocomplete_prediction import SingleWrapperOfArrayOfAutocompletePrediction  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSingleWrapperOfArrayOfAutocompletePrediction(unittest.TestCase):
     """SingleWrapperOfArrayOfAutocompletePrediction unit test stubs"""
@@ -25,17 +28,17 @@ class TestSingleWrapperOfArrayOfAutocompletePrediction(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperOfArrayOfAutocompletePrediction:
+    def make_instance(self, include_optional):
         """Test SingleWrapperOfArrayOfAutocompletePrediction
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfArrayOfAutocompletePrediction`
         """
-        model = SingleWrapperOfArrayOfAutocompletePrediction()
-        if include_optional:
+        model = dupr_backend.models.single_wrapper_of_array_of_autocomplete_prediction.SingleWrapperOfArrayOfAutocompletePrediction()  # noqa: E501
+        if include_optional :
             return SingleWrapperOfArrayOfAutocompletePrediction(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 result = [
                     dupr_backend.models.autocomplete_prediction.AutocompletePrediction(
                         description = '', 
@@ -62,10 +65,10 @@ class TestSingleWrapperOfArrayOfAutocompletePrediction(unittest.TestCase):
                         types = [
                             ''
                             ], )
-                    ],
+                    ], 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return SingleWrapperOfArrayOfAutocompletePrediction(
         )
         """

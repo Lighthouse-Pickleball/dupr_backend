@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.single_wrapper_of_unclaimed_player_response import SingleWrapperOfUnclaimedPlayerResponse
+import dupr_backend
+from dupr_backend.models.single_wrapper_of_unclaimed_player_response import SingleWrapperOfUnclaimedPlayerResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSingleWrapperOfUnclaimedPlayerResponse(unittest.TestCase):
     """SingleWrapperOfUnclaimedPlayerResponse unit test stubs"""
@@ -25,17 +28,17 @@ class TestSingleWrapperOfUnclaimedPlayerResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperOfUnclaimedPlayerResponse:
+    def make_instance(self, include_optional):
         """Test SingleWrapperOfUnclaimedPlayerResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfUnclaimedPlayerResponse`
         """
-        model = SingleWrapperOfUnclaimedPlayerResponse()
-        if include_optional:
+        model = dupr_backend.models.single_wrapper_of_unclaimed_player_response.SingleWrapperOfUnclaimedPlayerResponse()  # noqa: E501
+        if include_optional :
             return SingleWrapperOfUnclaimedPlayerResponse(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 result = dupr_backend.models.unclaimed_player_response.UnclaimedPlayerResponse(
                     age = 12, 
                     claimed = False, 
@@ -57,10 +60,10 @@ class TestSingleWrapperOfUnclaimedPlayerResponse(unittest.TestCase):
                         description = '', 
                         image_url = '', 
                         sponsor_popup_heading = '', 
-                        sponsor_redirect_url = '', ), ),
+                        sponsor_redirect_url = '', ), ), 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return SingleWrapperOfUnclaimedPlayerResponse(
         )
         """

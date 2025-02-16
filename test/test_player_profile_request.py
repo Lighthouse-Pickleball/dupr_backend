@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.player_profile_request import PlayerProfileRequest
+import dupr_backend
+from dupr_backend.models.player_profile_request import PlayerProfileRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestPlayerProfileRequest(unittest.TestCase):
     """PlayerProfileRequest unit test stubs"""
@@ -25,38 +28,38 @@ class TestPlayerProfileRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PlayerProfileRequest:
+    def make_instance(self, include_optional):
         """Test PlayerProfileRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PlayerProfileRequest`
         """
-        model = PlayerProfileRequest()
-        if include_optional:
+        model = dupr_backend.models.player_profile_request.PlayerProfileRequest()  # noqa: E501
+        if include_optional :
             return PlayerProfileRequest(
-                address_id = 10684651007,
-                apparel_brand = 'Puma',
-                birthdate = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
-                default_rating = 'SINGLES/DOUBLES/NONE',
-                display_username = True,
-                first_name = 'John',
-                full_name = 'John Doe',
-                gender = 'MALE/FEMALE',
-                hand = 'LEFT/RIGHT',
-                is_valid_phone = True,
-                iso_code = 'US',
-                last_name = 'Doe',
-                media_id = 4086274008,
-                paddle_brand = 'Selkirk Vanguard Hybrid S2',
-                phone = '987654321',
-                place_id = 'ChIJW37e6g4AwTsRfjFKn0_XRiU',
-                preferred_ball = 'Balls',
-                preferred_side = 'LEFT/RIGHT/EITHER',
-                shoe_brand = 'Nike',
+                address_id = 10684651007, 
+                apparel_brand = 'Puma', 
+                birthdate = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
+                default_rating = 'SINGLES/DOUBLES/NONE', 
+                display_username = True, 
+                first_name = 'John', 
+                full_name = 'John Doe', 
+                gender = 'MALE/FEMALE', 
+                hand = 'LEFT/RIGHT', 
+                is_valid_phone = True, 
+                iso_code = 'US', 
+                last_name = 'Doe', 
+                media_id = 4086274008, 
+                paddle_brand = 'Selkirk Vanguard Hybrid S2', 
+                phone = '987654321', 
+                place_id = 'ChIJW37e6g4AwTsRfjFKn0_XRiU', 
+                preferred_ball = 'Balls', 
+                preferred_side = 'LEFT/RIGHT/EITHER', 
+                shoe_brand = 'Nike', 
                 username = 'X AE A-XII'
             )
-        else:
+        else :
             return PlayerProfileRequest(
                 full_name = 'John Doe',
         )

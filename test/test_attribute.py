@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.attribute import Attribute
+import dupr_backend
+from dupr_backend.models.attribute import Attribute  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestAttribute(unittest.TestCase):
     """Attribute unit test stubs"""
@@ -25,15 +28,15 @@ class TestAttribute(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> Attribute:
+    def make_instance(self, include_optional):
         """Test Attribute
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `Attribute`
         """
-        model = Attribute()
-        if include_optional:
+        model = dupr_backend.models.attribute.Attribute()  # noqa: E501
+        if include_optional :
             return Attribute(
                 children = {
                     'key' : dupr_backend.models.attribute.Attribute(
@@ -44,11 +47,11 @@ class TestAttribute(unittest.TestCase):
                             }, 
                         _comment = 'Contact person name, if provided.', 
                         value = 'String', )
-                    },
-                comment = 'Contact person name, if provided.',
+                    }, 
+                comment = 'Contact person name, if provided.', 
                 value = 'String'
             )
-        else:
+        else :
             return Attribute(
                 comment = 'Contact person name, if provided.',
                 value = 'String',

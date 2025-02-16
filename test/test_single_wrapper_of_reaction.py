@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.single_wrapper_of_reaction import SingleWrapperOfReaction
+import dupr_backend
+from dupr_backend.models.single_wrapper_of_reaction import SingleWrapperOfReaction  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSingleWrapperOfReaction(unittest.TestCase):
     """SingleWrapperOfReaction unit test stubs"""
@@ -25,26 +28,26 @@ class TestSingleWrapperOfReaction(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperOfReaction:
+    def make_instance(self, include_optional):
         """Test SingleWrapperOfReaction
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfReaction`
         """
-        model = SingleWrapperOfReaction()
-        if include_optional:
+        model = dupr_backend.models.single_wrapper_of_reaction.SingleWrapperOfReaction()  # noqa: E501
+        if include_optional :
             return SingleWrapperOfReaction(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 result = dupr_backend.models.reaction.Reaction(
                     activity_id = '', 
                     id = '', 
                     kind = '', 
                     parent = '', 
-                    user_id = '', ),
+                    user_id = '', ), 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return SingleWrapperOfReaction(
         )
         """

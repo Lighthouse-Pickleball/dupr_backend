@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.bracket_match_request import BracketMatchRequest
+import dupr_backend
+from dupr_backend.models.bracket_match_request import BracketMatchRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestBracketMatchRequest(unittest.TestCase):
     """BracketMatchRequest unit test stubs"""
@@ -25,19 +28,19 @@ class TestBracketMatchRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> BracketMatchRequest:
+    def make_instance(self, include_optional):
         """Test BracketMatchRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `BracketMatchRequest`
         """
-        model = BracketMatchRequest()
-        if include_optional:
+        model = dupr_backend.models.bracket_match_request.BracketMatchRequest()  # noqa: E501
+        if include_optional :
             return BracketMatchRequest(
                 tags = [EAST, WEST]
             )
-        else:
+        else :
             return BracketMatchRequest(
                 tags = [EAST, WEST],
         )

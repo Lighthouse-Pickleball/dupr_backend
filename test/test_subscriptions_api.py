@@ -14,43 +14,45 @@
 
 import unittest
 
-from dupr_backend.api.subscriptions_api import SubscriptionsApi
+import dupr_backend
+from dupr_backend.api.subscriptions_api import SubscriptionsApi  # noqa: E501
+from dupr_backend.rest import ApiException
 
 
 class TestSubscriptionsApi(unittest.TestCase):
     """SubscriptionsApi unit test stubs"""
 
-    def setUp(self) -> None:
-        self.api = SubscriptionsApi()
+    def setUp(self):
+        self.api = dupr_backend.api.subscriptions_api.SubscriptionsApi()  # noqa: E501
 
-    def tearDown(self) -> None:
+    def tearDown(self):
         pass
 
-    def test_checkout_using_put(self) -> None:
+    def test_checkout_using_put(self):
         """Test case for checkout_using_put
 
-        checkout
+        checkout  # noqa: E501
         """
         pass
 
-    def test_customer_portal_using_put(self) -> None:
+    def test_customer_portal_using_put(self):
         """Test case for customer_portal_using_put
 
-        customerPortal
+        customerPortal  # noqa: E501
         """
         pass
 
-    def test_is_subscribed_using_get(self) -> None:
+    def test_is_subscribed_using_get(self):
         """Test case for is_subscribed_using_get
 
-        isSubscribed
+        isSubscribed  # noqa: E501
         """
         pass
 
-    def test_subscriptions_using_get(self) -> None:
+    def test_subscriptions_using_get(self):
         """Test case for subscriptions_using_get
 
-        subscriptions
+        subscriptions  # noqa: E501
         """
         pass
 

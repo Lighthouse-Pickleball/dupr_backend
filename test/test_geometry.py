@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.geometry import Geometry
+import dupr_backend
+from dupr_backend.models.geometry import Geometry  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestGeometry(unittest.TestCase):
     """Geometry unit test stubs"""
@@ -25,15 +28,15 @@ class TestGeometry(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> Geometry:
+    def make_instance(self, include_optional):
         """Test Geometry
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `Geometry`
         """
-        model = Geometry()
-        if include_optional:
+        model = dupr_backend.models.geometry.Geometry()  # noqa: E501
+        if include_optional :
             return Geometry(
                 bounds = dupr_backend.models.bounds.Bounds(
                     northeast = dupr_backend.models.lat_lng.LatLng(
@@ -41,11 +44,11 @@ class TestGeometry(unittest.TestCase):
                         lng = 1.337, ), 
                     southwest = dupr_backend.models.lat_lng.LatLng(
                         lat = 1.337, 
-                        lng = 1.337, ), ),
+                        lng = 1.337, ), ), 
                 location = dupr_backend.models.lat_lng.LatLng(
                     lat = 1.337, 
-                    lng = 1.337, ),
-                location_type = 'APPROXIMATE',
+                    lng = 1.337, ), 
+                location_type = 'APPROXIMATE', 
                 viewport = dupr_backend.models.bounds.Bounds(
                     northeast = dupr_backend.models.lat_lng.LatLng(
                         lat = 1.337, 
@@ -54,7 +57,7 @@ class TestGeometry(unittest.TestCase):
                         lat = 1.337, 
                         lng = 1.337, ), )
             )
-        else:
+        else :
             return Geometry(
         )
         """

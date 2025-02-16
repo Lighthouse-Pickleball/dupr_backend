@@ -17,98 +17,82 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List, Optional
+
+from typing import List, Optional
+from pydantic import BaseModel, Field, StrictInt, StrictStr, conlist, validator
 from dupr_backend.models.team_member import TeamMember
-from typing import Optional, Set
-from typing_extensions import Self
 
 class MiLPTeam(BaseModel):
     """
     MiLPTeam
-    """ # noqa: E501
+    """
     created: Optional[StrictStr] = None
     status: Optional[StrictStr] = None
-    team_code: Optional[StrictStr] = Field(default=None, alias="teamCode")
-    team_id: StrictInt = Field(alias="teamId")
-    team_members: List[TeamMember] = Field(alias="teamMembers")
-    team_name: StrictStr = Field(alias="teamName")
-    __properties: ClassVar[List[str]] = ["created", "status", "teamCode", "teamId", "teamMembers", "teamName"]
+    team_code: Optional[StrictStr] = Field(None, alias="teamCode")
+    team_id: StrictInt = Field(..., alias="teamId")
+    team_members: conlist(TeamMember) = Field(..., alias="teamMembers")
+    team_name: StrictStr = Field(..., alias="teamName")
+    __properties = ["created", "status", "teamCode", "teamId", "teamMembers", "teamName"]
 
-    @field_validator('status')
+    @validator('status')
     def status_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING']):
+        if value not in ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING'):
             raise ValueError("must be one of enum values ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING')")
         return value
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
+    class Config:
+        """Pydantic configuration"""
+        allow_population_by_field_name = True
+        validate_assignment = True
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+        return pprint.pformat(self.dict(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
+    def from_json(cls, json_str: str) -> MiLPTeam:
         """Create an instance of MiLPTeam from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
+    def to_dict(self):
+        """Returns the dictionary representation of the model using alias"""
+        _dict = self.dict(by_alias=True,
+                          exclude={
+                          },
+                          exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of each item in team_members (list)
         _items = []
         if self.team_members:
-            for _item_team_members in self.team_members:
-                if _item_team_members:
-                    _items.append(_item_team_members.to_dict())
+            for _item in self.team_members:
+                if _item:
+                    _items.append(_item.to_dict())
             _dict['teamMembers'] = _items
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+    def from_dict(cls, obj: dict) -> MiLPTeam:
         """Create an instance of MiLPTeam from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+            return MiLPTeam.parse_obj(obj)
 
-        _obj = cls.model_validate({
+        _obj = MiLPTeam.parse_obj({
             "created": obj.get("created"),
             "status": obj.get("status"),
-            "teamCode": obj.get("teamCode"),
-            "teamId": obj.get("teamId"),
-            "teamMembers": [TeamMember.from_dict(_item) for _item in obj["teamMembers"]] if obj.get("teamMembers") is not None else None,
-            "teamName": obj.get("teamName")
+            "team_code": obj.get("teamCode"),
+            "team_id": obj.get("teamId"),
+            "team_members": [TeamMember.from_dict(_item) for _item in obj.get("teamMembers")] if obj.get("teamMembers") is not None else None,
+            "team_name": obj.get("teamName")
         })
         return _obj
 

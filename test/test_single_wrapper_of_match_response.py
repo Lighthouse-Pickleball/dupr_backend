@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.single_wrapper_of_match_response import SingleWrapperOfMatchResponse
+import dupr_backend
+from dupr_backend.models.single_wrapper_of_match_response import SingleWrapperOfMatchResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSingleWrapperOfMatchResponse(unittest.TestCase):
     """SingleWrapperOfMatchResponse unit test stubs"""
@@ -25,17 +28,17 @@ class TestSingleWrapperOfMatchResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperOfMatchResponse:
+    def make_instance(self, include_optional):
         """Test SingleWrapperOfMatchResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfMatchResponse`
         """
-        model = SingleWrapperOfMatchResponse()
-        if include_optional:
+        model = dupr_backend.models.single_wrapper_of_match_response.SingleWrapperOfMatchResponse()  # noqa: E501
+        if include_optional :
             return SingleWrapperOfMatchResponse(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 result = dupr_backend.models.match_response.MatchResponse(
                     bracket_id = 6806605627, 
                     client_id = 45, 
@@ -118,10 +121,10 @@ class TestSingleWrapperOfMatchResponse(unittest.TestCase):
                         id = 56, 
                         name = '', 
                         referral_code = '', ), 
-                    venue = 'Dreamland Pickleball', ),
+                    venue = 'Dreamland Pickleball', ), 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return SingleWrapperOfMatchResponse(
         )
         """

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.update_user_request import UpdateUserRequest
+import dupr_backend
+from dupr_backend.models.update_user_request import UpdateUserRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestUpdateUserRequest(unittest.TestCase):
     """UpdateUserRequest unit test stubs"""
@@ -25,19 +28,19 @@ class TestUpdateUserRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> UpdateUserRequest:
+    def make_instance(self, include_optional):
         """Test UpdateUserRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `UpdateUserRequest`
         """
-        model = UpdateUserRequest()
-        if include_optional:
+        model = dupr_backend.models.update_user_request.UpdateUserRequest()  # noqa: E501
+        if include_optional :
             return UpdateUserRequest(
                 users = {"26518181881":{"id":"26518181881","name":"Brian Lara","property_name":"value"}}
             )
-        else:
+        else :
             return UpdateUserRequest(
                 users = {"26518181881":{"id":"26518181881","name":"Brian Lara","property_name":"value"}},
         )

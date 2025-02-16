@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.array_wrapper_of_post_reaction_response import ArrayWrapperOfPostReactionResponse
+import dupr_backend
+from dupr_backend.models.array_wrapper_of_post_reaction_response import ArrayWrapperOfPostReactionResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestArrayWrapperOfPostReactionResponse(unittest.TestCase):
     """ArrayWrapperOfPostReactionResponse unit test stubs"""
@@ -25,17 +28,17 @@ class TestArrayWrapperOfPostReactionResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ArrayWrapperOfPostReactionResponse:
+    def make_instance(self, include_optional):
         """Test ArrayWrapperOfPostReactionResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ArrayWrapperOfPostReactionResponse`
         """
-        model = ArrayWrapperOfPostReactionResponse()
-        if include_optional:
+        model = dupr_backend.models.array_wrapper_of_post_reaction_response.ArrayWrapperOfPostReactionResponse()  # noqa: E501
+        if include_optional :
             return ArrayWrapperOfPostReactionResponse(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 results = [
                     dupr_backend.models.post_reaction_response.PostReactionResponse(
                         activity_id = '', 
@@ -341,10 +344,10 @@ class TestArrayWrapperOfPostReactionResponse(unittest.TestCase):
                             
                             ], 
                         updated_at = 56, )
-                    ],
+                    ], 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return ArrayWrapperOfPostReactionResponse(
         )
         """

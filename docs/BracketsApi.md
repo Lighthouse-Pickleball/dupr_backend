@@ -70,8 +70,9 @@ addMatchScoreByDirector
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.league_match_request import LeagueMatchRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -106,7 +107,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -127,7 +127,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -142,8 +141,9 @@ addMatchScore
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.league_match_request import LeagueMatchRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -178,7 +178,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -199,7 +198,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -214,8 +212,9 @@ confirmMatchDirector
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.league_match_confirm_request import LeagueMatchConfirmRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -250,7 +249,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -271,7 +269,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -286,8 +283,9 @@ confirmMatch
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.league_match_confirm_request import LeagueMatchConfirmRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -322,7 +320,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -343,7 +340,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -358,8 +354,9 @@ confirmTeamByDirector
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.confirm_team_request import ConfirmTeamRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -394,7 +391,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -415,7 +411,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -430,8 +425,9 @@ deleteLeague
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
@@ -466,7 +462,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -488,7 +483,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -503,8 +497,9 @@ editBracketStatus
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
 from dupr_backend.rest import ApiException
@@ -541,7 +536,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -565,7 +559,6 @@ No authorization required
  - **Accept**: */*
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -580,8 +573,9 @@ editBracket
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.edit_bracket_request import EditBracketRequest
 from dupr_backend.models.single_wrapper_of_league_response import SingleWrapperOfLeagueResponse
@@ -616,7 +610,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -637,7 +630,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -652,8 +644,9 @@ editConfirmedMatches
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.edit_match_request import EditMatchRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -688,7 +681,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -709,7 +701,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -724,8 +715,9 @@ editMatchScoreByDirector
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.edit_match_request import EditMatchRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -760,7 +752,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -781,7 +772,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -796,8 +786,9 @@ editMatchScore
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.edit_match_request import EditMatchRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -832,7 +823,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -853,7 +843,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -868,8 +857,9 @@ editPartner
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.edit_partner_request import EditPartnerRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -904,7 +894,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -925,7 +914,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -940,8 +928,9 @@ editPlayerWaitList
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.edit_wait_list_request import EditWaitListRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -976,7 +965,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -997,7 +985,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1012,8 +999,9 @@ editTeams
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.edit_event_team_request import EditEventTeamRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -1048,7 +1036,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1069,7 +1056,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1084,8 +1070,9 @@ endLeague
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
@@ -1120,7 +1107,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1142,7 +1128,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1157,8 +1142,9 @@ exportBracketParticipants
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_download_s3_response import SingleWrapperOfDownloadS3Response
 from dupr_backend.rest import ApiException
@@ -1192,7 +1178,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1213,7 +1198,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1228,8 +1212,9 @@ forfeitMatch
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.forfeit_match_request import ForfeitMatchRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -1264,7 +1249,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1285,7 +1269,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1300,8 +1283,9 @@ getAllBracketMatches
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.array_wrapper_of_league_match_response import ArrayWrapperOfLeagueMatchResponse
 from dupr_backend.rest import ApiException
@@ -1335,7 +1319,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1356,7 +1339,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1371,8 +1353,9 @@ getAllEventPlayers
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.search_league_player_request import SearchLeaguePlayerRequest
 from dupr_backend.models.single_wrapper_of_page_of_player_payment_response import SingleWrapperOfPageOfPlayerPaymentResponse
@@ -1409,7 +1392,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1432,7 +1414,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1447,8 +1428,9 @@ getBracketById
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_bracket_response import SingleWrapperOfBracketResponse
 from dupr_backend.rest import ApiException
@@ -1482,7 +1464,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bracket_id** | **int**| bracketId | 
@@ -1503,7 +1484,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1518,8 +1498,9 @@ getBracketDetailsTeams
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_bracket_details_response import SingleWrapperOfBracketDetailsResponse
 from dupr_backend.rest import ApiException
@@ -1553,7 +1534,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1574,7 +1554,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1589,8 +1568,9 @@ getBracketMatchQueue
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_page_of_league_match_response import SingleWrapperOfPageOfLeagueMatchResponse
 from dupr_backend.rest import ApiException
@@ -1626,7 +1606,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1649,7 +1628,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1664,8 +1642,9 @@ getBracketMatchesPost
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.bracket_match_request import BracketMatchRequest
 from dupr_backend.models.single_wrapper_of_page_of_league_match_response import SingleWrapperOfPageOfLeagueMatchResponse
@@ -1704,7 +1683,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1729,7 +1707,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1744,8 +1721,9 @@ getBracketMatches
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_page_of_league_match_response import SingleWrapperOfPageOfLeagueMatchResponse
 from dupr_backend.rest import ApiException
@@ -1783,7 +1761,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1808,7 +1785,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1823,8 +1799,9 @@ getBracketPlayers
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_page_of_player_response import SingleWrapperOfPageOfPlayerResponse
 from dupr_backend.rest import ApiException
@@ -1861,7 +1838,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1885,7 +1861,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1900,8 +1875,9 @@ getBracketPlayers
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.search_league_player_request import SearchLeaguePlayerRequest
 from dupr_backend.models.single_wrapper_of_page_of_player_response import SingleWrapperOfPageOfPlayerResponse
@@ -1938,7 +1914,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1961,7 +1936,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1976,8 +1950,9 @@ getBracketStanding
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_page_of_league_standing_response import SingleWrapperOfPageOfLeagueStandingResponse
 from dupr_backend.rest import ApiException
@@ -2014,7 +1989,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2038,7 +2012,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -2053,8 +2026,9 @@ getBracketTeams
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_page_of_league_teams_response import SingleWrapperOfPageOfLeagueTeamsResponse
 from dupr_backend.rest import ApiException
@@ -2091,7 +2065,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2115,7 +2088,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -2130,8 +2102,9 @@ getBracketTeams
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.bracket_search_teams_request import BracketSearchTeamsRequest
 from dupr_backend.models.single_wrapper_of_page_of_league_teams_response import SingleWrapperOfPageOfLeagueTeamsResponse
@@ -2167,7 +2140,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2189,7 +2161,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -2204,8 +2175,9 @@ getBracketWaitlistedTeams
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.bracket_search_teams_request import BracketSearchTeamsRequest
 from dupr_backend.models.single_wrapper_of_page_of_league_teams_response import SingleWrapperOfPageOfLeagueTeamsResponse
@@ -2241,7 +2213,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2263,7 +2234,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -2278,8 +2248,9 @@ getDirectorBracketTeams
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_page_of_league_teams_response import SingleWrapperOfPageOfLeagueTeamsResponse
 from dupr_backend.rest import ApiException
@@ -2316,7 +2287,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2340,7 +2310,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -2355,8 +2324,9 @@ getPendingConfirmation
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.array_wrapper_of_league_teams_response import ArrayWrapperOfLeagueTeamsResponse
 from dupr_backend.rest import ApiException
@@ -2390,7 +2360,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2411,7 +2380,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -2426,8 +2394,9 @@ getPendingTeamsToReplace
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.array_wrapper_of_pending_teams_response import ArrayWrapperOfPendingTeamsResponse
 from dupr_backend.rest import ApiException
@@ -2461,7 +2430,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2482,7 +2450,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -2497,8 +2464,9 @@ getRegistrationDetails
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_registration_response import SingleWrapperOfRegistrationResponse
 from dupr_backend.rest import ApiException
@@ -2532,7 +2500,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2553,7 +2520,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -2568,8 +2534,9 @@ getUnmatchedPlayers
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_page_of_player_response import SingleWrapperOfPageOfPlayerResponse
 from dupr_backend.rest import ApiException
@@ -2606,7 +2573,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2630,7 +2596,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -2645,8 +2610,9 @@ getUnmatchedPlayers
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.search_unmatched_players_request import SearchUnmatchedPlayersRequest
 from dupr_backend.models.single_wrapper_of_page_of_player_response import SingleWrapperOfPageOfPlayerResponse
@@ -2681,7 +2647,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2702,7 +2667,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -2717,8 +2681,9 @@ getUserBrackets
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_page_of_bracket_response import SingleWrapperOfPageOfBracketResponse
 from dupr_backend.rest import ApiException
@@ -2754,7 +2719,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2777,7 +2741,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -2792,8 +2755,9 @@ getUserClubRole
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_bracket_club_role_response import SingleWrapperOfBracketClubRoleResponse
 from dupr_backend.models.user_club_role_request import UserClubRoleRequest
@@ -2828,7 +2792,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2849,7 +2812,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -2864,8 +2826,9 @@ getUserEventBrackets
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.array_wrapper_of_bracket_response import ArrayWrapperOfBracketResponse
 from dupr_backend.rest import ApiException
@@ -2900,7 +2863,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2922,7 +2884,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -2937,8 +2898,9 @@ getUserMatches
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_page_of_league_match_response import SingleWrapperOfPageOfLeagueMatchResponse
 from dupr_backend.models.user_matches_request import UserMatchesRequest
@@ -2973,7 +2935,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2994,7 +2955,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -3009,8 +2969,9 @@ getValidUserBracketId
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.array_wrapper_of_bracket_response import ArrayWrapperOfBracketResponse
 from dupr_backend.rest import ApiException
@@ -3044,7 +3005,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -3065,7 +3025,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -3080,8 +3039,9 @@ getWaterfallMatches
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.array_wrapper_of_league_match_response import ArrayWrapperOfLeagueMatchResponse
 from dupr_backend.rest import ApiException
@@ -3115,7 +3075,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -3136,7 +3095,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -3151,8 +3109,9 @@ playerWithdrawByDirector
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.withdraw_player_request import WithdrawPlayerRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -3187,7 +3146,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -3208,7 +3166,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -3223,8 +3180,9 @@ playerWithdraw
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.withdraw_player_request import WithdrawPlayerRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -3259,7 +3217,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -3280,7 +3237,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -3295,8 +3251,9 @@ processRefunds
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.event_refund_request import EventRefundRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -3331,7 +3288,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -3352,7 +3308,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -3367,8 +3322,9 @@ registerUsersToBracket
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.register_to_bracket_request import RegisterToBracketRequest
 from dupr_backend.models.single_wrapper_of_join_league_response import SingleWrapperOfJoinLeagueResponse
@@ -3403,7 +3359,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -3424,7 +3379,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -3439,8 +3393,9 @@ removeMatchFromQueue
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
@@ -3474,7 +3429,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -3495,7 +3449,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -3510,8 +3463,9 @@ saveBracket
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.bracket_request import BracketRequest
 from dupr_backend.models.single_wrapper_of_league_response import SingleWrapperOfLeagueResponse
@@ -3546,7 +3500,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -3567,7 +3520,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -3582,8 +3534,9 @@ saveMatchSeeding
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.match_round_req import MatchRoundReq
 from dupr_backend.models.wrapper import Wrapper
@@ -3619,7 +3572,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -3641,7 +3593,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -3656,8 +3607,9 @@ saveTeams
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.create_new_team_request import CreateNewTeamRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -3692,7 +3644,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -3713,7 +3664,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -3728,8 +3678,9 @@ seedMatches
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.array_wrapper_of_match_round import ArrayWrapperOfMatchRound
 from dupr_backend.rest import ApiException
@@ -3764,7 +3715,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -3786,7 +3736,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -3801,8 +3750,9 @@ substitutePlayers
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
 from dupr_backend.models.substitute_player_request import SubstitutePlayerRequest
@@ -3837,7 +3787,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -3858,7 +3807,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -3873,8 +3821,9 @@ switchPlayer
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.array_wrapper_of_switch_bracket_response import ArrayWrapperOfSwitchBracketResponse
 from dupr_backend.models.switch_bracket_request import SwitchBracketRequest
@@ -3909,7 +3858,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -3930,7 +3878,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -3945,8 +3892,9 @@ switchTeams
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.array_wrapper_of_switch_bracket_response import ArrayWrapperOfSwitchBracketResponse
 from dupr_backend.models.switch_team_request import SwitchTeamRequest
@@ -3981,7 +3929,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -4002,7 +3949,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -4017,8 +3963,9 @@ switchWaitListedTeams
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.bracket_player_switch_wait_listed_request import BracketPlayerSwitchWaitListedRequest
 from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
@@ -4053,7 +4000,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -4074,7 +4020,6 @@ No authorization required
  - **Accept**: */*
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -4089,8 +4034,9 @@ switchWaitListed
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.bracket_player_switch_wait_listed_request import BracketPlayerSwitchWaitListedRequest
 from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
@@ -4125,7 +4071,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -4146,7 +4091,6 @@ No authorization required
  - **Accept**: */*
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -4161,8 +4105,9 @@ updateBracketApproval
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_session_response import SingleWrapperOfSessionResponse
 from dupr_backend.rest import ApiException
@@ -4200,7 +4145,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -4225,7 +4169,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |

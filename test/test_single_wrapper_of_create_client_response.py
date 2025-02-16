@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.single_wrapper_of_create_client_response import SingleWrapperOfCreateClientResponse
+import dupr_backend
+from dupr_backend.models.single_wrapper_of_create_client_response import SingleWrapperOfCreateClientResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSingleWrapperOfCreateClientResponse(unittest.TestCase):
     """SingleWrapperOfCreateClientResponse unit test stubs"""
@@ -25,24 +28,24 @@ class TestSingleWrapperOfCreateClientResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperOfCreateClientResponse:
+    def make_instance(self, include_optional):
         """Test SingleWrapperOfCreateClientResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfCreateClientResponse`
         """
-        model = SingleWrapperOfCreateClientResponse()
-        if include_optional:
+        model = dupr_backend.models.single_wrapper_of_create_client_response.SingleWrapperOfCreateClientResponse()  # noqa: E501
+        if include_optional :
             return SingleWrapperOfCreateClientResponse(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 result = dupr_backend.models.create_client_response.CreateClientResponse(
                     client_id = 56, 
                     client_key = '', 
-                    client_secret = '', ),
+                    client_secret = '', ), 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return SingleWrapperOfCreateClientResponse(
         )
         """

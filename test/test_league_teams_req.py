@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.league_teams_req import LeagueTeamsReq
+import dupr_backend
+from dupr_backend.models.league_teams_req import LeagueTeamsReq  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestLeagueTeamsReq(unittest.TestCase):
     """LeagueTeamsReq unit test stubs"""
@@ -25,18 +28,18 @@ class TestLeagueTeamsReq(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> LeagueTeamsReq:
+    def make_instance(self, include_optional):
         """Test LeagueTeamsReq
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `LeagueTeamsReq`
         """
-        model = LeagueTeamsReq()
-        if include_optional:
+        model = dupr_backend.models.league_teams_req.LeagueTeamsReq()  # noqa: E501
+        if include_optional :
             return LeagueTeamsReq(
-                partner_status = 'ACTIVE',
-                payment_status = 'ACTIVE',
+                partner_status = 'ACTIVE', 
+                payment_status = 'ACTIVE', 
                 player1 = dupr_backend.models.player_req.PlayerReq(
                     age = 56, 
                     birthdate = '', 
@@ -86,7 +89,7 @@ class TestLeagueTeamsReq(unittest.TestCase):
                     status = 'ACTIVE', 
                     username = '', 
                     verified_email = True, 
-                    verified_phone = True, ),
+                    verified_phone = True, ), 
                 player2 = dupr_backend.models.player_req.PlayerReq(
                     age = 56, 
                     birthdate = '', 
@@ -136,11 +139,11 @@ class TestLeagueTeamsReq(unittest.TestCase):
                     status = 'ACTIVE', 
                     username = '', 
                     verified_email = True, 
-                    verified_phone = True, ),
-                registration_id = 56,
+                    verified_phone = True, ), 
+                registration_id = 56, 
                 team_status = 'ACTIVE'
             )
-        else:
+        else :
             return LeagueTeamsReq(
         )
         """

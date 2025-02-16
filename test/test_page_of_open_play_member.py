@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.page_of_open_play_member import PageOfOpenPlayMember
+import dupr_backend
+from dupr_backend.models.page_of_open_play_member import PageOfOpenPlayMember  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestPageOfOpenPlayMember(unittest.TestCase):
     """PageOfOpenPlayMember unit test stubs"""
@@ -25,19 +28,19 @@ class TestPageOfOpenPlayMember(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PageOfOpenPlayMember:
+    def make_instance(self, include_optional):
         """Test PageOfOpenPlayMember
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PageOfOpenPlayMember`
         """
-        model = PageOfOpenPlayMember()
-        if include_optional:
+        model = dupr_backend.models.page_of_open_play_member.PageOfOpenPlayMember()  # noqa: E501
+        if include_optional :
             return PageOfOpenPlayMember(
-                empty = False,
-                has_more = False,
-                has_previous = True,
+                empty = False, 
+                has_more = False, 
+                has_previous = True, 
                 hits = [
                     dupr_backend.models.open_play_member.OpenPlayMember(
                         create_at = 'yyyy-MM-dd', 
@@ -47,13 +50,13 @@ class TestPageOfOpenPlayMember(unittest.TestCase):
                         id = 56, 
                         name = '', 
                         singles = '', )
-                    ],
-                limit = 10,
-                offset = 90,
-                total = 100,
+                    ], 
+                limit = 10, 
+                offset = 90, 
+                total = 100, 
                 total_value_relation = 'GREATER_THAN_OR_EQUAL_TO'
             )
-        else:
+        else :
             return PageOfOpenPlayMember(
                 empty = False,
                 has_more = False,

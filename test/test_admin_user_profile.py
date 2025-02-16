@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.admin_user_profile import AdminUserProfile
+import dupr_backend
+from dupr_backend.models.admin_user_profile import AdminUserProfile  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestAdminUserProfile(unittest.TestCase):
     """AdminUserProfile unit test stubs"""
@@ -25,25 +28,25 @@ class TestAdminUserProfile(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AdminUserProfile:
+    def make_instance(self, include_optional):
         """Test AdminUserProfile
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `AdminUserProfile`
         """
-        model = AdminUserProfile()
-        if include_optional:
+        model = dupr_backend.models.admin_user_profile.AdminUserProfile()  # noqa: E501
+        if include_optional :
             return AdminUserProfile(
-                dupr_id = '',
-                email = '',
-                external_id = '',
-                full_name = '',
-                iso_code = '',
-                phone_number = '',
+                dupr_id = '', 
+                email = '', 
+                external_id = '', 
+                full_name = '', 
+                iso_code = '', 
+                phone_number = '', 
                 user_id = 56
             )
-        else:
+        else :
             return AdminUserProfile(
                 full_name = '',
                 user_id = 56,

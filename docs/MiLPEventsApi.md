@@ -18,8 +18,9 @@ getEventInfo
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_mi_lp_event import SingleWrapperOfMiLPEvent
 from dupr_backend.rest import ApiException
@@ -53,7 +54,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -74,7 +74,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -89,8 +88,9 @@ getTeams
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.array_wrapper_of_mi_lp_team_division import ArrayWrapperOfMiLPTeamDivision
 from dupr_backend.rest import ApiException
@@ -124,7 +124,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -145,7 +144,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -160,8 +158,9 @@ registerTeam
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.mi_lp_register_team_request import MiLPRegisterTeamRequest
 from dupr_backend.models.single_wrapper_of_session_response import SingleWrapperOfSessionResponse
@@ -197,7 +196,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -219,7 +217,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -234,8 +231,9 @@ save
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.mi_lp_event_request import MiLPEventRequest
 from dupr_backend.models.single_wrapper_oflong import SingleWrapperOflong
@@ -270,7 +268,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -291,7 +288,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -306,8 +302,9 @@ searchEvent
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.mi_lp_event_search_request import MiLPEventSearchRequest
 from dupr_backend.models.single_wrapper_of_page_of_mi_lp_event import SingleWrapperOfPageOfMiLPEvent
@@ -342,7 +339,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -363,7 +359,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.email_exist_request import EmailExistRequest
+import dupr_backend
+from dupr_backend.models.email_exist_request import EmailExistRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestEmailExistRequest(unittest.TestCase):
     """EmailExistRequest unit test stubs"""
@@ -25,19 +28,19 @@ class TestEmailExistRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> EmailExistRequest:
+    def make_instance(self, include_optional):
         """Test EmailExistRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `EmailExistRequest`
         """
-        model = EmailExistRequest()
-        if include_optional:
+        model = dupr_backend.models.email_exist_request.EmailExistRequest()  # noqa: E501
+        if include_optional :
             return EmailExistRequest(
                 email = 'user@example.com'
             )
-        else:
+        else :
             return EmailExistRequest(
                 email = 'user@example.com',
         )

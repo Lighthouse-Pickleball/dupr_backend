@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **end_date** | **date** |  | [optional] 
@@ -21,12 +20,12 @@ json = "{}"
 # create an instance of MatchRoundRes from a JSON string
 match_round_res_instance = MatchRoundRes.from_json(json)
 # print the JSON string representation of the object
-print(MatchRoundRes.to_json())
+print MatchRoundRes.to_json()
 
 # convert the object into a dict
 match_round_res_dict = match_round_res_instance.to_dict()
 # create an instance of MatchRoundRes from a dict
-match_round_res_from_dict = MatchRoundRes.from_dict(match_round_res_dict)
+match_round_res_form_dict = match_round_res.from_dict(match_round_res_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

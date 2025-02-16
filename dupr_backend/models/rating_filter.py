@@ -17,96 +17,79 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List, Optional, Union
-from typing_extensions import Annotated
-from typing import Optional, Set
-from typing_extensions import Self
+
+from typing import Optional, Union
+from pydantic import BaseModel, Field, StrictStr, confloat, conint, validator
 
 class RatingFilter(BaseModel):
     """
     RatingFilter
-    """ # noqa: E501
+    """
     category: Optional[StrictStr] = None
-    max_rating: Optional[Union[Annotated[float, Field(le=8, strict=True, ge=2)], Annotated[int, Field(le=8, strict=True, ge=2)]]] = Field(default=None, alias="maxRating")
-    min_rating: Optional[Union[Annotated[float, Field(le=8, strict=True, ge=2)], Annotated[int, Field(le=8, strict=True, ge=2)]]] = Field(default=None, alias="minRating")
+    max_rating: Optional[Union[confloat(le=8, ge=2, strict=True), conint(le=8, ge=2, strict=True)]] = Field(None, alias="maxRating")
+    min_rating: Optional[Union[confloat(le=8, ge=2, strict=True), conint(le=8, ge=2, strict=True)]] = Field(None, alias="minRating")
     type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["category", "maxRating", "minRating", "type"]
+    __properties = ["category", "maxRating", "minRating", "type"]
 
-    @field_validator('category')
+    @validator('category')
     def category_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['DUPR', 'PROVISIONAL']):
+        if value not in ('DUPR', 'PROVISIONAL'):
             raise ValueError("must be one of enum values ('DUPR', 'PROVISIONAL')")
         return value
 
-    @field_validator('type')
+    @validator('type')
     def type_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['DOUBLES', 'SINGLES']):
+        if value not in ('DOUBLES', 'SINGLES'):
             raise ValueError("must be one of enum values ('DOUBLES', 'SINGLES')")
         return value
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
+    class Config:
+        """Pydantic configuration"""
+        allow_population_by_field_name = True
+        validate_assignment = True
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+        return pprint.pformat(self.dict(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
+    def from_json(cls, json_str: str) -> RatingFilter:
         """Create an instance of RatingFilter from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
+    def to_dict(self):
+        """Returns the dictionary representation of the model using alias"""
+        _dict = self.dict(by_alias=True,
+                          exclude={
+                          },
+                          exclude_none=True)
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+    def from_dict(cls, obj: dict) -> RatingFilter:
         """Create an instance of RatingFilter from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+            return RatingFilter.parse_obj(obj)
 
-        _obj = cls.model_validate({
+        _obj = RatingFilter.parse_obj({
             "category": obj.get("category"),
-            "maxRating": obj.get("maxRating"),
-            "minRating": obj.get("minRating"),
+            "max_rating": obj.get("maxRating"),
+            "min_rating": obj.get("minRating"),
             "type": obj.get("type")
         })
         return _obj

@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bracket_id** | **int** |  | 
@@ -20,12 +19,12 @@ json = "{}"
 # create an instance of BracketPlayerSwitchWaitListedRequest from a JSON string
 bracket_player_switch_wait_listed_request_instance = BracketPlayerSwitchWaitListedRequest.from_json(json)
 # print the JSON string representation of the object
-print(BracketPlayerSwitchWaitListedRequest.to_json())
+print BracketPlayerSwitchWaitListedRequest.to_json()
 
 # convert the object into a dict
 bracket_player_switch_wait_listed_request_dict = bracket_player_switch_wait_listed_request_instance.to_dict()
 # create an instance of BracketPlayerSwitchWaitListedRequest from a dict
-bracket_player_switch_wait_listed_request_from_dict = BracketPlayerSwitchWaitListedRequest.from_dict(bracket_player_switch_wait_listed_request_dict)
+bracket_player_switch_wait_listed_request_form_dict = bracket_player_switch_wait_listed_request.from_dict(bracket_player_switch_wait_listed_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

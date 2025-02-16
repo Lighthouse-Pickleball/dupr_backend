@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.wrapper import Wrapper
+import dupr_backend
+from dupr_backend.models.wrapper import Wrapper  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestWrapper(unittest.TestCase):
     """Wrapper unit test stubs"""
@@ -25,20 +28,20 @@ class TestWrapper(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> Wrapper:
+    def make_instance(self, include_optional):
         """Test Wrapper
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `Wrapper`
         """
-        model = Wrapper()
-        if include_optional:
+        model = dupr_backend.models.wrapper.Wrapper()  # noqa: E501
+        if include_optional :
             return Wrapper(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return Wrapper(
         )
         """

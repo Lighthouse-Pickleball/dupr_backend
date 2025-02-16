@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.club_revenue_model_request import ClubRevenueModelRequest
+import dupr_backend
+from dupr_backend.models.club_revenue_model_request import ClubRevenueModelRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestClubRevenueModelRequest(unittest.TestCase):
     """ClubRevenueModelRequest unit test stubs"""
@@ -25,20 +28,20 @@ class TestClubRevenueModelRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ClubRevenueModelRequest:
+    def make_instance(self, include_optional):
         """Test ClubRevenueModelRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ClubRevenueModelRequest`
         """
-        model = ClubRevenueModelRequest()
-        if include_optional:
+        model = dupr_backend.models.club_revenue_model_request.ClubRevenueModelRequest()  # noqa: E501
+        if include_optional :
             return ClubRevenueModelRequest(
-                model_type = 'ABSOLUTE/RELATIVE',
+                model_type = 'ABSOLUTE/RELATIVE', 
                 value = 33.5
             )
-        else:
+        else :
             return ClubRevenueModelRequest(
                 model_type = 'ABSOLUTE/RELATIVE',
                 value = 33.5,

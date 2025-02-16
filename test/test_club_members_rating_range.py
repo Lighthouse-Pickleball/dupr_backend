@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.club_members_rating_range import ClubMembersRatingRange
+import dupr_backend
+from dupr_backend.models.club_members_rating_range import ClubMembersRatingRange  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestClubMembersRatingRange(unittest.TestCase):
     """ClubMembersRatingRange unit test stubs"""
@@ -25,20 +28,20 @@ class TestClubMembersRatingRange(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ClubMembersRatingRange:
+    def make_instance(self, include_optional):
         """Test ClubMembersRatingRange
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ClubMembersRatingRange`
         """
-        model = ClubMembersRatingRange()
-        if include_optional:
+        model = dupr_backend.models.club_members_rating_range.ClubMembersRatingRange()  # noqa: E501
+        if include_optional :
             return ClubMembersRatingRange(
-                max_rating = 3.3,
+                max_rating = 3.3, 
                 min_rating = 2.3
             )
-        else:
+        else :
             return ClubMembersRatingRange(
         )
         """

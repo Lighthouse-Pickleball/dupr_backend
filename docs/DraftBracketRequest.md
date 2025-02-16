@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **age_bracket** | **List[int]** |  | [optional] 
@@ -39,12 +38,12 @@ json = "{}"
 # create an instance of DraftBracketRequest from a JSON string
 draft_bracket_request_instance = DraftBracketRequest.from_json(json)
 # print the JSON string representation of the object
-print(DraftBracketRequest.to_json())
+print DraftBracketRequest.to_json()
 
 # convert the object into a dict
 draft_bracket_request_dict = draft_bracket_request_instance.to_dict()
 # create an instance of DraftBracketRequest from a dict
-draft_bracket_request_from_dict = DraftBracketRequest.from_dict(draft_bracket_request_dict)
+draft_bracket_request_form_dict = draft_bracket_request.from_dict(draft_bracket_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

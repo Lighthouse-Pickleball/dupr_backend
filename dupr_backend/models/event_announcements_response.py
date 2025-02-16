@@ -17,107 +17,91 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List, Optional
+
+from typing import Optional
+from pydantic import BaseModel, Field, StrictInt, StrictStr, validator
 from dupr_backend.models.content_response import ContentResponse
-from typing import Optional, Set
-from typing_extensions import Self
 
 class EventAnnouncementsResponse(BaseModel):
     """
     EventAnnouncementsResponse
-    """ # noqa: E501
-    announcement_id: StrictInt = Field(alias="announcementId")
-    bracket_id: StrictInt = Field(alias="bracketId")
-    created: StrictStr
+    """
+    announcement_id: StrictInt = Field(..., alias="announcementId")
+    bracket_id: StrictInt = Field(..., alias="bracketId")
+    created: StrictStr = Field(...)
     description: Optional[ContentResponse] = None
-    email_failed: StrictInt = Field(alias="emailFailed")
-    email_sent: StrictInt = Field(alias="emailSent")
-    league_id: StrictInt = Field(alias="leagueId")
-    notification_count: Optional[StrictInt] = Field(default=None, alias="notificationCount")
-    push_failed: StrictInt = Field(alias="pushFailed")
-    push_sent: StrictInt = Field(alias="pushSent")
-    registered_members: Optional[StrictInt] = Field(default=None, alias="registeredMembers")
-    sms_failed: StrictInt = Field(alias="smsFailed")
-    sms_sent: StrictInt = Field(alias="smsSent")
-    status: StrictStr
-    title: StrictStr
-    __properties: ClassVar[List[str]] = ["announcementId", "bracketId", "created", "description", "emailFailed", "emailSent", "leagueId", "notificationCount", "pushFailed", "pushSent", "registeredMembers", "smsFailed", "smsSent", "status", "title"]
+    email_failed: StrictInt = Field(..., alias="emailFailed")
+    email_sent: StrictInt = Field(..., alias="emailSent")
+    league_id: StrictInt = Field(..., alias="leagueId")
+    notification_count: Optional[StrictInt] = Field(None, alias="notificationCount")
+    push_failed: StrictInt = Field(..., alias="pushFailed")
+    push_sent: StrictInt = Field(..., alias="pushSent")
+    registered_members: Optional[StrictInt] = Field(None, alias="registeredMembers")
+    sms_failed: StrictInt = Field(..., alias="smsFailed")
+    sms_sent: StrictInt = Field(..., alias="smsSent")
+    status: StrictStr = Field(...)
+    title: StrictStr = Field(...)
+    __properties = ["announcementId", "bracketId", "created", "description", "emailFailed", "emailSent", "leagueId", "notificationCount", "pushFailed", "pushSent", "registeredMembers", "smsFailed", "smsSent", "status", "title"]
 
-    @field_validator('status')
+    @validator('status')
     def status_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING']):
+        if value not in ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING'):
             raise ValueError("must be one of enum values ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING')")
         return value
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
+    class Config:
+        """Pydantic configuration"""
+        allow_population_by_field_name = True
+        validate_assignment = True
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+        return pprint.pformat(self.dict(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
+    def from_json(cls, json_str: str) -> EventAnnouncementsResponse:
         """Create an instance of EventAnnouncementsResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
+    def to_dict(self):
+        """Returns the dictionary representation of the model using alias"""
+        _dict = self.dict(by_alias=True,
+                          exclude={
+                          },
+                          exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of description
         if self.description:
             _dict['description'] = self.description.to_dict()
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+    def from_dict(cls, obj: dict) -> EventAnnouncementsResponse:
         """Create an instance of EventAnnouncementsResponse from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+            return EventAnnouncementsResponse.parse_obj(obj)
 
-        _obj = cls.model_validate({
-            "announcementId": obj.get("announcementId"),
-            "bracketId": obj.get("bracketId"),
+        _obj = EventAnnouncementsResponse.parse_obj({
+            "announcement_id": obj.get("announcementId"),
+            "bracket_id": obj.get("bracketId"),
             "created": obj.get("created"),
-            "description": ContentResponse.from_dict(obj["description"]) if obj.get("description") is not None else None,
-            "emailFailed": obj.get("emailFailed"),
-            "emailSent": obj.get("emailSent"),
-            "leagueId": obj.get("leagueId"),
-            "notificationCount": obj.get("notificationCount"),
-            "pushFailed": obj.get("pushFailed"),
-            "pushSent": obj.get("pushSent"),
-            "registeredMembers": obj.get("registeredMembers"),
-            "smsFailed": obj.get("smsFailed"),
-            "smsSent": obj.get("smsSent"),
+            "description": ContentResponse.from_dict(obj.get("description")) if obj.get("description") is not None else None,
+            "email_failed": obj.get("emailFailed"),
+            "email_sent": obj.get("emailSent"),
+            "league_id": obj.get("leagueId"),
+            "notification_count": obj.get("notificationCount"),
+            "push_failed": obj.get("pushFailed"),
+            "push_sent": obj.get("pushSent"),
+            "registered_members": obj.get("registeredMembers"),
+            "sms_failed": obj.get("smsFailed"),
+            "sms_sent": obj.get("smsSent"),
             "status": obj.get("status"),
             "title": obj.get("title")
         })

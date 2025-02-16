@@ -17,8 +17,9 @@ checkout
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
@@ -52,7 +53,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -73,7 +73,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -88,8 +87,9 @@ customerPortal
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
@@ -122,7 +122,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -142,7 +141,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -157,8 +155,9 @@ isSubscribed
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
@@ -191,7 +190,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -211,7 +209,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -226,8 +223,9 @@ subscriptions
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
@@ -260,7 +258,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -280,7 +277,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |

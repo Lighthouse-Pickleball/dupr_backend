@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.single_wrapper_of_bracket_response import SingleWrapperOfBracketResponse
+import dupr_backend
+from dupr_backend.models.single_wrapper_of_bracket_response import SingleWrapperOfBracketResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSingleWrapperOfBracketResponse(unittest.TestCase):
     """SingleWrapperOfBracketResponse unit test stubs"""
@@ -25,17 +28,17 @@ class TestSingleWrapperOfBracketResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperOfBracketResponse:
+    def make_instance(self, include_optional):
         """Test SingleWrapperOfBracketResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfBracketResponse`
         """
-        model = SingleWrapperOfBracketResponse()
-        if include_optional:
+        model = dupr_backend.models.single_wrapper_of_bracket_response.SingleWrapperOfBracketResponse()  # noqa: E501
+        if include_optional :
             return SingleWrapperOfBracketResponse(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 result = dupr_backend.models.bracket_response.BracketResponse(
                     age_bracket = [27, 35], 
                     bracket_id = 4684651981, 
@@ -159,10 +162,10 @@ class TestSingleWrapperOfBracketResponse(unittest.TestCase):
                     time_zone = 'IST', 
                     total_rounds = 1, 
                     wait_list = 500, 
-                    zone_name = 'IST', ),
+                    zone_name = 'IST', ), 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return SingleWrapperOfBracketResponse(
         )
         """

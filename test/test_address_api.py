@@ -14,50 +14,52 @@
 
 import unittest
 
-from dupr_backend.api.address_api import AddressApi
+import dupr_backend
+from dupr_backend.api.address_api import AddressApi  # noqa: E501
+from dupr_backend.rest import ApiException
 
 
 class TestAddressApi(unittest.TestCase):
     """AddressApi unit test stubs"""
 
-    def setUp(self) -> None:
-        self.api = AddressApi()
+    def setUp(self):
+        self.api = dupr_backend.api.address_api.AddressApi()  # noqa: E501
 
-    def tearDown(self) -> None:
+    def tearDown(self):
         pass
 
-    def test_autocomplete_using_get(self) -> None:
+    def test_autocomplete_using_get(self):
         """Test case for autocomplete_using_get
 
-        autocomplete
+        autocomplete  # noqa: E501
         """
         pass
 
-    def test_delete_user_address_using_delete(self) -> None:
+    def test_delete_user_address_using_delete(self):
         """Test case for delete_user_address_using_delete
 
-        deleteUserAddress
+        deleteUserAddress  # noqa: E501
         """
         pass
 
-    def test_geocode_using_get(self) -> None:
+    def test_geocode_using_get(self):
         """Test case for geocode_using_get
 
-        geocode
+        geocode  # noqa: E501
         """
         pass
 
-    def test_place_details_using_get(self) -> None:
+    def test_place_details_using_get(self):
         """Test case for place_details_using_get
 
-        placeDetails
+        placeDetails  # noqa: E501
         """
         pass
 
-    def test_save_address_using_put(self) -> None:
+    def test_save_address_using_put(self):
         """Test case for save_address_using_put
 
-        saveAddress
+        saveAddress  # noqa: E501
         """
         pass
 

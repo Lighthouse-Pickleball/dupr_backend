@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.join_league_request import JoinLeagueRequest
+import dupr_backend
+from dupr_backend.models.join_league_request import JoinLeagueRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestJoinLeagueRequest(unittest.TestCase):
     """JoinLeagueRequest unit test stubs"""
@@ -25,23 +28,23 @@ class TestJoinLeagueRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> JoinLeagueRequest:
+    def make_instance(self, include_optional):
         """Test JoinLeagueRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `JoinLeagueRequest`
         """
-        model = JoinLeagueRequest()
-        if include_optional:
+        model = dupr_backend.models.join_league_request.JoinLeagueRequest()  # noqa: E501
+        if include_optional :
             return JoinLeagueRequest(
-                bracket_id = 45785789,
-                is_club_member = False,
+                bracket_id = 45785789, 
+                is_club_member = False, 
                 partner_details = dupr_backend.models.add_partner_request.AddPartnerRequest(
                     partner_id = 45785789, 
                     partner_status = 'NOT_CONFIRMED/INVITED/CONFIRMED/INACTIVE', )
             )
-        else:
+        else :
             return JoinLeagueRequest(
                 bracket_id = 45785789,
         )

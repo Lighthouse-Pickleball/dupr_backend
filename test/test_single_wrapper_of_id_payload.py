@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.single_wrapper_of_id_payload import SingleWrapperOfIdPayload
+import dupr_backend
+from dupr_backend.models.single_wrapper_of_id_payload import SingleWrapperOfIdPayload  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSingleWrapperOfIdPayload(unittest.TestCase):
     """SingleWrapperOfIdPayload unit test stubs"""
@@ -25,22 +28,22 @@ class TestSingleWrapperOfIdPayload(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperOfIdPayload:
+    def make_instance(self, include_optional):
         """Test SingleWrapperOfIdPayload
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfIdPayload`
         """
-        model = SingleWrapperOfIdPayload()
-        if include_optional:
+        model = dupr_backend.models.single_wrapper_of_id_payload.SingleWrapperOfIdPayload()  # noqa: E501
+        if include_optional :
             return SingleWrapperOfIdPayload(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 result = dupr_backend.models.id_payload.IdPayload(
-                    id = 7615704574, ),
+                    id = 7615704574, ), 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return SingleWrapperOfIdPayload(
         )
         """

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.array_wrapper_of_match_round import ArrayWrapperOfMatchRound
+import dupr_backend
+from dupr_backend.models.array_wrapper_of_match_round import ArrayWrapperOfMatchRound  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestArrayWrapperOfMatchRound(unittest.TestCase):
     """ArrayWrapperOfMatchRound unit test stubs"""
@@ -25,17 +28,17 @@ class TestArrayWrapperOfMatchRound(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ArrayWrapperOfMatchRound:
+    def make_instance(self, include_optional):
         """Test ArrayWrapperOfMatchRound
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ArrayWrapperOfMatchRound`
         """
-        model = ArrayWrapperOfMatchRound()
-        if include_optional:
+        model = dupr_backend.models.array_wrapper_of_match_round.ArrayWrapperOfMatchRound()  # noqa: E501
+        if include_optional :
             return ArrayWrapperOfMatchRound(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 results = [
                     dupr_backend.models.match_round_res.MatchRoundRes(
                         end_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
@@ -151,10 +154,10 @@ class TestArrayWrapperOfMatchRound(unittest.TestCase):
                         serial = 1, 
                         start_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
                         team_ids = [9989596696], )
-                    ],
+                    ], 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return ArrayWrapperOfMatchRound(
         )
         """

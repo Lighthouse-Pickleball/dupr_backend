@@ -17,18 +17,17 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional, Union
+
+from typing import List, Optional, Union
+from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, conlist
 from dupr_backend.models.player import Player
 from dupr_backend.models.pre_match_rating_and_impact import PreMatchRatingAndImpact
 from dupr_backend.models.team_player import TeamPlayer
-from typing import Optional, Set
-from typing_extensions import Self
 
 class Team(BaseModel):
     """
     Team
-    """ # noqa: E501
+    """
     delta: Optional[Union[StrictFloat, StrictInt]] = None
     game1: Optional[StrictInt] = None
     game2: Optional[StrictInt] = None
@@ -36,61 +35,46 @@ class Team(BaseModel):
     game4: Optional[StrictInt] = None
     game5: Optional[StrictInt] = None
     id: Optional[StrictInt] = None
-    league_match_team_id: Optional[StrictInt] = Field(default=None, alias="leagueMatchTeamId")
+    league_match_team_id: Optional[StrictInt] = Field(None, alias="leagueMatchTeamId")
     player1: Optional[Player] = None
-    player1_doubles_rating: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="player1DoublesRating")
-    player1_singles_rating: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="player1SinglesRating")
+    player1_doubles_rating: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="player1DoublesRating")
+    player1_singles_rating: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="player1SinglesRating")
     player2: Optional[Player] = None
-    player2_doubles_rating: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="player2DoublesRating")
-    player2_singles_rating: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="player2SinglesRating")
-    player_ids: List[StrictInt] = Field(alias="playerIds")
-    pre_match_rating_and_impact: Optional[PreMatchRatingAndImpact] = Field(default=None, alias="preMatchRatingAndImpact")
-    priority: StrictInt
-    team_player1: Optional[TeamPlayer] = Field(default=None, alias="teamPlayer1")
-    team_player2: Optional[TeamPlayer] = Field(default=None, alias="teamPlayer2")
-    team_rating: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="teamRating")
-    winner: StrictBool
-    __properties: ClassVar[List[str]] = ["delta", "game1", "game2", "game3", "game4", "game5", "id", "leagueMatchTeamId", "player1", "player1DoublesRating", "player1SinglesRating", "player2", "player2DoublesRating", "player2SinglesRating", "playerIds", "preMatchRatingAndImpact", "priority", "teamPlayer1", "teamPlayer2", "teamRating", "winner"]
+    player2_doubles_rating: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="player2DoublesRating")
+    player2_singles_rating: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="player2SinglesRating")
+    player_ids: conlist(StrictInt) = Field(..., alias="playerIds")
+    pre_match_rating_and_impact: Optional[PreMatchRatingAndImpact] = Field(None, alias="preMatchRatingAndImpact")
+    priority: StrictInt = Field(...)
+    team_player1: Optional[TeamPlayer] = Field(None, alias="teamPlayer1")
+    team_player2: Optional[TeamPlayer] = Field(None, alias="teamPlayer2")
+    team_rating: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="teamRating")
+    winner: StrictBool = Field(...)
+    __properties = ["delta", "game1", "game2", "game3", "game4", "game5", "id", "leagueMatchTeamId", "player1", "player1DoublesRating", "player1SinglesRating", "player2", "player2DoublesRating", "player2SinglesRating", "playerIds", "preMatchRatingAndImpact", "priority", "teamPlayer1", "teamPlayer2", "teamRating", "winner"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
+    class Config:
+        """Pydantic configuration"""
+        allow_population_by_field_name = True
+        validate_assignment = True
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+        return pprint.pformat(self.dict(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
+    def from_json(cls, json_str: str) -> Team:
         """Create an instance of Team from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
+    def to_dict(self):
+        """Returns the dictionary representation of the model using alias"""
+        _dict = self.dict(by_alias=True,
+                          exclude={
+                          },
+                          exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of player1
         if self.player1:
             _dict['player1'] = self.player1.to_dict()
@@ -109,15 +93,15 @@ class Team(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+    def from_dict(cls, obj: dict) -> Team:
         """Create an instance of Team from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+            return Team.parse_obj(obj)
 
-        _obj = cls.model_validate({
+        _obj = Team.parse_obj({
             "delta": obj.get("delta"),
             "game1": obj.get("game1"),
             "game2": obj.get("game2"),
@@ -125,19 +109,19 @@ class Team(BaseModel):
             "game4": obj.get("game4"),
             "game5": obj.get("game5"),
             "id": obj.get("id"),
-            "leagueMatchTeamId": obj.get("leagueMatchTeamId"),
-            "player1": Player.from_dict(obj["player1"]) if obj.get("player1") is not None else None,
-            "player1DoublesRating": obj.get("player1DoublesRating"),
-            "player1SinglesRating": obj.get("player1SinglesRating"),
-            "player2": Player.from_dict(obj["player2"]) if obj.get("player2") is not None else None,
-            "player2DoublesRating": obj.get("player2DoublesRating"),
-            "player2SinglesRating": obj.get("player2SinglesRating"),
-            "playerIds": obj.get("playerIds"),
-            "preMatchRatingAndImpact": PreMatchRatingAndImpact.from_dict(obj["preMatchRatingAndImpact"]) if obj.get("preMatchRatingAndImpact") is not None else None,
+            "league_match_team_id": obj.get("leagueMatchTeamId"),
+            "player1": Player.from_dict(obj.get("player1")) if obj.get("player1") is not None else None,
+            "player1_doubles_rating": obj.get("player1DoublesRating"),
+            "player1_singles_rating": obj.get("player1SinglesRating"),
+            "player2": Player.from_dict(obj.get("player2")) if obj.get("player2") is not None else None,
+            "player2_doubles_rating": obj.get("player2DoublesRating"),
+            "player2_singles_rating": obj.get("player2SinglesRating"),
+            "player_ids": obj.get("playerIds"),
+            "pre_match_rating_and_impact": PreMatchRatingAndImpact.from_dict(obj.get("preMatchRatingAndImpact")) if obj.get("preMatchRatingAndImpact") is not None else None,
             "priority": obj.get("priority"),
-            "teamPlayer1": TeamPlayer.from_dict(obj["teamPlayer1"]) if obj.get("teamPlayer1") is not None else None,
-            "teamPlayer2": TeamPlayer.from_dict(obj["teamPlayer2"]) if obj.get("teamPlayer2") is not None else None,
-            "teamRating": obj.get("teamRating"),
+            "team_player1": TeamPlayer.from_dict(obj.get("teamPlayer1")) if obj.get("teamPlayer1") is not None else None,
+            "team_player2": TeamPlayer.from_dict(obj.get("teamPlayer2")) if obj.get("teamPlayer2") is not None else None,
+            "team_rating": obj.get("teamRating"),
             "winner": obj.get("winner")
         })
         return _obj

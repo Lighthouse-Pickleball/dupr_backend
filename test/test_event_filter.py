@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.event_filter import EventFilter
+import dupr_backend
+from dupr_backend.models.event_filter import EventFilter  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestEventFilter(unittest.TestCase):
     """EventFilter unit test stubs"""
@@ -25,29 +28,29 @@ class TestEventFilter(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> EventFilter:
+    def make_instance(self, include_optional):
         """Test EventFilter
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `EventFilter`
         """
-        model = EventFilter()
-        if include_optional:
+        model = dupr_backend.models.event_filter.EventFilter()  # noqa: E501
+        if include_optional :
             return EventFilter(
                 distance = dupr_backend.models.distance.Distance(
                     from = 56, 
-                    to = 56, ),
-                division = 'DUPR12/DUPR14/DUPR16/DUPR18/DUPR20/DUPR22/DUPR_OPEN',
+                    to = 56, ), 
+                division = 'DUPR12/DUPR14/DUPR16/DUPR18/DUPR20/DUPR22/DUPR_OPEN', 
                 geo_point = dupr_backend.models.geo_point.GeoPoint(
                     lat = 1.337, 
-                    lon = 1.337, ),
-                name = 'Event name',
-                place_id = 'Peh173uin271llopvdanh2',
-                statuses = UPCOMING/ONGOING/COMPLETE,
+                    lon = 1.337, ), 
+                name = 'Event name', 
+                place_id = 'Peh173uin271llopvdanh2', 
+                statuses = UPCOMING/ONGOING/COMPLETE, 
                 type = 'STANDARD/MARQUE/SHOWDOWN'
             )
-        else:
+        else :
             return EventFilter(
         )
         """

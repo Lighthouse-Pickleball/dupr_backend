@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.forfeit_team_request import ForfeitTeamRequest
+import dupr_backend
+from dupr_backend.models.forfeit_team_request import ForfeitTeamRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestForfeitTeamRequest(unittest.TestCase):
     """ForfeitTeamRequest unit test stubs"""
@@ -25,22 +28,22 @@ class TestForfeitTeamRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ForfeitTeamRequest:
+    def make_instance(self, include_optional):
         """Test ForfeitTeamRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ForfeitTeamRequest`
         """
-        model = ForfeitTeamRequest()
-        if include_optional:
+        model = dupr_backend.models.forfeit_team_request.ForfeitTeamRequest()  # noqa: E501
+        if include_optional :
             return ForfeitTeamRequest(
-                is_forfeited = True,
-                player1 = 4564651818,
-                player2 = 9884984848,
+                is_forfeited = True, 
+                player1 = 4564651818, 
+                player2 = 9884984848, 
                 team_id = 56168168161
             )
-        else:
+        else :
             return ForfeitTeamRequest(
                 is_forfeited = True,
                 player1 = 4564651818,

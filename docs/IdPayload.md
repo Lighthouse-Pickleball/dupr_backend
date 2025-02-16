@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
@@ -17,12 +16,12 @@ json = "{}"
 # create an instance of IdPayload from a JSON string
 id_payload_instance = IdPayload.from_json(json)
 # print the JSON string representation of the object
-print(IdPayload.to_json())
+print IdPayload.to_json()
 
 # convert the object into a dict
 id_payload_dict = id_payload_instance.to_dict()
 # create an instance of IdPayload from a dict
-id_payload_from_dict = IdPayload.from_dict(id_payload_dict)
+id_payload_form_dict = id_payload.from_dict(id_payload_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

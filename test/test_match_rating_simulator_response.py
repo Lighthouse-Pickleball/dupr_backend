@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.match_rating_simulator_response import MatchRatingSimulatorResponse
+import dupr_backend
+from dupr_backend.models.match_rating_simulator_response import MatchRatingSimulatorResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestMatchRatingSimulatorResponse(unittest.TestCase):
     """MatchRatingSimulatorResponse unit test stubs"""
@@ -25,18 +28,18 @@ class TestMatchRatingSimulatorResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> MatchRatingSimulatorResponse:
+    def make_instance(self, include_optional):
         """Test MatchRatingSimulatorResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MatchRatingSimulatorResponse`
         """
-        model = MatchRatingSimulatorResponse()
-        if include_optional:
+        model = dupr_backend.models.match_rating_simulator_response.MatchRatingSimulatorResponse()  # noqa: E501
+        if include_optional :
             return MatchRatingSimulatorResponse(
-                event_format = 'DOUBLES',
-                match_source = 'CLUB',
+                event_format = 'DOUBLES', 
+                match_source = 'CLUB', 
                 teams = [
                     dupr_backend.models.team_info0.TeamInfo0(
                         players = [
@@ -50,7 +53,7 @@ class TestMatchRatingSimulatorResponse(unittest.TestCase):
                         team_no = 56, )
                     ]
             )
-        else:
+        else :
             return MatchRatingSimulatorResponse(
                 event_format = 'DOUBLES',
                 match_source = 'CLUB',

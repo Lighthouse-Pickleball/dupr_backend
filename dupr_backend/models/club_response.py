@@ -17,104 +17,88 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List, Optional, Union
+
+from typing import Any, Dict, List, Optional, Union
+from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr, conlist, validator
 from dupr_backend.models.account_status_response import AccountStatusResponse
 from dupr_backend.models.address_response import AddressResponse
 from dupr_backend.models.club_role_response import ClubRoleResponse
 from dupr_backend.models.club_type_response import ClubTypeResponse
 from dupr_backend.models.content_response import ContentResponse
 from dupr_backend.models.currency_details_response import CurrencyDetailsResponse
-from typing import Optional, Set
-from typing_extensions import Self
 
 class ClubResponse(BaseModel):
     """
     ClubResponse
-    """ # noqa: E501
-    account_status: Optional[AccountStatusResponse] = Field(default=None, alias="accountStatus")
+    """
+    account_status: Optional[AccountStatusResponse] = Field(None, alias="accountStatus")
     address: Optional[AddressResponse] = None
     attributes: Optional[Dict[str, Any]] = None
-    club_id: StrictInt = Field(alias="clubId")
-    club_join_type: Optional[StrictStr] = Field(default=None, alias="clubJoinType")
-    club_member_count: Optional[StrictInt] = Field(default=None, alias="clubMemberCount")
-    club_name: StrictStr = Field(alias="clubName")
-    club_type: ClubTypeResponse = Field(alias="clubType")
+    club_id: StrictInt = Field(..., alias="clubId")
+    club_join_type: Optional[StrictStr] = Field(None, alias="clubJoinType")
+    club_member_count: Optional[StrictInt] = Field(None, alias="clubMemberCount")
+    club_name: StrictStr = Field(..., alias="clubName")
+    club_type: ClubTypeResponse = Field(..., alias="clubType")
     created: Optional[StrictStr] = None
-    currency_details: Optional[CurrencyDetailsResponse] = Field(default=None, alias="currencyDetails")
-    distance_in_miles: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="distanceInMiles")
-    is_payment_setup: Optional[StrictBool] = Field(default=None, alias="isPaymentSetup")
-    long_description: Optional[ContentResponse] = Field(default=None, alias="longDescription")
+    currency_details: Optional[CurrencyDetailsResponse] = Field(None, alias="currencyDetails")
+    distance_in_miles: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="distanceInMiles")
+    is_payment_setup: Optional[StrictBool] = Field(None, alias="isPaymentSetup")
+    long_description: Optional[ContentResponse] = Field(None, alias="longDescription")
     manifest: Optional[ContentResponse] = None
-    media_url: Optional[StrictStr] = Field(default=None, alias="mediaUrl")
-    model_type: Optional[StrictStr] = Field(default=None, alias="modelType")
-    model_value: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="modelValue")
-    pending_request_list: Optional[List[StrictInt]] = Field(default=None, alias="pendingRequestList")
-    requested_by: Optional[StrictInt] = Field(default=None, alias="requestedBy")
+    media_url: Optional[StrictStr] = Field(None, alias="mediaUrl")
+    model_type: Optional[StrictStr] = Field(None, alias="modelType")
+    model_value: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="modelValue")
+    pending_request_list: Optional[conlist(StrictInt)] = Field(None, alias="pendingRequestList")
+    requested_by: Optional[StrictInt] = Field(None, alias="requestedBy")
     role: Optional[ClubRoleResponse] = None
-    short_address: Optional[StrictStr] = Field(default=None, alias="shortAddress")
-    short_description: Optional[ContentResponse] = Field(default=None, alias="shortDescription")
-    __properties: ClassVar[List[str]] = ["accountStatus", "address", "attributes", "clubId", "clubJoinType", "clubMemberCount", "clubName", "clubType", "created", "currencyDetails", "distanceInMiles", "isPaymentSetup", "longDescription", "manifest", "mediaUrl", "modelType", "modelValue", "pendingRequestList", "requestedBy", "role", "shortAddress", "shortDescription"]
+    short_address: Optional[StrictStr] = Field(None, alias="shortAddress")
+    short_description: Optional[ContentResponse] = Field(None, alias="shortDescription")
+    __properties = ["accountStatus", "address", "attributes", "clubId", "clubJoinType", "clubMemberCount", "clubName", "clubType", "created", "currencyDetails", "distanceInMiles", "isPaymentSetup", "longDescription", "manifest", "mediaUrl", "modelType", "modelValue", "pendingRequestList", "requestedBy", "role", "shortAddress", "shortDescription"]
 
-    @field_validator('club_join_type')
+    @validator('club_join_type')
     def club_join_type_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['INVITATION', 'INVITATION_CSV', 'PARTNER_INVITE', 'REQUEST']):
+        if value not in ('INVITATION', 'INVITATION_CSV', 'PARTNER_INVITE', 'REQUEST'):
             raise ValueError("must be one of enum values ('INVITATION', 'INVITATION_CSV', 'PARTNER_INVITE', 'REQUEST')")
         return value
 
-    @field_validator('model_type')
+    @validator('model_type')
     def model_type_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['ABSOLUTE', 'RELATIVE']):
+        if value not in ('ABSOLUTE', 'RELATIVE'):
             raise ValueError("must be one of enum values ('ABSOLUTE', 'RELATIVE')")
         return value
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
+    class Config:
+        """Pydantic configuration"""
+        allow_population_by_field_name = True
+        validate_assignment = True
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+        return pprint.pformat(self.dict(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
+    def from_json(cls, json_str: str) -> ClubResponse:
         """Create an instance of ClubResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
+    def to_dict(self):
+        """Returns the dictionary representation of the model using alias"""
+        _dict = self.dict(by_alias=True,
+                          exclude={
+                          },
+                          exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of account_status
         if self.account_status:
             _dict['accountStatus'] = self.account_status.to_dict()
@@ -142,37 +126,37 @@ class ClubResponse(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+    def from_dict(cls, obj: dict) -> ClubResponse:
         """Create an instance of ClubResponse from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+            return ClubResponse.parse_obj(obj)
 
-        _obj = cls.model_validate({
-            "accountStatus": AccountStatusResponse.from_dict(obj["accountStatus"]) if obj.get("accountStatus") is not None else None,
-            "address": AddressResponse.from_dict(obj["address"]) if obj.get("address") is not None else None,
+        _obj = ClubResponse.parse_obj({
+            "account_status": AccountStatusResponse.from_dict(obj.get("accountStatus")) if obj.get("accountStatus") is not None else None,
+            "address": AddressResponse.from_dict(obj.get("address")) if obj.get("address") is not None else None,
             "attributes": obj.get("attributes"),
-            "clubId": obj.get("clubId"),
-            "clubJoinType": obj.get("clubJoinType"),
-            "clubMemberCount": obj.get("clubMemberCount"),
-            "clubName": obj.get("clubName"),
-            "clubType": ClubTypeResponse.from_dict(obj["clubType"]) if obj.get("clubType") is not None else None,
+            "club_id": obj.get("clubId"),
+            "club_join_type": obj.get("clubJoinType"),
+            "club_member_count": obj.get("clubMemberCount"),
+            "club_name": obj.get("clubName"),
+            "club_type": ClubTypeResponse.from_dict(obj.get("clubType")) if obj.get("clubType") is not None else None,
             "created": obj.get("created"),
-            "currencyDetails": CurrencyDetailsResponse.from_dict(obj["currencyDetails"]) if obj.get("currencyDetails") is not None else None,
-            "distanceInMiles": obj.get("distanceInMiles"),
-            "isPaymentSetup": obj.get("isPaymentSetup"),
-            "longDescription": ContentResponse.from_dict(obj["longDescription"]) if obj.get("longDescription") is not None else None,
-            "manifest": ContentResponse.from_dict(obj["manifest"]) if obj.get("manifest") is not None else None,
-            "mediaUrl": obj.get("mediaUrl"),
-            "modelType": obj.get("modelType"),
-            "modelValue": obj.get("modelValue"),
-            "pendingRequestList": obj.get("pendingRequestList"),
-            "requestedBy": obj.get("requestedBy"),
-            "role": ClubRoleResponse.from_dict(obj["role"]) if obj.get("role") is not None else None,
-            "shortAddress": obj.get("shortAddress"),
-            "shortDescription": ContentResponse.from_dict(obj["shortDescription"]) if obj.get("shortDescription") is not None else None
+            "currency_details": CurrencyDetailsResponse.from_dict(obj.get("currencyDetails")) if obj.get("currencyDetails") is not None else None,
+            "distance_in_miles": obj.get("distanceInMiles"),
+            "is_payment_setup": obj.get("isPaymentSetup"),
+            "long_description": ContentResponse.from_dict(obj.get("longDescription")) if obj.get("longDescription") is not None else None,
+            "manifest": ContentResponse.from_dict(obj.get("manifest")) if obj.get("manifest") is not None else None,
+            "media_url": obj.get("mediaUrl"),
+            "model_type": obj.get("modelType"),
+            "model_value": obj.get("modelValue"),
+            "pending_request_list": obj.get("pendingRequestList"),
+            "requested_by": obj.get("requestedBy"),
+            "role": ClubRoleResponse.from_dict(obj.get("role")) if obj.get("role") is not None else None,
+            "short_address": obj.get("shortAddress"),
+            "short_description": ContentResponse.from_dict(obj.get("shortDescription")) if obj.get("shortDescription") is not None else None
         })
         return _obj
 

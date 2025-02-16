@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.milp_event_organizer_request import MILPEventOrganizerRequest
+import dupr_backend
+from dupr_backend.models.milp_event_organizer_request import MILPEventOrganizerRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestMILPEventOrganizerRequest(unittest.TestCase):
     """MILPEventOrganizerRequest unit test stubs"""
@@ -25,20 +28,20 @@ class TestMILPEventOrganizerRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> MILPEventOrganizerRequest:
+    def make_instance(self, include_optional):
         """Test MILPEventOrganizerRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MILPEventOrganizerRequest`
         """
-        model = MILPEventOrganizerRequest()
-        if include_optional:
+        model = dupr_backend.models.milp_event_organizer_request.MILPEventOrganizerRequest()  # noqa: E501
+        if include_optional :
             return MILPEventOrganizerRequest(
-                status = 'ACTIVE/CANCELLED',
+                status = 'ACTIVE/CANCELLED', 
                 user_id = 45785789
             )
-        else:
+        else :
             return MILPEventOrganizerRequest(
                 user_id = 45785789,
         )

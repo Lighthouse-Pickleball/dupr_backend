@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.get_club_settings_request import GetClubSettingsRequest
+import dupr_backend
+from dupr_backend.models.get_club_settings_request import GetClubSettingsRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestGetClubSettingsRequest(unittest.TestCase):
     """GetClubSettingsRequest unit test stubs"""
@@ -25,19 +28,19 @@ class TestGetClubSettingsRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> GetClubSettingsRequest:
+    def make_instance(self, include_optional):
         """Test GetClubSettingsRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `GetClubSettingsRequest`
         """
-        model = GetClubSettingsRequest()
-        if include_optional:
+        model = dupr_backend.models.get_club_settings_request.GetClubSettingsRequest()  # noqa: E501
+        if include_optional :
             return GetClubSettingsRequest(
                 club_id = 56
             )
-        else:
+        else :
             return GetClubSettingsRequest(
         )
         """

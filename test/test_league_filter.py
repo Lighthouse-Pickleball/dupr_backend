@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.league_filter import LeagueFilter
+import dupr_backend
+from dupr_backend.models.league_filter import LeagueFilter  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestLeagueFilter(unittest.TestCase):
     """LeagueFilter unit test stubs"""
@@ -25,28 +28,28 @@ class TestLeagueFilter(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> LeagueFilter:
+    def make_instance(self, include_optional):
         """Test LeagueFilter
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `LeagueFilter`
         """
-        model = LeagueFilter()
-        if include_optional:
+        model = dupr_backend.models.league_filter.LeagueFilter()  # noqa: E501
+        if include_optional :
             return LeagueFilter(
-                city = [San Francisco, Great Falls],
-                duration_status = [COMPLETE, IN_PROGRESS, UPCOMING],
-                elimination = [DOUBLE_PREVENTED, ROUND_ROBIN],
-                event_format = [SINGLES, DOUBLES],
-                player_group = [MEN, WOMEN, MIXED],
-                registration_status = [OPEN, NOT_STARTED, CLOSED],
+                city = [San Francisco, Great Falls], 
+                duration_status = [COMPLETE, IN_PROGRESS, UPCOMING], 
+                elimination = [DOUBLE_PREVENTED, ROUND_ROBIN], 
+                event_format = [SINGLES, DOUBLES], 
+                player_group = [MEN, WOMEN, MIXED], 
+                registration_status = [OPEN, NOT_STARTED, CLOSED], 
                 skill_level = dupr_backend.models.skill_level_filter.SkillLevelFilter(
                     max_rating = 4.2, 
-                    min_rating = 3.2, ),
+                    min_rating = 3.2, ), 
                 status = [ACTIVE, IN_ACTIVE]
             )
-        else:
+        else :
             return LeagueFilter(
         )
         """

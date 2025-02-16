@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.device_request import DeviceRequest
+import dupr_backend
+from dupr_backend.models.device_request import DeviceRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestDeviceRequest(unittest.TestCase):
     """DeviceRequest unit test stubs"""
@@ -25,22 +28,22 @@ class TestDeviceRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> DeviceRequest:
+    def make_instance(self, include_optional):
         """Test DeviceRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `DeviceRequest`
         """
-        model = DeviceRequest()
-        if include_optional:
+        model = dupr_backend.models.device_request.DeviceRequest()  # noqa: E501
+        if include_optional :
             return DeviceRequest(
-                platform = 'android/ios/web',
-                token = '740f4707bebcf74f9b7c25d48e3358945f6aa01da5ddb387462c7eaf61bb78ad',
-                user_id = 4086274008,
+                platform = 'android/ios/web', 
+                token = '740f4707bebcf74f9b7c25d48e3358945f6aa01da5ddb387462c7eaf61bb78ad', 
+                user_id = 4086274008, 
                 uuid = 'unique-device-identity'
             )
-        else:
+        else :
             return DeviceRequest(
                 platform = 'android/ios/web',
                 token = '740f4707bebcf74f9b7c25d48e3358945f6aa01da5ddb387462c7eaf61bb78ad',

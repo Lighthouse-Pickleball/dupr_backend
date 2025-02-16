@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.single_wrapper_ofboolean import SingleWrapperOfboolean
+import dupr_backend
+from dupr_backend.models.single_wrapper_ofboolean import SingleWrapperOfboolean  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSingleWrapperOfboolean(unittest.TestCase):
     """SingleWrapperOfboolean unit test stubs"""
@@ -25,21 +28,21 @@ class TestSingleWrapperOfboolean(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperOfboolean:
+    def make_instance(self, include_optional):
         """Test SingleWrapperOfboolean
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfboolean`
         """
-        model = SingleWrapperOfboolean()
-        if include_optional:
+        model = dupr_backend.models.single_wrapper_ofboolean.SingleWrapperOfboolean()  # noqa: E501
+        if include_optional :
             return SingleWrapperOfboolean(
-                message = 'Show this message to user.',
-                result = True,
+                message = 'Show this message to user.', 
+                result = True, 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return SingleWrapperOfboolean(
         )
         """

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.bracket_club_role_response import BracketClubRoleResponse
+import dupr_backend
+from dupr_backend.models.bracket_club_role_response import BracketClubRoleResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestBracketClubRoleResponse(unittest.TestCase):
     """BracketClubRoleResponse unit test stubs"""
@@ -25,21 +28,21 @@ class TestBracketClubRoleResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> BracketClubRoleResponse:
+    def make_instance(self, include_optional):
         """Test BracketClubRoleResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `BracketClubRoleResponse`
         """
-        model = BracketClubRoleResponse()
-        if include_optional:
+        model = dupr_backend.models.bracket_club_role_response.BracketClubRoleResponse()  # noqa: E501
+        if include_optional :
             return BracketClubRoleResponse(
-                is_club_member = True,
-                role_id = 45785789,
+                is_club_member = True, 
+                role_id = 45785789, 
                 role_name = 'ADMIN'
             )
-        else:
+        else :
             return BracketClubRoleResponse(
                 is_club_member = True,
                 role_id = 45785789,

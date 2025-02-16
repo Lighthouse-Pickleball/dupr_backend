@@ -18,8 +18,9 @@ draft
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.event_announcement_request import EventAnnouncementRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -54,7 +55,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -75,7 +75,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -90,8 +89,9 @@ edit
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.event_announcement_request import EventAnnouncementRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -126,7 +126,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -147,7 +146,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -162,8 +160,9 @@ getAnnouncements
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.announcement_history_request import AnnouncementHistoryRequest
 from dupr_backend.models.single_wrapper_of_page_of_event_announcements_response import SingleWrapperOfPageOfEventAnnouncementsResponse
@@ -198,7 +197,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -219,7 +217,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -234,8 +231,9 @@ save
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.event_announcement_request import EventAnnouncementRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -270,7 +268,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -291,7 +288,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -306,8 +302,9 @@ sentNotification
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.announcements_notifications import AnnouncementsNotifications
 from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
@@ -342,7 +339,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -363,7 +359,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |

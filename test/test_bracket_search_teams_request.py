@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.bracket_search_teams_request import BracketSearchTeamsRequest
+import dupr_backend
+from dupr_backend.models.bracket_search_teams_request import BracketSearchTeamsRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestBracketSearchTeamsRequest(unittest.TestCase):
     """BracketSearchTeamsRequest unit test stubs"""
@@ -25,26 +28,26 @@ class TestBracketSearchTeamsRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> BracketSearchTeamsRequest:
+    def make_instance(self, include_optional):
         """Test BracketSearchTeamsRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `BracketSearchTeamsRequest`
         """
-        model = BracketSearchTeamsRequest()
-        if include_optional:
+        model = dupr_backend.models.bracket_search_teams_request.BracketSearchTeamsRequest()  # noqa: E501
+        if include_optional :
             return BracketSearchTeamsRequest(
-                bracket_id = 7828935307,
-                limit = 10,
-                offset = 0,
-                only_non_wait_listed = False,
-                only_wait_listed = False,
+                bracket_id = 7828935307, 
+                limit = 10, 
+                offset = 0, 
+                only_non_wait_listed = False, 
+                only_wait_listed = False, 
                 sort = dupr_backend.models.bracket_team_sort.BracketTeamSort(
                     order = 'ASC/DESC', 
                     parameter = 'RATINGS', )
             )
-        else:
+        else :
             return BracketSearchTeamsRequest(
                 bracket_id = 7828935307,
                 limit = 10,

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.score_format_response import ScoreFormatResponse
+import dupr_backend
+from dupr_backend.models.score_format_response import ScoreFormatResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestScoreFormatResponse(unittest.TestCase):
     """ScoreFormatResponse unit test stubs"""
@@ -25,24 +28,24 @@ class TestScoreFormatResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ScoreFormatResponse:
+    def make_instance(self, include_optional):
         """Test ScoreFormatResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ScoreFormatResponse`
         """
-        model = ScoreFormatResponse()
-        if include_optional:
+        model = dupr_backend.models.score_format_response.ScoreFormatResponse()  # noqa: E501
+        if include_optional :
             return ScoreFormatResponse(
-                format = 'Best 2 out of 3 Games to 11',
-                games = 1,
-                id = 56,
-                priority = 1,
-                variant = 'Game 3 to 15 or until win by 2',
+                format = 'Best 2 out of 3 Games to 11', 
+                games = 1, 
+                id = 56, 
+                priority = 1, 
+                variant = 'Game 3 to 15 or until win by 2', 
                 winning_score = 11
             )
-        else:
+        else :
             return ScoreFormatResponse(
                 format = 'Best 2 out of 3 Games to 11',
                 games = 1,

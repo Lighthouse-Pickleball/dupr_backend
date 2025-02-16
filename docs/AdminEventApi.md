@@ -22,8 +22,9 @@ deleteAllLeague
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
@@ -56,7 +57,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -76,7 +76,6 @@ No authorization required
  - **Accept**: */*
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -91,8 +90,9 @@ deleteEventPlayers
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
@@ -125,7 +125,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -145,7 +144,6 @@ No authorization required
  - **Accept**: */*
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -160,8 +158,9 @@ forceDeleteLeague
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
@@ -195,7 +194,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -216,7 +214,6 @@ No authorization required
  - **Accept**: */*
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -231,8 +228,9 @@ indexAllLeagues
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
@@ -265,7 +263,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -285,7 +282,6 @@ No authorization required
  - **Accept**: */*
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -300,8 +296,9 @@ indexLeaguePlayers
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
@@ -334,7 +331,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -354,7 +350,6 @@ No authorization required
  - **Accept**: */*
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -369,8 +364,9 @@ indexLeaguesById
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
@@ -404,7 +400,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -425,7 +420,6 @@ No authorization required
  - **Accept**: */*
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -440,8 +434,9 @@ registeredToBracket
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.registered_event_admin_request import RegisteredEventAdminRequest
 from dupr_backend.models.single_wrapper_of_join_league_response import SingleWrapperOfJoinLeagueResponse
@@ -477,7 +472,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -499,7 +493,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -514,8 +507,9 @@ restoreDeletedLeague
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
@@ -549,7 +543,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -570,7 +563,6 @@ No authorization required
  - **Accept**: */*
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -585,8 +577,9 @@ updateLeagueFees
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.models.league_fees_request import LeagueFeesRequest
 from dupr_backend.models.single_wrapper_of_league_response import SingleWrapperOfLeagueResponse
@@ -622,7 +615,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -644,7 +636,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |

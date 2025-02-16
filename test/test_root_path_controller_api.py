@@ -14,22 +14,24 @@
 
 import unittest
 
-from dupr_backend.api.root_path_controller_api import RootPathControllerApi
+import dupr_backend
+from dupr_backend.api.root_path_controller_api import RootPathControllerApi  # noqa: E501
+from dupr_backend.rest import ApiException
 
 
 class TestRootPathControllerApi(unittest.TestCase):
     """RootPathControllerApi unit test stubs"""
 
-    def setUp(self) -> None:
-        self.api = RootPathControllerApi()
+    def setUp(self):
+        self.api = dupr_backend.api.root_path_controller_api.RootPathControllerApi()  # noqa: E501
 
-    def tearDown(self) -> None:
+    def tearDown(self):
         pass
 
-    def test_app_ads_using_get(self) -> None:
+    def test_app_ads_using_get(self):
         """Test case for app_ads_using_get
 
-        appAds
+        appAds  # noqa: E501
         """
         pass
 

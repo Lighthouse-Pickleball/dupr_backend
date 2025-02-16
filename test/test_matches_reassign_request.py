@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.matches_reassign_request import MatchesReassignRequest
+import dupr_backend
+from dupr_backend.models.matches_reassign_request import MatchesReassignRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestMatchesReassignRequest(unittest.TestCase):
     """MatchesReassignRequest unit test stubs"""
@@ -25,24 +28,24 @@ class TestMatchesReassignRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> MatchesReassignRequest:
+    def make_instance(self, include_optional):
         """Test MatchesReassignRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MatchesReassignRequest`
         """
-        model = MatchesReassignRequest()
-        if include_optional:
+        model = dupr_backend.models.matches_reassign_request.MatchesReassignRequest()  # noqa: E501
+        if include_optional :
             return MatchesReassignRequest(
-                match_code = 'GGL2ZZPYD',
-                notify = False,
-                source = '4684651981',
-                source_merge_input_type = 'DUPR_ID/OBFUSCATED_USER_ID/EMAIL',
-                target = '4684651981',
+                match_code = 'GGL2ZZPYD', 
+                notify = False, 
+                source = '4684651981', 
+                source_merge_input_type = 'DUPR_ID/OBFUSCATED_USER_ID/EMAIL', 
+                target = '4684651981', 
                 target_merge_input_type = 'DUPR_ID/OBFUSCATED_USER_ID/EMAIL'
             )
-        else:
+        else :
             return MatchesReassignRequest(
                 match_code = 'GGL2ZZPYD',
                 source = '4684651981',

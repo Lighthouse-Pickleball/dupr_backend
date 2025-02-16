@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.verify_email_request import VerifyEmailRequest
+import dupr_backend
+from dupr_backend.models.verify_email_request import VerifyEmailRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestVerifyEmailRequest(unittest.TestCase):
     """VerifyEmailRequest unit test stubs"""
@@ -25,20 +28,20 @@ class TestVerifyEmailRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> VerifyEmailRequest:
+    def make_instance(self, include_optional):
         """Test VerifyEmailRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `VerifyEmailRequest`
         """
-        model = VerifyEmailRequest()
-        if include_optional:
+        model = dupr_backend.models.verify_email_request.VerifyEmailRequest()  # noqa: E501
+        if include_optional :
             return VerifyEmailRequest(
-                code = '1234',
+                code = '1234', 
                 email = 'user@example.com'
             )
-        else:
+        else :
             return VerifyEmailRequest(
                 code = '1234',
                 email = 'user@example.com',

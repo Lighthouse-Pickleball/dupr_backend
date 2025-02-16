@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.league_match_request import LeagueMatchRequest
+import dupr_backend
+from dupr_backend.models.league_match_request import LeagueMatchRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestLeagueMatchRequest(unittest.TestCase):
     """LeagueMatchRequest unit test stubs"""
@@ -25,26 +28,26 @@ class TestLeagueMatchRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> LeagueMatchRequest:
+    def make_instance(self, include_optional):
         """Test LeagueMatchRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `LeagueMatchRequest`
         """
-        model = LeagueMatchRequest()
-        if include_optional:
+        model = dupr_backend.models.league_match_request.LeagueMatchRequest()  # noqa: E501
+        if include_optional :
             return LeagueMatchRequest(
-                bracket_id = 56168168161,
-                club_id = 56168168161,
-                event_name = 'Beach Doubles Event',
-                format = 'SINGLES',
-                league = 'Example League',
-                league_id = 56168168161,
-                league_match_id = 56168168161,
-                location = 'Newport Beach, CA',
-                match_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
-                score_format_id = 56168168161,
+                bracket_id = 56168168161, 
+                club_id = 56168168161, 
+                event_name = 'Beach Doubles Event', 
+                format = 'SINGLES', 
+                league = 'Example League', 
+                league_id = 56168168161, 
+                league_match_id = 56168168161, 
+                location = 'Newport Beach, CA', 
+                match_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
+                score_format_id = 56168168161, 
                 team1 = dupr_backend.models.team.Team(
                     delta = 1.337, 
                     game1 = 56, 
@@ -188,7 +191,7 @@ class TestLeagueMatchRequest(unittest.TestCase):
                         validated_match = True, 
                         verified_email = True, ), 
                     team_rating = 1.337, 
-                    winner = True, ),
+                    winner = True, ), 
                 team2 = dupr_backend.models.team.Team(
                     delta = 1.337, 
                     game1 = 56, 
@@ -332,11 +335,11 @@ class TestLeagueMatchRequest(unittest.TestCase):
                         validated_match = True, 
                         verified_email = True, ), 
                     team_rating = 1.337, 
-                    winner = True, ),
-                tournament = 'Newport Beach Doubles Shootout',
+                    winner = True, ), 
+                tournament = 'Newport Beach Doubles Shootout', 
                 venue = 'Dreamland Pickleball'
             )
-        else:
+        else :
             return LeagueMatchRequest(
                 bracket_id = 56168168161,
                 club_id = 56168168161,

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.topic_response import TopicResponse
+import dupr_backend
+from dupr_backend.models.topic_response import TopicResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestTopicResponse(unittest.TestCase):
     """TopicResponse unit test stubs"""
@@ -25,20 +28,20 @@ class TestTopicResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> TopicResponse:
+    def make_instance(self, include_optional):
         """Test TopicResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `TopicResponse`
         """
-        model = TopicResponse()
-        if include_optional:
+        model = dupr_backend.models.topic_response.TopicResponse()  # noqa: E501
+        if include_optional :
             return TopicResponse(
-                id = 56,
+                id = 56, 
                 name = ''
             )
-        else:
+        else :
             return TopicResponse(
                 name = '',
         )

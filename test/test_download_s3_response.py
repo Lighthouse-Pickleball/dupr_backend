@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.download_s3_response import DownloadS3Response
+import dupr_backend
+from dupr_backend.models.download_s3_response import DownloadS3Response  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestDownloadS3Response(unittest.TestCase):
     """DownloadS3Response unit test stubs"""
@@ -25,19 +28,19 @@ class TestDownloadS3Response(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> DownloadS3Response:
+    def make_instance(self, include_optional):
         """Test DownloadS3Response
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `DownloadS3Response`
         """
-        model = DownloadS3Response()
-        if include_optional:
+        model = dupr_backend.models.download_s3_response.DownloadS3Response()  # noqa: E501
+        if include_optional :
             return DownloadS3Response(
                 s3_url = 'https://dupr-dev.s3.amazonaws.com/clubs-members-excel/312312-2021-09-11'
             )
-        else:
+        else :
             return DownloadS3Response(
                 s3_url = 'https://dupr-dev.s3.amazonaws.com/clubs-members-excel/312312-2021-09-11',
         )

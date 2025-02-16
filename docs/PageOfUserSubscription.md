@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **empty** | **bool** | Are results empty | 
@@ -24,12 +23,12 @@ json = "{}"
 # create an instance of PageOfUserSubscription from a JSON string
 page_of_user_subscription_instance = PageOfUserSubscription.from_json(json)
 # print the JSON string representation of the object
-print(PageOfUserSubscription.to_json())
+print PageOfUserSubscription.to_json()
 
 # convert the object into a dict
 page_of_user_subscription_dict = page_of_user_subscription_instance.to_dict()
 # create an instance of PageOfUserSubscription from a dict
-page_of_user_subscription_from_dict = PageOfUserSubscription.from_dict(page_of_user_subscription_dict)
+page_of_user_subscription_form_dict = page_of_user_subscription.from_dict(page_of_user_subscription_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

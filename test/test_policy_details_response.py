@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.policy_details_response import PolicyDetailsResponse
+import dupr_backend
+from dupr_backend.models.policy_details_response import PolicyDetailsResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestPolicyDetailsResponse(unittest.TestCase):
     """PolicyDetailsResponse unit test stubs"""
@@ -25,15 +28,15 @@ class TestPolicyDetailsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PolicyDetailsResponse:
+    def make_instance(self, include_optional):
         """Test PolicyDetailsResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PolicyDetailsResponse`
         """
-        model = PolicyDetailsResponse()
-        if include_optional:
+        model = dupr_backend.models.policy_details_response.PolicyDetailsResponse()  # noqa: E501
+        if include_optional :
             return PolicyDetailsResponse(
                 refund_policy = dupr_backend.models.league_content_response.LeagueContentResponse(
                     content = '<h1>content</h1>', 
@@ -42,7 +45,7 @@ class TestPolicyDetailsResponse(unittest.TestCase):
                     footer = '<h1>footer</h1>', 
                     footer_type = 'text/html', 
                     header = '<h1>header</h1>', 
-                    header_type = 'text/html', ),
+                    header_type = 'text/html', ), 
                 safety_policy = dupr_backend.models.league_content_response.LeagueContentResponse(
                     content = '<h1>content</h1>', 
                     content_id = 45785789, 
@@ -52,7 +55,7 @@ class TestPolicyDetailsResponse(unittest.TestCase):
                     header = '<h1>header</h1>', 
                     header_type = 'text/html', )
             )
-        else:
+        else :
             return PolicyDetailsResponse(
         )
         """

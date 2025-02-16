@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.club_member_many_response import ClubMemberManyResponse
+import dupr_backend
+from dupr_backend.models.club_member_many_response import ClubMemberManyResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestClubMemberManyResponse(unittest.TestCase):
     """ClubMemberManyResponse unit test stubs"""
@@ -25,24 +28,24 @@ class TestClubMemberManyResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ClubMemberManyResponse:
+    def make_instance(self, include_optional):
         """Test ClubMemberManyResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ClubMemberManyResponse`
         """
-        model = ClubMemberManyResponse()
-        if include_optional:
+        model = dupr_backend.models.club_member_many_response.ClubMemberManyResponse()  # noqa: E501
+        if include_optional :
             return ClubMemberManyResponse(
-                add_members_action_s3_url = 'https://dupr-dev.s3.amazonaws.com/clubs-members-excel/312312-2021-09-11',
-                in_valid_email = [dupr@gmail.com],
-                invalid_email = 56,
-                players_added = 56,
-                players_invited = 56,
+                add_members_action_s3_url = 'https://dupr-dev.s3.amazonaws.com/clubs-members-excel/312312-2021-09-11', 
+                in_valid_email = [dupr@gmail.com], 
+                invalid_email = 56, 
+                players_added = 56, 
+                players_invited = 56, 
                 valid_email = [dupr@gmail.com]
             )
-        else:
+        else :
             return ClubMemberManyResponse(
                 invalid_email = 56,
                 players_added = 56,

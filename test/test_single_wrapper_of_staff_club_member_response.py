@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.single_wrapper_of_staff_club_member_response import SingleWrapperOfStaffClubMemberResponse
+import dupr_backend
+from dupr_backend.models.single_wrapper_of_staff_club_member_response import SingleWrapperOfStaffClubMemberResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSingleWrapperOfStaffClubMemberResponse(unittest.TestCase):
     """SingleWrapperOfStaffClubMemberResponse unit test stubs"""
@@ -25,17 +28,17 @@ class TestSingleWrapperOfStaffClubMemberResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperOfStaffClubMemberResponse:
+    def make_instance(self, include_optional):
         """Test SingleWrapperOfStaffClubMemberResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfStaffClubMemberResponse`
         """
-        model = SingleWrapperOfStaffClubMemberResponse()
-        if include_optional:
+        model = dupr_backend.models.single_wrapper_of_staff_club_member_response.SingleWrapperOfStaffClubMemberResponse()  # noqa: E501
+        if include_optional :
             return SingleWrapperOfStaffClubMemberResponse(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 result = dupr_backend.models.staff_club_member_response.StaffClubMemberResponse(
                     directors = [
                         dupr_backend.models.staff_club_member.StaffClubMember(
@@ -64,10 +67,10 @@ class TestSingleWrapperOfStaffClubMemberResponse(unittest.TestCase):
                             phone = '211564789', 
                             role_id = 1231231, 
                             user_id = 1231231, )
-                        ], ),
+                        ], ), 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return SingleWrapperOfStaffClubMemberResponse(
         )
         """

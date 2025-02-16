@@ -17,153 +17,137 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List, Optional
+
+from typing import List, Optional
+from pydantic import BaseModel, Field, StrictStr, conlist, validator
 from dupr_backend.models.skill_level_filter import SkillLevelFilter
-from typing import Optional, Set
-from typing_extensions import Self
 
 class LeagueFilter(BaseModel):
     """
     LeagueFilter
-    """ # noqa: E501
-    city: Optional[List[StrictStr]] = None
-    duration_status: Optional[List[StrictStr]] = Field(default=None, alias="durationStatus")
-    elimination: Optional[List[StrictStr]] = None
-    event_format: Optional[List[StrictStr]] = Field(default=None, alias="eventFormat")
-    player_group: Optional[List[StrictStr]] = Field(default=None, alias="playerGroup")
-    registration_status: Optional[List[StrictStr]] = Field(default=None, alias="registrationStatus")
-    skill_level: Optional[SkillLevelFilter] = Field(default=None, alias="skillLevel")
-    status: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["city", "durationStatus", "elimination", "eventFormat", "playerGroup", "registrationStatus", "skillLevel", "status"]
+    """
+    city: Optional[conlist(StrictStr)] = None
+    duration_status: Optional[conlist(StrictStr)] = Field(None, alias="durationStatus")
+    elimination: Optional[conlist(StrictStr)] = None
+    event_format: Optional[conlist(StrictStr)] = Field(None, alias="eventFormat")
+    player_group: Optional[conlist(StrictStr)] = Field(None, alias="playerGroup")
+    registration_status: Optional[conlist(StrictStr)] = Field(None, alias="registrationStatus")
+    skill_level: Optional[SkillLevelFilter] = Field(None, alias="skillLevel")
+    status: Optional[conlist(StrictStr)] = None
+    __properties = ["city", "durationStatus", "elimination", "eventFormat", "playerGroup", "registrationStatus", "skillLevel", "status"]
 
-    @field_validator('duration_status')
+    @validator('duration_status')
     def duration_status_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
         for i in value:
-            if i not in set(['ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING']):
+            if i not in ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING'):
                 raise ValueError("each list item must be one of ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING')")
         return value
 
-    @field_validator('elimination')
+    @validator('elimination')
     def elimination_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
         for i in value:
-            if i not in set(['COMPASS', 'DOUBLE', 'DOUBLE_PREVENTED', 'FLEX', 'ROUND_ROBIN', 'SINGLE']):
+            if i not in ('COMPASS', 'DOUBLE', 'DOUBLE_PREVENTED', 'FLEX', 'ROUND_ROBIN', 'SINGLE'):
                 raise ValueError("each list item must be one of ('COMPASS', 'DOUBLE', 'DOUBLE_PREVENTED', 'FLEX', 'ROUND_ROBIN', 'SINGLE')")
         return value
 
-    @field_validator('event_format')
+    @validator('event_format')
     def event_format_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
         for i in value:
-            if i not in set(['DOUBLES', 'SINGLES']):
+            if i not in ('DOUBLES', 'SINGLES'):
                 raise ValueError("each list item must be one of ('DOUBLES', 'SINGLES')")
         return value
 
-    @field_validator('player_group')
+    @validator('player_group')
     def player_group_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
         for i in value:
-            if i not in set(['COED', 'MEN', 'MIXED', 'OPEN', 'WOMEN']):
+            if i not in ('COED', 'MEN', 'MIXED', 'OPEN', 'WOMEN'):
                 raise ValueError("each list item must be one of ('COED', 'MEN', 'MIXED', 'OPEN', 'WOMEN')")
         return value
 
-    @field_validator('registration_status')
+    @validator('registration_status')
     def registration_status_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
         for i in value:
-            if i not in set(['CLOSED', 'NOT_STARTED', 'OPEN']):
+            if i not in ('CLOSED', 'NOT_STARTED', 'OPEN'):
                 raise ValueError("each list item must be one of ('CLOSED', 'NOT_STARTED', 'OPEN')")
         return value
 
-    @field_validator('status')
+    @validator('status')
     def status_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
         for i in value:
-            if i not in set(['ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING']):
+            if i not in ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING'):
                 raise ValueError("each list item must be one of ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING')")
         return value
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
+    class Config:
+        """Pydantic configuration"""
+        allow_population_by_field_name = True
+        validate_assignment = True
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+        return pprint.pformat(self.dict(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
+    def from_json(cls, json_str: str) -> LeagueFilter:
         """Create an instance of LeagueFilter from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
+    def to_dict(self):
+        """Returns the dictionary representation of the model using alias"""
+        _dict = self.dict(by_alias=True,
+                          exclude={
+                          },
+                          exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of skill_level
         if self.skill_level:
             _dict['skillLevel'] = self.skill_level.to_dict()
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+    def from_dict(cls, obj: dict) -> LeagueFilter:
         """Create an instance of LeagueFilter from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+            return LeagueFilter.parse_obj(obj)
 
-        _obj = cls.model_validate({
+        _obj = LeagueFilter.parse_obj({
             "city": obj.get("city"),
-            "durationStatus": obj.get("durationStatus"),
+            "duration_status": obj.get("durationStatus"),
             "elimination": obj.get("elimination"),
-            "eventFormat": obj.get("eventFormat"),
-            "playerGroup": obj.get("playerGroup"),
-            "registrationStatus": obj.get("registrationStatus"),
-            "skillLevel": SkillLevelFilter.from_dict(obj["skillLevel"]) if obj.get("skillLevel") is not None else None,
+            "event_format": obj.get("eventFormat"),
+            "player_group": obj.get("playerGroup"),
+            "registration_status": obj.get("registrationStatus"),
+            "skill_level": SkillLevelFilter.from_dict(obj.get("skillLevel")) if obj.get("skillLevel") is not None else None,
             "status": obj.get("status")
         })
         return _obj

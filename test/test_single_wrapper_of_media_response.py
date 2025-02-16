@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.single_wrapper_of_media_response import SingleWrapperOfMediaResponse
+import dupr_backend
+from dupr_backend.models.single_wrapper_of_media_response import SingleWrapperOfMediaResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSingleWrapperOfMediaResponse(unittest.TestCase):
     """SingleWrapperOfMediaResponse unit test stubs"""
@@ -25,25 +28,25 @@ class TestSingleWrapperOfMediaResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperOfMediaResponse:
+    def make_instance(self, include_optional):
         """Test SingleWrapperOfMediaResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfMediaResponse`
         """
-        model = SingleWrapperOfMediaResponse()
-        if include_optional:
+        model = dupr_backend.models.single_wrapper_of_media_response.SingleWrapperOfMediaResponse()  # noqa: E501
+        if include_optional :
             return SingleWrapperOfMediaResponse(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 result = dupr_backend.models.media_response.MediaResponse(
                     error = 'Unable to upload due to server issue.', 
                     filename = 'profile-image.jpg', 
                     id = 45785789, 
-                    url = 'https://dupr-dev.s3.us-east-1.amazonaws.com/users/profile.jpg', ),
+                    url = 'https://dupr-dev.s3.us-east-1.amazonaws.com/users/profile.jpg', ), 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return SingleWrapperOfMediaResponse(
         )
         """

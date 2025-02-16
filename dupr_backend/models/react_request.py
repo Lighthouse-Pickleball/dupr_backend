@@ -17,93 +17,77 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List, Optional
-from typing import Optional, Set
-from typing_extensions import Self
+
+from typing import List, Optional
+from pydantic import BaseModel, Field, StrictInt, StrictStr, conlist, validator
 
 class ReactRequest(BaseModel):
     """
     ReactRequest
-    """ # noqa: E501
-    actor: Optional[StrictInt] = Field(default=None, description="Obfuscated Id of user do the reaction")
-    comment: Optional[StrictStr] = Field(default=None, description="If the react type is comment, then put the contain here")
-    id: Optional[StrictStr] = Field(default=None, description="The post's id")
-    images: Optional[List[StrictStr]] = None
-    matches: Optional[List[StrictInt]] = None
-    react: Optional[StrictStr] = Field(default=None, description="type of reaction, if COMMENT then add the contain in the 'comment', else let it empty")
-    react_on: Optional[StrictStr] = Field(default=None, description="if react on comment, add this comment getstreamId here, if not lets empty", alias="reactOn")
-    tags: Optional[List[StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["actor", "comment", "id", "images", "matches", "react", "reactOn", "tags"]
+    """
+    actor: Optional[StrictInt] = Field(None, description="Obfuscated Id of user do the reaction")
+    comment: Optional[StrictStr] = Field(None, description="If the react type is comment, then put the contain here")
+    id: Optional[StrictStr] = Field(None, description="The post's id")
+    images: Optional[conlist(StrictStr)] = None
+    matches: Optional[conlist(StrictInt)] = None
+    react: Optional[StrictStr] = Field(None, description="type of reaction, if COMMENT then add the contain in the 'comment', else let it empty")
+    react_on: Optional[StrictStr] = Field(None, alias="reactOn", description="if react on comment, add this comment getstreamId here, if not lets empty")
+    tags: Optional[conlist(StrictInt)] = None
+    __properties = ["actor", "comment", "id", "images", "matches", "react", "reactOn", "tags"]
 
-    @field_validator('react')
+    @validator('react')
     def react_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['COMMENT', 'LIKE']):
+        if value not in ('COMMENT', 'LIKE'):
             raise ValueError("must be one of enum values ('COMMENT', 'LIKE')")
         return value
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
+    class Config:
+        """Pydantic configuration"""
+        allow_population_by_field_name = True
+        validate_assignment = True
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+        return pprint.pformat(self.dict(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
+    def from_json(cls, json_str: str) -> ReactRequest:
         """Create an instance of ReactRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
+    def to_dict(self):
+        """Returns the dictionary representation of the model using alias"""
+        _dict = self.dict(by_alias=True,
+                          exclude={
+                          },
+                          exclude_none=True)
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+    def from_dict(cls, obj: dict) -> ReactRequest:
         """Create an instance of ReactRequest from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+            return ReactRequest.parse_obj(obj)
 
-        _obj = cls.model_validate({
+        _obj = ReactRequest.parse_obj({
             "actor": obj.get("actor"),
             "comment": obj.get("comment"),
             "id": obj.get("id"),
             "images": obj.get("images"),
             "matches": obj.get("matches"),
             "react": obj.get("react"),
-            "reactOn": obj.get("reactOn"),
+            "react_on": obj.get("reactOn"),
             "tags": obj.get("tags")
         })
         return _obj

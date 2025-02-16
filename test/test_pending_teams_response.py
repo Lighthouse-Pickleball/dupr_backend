@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.pending_teams_response import PendingTeamsResponse
+import dupr_backend
+from dupr_backend.models.pending_teams_response import PendingTeamsResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestPendingTeamsResponse(unittest.TestCase):
     """PendingTeamsResponse unit test stubs"""
@@ -25,15 +28,15 @@ class TestPendingTeamsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PendingTeamsResponse:
+    def make_instance(self, include_optional):
         """Test PendingTeamsResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PendingTeamsResponse`
         """
-        model = PendingTeamsResponse()
-        if include_optional:
+        model = dupr_backend.models.pending_teams_response.PendingTeamsResponse()  # noqa: E501
+        if include_optional :
             return PendingTeamsResponse(
                 team_source = dupr_backend.models.league_teams_response.LeagueTeamsResponse(
                     partner_status = 'ACTIVE', 
@@ -151,7 +154,7 @@ class TestPendingTeamsResponse(unittest.TestCase):
                         verified_email = False, ), 
                     player2 = , 
                     registration_id = 56, 
-                    team_status = 'ACTIVE', ),
+                    team_status = 'ACTIVE', ), 
                 team_target = dupr_backend.models.league_teams_response.LeagueTeamsResponse(
                     partner_status = 'ACTIVE', 
                     player1 = dupr_backend.models.player_response.PlayerResponse(
@@ -270,7 +273,7 @@ class TestPendingTeamsResponse(unittest.TestCase):
                     registration_id = 56, 
                     team_status = 'ACTIVE', )
             )
-        else:
+        else :
             return PendingTeamsResponse(
                 team_source = dupr_backend.models.league_teams_response.LeagueTeamsResponse(
                     partner_status = 'ACTIVE', 

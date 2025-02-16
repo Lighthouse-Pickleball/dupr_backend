@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.search_request import SearchRequest
+import dupr_backend
+from dupr_backend.models.search_request import SearchRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSearchRequest(unittest.TestCase):
     """SearchRequest unit test stubs"""
@@ -25,23 +28,23 @@ class TestSearchRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SearchRequest:
+    def make_instance(self, include_optional):
         """Test SearchRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SearchRequest`
         """
-        model = SearchRequest()
-        if include_optional:
+        model = dupr_backend.models.search_request.SearchRequest()  # noqa: E501
+        if include_optional :
             return SearchRequest(
-                bracket_id = 7828935307,
+                bracket_id = 7828935307, 
                 exclude = [
                     56
-                    ],
+                    ], 
                 exclude_club_members = dupr_backend.models.exclude_club_members.ExcludeClubMembers(
                     club_id = 7828935307, 
-                    roles = ORGANIZER/DIRECTOR, ),
+                    roles = ORGANIZER/DIRECTOR, ), 
                 filter = dupr_backend.models.search_filter.SearchFilter(
                     age_range = dupr_backend.models.age_range_filter.AgeRangeFilter(
                         max_age = 25, 
@@ -54,15 +57,15 @@ class TestSearchRequest(unittest.TestCase):
                         category = 'DUPR', 
                         max_rating = 3.3, 
                         min_rating = 2.3, 
-                        type = 'DOUBLES', ), ),
-                include_unclaimed_players = True,
-                limit = 10,
-                offset = 0,
-                page_source = 'LD_ADD_PARTICIPANT',
-                query = '*',
+                        type = 'DOUBLES', ), ), 
+                include_unclaimed_players = True, 
+                limit = 10, 
+                offset = 0, 
+                page_source = 'LD_ADD_PARTICIPANT', 
+                query = '*', 
                 verified_email = True
             )
-        else:
+        else :
             return SearchRequest(
                 filter = dupr_backend.models.search_filter.SearchFilter(
                     age_range = dupr_backend.models.age_range_filter.AgeRangeFilter(

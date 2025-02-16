@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.user_suggestion_request import UserSuggestionRequest
+import dupr_backend
+from dupr_backend.models.user_suggestion_request import UserSuggestionRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestUserSuggestionRequest(unittest.TestCase):
     """UserSuggestionRequest unit test stubs"""
@@ -25,21 +28,21 @@ class TestUserSuggestionRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> UserSuggestionRequest:
+    def make_instance(self, include_optional):
         """Test UserSuggestionRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `UserSuggestionRequest`
         """
-        model = UserSuggestionRequest()
-        if include_optional:
+        model = dupr_backend.models.user_suggestion_request.UserSuggestionRequest()  # noqa: E501
+        if include_optional :
             return UserSuggestionRequest(
                 dupr_ids = [
                     ''
                     ]
             )
-        else:
+        else :
             return UserSuggestionRequest(
                 dupr_ids = [
                     ''

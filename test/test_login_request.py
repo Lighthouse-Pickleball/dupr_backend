@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.login_request import LoginRequest
+import dupr_backend
+from dupr_backend.models.login_request import LoginRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestLoginRequest(unittest.TestCase):
     """LoginRequest unit test stubs"""
@@ -25,20 +28,20 @@ class TestLoginRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> LoginRequest:
+    def make_instance(self, include_optional):
         """Test LoginRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `LoginRequest`
         """
-        model = LoginRequest()
-        if include_optional:
+        model = dupr_backend.models.login_request.LoginRequest()  # noqa: E501
+        if include_optional :
             return LoginRequest(
-                email = 'user@example.com',
+                email = 'user@example.com', 
                 password = 'mySecretPassword'
             )
-        else:
+        else :
             return LoginRequest(
                 email = 'user@example.com',
                 password = 'mySecretPassword',

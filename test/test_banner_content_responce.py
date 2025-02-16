@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.banner_content_responce import BannerContentResponce
+import dupr_backend
+from dupr_backend.models.banner_content_responce import BannerContentResponce  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestBannerContentResponce(unittest.TestCase):
     """BannerContentResponce unit test stubs"""
@@ -25,25 +28,25 @@ class TestBannerContentResponce(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> BannerContentResponce:
+    def make_instance(self, include_optional):
         """Test BannerContentResponce
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `BannerContentResponce`
         """
-        model = BannerContentResponce()
-        if include_optional:
+        model = dupr_backend.models.banner_content_responce.BannerContentResponce()  # noqa: E501
+        if include_optional :
             return BannerContentResponce(
-                content = '',
-                content_id = 56,
-                content_type = '',
-                footer = '',
-                footer_type = '',
-                header = '',
+                content = '', 
+                content_id = 56, 
+                content_type = '', 
+                footer = '', 
+                footer_type = '', 
+                header = '', 
                 header_type = ''
             )
-        else:
+        else :
             return BannerContentResponce(
                 content_id = 56,
         )

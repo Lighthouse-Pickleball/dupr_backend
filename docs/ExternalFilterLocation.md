@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | **str** | Street level address in format county / city, state / region, country | 
@@ -20,12 +19,12 @@ json = "{}"
 # create an instance of ExternalFilterLocation from a JSON string
 external_filter_location_instance = ExternalFilterLocation.from_json(json)
 # print the JSON string representation of the object
-print(ExternalFilterLocation.to_json())
+print ExternalFilterLocation.to_json()
 
 # convert the object into a dict
 external_filter_location_dict = external_filter_location_instance.to_dict()
 # create an instance of ExternalFilterLocation from a dict
-external_filter_location_from_dict = ExternalFilterLocation.from_dict(external_filter_location_dict)
+external_filter_location_form_dict = external_filter_location.from_dict(external_filter_location_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

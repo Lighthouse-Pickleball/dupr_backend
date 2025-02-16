@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.delete_match_request import DeleteMatchRequest
+import dupr_backend
+from dupr_backend.models.delete_match_request import DeleteMatchRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestDeleteMatchRequest(unittest.TestCase):
     """DeleteMatchRequest unit test stubs"""
@@ -25,23 +28,23 @@ class TestDeleteMatchRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> DeleteMatchRequest:
+    def make_instance(self, include_optional):
         """Test DeleteMatchRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `DeleteMatchRequest`
         """
-        model = DeleteMatchRequest()
-        if include_optional:
+        model = dupr_backend.models.delete_match_request.DeleteMatchRequest()  # noqa: E501
+        if include_optional :
             return DeleteMatchRequest(
-                match_id = 'ABSDIHUASHD',
-                match_id_type = 'MATCH_CODE/OBFUSCATED_MATCH_ID/MATCH_ID',
-                notify = False,
-                reason = 'Requested by director',
+                match_id = 'ABSDIHUASHD', 
+                match_id_type = 'MATCH_CODE/OBFUSCATED_MATCH_ID/MATCH_ID', 
+                notify = False, 
+                reason = 'Requested by director', 
                 requested_by_dupr_id = 'AX7AW'
             )
-        else:
+        else :
             return DeleteMatchRequest(
                 match_id = 'ABSDIHUASHD',
                 match_id_type = 'MATCH_CODE/OBFUSCATED_MATCH_ID/MATCH_ID',

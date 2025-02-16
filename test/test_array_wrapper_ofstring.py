@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.array_wrapper_ofstring import ArrayWrapperOfstring
+import dupr_backend
+from dupr_backend.models.array_wrapper_ofstring import ArrayWrapperOfstring  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestArrayWrapperOfstring(unittest.TestCase):
     """ArrayWrapperOfstring unit test stubs"""
@@ -25,23 +28,23 @@ class TestArrayWrapperOfstring(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ArrayWrapperOfstring:
+    def make_instance(self, include_optional):
         """Test ArrayWrapperOfstring
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ArrayWrapperOfstring`
         """
-        model = ArrayWrapperOfstring()
-        if include_optional:
+        model = dupr_backend.models.array_wrapper_ofstring.ArrayWrapperOfstring()  # noqa: E501
+        if include_optional :
             return ArrayWrapperOfstring(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 results = [
                     ''
-                    ],
+                    ], 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return ArrayWrapperOfstring(
         )
         """

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.club_members_rating_filter import ClubMembersRatingFilter
+import dupr_backend
+from dupr_backend.models.club_members_rating_filter import ClubMembersRatingFilter  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestClubMembersRatingFilter(unittest.TestCase):
     """ClubMembersRatingFilter unit test stubs"""
@@ -25,25 +28,25 @@ class TestClubMembersRatingFilter(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ClubMembersRatingFilter:
+    def make_instance(self, include_optional):
         """Test ClubMembersRatingFilter
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ClubMembersRatingFilter`
         """
-        model = ClubMembersRatingFilter()
-        if include_optional:
+        model = dupr_backend.models.club_members_rating_filter.ClubMembersRatingFilter()  # noqa: E501
+        if include_optional :
             return ClubMembersRatingFilter(
-                category = 'DUPR/PROVISIONAL',
+                category = 'DUPR/PROVISIONAL', 
                 doubles = dupr_backend.models.club_members_rating_range.ClubMembersRatingRange(
                     max_rating = 3.3, 
-                    min_rating = 2.3, ),
+                    min_rating = 2.3, ), 
                 singles = dupr_backend.models.club_members_rating_range.ClubMembersRatingRange(
                     max_rating = 3.3, 
                     min_rating = 2.3, )
             )
-        else:
+        else :
             return ClubMembersRatingFilter(
         )
         """

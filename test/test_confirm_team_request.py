@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.confirm_team_request import ConfirmTeamRequest
+import dupr_backend
+from dupr_backend.models.confirm_team_request import ConfirmTeamRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestConfirmTeamRequest(unittest.TestCase):
     """ConfirmTeamRequest unit test stubs"""
@@ -25,20 +28,20 @@ class TestConfirmTeamRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ConfirmTeamRequest:
+    def make_instance(self, include_optional):
         """Test ConfirmTeamRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ConfirmTeamRequest`
         """
-        model = ConfirmTeamRequest()
-        if include_optional:
+        model = dupr_backend.models.confirm_team_request.ConfirmTeamRequest()  # noqa: E501
+        if include_optional :
             return ConfirmTeamRequest(
-                bracket_id = 45785789,
+                bracket_id = 45785789, 
                 registration_id = 45785789
             )
-        else:
+        else :
             return ConfirmTeamRequest(
                 bracket_id = 45785789,
                 registration_id = 45785789,

@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allow_substitution** | **bool** |  | 
@@ -23,12 +22,12 @@ json = "{}"
 # create an instance of TeamPlayerResponse from a JSON string
 team_player_response_instance = TeamPlayerResponse.from_json(json)
 # print the JSON string representation of the object
-print(TeamPlayerResponse.to_json())
+print TeamPlayerResponse.to_json()
 
 # convert the object into a dict
 team_player_response_dict = team_player_response_instance.to_dict()
 # create an instance of TeamPlayerResponse from a dict
-team_player_response_from_dict = TeamPlayerResponse.from_dict(team_player_response_dict)
+team_player_response_form_dict = team_player_response.from_dict(team_player_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.page_of_user_suggestion import PageOfUserSuggestion
+import dupr_backend
+from dupr_backend.models.page_of_user_suggestion import PageOfUserSuggestion  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestPageOfUserSuggestion(unittest.TestCase):
     """PageOfUserSuggestion unit test stubs"""
@@ -25,19 +28,19 @@ class TestPageOfUserSuggestion(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PageOfUserSuggestion:
+    def make_instance(self, include_optional):
         """Test PageOfUserSuggestion
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PageOfUserSuggestion`
         """
-        model = PageOfUserSuggestion()
-        if include_optional:
+        model = dupr_backend.models.page_of_user_suggestion.PageOfUserSuggestion()  # noqa: E501
+        if include_optional :
             return PageOfUserSuggestion(
-                empty = False,
-                has_more = False,
-                has_previous = True,
+                empty = False, 
+                has_more = False, 
+                has_previous = True, 
                 hits = [
                     dupr_backend.models.user_suggestion.UserSuggestion(
                         address = '', 
@@ -52,13 +55,13 @@ class TestPageOfUserSuggestion(unittest.TestCase):
                         name = '', 
                         status = 'ACTIVE', 
                         user_id = 56, )
-                    ],
-                limit = 10,
-                offset = 90,
-                total = 100,
+                    ], 
+                limit = 10, 
+                offset = 90, 
+                total = 100, 
                 total_value_relation = 'GREATER_THAN_OR_EQUAL_TO'
             )
-        else:
+        else :
             return PageOfUserSuggestion(
                 empty = False,
                 has_more = False,

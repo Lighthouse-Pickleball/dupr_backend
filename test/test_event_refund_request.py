@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.event_refund_request import EventRefundRequest
+import dupr_backend
+from dupr_backend.models.event_refund_request import EventRefundRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestEventRefundRequest(unittest.TestCase):
     """EventRefundRequest unit test stubs"""
@@ -25,15 +28,15 @@ class TestEventRefundRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> EventRefundRequest:
+    def make_instance(self, include_optional):
         """Test EventRefundRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `EventRefundRequest`
         """
-        model = EventRefundRequest()
-        if include_optional:
+        model = dupr_backend.models.event_refund_request.EventRefundRequest()  # noqa: E501
+        if include_optional :
             return EventRefundRequest(
                 brackets = [
                     dupr_backend.models.bracket_refund_request.BracketRefundRequest(
@@ -43,15 +46,15 @@ class TestEventRefundRequest(unittest.TestCase):
                         refund_amount = 45785789, 
                         registration_id = 45785789, 
                         withdraw_player = False, )
-                    ],
-                club_id = 45785789,
-                event_id = 45785789,
-                event_name = '45785789',
-                player_id = 45785789,
-                process_refund = False,
+                    ], 
+                club_id = 45785789, 
+                event_id = 45785789, 
+                event_name = '45785789', 
+                player_id = 45785789, 
+                process_refund = False, 
                 refund_amount = 45785789
             )
-        else:
+        else :
             return EventRefundRequest(
                 club_id = 45785789,
                 event_id = 45785789,

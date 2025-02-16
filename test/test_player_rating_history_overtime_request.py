@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.player_rating_history_overtime_request import PlayerRatingHistoryOvertimeRequest
+import dupr_backend
+from dupr_backend.models.player_rating_history_overtime_request import PlayerRatingHistoryOvertimeRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestPlayerRatingHistoryOvertimeRequest(unittest.TestCase):
     """PlayerRatingHistoryOvertimeRequest unit test stubs"""
@@ -25,24 +28,24 @@ class TestPlayerRatingHistoryOvertimeRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PlayerRatingHistoryOvertimeRequest:
+    def make_instance(self, include_optional):
         """Test PlayerRatingHistoryOvertimeRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PlayerRatingHistoryOvertimeRequest`
         """
-        model = PlayerRatingHistoryOvertimeRequest()
-        if include_optional:
+        model = dupr_backend.models.player_rating_history_overtime_request.PlayerRatingHistoryOvertimeRequest()  # noqa: E501
+        if include_optional :
             return PlayerRatingHistoryOvertimeRequest(
-                end_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
-                limit = 100,
-                offset = 100,
-                sort_by = 'asc | desc',
-                start_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
+                end_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
+                limit = 100, 
+                offset = 100, 
+                sort_by = 'asc | desc', 
+                start_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
                 type = 'SINGLES or DOUBLES'
             )
-        else:
+        else :
             return PlayerRatingHistoryOvertimeRequest(
                 type = 'SINGLES or DOUBLES',
         )

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.matched_substring import MatchedSubstring
+import dupr_backend
+from dupr_backend.models.matched_substring import MatchedSubstring  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestMatchedSubstring(unittest.TestCase):
     """MatchedSubstring unit test stubs"""
@@ -25,20 +28,20 @@ class TestMatchedSubstring(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> MatchedSubstring:
+    def make_instance(self, include_optional):
         """Test MatchedSubstring
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MatchedSubstring`
         """
-        model = MatchedSubstring()
-        if include_optional:
+        model = dupr_backend.models.matched_substring.MatchedSubstring()  # noqa: E501
+        if include_optional :
             return MatchedSubstring(
-                length = 56,
+                length = 56, 
                 offset = 56
             )
-        else:
+        else :
             return MatchedSubstring(
         )
         """

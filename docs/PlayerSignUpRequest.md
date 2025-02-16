@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address_id** | **int** |  | 
@@ -37,12 +36,12 @@ json = "{}"
 # create an instance of PlayerSignUpRequest from a JSON string
 player_sign_up_request_instance = PlayerSignUpRequest.from_json(json)
 # print the JSON string representation of the object
-print(PlayerSignUpRequest.to_json())
+print PlayerSignUpRequest.to_json()
 
 # convert the object into a dict
 player_sign_up_request_dict = player_sign_up_request_instance.to_dict()
 # create an instance of PlayerSignUpRequest from a dict
-player_sign_up_request_from_dict = PlayerSignUpRequest.from_dict(player_sign_up_request_dict)
+player_sign_up_request_form_dict = player_sign_up_request.from_dict(player_sign_up_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

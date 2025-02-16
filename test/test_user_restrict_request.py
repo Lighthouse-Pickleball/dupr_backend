@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.user_restrict_request import UserRestrictRequest
+import dupr_backend
+from dupr_backend.models.user_restrict_request import UserRestrictRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestUserRestrictRequest(unittest.TestCase):
     """UserRestrictRequest unit test stubs"""
@@ -25,20 +28,20 @@ class TestUserRestrictRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> UserRestrictRequest:
+    def make_instance(self, include_optional):
         """Test UserRestrictRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `UserRestrictRequest`
         """
-        model = UserRestrictRequest()
-        if include_optional:
+        model = dupr_backend.models.user_restrict_request.UserRestrictRequest()  # noqa: E501
+        if include_optional :
             return UserRestrictRequest(
-                notes = '',
+                notes = '', 
                 restricted = True
             )
-        else:
+        else :
             return UserRestrictRequest(
         )
         """

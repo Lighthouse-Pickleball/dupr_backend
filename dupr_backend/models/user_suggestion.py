@@ -17,99 +17,83 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List, Optional
+
+from typing import List, Optional
+from pydantic import BaseModel, Field, StrictInt, StrictStr, conlist, validator
 from dupr_backend.models.user_follow import UserFollow
-from typing import Optional, Set
-from typing_extensions import Self
 
 class UserSuggestion(BaseModel):
     """
     UserSuggestion
-    """ # noqa: E501
+    """
     address: Optional[StrictStr] = None
-    brief_followers: Optional[List[UserFollow]] = Field(default=None, alias="briefFollowers")
-    dupr_id: StrictStr = Field(alias="duprId")
-    follower_count: Optional[StrictInt] = Field(default=None, alias="followerCount")
-    image_url: Optional[StrictStr] = Field(default=None, alias="imageUrl")
-    name: StrictStr
-    status: StrictStr
-    user_id: StrictInt = Field(alias="userId")
-    __properties: ClassVar[List[str]] = ["address", "briefFollowers", "duprId", "followerCount", "imageUrl", "name", "status", "userId"]
+    brief_followers: Optional[conlist(UserFollow)] = Field(None, alias="briefFollowers")
+    dupr_id: StrictStr = Field(..., alias="duprId")
+    follower_count: Optional[StrictInt] = Field(None, alias="followerCount")
+    image_url: Optional[StrictStr] = Field(None, alias="imageUrl")
+    name: StrictStr = Field(...)
+    status: StrictStr = Field(...)
+    user_id: StrictInt = Field(..., alias="userId")
+    __properties = ["address", "briefFollowers", "duprId", "followerCount", "imageUrl", "name", "status", "userId"]
 
-    @field_validator('status')
+    @validator('status')
     def status_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING']):
+        if value not in ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING'):
             raise ValueError("must be one of enum values ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING')")
         return value
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
+    class Config:
+        """Pydantic configuration"""
+        allow_population_by_field_name = True
+        validate_assignment = True
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+        return pprint.pformat(self.dict(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
+    def from_json(cls, json_str: str) -> UserSuggestion:
         """Create an instance of UserSuggestion from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
+    def to_dict(self):
+        """Returns the dictionary representation of the model using alias"""
+        _dict = self.dict(by_alias=True,
+                          exclude={
+                          },
+                          exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of each item in brief_followers (list)
         _items = []
         if self.brief_followers:
-            for _item_brief_followers in self.brief_followers:
-                if _item_brief_followers:
-                    _items.append(_item_brief_followers.to_dict())
+            for _item in self.brief_followers:
+                if _item:
+                    _items.append(_item.to_dict())
             _dict['briefFollowers'] = _items
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+    def from_dict(cls, obj: dict) -> UserSuggestion:
         """Create an instance of UserSuggestion from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+            return UserSuggestion.parse_obj(obj)
 
-        _obj = cls.model_validate({
+        _obj = UserSuggestion.parse_obj({
             "address": obj.get("address"),
-            "briefFollowers": [UserFollow.from_dict(_item) for _item in obj["briefFollowers"]] if obj.get("briefFollowers") is not None else None,
-            "duprId": obj.get("duprId"),
-            "followerCount": obj.get("followerCount"),
-            "imageUrl": obj.get("imageUrl"),
+            "brief_followers": [UserFollow.from_dict(_item) for _item in obj.get("briefFollowers")] if obj.get("briefFollowers") is not None else None,
+            "dupr_id": obj.get("duprId"),
+            "follower_count": obj.get("followerCount"),
+            "image_url": obj.get("imageUrl"),
             "name": obj.get("name"),
             "status": obj.get("status"),
-            "userId": obj.get("userId")
+            "user_id": obj.get("userId")
         })
         return _obj
 

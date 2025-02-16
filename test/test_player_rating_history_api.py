@@ -14,29 +14,31 @@
 
 import unittest
 
-from dupr_backend.api.player_rating_history_api import PlayerRatingHistoryApi
+import dupr_backend
+from dupr_backend.api.player_rating_history_api import PlayerRatingHistoryApi  # noqa: E501
+from dupr_backend.rest import ApiException
 
 
 class TestPlayerRatingHistoryApi(unittest.TestCase):
     """PlayerRatingHistoryApi unit test stubs"""
 
-    def setUp(self) -> None:
-        self.api = PlayerRatingHistoryApi()
+    def setUp(self):
+        self.api = dupr_backend.api.player_rating_history_api.PlayerRatingHistoryApi()  # noqa: E501
 
-    def tearDown(self) -> None:
+    def tearDown(self):
         pass
 
-    def test_get_all_player_rating_history_using_get(self) -> None:
+    def test_get_all_player_rating_history_using_get(self):
         """Test case for get_all_player_rating_history_using_get
 
-        getAllPlayerRatingHistory
+        getAllPlayerRatingHistory  # noqa: E501
         """
         pass
 
-    def test_get_player_rating_history_by_user_using_get(self) -> None:
+    def test_get_player_rating_history_by_user_using_get(self):
         """Test case for get_player_rating_history_by_user_using_get
 
-        getPlayerRatingHistoryByUser
+        getPlayerRatingHistoryByUser  # noqa: E501
         """
         pass
 

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.player_queue import PlayerQueue
+import dupr_backend
+from dupr_backend.models.player_queue import PlayerQueue  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestPlayerQueue(unittest.TestCase):
     """PlayerQueue unit test stubs"""
@@ -25,17 +28,17 @@ class TestPlayerQueue(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PlayerQueue:
+    def make_instance(self, include_optional):
         """Test PlayerQueue
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PlayerQueue`
         """
-        model = PlayerQueue()
-        if include_optional:
+        model = dupr_backend.models.player_queue.PlayerQueue()  # noqa: E501
+        if include_optional :
             return PlayerQueue(
-                create_at = 'YYYY-MM-dd',
+                create_at = 'YYYY-MM-dd', 
                 event = dupr_backend.models.open_play_event.OpenPlayEvent(
                     creator = dupr_backend.models.creator.Creator(
                         email = '', 
@@ -55,7 +58,7 @@ class TestPlayerQueue(unittest.TestCase):
                         end = 'HH:mm', 
                         start = 'HH:mm', ), )
             )
-        else:
+        else :
             return PlayerQueue(
         )
         """

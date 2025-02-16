@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.single_wrapper_of_auth_response import SingleWrapperOfAuthResponse
+import dupr_backend
+from dupr_backend.models.single_wrapper_of_auth_response import SingleWrapperOfAuthResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSingleWrapperOfAuthResponse(unittest.TestCase):
     """SingleWrapperOfAuthResponse unit test stubs"""
@@ -25,17 +28,17 @@ class TestSingleWrapperOfAuthResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperOfAuthResponse:
+    def make_instance(self, include_optional):
         """Test SingleWrapperOfAuthResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfAuthResponse`
         """
-        model = SingleWrapperOfAuthResponse()
-        if include_optional:
+        model = dupr_backend.models.single_wrapper_of_auth_response.SingleWrapperOfAuthResponse()  # noqa: E501
+        if include_optional :
             return SingleWrapperOfAuthResponse(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 result = dupr_backend.models.auth_response0.AuthResponse0(
                     access_token = 'eyJhbGciOiJSUzUxMiJ9.', 
                     refresh_token = 'eyJhbGciOiJSUzUxMiJ9.', 
@@ -100,10 +103,10 @@ class TestSingleWrapperOfAuthResponse(unittest.TestCase):
                             enable_privacy = False, 
                             enable_push = False, 
                             enable_sms = False, ), 
-                        username = 'X AE A-XII', ), ),
+                        username = 'X AE A-XII', ), ), 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return SingleWrapperOfAuthResponse(
         )
         """

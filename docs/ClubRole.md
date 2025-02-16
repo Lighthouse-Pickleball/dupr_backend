@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **approval_status** | **str** |  | 
@@ -23,12 +22,12 @@ json = "{}"
 # create an instance of ClubRole from a JSON string
 club_role_instance = ClubRole.from_json(json)
 # print the JSON string representation of the object
-print(ClubRole.to_json())
+print ClubRole.to_json()
 
 # convert the object into a dict
 club_role_dict = club_role_instance.to_dict()
 # create an instance of ClubRole from a dict
-club_role_from_dict = ClubRole.from_dict(club_role_dict)
+club_role_form_dict = club_role.from_dict(club_role_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

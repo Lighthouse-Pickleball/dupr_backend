@@ -17,92 +17,76 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional, Union
-from typing import Optional, Set
-from typing_extensions import Self
+
+from typing import Optional, Union
+from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 
 class PlayerRatingHistory(BaseModel):
     """
     PlayerRatingHistory
-    """ # noqa: E501
-    changed_by_admin: StrictBool = Field(alias="changedByAdmin")
-    created: StrictStr
+    """
+    changed_by_admin: StrictBool = Field(..., alias="changedByAdmin")
+    created: StrictStr = Field(...)
     doubles: Optional[Union[StrictFloat, StrictInt]] = None
-    doubles_provisional: StrictBool = Field(alias="doublesProvisional")
-    match_date: Optional[StrictStr] = Field(default=None, alias="matchDate")
-    rating_history_id: StrictInt = Field(alias="ratingHistoryId")
+    doubles_provisional: StrictBool = Field(..., alias="doublesProvisional")
+    match_date: Optional[StrictStr] = Field(None, alias="matchDate")
+    rating_history_id: StrictInt = Field(..., alias="ratingHistoryId")
     singles: Optional[Union[StrictFloat, StrictInt]] = None
-    singles_provisional: StrictBool = Field(alias="singlesProvisional")
+    singles_provisional: StrictBool = Field(..., alias="singlesProvisional")
     status: Optional[StrictStr] = None
-    user_email: StrictStr = Field(alias="userEmail")
-    user_id: StrictInt = Field(alias="userId")
-    user_name: StrictStr = Field(alias="userName")
-    __properties: ClassVar[List[str]] = ["changedByAdmin", "created", "doubles", "doublesProvisional", "matchDate", "ratingHistoryId", "singles", "singlesProvisional", "status", "userEmail", "userId", "userName"]
+    user_email: StrictStr = Field(..., alias="userEmail")
+    user_id: StrictInt = Field(..., alias="userId")
+    user_name: StrictStr = Field(..., alias="userName")
+    __properties = ["changedByAdmin", "created", "doubles", "doublesProvisional", "matchDate", "ratingHistoryId", "singles", "singlesProvisional", "status", "userEmail", "userId", "userName"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
+    class Config:
+        """Pydantic configuration"""
+        allow_population_by_field_name = True
+        validate_assignment = True
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+        return pprint.pformat(self.dict(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
+    def from_json(cls, json_str: str) -> PlayerRatingHistory:
         """Create an instance of PlayerRatingHistory from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
+    def to_dict(self):
+        """Returns the dictionary representation of the model using alias"""
+        _dict = self.dict(by_alias=True,
+                          exclude={
+                          },
+                          exclude_none=True)
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+    def from_dict(cls, obj: dict) -> PlayerRatingHistory:
         """Create an instance of PlayerRatingHistory from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+            return PlayerRatingHistory.parse_obj(obj)
 
-        _obj = cls.model_validate({
-            "changedByAdmin": obj.get("changedByAdmin"),
+        _obj = PlayerRatingHistory.parse_obj({
+            "changed_by_admin": obj.get("changedByAdmin"),
             "created": obj.get("created"),
             "doubles": obj.get("doubles"),
-            "doublesProvisional": obj.get("doublesProvisional"),
-            "matchDate": obj.get("matchDate"),
-            "ratingHistoryId": obj.get("ratingHistoryId"),
+            "doubles_provisional": obj.get("doublesProvisional"),
+            "match_date": obj.get("matchDate"),
+            "rating_history_id": obj.get("ratingHistoryId"),
             "singles": obj.get("singles"),
-            "singlesProvisional": obj.get("singlesProvisional"),
+            "singles_provisional": obj.get("singlesProvisional"),
             "status": obj.get("status"),
-            "userEmail": obj.get("userEmail"),
-            "userId": obj.get("userId"),
-            "userName": obj.get("userName")
+            "user_email": obj.get("userEmail"),
+            "user_id": obj.get("userId"),
+            "user_name": obj.get("userName")
         })
         return _obj
 

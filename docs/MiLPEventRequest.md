@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address_id** | **int** |  | 
@@ -29,12 +28,12 @@ json = "{}"
 # create an instance of MiLPEventRequest from a JSON string
 mi_lp_event_request_instance = MiLPEventRequest.from_json(json)
 # print the JSON string representation of the object
-print(MiLPEventRequest.to_json())
+print MiLPEventRequest.to_json()
 
 # convert the object into a dict
 mi_lp_event_request_dict = mi_lp_event_request_instance.to_dict()
 # create an instance of MiLPEventRequest from a dict
-mi_lp_event_request_from_dict = MiLPEventRequest.from_dict(mi_lp_event_request_dict)
+mi_lp_event_request_form_dict = mi_lp_event_request.from_dict(mi_lp_event_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

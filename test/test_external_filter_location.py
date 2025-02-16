@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.external_filter_location import ExternalFilterLocation
+import dupr_backend
+from dupr_backend.models.external_filter_location import ExternalFilterLocation  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestExternalFilterLocation(unittest.TestCase):
     """ExternalFilterLocation unit test stubs"""
@@ -25,22 +28,22 @@ class TestExternalFilterLocation(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ExternalFilterLocation:
+    def make_instance(self, include_optional):
         """Test ExternalFilterLocation
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ExternalFilterLocation`
         """
-        model = ExternalFilterLocation()
-        if include_optional:
+        model = dupr_backend.models.external_filter_location.ExternalFilterLocation()  # noqa: E501
+        if include_optional :
             return ExternalFilterLocation(
-                address = 'Austin, TX, USA',
-                lat = 72.34654645455,
-                lng = 19.55151584984,
+                address = 'Austin, TX, USA', 
+                lat = 72.34654645455, 
+                lng = 19.55151584984, 
                 radius_in_meters = 40233.6
             )
-        else:
+        else :
             return ExternalFilterLocation(
                 address = 'Austin, TX, USA',
                 lat = 72.34654645455,

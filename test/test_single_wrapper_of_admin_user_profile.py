@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.single_wrapper_of_admin_user_profile import SingleWrapperOfAdminUserProfile
+import dupr_backend
+from dupr_backend.models.single_wrapper_of_admin_user_profile import SingleWrapperOfAdminUserProfile  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSingleWrapperOfAdminUserProfile(unittest.TestCase):
     """SingleWrapperOfAdminUserProfile unit test stubs"""
@@ -25,17 +28,17 @@ class TestSingleWrapperOfAdminUserProfile(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperOfAdminUserProfile:
+    def make_instance(self, include_optional):
         """Test SingleWrapperOfAdminUserProfile
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfAdminUserProfile`
         """
-        model = SingleWrapperOfAdminUserProfile()
-        if include_optional:
+        model = dupr_backend.models.single_wrapper_of_admin_user_profile.SingleWrapperOfAdminUserProfile()  # noqa: E501
+        if include_optional :
             return SingleWrapperOfAdminUserProfile(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 result = dupr_backend.models.admin_user_profile.AdminUserProfile(
                     dupr_id = '', 
                     email = '', 
@@ -43,10 +46,10 @@ class TestSingleWrapperOfAdminUserProfile(unittest.TestCase):
                     full_name = '', 
                     iso_code = '', 
                     phone_number = '', 
-                    user_id = 56, ),
+                    user_id = 56, ), 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return SingleWrapperOfAdminUserProfile(
         )
         """

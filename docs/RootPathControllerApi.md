@@ -14,8 +14,9 @@ appAds
 
 ### Example
 
-
 ```python
+import time
+import os
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
@@ -46,7 +47,6 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **entries** | **str**| entries | [optional] 
@@ -65,7 +65,6 @@ No authorization required
  - **Accept**: text/plain
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |

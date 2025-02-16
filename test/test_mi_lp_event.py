@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.mi_lp_event import MiLPEvent
+import dupr_backend
+from dupr_backend.models.mi_lp_event import MiLPEvent  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestMiLPEvent(unittest.TestCase):
     """MiLPEvent unit test stubs"""
@@ -25,32 +28,32 @@ class TestMiLPEvent(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> MiLPEvent:
+    def make_instance(self, include_optional):
         """Test MiLPEvent
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MiLPEvent`
         """
-        model = MiLPEvent()
-        if include_optional:
+        model = dupr_backend.models.mi_lp_event.MiLPEvent()  # noqa: E501
+        if include_optional :
             return MiLPEvent(
-                address_str = '',
-                club_id = 56,
-                club_name = '',
-                creator_email = '',
-                creator_id = 56,
-                creator_name = '',
-                default_entry_fee = 1.337,
-                default_max_teams = 56,
-                default_max_waitlist = 56,
+                address_str = '', 
+                club_id = 56, 
+                club_name = '', 
+                creator_email = '', 
+                creator_id = 56, 
+                creator_name = '', 
+                default_entry_fee = 1.337, 
+                default_max_teams = 56, 
+                default_max_waitlist = 56, 
                 description = dupr_backend.models.description.Description(
                     content = '', 
                     content_type = '', 
                     footer = '', 
                     footer_type = '', 
                     header = '', 
-                    header_type = '', ),
+                    header_type = '', ), 
                 divisions = [
                     dupr_backend.models.division.Division(
                         day1_start = '', 
@@ -70,16 +73,16 @@ class TestMiLPEvent(unittest.TestCase):
                             ], 
                         registration_start = '', 
                         status = 'ACTIVE', )
-                    ],
+                    ], 
                 duration = [
                     ''
-                    ],
-                event_id = 56,
-                event_name = '',
-                event_type = 'MARQUE',
+                    ], 
+                event_id = 56, 
+                event_name = '', 
+                event_type = 'MARQUE', 
                 status = 'ACTIVE'
             )
-        else:
+        else :
             return MiLPEvent(
                 address_str = '',
                 club_id = 56,

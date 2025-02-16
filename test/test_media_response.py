@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.media_response import MediaResponse
+import dupr_backend
+from dupr_backend.models.media_response import MediaResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestMediaResponse(unittest.TestCase):
     """MediaResponse unit test stubs"""
@@ -25,22 +28,22 @@ class TestMediaResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> MediaResponse:
+    def make_instance(self, include_optional):
         """Test MediaResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MediaResponse`
         """
-        model = MediaResponse()
-        if include_optional:
+        model = dupr_backend.models.media_response.MediaResponse()  # noqa: E501
+        if include_optional :
             return MediaResponse(
-                error = 'Unable to upload due to server issue.',
-                filename = 'profile-image.jpg',
-                id = 45785789,
+                error = 'Unable to upload due to server issue.', 
+                filename = 'profile-image.jpg', 
+                id = 45785789, 
                 url = 'https://dupr-dev.s3.us-east-1.amazonaws.com/users/profile.jpg'
             )
-        else:
+        else :
             return MediaResponse(
                 id = 45785789,
                 url = 'https://dupr-dev.s3.us-east-1.amazonaws.com/users/profile.jpg',

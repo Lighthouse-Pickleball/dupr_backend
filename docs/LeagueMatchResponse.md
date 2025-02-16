@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bracket_id** | **int** |  | 
@@ -50,12 +49,12 @@ json = "{}"
 # create an instance of LeagueMatchResponse from a JSON string
 league_match_response_instance = LeagueMatchResponse.from_json(json)
 # print the JSON string representation of the object
-print(LeagueMatchResponse.to_json())
+print LeagueMatchResponse.to_json()
 
 # convert the object into a dict
 league_match_response_dict = league_match_response_instance.to_dict()
 # create an instance of LeagueMatchResponse from a dict
-league_match_response_from_dict = LeagueMatchResponse.from_dict(league_match_response_dict)
+league_match_response_form_dict = league_match_response.from_dict(league_match_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.reset_password_request import ResetPasswordRequest
+import dupr_backend
+from dupr_backend.models.reset_password_request import ResetPasswordRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestResetPasswordRequest(unittest.TestCase):
     """ResetPasswordRequest unit test stubs"""
@@ -25,20 +28,20 @@ class TestResetPasswordRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ResetPasswordRequest:
+    def make_instance(self, include_optional):
         """Test ResetPasswordRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ResetPasswordRequest`
         """
-        model = ResetPasswordRequest()
-        if include_optional:
+        model = dupr_backend.models.reset_password_request.ResetPasswordRequest()  # noqa: E501
+        if include_optional :
             return ResetPasswordRequest(
-                new_password = 'mySecretPassword',
+                new_password = 'mySecretPassword', 
                 old_password = 'mySecretPassword'
             )
-        else:
+        else :
             return ResetPasswordRequest(
                 new_password = 'mySecretPassword',
                 old_password = 'mySecretPassword',

@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **content** | **str** |  | 
@@ -23,12 +22,12 @@ json = "{}"
 # create an instance of LeagueContentResponse from a JSON string
 league_content_response_instance = LeagueContentResponse.from_json(json)
 # print the JSON string representation of the object
-print(LeagueContentResponse.to_json())
+print LeagueContentResponse.to_json()
 
 # convert the object into a dict
 league_content_response_dict = league_content_response_instance.to_dict()
 # create an instance of LeagueContentResponse from a dict
-league_content_response_from_dict = LeagueContentResponse.from_dict(league_content_response_dict)
+league_content_response_form_dict = league_content_response.from_dict(league_content_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

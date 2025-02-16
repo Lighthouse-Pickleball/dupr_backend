@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.session_response import SessionResponse
+import dupr_backend
+from dupr_backend.models.session_response import SessionResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSessionResponse(unittest.TestCase):
     """SessionResponse unit test stubs"""
@@ -25,21 +28,21 @@ class TestSessionResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SessionResponse:
+    def make_instance(self, include_optional):
         """Test SessionResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SessionResponse`
         """
-        model = SessionResponse()
-        if include_optional:
+        model = dupr_backend.models.session_response.SessionResponse()  # noqa: E501
+        if include_optional :
             return SessionResponse(
-                checkout_url = '',
-                previously_paid = True,
+                checkout_url = '', 
+                previously_paid = True, 
                 session_id = ''
             )
-        else:
+        else :
             return SessionResponse(
                 checkout_url = '',
                 session_id = '',

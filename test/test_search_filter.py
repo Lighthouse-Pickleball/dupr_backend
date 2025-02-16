@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.search_filter import SearchFilter
+import dupr_backend
+from dupr_backend.models.search_filter import SearchFilter  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSearchFilter(unittest.TestCase):
     """SearchFilter unit test stubs"""
@@ -25,30 +28,30 @@ class TestSearchFilter(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SearchFilter:
+    def make_instance(self, include_optional):
         """Test SearchFilter
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SearchFilter`
         """
-        model = SearchFilter()
-        if include_optional:
+        model = dupr_backend.models.search_filter.SearchFilter()  # noqa: E501
+        if include_optional :
             return SearchFilter(
                 age_range = dupr_backend.models.age_range_filter.AgeRangeFilter(
                     max_age = 25, 
-                    min_age = 18, ),
-                gender = 'FEMALE',
-                lat = 72.34654645455,
-                lng = 19.55151584984,
-                radius_in_meters = 16093.4,
+                    min_age = 18, ), 
+                gender = 'FEMALE', 
+                lat = 72.34654645455, 
+                lng = 19.55151584984, 
+                radius_in_meters = 16093.4, 
                 rating = dupr_backend.models.rating_filter.RatingFilter(
                     category = 'DUPR', 
                     max_rating = 3.3, 
                     min_rating = 2.3, 
                     type = 'DOUBLES', )
             )
-        else:
+        else :
             return SearchFilter(
         )
         """

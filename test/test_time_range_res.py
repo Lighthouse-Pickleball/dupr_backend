@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.time_range_res import TimeRangeRes
+import dupr_backend
+from dupr_backend.models.time_range_res import TimeRangeRes  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestTimeRangeRes(unittest.TestCase):
     """TimeRangeRes unit test stubs"""
@@ -25,20 +28,20 @@ class TestTimeRangeRes(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> TimeRangeRes:
+    def make_instance(self, include_optional):
         """Test TimeRangeRes
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `TimeRangeRes`
         """
-        model = TimeRangeRes()
-        if include_optional:
+        model = dupr_backend.models.time_range_res.TimeRangeRes()  # noqa: E501
+        if include_optional :
             return TimeRangeRes(
-                end = 'HH:mm',
+                end = 'HH:mm', 
                 start = 'HH:mm'
             )
-        else:
+        else :
             return TimeRangeRes(
                 end = 'HH:mm',
                 start = 'HH:mm',

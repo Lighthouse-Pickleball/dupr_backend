@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.single_wrapper_of_user_response import SingleWrapperOfUserResponse
+import dupr_backend
+from dupr_backend.models.single_wrapper_of_user_response import SingleWrapperOfUserResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSingleWrapperOfUserResponse(unittest.TestCase):
     """SingleWrapperOfUserResponse unit test stubs"""
@@ -25,17 +28,17 @@ class TestSingleWrapperOfUserResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperOfUserResponse:
+    def make_instance(self, include_optional):
         """Test SingleWrapperOfUserResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfUserResponse`
         """
-        model = SingleWrapperOfUserResponse()
-        if include_optional:
+        model = dupr_backend.models.single_wrapper_of_user_response.SingleWrapperOfUserResponse()  # noqa: E501
+        if include_optional :
             return SingleWrapperOfUserResponse(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 result = dupr_backend.models.user_response.UserResponse(
                     active = True, 
                     addresses = [
@@ -97,10 +100,10 @@ class TestSingleWrapperOfUserResponse(unittest.TestCase):
                         enable_privacy = False, 
                         enable_push = False, 
                         enable_sms = False, ), 
-                    username = 'X AE A-XII', ),
+                    username = 'X AE A-XII', ), 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return SingleWrapperOfUserResponse(
         )
         """

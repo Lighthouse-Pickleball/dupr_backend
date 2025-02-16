@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.invite_request import InviteRequest
+import dupr_backend
+from dupr_backend.models.invite_request import InviteRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestInviteRequest(unittest.TestCase):
     """InviteRequest unit test stubs"""
@@ -25,23 +28,23 @@ class TestInviteRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> InviteRequest:
+    def make_instance(self, include_optional):
         """Test InviteRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `InviteRequest`
         """
-        model = InviteRequest()
-        if include_optional:
+        model = dupr_backend.models.invite_request.InviteRequest()  # noqa: E501
+        if include_optional :
             return InviteRequest(
-                email = 'user@example.com',
-                full_name = 'John Doe',
-                identifier = 'unique-identifier',
-                iso_code = 'US',
+                email = 'user@example.com', 
+                full_name = 'John Doe', 
+                identifier = 'unique-identifier', 
+                iso_code = 'US', 
                 phone = '+19876543210'
             )
-        else:
+        else :
             return InviteRequest(
                 email = 'user@example.com',
                 full_name = 'John Doe',

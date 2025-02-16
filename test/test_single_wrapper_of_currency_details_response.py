@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.single_wrapper_of_currency_details_response import SingleWrapperOfCurrencyDetailsResponse
+import dupr_backend
+from dupr_backend.models.single_wrapper_of_currency_details_response import SingleWrapperOfCurrencyDetailsResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSingleWrapperOfCurrencyDetailsResponse(unittest.TestCase):
     """SingleWrapperOfCurrencyDetailsResponse unit test stubs"""
@@ -25,25 +28,25 @@ class TestSingleWrapperOfCurrencyDetailsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperOfCurrencyDetailsResponse:
+    def make_instance(self, include_optional):
         """Test SingleWrapperOfCurrencyDetailsResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfCurrencyDetailsResponse`
         """
-        model = SingleWrapperOfCurrencyDetailsResponse()
-        if include_optional:
+        model = dupr_backend.models.single_wrapper_of_currency_details_response.SingleWrapperOfCurrencyDetailsResponse()  # noqa: E501
+        if include_optional :
             return SingleWrapperOfCurrencyDetailsResponse(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 result = dupr_backend.models.currency_details_response.CurrencyDetailsResponse(
                     currency_code = 'USD', 
                     currency_name = 'US Dollar', 
                     currency_symbol = '$', 
-                    min_limit = 100.0, ),
+                    min_limit = 100.0, ), 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return SingleWrapperOfCurrencyDetailsResponse(
         )
         """

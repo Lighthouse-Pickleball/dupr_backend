@@ -14,78 +14,80 @@
 
 import unittest
 
-from dupr_backend.api.admin_event_api import AdminEventApi
+import dupr_backend
+from dupr_backend.api.admin_event_api import AdminEventApi  # noqa: E501
+from dupr_backend.rest import ApiException
 
 
 class TestAdminEventApi(unittest.TestCase):
     """AdminEventApi unit test stubs"""
 
-    def setUp(self) -> None:
-        self.api = AdminEventApi()
+    def setUp(self):
+        self.api = dupr_backend.api.admin_event_api.AdminEventApi()  # noqa: E501
 
-    def tearDown(self) -> None:
+    def tearDown(self):
         pass
 
-    def test_delete_all_league_using_delete(self) -> None:
+    def test_delete_all_league_using_delete(self):
         """Test case for delete_all_league_using_delete
 
-        deleteAllLeague
+        deleteAllLeague  # noqa: E501
         """
         pass
 
-    def test_delete_event_players_using_delete(self) -> None:
+    def test_delete_event_players_using_delete(self):
         """Test case for delete_event_players_using_delete
 
-        deleteEventPlayers
+        deleteEventPlayers  # noqa: E501
         """
         pass
 
-    def test_force_delete_league_using_delete(self) -> None:
+    def test_force_delete_league_using_delete(self):
         """Test case for force_delete_league_using_delete
 
-        forceDeleteLeague
+        forceDeleteLeague  # noqa: E501
         """
         pass
 
-    def test_index_all_leagues_using_get(self) -> None:
+    def test_index_all_leagues_using_get(self):
         """Test case for index_all_leagues_using_get
 
-        indexAllLeagues
+        indexAllLeagues  # noqa: E501
         """
         pass
 
-    def test_index_league_players_using_get(self) -> None:
+    def test_index_league_players_using_get(self):
         """Test case for index_league_players_using_get
 
-        indexLeaguePlayers
+        indexLeaguePlayers  # noqa: E501
         """
         pass
 
-    def test_index_leagues_by_id_using_get(self) -> None:
+    def test_index_leagues_by_id_using_get(self):
         """Test case for index_leagues_by_id_using_get
 
-        indexLeaguesById
+        indexLeaguesById  # noqa: E501
         """
         pass
 
-    def test_registered_to_bracket_using_post(self) -> None:
+    def test_registered_to_bracket_using_post(self):
         """Test case for registered_to_bracket_using_post
 
-        registeredToBracket
+        registeredToBracket  # noqa: E501
         """
         pass
 
-    def test_restore_deleted_league_using_post(self) -> None:
+    def test_restore_deleted_league_using_post(self):
         """Test case for restore_deleted_league_using_post
 
-        restoreDeletedLeague
+        restoreDeletedLeague  # noqa: E501
         """
         pass
 
-    def test_update_league_fees_using_put(self) -> None:
+    def test_update_league_fees_using_put(self):
         """Test case for update_league_fees_using_put
 
-        updateLeagueFees
+        updateLeagueFees  # noqa: E501
         """
         pass
 

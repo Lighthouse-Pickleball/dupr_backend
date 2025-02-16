@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.delete_event_media_request import DeleteEventMediaRequest
+import dupr_backend
+from dupr_backend.models.delete_event_media_request import DeleteEventMediaRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestDeleteEventMediaRequest(unittest.TestCase):
     """DeleteEventMediaRequest unit test stubs"""
@@ -25,21 +28,21 @@ class TestDeleteEventMediaRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> DeleteEventMediaRequest:
+    def make_instance(self, include_optional):
         """Test DeleteEventMediaRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `DeleteEventMediaRequest`
         """
-        model = DeleteEventMediaRequest()
-        if include_optional:
+        model = dupr_backend.models.delete_event_media_request.DeleteEventMediaRequest()  # noqa: E501
+        if include_optional :
             return DeleteEventMediaRequest(
-                league_id = 4684651981,
-                liability_waiver_id = 4684651981,
+                league_id = 4684651981, 
+                liability_waiver_id = 4684651981, 
                 media_id = 4684651981
             )
-        else:
+        else :
             return DeleteEventMediaRequest(
                 league_id = 4684651981,
         )

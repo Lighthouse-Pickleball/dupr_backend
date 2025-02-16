@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.player_initialization_progress_response import PlayerInitializationProgressResponse
+import dupr_backend
+from dupr_backend.models.player_initialization_progress_response import PlayerInitializationProgressResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestPlayerInitializationProgressResponse(unittest.TestCase):
     """PlayerInitializationProgressResponse unit test stubs"""
@@ -25,15 +28,15 @@ class TestPlayerInitializationProgressResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PlayerInitializationProgressResponse:
+    def make_instance(self, include_optional):
         """Test PlayerInitializationProgressResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PlayerInitializationProgressResponse`
         """
-        model = PlayerInitializationProgressResponse()
-        if include_optional:
+        model = dupr_backend.models.player_initialization_progress_response.PlayerInitializationProgressResponse()  # noqa: E501
+        if include_optional :
             return PlayerInitializationProgressResponse(
                 data = dupr_backend.models.player_initialization_data_response.PlayerInitializationDataResponse(
                     days_left_for_initialization = 56, 
@@ -41,11 +44,11 @@ class TestPlayerInitializationProgressResponse(unittest.TestCase):
                     initialization_status = '', 
                     player_id = '', 
                     player_name = '', 
-                    qualification_score = 1.337, ),
-                message = '',
+                    qualification_score = 1.337, ), 
+                message = '', 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return PlayerInitializationProgressResponse(
                 message = '',
                 status = 'FAILURE',

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.single_wrapper_of_registration_response import SingleWrapperOfRegistrationResponse
+import dupr_backend
+from dupr_backend.models.single_wrapper_of_registration_response import SingleWrapperOfRegistrationResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSingleWrapperOfRegistrationResponse(unittest.TestCase):
     """SingleWrapperOfRegistrationResponse unit test stubs"""
@@ -25,17 +28,17 @@ class TestSingleWrapperOfRegistrationResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperOfRegistrationResponse:
+    def make_instance(self, include_optional):
         """Test SingleWrapperOfRegistrationResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfRegistrationResponse`
         """
-        model = SingleWrapperOfRegistrationResponse()
-        if include_optional:
+        model = dupr_backend.models.single_wrapper_of_registration_response.SingleWrapperOfRegistrationResponse()  # noqa: E501
+        if include_optional :
             return SingleWrapperOfRegistrationResponse(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 result = dupr_backend.models.registration_response.RegistrationResponse(
                     event_refunded_amount = 1.337, 
                     is_participant1 = False, 
@@ -70,10 +73,10 @@ class TestSingleWrapperOfRegistrationResponse(unittest.TestCase):
                         refund_amount = 1.337, 
                         status = 'NOT_ADDED/CONFIRMED/NOT_CONFIRMED/PAYMENT_DUE', 
                         username = 'X AE A-XII', ), 
-                    registration_id = 4684651981, ),
+                    registration_id = 4684651981, ), 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return SingleWrapperOfRegistrationResponse(
         )
         """

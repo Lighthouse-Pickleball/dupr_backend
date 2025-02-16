@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.post_request import PostRequest
+import dupr_backend
+from dupr_backend.models.post_request import PostRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestPostRequest(unittest.TestCase):
     """PostRequest unit test stubs"""
@@ -25,17 +28,17 @@ class TestPostRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PostRequest:
+    def make_instance(self, include_optional):
         """Test PostRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PostRequest`
         """
-        model = PostRequest()
-        if include_optional:
+        model = dupr_backend.models.post_request.PostRequest()  # noqa: E501
+        if include_optional :
             return PostRequest(
-                actor = 5333652862,
+                actor = 5333652862, 
                 checkin = dupr_backend.models.check_in_location.CheckInLocation(
                     address = dupr_backend.models.address_request.AddressRequest(
                         address_line = '402, B wing', 
@@ -73,18 +76,18 @@ class TestPostRequest(unittest.TestCase):
                                 ], ), 
                         place_id = 'ChIJW37e6g4AwTsRfjFKn0_XRiU', ), 
                     id = 5333652862, 
-                    type = 'RAW/CLUB/EVENT/NONE', ),
-                content = 'Welcome to my Feed',
+                    type = 'RAW/CLUB/EVENT/NONE', ), 
+                content = 'Welcome to my Feed', 
                 feed = dupr_backend.models.feed.Feed(
                     feed_id = 1, 
-                    slug = 'USER/CLUB/EVENT/DUPR', ),
-                hashtags = [Welcome, Feeds],
-                images = [/path/to/image],
-                matches = [7578951408],
-                tags = [5333652862],
+                    slug = 'USER/CLUB/EVENT/DUPR', ), 
+                hashtags = [Welcome, Feeds], 
+                images = [/path/to/image], 
+                matches = [7578951408], 
+                tags = [5333652862], 
                 verb = 'POST'
             )
-        else:
+        else :
             return PostRequest(
         )
         """

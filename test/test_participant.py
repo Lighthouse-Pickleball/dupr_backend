@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.participant import Participant
+import dupr_backend
+from dupr_backend.models.participant import Participant  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestParticipant(unittest.TestCase):
     """Participant unit test stubs"""
@@ -25,32 +28,32 @@ class TestParticipant(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> Participant:
+    def make_instance(self, include_optional):
         """Test Participant
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `Participant`
         """
-        model = Participant()
-        if include_optional:
+        model = dupr_backend.models.participant.Participant()  # noqa: E501
+        if include_optional :
             return Participant(
-                club_member = True,
-                display_username = True,
-                full_name = 'Brian Lara',
-                id = 26518181881,
-                is_registered = False,
-                is_substitute = False,
-                is_wait_listed = False,
-                partner_status = 'NOT_ADDED/CONFIRMED/NOT_CONFIRMED/PAYMENT_DUE',
-                payment_due = '2021-12-01',
-                payment_refunded = False,
-                payment_status = 'PENDING/COMPLETE',
-                refund_amount = 1.337,
-                status = 'NOT_ADDED/CONFIRMED/NOT_CONFIRMED/PAYMENT_DUE',
+                club_member = True, 
+                display_username = True, 
+                full_name = 'Brian Lara', 
+                id = 26518181881, 
+                is_registered = False, 
+                is_substitute = False, 
+                is_wait_listed = False, 
+                partner_status = 'NOT_ADDED/CONFIRMED/NOT_CONFIRMED/PAYMENT_DUE', 
+                payment_due = '2021-12-01', 
+                payment_refunded = False, 
+                payment_status = 'PENDING/COMPLETE', 
+                refund_amount = 1.337, 
+                status = 'NOT_ADDED/CONFIRMED/NOT_CONFIRMED/PAYMENT_DUE', 
                 username = 'X AE A-XII'
             )
-        else:
+        else :
             return Participant(
                 club_member = True,
                 full_name = 'Brian Lara',

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.informative_banner_responce import InformativeBannerResponce
+import dupr_backend
+from dupr_backend.models.informative_banner_responce import InformativeBannerResponce  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestInformativeBannerResponce(unittest.TestCase):
     """InformativeBannerResponce unit test stubs"""
@@ -25,17 +28,17 @@ class TestInformativeBannerResponce(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> InformativeBannerResponce:
+    def make_instance(self, include_optional):
         """Test InformativeBannerResponce
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `InformativeBannerResponce`
         """
-        model = InformativeBannerResponce()
-        if include_optional:
+        model = dupr_backend.models.informative_banner_responce.InformativeBannerResponce()  # noqa: E501
+        if include_optional :
             return InformativeBannerResponce(
-                banner_id = 56,
+                banner_id = 56, 
                 description = dupr_backend.models.banner_content_responce.BannerContentResponce(
                     content = '', 
                     content_id = 56, 
@@ -43,13 +46,13 @@ class TestInformativeBannerResponce(unittest.TestCase):
                     footer = '', 
                     footer_type = '', 
                     header = '', 
-                    header_type = '', ),
-                end_date_time = '',
-                start_date_time = '',
-                status = 'ACTIVE',
+                    header_type = '', ), 
+                end_date_time = '', 
+                start_date_time = '', 
+                status = 'ACTIVE', 
                 title = ''
             )
-        else:
+        else :
             return InformativeBannerResponce(
         )
         """

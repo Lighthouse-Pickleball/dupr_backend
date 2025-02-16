@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.user_subscription_request import UserSubscriptionRequest
+import dupr_backend
+from dupr_backend.models.user_subscription_request import UserSubscriptionRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestUserSubscriptionRequest(unittest.TestCase):
     """UserSubscriptionRequest unit test stubs"""
@@ -25,24 +28,24 @@ class TestUserSubscriptionRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> UserSubscriptionRequest:
+    def make_instance(self, include_optional):
         """Test UserSubscriptionRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `UserSubscriptionRequest`
         """
-        model = UserSubscriptionRequest()
-        if include_optional:
+        model = dupr_backend.models.user_subscription_request.UserSubscriptionRequest()  # noqa: E501
+        if include_optional :
             return UserSubscriptionRequest(
-                billing_period = 'MONTHLY/ANNUAL',
-                cost = 1000.0,
-                is_active = False,
-                renewal_date = '2024-01-01',
-                start_date = '2024-01-01',
+                billing_period = 'MONTHLY/ANNUAL', 
+                cost = 1000.0, 
+                is_active = False, 
+                renewal_date = '2024-01-01', 
+                start_date = '2024-01-01', 
                 user_id = 1241632612
             )
-        else:
+        else :
             return UserSubscriptionRequest(
                 billing_period = 'MONTHLY/ANNUAL',
                 cost = 1000.0,

@@ -14,134 +14,136 @@
 
 import unittest
 
-from dupr_backend.api.activity_newsfeeds_for_user_api import ActivityNewsfeedsForUserApi
+import dupr_backend
+from dupr_backend.api.activity_newsfeeds_for_user_api import ActivityNewsfeedsForUserApi  # noqa: E501
+from dupr_backend.rest import ApiException
 
 
 class TestActivityNewsfeedsForUserApi(unittest.TestCase):
     """ActivityNewsfeedsForUserApi unit test stubs"""
 
-    def setUp(self) -> None:
-        self.api = ActivityNewsfeedsForUserApi()
+    def setUp(self):
+        self.api = dupr_backend.api.activity_newsfeeds_for_user_api.ActivityNewsfeedsForUserApi()  # noqa: E501
 
-    def tearDown(self) -> None:
+    def tearDown(self):
         pass
 
-    def test_comments_using_get1(self) -> None:
+    def test_comments_using_get1(self):
         """Test case for comments_using_get1
 
-        comments
+        comments  # noqa: E501
         """
         pass
 
-    def test_create_post_using_post2(self) -> None:
+    def test_create_post_using_post2(self):
         """Test case for create_post_using_post2
 
-        createPost
+        createPost  # noqa: E501
         """
         pass
 
-    def test_delete_comment_using_delete1(self) -> None:
+    def test_delete_comment_using_delete1(self):
         """Test case for delete_comment_using_delete1
 
-        deleteComment
+        deleteComment  # noqa: E501
         """
         pass
 
-    def test_edit_post_using_put1(self) -> None:
+    def test_edit_post_using_put1(self):
         """Test case for edit_post_using_put1
 
-        editPost
+        editPost  # noqa: E501
         """
         pass
 
-    def test_fetch_feeds_using_get2(self) -> None:
+    def test_fetch_feeds_using_get2(self):
         """Test case for fetch_feeds_using_get2
 
-        fetchFeeds
+        fetchFeeds  # noqa: E501
         """
         pass
 
-    def test_follow_using_post2(self) -> None:
+    def test_follow_using_post2(self):
         """Test case for follow_using_post2
 
-        follow
+        follow  # noqa: E501
         """
         pass
 
-    def test_get_following_info_using_get(self) -> None:
+    def test_get_following_info_using_get(self):
         """Test case for get_following_info_using_get
 
-        getFollowingInfo
+        getFollowingInfo  # noqa: E501
         """
         pass
 
-    def test_get_list_followers_using_get(self) -> None:
+    def test_get_list_followers_using_get(self):
         """Test case for get_list_followers_using_get
 
-        getListFollowers
+        getListFollowers  # noqa: E501
         """
         pass
 
-    def test_get_list_followings_using_get(self) -> None:
+    def test_get_list_followings_using_get(self):
         """Test case for get_list_followings_using_get
 
-        getListFollowings
+        getListFollowings  # noqa: E501
         """
         pass
 
-    def test_get_post_detail_using_get1(self) -> None:
+    def test_get_post_detail_using_get1(self):
         """Test case for get_post_detail_using_get1
 
-        getPostDetail
+        getPostDetail  # noqa: E501
         """
         pass
 
-    def test_get_user_suggestion_using_get1(self) -> None:
+    def test_get_user_suggestion_using_get1(self):
         """Test case for get_user_suggestion_using_get1
 
-        getUserSuggestion
+        getUserSuggestion  # noqa: E501
         """
         pass
 
-    def test_react_using_post2(self) -> None:
+    def test_react_using_post2(self):
         """Test case for react_using_post2
 
-        react
+        react  # noqa: E501
         """
         pass
 
-    def test_reactions_using_get1(self) -> None:
+    def test_reactions_using_get1(self):
         """Test case for reactions_using_get1
 
-        reactions
+        reactions  # noqa: E501
         """
         pass
 
-    def test_remove_post_using_delete1(self) -> None:
+    def test_remove_post_using_delete1(self):
         """Test case for remove_post_using_delete1
 
-        removePost
+        removePost  # noqa: E501
         """
         pass
 
-    def test_timeline_using_get(self) -> None:
+    def test_timeline_using_get(self):
         """Test case for timeline_using_get
 
-        timeline
+        timeline  # noqa: E501
         """
         pass
 
-    def test_unfollow_using_delete2(self) -> None:
+    def test_unfollow_using_delete2(self):
         """Test case for unfollow_using_delete2
 
-        unfollow
+        unfollow  # noqa: E501
         """
         pass
 
-    def test_update_comment_using_put1(self) -> None:
+    def test_update_comment_using_put1(self):
         """Test case for update_comment_using_put1
 
-        updateComment
+        updateComment  # noqa: E501
         """
         pass
 

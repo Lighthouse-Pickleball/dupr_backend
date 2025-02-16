@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **limit** | **int** |  | 
@@ -21,12 +20,12 @@ json = "{}"
 # create an instance of ClubSearch from a JSON string
 club_search_instance = ClubSearch.from_json(json)
 # print the JSON string representation of the object
-print(ClubSearch.to_json())
+print ClubSearch.to_json()
 
 # convert the object into a dict
 club_search_dict = club_search_instance.to_dict()
 # create an instance of ClubSearch from a dict
-club_search_from_dict = ClubSearch.from_dict(club_search_dict)
+club_search_form_dict = club_search.from_dict(club_search_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

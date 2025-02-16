@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **max** | **float** |  | 
@@ -18,12 +17,12 @@ json = "{}"
 # create an instance of RatingRangeReq from a JSON string
 rating_range_req_instance = RatingRangeReq.from_json(json)
 # print the JSON string representation of the object
-print(RatingRangeReq.to_json())
+print RatingRangeReq.to_json()
 
 # convert the object into a dict
 rating_range_req_dict = rating_range_req_instance.to_dict()
 # create an instance of RatingRangeReq from a dict
-rating_range_req_from_dict = RatingRangeReq.from_dict(rating_range_req_dict)
+rating_range_req_form_dict = rating_range_req.from_dict(rating_range_req_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

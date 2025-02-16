@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.user_response import UserResponse
+import dupr_backend
+from dupr_backend.models.user_response import UserResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestUserResponse(unittest.TestCase):
     """UserResponse unit test stubs"""
@@ -25,17 +28,17 @@ class TestUserResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> UserResponse:
+    def make_instance(self, include_optional):
         """Test UserResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `UserResponse`
         """
-        model = UserResponse()
-        if include_optional:
+        model = dupr_backend.models.user_response.UserResponse()  # noqa: E501
+        if include_optional :
             return UserResponse(
-                active = True,
+                active = True, 
                 addresses = [
                     dupr_backend.models.address_response.AddressResponse(
                         address_line = 'Apartment, Room, PO Box numbers (optional)', 
@@ -49,33 +52,33 @@ class TestUserResponse(unittest.TestCase):
                         short_address = 'Center Valley, PA, US', 
                         status = '', 
                         types = '', )
-                    ],
-                apparel_brand = 'Puma',
-                birthdate = 'yyyy-MM-dd',
-                display_username = True,
-                email = 'user@exmaple.com',
-                first_name = 'John',
-                full_name = 'John Doe',
-                gender = 'FEMALE',
-                hand = 'BOTH',
-                id = 45785789,
-                image_url = 'https://dupr-dev.s3.us-east-1.amazonaws.com/users/profile.jpg',
-                is_valid_email = True,
-                is_valid_phone = True,
-                iso_code = 'US',
-                last_name = 'Doe',
-                lucra_connected = False,
-                paddle_brand = 'Selkirk Vanguard Hybrid S2',
-                phone = '+14445785789',
-                preferred_ball = 'Balls',
-                preferred_side = 'LEFT/RIGHT/EITHER',
-                referral_code = 'GB0NV05E',
-                restricted = False,
+                    ], 
+                apparel_brand = 'Puma', 
+                birthdate = 'yyyy-MM-dd', 
+                display_username = True, 
+                email = 'user@exmaple.com', 
+                first_name = 'John', 
+                full_name = 'John Doe', 
+                gender = 'FEMALE', 
+                hand = 'BOTH', 
+                id = 45785789, 
+                image_url = 'https://dupr-dev.s3.us-east-1.amazonaws.com/users/profile.jpg', 
+                is_valid_email = True, 
+                is_valid_phone = True, 
+                iso_code = 'US', 
+                last_name = 'Doe', 
+                lucra_connected = False, 
+                paddle_brand = 'Selkirk Vanguard Hybrid S2', 
+                phone = '+14445785789', 
+                preferred_ball = 'Balls', 
+                preferred_side = 'LEFT/RIGHT/EITHER', 
+                referral_code = 'GB0NV05E', 
+                restricted = False, 
                 role = dupr_backend.models.role_response.RoleResponse(
                     id = 424255123, 
                     permissions = {"USER":["VIEW","MODIFY"],"TOURNAMENT":["OWN_VIEW","OWN_MODIFY","OWN_DELETE"]}, 
-                    role = 'PLAYER', ),
-                shoe_brand = 'Nike',
+                    role = 'PLAYER', ), 
+                shoe_brand = 'Nike', 
                 stats = dupr_backend.models.player_rating_response.PlayerRatingResponse(
                     default_rating = 'DOUBLES', 
                     doubles = '2.864', 
@@ -88,16 +91,16 @@ class TestUserResponse(unittest.TestCase):
                     singles = '4.125', 
                     singles_provisional = True, 
                     singles_reliability_score = 10.0, 
-                    singles_verified = '4.1', ),
+                    singles_verified = '4.1', ), 
                 user_preferences = dupr_backend.models.user_preferences_response.UserPreferencesResponse(
                     enable_email = False, 
                     enable_newsletter = False, 
                     enable_privacy = False, 
                     enable_push = False, 
-                    enable_sms = False, ),
+                    enable_sms = False, ), 
                 username = 'X AE A-XII'
             )
-        else:
+        else :
             return UserResponse(
                 active = True,
                 email = 'user@exmaple.com',

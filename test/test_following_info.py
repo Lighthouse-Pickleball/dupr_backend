@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.following_info import FollowingInfo
+import dupr_backend
+from dupr_backend.models.following_info import FollowingInfo  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestFollowingInfo(unittest.TestCase):
     """FollowingInfo unit test stubs"""
@@ -25,21 +28,21 @@ class TestFollowingInfo(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> FollowingInfo:
+    def make_instance(self, include_optional):
         """Test FollowingInfo
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `FollowingInfo`
         """
-        model = FollowingInfo()
-        if include_optional:
+        model = dupr_backend.models.following_info.FollowingInfo()  # noqa: E501
+        if include_optional :
             return FollowingInfo(
-                followers = 0,
-                followings = 0,
+                followers = 0, 
+                followings = 0, 
                 is_followed = False
             )
-        else:
+        else :
             return FollowingInfo(
         )
         """

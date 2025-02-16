@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created** | **str** |  | [optional] 
@@ -22,12 +21,12 @@ json = "{}"
 # create an instance of MiLPTeam from a JSON string
 mi_lp_team_instance = MiLPTeam.from_json(json)
 # print the JSON string representation of the object
-print(MiLPTeam.to_json())
+print MiLPTeam.to_json()
 
 # convert the object into a dict
 mi_lp_team_dict = mi_lp_team_instance.to_dict()
 # create an instance of MiLPTeam from a dict
-mi_lp_team_from_dict = MiLPTeam.from_dict(mi_lp_team_dict)
+mi_lp_team_form_dict = mi_lp_team.from_dict(mi_lp_team_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

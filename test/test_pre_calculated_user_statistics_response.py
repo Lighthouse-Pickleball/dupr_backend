@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.pre_calculated_user_statistics_response import PreCalculatedUserStatisticsResponse
+import dupr_backend
+from dupr_backend.models.pre_calculated_user_statistics_response import PreCalculatedUserStatisticsResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestPreCalculatedUserStatisticsResponse(unittest.TestCase):
     """PreCalculatedUserStatisticsResponse unit test stubs"""
@@ -25,15 +28,15 @@ class TestPreCalculatedUserStatisticsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PreCalculatedUserStatisticsResponse:
+    def make_instance(self, include_optional):
         """Test PreCalculatedUserStatisticsResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PreCalculatedUserStatisticsResponse`
         """
-        model = PreCalculatedUserStatisticsResponse()
-        if include_optional:
+        model = dupr_backend.models.pre_calculated_user_statistics_response.PreCalculatedUserStatisticsResponse()  # noqa: E501
+        if include_optional :
             return PreCalculatedUserStatisticsResponse(
                 doubles = dupr_backend.models.match_ratings.MatchRatings(
                     average_opponent_dupr = '3.254', 
@@ -41,11 +44,11 @@ class TestPreCalculatedUserStatisticsResponse(unittest.TestCase):
                     average_points_won_percent = '67%', 
                     half_life = '3.0', 
                     losses = 12, 
-                    wins = 4, ),
+                    wins = 4, ), 
                 resul_overview = dupr_backend.models.ratings_overview_response.RatingsOverviewResponse(
                     losses = 56, 
                     pending = 56, 
-                    wins = 56, ),
+                    wins = 56, ), 
                 singles = dupr_backend.models.match_ratings.MatchRatings(
                     average_opponent_dupr = '3.254', 
                     average_partner_dupr = '6.391', 
@@ -54,7 +57,7 @@ class TestPreCalculatedUserStatisticsResponse(unittest.TestCase):
                     losses = 12, 
                     wins = 4, )
             )
-        else:
+        else :
             return PreCalculatedUserStatisticsResponse(
                 doubles = dupr_backend.models.match_ratings.MatchRatings(
                     average_opponent_dupr = '3.254', 

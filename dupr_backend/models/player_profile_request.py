@@ -18,147 +18,130 @@ import re  # noqa: F401
 import json
 
 from datetime import date
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List, Optional
-from typing import Optional, Set
-from typing_extensions import Self
+from typing import Optional
+from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, validator
 
 class PlayerProfileRequest(BaseModel):
     """
     PlayerProfileRequest
-    """ # noqa: E501
-    address_id: Optional[StrictInt] = Field(default=None, alias="addressId")
-    apparel_brand: Optional[StrictStr] = Field(default=None, alias="apparelBrand")
+    """
+    address_id: Optional[StrictInt] = Field(None, alias="addressId")
+    apparel_brand: Optional[StrictStr] = Field(None, alias="apparelBrand")
     birthdate: Optional[date] = None
-    default_rating: Optional[StrictStr] = Field(default=None, alias="defaultRating")
-    display_username: Optional[StrictBool] = Field(default=None, alias="displayUsername")
-    first_name: Optional[StrictStr] = Field(default=None, alias="firstName")
-    full_name: StrictStr = Field(alias="fullName")
+    default_rating: Optional[StrictStr] = Field(None, alias="defaultRating")
+    display_username: Optional[StrictBool] = Field(None, alias="displayUsername")
+    first_name: Optional[StrictStr] = Field(None, alias="firstName")
+    full_name: StrictStr = Field(..., alias="fullName")
     gender: Optional[StrictStr] = None
     hand: Optional[StrictStr] = None
-    is_valid_phone: Optional[StrictBool] = Field(default=None, alias="isValidPhone")
-    iso_code: Optional[StrictStr] = Field(default=None, alias="isoCode")
-    last_name: Optional[StrictStr] = Field(default=None, alias="lastName")
-    media_id: Optional[StrictInt] = Field(default=None, alias="mediaId")
-    paddle_brand: Optional[StrictStr] = Field(default=None, alias="paddleBrand")
+    is_valid_phone: Optional[StrictBool] = Field(None, alias="isValidPhone")
+    iso_code: Optional[StrictStr] = Field(None, alias="isoCode")
+    last_name: Optional[StrictStr] = Field(None, alias="lastName")
+    media_id: Optional[StrictInt] = Field(None, alias="mediaId")
+    paddle_brand: Optional[StrictStr] = Field(None, alias="paddleBrand")
     phone: Optional[StrictStr] = None
-    place_id: Optional[StrictStr] = Field(default=None, alias="placeId")
-    preferred_ball: Optional[StrictStr] = Field(default=None, alias="preferredBall")
-    preferred_side: Optional[StrictStr] = Field(default=None, alias="preferredSide")
-    shoe_brand: Optional[StrictStr] = Field(default=None, alias="shoeBrand")
+    place_id: Optional[StrictStr] = Field(None, alias="placeId")
+    preferred_ball: Optional[StrictStr] = Field(None, alias="preferredBall")
+    preferred_side: Optional[StrictStr] = Field(None, alias="preferredSide")
+    shoe_brand: Optional[StrictStr] = Field(None, alias="shoeBrand")
     username: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["addressId", "apparelBrand", "birthdate", "defaultRating", "displayUsername", "firstName", "fullName", "gender", "hand", "isValidPhone", "isoCode", "lastName", "mediaId", "paddleBrand", "phone", "placeId", "preferredBall", "preferredSide", "shoeBrand", "username"]
+    __properties = ["addressId", "apparelBrand", "birthdate", "defaultRating", "displayUsername", "firstName", "fullName", "gender", "hand", "isValidPhone", "isoCode", "lastName", "mediaId", "paddleBrand", "phone", "placeId", "preferredBall", "preferredSide", "shoeBrand", "username"]
 
-    @field_validator('default_rating')
+    @validator('default_rating')
     def default_rating_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['DOUBLES', 'SINGLES']):
+        if value not in ('DOUBLES', 'SINGLES'):
             raise ValueError("must be one of enum values ('DOUBLES', 'SINGLES')")
         return value
 
-    @field_validator('gender')
+    @validator('gender')
     def gender_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['FEMALE', 'MALE']):
+        if value not in ('FEMALE', 'MALE'):
             raise ValueError("must be one of enum values ('FEMALE', 'MALE')")
         return value
 
-    @field_validator('hand')
+    @validator('hand')
     def hand_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['BOTH', 'LEFT', 'NONE', 'RIGHT']):
+        if value not in ('BOTH', 'LEFT', 'NONE', 'RIGHT'):
             raise ValueError("must be one of enum values ('BOTH', 'LEFT', 'NONE', 'RIGHT')")
         return value
 
-    @field_validator('preferred_side')
+    @validator('preferred_side')
     def preferred_side_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['EITHER', 'LEFT', 'RIGHT']):
+        if value not in ('EITHER', 'LEFT', 'RIGHT'):
             raise ValueError("must be one of enum values ('EITHER', 'LEFT', 'RIGHT')")
         return value
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
+    class Config:
+        """Pydantic configuration"""
+        allow_population_by_field_name = True
+        validate_assignment = True
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+        return pprint.pformat(self.dict(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
+    def from_json(cls, json_str: str) -> PlayerProfileRequest:
         """Create an instance of PlayerProfileRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
+    def to_dict(self):
+        """Returns the dictionary representation of the model using alias"""
+        _dict = self.dict(by_alias=True,
+                          exclude={
+                          },
+                          exclude_none=True)
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+    def from_dict(cls, obj: dict) -> PlayerProfileRequest:
         """Create an instance of PlayerProfileRequest from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+            return PlayerProfileRequest.parse_obj(obj)
 
-        _obj = cls.model_validate({
-            "addressId": obj.get("addressId"),
-            "apparelBrand": obj.get("apparelBrand"),
+        _obj = PlayerProfileRequest.parse_obj({
+            "address_id": obj.get("addressId"),
+            "apparel_brand": obj.get("apparelBrand"),
             "birthdate": obj.get("birthdate"),
-            "defaultRating": obj.get("defaultRating"),
-            "displayUsername": obj.get("displayUsername"),
-            "firstName": obj.get("firstName"),
-            "fullName": obj.get("fullName"),
+            "default_rating": obj.get("defaultRating"),
+            "display_username": obj.get("displayUsername"),
+            "first_name": obj.get("firstName"),
+            "full_name": obj.get("fullName"),
             "gender": obj.get("gender"),
             "hand": obj.get("hand"),
-            "isValidPhone": obj.get("isValidPhone"),
-            "isoCode": obj.get("isoCode"),
-            "lastName": obj.get("lastName"),
-            "mediaId": obj.get("mediaId"),
-            "paddleBrand": obj.get("paddleBrand"),
+            "is_valid_phone": obj.get("isValidPhone"),
+            "iso_code": obj.get("isoCode"),
+            "last_name": obj.get("lastName"),
+            "media_id": obj.get("mediaId"),
+            "paddle_brand": obj.get("paddleBrand"),
             "phone": obj.get("phone"),
-            "placeId": obj.get("placeId"),
-            "preferredBall": obj.get("preferredBall"),
-            "preferredSide": obj.get("preferredSide"),
-            "shoeBrand": obj.get("shoeBrand"),
+            "place_id": obj.get("placeId"),
+            "preferred_ball": obj.get("preferredBall"),
+            "preferred_side": obj.get("preferredSide"),
+            "shoe_brand": obj.get("shoeBrand"),
             "username": obj.get("username")
         })
         return _obj

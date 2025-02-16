@@ -14,99 +14,101 @@
 
 import unittest
 
-from dupr_backend.api.open_play_api import OpenPlayApi
+import dupr_backend
+from dupr_backend.api.open_play_api import OpenPlayApi  # noqa: E501
+from dupr_backend.rest import ApiException
 
 
 class TestOpenPlayApi(unittest.TestCase):
     """OpenPlayApi unit test stubs"""
 
-    def setUp(self) -> None:
-        self.api = OpenPlayApi()
+    def setUp(self):
+        self.api = dupr_backend.api.open_play_api.OpenPlayApi()  # noqa: E501
 
-    def tearDown(self) -> None:
+    def tearDown(self):
         pass
 
-    def test_accept_invitation_using_post(self) -> None:
+    def test_accept_invitation_using_post(self):
         """Test case for accept_invitation_using_post
 
-        acceptInvitation
+        acceptInvitation  # noqa: E501
         """
         pass
 
-    def test_create_using_post(self) -> None:
+    def test_create_using_post(self):
         """Test case for create_using_post
 
-        create
+        create  # noqa: E501
         """
         pass
 
-    def test_get_event_detail_using_get(self) -> None:
+    def test_get_event_detail_using_get(self):
         """Test case for get_event_detail_using_get
 
-        getEventDetail
+        getEventDetail  # noqa: E501
         """
         pass
 
-    def test_get_events_members_using_get(self) -> None:
+    def test_get_events_members_using_get(self):
         """Test case for get_events_members_using_get
 
-        getEventsMembers
+        getEventsMembers  # noqa: E501
         """
         pass
 
-    def test_get_events_near_by_using_get(self) -> None:
+    def test_get_events_near_by_using_get(self):
         """Test case for get_events_near_by_using_get
 
-        getEventsNearBy
+        getEventsNearBy  # noqa: E501
         """
         pass
 
-    def test_get_invitation_by_player_using_get(self) -> None:
+    def test_get_invitation_by_player_using_get(self):
         """Test case for get_invitation_by_player_using_get
 
-        getInvitationByPlayer
+        getInvitationByPlayer  # noqa: E501
         """
         pass
 
-    def test_get_waitlist_by_player_using_get(self) -> None:
+    def test_get_waitlist_by_player_using_get(self):
         """Test case for get_waitlist_by_player_using_get
 
-        getWaitlistByPlayer
+        getWaitlistByPlayer  # noqa: E501
         """
         pass
 
-    def test_join_waitlist_using_post(self) -> None:
+    def test_join_waitlist_using_post(self):
         """Test case for join_waitlist_using_post
 
-        joinWaitlist
+        joinWaitlist  # noqa: E501
         """
         pass
 
-    def test_register_event_using_post1(self) -> None:
+    def test_register_event_using_post1(self):
         """Test case for register_event_using_post1
 
-        registerEvent
+        registerEvent  # noqa: E501
         """
         pass
 
-    def test_reject_invitation_using_post(self) -> None:
+    def test_reject_invitation_using_post(self):
         """Test case for reject_invitation_using_post
 
-        rejectInvitation
+        rejectInvitation  # noqa: E501
         """
         pass
 
-    def test_update_using_put(self) -> None:
+    def test_update_using_put(self):
         """Test case for update_using_put
 
-        update
+        update  # noqa: E501
         """
         pass
 
-    def test_withdraw_event_using_delete(self) -> None:
+    def test_withdraw_event_using_delete(self):
         """Test case for withdraw_event_using_delete
 
-        withdrawEvent
+        withdrawEvent  # noqa: E501
         """
         pass
 

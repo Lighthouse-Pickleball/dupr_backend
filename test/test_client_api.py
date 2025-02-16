@@ -14,22 +14,24 @@
 
 import unittest
 
-from dupr_backend.api.client_api import ClientApi
+import dupr_backend
+from dupr_backend.api.client_api import ClientApi  # noqa: E501
+from dupr_backend.rest import ApiException
 
 
 class TestClientApi(unittest.TestCase):
     """ClientApi unit test stubs"""
 
-    def setUp(self) -> None:
-        self.api = ClientApi()
+    def setUp(self):
+        self.api = dupr_backend.api.client_api.ClientApi()  # noqa: E501
 
-    def tearDown(self) -> None:
+    def tearDown(self):
         pass
 
-    def test_get_client_name_by_key_using_get(self) -> None:
+    def test_get_client_name_by_key_using_get(self):
         """Test case for get_client_name_by_key_using_get
 
-        getClientNameByKey
+        getClientNameByKey  # noqa: E501
         """
         pass
 

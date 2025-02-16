@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.open_play_member import OpenPlayMember
+import dupr_backend
+from dupr_backend.models.open_play_member import OpenPlayMember  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestOpenPlayMember(unittest.TestCase):
     """OpenPlayMember unit test stubs"""
@@ -25,25 +28,25 @@ class TestOpenPlayMember(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> OpenPlayMember:
+    def make_instance(self, include_optional):
         """Test OpenPlayMember
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `OpenPlayMember`
         """
-        model = OpenPlayMember()
-        if include_optional:
+        model = dupr_backend.models.open_play_member.OpenPlayMember()  # noqa: E501
+        if include_optional :
             return OpenPlayMember(
-                create_at = 'yyyy-MM-dd',
-                doubles = '',
-                dupr_id = '',
-                event_id = 56,
-                id = 56,
-                name = '',
+                create_at = 'yyyy-MM-dd', 
+                doubles = '', 
+                dupr_id = '', 
+                event_id = 56, 
+                id = 56, 
+                name = '', 
                 singles = ''
             )
-        else:
+        else :
             return OpenPlayMember(
                 event_id = 56,
                 id = 56,

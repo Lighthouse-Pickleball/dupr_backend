@@ -14,36 +14,38 @@
 
 import unittest
 
-from dupr_backend.api.post_report_api import PostReportApi
+import dupr_backend
+from dupr_backend.api.post_report_api import PostReportApi  # noqa: E501
+from dupr_backend.rest import ApiException
 
 
 class TestPostReportApi(unittest.TestCase):
     """PostReportApi unit test stubs"""
 
-    def setUp(self) -> None:
-        self.api = PostReportApi()
+    def setUp(self):
+        self.api = dupr_backend.api.post_report_api.PostReportApi()  # noqa: E501
 
-    def tearDown(self) -> None:
+    def tearDown(self):
         pass
 
-    def test_get_reports_using_get(self) -> None:
+    def test_get_reports_using_get(self):
         """Test case for get_reports_using_get
 
-        getReports
+        getReports  # noqa: E501
         """
         pass
 
-    def test_report_activity_using_post(self) -> None:
+    def test_report_activity_using_post(self):
         """Test case for report_activity_using_post
 
-        reportActivity
+        reportActivity  # noqa: E501
         """
         pass
 
-    def test_report_process_using_post(self) -> None:
+    def test_report_process_using_post(self):
         """Test case for report_process_using_post
 
-        reportProcess
+        reportProcess  # noqa: E501
         """
         pass
 

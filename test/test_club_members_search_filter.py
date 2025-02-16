@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.club_members_search_filter import ClubMembersSearchFilter
+import dupr_backend
+from dupr_backend.models.club_members_search_filter import ClubMembersSearchFilter  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestClubMembersSearchFilter(unittest.TestCase):
     """ClubMembersSearchFilter unit test stubs"""
@@ -25,24 +28,24 @@ class TestClubMembersSearchFilter(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ClubMembersSearchFilter:
+    def make_instance(self, include_optional):
         """Test ClubMembersSearchFilter
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ClubMembersSearchFilter`
         """
-        model = ClubMembersSearchFilter()
-        if include_optional:
+        model = dupr_backend.models.club_members_search_filter.ClubMembersSearchFilter()  # noqa: E501
+        if include_optional :
             return ClubMembersSearchFilter(
                 age = dupr_backend.models.club_members_age_filter.ClubMembersAgeFilter(
                     max_age = 25.0, 
-                    min_age = 18.0, ),
-                club_invitation_type = [INVITATION, REQUEST],
-                gender = 'MALE',
-                lat = 72.34654645455,
-                lng = 19.55151584984,
-                radius_in_meters = 16093.4,
+                    min_age = 18.0, ), 
+                club_invitation_type = [INVITATION, REQUEST], 
+                gender = 'MALE', 
+                lat = 72.34654645455, 
+                lng = 19.55151584984, 
+                radius_in_meters = 16093.4, 
                 rating = dupr_backend.models.club_members_rating_filter.ClubMembersRatingFilter(
                     category = 'DUPR/PROVISIONAL', 
                     doubles = dupr_backend.models.club_members_rating_range.ClubMembersRatingRange(
@@ -50,10 +53,10 @@ class TestClubMembersSearchFilter(unittest.TestCase):
                         min_rating = 2.3, ), 
                     singles = dupr_backend.models.club_members_rating_range.ClubMembersRatingRange(
                         max_rating = 3.3, 
-                        min_rating = 2.3, ), ),
+                        min_rating = 2.3, ), ), 
                 status = 'ACTIVE'
             )
-        else:
+        else :
             return ClubMembersSearchFilter(
         )
         """

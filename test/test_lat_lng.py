@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.lat_lng import LatLng
+import dupr_backend
+from dupr_backend.models.lat_lng import LatLng  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestLatLng(unittest.TestCase):
     """LatLng unit test stubs"""
@@ -25,20 +28,20 @@ class TestLatLng(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> LatLng:
+    def make_instance(self, include_optional):
         """Test LatLng
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `LatLng`
         """
-        model = LatLng()
-        if include_optional:
+        model = dupr_backend.models.lat_lng.LatLng()  # noqa: E501
+        if include_optional :
             return LatLng(
-                lat = 1.337,
+                lat = 1.337, 
                 lng = 1.337
             )
-        else:
+        else :
             return LatLng(
         )
         """

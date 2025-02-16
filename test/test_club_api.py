@@ -14,274 +14,276 @@
 
 import unittest
 
-from dupr_backend.api.club_api import ClubApi
+import dupr_backend
+from dupr_backend.api.club_api import ClubApi  # noqa: E501
+from dupr_backend.rest import ApiException
 
 
 class TestClubApi(unittest.TestCase):
     """ClubApi unit test stubs"""
 
-    def setUp(self) -> None:
-        self.api = ClubApi()
+    def setUp(self):
+        self.api = dupr_backend.api.club_api.ClubApi()  # noqa: E501
 
-    def tearDown(self) -> None:
+    def tearDown(self):
         pass
 
-    def test_add_club_using_put(self) -> None:
+    def test_add_club_using_put(self):
         """Test case for add_club_using_put
 
-        addClub
+        addClub  # noqa: E501
         """
         pass
 
-    def test_add_member_admin_using_put(self) -> None:
+    def test_add_member_admin_using_put(self):
         """Test case for add_member_admin_using_put
 
-        addMemberAdmin
+        addMemberAdmin  # noqa: E501
         """
         pass
 
-    def test_add_member_multiple_admin_using_put(self) -> None:
+    def test_add_member_multiple_admin_using_put(self):
         """Test case for add_member_multiple_admin_using_put
 
-        addMemberMultipleAdmin
+        addMemberMultipleAdmin  # noqa: E501
         """
         pass
 
-    def test_add_member_multiple_csv_admin_using_put(self) -> None:
+    def test_add_member_multiple_csv_admin_using_put(self):
         """Test case for add_member_multiple_csv_admin_using_put
 
-        addMemberMultipleCsvAdmin
+        addMemberMultipleCsvAdmin  # noqa: E501
         """
         pass
 
-    def test_add_member_request_using_put(self) -> None:
+    def test_add_member_request_using_put(self):
         """Test case for add_member_request_using_put
 
-        addMemberRequest
+        addMemberRequest  # noqa: E501
         """
         pass
 
-    def test_approve_roles_using_post(self) -> None:
+    def test_approve_roles_using_post(self):
         """Test case for approve_roles_using_post
 
-        approveRoles
+        approveRoles  # noqa: E501
         """
         pass
 
-    def test_assign_roles_using_post(self) -> None:
+    def test_assign_roles_using_post(self):
         """Test case for assign_roles_using_post
 
-        assignRoles
+        assignRoles  # noqa: E501
         """
         pass
 
-    def test_club_match_history_by_filters_using_post(self) -> None:
+    def test_club_match_history_by_filters_using_post(self):
         """Test case for club_match_history_by_filters_using_post
 
-        clubMatchHistoryByFilters
+        clubMatchHistoryByFilters  # noqa: E501
         """
         pass
 
-    def test_club_match_history_using_get(self) -> None:
+    def test_club_match_history_using_get(self):
         """Test case for club_match_history_using_get
 
-        clubMatchHistory
+        clubMatchHistory  # noqa: E501
         """
         pass
 
-    def test_club_save_match_using_put(self) -> None:
+    def test_club_save_match_using_put(self):
         """Test case for club_save_match_using_put
 
-        clubSaveMatch
+        clubSaveMatch  # noqa: E501
         """
         pass
 
-    def test_delete_club_match_using_post(self) -> None:
+    def test_delete_club_match_using_post(self):
         """Test case for delete_club_match_using_post
 
-        deleteClubMatch
+        deleteClubMatch  # noqa: E501
         """
         pass
 
-    def test_delete_member_admin_using_delete(self) -> None:
+    def test_delete_member_admin_using_delete(self):
         """Test case for delete_member_admin_using_delete
 
-        deleteMemberAdmin
+        deleteMemberAdmin  # noqa: E501
         """
         pass
 
-    def test_delete_member_request_using_delete(self) -> None:
+    def test_delete_member_request_using_delete(self):
         """Test case for delete_member_request_using_delete
 
-        deleteMemberRequest
+        deleteMemberRequest  # noqa: E501
         """
         pass
 
-    def test_edit_club_match_using_put(self) -> None:
+    def test_edit_club_match_using_put(self):
         """Test case for edit_club_match_using_put
 
-        editClubMatch
+        editClubMatch  # noqa: E501
         """
         pass
 
-    def test_get_all_club_roles_using_get(self) -> None:
+    def test_get_all_club_roles_using_get(self):
         """Test case for get_all_club_roles_using_get
 
-        getAllClubRoles
+        getAllClubRoles  # noqa: E501
         """
         pass
 
-    def test_get_all_currency_details_using_get(self) -> None:
+    def test_get_all_currency_details_using_get(self):
         """Test case for get_all_currency_details_using_get
 
-        getAllCurrencyDetails
+        getAllCurrencyDetails  # noqa: E501
         """
         pass
 
-    def test_get_all_members_download_using_post(self) -> None:
+    def test_get_all_members_download_using_post(self):
         """Test case for get_all_members_download_using_post
 
-        getAllMembersDownload
+        getAllMembersDownload  # noqa: E501
         """
         pass
 
-    def test_get_all_members_using_post(self) -> None:
+    def test_get_all_members_using_post(self):
         """Test case for get_all_members_using_post
 
-        getAllMembers
+        getAllMembers  # noqa: E501
         """
         pass
 
-    def test_get_all_roles_using_get1(self) -> None:
+    def test_get_all_roles_using_get1(self):
         """Test case for get_all_roles_using_get1
 
-        getAllRoles
+        getAllRoles  # noqa: E501
         """
         pass
 
-    def test_get_all_staff_members_using_get(self) -> None:
+    def test_get_all_staff_members_using_get(self):
         """Test case for get_all_staff_members_using_get
 
-        getAllStaffMembers
+        getAllStaffMembers  # noqa: E501
         """
         pass
 
-    def test_get_club_pending_invites_using_post(self) -> None:
+    def test_get_club_pending_invites_using_post(self):
         """Test case for get_club_pending_invites_using_post
 
-        getClubPendingInvites
+        getClubPendingInvites  # noqa: E501
         """
         pass
 
-    def test_get_club_restrictions_using_post1(self) -> None:
+    def test_get_club_restrictions_using_post1(self):
         """Test case for get_club_restrictions_using_post1
 
-        getClubRestrictions
+        getClubRestrictions  # noqa: E501
         """
         pass
 
-    def test_get_club_roles_player_using_post(self) -> None:
+    def test_get_club_roles_player_using_post(self):
         """Test case for get_club_roles_player_using_post
 
-        getClubRolesPlayer
+        getClubRolesPlayer  # noqa: E501
         """
         pass
 
-    def test_get_club_roles_staff_using_get(self) -> None:
+    def test_get_club_roles_staff_using_get(self):
         """Test case for get_club_roles_staff_using_get
 
-        getClubRolesStaff
+        getClubRolesStaff  # noqa: E501
         """
         pass
 
-    def test_get_club_roles_using_post(self) -> None:
+    def test_get_club_roles_using_post(self):
         """Test case for get_club_roles_using_post
 
-        getClubRoles
+        getClubRoles  # noqa: E501
         """
         pass
 
-    def test_get_club_using_get(self) -> None:
+    def test_get_club_using_get(self):
         """Test case for get_club_using_get
 
-        getClub
+        getClub  # noqa: E501
         """
         pass
 
-    def test_get_clubs_using_get(self) -> None:
+    def test_get_clubs_using_get(self):
         """Test case for get_clubs_using_get
 
-        getClubs
+        getClubs  # noqa: E501
         """
         pass
 
-    def test_get_clubs_using_post(self) -> None:
+    def test_get_clubs_using_post(self):
         """Test case for get_clubs_using_post
 
-        getClubs
+        getClubs  # noqa: E501
         """
         pass
 
-    def test_get_currency_details_using_get(self) -> None:
+    def test_get_currency_details_using_get(self):
         """Test case for get_currency_details_using_get
 
-        getCurrencyDetails
+        getCurrencyDetails  # noqa: E501
         """
         pass
 
-    def test_get_match_using_get1(self) -> None:
+    def test_get_match_using_get1(self):
         """Test case for get_match_using_get1
 
-        getMatch
+        getMatch  # noqa: E501
         """
         pass
 
-    def test_get_members_ranking_using_post(self) -> None:
+    def test_get_members_ranking_using_post(self):
         """Test case for get_members_ranking_using_post
 
-        getMembersRanking
+        getMembersRanking  # noqa: E501
         """
         pass
 
-    def test_invite_single_member_using_put(self) -> None:
+    def test_invite_single_member_using_put(self):
         """Test case for invite_single_member_using_put
 
-        inviteSingleMember
+        inviteSingleMember  # noqa: E501
         """
         pass
 
-    def test_remove_roles_using_post(self) -> None:
+    def test_remove_roles_using_post(self):
         """Test case for remove_roles_using_post
 
-        removeRoles
+        removeRoles  # noqa: E501
         """
         pass
 
-    def test_save_verified_club_match_csv_using_put(self) -> None:
+    def test_save_verified_club_match_csv_using_put(self):
         """Test case for save_verified_club_match_csv_using_put
 
-        saveVerifiedClubMatchCSV
+        saveVerifiedClubMatchCSV  # noqa: E501
         """
         pass
 
-    def test_update_approval_status_using_post(self) -> None:
+    def test_update_approval_status_using_post(self):
         """Test case for update_approval_status_using_post
 
-        updateApprovalStatus
+        updateApprovalStatus  # noqa: E501
         """
         pass
 
-    def test_update_club_using_post(self) -> None:
+    def test_update_club_using_post(self):
         """Test case for update_club_using_post
 
-        updateClub
+        updateClub  # noqa: E501
         """
         pass
 
-    def test_update_staff_members_using_put(self) -> None:
+    def test_update_staff_members_using_put(self):
         """Test case for update_staff_members_using_put
 
-        updateStaffMembers
+        updateStaffMembers  # noqa: E501
         """
         pass
 

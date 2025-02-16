@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.merge_users_response import MergeUsersResponse
+import dupr_backend
+from dupr_backend.models.merge_users_response import MergeUsersResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestMergeUsersResponse(unittest.TestCase):
     """MergeUsersResponse unit test stubs"""
@@ -25,20 +28,20 @@ class TestMergeUsersResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> MergeUsersResponse:
+    def make_instance(self, include_optional):
         """Test MergeUsersResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MergeUsersResponse`
         """
-        model = MergeUsersResponse()
-        if include_optional:
+        model = dupr_backend.models.merge_users_response.MergeUsersResponse()  # noqa: E501
+        if include_optional :
             return MergeUsersResponse(
-                source = '26518181881',
+                source = '26518181881', 
                 target = 'A1C3Z'
             )
-        else:
+        else :
             return MergeUsersResponse(
                 source = '26518181881',
                 target = 'A1C3Z',

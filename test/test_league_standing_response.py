@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.league_standing_response import LeagueStandingResponse
+import dupr_backend
+from dupr_backend.models.league_standing_response import LeagueStandingResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestLeagueStandingResponse(unittest.TestCase):
     """LeagueStandingResponse unit test stubs"""
@@ -25,21 +28,21 @@ class TestLeagueStandingResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> LeagueStandingResponse:
+    def make_instance(self, include_optional):
         """Test LeagueStandingResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `LeagueStandingResponse`
         """
-        model = LeagueStandingResponse()
-        if include_optional:
+        model = dupr_backend.models.league_standing_response.LeagueStandingResponse()  # noqa: E501
+        if include_optional :
             return LeagueStandingResponse(
-                bracket_id = 4684651981,
-                game_lost = 15,
-                game_won = 15,
-                match_lost = 15,
-                match_won = 15,
+                bracket_id = 4684651981, 
+                game_lost = 15, 
+                game_won = 15, 
+                match_lost = 15, 
+                match_won = 15, 
                 player1 = dupr_backend.models.player_response.PlayerResponse(
                     age = 55, 
                     display_username = True, 
@@ -166,7 +169,7 @@ class TestLeagueStandingResponse(unittest.TestCase):
                         ], 
                     team_status = 'ACTIVE/INACTIVE', 
                     username = 'X AE A-XII', 
-                    verified_email = False, ),
+                    verified_email = False, ), 
                 player2 = dupr_backend.models.player_response.PlayerResponse(
                     age = 55, 
                     display_username = True, 
@@ -293,16 +296,16 @@ class TestLeagueStandingResponse(unittest.TestCase):
                         ], 
                     team_status = 'ACTIVE/INACTIVE', 
                     username = 'X AE A-XII', 
-                    verified_email = False, ),
-                point_diff_percentage = 2.5,
-                point_difference = 15,
-                points_conceded = 15,
-                points_scored = 15,
-                rank = 1,
-                registration_id = 4684651981,
+                    verified_email = False, ), 
+                point_diff_percentage = 2.5, 
+                point_difference = 15, 
+                points_conceded = 15, 
+                points_scored = 15, 
+                rank = 1, 
+                registration_id = 4684651981, 
                 round = 0
             )
-        else:
+        else :
             return LeagueStandingResponse(
                 bracket_id = 4684651981,
                 registration_id = 4684651981,

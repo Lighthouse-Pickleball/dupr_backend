@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.club_member_ranking_response import ClubMemberRankingResponse
+import dupr_backend
+from dupr_backend.models.club_member_ranking_response import ClubMemberRankingResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestClubMemberRankingResponse(unittest.TestCase):
     """ClubMemberRankingResponse unit test stubs"""
@@ -25,15 +28,15 @@ class TestClubMemberRankingResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ClubMemberRankingResponse:
+    def make_instance(self, include_optional):
         """Test ClubMemberRankingResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ClubMemberRankingResponse`
         """
-        model = ClubMemberRankingResponse()
-        if include_optional:
+        model = dupr_backend.models.club_member_ranking_response.ClubMemberRankingResponse()  # noqa: E501
+        if include_optional :
             return ClubMemberRankingResponse(
                 member_ranking = dupr_backend.models.page_of_member_ranking.PageOfMemberRanking(
                     empty = False, 
@@ -51,7 +54,7 @@ class TestClubMemberRankingResponse(unittest.TestCase):
                     limit = 10, 
                     offset = 90, 
                     total = 100, 
-                    total_value_relation = 'GREATER_THAN_OR_EQUAL_TO', ),
+                    total_value_relation = 'GREATER_THAN_OR_EQUAL_TO', ), 
                 my_ranking = dupr_backend.models.member_ranking.MemberRanking(
                     full_name = '', 
                     id = 56, 
@@ -60,7 +63,7 @@ class TestClubMemberRankingResponse(unittest.TestCase):
                     rating = '', 
                     reliability = 56, )
             )
-        else:
+        else :
             return ClubMemberRankingResponse(
                 member_ranking = dupr_backend.models.page_of_member_ranking.PageOfMemberRanking(
                     empty = False, 

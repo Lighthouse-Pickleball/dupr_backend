@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.seed_match_req import SeedMatchReq
+import dupr_backend
+from dupr_backend.models.seed_match_req import SeedMatchReq  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSeedMatchReq(unittest.TestCase):
     """SeedMatchReq unit test stubs"""
@@ -25,19 +28,19 @@ class TestSeedMatchReq(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SeedMatchReq:
+    def make_instance(self, include_optional):
         """Test SeedMatchReq
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SeedMatchReq`
         """
-        model = SeedMatchReq()
-        if include_optional:
+        model = dupr_backend.models.seed_match_req.SeedMatchReq()  # noqa: E501
+        if include_optional :
             return SeedMatchReq(
-                bye = True,
-                match_serial = 1,
-                serial = 1,
+                bye = True, 
+                match_serial = 1, 
+                serial = 1, 
                 team1 = dupr_backend.models.league_teams_req.LeagueTeamsReq(
                     partner_status = 'ACTIVE', 
                     payment_status = 'ACTIVE', 
@@ -135,7 +138,7 @@ class TestSeedMatchReq(unittest.TestCase):
                         verified_email = True, 
                         verified_phone = True, ), 
                     registration_id = 56, 
-                    team_status = 'ACTIVE', ),
+                    team_status = 'ACTIVE', ), 
                 team2 = dupr_backend.models.league_teams_req.LeagueTeamsReq(
                     partner_status = 'ACTIVE', 
                     payment_status = 'ACTIVE', 
@@ -235,7 +238,7 @@ class TestSeedMatchReq(unittest.TestCase):
                     registration_id = 56, 
                     team_status = 'ACTIVE', )
             )
-        else:
+        else :
             return SeedMatchReq(
                 serial = 1,
         )

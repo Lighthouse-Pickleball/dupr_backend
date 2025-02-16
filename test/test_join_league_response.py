@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.join_league_response import JoinLeagueResponse
+import dupr_backend
+from dupr_backend.models.join_league_response import JoinLeagueResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestJoinLeagueResponse(unittest.TestCase):
     """JoinLeagueResponse unit test stubs"""
@@ -25,24 +28,24 @@ class TestJoinLeagueResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> JoinLeagueResponse:
+    def make_instance(self, include_optional):
         """Test JoinLeagueResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `JoinLeagueResponse`
         """
-        model = JoinLeagueResponse()
-        if include_optional:
+        model = dupr_backend.models.join_league_response.JoinLeagueResponse()  # noqa: E501
+        if include_optional :
             return JoinLeagueResponse(
-                failed = [26518181881],
+                failed = [26518181881], 
                 session = dupr_backend.models.session_response.SessionResponse(
                     checkout_url = '', 
                     previously_paid = True, 
-                    session_id = '', ),
+                    session_id = '', ), 
                 success = [26518181881]
             )
-        else:
+        else :
             return JoinLeagueResponse(
         )
         """

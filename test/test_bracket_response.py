@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.bracket_response import BracketResponse
+import dupr_backend
+from dupr_backend.models.bracket_response import BracketResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestBracketResponse(unittest.TestCase):
     """BracketResponse unit test stubs"""
@@ -25,21 +28,21 @@ class TestBracketResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> BracketResponse:
+    def make_instance(self, include_optional):
         """Test BracketResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `BracketResponse`
         """
-        model = BracketResponse()
-        if include_optional:
+        model = dupr_backend.models.bracket_response.BracketResponse()  # noqa: E501
+        if include_optional :
             return BracketResponse(
-                age_bracket = [27, 35],
-                bracket_id = 4684651981,
-                can_show_standings = False,
-                club_id = 45785789,
-                club_name = 'Stillwater Pickleball',
+                age_bracket = [27, 35], 
+                bracket_id = 4684651981, 
+                can_show_standings = False, 
+                club_id = 45785789, 
+                club_name = 'Stillwater Pickleball', 
                 contact_details = [
                     dupr_backend.models.league_contact_detail_response.LeagueContactDetailResponse(
                         address = 'PA 18034, United States', 
@@ -48,14 +51,14 @@ class TestBracketResponse(unittest.TestCase):
                         phone = '18022214966', 
                         priority = 1, 
                         type = 'person/club', )
-                    ],
-                courts = 5,
+                    ], 
+                courts = 5, 
                 currency_details = dupr_backend.models.currency_details_response.CurrencyDetailsResponse(
                     currency_code = 'USD', 
                     currency_name = 'US Dollar', 
                     currency_symbol = '$', 
-                    min_limit = 100.0, ),
-                custom_code = 'BRACKET123',
+                    min_limit = 100.0, ), 
+                custom_code = 'BRACKET123', 
                 description = dupr_backend.models.league_content_response.LeagueContentResponse(
                     content = '<h1>content</h1>', 
                     content_id = 45785789, 
@@ -63,21 +66,21 @@ class TestBracketResponse(unittest.TestCase):
                     footer = '<h1>footer</h1>', 
                     footer_type = 'text/html', 
                     header = '<h1>header</h1>', 
-                    header_type = 'text/html', ),
-                display_status = 'Draft/Upcoming/Open/Ongoing',
-                draw_impacted = False,
-                duration = [yyyy-mm-dd, yyyy-mm-dd],
-                duration_date_time = [yyyy-mm-ddTHH:mm:ss, yyyy-mm-ddTHH:mm:ss],
-                duration_status = 'IN_PROGRESS/UPCOMING',
-                elimination = 'SINGLE/DOUBLE/DOUBLE_PREVENTED/ROUND_ROBIN',
-                format = 'SINGLES/DOUBLES',
-                has_confirm_match = False,
-                has_queue = False,
-                is_match_seeded = True,
-                is_player_eligible = False,
-                is_queue_complete = False,
-                is_registered = False,
-                is_wait_list_full = False,
+                    header_type = 'text/html', ), 
+                display_status = 'Draft/Upcoming/Open/Ongoing', 
+                draw_impacted = False, 
+                duration = [yyyy-mm-dd, yyyy-mm-dd], 
+                duration_date_time = [yyyy-mm-ddTHH:mm:ss, yyyy-mm-ddTHH:mm:ss], 
+                duration_status = 'IN_PROGRESS/UPCOMING', 
+                elimination = 'SINGLE/DOUBLE/DOUBLE_PREVENTED/ROUND_ROBIN', 
+                format = 'SINGLES/DOUBLES', 
+                has_confirm_match = False, 
+                has_queue = False, 
+                is_match_seeded = True, 
+                is_player_eligible = False, 
+                is_queue_complete = False, 
+                is_registered = False, 
+                is_wait_list_full = False, 
                 league_address = dupr_backend.models.address_response.AddressResponse(
                     address_line = 'Apartment, Room, PO Box numbers (optional)', 
                     create = '', 
@@ -89,15 +92,15 @@ class TestBracketResponse(unittest.TestCase):
                     precision = '', 
                     short_address = 'Center Valley, PA, US', 
                     status = '', 
-                    types = '', ),
-                league_id = 4684651981,
-                league_name = 'Stillwater Pickleball',
-                match_bonus_points = 8.0,
-                max_team = 500,
-                media_url = 'www.url.com/image.jpg',
-                member_fee = 500.0,
-                name = 'Stillwater Pickleball',
-                non_member_fee = 500.0,
+                    types = '', ), 
+                league_id = 4684651981, 
+                league_name = 'Stillwater Pickleball', 
+                match_bonus_points = 8.0, 
+                max_team = 500, 
+                media_url = 'www.url.com/image.jpg', 
+                member_fee = 500.0, 
+                name = 'Stillwater Pickleball', 
+                non_member_fee = 500.0, 
                 payment_details = dupr_backend.models.payment_details_response.PaymentDetailsResponse(
                     amount_paid = 100.0, 
                     event_fee = 1.337, 
@@ -107,14 +110,14 @@ class TestBracketResponse(unittest.TestCase):
                     payment_capture = True, 
                     payment_status = 'ACTIVE', 
                     player_status = 'ACTIVE', 
-                    refunded_amount = 10.0, ),
-                payment_status = 'ACTIVE',
-                player_group = 'MEN/WOMEN/MIXED/COED',
-                rating_bracket = [3.1, 4.5],
-                reg_user_id = 56,
-                registered_members = 56,
-                registration_date = [yyyy-mm-dd, yyyy-mm-dd],
-                registration_date_time = [yyyy-mm-ddTHH:mm:ss, yyyy-mm-ddTHH:mm:ss],
+                    refunded_amount = 10.0, ), 
+                payment_status = 'ACTIVE', 
+                player_group = 'MEN/WOMEN/MIXED/COED', 
+                rating_bracket = [3.1, 4.5], 
+                reg_user_id = 56, 
+                registered_members = 56, 
+                registration_date = [yyyy-mm-dd, yyyy-mm-dd], 
+                registration_date_time = [yyyy-mm-ddTHH:mm:ss, yyyy-mm-ddTHH:mm:ss], 
                 registration_details = dupr_backend.models.registration_response.RegistrationResponse(
                     event_refunded_amount = 1.337, 
                     is_participant1 = False, 
@@ -149,17 +152,17 @@ class TestBracketResponse(unittest.TestCase):
                         refund_amount = 1.337, 
                         status = 'NOT_ADDED/CONFIRMED/NOT_CONFIRMED/PAYMENT_DUE', 
                         username = 'X AE A-XII', ), 
-                    registration_id = 4684651981, ),
-                registration_status = 'OPEN/CLOSED',
-                score_format = '1',
-                score_format_id = 4684651981,
-                status = 'ACTIVE/IN_PROGRESS/COMPLETE/CANCELLED',
-                time_zone = 'IST',
-                total_rounds = 1,
-                wait_list = 500,
+                    registration_id = 4684651981, ), 
+                registration_status = 'OPEN/CLOSED', 
+                score_format = '1', 
+                score_format_id = 4684651981, 
+                status = 'ACTIVE/IN_PROGRESS/COMPLETE/CANCELLED', 
+                time_zone = 'IST', 
+                total_rounds = 1, 
+                wait_list = 500, 
                 zone_name = 'IST'
             )
-        else:
+        else :
             return BracketResponse(
                 bracket_id = 4684651981,
                 club_id = 45785789,

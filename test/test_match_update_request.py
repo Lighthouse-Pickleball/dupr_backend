@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.match_update_request import MatchUpdateRequest
+import dupr_backend
+from dupr_backend.models.match_update_request import MatchUpdateRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestMatchUpdateRequest(unittest.TestCase):
     """MatchUpdateRequest unit test stubs"""
@@ -25,29 +28,29 @@ class TestMatchUpdateRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> MatchUpdateRequest:
+    def make_instance(self, include_optional):
         """Test MatchUpdateRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MatchUpdateRequest`
         """
-        model = MatchUpdateRequest()
-        if include_optional:
+        model = dupr_backend.models.match_update_request.MatchUpdateRequest()  # noqa: E501
+        if include_optional :
             return MatchUpdateRequest(
-                bracket_id = 6806605627,
-                confirmed = False,
-                created = '2020-03-04T17:21:16.000Z',
-                event_date = 'yyyy-MM-dd',
-                event_name = 'event name',
-                league = 'Example League',
-                league_id = 7396161624,
-                league_match_id = 2090230022,
-                location = 'Newport Beach, CA',
-                match_id = 7737603024,
-                match_source = 'DUPR/MANUAL/LEAGUE',
-                reason = 'requested by player',
-                requested_by = 'KO8731',
+                bracket_id = 6806605627, 
+                confirmed = False, 
+                created = '2020-03-04T17:21:16.000Z', 
+                event_date = 'yyyy-MM-dd', 
+                event_name = 'event name', 
+                league = 'Example League', 
+                league_id = 7396161624, 
+                league_match_id = 2090230022, 
+                location = 'Newport Beach, CA', 
+                match_id = 7737603024, 
+                match_source = 'DUPR/MANUAL/LEAGUE', 
+                reason = 'requested by player', 
+                requested_by = 'KO8731', 
                 teams = [
                     dupr_backend.models.team_update_request.TeamUpdateRequest(
                         game1 = 11, 
@@ -59,10 +62,10 @@ class TestMatchUpdateRequest(unittest.TestCase):
                         player1 = 56, 
                         player2 = 56, 
                         winner = True, )
-                    ],
+                    ], 
                 venue = 'Dreamland Pickleball'
             )
-        else:
+        else :
             return MatchUpdateRequest(
                 teams = [
                     dupr_backend.models.team_update_request.TeamUpdateRequest(

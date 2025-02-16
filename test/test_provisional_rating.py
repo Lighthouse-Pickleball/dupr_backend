@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.provisional_rating import ProvisionalRating
+import dupr_backend
+from dupr_backend.models.provisional_rating import ProvisionalRating  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestProvisionalRating(unittest.TestCase):
     """ProvisionalRating unit test stubs"""
@@ -25,20 +28,20 @@ class TestProvisionalRating(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ProvisionalRating:
+    def make_instance(self, include_optional):
         """Test ProvisionalRating
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ProvisionalRating`
         """
-        model = ProvisionalRating()
-        if include_optional:
+        model = dupr_backend.models.provisional_rating.ProvisionalRating()  # noqa: E501
+        if include_optional :
             return ProvisionalRating(
-                doubles_rating = 3.5,
+                doubles_rating = 3.5, 
                 singles_rating = 3.5
             )
-        else:
+        else :
             return ProvisionalRating(
         )
         """

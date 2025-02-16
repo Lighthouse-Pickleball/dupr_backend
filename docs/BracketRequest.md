@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **age_bracket** | **List[int]** |  | [optional] 
@@ -39,12 +38,12 @@ json = "{}"
 # create an instance of BracketRequest from a JSON string
 bracket_request_instance = BracketRequest.from_json(json)
 # print the JSON string representation of the object
-print(BracketRequest.to_json())
+print BracketRequest.to_json()
 
 # convert the object into a dict
 bracket_request_dict = bracket_request_instance.to_dict()
 # create an instance of BracketRequest from a dict
-bracket_request_from_dict = BracketRequest.from_dict(bracket_request_dict)
+bracket_request_form_dict = bracket_request.from_dict(bracket_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

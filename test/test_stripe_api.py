@@ -14,78 +14,80 @@
 
 import unittest
 
-from dupr_backend.api.stripe_api import StripeApi
+import dupr_backend
+from dupr_backend.api.stripe_api import StripeApi  # noqa: E501
+from dupr_backend.rest import ApiException
 
 
 class TestStripeApi(unittest.TestCase):
     """StripeApi unit test stubs"""
 
-    def setUp(self) -> None:
-        self.api = StripeApi()
+    def setUp(self):
+        self.api = dupr_backend.api.stripe_api.StripeApi()  # noqa: E501
 
-    def tearDown(self) -> None:
+    def tearDown(self):
         pass
 
-    def test_account_charge_updates_using_post(self) -> None:
+    def test_account_charge_updates_using_post(self):
         """Test case for account_charge_updates_using_post
 
-        accountChargeUpdates
+        accountChargeUpdates  # noqa: E501
         """
         pass
 
-    def test_account_checkout_updates_using_post(self) -> None:
+    def test_account_checkout_updates_using_post(self):
         """Test case for account_checkout_updates_using_post
 
-        accountCheckoutUpdates
+        accountCheckoutUpdates  # noqa: E501
         """
         pass
 
-    def test_charge_updates_using_post(self) -> None:
+    def test_charge_updates_using_post(self):
         """Test case for charge_updates_using_post
 
-        chargeUpdates
+        chargeUpdates  # noqa: E501
         """
         pass
 
-    def test_checkout_account_payment_intent_using_post(self) -> None:
+    def test_checkout_account_payment_intent_using_post(self):
         """Test case for checkout_account_payment_intent_using_post
 
-        checkoutAccountPaymentIntent
+        checkoutAccountPaymentIntent  # noqa: E501
         """
         pass
 
-    def test_checkout_payment_intent_using_post(self) -> None:
+    def test_checkout_payment_intent_using_post(self):
         """Test case for checkout_payment_intent_using_post
 
-        checkoutPaymentIntent
+        checkoutPaymentIntent  # noqa: E501
         """
         pass
 
-    def test_checkout_updates_using_post(self) -> None:
+    def test_checkout_updates_using_post(self):
         """Test case for checkout_updates_using_post
 
-        checkoutUpdates
+        checkoutUpdates  # noqa: E501
         """
         pass
 
-    def test_club_account_updates_using_post(self) -> None:
+    def test_club_account_updates_using_post(self):
         """Test case for club_account_updates_using_post
 
-        clubAccountUpdates
+        clubAccountUpdates  # noqa: E501
         """
         pass
 
-    def test_invoice_updates_using_post(self) -> None:
+    def test_invoice_updates_using_post(self):
         """Test case for invoice_updates_using_post
 
-        invoiceUpdates
+        invoiceUpdates  # noqa: E501
         """
         pass
 
-    def test_subscription_updates_using_post(self) -> None:
+    def test_subscription_updates_using_post(self):
         """Test case for subscription_updates_using_post
 
-        subscriptionUpdates
+        subscriptionUpdates  # noqa: E501
         """
         pass
 

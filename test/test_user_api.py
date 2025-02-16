@@ -14,190 +14,192 @@
 
 import unittest
 
-from dupr_backend.api.user_api import UserApi
+import dupr_backend
+from dupr_backend.api.user_api import UserApi  # noqa: E501
+from dupr_backend.rest import ApiException
 
 
 class TestUserApi(unittest.TestCase):
     """UserApi unit test stubs"""
 
-    def setUp(self) -> None:
-        self.api = UserApi()
+    def setUp(self):
+        self.api = dupr_backend.api.user_api.UserApi()  # noqa: E501
 
-    def tearDown(self) -> None:
+    def tearDown(self):
         pass
 
-    def test_delete_user_using_delete(self) -> None:
+    def test_delete_user_using_delete(self):
         """Test case for delete_user_using_delete
 
-        deleteUser
+        deleteUser  # noqa: E501
         """
         pass
 
-    def test_delete_using_delete(self) -> None:
+    def test_delete_using_delete(self):
         """Test case for delete_using_delete
 
-        delete
+        delete  # noqa: E501
         """
         pass
 
-    def test_get_calculated_statistics_using_get(self) -> None:
+    def test_get_calculated_statistics_using_get(self):
         """Test case for get_calculated_statistics_using_get
 
-        getCalculatedStatistics
+        getCalculatedStatistics  # noqa: E501
         """
         pass
 
-    def test_get_profile_using_get(self) -> None:
+    def test_get_profile_using_get(self):
         """Test case for get_profile_using_get
 
-        getProfile
+        getProfile  # noqa: E501
         """
         pass
 
-    def test_get_rating_using_get(self) -> None:
+    def test_get_rating_using_get(self):
         """Test case for get_rating_using_get
 
-        getRating
+        getRating  # noqa: E501
         """
         pass
 
-    def test_get_settings_using_get(self) -> None:
+    def test_get_settings_using_get(self):
         """Test case for get_settings_using_get
 
-        getSettings
+        getSettings  # noqa: E501
         """
         pass
 
-    def test_get_sponsor_logo_using_get(self) -> None:
+    def test_get_sponsor_logo_using_get(self):
         """Test case for get_sponsor_logo_using_get
 
-        getSponsorLogo
+        getSponsorLogo  # noqa: E501
         """
         pass
 
-    def test_get_statistics_using_get1(self) -> None:
+    def test_get_statistics_using_get1(self):
         """Test case for get_statistics_using_get1
 
-        getStatistics
+        getStatistics  # noqa: E501
         """
         pass
 
-    def test_get_user_initialization_information_bulk_using_post(self) -> None:
+    def test_get_user_initialization_information_bulk_using_post(self):
         """Test case for get_user_initialization_information_bulk_using_post
 
-        getUserInitializationInformationBulk
+        getUserInitializationInformationBulk  # noqa: E501
         """
         pass
 
-    def test_get_user_initialization_information_using_get(self) -> None:
+    def test_get_user_initialization_information_using_get(self):
         """Test case for get_user_initialization_information_using_get
 
-        getUserInitializationInformation
+        getUserInitializationInformation  # noqa: E501
         """
         pass
 
-    def test_get_verfied_statistics_using_get(self) -> None:
+    def test_get_verfied_statistics_using_get(self):
         """Test case for get_verfied_statistics_using_get
 
-        getVerfiedStatistics
+        getVerfiedStatistics  # noqa: E501
         """
         pass
 
-    def test_history_using_get(self) -> None:
+    def test_history_using_get(self):
         """Test case for history_using_get
 
-        history
+        history  # noqa: E501
         """
         pass
 
-    def test_is_sole_director_using_get(self) -> None:
+    def test_is_sole_director_using_get(self):
         """Test case for is_sole_director_using_get
 
-        isSoleDirector
+        isSoleDirector  # noqa: E501
         """
         pass
 
-    def test_logout_using_post(self) -> None:
+    def test_logout_using_post(self):
         """Test case for logout_using_post
 
-        logout
+        logout  # noqa: E501
         """
         pass
 
-    def test_reset_password_using_post(self) -> None:
+    def test_reset_password_using_post(self):
         """Test case for reset_password_using_post
 
-        resetPassword
+        resetPassword  # noqa: E501
         """
         pass
 
-    def test_send_email_verification_link_using_post(self) -> None:
+    def test_send_email_verification_link_using_post(self):
         """Test case for send_email_verification_link_using_post
 
-        sendEmailVerificationLink
+        sendEmailVerificationLink  # noqa: E501
         """
         pass
 
-    def test_send_phone_otp_using_post(self) -> None:
+    def test_send_phone_otp_using_post(self):
         """Test case for send_phone_otp_using_post
 
-        sendPhoneOTP
+        sendPhoneOTP  # noqa: E501
         """
         pass
 
-    def test_send_verification_email_using_post(self) -> None:
+    def test_send_verification_email_using_post(self):
         """Test case for send_verification_email_using_post
 
-        sendVerificationEmail
+        sendVerificationEmail  # noqa: E501
         """
         pass
 
-    def test_update_lucra_connection_using_put1(self) -> None:
+    def test_update_lucra_connection_using_put1(self):
         """Test case for update_lucra_connection_using_put1
 
-        updateLucraConnection
+        updateLucraConnection  # noqa: E501
         """
         pass
 
-    def test_update_preferences_using_put(self) -> None:
+    def test_update_preferences_using_put(self):
         """Test case for update_preferences_using_put
 
-        updatePreferences
+        updatePreferences  # noqa: E501
         """
         pass
 
-    def test_update_profile_using_put(self) -> None:
+    def test_update_profile_using_put(self):
         """Test case for update_profile_using_put
 
-        updateProfile
+        updateProfile  # noqa: E501
         """
         pass
 
-    def test_update_settings_using_put(self) -> None:
+    def test_update_settings_using_put(self):
         """Test case for update_settings_using_put
 
-        updateSettings
+        updateSettings  # noqa: E501
         """
         pass
 
-    def test_verify_captcha_using_post(self) -> None:
+    def test_verify_captcha_using_post(self):
         """Test case for verify_captcha_using_post
 
-        verifyCaptcha
+        verifyCaptcha  # noqa: E501
         """
         pass
 
-    def test_verify_email_address_using_post(self) -> None:
+    def test_verify_email_address_using_post(self):
         """Test case for verify_email_address_using_post
 
-        verifyEmailAddress
+        verifyEmailAddress  # noqa: E501
         """
         pass
 
-    def test_verify_phone_number_using_post(self) -> None:
+    def test_verify_phone_number_using_post(self):
         """Test case for verify_phone_number_using_post
 
-        verifyPhoneNumber
+        verifyPhoneNumber  # noqa: E501
         """
         pass
 

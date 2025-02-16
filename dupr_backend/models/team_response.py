@@ -17,71 +17,55 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+
+from typing import Optional
+from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
 from dupr_backend.models.pre_match_rating_and_impact import PreMatchRatingAndImpact
 from dupr_backend.models.team_player_response import TeamPlayerResponse
-from typing import Optional, Set
-from typing_extensions import Self
 
 class TeamResponse(BaseModel):
     """
     TeamResponse
-    """ # noqa: E501
-    delta: StrictStr
-    game1: StrictInt
-    game2: StrictInt
-    game3: StrictInt
-    game4: StrictInt
-    game5: StrictInt
+    """
+    delta: StrictStr = Field(...)
+    game1: StrictInt = Field(...)
+    game2: StrictInt = Field(...)
+    game3: StrictInt = Field(...)
+    game4: StrictInt = Field(...)
+    game5: StrictInt = Field(...)
     id: Optional[StrictInt] = None
-    player1: TeamPlayerResponse
+    player1: TeamPlayerResponse = Field(...)
     player2: Optional[TeamPlayerResponse] = None
-    pre_match_rating_and_impact: PreMatchRatingAndImpact = Field(alias="preMatchRatingAndImpact")
-    serial: StrictInt
-    team_rating: StrictStr = Field(alias="teamRating")
-    winner: StrictBool
-    __properties: ClassVar[List[str]] = ["delta", "game1", "game2", "game3", "game4", "game5", "id", "player1", "player2", "preMatchRatingAndImpact", "serial", "teamRating", "winner"]
+    pre_match_rating_and_impact: PreMatchRatingAndImpact = Field(..., alias="preMatchRatingAndImpact")
+    serial: StrictInt = Field(...)
+    team_rating: StrictStr = Field(..., alias="teamRating")
+    winner: StrictBool = Field(...)
+    __properties = ["delta", "game1", "game2", "game3", "game4", "game5", "id", "player1", "player2", "preMatchRatingAndImpact", "serial", "teamRating", "winner"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
+    class Config:
+        """Pydantic configuration"""
+        allow_population_by_field_name = True
+        validate_assignment = True
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+        return pprint.pformat(self.dict(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
+    def from_json(cls, json_str: str) -> TeamResponse:
         """Create an instance of TeamResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
+    def to_dict(self):
+        """Returns the dictionary representation of the model using alias"""
+        _dict = self.dict(by_alias=True,
+                          exclude={
+                          },
+                          exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of player1
         if self.player1:
             _dict['player1'] = self.player1.to_dict()
@@ -94,15 +78,15 @@ class TeamResponse(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+    def from_dict(cls, obj: dict) -> TeamResponse:
         """Create an instance of TeamResponse from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+            return TeamResponse.parse_obj(obj)
 
-        _obj = cls.model_validate({
+        _obj = TeamResponse.parse_obj({
             "delta": obj.get("delta"),
             "game1": obj.get("game1"),
             "game2": obj.get("game2"),
@@ -110,11 +94,11 @@ class TeamResponse(BaseModel):
             "game4": obj.get("game4"),
             "game5": obj.get("game5"),
             "id": obj.get("id"),
-            "player1": TeamPlayerResponse.from_dict(obj["player1"]) if obj.get("player1") is not None else None,
-            "player2": TeamPlayerResponse.from_dict(obj["player2"]) if obj.get("player2") is not None else None,
-            "preMatchRatingAndImpact": PreMatchRatingAndImpact.from_dict(obj["preMatchRatingAndImpact"]) if obj.get("preMatchRatingAndImpact") is not None else None,
+            "player1": TeamPlayerResponse.from_dict(obj.get("player1")) if obj.get("player1") is not None else None,
+            "player2": TeamPlayerResponse.from_dict(obj.get("player2")) if obj.get("player2") is not None else None,
+            "pre_match_rating_and_impact": PreMatchRatingAndImpact.from_dict(obj.get("preMatchRatingAndImpact")) if obj.get("preMatchRatingAndImpact") is not None else None,
             "serial": obj.get("serial"),
-            "teamRating": obj.get("teamRating"),
+            "team_rating": obj.get("teamRating"),
             "winner": obj.get("winner")
         })
         return _obj

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.edit_match_request import EditMatchRequest
+import dupr_backend
+from dupr_backend.models.edit_match_request import EditMatchRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestEditMatchRequest(unittest.TestCase):
     """EditMatchRequest unit test stubs"""
@@ -25,21 +28,21 @@ class TestEditMatchRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> EditMatchRequest:
+    def make_instance(self, include_optional):
         """Test EditMatchRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `EditMatchRequest`
         """
-        model = EditMatchRequest()
-        if include_optional:
+        model = dupr_backend.models.edit_match_request.EditMatchRequest()  # noqa: E501
+        if include_optional :
             return EditMatchRequest(
-                bracket_id = 56168168161,
-                is_forfeited = True,
-                league_match_id = 56168168161,
-                match_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
-                match_id = 56168168161,
+                bracket_id = 56168168161, 
+                is_forfeited = True, 
+                league_match_id = 56168168161, 
+                match_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
+                match_id = 56168168161, 
                 team1_score = dupr_backend.models.edit_score_request.EditScoreRequest(
                     game1 = 7, 
                     game2 = 11, 
@@ -47,7 +50,7 @@ class TestEditMatchRequest(unittest.TestCase):
                     game4 = 0, 
                     game5 = 0, 
                     team_id = 56168168161, 
-                    winner = True, ),
+                    winner = True, ), 
                 team2_score = dupr_backend.models.edit_score_request.EditScoreRequest(
                     game1 = 7, 
                     game2 = 11, 
@@ -57,7 +60,7 @@ class TestEditMatchRequest(unittest.TestCase):
                     team_id = 56168168161, 
                     winner = True, )
             )
-        else:
+        else :
             return EditMatchRequest(
                 match_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
                 match_id = 56168168161,

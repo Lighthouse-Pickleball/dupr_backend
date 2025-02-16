@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.single_wrapper_of_sponsor_logo_response import SingleWrapperOfSponsorLogoResponse
+import dupr_backend
+from dupr_backend.models.single_wrapper_of_sponsor_logo_response import SingleWrapperOfSponsorLogoResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSingleWrapperOfSponsorLogoResponse(unittest.TestCase):
     """SingleWrapperOfSponsorLogoResponse unit test stubs"""
@@ -25,26 +28,26 @@ class TestSingleWrapperOfSponsorLogoResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperOfSponsorLogoResponse:
+    def make_instance(self, include_optional):
         """Test SingleWrapperOfSponsorLogoResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfSponsorLogoResponse`
         """
-        model = SingleWrapperOfSponsorLogoResponse()
-        if include_optional:
+        model = dupr_backend.models.single_wrapper_of_sponsor_logo_response.SingleWrapperOfSponsorLogoResponse()  # noqa: E501
+        if include_optional :
             return SingleWrapperOfSponsorLogoResponse(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 result = dupr_backend.models.sponsor_logo_response.SponsorLogoResponse(
                     button_text = '', 
                     description = '', 
                     image_url = '', 
                     sponsor_popup_heading = '', 
-                    sponsor_redirect_url = '', ),
+                    sponsor_redirect_url = '', ), 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return SingleWrapperOfSponsorLogoResponse(
         )
         """

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.switch_bracket_response import SwitchBracketResponse
+import dupr_backend
+from dupr_backend.models.switch_bracket_response import SwitchBracketResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSwitchBracketResponse(unittest.TestCase):
     """SwitchBracketResponse unit test stubs"""
@@ -25,24 +28,24 @@ class TestSwitchBracketResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SwitchBracketResponse:
+    def make_instance(self, include_optional):
         """Test SwitchBracketResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SwitchBracketResponse`
         """
-        model = SwitchBracketResponse()
-        if include_optional:
+        model = dupr_backend.models.switch_bracket_response.SwitchBracketResponse()  # noqa: E501
+        if include_optional :
             return SwitchBracketResponse(
-                failed_reason = '',
-                is_source_re_seeded = True,
-                is_success = False,
-                is_target_re_seeded = True,
-                registration_id = 56,
+                failed_reason = '', 
+                is_source_re_seeded = True, 
+                is_success = False, 
+                is_target_re_seeded = True, 
+                registration_id = 56, 
                 user_id = 56
             )
-        else:
+        else :
             return SwitchBracketResponse(
         )
         """

@@ -14,50 +14,52 @@
 
 import unittest
 
-from dupr_backend.api.announcements_api import AnnouncementsApi
+import dupr_backend
+from dupr_backend.api.announcements_api import AnnouncementsApi  # noqa: E501
+from dupr_backend.rest import ApiException
 
 
 class TestAnnouncementsApi(unittest.TestCase):
     """AnnouncementsApi unit test stubs"""
 
-    def setUp(self) -> None:
-        self.api = AnnouncementsApi()
+    def setUp(self):
+        self.api = dupr_backend.api.announcements_api.AnnouncementsApi()  # noqa: E501
 
-    def tearDown(self) -> None:
+    def tearDown(self):
         pass
 
-    def test_draft_using_post(self) -> None:
+    def test_draft_using_post(self):
         """Test case for draft_using_post
 
-        draft
+        draft  # noqa: E501
         """
         pass
 
-    def test_edit_using_post(self) -> None:
+    def test_edit_using_post(self):
         """Test case for edit_using_post
 
-        edit
+        edit  # noqa: E501
         """
         pass
 
-    def test_get_announcements_using_post(self) -> None:
+    def test_get_announcements_using_post(self):
         """Test case for get_announcements_using_post
 
-        getAnnouncements
+        getAnnouncements  # noqa: E501
         """
         pass
 
-    def test_save_using_post(self) -> None:
+    def test_save_using_post(self):
         """Test case for save_using_post
 
-        save
+        save  # noqa: E501
         """
         pass
 
-    def test_sent_notification_using_post(self) -> None:
+    def test_sent_notification_using_post(self):
         """Test case for sent_notification_using_post
 
-        sentNotification
+        sentNotification  # noqa: E501
         """
         pass
 

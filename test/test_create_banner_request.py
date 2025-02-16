@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.create_banner_request import CreateBannerRequest
+import dupr_backend
+from dupr_backend.models.create_banner_request import CreateBannerRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestCreateBannerRequest(unittest.TestCase):
     """CreateBannerRequest unit test stubs"""
@@ -25,18 +28,18 @@ class TestCreateBannerRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> CreateBannerRequest:
+    def make_instance(self, include_optional):
         """Test CreateBannerRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `CreateBannerRequest`
         """
-        model = CreateBannerRequest()
-        if include_optional:
+        model = dupr_backend.models.create_banner_request.CreateBannerRequest()  # noqa: E501
+        if include_optional :
             return CreateBannerRequest(
-                banner_id = 2322,
-                content_id = 1214,
+                banner_id = 2322, 
+                content_id = 1214, 
                 description = dupr_backend.models.banner_content.BannerContent(
                     content = '<h1>content</h1>', 
                     content_id = 45785789, 
@@ -44,13 +47,13 @@ class TestCreateBannerRequest(unittest.TestCase):
                     footer = '<h1>footer</h1>', 
                     footer_type = 'text/html', 
                     header = '<h1>header</h1>', 
-                    header_type = 'text/html', ),
-                end_date_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                start_date_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                status = 'ACTIVE/INACTIVE',
+                    header_type = 'text/html', ), 
+                end_date_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                start_date_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                status = 'ACTIVE/INACTIVE', 
                 title = 'banner Title'
             )
-        else:
+        else :
             return CreateBannerRequest(
                 banner_id = 2322,
                 content_id = 1214,

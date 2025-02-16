@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.club_match_history_request import ClubMatchHistoryRequest
+import dupr_backend
+from dupr_backend.models.club_match_history_request import ClubMatchHistoryRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestClubMatchHistoryRequest(unittest.TestCase):
     """ClubMatchHistoryRequest unit test stubs"""
@@ -25,31 +28,31 @@ class TestClubMatchHistoryRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ClubMatchHistoryRequest:
+    def make_instance(self, include_optional):
         """Test ClubMatchHistoryRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ClubMatchHistoryRequest`
         """
-        model = ClubMatchHistoryRequest()
-        if include_optional:
+        model = dupr_backend.models.club_match_history_request.ClubMatchHistoryRequest()  # noqa: E501
+        if include_optional :
             return ClubMatchHistoryRequest(
-                club_id = 5156151658,
+                club_id = 5156151658, 
                 filters = dupr_backend.models.club_match_filters.ClubMatchFilters(
                     event_date = dupr_backend.models.date_range.DateRange(
                         end_date = 'yyyy-MM-dd', 
                         start_date = 'yyyy-MM-dd', ), 
                     event_format = [SINGLES, DOUBLES], 
                     event_name = 'Pickle ball', 
-                    player_id = 215254148, ),
-                limit = 10,
-                offset = 0,
+                    player_id = 215254148, ), 
+                limit = 10, 
+                offset = 0, 
                 sort = dupr_backend.models.club_match_sort.ClubMatchSort(
                     order = 'ASC/DESC', 
                     parameter = 'MATCH_DATE', )
             )
-        else:
+        else :
             return ClubMatchHistoryRequest(
         )
         """

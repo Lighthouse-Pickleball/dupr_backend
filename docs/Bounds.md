@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **northeast** | [**LatLng**](LatLng.md) |  | [optional] 
@@ -18,12 +17,12 @@ json = "{}"
 # create an instance of Bounds from a JSON string
 bounds_instance = Bounds.from_json(json)
 # print the JSON string representation of the object
-print(Bounds.to_json())
+print Bounds.to_json()
 
 # convert the object into a dict
 bounds_dict = bounds_instance.to_dict()
 # create an instance of Bounds from a dict
-bounds_from_dict = Bounds.from_dict(bounds_dict)
+bounds_form_dict = bounds.from_dict(bounds_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

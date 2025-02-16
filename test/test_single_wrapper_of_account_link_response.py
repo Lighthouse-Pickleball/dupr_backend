@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.single_wrapper_of_account_link_response import SingleWrapperOfAccountLinkResponse
+import dupr_backend
+from dupr_backend.models.single_wrapper_of_account_link_response import SingleWrapperOfAccountLinkResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestSingleWrapperOfAccountLinkResponse(unittest.TestCase):
     """SingleWrapperOfAccountLinkResponse unit test stubs"""
@@ -25,24 +28,24 @@ class TestSingleWrapperOfAccountLinkResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperOfAccountLinkResponse:
+    def make_instance(self, include_optional):
         """Test SingleWrapperOfAccountLinkResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfAccountLinkResponse`
         """
-        model = SingleWrapperOfAccountLinkResponse()
-        if include_optional:
+        model = dupr_backend.models.single_wrapper_of_account_link_response.SingleWrapperOfAccountLinkResponse()  # noqa: E501
+        if include_optional :
             return SingleWrapperOfAccountLinkResponse(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 result = dupr_backend.models.account_link_response.AccountLinkResponse(
                     created = 1645628420, 
                     expires_at = 1645628720, 
-                    url = 'https://stripe.com/express/Ln7FfnNpUcCU', ),
+                    url = 'https://stripe.com/express/Ln7FfnNpUcCU', ), 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return SingleWrapperOfAccountLinkResponse(
         )
         """

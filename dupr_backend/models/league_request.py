@@ -18,129 +18,112 @@ import re  # noqa: F401
 import json
 
 from datetime import date
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List, Optional, Union
+from typing import Dict, List, Optional, Union
+from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr, conlist, validator
 from dupr_backend.models.attribute import Attribute
 from dupr_backend.models.bracket_request import BracketRequest
 from dupr_backend.models.league_content_request import LeagueContentRequest
-from typing import Optional, Set
-from typing_extensions import Self
 
 class LeagueRequest(BaseModel):
     """
     LeagueRequest
-    """ # noqa: E501
-    additional_information: Optional[LeagueContentRequest] = Field(default=None, alias="additionalInformation")
-    address_id: StrictInt = Field(alias="addressId")
-    advertise_end: Optional[date] = Field(default=None, alias="advertiseEnd")
-    advertise_start: Optional[date] = Field(default=None, alias="advertiseStart")
+    """
+    additional_information: Optional[LeagueContentRequest] = Field(None, alias="additionalInformation")
+    address_id: StrictInt = Field(..., alias="addressId")
+    advertise_end: Optional[date] = Field(None, alias="advertiseEnd")
+    advertise_start: Optional[date] = Field(None, alias="advertiseStart")
     attributes: Optional[Dict[str, Attribute]] = None
-    brackets: Optional[List[BracketRequest]] = None
-    club_id: StrictInt = Field(alias="clubId")
-    end_date: date = Field(alias="endDate")
-    league_id: Optional[StrictInt] = Field(default=None, alias="leagueId")
-    league_name: StrictStr = Field(alias="leagueName")
-    liability_waiver_id: Optional[StrictInt] = Field(default=None, alias="liabilityWaiverId")
-    long_description: Optional[LeagueContentRequest] = Field(default=None, alias="longDescription")
-    media_id: StrictInt = Field(alias="mediaId")
-    member_fee: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="memberFee")
-    membership_permission: Optional[StrictStr] = Field(default=None, alias="membershipPermission")
-    non_member_fee: Union[StrictFloat, StrictInt] = Field(alias="nonMemberFee")
-    refund_policy: Optional[LeagueContentRequest] = Field(default=None, alias="refundPolicy")
-    registration_url: StrictStr = Field(alias="registrationUrl")
-    safety_policy: Optional[LeagueContentRequest] = Field(default=None, alias="safetyPolicy")
-    short_description: Optional[LeagueContentRequest] = Field(default=None, alias="shortDescription")
-    start_date: date = Field(alias="startDate")
+    brackets: Optional[conlist(BracketRequest)] = None
+    club_id: StrictInt = Field(..., alias="clubId")
+    end_date: date = Field(..., alias="endDate")
+    league_id: Optional[StrictInt] = Field(None, alias="leagueId")
+    league_name: StrictStr = Field(..., alias="leagueName")
+    liability_waiver_id: Optional[StrictInt] = Field(None, alias="liabilityWaiverId")
+    long_description: Optional[LeagueContentRequest] = Field(None, alias="longDescription")
+    media_id: StrictInt = Field(..., alias="mediaId")
+    member_fee: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="memberFee")
+    membership_permission: Optional[StrictStr] = Field(None, alias="membershipPermission")
+    non_member_fee: Union[StrictFloat, StrictInt] = Field(..., alias="nonMemberFee")
+    refund_policy: Optional[LeagueContentRequest] = Field(None, alias="refundPolicy")
+    registration_url: StrictStr = Field(..., alias="registrationUrl")
+    safety_policy: Optional[LeagueContentRequest] = Field(None, alias="safetyPolicy")
+    short_description: Optional[LeagueContentRequest] = Field(None, alias="shortDescription")
+    start_date: date = Field(..., alias="startDate")
     status: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
-    user_id: StrictInt = Field(alias="userId")
-    __properties: ClassVar[List[str]] = ["additionalInformation", "addressId", "advertiseEnd", "advertiseStart", "attributes", "brackets", "clubId", "endDate", "leagueId", "leagueName", "liabilityWaiverId", "longDescription", "mediaId", "memberFee", "membershipPermission", "nonMemberFee", "refundPolicy", "registrationUrl", "safetyPolicy", "shortDescription", "startDate", "status", "type", "userId"]
+    user_id: StrictInt = Field(..., alias="userId")
+    __properties = ["additionalInformation", "addressId", "advertiseEnd", "advertiseStart", "attributes", "brackets", "clubId", "endDate", "leagueId", "leagueName", "liabilityWaiverId", "longDescription", "mediaId", "memberFee", "membershipPermission", "nonMemberFee", "refundPolicy", "registrationUrl", "safetyPolicy", "shortDescription", "startDate", "status", "type", "userId"]
 
-    @field_validator('membership_permission')
+    @validator('membership_permission')
     def membership_permission_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['CLUB_MEMBERS', 'OPEN_TO_ALL']):
+        if value not in ('CLUB_MEMBERS', 'OPEN_TO_ALL'):
             raise ValueError("must be one of enum values ('CLUB_MEMBERS', 'OPEN_TO_ALL')")
         return value
 
-    @field_validator('status')
+    @validator('status')
     def status_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING']):
+        if value not in ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING'):
             raise ValueError("must be one of enum values ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING')")
         return value
 
-    @field_validator('type')
+    @validator('type')
     def type_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['FLEX']):
+        if value not in ('FLEX'):
             raise ValueError("must be one of enum values ('FLEX')")
         return value
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
+    class Config:
+        """Pydantic configuration"""
+        allow_population_by_field_name = True
+        validate_assignment = True
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+        return pprint.pformat(self.dict(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
+    def from_json(cls, json_str: str) -> LeagueRequest:
         """Create an instance of LeagueRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
+    def to_dict(self):
+        """Returns the dictionary representation of the model using alias"""
+        _dict = self.dict(by_alias=True,
+                          exclude={
+                          },
+                          exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of additional_information
         if self.additional_information:
             _dict['additionalInformation'] = self.additional_information.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each value in attributes (dict)
         _field_dict = {}
         if self.attributes:
-            for _key_attributes in self.attributes:
-                if self.attributes[_key_attributes]:
-                    _field_dict[_key_attributes] = self.attributes[_key_attributes].to_dict()
+            for _key in self.attributes:
+                if self.attributes[_key]:
+                    _field_dict[_key] = self.attributes[_key].to_dict()
             _dict['attributes'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each item in brackets (list)
         _items = []
         if self.brackets:
-            for _item_brackets in self.brackets:
-                if _item_brackets:
-                    _items.append(_item_brackets.to_dict())
+            for _item in self.brackets:
+                if _item:
+                    _items.append(_item.to_dict())
             _dict['brackets'] = _items
         # override the default output from pydantic by calling `to_dict()` of long_description
         if self.long_description:
@@ -157,44 +140,44 @@ class LeagueRequest(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+    def from_dict(cls, obj: dict) -> LeagueRequest:
         """Create an instance of LeagueRequest from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+            return LeagueRequest.parse_obj(obj)
 
-        _obj = cls.model_validate({
-            "additionalInformation": LeagueContentRequest.from_dict(obj["additionalInformation"]) if obj.get("additionalInformation") is not None else None,
-            "addressId": obj.get("addressId"),
-            "advertiseEnd": obj.get("advertiseEnd"),
-            "advertiseStart": obj.get("advertiseStart"),
+        _obj = LeagueRequest.parse_obj({
+            "additional_information": LeagueContentRequest.from_dict(obj.get("additionalInformation")) if obj.get("additionalInformation") is not None else None,
+            "address_id": obj.get("addressId"),
+            "advertise_end": obj.get("advertiseEnd"),
+            "advertise_start": obj.get("advertiseStart"),
             "attributes": dict(
                 (_k, Attribute.from_dict(_v))
-                for _k, _v in obj["attributes"].items()
+                for _k, _v in obj.get("attributes").items()
             )
             if obj.get("attributes") is not None
             else None,
-            "brackets": [BracketRequest.from_dict(_item) for _item in obj["brackets"]] if obj.get("brackets") is not None else None,
-            "clubId": obj.get("clubId"),
-            "endDate": obj.get("endDate"),
-            "leagueId": obj.get("leagueId"),
-            "leagueName": obj.get("leagueName"),
-            "liabilityWaiverId": obj.get("liabilityWaiverId"),
-            "longDescription": LeagueContentRequest.from_dict(obj["longDescription"]) if obj.get("longDescription") is not None else None,
-            "mediaId": obj.get("mediaId"),
-            "memberFee": obj.get("memberFee"),
-            "membershipPermission": obj.get("membershipPermission"),
-            "nonMemberFee": obj.get("nonMemberFee"),
-            "refundPolicy": LeagueContentRequest.from_dict(obj["refundPolicy"]) if obj.get("refundPolicy") is not None else None,
-            "registrationUrl": obj.get("registrationUrl"),
-            "safetyPolicy": LeagueContentRequest.from_dict(obj["safetyPolicy"]) if obj.get("safetyPolicy") is not None else None,
-            "shortDescription": LeagueContentRequest.from_dict(obj["shortDescription"]) if obj.get("shortDescription") is not None else None,
-            "startDate": obj.get("startDate"),
+            "brackets": [BracketRequest.from_dict(_item) for _item in obj.get("brackets")] if obj.get("brackets") is not None else None,
+            "club_id": obj.get("clubId"),
+            "end_date": obj.get("endDate"),
+            "league_id": obj.get("leagueId"),
+            "league_name": obj.get("leagueName"),
+            "liability_waiver_id": obj.get("liabilityWaiverId"),
+            "long_description": LeagueContentRequest.from_dict(obj.get("longDescription")) if obj.get("longDescription") is not None else None,
+            "media_id": obj.get("mediaId"),
+            "member_fee": obj.get("memberFee"),
+            "membership_permission": obj.get("membershipPermission"),
+            "non_member_fee": obj.get("nonMemberFee"),
+            "refund_policy": LeagueContentRequest.from_dict(obj.get("refundPolicy")) if obj.get("refundPolicy") is not None else None,
+            "registration_url": obj.get("registrationUrl"),
+            "safety_policy": LeagueContentRequest.from_dict(obj.get("safetyPolicy")) if obj.get("safetyPolicy") is not None else None,
+            "short_description": LeagueContentRequest.from_dict(obj.get("shortDescription")) if obj.get("shortDescription") is not None else None,
+            "start_date": obj.get("startDate"),
             "status": obj.get("status"),
             "type": obj.get("type"),
-            "userId": obj.get("userId")
+            "user_id": obj.get("userId")
         })
         return _obj
 

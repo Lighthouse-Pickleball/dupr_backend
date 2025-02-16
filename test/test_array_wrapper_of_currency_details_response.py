@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.array_wrapper_of_currency_details_response import ArrayWrapperOfCurrencyDetailsResponse
+import dupr_backend
+from dupr_backend.models.array_wrapper_of_currency_details_response import ArrayWrapperOfCurrencyDetailsResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestArrayWrapperOfCurrencyDetailsResponse(unittest.TestCase):
     """ArrayWrapperOfCurrencyDetailsResponse unit test stubs"""
@@ -25,27 +28,27 @@ class TestArrayWrapperOfCurrencyDetailsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ArrayWrapperOfCurrencyDetailsResponse:
+    def make_instance(self, include_optional):
         """Test ArrayWrapperOfCurrencyDetailsResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ArrayWrapperOfCurrencyDetailsResponse`
         """
-        model = ArrayWrapperOfCurrencyDetailsResponse()
-        if include_optional:
+        model = dupr_backend.models.array_wrapper_of_currency_details_response.ArrayWrapperOfCurrencyDetailsResponse()  # noqa: E501
+        if include_optional :
             return ArrayWrapperOfCurrencyDetailsResponse(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 results = [
                     dupr_backend.models.currency_details_response.CurrencyDetailsResponse(
                         currency_code = 'USD', 
                         currency_name = 'US Dollar', 
                         currency_symbol = '$', 
                         min_limit = 100.0, )
-                    ],
+                    ], 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return ArrayWrapperOfCurrencyDetailsResponse(
         )
         """

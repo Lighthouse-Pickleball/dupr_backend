@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.array_wrapper_of_club_listing_response import ArrayWrapperOfClubListingResponse
+import dupr_backend
+from dupr_backend.models.array_wrapper_of_club_listing_response import ArrayWrapperOfClubListingResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestArrayWrapperOfClubListingResponse(unittest.TestCase):
     """ArrayWrapperOfClubListingResponse unit test stubs"""
@@ -25,17 +28,17 @@ class TestArrayWrapperOfClubListingResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ArrayWrapperOfClubListingResponse:
+    def make_instance(self, include_optional):
         """Test ArrayWrapperOfClubListingResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ArrayWrapperOfClubListingResponse`
         """
-        model = ArrayWrapperOfClubListingResponse()
-        if include_optional:
+        model = dupr_backend.models.array_wrapper_of_club_listing_response.ArrayWrapperOfClubListingResponse()  # noqa: E501
+        if include_optional :
             return ArrayWrapperOfClubListingResponse(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 results = [
                     dupr_backend.models.club_listing_response.ClubListingResponse(
                         club_id = 1231231, 
@@ -46,10 +49,10 @@ class TestArrayWrapperOfClubListingResponse(unittest.TestCase):
                         role = dupr_backend.models.club_role_response.ClubRoleResponse(
                             role_id = 56, ), 
                         short_address = 'Miami-Dade County, FL, US', )
-                    ],
+                    ], 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return ArrayWrapperOfClubListingResponse(
         )
         """

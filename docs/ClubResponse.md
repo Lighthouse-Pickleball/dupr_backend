@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_status** | [**AccountStatusResponse**](AccountStatusResponse.md) |  | [optional] 
@@ -38,12 +37,12 @@ json = "{}"
 # create an instance of ClubResponse from a JSON string
 club_response_instance = ClubResponse.from_json(json)
 # print the JSON string representation of the object
-print(ClubResponse.to_json())
+print ClubResponse.to_json()
 
 # convert the object into a dict
 club_response_dict = club_response_instance.to_dict()
 # create an instance of ClubResponse from a dict
-club_response_from_dict = ClubResponse.from_dict(club_response_dict)
+club_response_form_dict = club_response.from_dict(club_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

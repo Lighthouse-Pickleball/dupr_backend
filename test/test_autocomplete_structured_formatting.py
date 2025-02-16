@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.autocomplete_structured_formatting import AutocompleteStructuredFormatting
+import dupr_backend
+from dupr_backend.models.autocomplete_structured_formatting import AutocompleteStructuredFormatting  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestAutocompleteStructuredFormatting(unittest.TestCase):
     """AutocompleteStructuredFormatting unit test stubs"""
@@ -25,25 +28,25 @@ class TestAutocompleteStructuredFormatting(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AutocompleteStructuredFormatting:
+    def make_instance(self, include_optional):
         """Test AutocompleteStructuredFormatting
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `AutocompleteStructuredFormatting`
         """
-        model = AutocompleteStructuredFormatting()
-        if include_optional:
+        model = dupr_backend.models.autocomplete_structured_formatting.AutocompleteStructuredFormatting()  # noqa: E501
+        if include_optional :
             return AutocompleteStructuredFormatting(
-                main_text = '',
+                main_text = '', 
                 main_text_matched_substrings = [
                     dupr_backend.models.matched_substring.MatchedSubstring(
                         length = 56, 
                         offset = 56, )
-                    ],
+                    ], 
                 secondary_text = ''
             )
-        else:
+        else :
             return AutocompleteStructuredFormatting(
         )
         """

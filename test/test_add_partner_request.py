@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.add_partner_request import AddPartnerRequest
+import dupr_backend
+from dupr_backend.models.add_partner_request import AddPartnerRequest  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestAddPartnerRequest(unittest.TestCase):
     """AddPartnerRequest unit test stubs"""
@@ -25,20 +28,20 @@ class TestAddPartnerRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AddPartnerRequest:
+    def make_instance(self, include_optional):
         """Test AddPartnerRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `AddPartnerRequest`
         """
-        model = AddPartnerRequest()
-        if include_optional:
+        model = dupr_backend.models.add_partner_request.AddPartnerRequest()  # noqa: E501
+        if include_optional :
             return AddPartnerRequest(
-                partner_id = 45785789,
+                partner_id = 45785789, 
                 partner_status = 'NOT_CONFIRMED/INVITED/CONFIRMED/INACTIVE'
             )
-        else:
+        else :
             return AddPartnerRequest(
                 partner_id = 45785789,
                 partner_status = 'NOT_CONFIRMED/INVITED/CONFIRMED/INACTIVE',

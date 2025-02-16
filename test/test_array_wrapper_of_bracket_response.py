@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.array_wrapper_of_bracket_response import ArrayWrapperOfBracketResponse
+import dupr_backend
+from dupr_backend.models.array_wrapper_of_bracket_response import ArrayWrapperOfBracketResponse  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestArrayWrapperOfBracketResponse(unittest.TestCase):
     """ArrayWrapperOfBracketResponse unit test stubs"""
@@ -25,17 +28,17 @@ class TestArrayWrapperOfBracketResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ArrayWrapperOfBracketResponse:
+    def make_instance(self, include_optional):
         """Test ArrayWrapperOfBracketResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ArrayWrapperOfBracketResponse`
         """
-        model = ArrayWrapperOfBracketResponse()
-        if include_optional:
+        model = dupr_backend.models.array_wrapper_of_bracket_response.ArrayWrapperOfBracketResponse()  # noqa: E501
+        if include_optional :
             return ArrayWrapperOfBracketResponse(
-                message = 'Show this message to user.',
+                message = 'Show this message to user.', 
                 results = [
                     dupr_backend.models.bracket_response.BracketResponse(
                         age_bracket = [27, 35], 
@@ -161,10 +164,10 @@ class TestArrayWrapperOfBracketResponse(unittest.TestCase):
                         total_rounds = 1, 
                         wait_list = 500, 
                         zone_name = 'IST', )
-                    ],
+                    ], 
                 status = 'FAILURE'
             )
-        else:
+        else :
             return ArrayWrapperOfBracketResponse(
         )
         """

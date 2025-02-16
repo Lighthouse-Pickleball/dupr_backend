@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.date_range import DateRange
+import dupr_backend
+from dupr_backend.models.date_range import DateRange  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestDateRange(unittest.TestCase):
     """DateRange unit test stubs"""
@@ -25,20 +28,20 @@ class TestDateRange(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> DateRange:
+    def make_instance(self, include_optional):
         """Test DateRange
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `DateRange`
         """
-        model = DateRange()
-        if include_optional:
+        model = dupr_backend.models.date_range.DateRange()  # noqa: E501
+        if include_optional :
             return DateRange(
-                end_date = 'yyyy-MM-dd',
+                end_date = 'yyyy-MM-dd', 
                 start_date = 'yyyy-MM-dd'
             )
-        else:
+        else :
             return DateRange(
                 end_date = 'yyyy-MM-dd',
                 start_date = 'yyyy-MM-dd',

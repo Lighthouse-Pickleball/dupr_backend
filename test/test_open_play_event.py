@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.open_play_event import OpenPlayEvent
+import dupr_backend
+from dupr_backend.models.open_play_event import OpenPlayEvent  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestOpenPlayEvent(unittest.TestCase):
     """OpenPlayEvent unit test stubs"""
@@ -25,35 +28,35 @@ class TestOpenPlayEvent(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> OpenPlayEvent:
+    def make_instance(self, include_optional):
         """Test OpenPlayEvent
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `OpenPlayEvent`
         """
-        model = OpenPlayEvent()
-        if include_optional:
+        model = dupr_backend.models.open_play_event.OpenPlayEvent()  # noqa: E501
+        if include_optional :
             return OpenPlayEvent(
                 creator = dupr_backend.models.creator.Creator(
                     email = '', 
                     id = 56, 
-                    name = '', ),
-                var_date = 'YYYY-MM-dd',
-                description = '',
-                id = 56,
-                location = '',
-                max_players = 56,
-                name = '',
+                    name = '', ), 
+                var_date = 'YYYY-MM-dd', 
+                description = '', 
+                id = 56, 
+                location = '', 
+                max_players = 56, 
+                name = '', 
                 rating = dupr_backend.models.rating_range_res.RatingRangeRes(
                     max = 1.337, 
-                    min = 1.337, ),
-                registered_players = 56,
+                    min = 1.337, ), 
+                registered_players = 56, 
                 time = dupr_backend.models.time_range_res.TimeRangeRes(
                     end = 'HH:mm', 
                     start = 'HH:mm', )
             )
-        else:
+        else :
             return OpenPlayEvent(
                 creator = dupr_backend.models.creator.Creator(
                     email = '', 

@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.club_search import ClubSearch
+import dupr_backend
+from dupr_backend.models.club_search import ClubSearch  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestClubSearch(unittest.TestCase):
     """ClubSearch unit test stubs"""
@@ -25,27 +28,27 @@ class TestClubSearch(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ClubSearch:
+    def make_instance(self, include_optional):
         """Test ClubSearch
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ClubSearch`
         """
-        model = ClubSearch()
-        if include_optional:
+        model = dupr_backend.models.club_search.ClubSearch()  # noqa: E501
+        if include_optional :
             return ClubSearch(
-                limit = 10,
+                limit = 10, 
                 location = dupr_backend.models.external_filter_location.ExternalFilterLocation(
                     address = 'Austin, TX, USA', 
                     lat = 72.34654645455, 
                     lng = 19.55151584984, 
-                    radius_in_meters = 40233.6, ),
-                offset = 0,
-                own = True,
+                    radius_in_meters = 40233.6, ), 
+                offset = 0, 
+                own = True, 
                 query = 'Stillwater Pickleball'
             )
-        else:
+        else :
             return ClubSearch(
                 limit = 10,
                 offset = 0,

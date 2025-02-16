@@ -13,8 +13,11 @@
 
 
 import unittest
+import datetime
 
-from dupr_backend.models.division import Division
+import dupr_backend
+from dupr_backend.models.division import Division  # noqa: E501
+from dupr_backend.rest import ApiException
 
 class TestDivision(unittest.TestCase):
     """Division unit test stubs"""
@@ -25,35 +28,35 @@ class TestDivision(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> Division:
+    def make_instance(self, include_optional):
         """Test Division
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `Division`
         """
-        model = Division()
-        if include_optional:
+        model = dupr_backend.models.division.Division()  # noqa: E501
+        if include_optional :
             return Division(
-                day1_start = '',
-                day2_start = '',
-                division_code = '',
-                division_id = 56,
-                division_name = '',
-                division_type = 'DUPR12',
-                entry_fee = 1.337,
-                event_id = 56,
-                max_teams = 56,
-                max_waitlist = 56,
-                prize = 1.337,
-                registration_end = '',
+                day1_start = '', 
+                day2_start = '', 
+                division_code = '', 
+                division_id = 56, 
+                division_name = '', 
+                division_type = 'DUPR12', 
+                entry_fee = 1.337, 
+                event_id = 56, 
+                max_teams = 56, 
+                max_waitlist = 56, 
+                prize = 1.337, 
+                registration_end = '', 
                 registration_period = [
                     ''
-                    ],
-                registration_start = '',
+                    ], 
+                registration_start = '', 
                 status = 'ACTIVE'
             )
-        else:
+        else :
             return Division(
                 division_code = '',
                 division_id = 56,

@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
@@ -20,12 +19,12 @@ json = "{}"
 # create an instance of ReportRequest from a JSON string
 report_request_instance = ReportRequest.from_json(json)
 # print the JSON string representation of the object
-print(ReportRequest.to_json())
+print ReportRequest.to_json()
 
 # convert the object into a dict
 report_request_dict = report_request_instance.to_dict()
 # create an instance of ReportRequest from a dict
-report_request_from_dict = ReportRequest.from_dict(report_request_dict)
+report_request_form_dict = report_request.from_dict(report_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
