@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.filters import Filters  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.filters import Filters
 
 class TestFilters(unittest.TestCase):
     """Filters unit test stubs"""
@@ -28,23 +25,23 @@ class TestFilters(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> Filters:
         """Test Filters
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `Filters`
         """
-        model = dupr_backend.models.filters.Filters()  # noqa: E501
-        if include_optional :
+        model = Filters()
+        if include_optional:
             return Filters(
-                is_registered = True, 
-                is_wait_listed = True, 
-                partner_status = 'NO_PARTNER', 
-                payment_status = 'COMPLETE/PENDING', 
+                is_registered = True,
+                is_wait_listed = True,
+                partner_status = 'NO_PARTNER',
+                payment_status = 'COMPLETE/PENDING',
                 registration_status = 'CLOSED'
             )
-        else :
+        else:
             return Filters(
         )
         """

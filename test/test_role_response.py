@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.role_response import RoleResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.role_response import RoleResponse
 
 class TestRoleResponse(unittest.TestCase):
     """RoleResponse unit test stubs"""
@@ -28,21 +25,21 @@ class TestRoleResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> RoleResponse:
         """Test RoleResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `RoleResponse`
         """
-        model = dupr_backend.models.role_response.RoleResponse()  # noqa: E501
-        if include_optional :
+        model = RoleResponse()
+        if include_optional:
             return RoleResponse(
-                id = 424255123, 
-                permissions = {"USER":["VIEW","MODIFY"],"TOURNAMENT":["OWN_VIEW","OWN_MODIFY","OWN_DELETE"]}, 
+                id = 424255123,
+                permissions = {"USER":["VIEW","MODIFY"],"TOURNAMENT":["OWN_VIEW","OWN_MODIFY","OWN_DELETE"]},
                 role = 'PLAYER'
             )
-        else :
+        else:
             return RoleResponse(
                 id = 424255123,
                 role = 'PLAYER',

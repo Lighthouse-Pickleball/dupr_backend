@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **button_text** | **str** |  | [optional] 
@@ -21,12 +22,12 @@ json = "{}"
 # create an instance of SponsorRes from a JSON string
 sponsor_res_instance = SponsorRes.from_json(json)
 # print the JSON string representation of the object
-print SponsorRes.to_json()
+print(SponsorRes.to_json())
 
 # convert the object into a dict
 sponsor_res_dict = sponsor_res_instance.to_dict()
 # create an instance of SponsorRes from a dict
-sponsor_res_form_dict = sponsor_res.from_dict(sponsor_res_dict)
+sponsor_res_from_dict = SponsorRes.from_dict(sponsor_res_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

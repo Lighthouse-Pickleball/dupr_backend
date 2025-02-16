@@ -14,52 +14,50 @@
 
 import unittest
 
-import dupr_backend
-from dupr_backend.api.mi_lp_events_api import MiLPEventsApi  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.api.mi_lp_events_api import MiLPEventsApi
 
 
 class TestMiLPEventsApi(unittest.TestCase):
     """MiLPEventsApi unit test stubs"""
 
-    def setUp(self):
-        self.api = dupr_backend.api.mi_lp_events_api.MiLPEventsApi()  # noqa: E501
+    def setUp(self) -> None:
+        self.api = MiLPEventsApi()
 
-    def tearDown(self):
+    def tearDown(self) -> None:
         pass
 
-    def test_get_event_info_using_get(self):
+    def test_get_event_info_using_get(self) -> None:
         """Test case for get_event_info_using_get
 
-        getEventInfo  # noqa: E501
+        getEventInfo
         """
         pass
 
-    def test_get_teams_using_get(self):
+    def test_get_teams_using_get(self) -> None:
         """Test case for get_teams_using_get
 
-        getTeams  # noqa: E501
+        getTeams
         """
         pass
 
-    def test_register_team_using_post(self):
+    def test_register_team_using_post(self) -> None:
         """Test case for register_team_using_post
 
-        registerTeam  # noqa: E501
+        registerTeam
         """
         pass
 
-    def test_save_using_post2(self):
+    def test_save_using_post2(self) -> None:
         """Test case for save_using_post2
 
-        save  # noqa: E501
+        save
         """
         pass
 
-    def test_search_event_using_post(self):
+    def test_search_event_using_post(self) -> None:
         """Test case for search_event_using_post
 
-        searchEvent  # noqa: E501
+        searchEvent
         """
         pass
 

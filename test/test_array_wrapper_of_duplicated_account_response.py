@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.array_wrapper_of_duplicated_account_response import ArrayWrapperOfDuplicatedAccountResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.array_wrapper_of_duplicated_account_response import ArrayWrapperOfDuplicatedAccountResponse
 
 class TestArrayWrapperOfDuplicatedAccountResponse(unittest.TestCase):
     """ArrayWrapperOfDuplicatedAccountResponse unit test stubs"""
@@ -28,17 +25,17 @@ class TestArrayWrapperOfDuplicatedAccountResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ArrayWrapperOfDuplicatedAccountResponse:
         """Test ArrayWrapperOfDuplicatedAccountResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ArrayWrapperOfDuplicatedAccountResponse`
         """
-        model = dupr_backend.models.array_wrapper_of_duplicated_account_response.ArrayWrapperOfDuplicatedAccountResponse()  # noqa: E501
-        if include_optional :
+        model = ArrayWrapperOfDuplicatedAccountResponse()
+        if include_optional:
             return ArrayWrapperOfDuplicatedAccountResponse(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 results = [
                     dupr_backend.models.duplicated_account_response.DuplicatedAccountResponse(
                         player1 = dupr_backend.models.duplicated_player.DuplicatedPlayer(
@@ -66,10 +63,10 @@ class TestArrayWrapperOfDuplicatedAccountResponse(unittest.TestCase):
                             status = 'ACTIVE', 
                             verified_email = True, ), 
                         probability = '', )
-                    ], 
+                    ],
                 status = 'FAILURE'
             )
-        else :
+        else:
             return ArrayWrapperOfDuplicatedAccountResponse(
         )
         """

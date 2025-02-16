@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_following_info import SingleWrapperOfFollowingInfo  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_of_following_info import SingleWrapperOfFollowingInfo
 
 class TestSingleWrapperOfFollowingInfo(unittest.TestCase):
     """SingleWrapperOfFollowingInfo unit test stubs"""
@@ -28,24 +25,24 @@ class TestSingleWrapperOfFollowingInfo(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfFollowingInfo:
         """Test SingleWrapperOfFollowingInfo
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfFollowingInfo`
         """
-        model = dupr_backend.models.single_wrapper_of_following_info.SingleWrapperOfFollowingInfo()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfFollowingInfo()
+        if include_optional:
             return SingleWrapperOfFollowingInfo(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 result = dupr_backend.models.following_info.FollowingInfo(
                     followers = 0, 
                     followings = 0, 
-                    is_followed = False, ), 
+                    is_followed = False, ),
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfFollowingInfo(
         )
         """

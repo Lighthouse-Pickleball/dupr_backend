@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_bracket_details_response import SingleWrapperOfBracketDetailsResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_of_bracket_details_response import SingleWrapperOfBracketDetailsResponse
 
 class TestSingleWrapperOfBracketDetailsResponse(unittest.TestCase):
     """SingleWrapperOfBracketDetailsResponse unit test stubs"""
@@ -28,23 +25,23 @@ class TestSingleWrapperOfBracketDetailsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfBracketDetailsResponse:
         """Test SingleWrapperOfBracketDetailsResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfBracketDetailsResponse`
         """
-        model = dupr_backend.models.single_wrapper_of_bracket_details_response.SingleWrapperOfBracketDetailsResponse()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfBracketDetailsResponse()
+        if include_optional:
             return SingleWrapperOfBracketDetailsResponse(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 result = dupr_backend.models.bracket_details_response.BracketDetailsResponse(
                     elimination = 'COMPASS', 
-                    event_format = 'DOUBLES', ), 
+                    event_format = 'DOUBLES', ),
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfBracketDetailsResponse(
         )
         """

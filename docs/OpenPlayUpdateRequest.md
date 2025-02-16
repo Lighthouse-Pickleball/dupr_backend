@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address_id** | **int** |  | 
@@ -22,12 +23,12 @@ json = "{}"
 # create an instance of OpenPlayUpdateRequest from a JSON string
 open_play_update_request_instance = OpenPlayUpdateRequest.from_json(json)
 # print the JSON string representation of the object
-print OpenPlayUpdateRequest.to_json()
+print(OpenPlayUpdateRequest.to_json())
 
 # convert the object into a dict
 open_play_update_request_dict = open_play_update_request_instance.to_dict()
 # create an instance of OpenPlayUpdateRequest from a dict
-open_play_update_request_form_dict = open_play_update_request.from_dict(open_play_update_request_dict)
+open_play_update_request_from_dict = OpenPlayUpdateRequest.from_dict(open_play_update_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

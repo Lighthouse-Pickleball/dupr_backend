@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.search_leagues_request import SearchLeaguesRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.search_leagues_request import SearchLeaguesRequest
 
 class TestSearchLeaguesRequest(unittest.TestCase):
     """SearchLeaguesRequest unit test stubs"""
@@ -28,15 +25,15 @@ class TestSearchLeaguesRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SearchLeaguesRequest:
         """Test SearchLeaguesRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SearchLeaguesRequest`
         """
-        model = dupr_backend.models.search_leagues_request.SearchLeaguesRequest()  # noqa: E501
-        if include_optional :
+        model = SearchLeaguesRequest()
+        if include_optional:
             return SearchLeaguesRequest(
                 filters = dupr_backend.models.league_filter.LeagueFilter(
                     city = [San Francisco, Great Falls], 
@@ -48,16 +45,16 @@ class TestSearchLeaguesRequest(unittest.TestCase):
                     skill_level = dupr_backend.models.skill_level_filter.SkillLevelFilter(
                         max_rating = 4.2, 
                         min_rating = 3.2, ), 
-                    status = [ACTIVE, IN_ACTIVE], ), 
-                is_near_me = True, 
-                lat = 72.34654645455, 
-                limit = 10, 
-                lng = 19.55151584984, 
-                offset = 0, 
-                query = '*', 
+                    status = [ACTIVE, IN_ACTIVE], ),
+                is_near_me = True,
+                lat = 72.34654645455,
+                limit = 10,
+                lng = 19.55151584984,
+                offset = 0,
+                query = '*',
                 radius_in_meters = 16093.4
             )
-        else :
+        else:
             return SearchLeaguesRequest(
                 limit = 10,
                 offset = 0,

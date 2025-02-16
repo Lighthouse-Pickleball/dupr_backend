@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **city** | **List[str]** |  | [optional] 
@@ -23,12 +24,12 @@ json = "{}"
 # create an instance of LeagueFilter from a JSON string
 league_filter_instance = LeagueFilter.from_json(json)
 # print the JSON string representation of the object
-print LeagueFilter.to_json()
+print(LeagueFilter.to_json())
 
 # convert the object into a dict
 league_filter_dict = league_filter_instance.to_dict()
 # create an instance of LeagueFilter from a dict
-league_filter_form_dict = league_filter.from_dict(league_filter_dict)
+league_filter_from_dict = LeagueFilter.from_dict(league_filter_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

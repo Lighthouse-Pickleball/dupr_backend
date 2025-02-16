@@ -17,71 +17,87 @@ import pprint
 import re  # noqa: F401
 import json
 
-
-from typing import List
-from pydantic import BaseModel, Field, StrictStr, conlist, validator
+from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List
 from dupr_backend.models.mi_lp_team import MiLPTeam
+from typing import Optional, Set
+from typing_extensions import Self
 
 class MiLPTeamDivision(BaseModel):
     """
     MiLPTeamDivision
-    """
-    division_type: StrictStr = Field(..., alias="divisionType")
-    teams: conlist(MiLPTeam) = Field(...)
-    __properties = ["divisionType", "teams"]
+    """ # noqa: E501
+    division_type: StrictStr = Field(alias="divisionType")
+    teams: List[MiLPTeam]
+    __properties: ClassVar[List[str]] = ["divisionType", "teams"]
 
-    @validator('division_type')
+    @field_validator('division_type')
     def division_type_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in ('DUPR12', 'DUPR14', 'DUPR16', 'DUPR18', 'DUPR20', 'DUPR22', 'DUPR_OPEN'):
+        if value not in set(['DUPR12', 'DUPR14', 'DUPR16', 'DUPR18', 'DUPR20', 'DUPR22', 'DUPR_OPEN']):
             raise ValueError("must be one of enum values ('DUPR12', 'DUPR14', 'DUPR16', 'DUPR18', 'DUPR20', 'DUPR22', 'DUPR_OPEN')")
         return value
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> MiLPTeamDivision:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of MiLPTeamDivision from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         # override the default output from pydantic by calling `to_dict()` of each item in teams (list)
         _items = []
         if self.teams:
-            for _item in self.teams:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_teams in self.teams:
+                if _item_teams:
+                    _items.append(_item_teams.to_dict())
             _dict['teams'] = _items
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> MiLPTeamDivision:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of MiLPTeamDivision from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return MiLPTeamDivision.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = MiLPTeamDivision.parse_obj({
-            "division_type": obj.get("divisionType"),
-            "teams": [MiLPTeam.from_dict(_item) for _item in obj.get("teams")] if obj.get("teams") is not None else None
+        _obj = cls.model_validate({
+            "divisionType": obj.get("divisionType"),
+            "teams": [MiLPTeam.from_dict(_item) for _item in obj["teams"]] if obj.get("teams") is not None else None
         })
         return _obj
 

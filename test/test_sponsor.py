@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.sponsor import Sponsor  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.sponsor import Sponsor
 
 class TestSponsor(unittest.TestCase):
     """Sponsor unit test stubs"""
@@ -28,24 +25,24 @@ class TestSponsor(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> Sponsor:
         """Test Sponsor
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `Sponsor`
         """
-        model = dupr_backend.models.sponsor.Sponsor()  # noqa: E501
-        if include_optional :
+        model = Sponsor()
+        if include_optional:
             return Sponsor(
-                button_text = '', 
-                description = '', 
-                id = 56, 
-                image_url = '', 
-                sponsor_popup_heading = '', 
+                button_text = '',
+                description = '',
+                id = 56,
+                image_url = '',
+                sponsor_popup_heading = '',
                 sponsor_redirect_url = ''
             )
-        else :
+        else:
             return Sponsor(
         )
         """

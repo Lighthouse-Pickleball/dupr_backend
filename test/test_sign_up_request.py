@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.sign_up_request import SignUpRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.sign_up_request import SignUpRequest
 
 class TestSignUpRequest(unittest.TestCase):
     """SignUpRequest unit test stubs"""
@@ -28,28 +25,28 @@ class TestSignUpRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SignUpRequest:
         """Test SignUpRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SignUpRequest`
         """
-        model = dupr_backend.models.sign_up_request.SignUpRequest()  # noqa: E501
-        if include_optional :
+        model = SignUpRequest()
+        if include_optional:
             return SignUpRequest(
-                address = 'GhIJQWX8-4yLQkARem8MAcBEWcA', 
-                birthdate = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                doubles_rating = 4.3, 
-                dupr_id = 'C8AX1', 
-                email = 'john.doe@yopmail.com', 
-                external_id = 'B1234', 
-                gender = 'male', 
-                phone_number = '+12481234701', 
-                player_name = 'John Doe', 
+                address = 'GhIJQWX8-4yLQkARem8MAcBEWcA',
+                birthdate = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
+                doubles_rating = 4.3,
+                dupr_id = 'C8AX1',
+                email = 'john.doe@yopmail.com',
+                external_id = 'B1234',
+                gender = 'male',
+                phone_number = '+12481234701',
+                player_name = 'John Doe',
                 singles_rating = 2.6
             )
-        else :
+        else:
             return SignUpRequest(
                 email = 'john.doe@yopmail.com',
                 player_name = 'John Doe',

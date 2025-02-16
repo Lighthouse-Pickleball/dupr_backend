@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.autocomplete_prediction import AutocompletePrediction  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.autocomplete_prediction import AutocompletePrediction
 
 class TestAutocompletePrediction(unittest.TestCase):
     """AutocompletePrediction unit test stubs"""
@@ -28,24 +25,24 @@ class TestAutocompletePrediction(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> AutocompletePrediction:
         """Test AutocompletePrediction
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `AutocompletePrediction`
         """
-        model = dupr_backend.models.autocomplete_prediction.AutocompletePrediction()  # noqa: E501
-        if include_optional :
+        model = AutocompletePrediction()
+        if include_optional:
             return AutocompletePrediction(
-                description = '', 
-                distance_meters = 56, 
+                description = '',
+                distance_meters = 56,
                 matched_substrings = [
                     dupr_backend.models.matched_substring.MatchedSubstring(
                         length = 56, 
                         offset = 56, )
-                    ], 
-                place_id = '', 
+                    ],
+                place_id = '',
                 structured_formatting = dupr_backend.models.autocomplete_structured_formatting.AutocompleteStructuredFormatting(
                     main_text = '', 
                     main_text_matched_substrings = [
@@ -53,17 +50,17 @@ class TestAutocompletePrediction(unittest.TestCase):
                             length = 56, 
                             offset = 56, )
                         ], 
-                    secondary_text = '', ), 
+                    secondary_text = '', ),
                 terms = [
                     dupr_backend.models.term.Term(
                         offset = 56, 
                         value = '', )
-                    ], 
+                    ],
                 types = [
                     ''
                     ]
             )
-        else :
+        else:
             return AutocompletePrediction(
         )
         """

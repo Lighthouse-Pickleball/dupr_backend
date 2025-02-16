@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.mi_lp_event_search_request import MiLPEventSearchRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.mi_lp_event_search_request import MiLPEventSearchRequest
 
 class TestMiLPEventSearchRequest(unittest.TestCase):
     """MiLPEventSearchRequest unit test stubs"""
@@ -28,15 +25,15 @@ class TestMiLPEventSearchRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> MiLPEventSearchRequest:
         """Test MiLPEventSearchRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MiLPEventSearchRequest`
         """
-        model = dupr_backend.models.mi_lp_event_search_request.MiLPEventSearchRequest()  # noqa: E501
-        if include_optional :
+        model = MiLPEventSearchRequest()
+        if include_optional:
             return MiLPEventSearchRequest(
                 filters = dupr_backend.models.event_filter.EventFilter(
                     distance = dupr_backend.models.distance.Distance(
@@ -49,11 +46,11 @@ class TestMiLPEventSearchRequest(unittest.TestCase):
                     name = 'Event name', 
                     place_id = 'Peh173uin271llopvdanh2', 
                     statuses = UPCOMING/ONGOING/COMPLETE, 
-                    type = 'STANDARD/MARQUE/SHOWDOWN', ), 
-                limit = 56, 
+                    type = 'STANDARD/MARQUE/SHOWDOWN', ),
+                limit = 56,
                 offset = 56
             )
-        else :
+        else:
             return MiLPEventSearchRequest(
         )
         """

@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_topic_response import SingleWrapperOfTopicResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_of_topic_response import SingleWrapperOfTopicResponse
 
 class TestSingleWrapperOfTopicResponse(unittest.TestCase):
     """SingleWrapperOfTopicResponse unit test stubs"""
@@ -28,23 +25,23 @@ class TestSingleWrapperOfTopicResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfTopicResponse:
         """Test SingleWrapperOfTopicResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfTopicResponse`
         """
-        model = dupr_backend.models.single_wrapper_of_topic_response.SingleWrapperOfTopicResponse()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfTopicResponse()
+        if include_optional:
             return SingleWrapperOfTopicResponse(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 result = dupr_backend.models.topic_response.TopicResponse(
                     id = 56, 
-                    name = '', ), 
+                    name = '', ),
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfTopicResponse(
         )
         """

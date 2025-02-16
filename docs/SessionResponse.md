@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **checkout_url** | **str** |  | 
@@ -18,12 +19,12 @@ json = "{}"
 # create an instance of SessionResponse from a JSON string
 session_response_instance = SessionResponse.from_json(json)
 # print the JSON string representation of the object
-print SessionResponse.to_json()
+print(SessionResponse.to_json())
 
 # convert the object into a dict
 session_response_dict = session_response_instance.to_dict()
 # create an instance of SessionResponse from a dict
-session_response_form_dict = session_response.from_dict(session_response_dict)
+session_response_from_dict = SessionResponse.from_dict(session_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

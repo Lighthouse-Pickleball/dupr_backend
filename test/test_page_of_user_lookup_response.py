@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.page_of_user_lookup_response import PageOfUserLookupResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.page_of_user_lookup_response import PageOfUserLookupResponse
 
 class TestPageOfUserLookupResponse(unittest.TestCase):
     """PageOfUserLookupResponse unit test stubs"""
@@ -28,19 +25,19 @@ class TestPageOfUserLookupResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> PageOfUserLookupResponse:
         """Test PageOfUserLookupResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PageOfUserLookupResponse`
         """
-        model = dupr_backend.models.page_of_user_lookup_response.PageOfUserLookupResponse()  # noqa: E501
-        if include_optional :
+        model = PageOfUserLookupResponse()
+        if include_optional:
             return PageOfUserLookupResponse(
-                empty = False, 
-                has_more = False, 
-                has_previous = True, 
+                empty = False,
+                has_more = False,
+                has_previous = True,
                 hits = [
                     dupr_backend.models.user_lookup_response.UserLookupResponse(
                         birthdate = 'Tue Jan 12 19:00:00 EST 2021', 
@@ -63,13 +60,13 @@ class TestPageOfUserLookupResponse(unittest.TestCase):
                             permissions = {"USER":["VIEW","MODIFY"],"TOURNAMENT":["OWN_VIEW","OWN_MODIFY","OWN_DELETE"]}, 
                             role = 'PLAYER', ), 
                         status = 'ACTIVE', )
-                    ], 
-                limit = 10, 
-                offset = 90, 
-                total = 100, 
+                    ],
+                limit = 10,
+                offset = 90,
+                total = 100,
                 total_value_relation = 'GREATER_THAN_OR_EQUAL_TO'
             )
-        else :
+        else:
             return PageOfUserLookupResponse(
                 empty = False,
                 has_more = False,

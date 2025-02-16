@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.account_link_response import AccountLinkResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.account_link_response import AccountLinkResponse
 
 class TestAccountLinkResponse(unittest.TestCase):
     """AccountLinkResponse unit test stubs"""
@@ -28,21 +25,21 @@ class TestAccountLinkResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> AccountLinkResponse:
         """Test AccountLinkResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `AccountLinkResponse`
         """
-        model = dupr_backend.models.account_link_response.AccountLinkResponse()  # noqa: E501
-        if include_optional :
+        model = AccountLinkResponse()
+        if include_optional:
             return AccountLinkResponse(
-                created = 1645628420, 
-                expires_at = 1645628720, 
+                created = 1645628420,
+                expires_at = 1645628720,
                 url = 'https://stripe.com/express/Ln7FfnNpUcCU'
             )
-        else :
+        else:
             return AccountLinkResponse(
                 created = 1645628420,
                 url = 'https://stripe.com/express/Ln7FfnNpUcCU',

@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_policy_details_response import SingleWrapperOfPolicyDetailsResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_of_policy_details_response import SingleWrapperOfPolicyDetailsResponse
 
 class TestSingleWrapperOfPolicyDetailsResponse(unittest.TestCase):
     """SingleWrapperOfPolicyDetailsResponse unit test stubs"""
@@ -28,17 +25,17 @@ class TestSingleWrapperOfPolicyDetailsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfPolicyDetailsResponse:
         """Test SingleWrapperOfPolicyDetailsResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfPolicyDetailsResponse`
         """
-        model = dupr_backend.models.single_wrapper_of_policy_details_response.SingleWrapperOfPolicyDetailsResponse()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfPolicyDetailsResponse()
+        if include_optional:
             return SingleWrapperOfPolicyDetailsResponse(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 result = dupr_backend.models.policy_details_response.PolicyDetailsResponse(
                     refund_policy = dupr_backend.models.league_content_response.LeagueContentResponse(
                         content = '<h1>content</h1>', 
@@ -55,10 +52,10 @@ class TestSingleWrapperOfPolicyDetailsResponse(unittest.TestCase):
                         footer = '<h1>footer</h1>', 
                         footer_type = 'text/html', 
                         header = '<h1>header</h1>', 
-                        header_type = 'text/html', ), ), 
+                        header_type = 'text/html', ), ),
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfPolicyDetailsResponse(
         )
         """

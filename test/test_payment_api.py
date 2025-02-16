@@ -14,38 +14,36 @@
 
 import unittest
 
-import dupr_backend
-from dupr_backend.api.payment_api import PaymentApi  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.api.payment_api import PaymentApi
 
 
 class TestPaymentApi(unittest.TestCase):
     """PaymentApi unit test stubs"""
 
-    def setUp(self):
-        self.api = dupr_backend.api.payment_api.PaymentApi()  # noqa: E501
+    def setUp(self) -> None:
+        self.api = PaymentApi()
 
-    def tearDown(self):
+    def tearDown(self) -> None:
         pass
 
-    def test_club_payment_dashboard_using_get(self):
+    def test_club_payment_dashboard_using_get(self) -> None:
         """Test case for club_payment_dashboard_using_get
 
-        clubPaymentDashboard  # noqa: E501
+        clubPaymentDashboard
         """
         pass
 
-    def test_club_payment_status_using_get(self):
+    def test_club_payment_status_using_get(self) -> None:
         """Test case for club_payment_status_using_get
 
-        clubPaymentStatus  # noqa: E501
+        clubPaymentStatus
         """
         pass
 
-    def test_club_setup_payment_using_get(self):
+    def test_club_setup_payment_using_get(self) -> None:
         """Test case for club_setup_payment_using_get
 
-        clubSetupPayment  # noqa: E501
+        clubSetupPayment
         """
         pass
 

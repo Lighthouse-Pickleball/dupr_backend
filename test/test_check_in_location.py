@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.check_in_location import CheckInLocation  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.check_in_location import CheckInLocation
 
 class TestCheckInLocation(unittest.TestCase):
     """CheckInLocation unit test stubs"""
@@ -28,15 +25,15 @@ class TestCheckInLocation(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> CheckInLocation:
         """Test CheckInLocation
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `CheckInLocation`
         """
-        model = dupr_backend.models.check_in_location.CheckInLocation()  # noqa: E501
-        if include_optional :
+        model = CheckInLocation()
+        if include_optional:
             return CheckInLocation(
                 address = dupr_backend.models.address_request.AddressRequest(
                     address_line = '402, B wing', 
@@ -72,11 +69,11 @@ class TestCheckInLocation(unittest.TestCase):
                         types = [
                             'ACCOUNTING'
                             ], ), 
-                    place_id = 'ChIJW37e6g4AwTsRfjFKn0_XRiU', ), 
-                id = 5333652862, 
+                    place_id = 'ChIJW37e6g4AwTsRfjFKn0_XRiU', ),
+                id = 5333652862,
                 type = 'RAW/CLUB/EVENT/NONE'
             )
-        else :
+        else:
             return CheckInLocation(
         )
         """

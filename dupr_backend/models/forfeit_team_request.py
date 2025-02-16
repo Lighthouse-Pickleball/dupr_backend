@@ -17,60 +17,76 @@ import pprint
 import re  # noqa: F401
 import json
 
-
-from typing import Optional
-from pydantic import BaseModel, Field, StrictBool, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional
+from typing import Optional, Set
+from typing_extensions import Self
 
 class ForfeitTeamRequest(BaseModel):
     """
     ForfeitTeamRequest
-    """
-    is_forfeited: StrictBool = Field(..., alias="isForfeited")
-    player1: StrictInt = Field(...)
+    """ # noqa: E501
+    is_forfeited: StrictBool = Field(alias="isForfeited")
+    player1: StrictInt
     player2: Optional[StrictInt] = None
-    team_id: StrictInt = Field(..., alias="teamId")
-    __properties = ["isForfeited", "player1", "player2", "teamId"]
+    team_id: StrictInt = Field(alias="teamId")
+    __properties: ClassVar[List[str]] = ["isForfeited", "player1", "player2", "teamId"]
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> ForfeitTeamRequest:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of ForfeitTeamRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> ForfeitTeamRequest:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of ForfeitTeamRequest from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return ForfeitTeamRequest.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = ForfeitTeamRequest.parse_obj({
-            "is_forfeited": obj.get("isForfeited"),
+        _obj = cls.model_validate({
+            "isForfeited": obj.get("isForfeited"),
             "player1": obj.get("player1"),
             "player2": obj.get("player2"),
-            "team_id": obj.get("teamId")
+            "teamId": obj.get("teamId")
         })
         return _obj
 

@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_player_rating_response import SingleWrapperOfPlayerRatingResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_of_player_rating_response import SingleWrapperOfPlayerRatingResponse
 
 class TestSingleWrapperOfPlayerRatingResponse(unittest.TestCase):
     """SingleWrapperOfPlayerRatingResponse unit test stubs"""
@@ -28,17 +25,17 @@ class TestSingleWrapperOfPlayerRatingResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfPlayerRatingResponse:
         """Test SingleWrapperOfPlayerRatingResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfPlayerRatingResponse`
         """
-        model = dupr_backend.models.single_wrapper_of_player_rating_response.SingleWrapperOfPlayerRatingResponse()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfPlayerRatingResponse()
+        if include_optional:
             return SingleWrapperOfPlayerRatingResponse(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 result = dupr_backend.models.player_rating_response.PlayerRatingResponse(
                     default_rating = 'DOUBLES', 
                     doubles = '2.864', 
@@ -51,10 +48,10 @@ class TestSingleWrapperOfPlayerRatingResponse(unittest.TestCase):
                     singles = '4.125', 
                     singles_provisional = True, 
                     singles_reliability_score = 10.0, 
-                    singles_verified = '4.1', ), 
+                    singles_verified = '4.1', ),
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfPlayerRatingResponse(
         )
         """

@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.array_wrapper_of_league_teams_response import ArrayWrapperOfLeagueTeamsResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.array_wrapper_of_league_teams_response import ArrayWrapperOfLeagueTeamsResponse
 
 class TestArrayWrapperOfLeagueTeamsResponse(unittest.TestCase):
     """ArrayWrapperOfLeagueTeamsResponse unit test stubs"""
@@ -28,17 +25,17 @@ class TestArrayWrapperOfLeagueTeamsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ArrayWrapperOfLeagueTeamsResponse:
         """Test ArrayWrapperOfLeagueTeamsResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ArrayWrapperOfLeagueTeamsResponse`
         """
-        model = dupr_backend.models.array_wrapper_of_league_teams_response.ArrayWrapperOfLeagueTeamsResponse()  # noqa: E501
-        if include_optional :
+        model = ArrayWrapperOfLeagueTeamsResponse()
+        if include_optional:
             return ArrayWrapperOfLeagueTeamsResponse(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 results = [
                     dupr_backend.models.league_teams_response.LeagueTeamsResponse(
                         partner_status = 'ACTIVE', 
@@ -157,10 +154,10 @@ class TestArrayWrapperOfLeagueTeamsResponse(unittest.TestCase):
                         player2 = , 
                         registration_id = 56, 
                         team_status = 'ACTIVE', )
-                    ], 
+                    ],
                 status = 'FAILURE'
             )
-        else :
+        else:
             return ArrayWrapperOfLeagueTeamsResponse(
         )
         """

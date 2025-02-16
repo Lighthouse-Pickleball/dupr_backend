@@ -17,47 +17,63 @@ import pprint
 import re  # noqa: F401
 import json
 
-
-from typing import Optional, Union
-from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dupr_backend.models.participant import Participant
+from typing import Optional, Set
+from typing_extensions import Self
 
 class RegistrationResponse(BaseModel):
     """
     RegistrationResponse
-    """
-    event_refunded_amount: Union[StrictFloat, StrictInt] = Field(..., alias="eventRefundedAmount")
-    is_participant1: StrictBool = Field(..., alias="isParticipant1")
-    is_wait_listed: StrictBool = Field(..., alias="isWaitListed")
+    """ # noqa: E501
+    event_refunded_amount: Union[StrictFloat, StrictInt] = Field(alias="eventRefundedAmount")
+    is_participant1: StrictBool = Field(alias="isParticipant1")
+    is_wait_listed: StrictBool = Field(alias="isWaitListed")
     player1: Optional[Participant] = None
     player2: Optional[Participant] = None
-    registration_id: StrictInt = Field(..., alias="registrationId")
-    __properties = ["eventRefundedAmount", "isParticipant1", "isWaitListed", "player1", "player2", "registrationId"]
+    registration_id: StrictInt = Field(alias="registrationId")
+    __properties: ClassVar[List[str]] = ["eventRefundedAmount", "isParticipant1", "isWaitListed", "player1", "player2", "registrationId"]
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> RegistrationResponse:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of RegistrationResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         # override the default output from pydantic by calling `to_dict()` of player1
         if self.player1:
             _dict['player1'] = self.player1.to_dict()
@@ -67,21 +83,21 @@ class RegistrationResponse(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> RegistrationResponse:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of RegistrationResponse from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return RegistrationResponse.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = RegistrationResponse.parse_obj({
-            "event_refunded_amount": obj.get("eventRefundedAmount"),
-            "is_participant1": obj.get("isParticipant1"),
-            "is_wait_listed": obj.get("isWaitListed"),
-            "player1": Participant.from_dict(obj.get("player1")) if obj.get("player1") is not None else None,
-            "player2": Participant.from_dict(obj.get("player2")) if obj.get("player2") is not None else None,
-            "registration_id": obj.get("registrationId")
+        _obj = cls.model_validate({
+            "eventRefundedAmount": obj.get("eventRefundedAmount"),
+            "isParticipant1": obj.get("isParticipant1"),
+            "isWaitListed": obj.get("isWaitListed"),
+            "player1": Participant.from_dict(obj["player1"]) if obj.get("player1") is not None else None,
+            "player2": Participant.from_dict(obj["player2"]) if obj.get("player2") is not None else None,
+            "registrationId": obj.get("registrationId")
         })
         return _obj
 

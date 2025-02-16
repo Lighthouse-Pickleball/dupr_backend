@@ -14,31 +14,29 @@
 
 import unittest
 
-import dupr_backend
-from dupr_backend.api.media_api import MediaApi  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.api.media_api import MediaApi
 
 
 class TestMediaApi(unittest.TestCase):
     """MediaApi unit test stubs"""
 
-    def setUp(self):
-        self.api = dupr_backend.api.media_api.MediaApi()  # noqa: E501
+    def setUp(self) -> None:
+        self.api = MediaApi()
 
-    def tearDown(self):
+    def tearDown(self) -> None:
         pass
 
-    def test_upload_document_using_put(self):
+    def test_upload_document_using_put(self) -> None:
         """Test case for upload_document_using_put
 
-        uploadDocument  # noqa: E501
+        uploadDocument
         """
         pass
 
-    def test_upload_using_put(self):
+    def test_upload_using_put(self) -> None:
         """Test case for upload_using_put
 
-        upload  # noqa: E501
+        upload
         """
         pass
 

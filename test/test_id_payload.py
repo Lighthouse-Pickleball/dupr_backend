@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.id_payload import IdPayload  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.id_payload import IdPayload
 
 class TestIdPayload(unittest.TestCase):
     """IdPayload unit test stubs"""
@@ -28,19 +25,19 @@ class TestIdPayload(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> IdPayload:
         """Test IdPayload
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `IdPayload`
         """
-        model = dupr_backend.models.id_payload.IdPayload()  # noqa: E501
-        if include_optional :
+        model = IdPayload()
+        if include_optional:
             return IdPayload(
                 id = 7615704574
             )
-        else :
+        else:
             return IdPayload(
                 id = 7615704574,
         )

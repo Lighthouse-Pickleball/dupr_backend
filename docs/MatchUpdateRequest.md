@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bracket_id** | **int** |  | [optional] 
@@ -30,12 +31,12 @@ json = "{}"
 # create an instance of MatchUpdateRequest from a JSON string
 match_update_request_instance = MatchUpdateRequest.from_json(json)
 # print the JSON string representation of the object
-print MatchUpdateRequest.to_json()
+print(MatchUpdateRequest.to_json())
 
 # convert the object into a dict
 match_update_request_dict = match_update_request_instance.to_dict()
 # create an instance of MatchUpdateRequest from a dict
-match_update_request_form_dict = match_update_request.from_dict(match_update_request_dict)
+match_update_request_from_dict = MatchUpdateRequest.from_dict(match_update_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.edit_event_team_request import EditEventTeamRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.edit_event_team_request import EditEventTeamRequest
 
 class TestEditEventTeamRequest(unittest.TestCase):
     """EditEventTeamRequest unit test stubs"""
@@ -28,25 +25,25 @@ class TestEditEventTeamRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> EditEventTeamRequest:
         """Test EditEventTeamRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `EditEventTeamRequest`
         """
-        model = dupr_backend.models.edit_event_team_request.EditEventTeamRequest()  # noqa: E501
-        if include_optional :
+        model = EditEventTeamRequest()
+        if include_optional:
             return EditEventTeamRequest(
-                bracket_id = 45785789, 
-                club_id = 45785789, 
-                is_player1_club_member = False, 
-                is_player2_club_member = False, 
-                player1 = 45785789, 
-                player2 = 45785789, 
+                bracket_id = 45785789,
+                club_id = 45785789,
+                is_player1_club_member = False,
+                is_player2_club_member = False,
+                player1 = 45785789,
+                player2 = 45785789,
                 registration_id = 45785789
             )
-        else :
+        else:
             return EditEventTeamRequest(
                 bracket_id = 45785789,
                 club_id = 45785789,

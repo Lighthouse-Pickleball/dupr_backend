@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount_paid** | **float** |  | 
@@ -24,12 +25,12 @@ json = "{}"
 # create an instance of PaymentDetailsResponse from a JSON string
 payment_details_response_instance = PaymentDetailsResponse.from_json(json)
 # print the JSON string representation of the object
-print PaymentDetailsResponse.to_json()
+print(PaymentDetailsResponse.to_json())
 
 # convert the object into a dict
 payment_details_response_dict = payment_details_response_instance.to_dict()
 # create an instance of PaymentDetailsResponse from a dict
-payment_details_response_form_dict = payment_details_response.from_dict(payment_details_response_dict)
+payment_details_response_from_dict = PaymentDetailsResponse.from_dict(payment_details_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

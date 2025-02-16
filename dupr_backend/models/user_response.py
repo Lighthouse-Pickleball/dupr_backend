@@ -17,108 +17,124 @@ import pprint
 import re  # noqa: F401
 import json
 
-
-from typing import List, Optional
-from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist, validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional
 from dupr_backend.models.address_response import AddressResponse
 from dupr_backend.models.player_rating_response import PlayerRatingResponse
 from dupr_backend.models.role_response import RoleResponse
 from dupr_backend.models.user_preferences_response import UserPreferencesResponse
+from typing import Optional, Set
+from typing_extensions import Self
 
 class UserResponse(BaseModel):
     """
     UserResponse
-    """
-    active: StrictBool = Field(...)
-    addresses: Optional[conlist(AddressResponse)] = None
-    apparel_brand: Optional[StrictStr] = Field(None, alias="apparelBrand")
+    """ # noqa: E501
+    active: StrictBool
+    addresses: Optional[List[AddressResponse]] = None
+    apparel_brand: Optional[StrictStr] = Field(default=None, alias="apparelBrand")
     birthdate: Optional[StrictStr] = None
-    display_username: Optional[StrictBool] = Field(None, alias="displayUsername")
-    email: StrictStr = Field(...)
-    first_name: StrictStr = Field(..., alias="firstName")
-    full_name: StrictStr = Field(..., alias="fullName")
+    display_username: Optional[StrictBool] = Field(default=None, alias="displayUsername")
+    email: StrictStr
+    first_name: StrictStr = Field(alias="firstName")
+    full_name: StrictStr = Field(alias="fullName")
     gender: Optional[StrictStr] = None
     hand: Optional[StrictStr] = None
-    id: StrictInt = Field(...)
-    image_url: Optional[StrictStr] = Field(None, alias="imageUrl")
-    is_valid_email: Optional[StrictBool] = Field(None, alias="isValidEmail")
-    is_valid_phone: Optional[StrictBool] = Field(None, alias="isValidPhone")
-    iso_code: Optional[StrictStr] = Field(None, alias="isoCode")
-    last_name: StrictStr = Field(..., alias="lastName")
-    lucra_connected: Optional[StrictBool] = Field(None, alias="lucraConnected")
-    paddle_brand: Optional[StrictStr] = Field(None, alias="paddleBrand")
+    id: StrictInt
+    image_url: Optional[StrictStr] = Field(default=None, alias="imageUrl")
+    is_valid_email: Optional[StrictBool] = Field(default=None, alias="isValidEmail")
+    is_valid_phone: Optional[StrictBool] = Field(default=None, alias="isValidPhone")
+    iso_code: Optional[StrictStr] = Field(default=None, alias="isoCode")
+    last_name: StrictStr = Field(alias="lastName")
+    lucra_connected: Optional[StrictBool] = Field(default=None, alias="lucraConnected")
+    paddle_brand: Optional[StrictStr] = Field(default=None, alias="paddleBrand")
     phone: Optional[StrictStr] = None
-    preferred_ball: Optional[StrictStr] = Field(None, alias="preferredBall")
-    preferred_side: Optional[StrictStr] = Field(None, alias="preferredSide")
-    referral_code: Optional[StrictStr] = Field(None, alias="referralCode")
+    preferred_ball: Optional[StrictStr] = Field(default=None, alias="preferredBall")
+    preferred_side: Optional[StrictStr] = Field(default=None, alias="preferredSide")
+    referral_code: Optional[StrictStr] = Field(default=None, alias="referralCode")
     restricted: Optional[StrictBool] = None
     role: Optional[RoleResponse] = None
-    shoe_brand: Optional[StrictStr] = Field(None, alias="shoeBrand")
+    shoe_brand: Optional[StrictStr] = Field(default=None, alias="shoeBrand")
     stats: Optional[PlayerRatingResponse] = None
-    user_preferences: Optional[UserPreferencesResponse] = Field(None, alias="userPreferences")
+    user_preferences: Optional[UserPreferencesResponse] = Field(default=None, alias="userPreferences")
     username: Optional[StrictStr] = None
-    __properties = ["active", "addresses", "apparelBrand", "birthdate", "displayUsername", "email", "firstName", "fullName", "gender", "hand", "id", "imageUrl", "isValidEmail", "isValidPhone", "isoCode", "lastName", "lucraConnected", "paddleBrand", "phone", "preferredBall", "preferredSide", "referralCode", "restricted", "role", "shoeBrand", "stats", "userPreferences", "username"]
+    __properties: ClassVar[List[str]] = ["active", "addresses", "apparelBrand", "birthdate", "displayUsername", "email", "firstName", "fullName", "gender", "hand", "id", "imageUrl", "isValidEmail", "isValidPhone", "isoCode", "lastName", "lucraConnected", "paddleBrand", "phone", "preferredBall", "preferredSide", "referralCode", "restricted", "role", "shoeBrand", "stats", "userPreferences", "username"]
 
-    @validator('gender')
+    @field_validator('gender')
     def gender_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('FEMALE', 'MALE'):
+        if value not in set(['FEMALE', 'MALE']):
             raise ValueError("must be one of enum values ('FEMALE', 'MALE')")
         return value
 
-    @validator('hand')
+    @field_validator('hand')
     def hand_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('BOTH', 'LEFT', 'NONE', 'RIGHT'):
+        if value not in set(['BOTH', 'LEFT', 'NONE', 'RIGHT']):
             raise ValueError("must be one of enum values ('BOTH', 'LEFT', 'NONE', 'RIGHT')")
         return value
 
-    @validator('preferred_side')
+    @field_validator('preferred_side')
     def preferred_side_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('EITHER', 'LEFT', 'RIGHT'):
+        if value not in set(['EITHER', 'LEFT', 'RIGHT']):
             raise ValueError("must be one of enum values ('EITHER', 'LEFT', 'RIGHT')")
         return value
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> UserResponse:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of UserResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         # override the default output from pydantic by calling `to_dict()` of each item in addresses (list)
         _items = []
         if self.addresses:
-            for _item in self.addresses:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_addresses in self.addresses:
+                if _item_addresses:
+                    _items.append(_item_addresses.to_dict())
             _dict['addresses'] = _items
         # override the default output from pydantic by calling `to_dict()` of role
         if self.role:
@@ -132,42 +148,42 @@ class UserResponse(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> UserResponse:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of UserResponse from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return UserResponse.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = UserResponse.parse_obj({
+        _obj = cls.model_validate({
             "active": obj.get("active"),
-            "addresses": [AddressResponse.from_dict(_item) for _item in obj.get("addresses")] if obj.get("addresses") is not None else None,
-            "apparel_brand": obj.get("apparelBrand"),
+            "addresses": [AddressResponse.from_dict(_item) for _item in obj["addresses"]] if obj.get("addresses") is not None else None,
+            "apparelBrand": obj.get("apparelBrand"),
             "birthdate": obj.get("birthdate"),
-            "display_username": obj.get("displayUsername"),
+            "displayUsername": obj.get("displayUsername"),
             "email": obj.get("email"),
-            "first_name": obj.get("firstName"),
-            "full_name": obj.get("fullName"),
+            "firstName": obj.get("firstName"),
+            "fullName": obj.get("fullName"),
             "gender": obj.get("gender"),
             "hand": obj.get("hand"),
             "id": obj.get("id"),
-            "image_url": obj.get("imageUrl"),
-            "is_valid_email": obj.get("isValidEmail"),
-            "is_valid_phone": obj.get("isValidPhone"),
-            "iso_code": obj.get("isoCode"),
-            "last_name": obj.get("lastName"),
-            "lucra_connected": obj.get("lucraConnected"),
-            "paddle_brand": obj.get("paddleBrand"),
+            "imageUrl": obj.get("imageUrl"),
+            "isValidEmail": obj.get("isValidEmail"),
+            "isValidPhone": obj.get("isValidPhone"),
+            "isoCode": obj.get("isoCode"),
+            "lastName": obj.get("lastName"),
+            "lucraConnected": obj.get("lucraConnected"),
+            "paddleBrand": obj.get("paddleBrand"),
             "phone": obj.get("phone"),
-            "preferred_ball": obj.get("preferredBall"),
-            "preferred_side": obj.get("preferredSide"),
-            "referral_code": obj.get("referralCode"),
+            "preferredBall": obj.get("preferredBall"),
+            "preferredSide": obj.get("preferredSide"),
+            "referralCode": obj.get("referralCode"),
             "restricted": obj.get("restricted"),
-            "role": RoleResponse.from_dict(obj.get("role")) if obj.get("role") is not None else None,
-            "shoe_brand": obj.get("shoeBrand"),
-            "stats": PlayerRatingResponse.from_dict(obj.get("stats")) if obj.get("stats") is not None else None,
-            "user_preferences": UserPreferencesResponse.from_dict(obj.get("userPreferences")) if obj.get("userPreferences") is not None else None,
+            "role": RoleResponse.from_dict(obj["role"]) if obj.get("role") is not None else None,
+            "shoeBrand": obj.get("shoeBrand"),
+            "stats": PlayerRatingResponse.from_dict(obj["stats"]) if obj.get("stats") is not None else None,
+            "userPreferences": UserPreferencesResponse.from_dict(obj["userPreferences"]) if obj.get("userPreferences") is not None else None,
             "username": obj.get("username")
         })
         return _obj

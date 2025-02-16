@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.skill_level_filter import SkillLevelFilter  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.skill_level_filter import SkillLevelFilter
 
 class TestSkillLevelFilter(unittest.TestCase):
     """SkillLevelFilter unit test stubs"""
@@ -28,20 +25,20 @@ class TestSkillLevelFilter(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SkillLevelFilter:
         """Test SkillLevelFilter
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SkillLevelFilter`
         """
-        model = dupr_backend.models.skill_level_filter.SkillLevelFilter()  # noqa: E501
-        if include_optional :
+        model = SkillLevelFilter()
+        if include_optional:
             return SkillLevelFilter(
-                max_rating = 4.2, 
+                max_rating = 4.2,
                 min_rating = 3.2
             )
-        else :
+        else:
             return SkillLevelFilter(
         )
         """

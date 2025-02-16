@@ -18,76 +18,93 @@ import re  # noqa: F401
 import json
 
 from datetime import date, datetime
-from typing import List, Optional, Union
-from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr, conlist, validator
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from typing import Optional, Set
+from typing_extensions import Self
 
 class MILPDivisionRequest(BaseModel):
     """
     MILPDivisionRequest
-    """
-    day1_start: datetime = Field(..., alias="day1Start")
-    day2_start: Optional[datetime] = Field(None, alias="day2Start")
-    division_name: Optional[StrictStr] = Field(None, alias="divisionName")
-    division_type: StrictStr = Field(..., alias="divisionType")
-    entry_fee: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="entryFee")
-    max_teams: Optional[StrictInt] = Field(None, alias="maxTeams")
-    max_waitlist: Optional[StrictInt] = Field(None, alias="maxWaitlist")
-    prize: Union[StrictFloat, StrictInt] = Field(...)
-    registration_period: conlist(date) = Field(..., alias="registrationPeriod")
-    __properties = ["day1Start", "day2Start", "divisionName", "divisionType", "entryFee", "maxTeams", "maxWaitlist", "prize", "registrationPeriod"]
+    """ # noqa: E501
+    day1_start: datetime = Field(alias="day1Start")
+    day2_start: Optional[datetime] = Field(default=None, alias="day2Start")
+    division_name: Optional[StrictStr] = Field(default=None, alias="divisionName")
+    division_type: StrictStr = Field(alias="divisionType")
+    entry_fee: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="entryFee")
+    max_teams: Optional[StrictInt] = Field(default=None, alias="maxTeams")
+    max_waitlist: Optional[StrictInt] = Field(default=None, alias="maxWaitlist")
+    prize: Union[StrictFloat, StrictInt]
+    registration_period: List[date] = Field(alias="registrationPeriod")
+    __properties: ClassVar[List[str]] = ["day1Start", "day2Start", "divisionName", "divisionType", "entryFee", "maxTeams", "maxWaitlist", "prize", "registrationPeriod"]
 
-    @validator('division_type')
+    @field_validator('division_type')
     def division_type_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in ('DUPR12', 'DUPR14', 'DUPR16', 'DUPR18', 'DUPR20', 'DUPR22', 'DUPR_OPEN'):
+        if value not in set(['DUPR12', 'DUPR14', 'DUPR16', 'DUPR18', 'DUPR20', 'DUPR22', 'DUPR_OPEN']):
             raise ValueError("must be one of enum values ('DUPR12', 'DUPR14', 'DUPR16', 'DUPR18', 'DUPR20', 'DUPR22', 'DUPR_OPEN')")
         return value
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> MILPDivisionRequest:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of MILPDivisionRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> MILPDivisionRequest:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of MILPDivisionRequest from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return MILPDivisionRequest.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = MILPDivisionRequest.parse_obj({
-            "day1_start": obj.get("day1Start"),
-            "day2_start": obj.get("day2Start"),
-            "division_name": obj.get("divisionName"),
-            "division_type": obj.get("divisionType"),
-            "entry_fee": obj.get("entryFee"),
-            "max_teams": obj.get("maxTeams"),
-            "max_waitlist": obj.get("maxWaitlist"),
+        _obj = cls.model_validate({
+            "day1Start": obj.get("day1Start"),
+            "day2Start": obj.get("day2Start"),
+            "divisionName": obj.get("divisionName"),
+            "divisionType": obj.get("divisionType"),
+            "entryFee": obj.get("entryFee"),
+            "maxTeams": obj.get("maxTeams"),
+            "maxWaitlist": obj.get("maxWaitlist"),
             "prize": obj.get("prize"),
-            "registration_period": obj.get("registrationPeriod")
+            "registrationPeriod": obj.get("registrationPeriod")
         })
         return _obj
 

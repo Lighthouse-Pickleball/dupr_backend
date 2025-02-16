@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.mi_lp_event_request import MiLPEventRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.mi_lp_event_request import MiLPEventRequest
 
 class TestMiLPEventRequest(unittest.TestCase):
     """MiLPEventRequest unit test stubs"""
@@ -28,21 +25,21 @@ class TestMiLPEventRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> MiLPEventRequest:
         """Test MiLPEventRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MiLPEventRequest`
         """
-        model = dupr_backend.models.mi_lp_event_request.MiLPEventRequest()  # noqa: E501
-        if include_optional :
+        model = MiLPEventRequest()
+        if include_optional:
             return MiLPEventRequest(
-                address_id = 5156151658, 
-                club_id = 45785789, 
-                default_entry_fee = 500.0, 
-                default_max_teams = 10, 
-                default_max_waitlist = 3, 
+                address_id = 5156151658,
+                club_id = 45785789,
+                default_entry_fee = 500.0,
+                default_max_teams = 10,
+                default_max_waitlist = 3,
                 description = dupr_backend.models.league_content_request.LeagueContentRequest(
                     content = '<h1>content</h1>', 
                     content_id = 45785789, 
@@ -50,7 +47,7 @@ class TestMiLPEventRequest(unittest.TestCase):
                     footer = '<h1>footer</h1>', 
                     footer_type = 'text/html', 
                     header = '<h1>header</h1>', 
-                    header_type = 'text/html', ), 
+                    header_type = 'text/html', ),
                 divisions = [
                     dupr_backend.models.milp_division_request.MILPDivisionRequest(
                         day1_start = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -62,19 +59,19 @@ class TestMiLPEventRequest(unittest.TestCase):
                         max_waitlist = 3, 
                         prize = 500.0, 
                         registration_period = [yyyy-mm-dd, yyyy-mm-dd], )
-                    ], 
-                duration = [yyyy-mm-dd, yyyy-mm-dd], 
-                event_name = 'Stillwater Pickleball', 
-                event_type = 'STANDARD/MARQUE/SHOWDOWN', 
+                    ],
+                duration = [yyyy-mm-dd, yyyy-mm-dd],
+                event_name = 'Stillwater Pickleball',
+                event_type = 'STANDARD/MARQUE/SHOWDOWN',
                 organizers = [
                     dupr_backend.models.milp_event_organizer_request.MILPEventOrganizerRequest(
                         status = 'ACTIVE/CANCELLED', 
                         user_id = 45785789, )
-                    ], 
-                status = 'ACTIVE/IN_PROGRESS/COMPLETE/CANCELLED', 
+                    ],
+                status = 'ACTIVE/IN_PROGRESS/COMPLETE/CANCELLED',
                 time_zone = 'America/New_York'
             )
-        else :
+        else:
             return MiLPEventRequest(
                 address_id = 5156151658,
                 club_id = 45785789,

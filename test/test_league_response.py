@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.league_response import LeagueResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.league_response import LeagueResponse
 
 class TestLeagueResponse(unittest.TestCase):
     """LeagueResponse unit test stubs"""
@@ -28,15 +25,15 @@ class TestLeagueResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> LeagueResponse:
         """Test LeagueResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `LeagueResponse`
         """
-        model = dupr_backend.models.league_response.LeagueResponse()  # noqa: E501
-        if include_optional :
+        model = LeagueResponse()
+        if include_optional:
             return LeagueResponse(
                 additional_information = dupr_backend.models.league_content_response.LeagueContentResponse(
                     content = '<h1>content</h1>', 
@@ -45,7 +42,7 @@ class TestLeagueResponse(unittest.TestCase):
                     footer = '<h1>footer</h1>', 
                     footer_type = 'text/html', 
                     header = '<h1>header</h1>', 
-                    header_type = 'text/html', ), 
+                    header_type = 'text/html', ),
                 address = dupr_backend.models.address_response.AddressResponse(
                     address_line = 'Apartment, Room, PO Box numbers (optional)', 
                     create = '', 
@@ -57,9 +54,9 @@ class TestLeagueResponse(unittest.TestCase):
                     precision = '', 
                     short_address = 'Center Valley, PA, US', 
                     status = '', 
-                    types = '', ), 
-                age_string = '20 - 30', 
-                attributes = {"additionalProp1":{"children":{},"comment":"Contact person name, if provided.","value":"String"}}, 
+                    types = '', ),
+                age_string = '20 - 30',
+                attributes = {"additionalProp1":{"children":{},"comment":"Contact person name, if provided.","value":"String"}},
                 brackets = [
                     dupr_backend.models.bracket_response.BracketResponse(
                         age_bracket = [27, 35], 
@@ -185,10 +182,10 @@ class TestLeagueResponse(unittest.TestCase):
                         total_rounds = 1, 
                         wait_list = 500, 
                         zone_name = 'IST', )
-                    ], 
-                can_show_standings = False, 
-                club_id = 45785789, 
-                club_name = 'Stillwater Pickleball', 
+                    ],
+                can_show_standings = False,
+                club_id = 45785789,
+                club_name = 'Stillwater Pickleball',
                 contact_details = [
                     dupr_backend.models.league_contact_detail_response.LeagueContactDetailResponse(
                         address = 'PA 18034, United States', 
@@ -197,29 +194,29 @@ class TestLeagueResponse(unittest.TestCase):
                         phone = '18022214966', 
                         priority = 1, 
                         type = 'person/club', )
-                    ], 
+                    ],
                 currency_details = dupr_backend.models.currency_details_response.CurrencyDetailsResponse(
                     currency_code = 'USD', 
                     currency_name = 'US Dollar', 
                     currency_symbol = '$', 
-                    min_limit = 100.0, ), 
-                display_status = 'Draft/Upcoming/Open/Ongoing', 
-                distance = 'Nearby', 
-                distance_in_miles = 15.4, 
-                duration = [yyyy-mm-dd, yyyy-mm-dd], 
-                duration_date_time = [yyyy-mm-ddTHH:mm:ss, yyyy-mm-ddTHH:mm:ss], 
-                duration_date_time_utc = [yyyy-mm-ddTHH:mm:ss, yyyy-mm-ddTHH:mm:ss], 
-                duration_status = 'IN_PROGRESS/UPCOMING/COMPLETE', 
-                duration_string = '2021-11-07 - 2021-11-08', 
-                elimination_string = 'ROUND_ROBIN', 
-                end_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                event_format_string = 'SINGLES,DOUBLES', 
-                is_registered = True, 
-                league_id = 45785789, 
-                league_name = 'Stillwater Pickleball', 
-                league_price = '$40 - $50', 
-                liability_waiver_id = 45785789, 
-                liability_waiver_url = 'www.url.com/doc.pdf', 
+                    min_limit = 100.0, ),
+                display_status = 'Draft/Upcoming/Open/Ongoing',
+                distance = 'Nearby',
+                distance_in_miles = 15.4,
+                duration = [yyyy-mm-dd, yyyy-mm-dd],
+                duration_date_time = [yyyy-mm-ddTHH:mm:ss, yyyy-mm-ddTHH:mm:ss],
+                duration_date_time_utc = [yyyy-mm-ddTHH:mm:ss, yyyy-mm-ddTHH:mm:ss],
+                duration_status = 'IN_PROGRESS/UPCOMING/COMPLETE',
+                duration_string = '2021-11-07 - 2021-11-08',
+                elimination_string = 'ROUND_ROBIN',
+                end_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                event_format_string = 'SINGLES,DOUBLES',
+                is_registered = True,
+                league_id = 45785789,
+                league_name = 'Stillwater Pickleball',
+                league_price = '$40 - $50',
+                liability_waiver_id = 45785789,
+                liability_waiver_url = 'www.url.com/doc.pdf',
                 long_description = dupr_backend.models.league_content_response.LeagueContentResponse(
                     content = '<h1>content</h1>', 
                     content_id = 45785789, 
@@ -227,13 +224,13 @@ class TestLeagueResponse(unittest.TestCase):
                     footer = '<h1>footer</h1>', 
                     footer_type = 'text/html', 
                     header = '<h1>header</h1>', 
-                    header_type = 'text/html', ), 
-                media_id = 45785789, 
-                media_url = 'www.url.com/image.jpg', 
-                member_fee = 500.0, 
-                membership_permission = 'OPEN_TO_ALL/CLUB_MEMBERS', 
-                non_member_fee = 500.0, 
-                player_group = 'MEN,MIXED', 
+                    header_type = 'text/html', ),
+                media_id = 45785789,
+                media_url = 'www.url.com/image.jpg',
+                member_fee = 500.0,
+                membership_permission = 'OPEN_TO_ALL/CLUB_MEMBERS',
+                non_member_fee = 500.0,
+                player_group = 'MEN,MIXED',
                 refund_policy = dupr_backend.models.league_content_response.LeagueContentResponse(
                     content = '<h1>content</h1>', 
                     content_id = 45785789, 
@@ -241,14 +238,14 @@ class TestLeagueResponse(unittest.TestCase):
                     footer = '<h1>footer</h1>', 
                     footer_type = 'text/html', 
                     header = '<h1>header</h1>', 
-                    header_type = 'text/html', ), 
-                registered_members = 56, 
-                registration_date = [yyyy-mm-dd, yyyy-mm-dd], 
-                registration_date_time = [yyyy-mm-ddTHH:mm:ss, yyyy-mm-ddTHH:mm:ss], 
-                registration_date_time_utc = [yyyy-mm-ddTHH:mm:ss, yyyy-mm-ddTHH:mm:ss], 
-                registration_status = 'OPEN/CLOSED', 
-                registration_string = '2021-11-07 - 2021-11-08', 
-                registration_url = 'https://mydupr.com/register', 
+                    header_type = 'text/html', ),
+                registered_members = 56,
+                registration_date = [yyyy-mm-dd, yyyy-mm-dd],
+                registration_date_time = [yyyy-mm-ddTHH:mm:ss, yyyy-mm-ddTHH:mm:ss],
+                registration_date_time_utc = [yyyy-mm-ddTHH:mm:ss, yyyy-mm-ddTHH:mm:ss],
+                registration_status = 'OPEN/CLOSED',
+                registration_string = '2021-11-07 - 2021-11-08',
+                registration_url = 'https://mydupr.com/register',
                 safety_policy = dupr_backend.models.league_content_response.LeagueContentResponse(
                     content = '<h1>content</h1>', 
                     content_id = 45785789, 
@@ -256,8 +253,8 @@ class TestLeagueResponse(unittest.TestCase):
                     footer = '<h1>footer</h1>', 
                     footer_type = 'text/html', 
                     header = '<h1>header</h1>', 
-                    header_type = 'text/html', ), 
-                short_address = 'Miami-Dade County, FL, US', 
+                    header_type = 'text/html', ),
+                short_address = 'Miami-Dade County, FL, US',
                 short_description = dupr_backend.models.league_content_response.LeagueContentResponse(
                     content = '<h1>content</h1>', 
                     content_id = 45785789, 
@@ -265,14 +262,14 @@ class TestLeagueResponse(unittest.TestCase):
                     footer = '<h1>footer</h1>', 
                     footer_type = 'text/html', 
                     header = '<h1>header</h1>', 
-                    header_type = 'text/html', ), 
-                skill_level = 'DUPR 3 - 4', 
-                start_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                status = 'ACTIVE/IN_PROGRESS/COMPLETE/CANCELLED', 
-                type = 'FLEX', 
+                    header_type = 'text/html', ),
+                skill_level = 'DUPR 3 - 4',
+                start_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                status = 'ACTIVE/IN_PROGRESS/COMPLETE/CANCELLED',
+                type = 'FLEX',
                 user_id = 45785789
             )
-        else :
+        else:
             return LeagueResponse(
                 brackets = [
                     dupr_backend.models.bracket_response.BracketResponse(

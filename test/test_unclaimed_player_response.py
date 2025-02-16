@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.unclaimed_player_response import UnclaimedPlayerResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.unclaimed_player_response import UnclaimedPlayerResponse
 
 class TestUnclaimedPlayerResponse(unittest.TestCase):
     """UnclaimedPlayerResponse unit test stubs"""
@@ -28,31 +25,31 @@ class TestUnclaimedPlayerResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> UnclaimedPlayerResponse:
         """Test UnclaimedPlayerResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `UnclaimedPlayerResponse`
         """
-        model = dupr_backend.models.unclaimed_player_response.UnclaimedPlayerResponse()  # noqa: E501
-        if include_optional :
+        model = UnclaimedPlayerResponse()
+        if include_optional:
             return UnclaimedPlayerResponse(
-                age = 12, 
-                claimed = False, 
-                fullname = 'Brian Lara', 
-                gender = 'MALE/FEMALE', 
-                id = 26518181881, 
-                image_url = 'http://www.example.com/image.png', 
+                age = 12,
+                claimed = False,
+                fullname = 'Brian Lara',
+                gender = 'MALE/FEMALE',
+                id = 26518181881,
+                image_url = 'http://www.example.com/image.png',
                 ratings = dupr_backend.models.ratings_unclaimed_player_response.RatingsUnclaimedPlayerResponse(
                     doubles = '2.864', 
                     doubles_provisional = False, 
                     doubles_verified = '2.864', 
                     singles = '4.125', 
                     singles_provisional = False, 
-                    singles_verified = '4.125', ), 
-                referral_code = 'NV3JF2', 
-                short_address = '201, San Jose, CA, USA', 
+                    singles_verified = '4.125', ),
+                referral_code = 'NV3JF2',
+                short_address = '201, San Jose, CA, USA',
                 sponsor = dupr_backend.models.sponsor_logo_response.SponsorLogoResponse(
                     button_text = '', 
                     description = '', 
@@ -60,7 +57,7 @@ class TestUnclaimedPlayerResponse(unittest.TestCase):
                     sponsor_popup_heading = '', 
                     sponsor_redirect_url = '', )
             )
-        else :
+        else:
             return UnclaimedPlayerResponse(
                 claimed = False,
                 fullname = 'Brian Lara',

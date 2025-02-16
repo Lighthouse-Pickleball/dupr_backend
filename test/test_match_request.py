@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.match_request import MatchRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.match_request import MatchRequest
 
 class TestMatchRequest(unittest.TestCase):
     """MatchRequest unit test stubs"""
@@ -28,30 +25,30 @@ class TestMatchRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> MatchRequest:
         """Test MatchRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MatchRequest`
         """
-        model = dupr_backend.models.match_request.MatchRequest()  # noqa: E501
-        if include_optional :
+        model = MatchRequest()
+        if include_optional:
             return MatchRequest(
-                club_id = 41224223332, 
-                event = 'event name', 
-                event_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                format = 'SINGLES', 
-                league = 'Example League', 
-                location = 'Newport Beach, CA', 
-                match_type = 'SIDE_ONLY/RALLY', 
-                notify = False, 
-                score_format_id = 56168168161, 
+                club_id = 41224223332,
+                event = 'event name',
+                event_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
+                format = 'SINGLES',
+                league = 'Example League',
+                location = 'Newport Beach, CA',
+                match_type = 'SIDE_ONLY/RALLY',
+                notify = False,
+                score_format_id = 56168168161,
                 scores = [
                     dupr_backend.models.pair_ofint_andint.PairOfintAndint(
                         first = 56, 
                         second = 56, )
-                    ], 
+                    ],
                 team1 = dupr_backend.models.team.Team(
                     delta = 1.337, 
                     game1 = 56, 
@@ -195,7 +192,7 @@ class TestMatchRequest(unittest.TestCase):
                         validated_match = True, 
                         verified_email = True, ), 
                     team_rating = 1.337, 
-                    winner = True, ), 
+                    winner = True, ),
                 team2 = dupr_backend.models.team.Team(
                     delta = 1.337, 
                     game1 = 56, 
@@ -339,11 +336,11 @@ class TestMatchRequest(unittest.TestCase):
                         validated_match = True, 
                         verified_email = True, ), 
                     team_rating = 1.337, 
-                    winner = True, ), 
-                tournament = 'Newport Beach Doubles Shootout', 
+                    winner = True, ),
+                tournament = 'Newport Beach Doubles Shootout',
                 venue = 'Dreamland Pickleball'
             )
-        else :
+        else:
             return MatchRequest(
                 event_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
                 format = 'SINGLES',

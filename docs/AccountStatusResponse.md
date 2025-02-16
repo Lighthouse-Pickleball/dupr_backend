@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **int** |  | [optional] 
@@ -19,12 +20,12 @@ json = "{}"
 # create an instance of AccountStatusResponse from a JSON string
 account_status_response_instance = AccountStatusResponse.from_json(json)
 # print the JSON string representation of the object
-print AccountStatusResponse.to_json()
+print(AccountStatusResponse.to_json())
 
 # convert the object into a dict
 account_status_response_dict = account_status_response_instance.to_dict()
 # create an instance of AccountStatusResponse from a dict
-account_status_response_form_dict = account_status_response.from_dict(account_status_response_dict)
+account_status_response_from_dict = AccountStatusResponse.from_dict(account_status_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

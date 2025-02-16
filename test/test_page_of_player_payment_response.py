@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.page_of_player_payment_response import PageOfPlayerPaymentResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.page_of_player_payment_response import PageOfPlayerPaymentResponse
 
 class TestPageOfPlayerPaymentResponse(unittest.TestCase):
     """PageOfPlayerPaymentResponse unit test stubs"""
@@ -28,19 +25,19 @@ class TestPageOfPlayerPaymentResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> PageOfPlayerPaymentResponse:
         """Test PageOfPlayerPaymentResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PageOfPlayerPaymentResponse`
         """
-        model = dupr_backend.models.page_of_player_payment_response.PageOfPlayerPaymentResponse()  # noqa: E501
-        if include_optional :
+        model = PageOfPlayerPaymentResponse()
+        if include_optional:
             return PageOfPlayerPaymentResponse(
-                empty = False, 
-                has_more = False, 
-                has_previous = True, 
+                empty = False,
+                has_more = False,
+                has_previous = True,
                 hits = [
                     dupr_backend.models.player_payment_response.PlayerPaymentResponse(
                         age = 55, 
@@ -213,13 +210,13 @@ class TestPageOfPlayerPaymentResponse(unittest.TestCase):
                         team_status = 'ACTIVE/INACTIVE', 
                         username = 'X AE A-XII', 
                         verified_email = False, )
-                    ], 
-                limit = 10, 
-                offset = 90, 
-                total = 100, 
+                    ],
+                limit = 10,
+                offset = 90,
+                total = 100,
                 total_value_relation = 'GREATER_THAN_OR_EQUAL_TO'
             )
-        else :
+        else:
             return PageOfPlayerPaymentResponse(
                 empty = False,
                 has_more = False,

@@ -17,149 +17,165 @@ import pprint
 import re  # noqa: F401
 import json
 
-
-from typing import List, Optional, Union
-from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr, conlist, validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dupr_backend.models.address_response import AddressResponse
 from dupr_backend.models.currency_details_response import CurrencyDetailsResponse
 from dupr_backend.models.league_contact_detail_response import LeagueContactDetailResponse
 from dupr_backend.models.league_content_response import LeagueContentResponse
 from dupr_backend.models.payment_details_response import PaymentDetailsResponse
 from dupr_backend.models.registration_response import RegistrationResponse
+from typing import Optional, Set
+from typing_extensions import Self
 
 class BracketResponse(BaseModel):
     """
     BracketResponse
-    """
-    age_bracket: Optional[conlist(StrictInt)] = Field(None, alias="ageBracket")
-    bracket_id: StrictInt = Field(..., alias="bracketId")
-    can_show_standings: Optional[StrictBool] = Field(None, alias="canShowStandings")
-    club_id: StrictInt = Field(..., alias="clubId")
-    club_name: StrictStr = Field(..., alias="clubName")
-    contact_details: Optional[conlist(LeagueContactDetailResponse)] = Field(None, alias="contactDetails")
+    """ # noqa: E501
+    age_bracket: Optional[List[StrictInt]] = Field(default=None, alias="ageBracket")
+    bracket_id: StrictInt = Field(alias="bracketId")
+    can_show_standings: Optional[StrictBool] = Field(default=None, alias="canShowStandings")
+    club_id: StrictInt = Field(alias="clubId")
+    club_name: StrictStr = Field(alias="clubName")
+    contact_details: Optional[List[LeagueContactDetailResponse]] = Field(default=None, alias="contactDetails")
     courts: Optional[StrictInt] = None
-    currency_details: Optional[CurrencyDetailsResponse] = Field(None, alias="currencyDetails")
-    custom_code: Optional[StrictStr] = Field(None, alias="customCode")
+    currency_details: Optional[CurrencyDetailsResponse] = Field(default=None, alias="currencyDetails")
+    custom_code: Optional[StrictStr] = Field(default=None, alias="customCode")
     description: Optional[LeagueContentResponse] = None
-    display_status: Optional[StrictStr] = Field(None, alias="displayStatus")
-    draw_impacted: Optional[StrictBool] = Field(None, alias="drawImpacted")
-    duration: conlist(StrictStr) = Field(...)
-    duration_date_time: Optional[conlist(StrictStr)] = Field(None, alias="durationDateTime")
-    duration_status: Optional[StrictStr] = Field(None, alias="durationStatus")
+    display_status: Optional[StrictStr] = Field(default=None, alias="displayStatus")
+    draw_impacted: Optional[StrictBool] = Field(default=None, alias="drawImpacted")
+    duration: List[StrictStr]
+    duration_date_time: Optional[List[StrictStr]] = Field(default=None, alias="durationDateTime")
+    duration_status: Optional[StrictStr] = Field(default=None, alias="durationStatus")
     elimination: Optional[StrictStr] = None
     format: Optional[StrictStr] = None
-    has_confirm_match: Optional[StrictBool] = Field(None, alias="hasConfirmMatch")
-    has_queue: Optional[StrictBool] = Field(None, alias="hasQueue")
-    is_match_seeded: Optional[StrictBool] = Field(None, alias="isMatchSeeded")
-    is_player_eligible: Optional[StrictBool] = Field(None, alias="isPlayerEligible")
-    is_queue_complete: Optional[StrictBool] = Field(None, alias="isQueueComplete")
-    is_registered: StrictBool = Field(..., alias="isRegistered")
-    is_wait_list_full: StrictBool = Field(..., alias="isWaitListFull")
-    league_address: Optional[AddressResponse] = Field(None, alias="leagueAddress")
-    league_id: StrictInt = Field(..., alias="leagueId")
-    league_name: StrictStr = Field(..., alias="leagueName")
-    match_bonus_points: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="matchBonusPoints")
-    max_team: Optional[StrictInt] = Field(None, alias="maxTeam")
-    media_url: Optional[StrictStr] = Field(None, alias="mediaUrl")
-    member_fee: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="memberFee")
+    has_confirm_match: Optional[StrictBool] = Field(default=None, alias="hasConfirmMatch")
+    has_queue: Optional[StrictBool] = Field(default=None, alias="hasQueue")
+    is_match_seeded: Optional[StrictBool] = Field(default=None, alias="isMatchSeeded")
+    is_player_eligible: Optional[StrictBool] = Field(default=None, alias="isPlayerEligible")
+    is_queue_complete: Optional[StrictBool] = Field(default=None, alias="isQueueComplete")
+    is_registered: StrictBool = Field(alias="isRegistered")
+    is_wait_list_full: StrictBool = Field(alias="isWaitListFull")
+    league_address: Optional[AddressResponse] = Field(default=None, alias="leagueAddress")
+    league_id: StrictInt = Field(alias="leagueId")
+    league_name: StrictStr = Field(alias="leagueName")
+    match_bonus_points: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="matchBonusPoints")
+    max_team: Optional[StrictInt] = Field(default=None, alias="maxTeam")
+    media_url: Optional[StrictStr] = Field(default=None, alias="mediaUrl")
+    member_fee: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="memberFee")
     name: Optional[StrictStr] = None
-    non_member_fee: Union[StrictFloat, StrictInt] = Field(..., alias="nonMemberFee")
-    payment_details: Optional[PaymentDetailsResponse] = Field(None, alias="paymentDetails")
-    payment_status: StrictStr = Field(..., alias="paymentStatus")
-    player_group: Optional[StrictStr] = Field(None, alias="playerGroup")
-    rating_bracket: Optional[conlist(Union[StrictFloat, StrictInt])] = Field(None, alias="ratingBracket")
-    reg_user_id: Optional[StrictInt] = Field(None, alias="regUserId")
-    registered_members: Optional[StrictInt] = Field(None, alias="registeredMembers")
-    registration_date: Optional[conlist(StrictStr)] = Field(None, alias="registrationDate")
-    registration_date_time: Optional[conlist(StrictStr)] = Field(None, alias="registrationDateTime")
-    registration_details: Optional[RegistrationResponse] = Field(None, alias="registrationDetails")
-    registration_status: Optional[StrictStr] = Field(None, alias="registrationStatus")
-    score_format: StrictStr = Field(..., alias="scoreFormat")
-    score_format_id: StrictInt = Field(..., alias="scoreFormatId")
+    non_member_fee: Union[StrictFloat, StrictInt] = Field(alias="nonMemberFee")
+    payment_details: Optional[PaymentDetailsResponse] = Field(default=None, alias="paymentDetails")
+    payment_status: StrictStr = Field(alias="paymentStatus")
+    player_group: Optional[StrictStr] = Field(default=None, alias="playerGroup")
+    rating_bracket: Optional[List[Union[StrictFloat, StrictInt]]] = Field(default=None, alias="ratingBracket")
+    reg_user_id: Optional[StrictInt] = Field(default=None, alias="regUserId")
+    registered_members: Optional[StrictInt] = Field(default=None, alias="registeredMembers")
+    registration_date: Optional[List[StrictStr]] = Field(default=None, alias="registrationDate")
+    registration_date_time: Optional[List[StrictStr]] = Field(default=None, alias="registrationDateTime")
+    registration_details: Optional[RegistrationResponse] = Field(default=None, alias="registrationDetails")
+    registration_status: Optional[StrictStr] = Field(default=None, alias="registrationStatus")
+    score_format: StrictStr = Field(alias="scoreFormat")
+    score_format_id: StrictInt = Field(alias="scoreFormatId")
     status: Optional[StrictStr] = None
-    time_zone: Optional[StrictStr] = Field(None, alias="timeZone")
-    total_rounds: Optional[StrictInt] = Field(None, alias="totalRounds")
-    wait_list: StrictInt = Field(..., alias="waitList")
-    zone_name: Optional[StrictStr] = Field(None, alias="zoneName")
-    __properties = ["ageBracket", "bracketId", "canShowStandings", "clubId", "clubName", "contactDetails", "courts", "currencyDetails", "customCode", "description", "displayStatus", "drawImpacted", "duration", "durationDateTime", "durationStatus", "elimination", "format", "hasConfirmMatch", "hasQueue", "isMatchSeeded", "isPlayerEligible", "isQueueComplete", "isRegistered", "isWaitListFull", "leagueAddress", "leagueId", "leagueName", "matchBonusPoints", "maxTeam", "mediaUrl", "memberFee", "name", "nonMemberFee", "paymentDetails", "paymentStatus", "playerGroup", "ratingBracket", "regUserId", "registeredMembers", "registrationDate", "registrationDateTime", "registrationDetails", "registrationStatus", "scoreFormat", "scoreFormatId", "status", "timeZone", "totalRounds", "waitList", "zoneName"]
+    time_zone: Optional[StrictStr] = Field(default=None, alias="timeZone")
+    total_rounds: Optional[StrictInt] = Field(default=None, alias="totalRounds")
+    wait_list: StrictInt = Field(alias="waitList")
+    zone_name: Optional[StrictStr] = Field(default=None, alias="zoneName")
+    __properties: ClassVar[List[str]] = ["ageBracket", "bracketId", "canShowStandings", "clubId", "clubName", "contactDetails", "courts", "currencyDetails", "customCode", "description", "displayStatus", "drawImpacted", "duration", "durationDateTime", "durationStatus", "elimination", "format", "hasConfirmMatch", "hasQueue", "isMatchSeeded", "isPlayerEligible", "isQueueComplete", "isRegistered", "isWaitListFull", "leagueAddress", "leagueId", "leagueName", "matchBonusPoints", "maxTeam", "mediaUrl", "memberFee", "name", "nonMemberFee", "paymentDetails", "paymentStatus", "playerGroup", "ratingBracket", "regUserId", "registeredMembers", "registrationDate", "registrationDateTime", "registrationDetails", "registrationStatus", "scoreFormat", "scoreFormatId", "status", "timeZone", "totalRounds", "waitList", "zoneName"]
 
-    @validator('elimination')
+    @field_validator('elimination')
     def elimination_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('COMPASS', 'DOUBLE', 'DOUBLE_PREVENTED', 'FLEX', 'ROUND_ROBIN', 'SINGLE'):
+        if value not in set(['COMPASS', 'DOUBLE', 'DOUBLE_PREVENTED', 'FLEX', 'ROUND_ROBIN', 'SINGLE']):
             raise ValueError("must be one of enum values ('COMPASS', 'DOUBLE', 'DOUBLE_PREVENTED', 'FLEX', 'ROUND_ROBIN', 'SINGLE')")
         return value
 
-    @validator('format')
+    @field_validator('format')
     def format_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('DOUBLES', 'SINGLES'):
+        if value not in set(['DOUBLES', 'SINGLES']):
             raise ValueError("must be one of enum values ('DOUBLES', 'SINGLES')")
         return value
 
-    @validator('payment_status')
+    @field_validator('payment_status')
     def payment_status_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING'):
+        if value not in set(['ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING']):
             raise ValueError("must be one of enum values ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING')")
         return value
 
-    @validator('player_group')
+    @field_validator('player_group')
     def player_group_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('COED', 'MEN', 'MIXED', 'OPEN', 'WOMEN'):
+        if value not in set(['COED', 'MEN', 'MIXED', 'OPEN', 'WOMEN']):
             raise ValueError("must be one of enum values ('COED', 'MEN', 'MIXED', 'OPEN', 'WOMEN')")
         return value
 
-    @validator('status')
+    @field_validator('status')
     def status_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING'):
+        if value not in set(['ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING']):
             raise ValueError("must be one of enum values ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING')")
         return value
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> BracketResponse:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of BracketResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         # override the default output from pydantic by calling `to_dict()` of each item in contact_details (list)
         _items = []
         if self.contact_details:
-            for _item in self.contact_details:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_contact_details in self.contact_details:
+                if _item_contact_details:
+                    _items.append(_item_contact_details.to_dict())
             _dict['contactDetails'] = _items
         # override the default output from pydantic by calling `to_dict()` of currency_details
         if self.currency_details:
@@ -179,65 +195,65 @@ class BracketResponse(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> BracketResponse:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of BracketResponse from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return BracketResponse.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = BracketResponse.parse_obj({
-            "age_bracket": obj.get("ageBracket"),
-            "bracket_id": obj.get("bracketId"),
-            "can_show_standings": obj.get("canShowStandings"),
-            "club_id": obj.get("clubId"),
-            "club_name": obj.get("clubName"),
-            "contact_details": [LeagueContactDetailResponse.from_dict(_item) for _item in obj.get("contactDetails")] if obj.get("contactDetails") is not None else None,
+        _obj = cls.model_validate({
+            "ageBracket": obj.get("ageBracket"),
+            "bracketId": obj.get("bracketId"),
+            "canShowStandings": obj.get("canShowStandings"),
+            "clubId": obj.get("clubId"),
+            "clubName": obj.get("clubName"),
+            "contactDetails": [LeagueContactDetailResponse.from_dict(_item) for _item in obj["contactDetails"]] if obj.get("contactDetails") is not None else None,
             "courts": obj.get("courts"),
-            "currency_details": CurrencyDetailsResponse.from_dict(obj.get("currencyDetails")) if obj.get("currencyDetails") is not None else None,
-            "custom_code": obj.get("customCode"),
-            "description": LeagueContentResponse.from_dict(obj.get("description")) if obj.get("description") is not None else None,
-            "display_status": obj.get("displayStatus"),
-            "draw_impacted": obj.get("drawImpacted"),
+            "currencyDetails": CurrencyDetailsResponse.from_dict(obj["currencyDetails"]) if obj.get("currencyDetails") is not None else None,
+            "customCode": obj.get("customCode"),
+            "description": LeagueContentResponse.from_dict(obj["description"]) if obj.get("description") is not None else None,
+            "displayStatus": obj.get("displayStatus"),
+            "drawImpacted": obj.get("drawImpacted"),
             "duration": obj.get("duration"),
-            "duration_date_time": obj.get("durationDateTime"),
-            "duration_status": obj.get("durationStatus"),
+            "durationDateTime": obj.get("durationDateTime"),
+            "durationStatus": obj.get("durationStatus"),
             "elimination": obj.get("elimination"),
             "format": obj.get("format"),
-            "has_confirm_match": obj.get("hasConfirmMatch"),
-            "has_queue": obj.get("hasQueue"),
-            "is_match_seeded": obj.get("isMatchSeeded"),
-            "is_player_eligible": obj.get("isPlayerEligible"),
-            "is_queue_complete": obj.get("isQueueComplete"),
-            "is_registered": obj.get("isRegistered"),
-            "is_wait_list_full": obj.get("isWaitListFull"),
-            "league_address": AddressResponse.from_dict(obj.get("leagueAddress")) if obj.get("leagueAddress") is not None else None,
-            "league_id": obj.get("leagueId"),
-            "league_name": obj.get("leagueName"),
-            "match_bonus_points": obj.get("matchBonusPoints"),
-            "max_team": obj.get("maxTeam"),
-            "media_url": obj.get("mediaUrl"),
-            "member_fee": obj.get("memberFee"),
+            "hasConfirmMatch": obj.get("hasConfirmMatch"),
+            "hasQueue": obj.get("hasQueue"),
+            "isMatchSeeded": obj.get("isMatchSeeded"),
+            "isPlayerEligible": obj.get("isPlayerEligible"),
+            "isQueueComplete": obj.get("isQueueComplete"),
+            "isRegistered": obj.get("isRegistered"),
+            "isWaitListFull": obj.get("isWaitListFull"),
+            "leagueAddress": AddressResponse.from_dict(obj["leagueAddress"]) if obj.get("leagueAddress") is not None else None,
+            "leagueId": obj.get("leagueId"),
+            "leagueName": obj.get("leagueName"),
+            "matchBonusPoints": obj.get("matchBonusPoints"),
+            "maxTeam": obj.get("maxTeam"),
+            "mediaUrl": obj.get("mediaUrl"),
+            "memberFee": obj.get("memberFee"),
             "name": obj.get("name"),
-            "non_member_fee": obj.get("nonMemberFee"),
-            "payment_details": PaymentDetailsResponse.from_dict(obj.get("paymentDetails")) if obj.get("paymentDetails") is not None else None,
-            "payment_status": obj.get("paymentStatus"),
-            "player_group": obj.get("playerGroup"),
-            "rating_bracket": obj.get("ratingBracket"),
-            "reg_user_id": obj.get("regUserId"),
-            "registered_members": obj.get("registeredMembers"),
-            "registration_date": obj.get("registrationDate"),
-            "registration_date_time": obj.get("registrationDateTime"),
-            "registration_details": RegistrationResponse.from_dict(obj.get("registrationDetails")) if obj.get("registrationDetails") is not None else None,
-            "registration_status": obj.get("registrationStatus"),
-            "score_format": obj.get("scoreFormat"),
-            "score_format_id": obj.get("scoreFormatId"),
+            "nonMemberFee": obj.get("nonMemberFee"),
+            "paymentDetails": PaymentDetailsResponse.from_dict(obj["paymentDetails"]) if obj.get("paymentDetails") is not None else None,
+            "paymentStatus": obj.get("paymentStatus"),
+            "playerGroup": obj.get("playerGroup"),
+            "ratingBracket": obj.get("ratingBracket"),
+            "regUserId": obj.get("regUserId"),
+            "registeredMembers": obj.get("registeredMembers"),
+            "registrationDate": obj.get("registrationDate"),
+            "registrationDateTime": obj.get("registrationDateTime"),
+            "registrationDetails": RegistrationResponse.from_dict(obj["registrationDetails"]) if obj.get("registrationDetails") is not None else None,
+            "registrationStatus": obj.get("registrationStatus"),
+            "scoreFormat": obj.get("scoreFormat"),
+            "scoreFormatId": obj.get("scoreFormatId"),
             "status": obj.get("status"),
-            "time_zone": obj.get("timeZone"),
-            "total_rounds": obj.get("totalRounds"),
-            "wait_list": obj.get("waitList"),
-            "zone_name": obj.get("zoneName")
+            "timeZone": obj.get("timeZone"),
+            "totalRounds": obj.get("totalRounds"),
+            "waitList": obj.get("waitList"),
+            "zoneName": obj.get("zoneName")
         })
         return _obj
 

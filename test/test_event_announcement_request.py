@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.event_announcement_request import EventAnnouncementRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.event_announcement_request import EventAnnouncementRequest
 
 class TestEventAnnouncementRequest(unittest.TestCase):
     """EventAnnouncementRequest unit test stubs"""
@@ -28,19 +25,19 @@ class TestEventAnnouncementRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> EventAnnouncementRequest:
         """Test EventAnnouncementRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `EventAnnouncementRequest`
         """
-        model = dupr_backend.models.event_announcement_request.EventAnnouncementRequest()  # noqa: E501
-        if include_optional :
+        model = EventAnnouncementRequest()
+        if include_optional:
             return EventAnnouncementRequest(
-                announcement_id = 45785789, 
-                bracket_id = 45785789, 
-                club_id = 45785789, 
+                announcement_id = 45785789,
+                bracket_id = 45785789,
+                club_id = 45785789,
                 description = dupr_backend.models.announcement_content.AnnouncementContent(
                     content = '<h1>content</h1>', 
                     content_id = 45785789, 
@@ -48,11 +45,11 @@ class TestEventAnnouncementRequest(unittest.TestCase):
                     footer = '<h1>footer</h1>', 
                     footer_type = 'text/html', 
                     header = '<h1>header</h1>', 
-                    header_type = 'text/html', ), 
-                league_id = 45785789, 
+                    header_type = 'text/html', ),
+                league_id = 45785789,
                 title = 'Announcement Title'
             )
-        else :
+        else:
             return EventAnnouncementRequest(
                 announcement_id = 45785789,
                 bracket_id = 45785789,

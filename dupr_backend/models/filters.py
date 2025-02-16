@@ -17,92 +17,108 @@ import pprint
 import re  # noqa: F401
 import json
 
-
-from typing import Optional
-from pydantic import BaseModel, Field, StrictBool, StrictStr, validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional
+from typing import Optional, Set
+from typing_extensions import Self
 
 class Filters(BaseModel):
     """
     Filters
-    """
-    is_registered: Optional[StrictBool] = Field(None, alias="isRegistered")
-    is_wait_listed: Optional[StrictBool] = Field(None, alias="isWaitListed")
-    partner_status: Optional[StrictStr] = Field(None, alias="partnerStatus")
-    payment_status: Optional[StrictStr] = Field(None, alias="paymentStatus")
-    registration_status: Optional[StrictStr] = Field(None, alias="registrationStatus")
-    __properties = ["isRegistered", "isWaitListed", "partnerStatus", "paymentStatus", "registrationStatus"]
+    """ # noqa: E501
+    is_registered: Optional[StrictBool] = Field(default=None, alias="isRegistered")
+    is_wait_listed: Optional[StrictBool] = Field(default=None, alias="isWaitListed")
+    partner_status: Optional[StrictStr] = Field(default=None, alias="partnerStatus")
+    payment_status: Optional[StrictStr] = Field(default=None, alias="paymentStatus")
+    registration_status: Optional[StrictStr] = Field(default=None, alias="registrationStatus")
+    __properties: ClassVar[List[str]] = ["isRegistered", "isWaitListed", "partnerStatus", "paymentStatus", "registrationStatus"]
 
-    @validator('partner_status')
+    @field_validator('partner_status')
     def partner_status_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('NO_PARTNER', 'PENDING', 'REGISTERED'):
+        if value not in set(['NO_PARTNER', 'PENDING', 'REGISTERED']):
             raise ValueError("must be one of enum values ('NO_PARTNER', 'PENDING', 'REGISTERED')")
         return value
 
-    @validator('payment_status')
+    @field_validator('payment_status')
     def payment_status_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING'):
+        if value not in set(['ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING']):
             raise ValueError("must be one of enum values ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING')")
         return value
 
-    @validator('registration_status')
+    @field_validator('registration_status')
     def registration_status_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('CLOSED', 'NOT_STARTED', 'OPEN'):
+        if value not in set(['CLOSED', 'NOT_STARTED', 'OPEN']):
             raise ValueError("must be one of enum values ('CLOSED', 'NOT_STARTED', 'OPEN')")
         return value
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Filters:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of Filters from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> Filters:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of Filters from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return Filters.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = Filters.parse_obj({
-            "is_registered": obj.get("isRegistered"),
-            "is_wait_listed": obj.get("isWaitListed"),
-            "partner_status": obj.get("partnerStatus"),
-            "payment_status": obj.get("paymentStatus"),
-            "registration_status": obj.get("registrationStatus")
+        _obj = cls.model_validate({
+            "isRegistered": obj.get("isRegistered"),
+            "isWaitListed": obj.get("isWaitListed"),
+            "partnerStatus": obj.get("partnerStatus"),
+            "paymentStatus": obj.get("paymentStatus"),
+            "registrationStatus": obj.get("registrationStatus")
         })
         return _obj
 

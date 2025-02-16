@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.club_members_search_sort import ClubMembersSearchSort  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.club_members_search_sort import ClubMembersSearchSort
 
 class TestClubMembersSearchSort(unittest.TestCase):
     """ClubMembersSearchSort unit test stubs"""
@@ -28,20 +25,20 @@ class TestClubMembersSearchSort(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ClubMembersSearchSort:
         """Test ClubMembersSearchSort
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ClubMembersSearchSort`
         """
-        model = dupr_backend.models.club_members_search_sort.ClubMembersSearchSort()  # noqa: E501
-        if include_optional :
+        model = ClubMembersSearchSort()
+        if include_optional:
             return ClubMembersSearchSort(
-                order = 'ASC/DESC', 
+                order = 'ASC/DESC',
                 parameter = 'fullNameSort/doubles/doublesVerified/singles/singlesVerified/created'
             )
-        else :
+        else:
             return ClubMembersSearchSort(
         )
         """

@@ -15,9 +15,8 @@ uploadDocument
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_media_response import SingleWrapperOfMediaResponse
 from dupr_backend.rest import ApiException
@@ -49,6 +48,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **version** | **str**| version | [default to &#39;v1.0&#39;]
@@ -67,6 +67,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -81,9 +82,8 @@ upload
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_media_response import SingleWrapperOfMediaResponse
 from dupr_backend.rest import ApiException
@@ -115,6 +115,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **version** | **str**| version | [default to &#39;v1.0&#39;]
@@ -133,6 +134,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |

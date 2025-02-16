@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.pair_ofint_andint import PairOfintAndint  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.pair_ofint_andint import PairOfintAndint
 
 class TestPairOfintAndint(unittest.TestCase):
     """PairOfintAndint unit test stubs"""
@@ -28,20 +25,20 @@ class TestPairOfintAndint(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> PairOfintAndint:
         """Test PairOfintAndint
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PairOfintAndint`
         """
-        model = dupr_backend.models.pair_ofint_andint.PairOfintAndint()  # noqa: E501
-        if include_optional :
+        model = PairOfintAndint()
+        if include_optional:
             return PairOfintAndint(
-                first = 56, 
+                first = 56,
                 second = 56
             )
-        else :
+        else:
             return PairOfintAndint(
                 first = 56,
                 second = 56,

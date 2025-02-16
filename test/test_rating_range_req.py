@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.rating_range_req import RatingRangeReq  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.rating_range_req import RatingRangeReq
 
 class TestRatingRangeReq(unittest.TestCase):
     """RatingRangeReq unit test stubs"""
@@ -28,20 +25,20 @@ class TestRatingRangeReq(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> RatingRangeReq:
         """Test RatingRangeReq
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `RatingRangeReq`
         """
-        model = dupr_backend.models.rating_range_req.RatingRangeReq()  # noqa: E501
-        if include_optional :
+        model = RatingRangeReq()
+        if include_optional:
             return RatingRangeReq(
-                max = 1.337, 
+                max = 1.337,
                 min = 1.337
             )
-        else :
+        else:
             return RatingRangeReq(
                 max = 1.337,
                 min = 1.337,

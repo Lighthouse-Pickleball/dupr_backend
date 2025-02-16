@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.banner_content import BannerContent  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.banner_content import BannerContent
 
 class TestBannerContent(unittest.TestCase):
     """BannerContent unit test stubs"""
@@ -28,25 +25,25 @@ class TestBannerContent(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> BannerContent:
         """Test BannerContent
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `BannerContent`
         """
-        model = dupr_backend.models.banner_content.BannerContent()  # noqa: E501
-        if include_optional :
+        model = BannerContent()
+        if include_optional:
             return BannerContent(
-                content = '<h1>content</h1>', 
-                content_id = 45785789, 
-                content_type = 'text/html', 
-                footer = '<h1>footer</h1>', 
-                footer_type = 'text/html', 
-                header = '<h1>header</h1>', 
+                content = '<h1>content</h1>',
+                content_id = 45785789,
+                content_type = 'text/html',
+                footer = '<h1>footer</h1>',
+                footer_type = 'text/html',
+                header = '<h1>header</h1>',
                 header_type = 'text/html'
             )
-        else :
+        else:
             return BannerContent(
                 content = '<h1>content</h1>',
                 content_type = 'text/html',

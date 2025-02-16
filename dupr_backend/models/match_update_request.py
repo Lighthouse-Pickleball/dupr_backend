@@ -17,99 +17,115 @@ import pprint
 import re  # noqa: F401
 import json
 
-
-from typing import List, Optional
-from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist, validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional
 from dupr_backend.models.team_update_request import TeamUpdateRequest
+from typing import Optional, Set
+from typing_extensions import Self
 
 class MatchUpdateRequest(BaseModel):
     """
     MatchUpdateRequest
-    """
-    bracket_id: Optional[StrictInt] = Field(None, alias="bracketId")
+    """ # noqa: E501
+    bracket_id: Optional[StrictInt] = Field(default=None, alias="bracketId")
     confirmed: Optional[StrictBool] = None
     created: Optional[StrictStr] = None
-    event_date: Optional[StrictStr] = Field(None, alias="eventDate")
-    event_name: Optional[StrictStr] = Field(None, alias="eventName")
+    event_date: Optional[StrictStr] = Field(default=None, alias="eventDate")
+    event_name: Optional[StrictStr] = Field(default=None, alias="eventName")
     league: Optional[StrictStr] = None
-    league_id: Optional[StrictInt] = Field(None, alias="leagueId")
-    league_match_id: Optional[StrictInt] = Field(None, alias="leagueMatchId")
+    league_id: Optional[StrictInt] = Field(default=None, alias="leagueId")
+    league_match_id: Optional[StrictInt] = Field(default=None, alias="leagueMatchId")
     location: Optional[StrictStr] = None
-    match_id: Optional[StrictInt] = Field(None, alias="matchId")
-    match_source: Optional[StrictStr] = Field(None, alias="matchSource")
+    match_id: Optional[StrictInt] = Field(default=None, alias="matchId")
+    match_source: Optional[StrictStr] = Field(default=None, alias="matchSource")
     reason: Optional[StrictStr] = None
-    requested_by: Optional[StrictStr] = Field(None, alias="requestedBy")
-    teams: conlist(TeamUpdateRequest) = Field(...)
+    requested_by: Optional[StrictStr] = Field(default=None, alias="requestedBy")
+    teams: List[TeamUpdateRequest]
     venue: Optional[StrictStr] = None
-    __properties = ["bracketId", "confirmed", "created", "eventDate", "eventName", "league", "leagueId", "leagueMatchId", "location", "matchId", "matchSource", "reason", "requestedBy", "teams", "venue"]
+    __properties: ClassVar[List[str]] = ["bracketId", "confirmed", "created", "eventDate", "eventName", "league", "leagueId", "leagueMatchId", "location", "matchId", "matchSource", "reason", "requestedBy", "teams", "venue"]
 
-    @validator('match_source')
+    @field_validator('match_source')
     def match_source_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('CLUB', 'DUPR', 'EXTERNAL', 'LEAGUE', 'MANUAL', 'PARTNER', 'TOURNAMENT'):
+        if value not in set(['CLUB', 'DUPR', 'EXTERNAL', 'LEAGUE', 'MANUAL', 'PARTNER', 'TOURNAMENT']):
             raise ValueError("must be one of enum values ('CLUB', 'DUPR', 'EXTERNAL', 'LEAGUE', 'MANUAL', 'PARTNER', 'TOURNAMENT')")
         return value
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> MatchUpdateRequest:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of MatchUpdateRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         # override the default output from pydantic by calling `to_dict()` of each item in teams (list)
         _items = []
         if self.teams:
-            for _item in self.teams:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_teams in self.teams:
+                if _item_teams:
+                    _items.append(_item_teams.to_dict())
             _dict['teams'] = _items
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> MatchUpdateRequest:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of MatchUpdateRequest from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return MatchUpdateRequest.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = MatchUpdateRequest.parse_obj({
-            "bracket_id": obj.get("bracketId"),
+        _obj = cls.model_validate({
+            "bracketId": obj.get("bracketId"),
             "confirmed": obj.get("confirmed"),
             "created": obj.get("created"),
-            "event_date": obj.get("eventDate"),
-            "event_name": obj.get("eventName"),
+            "eventDate": obj.get("eventDate"),
+            "eventName": obj.get("eventName"),
             "league": obj.get("league"),
-            "league_id": obj.get("leagueId"),
-            "league_match_id": obj.get("leagueMatchId"),
+            "leagueId": obj.get("leagueId"),
+            "leagueMatchId": obj.get("leagueMatchId"),
             "location": obj.get("location"),
-            "match_id": obj.get("matchId"),
-            "match_source": obj.get("matchSource"),
+            "matchId": obj.get("matchId"),
+            "matchSource": obj.get("matchSource"),
             "reason": obj.get("reason"),
-            "requested_by": obj.get("requestedBy"),
-            "teams": [TeamUpdateRequest.from_dict(_item) for _item in obj.get("teams")] if obj.get("teams") is not None else None,
+            "requestedBy": obj.get("requestedBy"),
+            "teams": [TeamUpdateRequest.from_dict(_item) for _item in obj["teams"]] if obj.get("teams") is not None else None,
             "venue": obj.get("venue")
         })
         return _obj

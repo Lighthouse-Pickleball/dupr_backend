@@ -15,9 +15,8 @@ getAllPlayerRatingHistory
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_page_of_player_rating_history import SingleWrapperOfPageOfPlayerRatingHistory
 from dupr_backend.rest import ApiException
@@ -52,6 +51,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -73,6 +73,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -87,9 +88,8 @@ getPlayerRatingHistoryByUser
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_page_of_player_rating_history import SingleWrapperOfPageOfPlayerRatingHistory
 from dupr_backend.rest import ApiException
@@ -125,6 +125,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -147,6 +148,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |

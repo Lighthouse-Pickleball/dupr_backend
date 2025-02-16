@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.feed import Feed  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.feed import Feed
 
 class TestFeed(unittest.TestCase):
     """Feed unit test stubs"""
@@ -28,20 +25,20 @@ class TestFeed(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> Feed:
         """Test Feed
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `Feed`
         """
-        model = dupr_backend.models.feed.Feed()  # noqa: E501
-        if include_optional :
+        model = Feed()
+        if include_optional:
             return Feed(
-                feed_id = 1, 
+                feed_id = 1,
                 slug = 'USER/CLUB/EVENT/DUPR'
             )
-        else :
+        else:
             return Feed(
         )
         """

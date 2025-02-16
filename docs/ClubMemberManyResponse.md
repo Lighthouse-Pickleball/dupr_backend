@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **add_members_action_s3_url** | **str** |  | [optional] 
@@ -21,12 +22,12 @@ json = "{}"
 # create an instance of ClubMemberManyResponse from a JSON string
 club_member_many_response_instance = ClubMemberManyResponse.from_json(json)
 # print the JSON string representation of the object
-print ClubMemberManyResponse.to_json()
+print(ClubMemberManyResponse.to_json())
 
 # convert the object into a dict
 club_member_many_response_dict = club_member_many_response_instance.to_dict()
 # create an instance of ClubMemberManyResponse from a dict
-club_member_many_response_form_dict = club_member_many_response.from_dict(club_member_many_response_dict)
+club_member_many_response_from_dict = ClubMemberManyResponse.from_dict(club_member_many_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

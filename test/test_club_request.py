@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.club_request import ClubRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.club_request import ClubRequest
 
 class TestClubRequest(unittest.TestCase):
     """ClubRequest unit test stubs"""
@@ -28,17 +25,17 @@ class TestClubRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ClubRequest:
         """Test ClubRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ClubRequest`
         """
-        model = dupr_backend.models.club_request.ClubRequest()  # noqa: E501
-        if include_optional :
+        model = ClubRequest()
+        if include_optional:
             return ClubRequest(
-                address_id = 5156151658, 
+                address_id = 5156151658,
                 attributes = {
                     'key' : dupr_backend.models.attribute.Attribute(
                         _children = {
@@ -48,11 +45,11 @@ class TestClubRequest(unittest.TestCase):
                             }, 
                         _comment = 'Contact person name, if provided.', 
                         value = 'String', )
-                    }, 
-                club_id = 1231231, 
-                club_name = 'Stillwater Pickleball', 
-                club_type_id = 2, 
-                currency_code = 'USD', 
+                    },
+                club_id = 1231231,
+                club_name = 'Stillwater Pickleball',
+                club_type_id = 2,
+                currency_code = 'USD',
                 long_description = dupr_backend.models.content_request.ContentRequest(
                     content = '<h1>content</h1>', 
                     content_id = 13212313, 
@@ -60,7 +57,7 @@ class TestClubRequest(unittest.TestCase):
                     footer = '<h1>footer</h1>', 
                     footer_type = 'text/html', 
                     header = '<h1>header</h1>', 
-                    header_type = 'text/html', ), 
+                    header_type = 'text/html', ),
                 manifest = dupr_backend.models.content_request.ContentRequest(
                     content = '<h1>content</h1>', 
                     content_id = 13212313, 
@@ -68,10 +65,10 @@ class TestClubRequest(unittest.TestCase):
                     footer = '<h1>footer</h1>', 
                     footer_type = 'text/html', 
                     header = '<h1>header</h1>', 
-                    header_type = 'text/html', ), 
-                media_id = 4684651981, 
-                model_type = 'ABSOLUTE/RELATIVE', 
-                model_value = 33.5, 
+                    header_type = 'text/html', ),
+                media_id = 4684651981,
+                model_type = 'ABSOLUTE/RELATIVE',
+                model_value = 33.5,
                 short_description = dupr_backend.models.content_request.ContentRequest(
                     content = '<h1>content</h1>', 
                     content_id = 13212313, 
@@ -81,7 +78,7 @@ class TestClubRequest(unittest.TestCase):
                     header = '<h1>header</h1>', 
                     header_type = 'text/html', )
             )
-        else :
+        else:
             return ClubRequest(
                 club_id = 1231231,
                 club_name = 'Stillwater Pickleball',

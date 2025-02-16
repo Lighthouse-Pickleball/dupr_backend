@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **age** | **int** |  | [optional] 
@@ -58,12 +59,12 @@ json = "{}"
 # create an instance of PlayerRes from a JSON string
 player_res_instance = PlayerRes.from_json(json)
 # print the JSON string representation of the object
-print PlayerRes.to_json()
+print(PlayerRes.to_json())
 
 # convert the object into a dict
 player_res_dict = player_res_instance.to_dict()
 # create an instance of PlayerRes from a dict
-player_res_form_dict = player_res.from_dict(player_res_dict)
+player_res_from_dict = PlayerRes.from_dict(player_res_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

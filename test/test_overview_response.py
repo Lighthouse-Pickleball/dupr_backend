@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.overview_response import OverviewResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.overview_response import OverviewResponse
 
 class TestOverviewResponse(unittest.TestCase):
     """OverviewResponse unit test stubs"""
@@ -28,22 +25,22 @@ class TestOverviewResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> OverviewResponse:
         """Test OverviewResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `OverviewResponse`
         """
-        model = dupr_backend.models.overview_response.OverviewResponse()  # noqa: E501
-        if include_optional :
+        model = OverviewResponse()
+        if include_optional:
             return OverviewResponse(
-                all = 10, 
-                losses = 2, 
-                pending = 5, 
+                all = 10,
+                losses = 2,
+                pending = 5,
                 wins = 3
             )
-        else :
+        else:
             return OverviewResponse(
         )
         """

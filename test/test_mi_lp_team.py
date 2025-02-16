@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.mi_lp_team import MiLPTeam  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.mi_lp_team import MiLPTeam
 
 class TestMiLPTeam(unittest.TestCase):
     """MiLPTeam unit test stubs"""
@@ -28,20 +25,20 @@ class TestMiLPTeam(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> MiLPTeam:
         """Test MiLPTeam
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MiLPTeam`
         """
-        model = dupr_backend.models.mi_lp_team.MiLPTeam()  # noqa: E501
-        if include_optional :
+        model = MiLPTeam()
+        if include_optional:
             return MiLPTeam(
-                created = '', 
-                status = 'ACTIVE', 
-                team_code = '', 
-                team_id = 56, 
+                created = '',
+                status = 'ACTIVE',
+                team_code = '',
+                team_id = 56,
                 team_members = [
                     dupr_backend.models.team_member.TeamMember(
                         created = '', 
@@ -53,10 +50,10 @@ class TestMiLPTeam(unittest.TestCase):
                         status = 'ACTIVE', 
                         team_id = 56, 
                         user_id = 56, )
-                    ], 
+                    ],
                 team_name = ''
             )
-        else :
+        else:
             return MiLPTeam(
                 team_id = 56,
                 team_members = [

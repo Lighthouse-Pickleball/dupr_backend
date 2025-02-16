@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.rating_filter import RatingFilter  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.rating_filter import RatingFilter
 
 class TestRatingFilter(unittest.TestCase):
     """RatingFilter unit test stubs"""
@@ -28,22 +25,22 @@ class TestRatingFilter(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> RatingFilter:
         """Test RatingFilter
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `RatingFilter`
         """
-        model = dupr_backend.models.rating_filter.RatingFilter()  # noqa: E501
-        if include_optional :
+        model = RatingFilter()
+        if include_optional:
             return RatingFilter(
-                category = 'DUPR', 
-                max_rating = 3.3, 
-                min_rating = 2.3, 
+                category = 'DUPR',
+                max_rating = 3.3,
+                min_rating = 2.3,
                 type = 'DOUBLES'
             )
-        else :
+        else:
             return RatingFilter(
         )
         """

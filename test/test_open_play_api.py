@@ -14,101 +14,99 @@
 
 import unittest
 
-import dupr_backend
-from dupr_backend.api.open_play_api import OpenPlayApi  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.api.open_play_api import OpenPlayApi
 
 
 class TestOpenPlayApi(unittest.TestCase):
     """OpenPlayApi unit test stubs"""
 
-    def setUp(self):
-        self.api = dupr_backend.api.open_play_api.OpenPlayApi()  # noqa: E501
+    def setUp(self) -> None:
+        self.api = OpenPlayApi()
 
-    def tearDown(self):
+    def tearDown(self) -> None:
         pass
 
-    def test_accept_invitation_using_post(self):
+    def test_accept_invitation_using_post(self) -> None:
         """Test case for accept_invitation_using_post
 
-        acceptInvitation  # noqa: E501
+        acceptInvitation
         """
         pass
 
-    def test_create_using_post(self):
+    def test_create_using_post(self) -> None:
         """Test case for create_using_post
 
-        create  # noqa: E501
+        create
         """
         pass
 
-    def test_get_event_detail_using_get(self):
+    def test_get_event_detail_using_get(self) -> None:
         """Test case for get_event_detail_using_get
 
-        getEventDetail  # noqa: E501
+        getEventDetail
         """
         pass
 
-    def test_get_events_members_using_get(self):
+    def test_get_events_members_using_get(self) -> None:
         """Test case for get_events_members_using_get
 
-        getEventsMembers  # noqa: E501
+        getEventsMembers
         """
         pass
 
-    def test_get_events_near_by_using_get(self):
+    def test_get_events_near_by_using_get(self) -> None:
         """Test case for get_events_near_by_using_get
 
-        getEventsNearBy  # noqa: E501
+        getEventsNearBy
         """
         pass
 
-    def test_get_invitation_by_player_using_get(self):
+    def test_get_invitation_by_player_using_get(self) -> None:
         """Test case for get_invitation_by_player_using_get
 
-        getInvitationByPlayer  # noqa: E501
+        getInvitationByPlayer
         """
         pass
 
-    def test_get_waitlist_by_player_using_get(self):
+    def test_get_waitlist_by_player_using_get(self) -> None:
         """Test case for get_waitlist_by_player_using_get
 
-        getWaitlistByPlayer  # noqa: E501
+        getWaitlistByPlayer
         """
         pass
 
-    def test_join_waitlist_using_post(self):
+    def test_join_waitlist_using_post(self) -> None:
         """Test case for join_waitlist_using_post
 
-        joinWaitlist  # noqa: E501
+        joinWaitlist
         """
         pass
 
-    def test_register_event_using_post1(self):
+    def test_register_event_using_post1(self) -> None:
         """Test case for register_event_using_post1
 
-        registerEvent  # noqa: E501
+        registerEvent
         """
         pass
 
-    def test_reject_invitation_using_post(self):
+    def test_reject_invitation_using_post(self) -> None:
         """Test case for reject_invitation_using_post
 
-        rejectInvitation  # noqa: E501
+        rejectInvitation
         """
         pass
 
-    def test_update_using_put(self):
+    def test_update_using_put(self) -> None:
         """Test case for update_using_put
 
-        update  # noqa: E501
+        update
         """
         pass
 
-    def test_withdraw_event_using_delete(self):
+    def test_withdraw_event_using_delete(self) -> None:
         """Test case for withdraw_event_using_delete
 
-        withdrawEvent  # noqa: E501
+        withdrawEvent
         """
         pass
 

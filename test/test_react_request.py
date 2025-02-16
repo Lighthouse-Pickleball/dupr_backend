@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.react_request import ReactRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.react_request import ReactRequest
 
 class TestReactRequest(unittest.TestCase):
     """ReactRequest unit test stubs"""
@@ -28,26 +25,26 @@ class TestReactRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ReactRequest:
         """Test ReactRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ReactRequest`
         """
-        model = dupr_backend.models.react_request.ReactRequest()  # noqa: E501
-        if include_optional :
+        model = ReactRequest()
+        if include_optional:
             return ReactRequest(
-                actor = 1, 
-                comment = 'Hi', 
-                id = 'db0f3ce2-99ab-4ec0-b006-333de4a3d47b', 
-                images = [/path/to/image], 
-                matches = [1], 
-                react = 'COMMENT|LIKE', 
-                react_on = 'db0f3ce2-99ab-4ec0-b006-333de4a3d47b', 
+                actor = 1,
+                comment = 'Hi',
+                id = 'db0f3ce2-99ab-4ec0-b006-333de4a3d47b',
+                images = [/path/to/image],
+                matches = [1],
+                react = 'COMMENT|LIKE',
+                react_on = 'db0f3ce2-99ab-4ec0-b006-333de4a3d47b',
                 tags = [1]
             )
-        else :
+        else:
             return ReactRequest(
         )
         """

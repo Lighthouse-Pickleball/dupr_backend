@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.open_play_update_request import OpenPlayUpdateRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.open_play_update_request import OpenPlayUpdateRequest
 
 class TestOpenPlayUpdateRequest(unittest.TestCase):
     """OpenPlayUpdateRequest unit test stubs"""
@@ -28,29 +25,29 @@ class TestOpenPlayUpdateRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> OpenPlayUpdateRequest:
         """Test OpenPlayUpdateRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `OpenPlayUpdateRequest`
         """
-        model = dupr_backend.models.open_play_update_request.OpenPlayUpdateRequest()  # noqa: E501
-        if include_optional :
+        model = OpenPlayUpdateRequest()
+        if include_optional:
             return OpenPlayUpdateRequest(
-                address_id = 5156151658, 
-                description = 'Welcome to new open play event', 
-                event_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                name = 'Dreamland Open Play', 
+                address_id = 5156151658,
+                description = 'Welcome to new open play event',
+                event_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
+                name = 'Dreamland Open Play',
                 rating = dupr_backend.models.rating_range_req.RatingRangeReq(
                     max = 1.337, 
-                    min = 1.337, ), 
-                status = 'ACTIVE/INACTIVE', 
+                    min = 1.337, ),
+                status = 'ACTIVE/INACTIVE',
                 time = dupr_backend.models.time_range_req.TimeRangeReq(
                     end = 'HH:mm', 
                     start = 'HH:mm', )
             )
-        else :
+        else:
             return OpenPlayUpdateRequest(
                 address_id = 5156151658,
                 event_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),

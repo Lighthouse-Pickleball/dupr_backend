@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.forfeit_match_request import ForfeitMatchRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.forfeit_match_request import ForfeitMatchRequest
 
 class TestForfeitMatchRequest(unittest.TestCase):
     """ForfeitMatchRequest unit test stubs"""
@@ -28,32 +25,32 @@ class TestForfeitMatchRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ForfeitMatchRequest:
         """Test ForfeitMatchRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ForfeitMatchRequest`
         """
-        model = dupr_backend.models.forfeit_match_request.ForfeitMatchRequest()  # noqa: E501
-        if include_optional :
+        model = ForfeitMatchRequest()
+        if include_optional:
             return ForfeitMatchRequest(
-                bracket_id = 56168168161, 
-                club_id = 56168168161, 
-                league_match_id = 56168168161, 
-                match_id = 56168168161, 
+                bracket_id = 56168168161,
+                club_id = 56168168161,
+                league_match_id = 56168168161,
+                match_id = 56168168161,
                 team1 = dupr_backend.models.forfeit_team_request.ForfeitTeamRequest(
                     is_forfeited = True, 
                     player1 = 4564651818, 
                     player2 = 9884984848, 
-                    team_id = 56168168161, ), 
+                    team_id = 56168168161, ),
                 team2 = dupr_backend.models.forfeit_team_request.ForfeitTeamRequest(
                     is_forfeited = True, 
                     player1 = 4564651818, 
                     player2 = 9884984848, 
                     team_id = 56168168161, )
             )
-        else :
+        else:
             return ForfeitMatchRequest(
                 bracket_id = 56168168161,
                 club_id = 56168168161,

@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.content_response import ContentResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.content_response import ContentResponse
 
 class TestContentResponse(unittest.TestCase):
     """ContentResponse unit test stubs"""
@@ -28,25 +25,25 @@ class TestContentResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ContentResponse:
         """Test ContentResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ContentResponse`
         """
-        model = dupr_backend.models.content_response.ContentResponse()  # noqa: E501
-        if include_optional :
+        model = ContentResponse()
+        if include_optional:
             return ContentResponse(
-                content = '<h1>content</h1>', 
-                content_id = 45785789, 
-                content_type = 'text/html', 
-                footer = '<h1>footer</h1>', 
-                footer_type = 'text/html', 
-                header = '<h1>header</h1>', 
+                content = '<h1>content</h1>',
+                content_id = 45785789,
+                content_type = 'text/html',
+                footer = '<h1>footer</h1>',
+                footer_type = 'text/html',
+                header = '<h1>header</h1>',
                 header_type = 'text/html'
             )
-        else :
+        else:
             return ContentResponse(
                 content = '<h1>content</h1>',
                 content_id = 45785789,

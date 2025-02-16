@@ -50,9 +50,8 @@ addClub
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.club_request import ClubRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -87,6 +86,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -107,6 +107,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -121,9 +122,8 @@ addMemberAdmin
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.user_list_request import UserListRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -159,6 +159,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -180,6 +181,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -194,9 +196,8 @@ addMemberMultipleAdmin
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.club_member_add_request import ClubMemberAddRequest
 from dupr_backend.models.single_wrapper_of_club_member_many_response import SingleWrapperOfClubMemberManyResponse
@@ -232,6 +233,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -253,6 +255,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -267,9 +270,8 @@ addMemberMultipleCsvAdmin
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
@@ -303,6 +305,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -324,6 +327,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -338,9 +342,8 @@ addMemberRequest
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
@@ -373,6 +376,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -393,6 +397,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -407,9 +412,8 @@ approveRoles
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.ids_list_request import IdsListRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -445,6 +449,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -466,6 +471,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -480,9 +486,8 @@ assignRoles
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.assign_role_request import AssignRoleRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -518,6 +523,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -539,6 +545,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -553,9 +560,8 @@ clubMatchHistoryByFilters
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.club_match_history_request import ClubMatchHistoryRequest
 from dupr_backend.models.single_wrapper_of_page_of_match_response import SingleWrapperOfPageOfMatchResponse
@@ -590,6 +596,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -610,6 +617,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -624,9 +632,8 @@ clubMatchHistory
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_page_of_match_response import SingleWrapperOfPageOfMatchResponse
 from dupr_backend.rest import ApiException
@@ -662,6 +669,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -684,6 +692,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -698,9 +707,8 @@ clubSaveMatch
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.match_request import MatchRequest
 from dupr_backend.rest import ApiException
@@ -735,6 +743,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -756,6 +765,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -770,9 +780,8 @@ deleteClubMatch
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.delete_match_request import DeleteMatchRequest
 from dupr_backend.rest import ApiException
@@ -807,6 +816,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -828,6 +838,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -842,9 +853,8 @@ deleteMemberAdmin
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
@@ -879,6 +889,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -900,6 +911,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -914,9 +926,8 @@ deleteMemberRequest
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
@@ -949,6 +960,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -969,6 +981,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -983,9 +996,8 @@ editClubMatch
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.match_update_request import MatchUpdateRequest
 from dupr_backend.models.single_wrapper_of_match_response import SingleWrapperOfMatchResponse
@@ -1021,6 +1033,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1042,6 +1055,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1056,9 +1070,8 @@ getAllClubRoles
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.array_wrapper_of_club_listing_response import ArrayWrapperOfClubListingResponse
 from dupr_backend.rest import ApiException
@@ -1091,6 +1104,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1110,6 +1124,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1124,9 +1139,8 @@ getAllCurrencyDetails
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.array_wrapper_of_currency_details_response import ArrayWrapperOfCurrencyDetailsResponse
 from dupr_backend.rest import ApiException
@@ -1159,6 +1173,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1178,6 +1193,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1192,9 +1208,8 @@ getAllMembersDownload
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_download_s3_response import SingleWrapperOfDownloadS3Response
 from dupr_backend.rest import ApiException
@@ -1228,6 +1243,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1248,6 +1264,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1262,9 +1279,8 @@ getAllMembers
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.club_members_search_request import ClubMembersSearchRequest
 from dupr_backend.models.single_wrapper_of_page_of_club_member_response import SingleWrapperOfPageOfClubMemberResponse
@@ -1300,6 +1316,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1321,6 +1338,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1335,9 +1353,8 @@ getAllRoles
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.array_wrapper_of_role_response import ArrayWrapperOfRoleResponse
 from dupr_backend.rest import ApiException
@@ -1370,6 +1387,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1389,6 +1407,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1403,9 +1422,8 @@ getAllStaffMembers
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_staff_club_member_response import SingleWrapperOfStaffClubMemberResponse
 from dupr_backend.rest import ApiException
@@ -1439,6 +1457,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1459,6 +1478,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1473,9 +1493,8 @@ getClubPendingInvites
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.club_members_search_request import ClubMembersSearchRequest
 from dupr_backend.models.single_wrapper_of_page_of_club_member_response import SingleWrapperOfPageOfClubMemberResponse
@@ -1511,6 +1530,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1532,6 +1552,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1546,9 +1567,8 @@ getClubRestrictions
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
@@ -1581,6 +1601,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1601,6 +1622,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1615,9 +1637,8 @@ getClubRolesPlayer
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_role_response import SingleWrapperOfRoleResponse
 from dupr_backend.models.user_request import UserRequest
@@ -1653,6 +1674,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1674,6 +1696,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1688,9 +1711,8 @@ getClubRolesStaff
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_map_ofstring_andobject import SingleWrapperOfMapOfstringAndobject
 from dupr_backend.rest import ApiException
@@ -1723,6 +1745,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1742,6 +1765,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1756,9 +1780,8 @@ getClubRoles
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_role_response import SingleWrapperOfRoleResponse
 from dupr_backend.models.user_request import UserRequest
@@ -1794,6 +1817,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1815,6 +1839,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1829,9 +1854,8 @@ getClub
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_club_response import SingleWrapperOfClubResponse
 from dupr_backend.rest import ApiException
@@ -1865,6 +1889,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1885,6 +1910,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1899,9 +1925,8 @@ getClubs
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_page_of_club_response import SingleWrapperOfPageOfClubResponse
 from dupr_backend.rest import ApiException
@@ -1938,6 +1963,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1961,6 +1987,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1975,9 +2002,8 @@ getClubs
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.club_search import ClubSearch
 from dupr_backend.models.single_wrapper_of_page_of_club_response import SingleWrapperOfPageOfClubResponse
@@ -2012,6 +2038,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2032,6 +2059,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -2046,9 +2074,8 @@ getCurrencyDetails
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_currency_details_response import SingleWrapperOfCurrencyDetailsResponse
 from dupr_backend.rest import ApiException
@@ -2082,6 +2109,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2102,6 +2130,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -2116,9 +2145,8 @@ getMatch
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_match_response import SingleWrapperOfMatchResponse
 from dupr_backend.rest import ApiException
@@ -2153,6 +2181,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2174,6 +2203,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -2188,9 +2218,8 @@ getMembersRanking
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.club_members_search_request import ClubMembersSearchRequest
 from dupr_backend.models.single_wrapper_of_club_member_ranking_response import SingleWrapperOfClubMemberRankingResponse
@@ -2226,6 +2255,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2247,6 +2277,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -2261,9 +2292,8 @@ inviteSingleMember
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.invite_request import InviteRequest
 from dupr_backend.models.single_wrapper_ofstring import SingleWrapperOfstring
@@ -2299,6 +2329,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2320,6 +2351,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -2334,9 +2366,8 @@ removeRoles
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.assign_role_request import AssignRoleRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -2372,6 +2403,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2393,6 +2425,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -2407,9 +2440,8 @@ saveVerifiedClubMatchCSV
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
@@ -2443,6 +2475,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2464,6 +2497,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -2478,9 +2512,8 @@ updateApprovalStatus
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.status_request import StatusRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -2516,6 +2549,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2537,6 +2571,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -2551,9 +2586,8 @@ updateClub
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.club_request import ClubRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -2588,6 +2622,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2608,6 +2643,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -2622,9 +2658,8 @@ updateStaffMembers
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.staff_club_member_request import StaffClubMemberRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -2659,6 +2694,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -2679,6 +2715,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |

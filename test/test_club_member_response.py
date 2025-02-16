@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.club_member_response import ClubMemberResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.club_member_response import ClubMemberResponse
 
 class TestClubMemberResponse(unittest.TestCase):
     """ClubMemberResponse unit test stubs"""
@@ -28,47 +25,47 @@ class TestClubMemberResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ClubMemberResponse:
         """Test ClubMemberResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ClubMemberResponse`
         """
-        model = dupr_backend.models.club_member_response.ClubMemberResponse()  # noqa: E501
-        if include_optional :
+        model = ClubMemberResponse()
+        if include_optional:
             return ClubMemberResponse(
-                age = 56, 
-                birthdate = '', 
-                club_id = 56, 
-                created = '', 
-                default_rating = 'DOUBLES', 
-                display_username = True, 
-                distance = '', 
-                distance_in_miles = 1.337, 
-                doubles = '', 
-                doubles_provisional = True, 
-                doubles_reliability = 1.337, 
-                doubles_verified = '', 
-                dupr_id = '', 
-                email = '', 
-                enable_privacy = True, 
-                formatted_address = '', 
-                full_name = '', 
-                gender = 'FEMALE', 
-                hand = 'BOTH', 
-                id = 56, 
-                image_url = '', 
-                invitation_type = 'INVITATION', 
-                is_checked = True, 
-                iso_alpha2_code = '', 
-                latitude = 1.337, 
-                location = '', 
-                longitude = 1.337, 
-                phone = '', 
-                provisional_doubles_rating = 1.337, 
-                provisional_singles_rating = 1.337, 
-                requested_by = 56, 
+                age = 56,
+                birthdate = '',
+                club_id = 56,
+                created = '',
+                default_rating = 'DOUBLES',
+                display_username = True,
+                distance = '',
+                distance_in_miles = 1.337,
+                doubles = '',
+                doubles_provisional = True,
+                doubles_reliability = 1.337,
+                doubles_verified = '',
+                dupr_id = '',
+                email = '',
+                enable_privacy = True,
+                formatted_address = '',
+                full_name = '',
+                gender = 'FEMALE',
+                hand = 'BOTH',
+                id = 56,
+                image_url = '',
+                invitation_type = 'INVITATION',
+                is_checked = True,
+                iso_alpha2_code = '',
+                latitude = 1.337,
+                location = '',
+                longitude = 1.337,
+                phone = '',
+                provisional_doubles_rating = 1.337,
+                provisional_singles_rating = 1.337,
+                requested_by = 56,
                 roles = [
                     dupr_backend.models.club_role.ClubRole(
                         approval_status = 'APPROVED', 
@@ -78,18 +75,18 @@ class TestClubMemberResponse(unittest.TestCase):
                         request_by = 56, 
                         role = 'ADMIN', 
                         role_id = 56, )
-                    ], 
-                short_address = '', 
-                singles = '', 
-                singles_provisional = True, 
-                singles_reliability = 1.337, 
-                singles_verified = '', 
-                status = 'ACTIVE', 
-                username = '', 
-                verified_email = True, 
+                    ],
+                short_address = '',
+                singles = '',
+                singles_provisional = True,
+                singles_reliability = 1.337,
+                singles_verified = '',
+                status = 'ACTIVE',
+                username = '',
+                verified_email = True,
                 verified_phone = True
             )
-        else :
+        else:
             return ClubMemberResponse(
                 club_id = 56,
                 enable_privacy = True,

@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.team0 import Team0  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.team0 import Team0
 
 class TestTeam0(unittest.TestCase):
     """Team0 unit test stubs"""
@@ -28,24 +25,24 @@ class TestTeam0(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> Team0:
         """Test Team0
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `Team0`
         """
-        model = dupr_backend.models.team0.Team0()  # noqa: E501
-        if include_optional :
+        model = Team0()
+        if include_optional:
             return Team0(
-                delta = 1.337, 
-                game1 = 56, 
-                game2 = 56, 
-                game3 = 56, 
-                game4 = 56, 
-                game5 = 56, 
-                id = 56, 
-                league_match_team_id = 56, 
+                delta = 1.337,
+                game1 = 56,
+                game2 = 56,
+                game3 = 56,
+                game4 = 56,
+                game5 = 56,
+                id = 56,
+                league_match_team_id = 56,
                 player1 = dupr_backend.models.player.Player(
                     age = 56, 
                     birthdate = '', 
@@ -95,9 +92,9 @@ class TestTeam0(unittest.TestCase):
                     status = 'ACTIVE', 
                     username = '', 
                     verified_email = True, 
-                    verified_phone = True, ), 
-                player1_doubles_rating = 1.337, 
-                player1_singles_rating = 1.337, 
+                    verified_phone = True, ),
+                player1_doubles_rating = 1.337,
+                player1_singles_rating = 1.337,
                 player2 = dupr_backend.models.player.Player(
                     age = 56, 
                     birthdate = '', 
@@ -147,12 +144,12 @@ class TestTeam0(unittest.TestCase):
                     status = 'ACTIVE', 
                     username = '', 
                     verified_email = True, 
-                    verified_phone = True, ), 
-                player2_doubles_rating = 1.337, 
-                player2_singles_rating = 1.337, 
+                    verified_phone = True, ),
+                player2_doubles_rating = 1.337,
+                player2_singles_rating = 1.337,
                 player_ids = [
                     56
-                    ], 
+                    ],
                 pre_match_rating_and_impact = dupr_backend.models.pre_match_rating_and_impact.PreMatchRatingAndImpact(
                     match_double_rating_impact_player1 = 1.337, 
                     match_double_rating_impact_player2 = 1.337, 
@@ -161,8 +158,8 @@ class TestTeam0(unittest.TestCase):
                     pre_match_double_rating_player1 = 1.337, 
                     pre_match_double_rating_player2 = 1.337, 
                     pre_match_single_rating_player1 = 1.337, 
-                    pre_match_single_rating_player2 = 1.337, ), 
-                priority = 56, 
+                    pre_match_single_rating_player2 = 1.337, ),
+                priority = 56,
                 team_player1 = dupr_backend.models.team_player.TeamPlayer(
                     allow_substitution = True, 
                     email = '', 
@@ -175,7 +172,7 @@ class TestTeam0(unittest.TestCase):
                     referral_code = '', 
                     status = 'ACTIVE', 
                     validated_match = True, 
-                    verified_email = True, ), 
+                    verified_email = True, ),
                 team_player2 = dupr_backend.models.team_player.TeamPlayer(
                     allow_substitution = True, 
                     email = '', 
@@ -188,11 +185,11 @@ class TestTeam0(unittest.TestCase):
                     referral_code = '', 
                     status = 'ACTIVE', 
                     validated_match = True, 
-                    verified_email = True, ), 
-                team_rating = 1.337, 
+                    verified_email = True, ),
+                team_rating = 1.337,
                 winner = True
             )
-        else :
+        else:
             return Team0(
                 player_ids = [
                     56

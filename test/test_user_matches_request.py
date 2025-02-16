@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.user_matches_request import UserMatchesRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.user_matches_request import UserMatchesRequest
 
 class TestUserMatchesRequest(unittest.TestCase):
     """UserMatchesRequest unit test stubs"""
@@ -28,23 +25,23 @@ class TestUserMatchesRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> UserMatchesRequest:
         """Test UserMatchesRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `UserMatchesRequest`
         """
-        model = dupr_backend.models.user_matches_request.UserMatchesRequest()  # noqa: E501
-        if include_optional :
+        model = UserMatchesRequest()
+        if include_optional:
             return UserMatchesRequest(
-                bracket_id = 56168168161, 
-                club_id = 56168168161, 
-                league_match_id = 56168168161, 
-                limit = 10, 
+                bracket_id = 56168168161,
+                club_id = 56168168161,
+                league_match_id = 56168168161,
+                limit = 10,
                 offset = 0
             )
-        else :
+        else:
             return UserMatchesRequest(
                 bracket_id = 56168168161,
                 club_id = 56168168161,

@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.activity_user import ActivityUser  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.activity_user import ActivityUser
 
 class TestActivityUser(unittest.TestCase):
     """ActivityUser unit test stubs"""
@@ -28,22 +25,22 @@ class TestActivityUser(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ActivityUser:
         """Test ActivityUser
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ActivityUser`
         """
-        model = dupr_backend.models.activity_user.ActivityUser()  # noqa: E501
-        if include_optional :
+        model = ActivityUser()
+        if include_optional:
             return ActivityUser(
-                id = 56, 
-                is_follow = True, 
-                name = '', 
+                id = 56,
+                is_follow = True,
+                name = '',
                 profile_image = ''
             )
-        else :
+        else:
             return ActivityUser(
                 id = 56,
                 is_follow = True,

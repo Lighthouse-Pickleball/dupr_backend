@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_user_statistic_response import SingleWrapperOfUserStatisticResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_of_user_statistic_response import SingleWrapperOfUserStatisticResponse
 
 class TestSingleWrapperOfUserStatisticResponse(unittest.TestCase):
     """SingleWrapperOfUserStatisticResponse unit test stubs"""
@@ -28,17 +25,17 @@ class TestSingleWrapperOfUserStatisticResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfUserStatisticResponse:
         """Test SingleWrapperOfUserStatisticResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfUserStatisticResponse`
         """
-        model = dupr_backend.models.single_wrapper_of_user_statistic_response.SingleWrapperOfUserStatisticResponse()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfUserStatisticResponse()
+        if include_optional:
             return SingleWrapperOfUserStatisticResponse(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 result = dupr_backend.models.user_statistic_response.UserStatisticResponse(
                     overview = dupr_backend.models.rating_overview_response.RatingOverviewResponse(
                         all = dupr_backend.models.overview_response.OverviewResponse(
@@ -58,10 +55,10 @@ class TestSingleWrapperOfUserStatisticResponse(unittest.TestCase):
                                 month = 'January', 
                                 serial = 1, 
                                 total_games = 20, )
-                            ], ), ), 
+                            ], ), ),
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfUserStatisticResponse(
         )
         """

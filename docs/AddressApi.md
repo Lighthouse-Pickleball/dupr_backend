@@ -18,9 +18,8 @@ autocomplete
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_array_of_autocomplete_prediction import SingleWrapperOfArrayOfAutocompletePrediction
 from dupr_backend.rest import ApiException
@@ -54,6 +53,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **q** | **str**| q | 
@@ -74,6 +74,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -88,9 +89,8 @@ deleteUserAddress
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.id_payload import IdPayload
 from dupr_backend.models.wrapper import Wrapper
@@ -125,6 +125,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -145,6 +146,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -159,9 +161,8 @@ geocode
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.array_wrapper_of_geocoding_result import ArrayWrapperOfGeocodingResult
 from dupr_backend.rest import ApiException
@@ -195,6 +196,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **lat** | **float**| lat | 
@@ -215,6 +217,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -229,9 +232,8 @@ placeDetails
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_geocoding_result import SingleWrapperOfGeocodingResult
 from dupr_backend.rest import ApiException
@@ -264,6 +266,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **place_id** | **str**| placeId | 
@@ -283,6 +286,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -297,9 +301,8 @@ saveAddress
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.address_request import AddressRequest
 from dupr_backend.models.single_wrapper_of_id_payload import SingleWrapperOfIdPayload
@@ -333,6 +336,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **version** | **str**| version | [default to &#39;v1.0&#39;]
@@ -352,6 +356,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |

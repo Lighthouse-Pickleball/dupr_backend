@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_download_s3_response import SingleWrapperOfDownloadS3Response  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_of_download_s3_response import SingleWrapperOfDownloadS3Response
 
 class TestSingleWrapperOfDownloadS3Response(unittest.TestCase):
     """SingleWrapperOfDownloadS3Response unit test stubs"""
@@ -28,22 +25,22 @@ class TestSingleWrapperOfDownloadS3Response(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfDownloadS3Response:
         """Test SingleWrapperOfDownloadS3Response
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfDownloadS3Response`
         """
-        model = dupr_backend.models.single_wrapper_of_download_s3_response.SingleWrapperOfDownloadS3Response()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfDownloadS3Response()
+        if include_optional:
             return SingleWrapperOfDownloadS3Response(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 result = dupr_backend.models.download_s3_response.DownloadS3Response(
-                    s3_url = 'https://dupr-dev.s3.amazonaws.com/clubs-members-excel/312312-2021-09-11', ), 
+                    s3_url = 'https://dupr-dev.s3.amazonaws.com/clubs-members-excel/312312-2021-09-11', ),
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfDownloadS3Response(
         )
         """

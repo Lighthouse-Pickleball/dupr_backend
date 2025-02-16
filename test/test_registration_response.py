@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.registration_response import RegistrationResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.registration_response import RegistrationResponse
 
 class TestRegistrationResponse(unittest.TestCase):
     """RegistrationResponse unit test stubs"""
@@ -28,19 +25,19 @@ class TestRegistrationResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> RegistrationResponse:
         """Test RegistrationResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `RegistrationResponse`
         """
-        model = dupr_backend.models.registration_response.RegistrationResponse()  # noqa: E501
-        if include_optional :
+        model = RegistrationResponse()
+        if include_optional:
             return RegistrationResponse(
-                event_refunded_amount = 1.337, 
-                is_participant1 = False, 
-                is_wait_listed = False, 
+                event_refunded_amount = 1.337,
+                is_participant1 = False,
+                is_wait_listed = False,
                 player1 = dupr_backend.models.participant.Participant(
                     club_member = True, 
                     display_username = True, 
@@ -55,7 +52,7 @@ class TestRegistrationResponse(unittest.TestCase):
                     payment_status = 'PENDING/COMPLETE', 
                     refund_amount = 1.337, 
                     status = 'NOT_ADDED/CONFIRMED/NOT_CONFIRMED/PAYMENT_DUE', 
-                    username = 'X AE A-XII', ), 
+                    username = 'X AE A-XII', ),
                 player2 = dupr_backend.models.participant.Participant(
                     club_member = True, 
                     display_username = True, 
@@ -70,10 +67,10 @@ class TestRegistrationResponse(unittest.TestCase):
                     payment_status = 'PENDING/COMPLETE', 
                     refund_amount = 1.337, 
                     status = 'NOT_ADDED/CONFIRMED/NOT_CONFIRMED/PAYMENT_DUE', 
-                    username = 'X AE A-XII', ), 
+                    username = 'X AE A-XII', ),
                 registration_id = 4684651981
             )
-        else :
+        else:
             return RegistrationResponse(
                 event_refunded_amount = 1.337,
                 is_participant1 = False,

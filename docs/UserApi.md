@@ -38,9 +38,8 @@ deleteUser
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
 from dupr_backend.rest import ApiException
@@ -73,6 +72,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -92,6 +92,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -106,9 +107,8 @@ delete
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
@@ -140,6 +140,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -159,6 +160,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -173,9 +175,8 @@ getCalculatedStatistics
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_pre_calculated_user_statistics_response import SingleWrapperOfPreCalculatedUserStatisticsResponse
 from dupr_backend.rest import ApiException
@@ -209,6 +210,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -229,6 +231,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -243,9 +246,8 @@ getProfile
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_user_response import SingleWrapperOfUserResponse
 from dupr_backend.rest import ApiException
@@ -278,6 +280,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -297,6 +300,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -311,9 +315,8 @@ getRating
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_player_rating_response import SingleWrapperOfPlayerRatingResponse
 from dupr_backend.rest import ApiException
@@ -346,6 +349,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -365,6 +369,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -379,9 +384,8 @@ getSettings
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_map_ofstring_andstring import SingleWrapperOfMapOfstringAndstring
 from dupr_backend.rest import ApiException
@@ -414,6 +418,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -433,6 +438,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -447,9 +453,8 @@ getSponsorLogo
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_sponsor_logo_response import SingleWrapperOfSponsorLogoResponse
 from dupr_backend.rest import ApiException
@@ -482,6 +487,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **obfuscated_id** | **int**| obfuscatedId | 
@@ -501,6 +507,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -515,9 +522,8 @@ getStatistics
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_of_user_statistic_response import SingleWrapperOfUserStatisticResponse
 from dupr_backend.rest import ApiException
@@ -550,6 +556,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -569,6 +576,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -583,9 +591,8 @@ getUserInitializationInformationBulk
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.array_wrapper_of_player_initialization_data_response import ArrayWrapperOfPlayerInitializationDataResponse
 from dupr_backend.models.user_list_request import UserListRequest
@@ -621,6 +628,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -642,6 +650,7 @@ No authorization required
  - **Accept**: */*
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -656,9 +665,8 @@ getUserInitializationInformation
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.array_wrapper_of_player_initialization_progress_response import ArrayWrapperOfPlayerInitializationProgressResponse
 from dupr_backend.rest import ApiException
@@ -692,6 +700,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -712,6 +721,7 @@ No authorization required
  - **Accept**: */*
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -726,9 +736,8 @@ getVerfiedStatistics
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
@@ -761,6 +770,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -780,6 +790,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -794,9 +805,8 @@ history
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.notification_history_response import NotificationHistoryResponse
 from dupr_backend.rest import ApiException
@@ -830,6 +840,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -850,6 +861,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -864,9 +876,8 @@ isSoleDirector
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_ofboolean import SingleWrapperOfboolean
 from dupr_backend.rest import ApiException
@@ -899,6 +910,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -918,6 +930,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -932,9 +945,8 @@ logout
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.logout_request import LogoutRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -969,6 +981,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -989,6 +1002,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1003,9 +1017,8 @@ resetPassword
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.reset_password_request import ResetPasswordRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -1040,6 +1053,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1060,6 +1074,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1074,9 +1089,8 @@ sendEmailVerificationLink
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.email_exist_request import EmailExistRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -1111,6 +1125,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1131,6 +1146,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1145,9 +1161,8 @@ sendPhoneOTP
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.send_otp_request import SendOtpRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -1183,6 +1198,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1204,6 +1220,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1218,9 +1235,8 @@ sendVerificationEmail
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.email_exist_request import EmailExistRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -1255,6 +1271,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1275,6 +1292,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1289,9 +1307,8 @@ updateLucraConnection
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.user_lucra_request import UserLucraRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -1326,6 +1343,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1346,6 +1364,7 @@ No authorization required
  - **Accept**: */*
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1360,9 +1379,8 @@ updatePreferences
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.user_preferences_request import UserPreferencesRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -1397,6 +1415,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1417,6 +1436,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1431,9 +1451,8 @@ updateProfile
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.player_profile_request import PlayerProfileRequest
 from dupr_backend.models.single_wrapper_of_user_response import SingleWrapperOfUserResponse
@@ -1468,6 +1487,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1488,6 +1508,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1502,9 +1523,8 @@ updateSettings
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.user_settings_request import UserSettingsRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -1539,6 +1559,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1559,6 +1580,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1573,9 +1595,8 @@ verifyCaptcha
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_ofboolean import SingleWrapperOfboolean
 from dupr_backend.models.verify_token_request import VerifyTokenRequest
@@ -1609,6 +1630,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **version** | **str**| version | [default to &#39;v1.0&#39;]
@@ -1628,6 +1650,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1642,9 +1665,8 @@ verifyEmailAddress
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.single_wrapper_ofboolean import SingleWrapperOfboolean
 from dupr_backend.models.verify_email_request import VerifyEmailRequest
@@ -1678,6 +1700,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **version** | **str**| version | [default to &#39;v1.0&#39;]
@@ -1697,6 +1720,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1711,9 +1735,8 @@ verifyPhoneNumber
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.models.verify_otp_request import VerifyOtpRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -1748,6 +1771,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -1768,6 +1792,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |

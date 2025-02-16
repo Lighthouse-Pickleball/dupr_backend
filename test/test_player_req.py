@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.player_req import PlayerReq  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.player_req import PlayerReq
 
 class TestPlayerReq(unittest.TestCase):
     """PlayerReq unit test stubs"""
@@ -28,67 +25,67 @@ class TestPlayerReq(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> PlayerReq:
         """Test PlayerReq
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PlayerReq`
         """
-        model = dupr_backend.models.player_req.PlayerReq()  # noqa: E501
-        if include_optional :
+        model = PlayerReq()
+        if include_optional:
             return PlayerReq(
-                age = 56, 
-                birthdate = '', 
-                created = '', 
-                default_rating = 'DOUBLES', 
-                display_username = True, 
-                distance = '', 
-                distance_in_miles = 1.337, 
-                doubles = 1.337, 
-                doubles_provisional = True, 
-                doubles_reliability = 1.337, 
-                doubles_verified = 1.337, 
-                email = '', 
-                enable_privacy = True, 
-                first_name = '', 
-                formatted_address = '', 
-                full_name = '', 
-                gender = 'FEMALE', 
-                hand = 'BOTH', 
-                id = 56, 
-                image_url = '', 
-                iso_alpha2_code = '', 
-                last_name = '', 
-                latitude = 1.337, 
-                location = '', 
-                longitude = 1.337, 
-                lucra_connected = True, 
-                phone = '', 
-                provisional_doubles_rating = 1.337, 
-                provisional_singles_rating = 1.337, 
-                referral_code = '', 
-                registered = True, 
-                registration_type = 'INVITATION', 
-                reliability_score = 56, 
-                short_address = '', 
-                singles = 1.337, 
-                singles_provisional = True, 
-                singles_reliability = 1.337, 
-                singles_verified = 1.337, 
+                age = 56,
+                birthdate = '',
+                created = '',
+                default_rating = 'DOUBLES',
+                display_username = True,
+                distance = '',
+                distance_in_miles = 1.337,
+                doubles = 1.337,
+                doubles_provisional = True,
+                doubles_reliability = 1.337,
+                doubles_verified = 1.337,
+                email = '',
+                enable_privacy = True,
+                first_name = '',
+                formatted_address = '',
+                full_name = '',
+                gender = 'FEMALE',
+                hand = 'BOTH',
+                id = 56,
+                image_url = '',
+                iso_alpha2_code = '',
+                last_name = '',
+                latitude = 1.337,
+                location = '',
+                longitude = 1.337,
+                lucra_connected = True,
+                phone = '',
+                provisional_doubles_rating = 1.337,
+                provisional_singles_rating = 1.337,
+                referral_code = '',
+                registered = True,
+                registration_type = 'INVITATION',
+                reliability_score = 56,
+                short_address = '',
+                singles = 1.337,
+                singles_provisional = True,
+                singles_reliability = 1.337,
+                singles_verified = 1.337,
                 sponsor = dupr_backend.models.sponsor_req.SponsorReq(
                     button_text = '', 
                     description = '', 
                     id = 56, 
                     image_url = '', 
                     sponsor_popup_heading = '', 
-                    sponsor_redirect_url = '', ), 
-                status = 'ACTIVE', 
-                username = '', 
-                verified_email = True, 
+                    sponsor_redirect_url = '', ),
+                status = 'ACTIVE',
+                username = '',
+                verified_email = True,
                 verified_phone = True
             )
-        else :
+        else:
             return PlayerReq(
                 email = '',
                 full_name = '',

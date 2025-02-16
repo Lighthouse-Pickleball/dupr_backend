@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.user_bracket_admin_request import UserBracketAdminRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.user_bracket_admin_request import UserBracketAdminRequest
 
 class TestUserBracketAdminRequest(unittest.TestCase):
     """UserBracketAdminRequest unit test stubs"""
@@ -28,23 +25,23 @@ class TestUserBracketAdminRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> UserBracketAdminRequest:
         """Test UserBracketAdminRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `UserBracketAdminRequest`
         """
-        model = dupr_backend.models.user_bracket_admin_request.UserBracketAdminRequest()  # noqa: E501
-        if include_optional :
+        model = UserBracketAdminRequest()
+        if include_optional:
             return UserBracketAdminRequest(
-                dupr_id = 'user@example.com', 
-                email = 'user@example.com', 
-                limit = 10, 
-                offset = 0, 
+                dupr_id = 'user@example.com',
+                email = 'user@example.com',
+                limit = 10,
+                offset = 0,
                 user_id = 904958585
             )
-        else :
+        else:
             return UserBracketAdminRequest(
         )
         """

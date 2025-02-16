@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **club_id** | **int** |  | [optional] 
@@ -29,12 +30,12 @@ json = "{}"
 # create an instance of MatchRequest from a JSON string
 match_request_instance = MatchRequest.from_json(json)
 # print the JSON string representation of the object
-print MatchRequest.to_json()
+print(MatchRequest.to_json())
 
 # convert the object into a dict
 match_request_dict = match_request_instance.to_dict()
 # create an instance of MatchRequest from a dict
-match_request_form_dict = match_request.from_dict(match_request_dict)
+match_request_from_dict = MatchRequest.from_dict(match_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

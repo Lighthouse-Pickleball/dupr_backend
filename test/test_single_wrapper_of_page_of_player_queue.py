@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_page_of_player_queue import SingleWrapperOfPageOfPlayerQueue  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_of_page_of_player_queue import SingleWrapperOfPageOfPlayerQueue
 
 class TestSingleWrapperOfPageOfPlayerQueue(unittest.TestCase):
     """SingleWrapperOfPageOfPlayerQueue unit test stubs"""
@@ -28,17 +25,17 @@ class TestSingleWrapperOfPageOfPlayerQueue(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfPageOfPlayerQueue:
         """Test SingleWrapperOfPageOfPlayerQueue
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfPageOfPlayerQueue`
         """
-        model = dupr_backend.models.single_wrapper_of_page_of_player_queue.SingleWrapperOfPageOfPlayerQueue()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfPageOfPlayerQueue()
+        if include_optional:
             return SingleWrapperOfPageOfPlayerQueue(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 result = dupr_backend.models.page_of_player_queue.PageOfPlayerQueue(
                     empty = False, 
                     has_more = False, 
@@ -68,10 +65,10 @@ class TestSingleWrapperOfPageOfPlayerQueue(unittest.TestCase):
                     limit = 10, 
                     offset = 90, 
                     total = 100, 
-                    total_value_relation = 'GREATER_THAN_OR_EQUAL_TO', ), 
+                    total_value_relation = 'GREATER_THAN_OR_EQUAL_TO', ),
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfPageOfPlayerQueue(
         )
         """

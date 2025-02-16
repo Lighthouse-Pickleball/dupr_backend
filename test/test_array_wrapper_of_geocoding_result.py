@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.array_wrapper_of_geocoding_result import ArrayWrapperOfGeocodingResult  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.array_wrapper_of_geocoding_result import ArrayWrapperOfGeocodingResult
 
 class TestArrayWrapperOfGeocodingResult(unittest.TestCase):
     """ArrayWrapperOfGeocodingResult unit test stubs"""
@@ -28,17 +25,17 @@ class TestArrayWrapperOfGeocodingResult(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ArrayWrapperOfGeocodingResult:
         """Test ArrayWrapperOfGeocodingResult
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ArrayWrapperOfGeocodingResult`
         """
-        model = dupr_backend.models.array_wrapper_of_geocoding_result.ArrayWrapperOfGeocodingResult()  # noqa: E501
-        if include_optional :
+        model = ArrayWrapperOfGeocodingResult()
+        if include_optional:
             return ArrayWrapperOfGeocodingResult(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 results = [
                     dupr_backend.models.geocoding_result.GeocodingResult(
                         address_components = [
@@ -72,10 +69,10 @@ class TestArrayWrapperOfGeocodingResult(unittest.TestCase):
                         types = [
                             'ACCOUNTING'
                             ], )
-                    ], 
+                    ],
                 status = 'FAILURE'
             )
-        else :
+        else:
             return ArrayWrapperOfGeocodingResult(
         )
         """

@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_page_of_mi_lp_event import SingleWrapperOfPageOfMiLPEvent  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_of_page_of_mi_lp_event import SingleWrapperOfPageOfMiLPEvent
 
 class TestSingleWrapperOfPageOfMiLPEvent(unittest.TestCase):
     """SingleWrapperOfPageOfMiLPEvent unit test stubs"""
@@ -28,17 +25,17 @@ class TestSingleWrapperOfPageOfMiLPEvent(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfPageOfMiLPEvent:
         """Test SingleWrapperOfPageOfMiLPEvent
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfPageOfMiLPEvent`
         """
-        model = dupr_backend.models.single_wrapper_of_page_of_mi_lp_event.SingleWrapperOfPageOfMiLPEvent()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfPageOfMiLPEvent()
+        if include_optional:
             return SingleWrapperOfPageOfMiLPEvent(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 result = dupr_backend.models.page_of_mi_lp_event.PageOfMiLPEvent(
                     empty = False, 
                     has_more = False, 
@@ -92,10 +89,10 @@ class TestSingleWrapperOfPageOfMiLPEvent(unittest.TestCase):
                     limit = 10, 
                     offset = 90, 
                     total = 100, 
-                    total_value_relation = 'GREATER_THAN_OR_EQUAL_TO', ), 
+                    total_value_relation = 'GREATER_THAN_OR_EQUAL_TO', ),
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfPageOfMiLPEvent(
         )
         """

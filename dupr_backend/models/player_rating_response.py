@@ -17,86 +17,102 @@ import pprint
 import re  # noqa: F401
 import json
 
-
-from typing import Optional, Union
-from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr, validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dupr_backend.models.provisional_rating import ProvisionalRating
+from typing import Optional, Set
+from typing_extensions import Self
 
 class PlayerRatingResponse(BaseModel):
     """
     PlayerRatingResponse
-    """
-    default_rating: Optional[StrictStr] = Field(None, alias="defaultRating")
+    """ # noqa: E501
+    default_rating: Optional[StrictStr] = Field(default=None, alias="defaultRating")
     doubles: Optional[StrictStr] = None
-    doubles_provisional: Optional[StrictBool] = Field(None, alias="doublesProvisional")
-    doubles_reliability_score: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="doublesReliabilityScore")
-    doubles_verified: Optional[StrictStr] = Field(None, alias="doublesVerified")
-    provisional_ratings: Optional[ProvisionalRating] = Field(None, alias="provisionalRatings")
+    doubles_provisional: Optional[StrictBool] = Field(default=None, alias="doublesProvisional")
+    doubles_reliability_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="doublesReliabilityScore")
+    doubles_verified: Optional[StrictStr] = Field(default=None, alias="doublesVerified")
+    provisional_ratings: Optional[ProvisionalRating] = Field(default=None, alias="provisionalRatings")
     singles: Optional[StrictStr] = None
-    singles_provisional: Optional[StrictBool] = Field(None, alias="singlesProvisional")
-    singles_reliability_score: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="singlesReliabilityScore")
-    singles_verified: Optional[StrictStr] = Field(None, alias="singlesVerified")
-    __properties = ["defaultRating", "doubles", "doublesProvisional", "doublesReliabilityScore", "doublesVerified", "provisionalRatings", "singles", "singlesProvisional", "singlesReliabilityScore", "singlesVerified"]
+    singles_provisional: Optional[StrictBool] = Field(default=None, alias="singlesProvisional")
+    singles_reliability_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="singlesReliabilityScore")
+    singles_verified: Optional[StrictStr] = Field(default=None, alias="singlesVerified")
+    __properties: ClassVar[List[str]] = ["defaultRating", "doubles", "doublesProvisional", "doublesReliabilityScore", "doublesVerified", "provisionalRatings", "singles", "singlesProvisional", "singlesReliabilityScore", "singlesVerified"]
 
-    @validator('default_rating')
+    @field_validator('default_rating')
     def default_rating_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('DOUBLES', 'SINGLES'):
+        if value not in set(['DOUBLES', 'SINGLES']):
             raise ValueError("must be one of enum values ('DOUBLES', 'SINGLES')")
         return value
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> PlayerRatingResponse:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of PlayerRatingResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         # override the default output from pydantic by calling `to_dict()` of provisional_ratings
         if self.provisional_ratings:
             _dict['provisionalRatings'] = self.provisional_ratings.to_dict()
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> PlayerRatingResponse:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of PlayerRatingResponse from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return PlayerRatingResponse.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = PlayerRatingResponse.parse_obj({
-            "default_rating": obj.get("defaultRating"),
+        _obj = cls.model_validate({
+            "defaultRating": obj.get("defaultRating"),
             "doubles": obj.get("doubles"),
-            "doubles_provisional": obj.get("doublesProvisional"),
-            "doubles_reliability_score": obj.get("doublesReliabilityScore"),
-            "doubles_verified": obj.get("doublesVerified"),
-            "provisional_ratings": ProvisionalRating.from_dict(obj.get("provisionalRatings")) if obj.get("provisionalRatings") is not None else None,
+            "doublesProvisional": obj.get("doublesProvisional"),
+            "doublesReliabilityScore": obj.get("doublesReliabilityScore"),
+            "doublesVerified": obj.get("doublesVerified"),
+            "provisionalRatings": ProvisionalRating.from_dict(obj["provisionalRatings"]) if obj.get("provisionalRatings") is not None else None,
             "singles": obj.get("singles"),
-            "singles_provisional": obj.get("singlesProvisional"),
-            "singles_reliability_score": obj.get("singlesReliabilityScore"),
-            "singles_verified": obj.get("singlesVerified")
+            "singlesProvisional": obj.get("singlesProvisional"),
+            "singlesReliabilityScore": obj.get("singlesReliabilityScore"),
+            "singlesVerified": obj.get("singlesVerified")
         })
         return _obj
 

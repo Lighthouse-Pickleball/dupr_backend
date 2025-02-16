@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **age** | **int** |  | [optional] 
@@ -48,12 +49,12 @@ json = "{}"
 # create an instance of PlayerPaymentResponse from a JSON string
 player_payment_response_instance = PlayerPaymentResponse.from_json(json)
 # print the JSON string representation of the object
-print PlayerPaymentResponse.to_json()
+print(PlayerPaymentResponse.to_json())
 
 # convert the object into a dict
 player_payment_response_dict = player_payment_response_instance.to_dict()
 # create an instance of PlayerPaymentResponse from a dict
-player_payment_response_form_dict = player_payment_response.from_dict(player_payment_response_dict)
+player_payment_response_from_dict = PlayerPaymentResponse.from_dict(player_payment_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

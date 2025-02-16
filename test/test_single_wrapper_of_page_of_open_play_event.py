@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_page_of_open_play_event import SingleWrapperOfPageOfOpenPlayEvent  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_of_page_of_open_play_event import SingleWrapperOfPageOfOpenPlayEvent
 
 class TestSingleWrapperOfPageOfOpenPlayEvent(unittest.TestCase):
     """SingleWrapperOfPageOfOpenPlayEvent unit test stubs"""
@@ -28,17 +25,17 @@ class TestSingleWrapperOfPageOfOpenPlayEvent(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfPageOfOpenPlayEvent:
         """Test SingleWrapperOfPageOfOpenPlayEvent
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfPageOfOpenPlayEvent`
         """
-        model = dupr_backend.models.single_wrapper_of_page_of_open_play_event.SingleWrapperOfPageOfOpenPlayEvent()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfPageOfOpenPlayEvent()
+        if include_optional:
             return SingleWrapperOfPageOfOpenPlayEvent(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 result = dupr_backend.models.page_of_open_play_event.PageOfOpenPlayEvent(
                     empty = False, 
                     has_more = False, 
@@ -66,10 +63,10 @@ class TestSingleWrapperOfPageOfOpenPlayEvent(unittest.TestCase):
                     limit = 10, 
                     offset = 90, 
                     total = 100, 
-                    total_value_relation = 'GREATER_THAN_OR_EQUAL_TO', ), 
+                    total_value_relation = 'GREATER_THAN_OR_EQUAL_TO', ),
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfPageOfOpenPlayEvent(
         )
         """

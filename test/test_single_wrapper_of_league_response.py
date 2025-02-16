@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_league_response import SingleWrapperOfLeagueResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_of_league_response import SingleWrapperOfLeagueResponse
 
 class TestSingleWrapperOfLeagueResponse(unittest.TestCase):
     """SingleWrapperOfLeagueResponse unit test stubs"""
@@ -28,17 +25,17 @@ class TestSingleWrapperOfLeagueResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfLeagueResponse:
         """Test SingleWrapperOfLeagueResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfLeagueResponse`
         """
-        model = dupr_backend.models.single_wrapper_of_league_response.SingleWrapperOfLeagueResponse()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfLeagueResponse()
+        if include_optional:
             return SingleWrapperOfLeagueResponse(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 result = dupr_backend.models.league_response.LeagueResponse(
                     additional_information = dupr_backend.models.league_content_response.LeagueContentResponse(
                         content = '<h1>content</h1>', 
@@ -242,10 +239,10 @@ class TestSingleWrapperOfLeagueResponse(unittest.TestCase):
                     start_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     status = 'ACTIVE/IN_PROGRESS/COMPLETE/CANCELLED', 
                     type = 'FLEX', 
-                    user_id = 45785789, ), 
+                    user_id = 45785789, ),
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfLeagueResponse(
         )
         """

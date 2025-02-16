@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.match_confirm_request import MatchConfirmRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.match_confirm_request import MatchConfirmRequest
 
 class TestMatchConfirmRequest(unittest.TestCase):
     """MatchConfirmRequest unit test stubs"""
@@ -28,19 +25,19 @@ class TestMatchConfirmRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> MatchConfirmRequest:
         """Test MatchConfirmRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MatchConfirmRequest`
         """
-        model = dupr_backend.models.match_confirm_request.MatchConfirmRequest()  # noqa: E501
-        if include_optional :
+        model = MatchConfirmRequest()
+        if include_optional:
             return MatchConfirmRequest(
                 match_id = 4684651981
             )
-        else :
+        else:
             return MatchConfirmRequest(
                 match_id = 4684651981,
         )

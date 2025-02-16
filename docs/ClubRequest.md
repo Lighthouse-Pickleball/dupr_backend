@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address_id** | **int** |  | [optional] 
@@ -27,12 +28,12 @@ json = "{}"
 # create an instance of ClubRequest from a JSON string
 club_request_instance = ClubRequest.from_json(json)
 # print the JSON string representation of the object
-print ClubRequest.to_json()
+print(ClubRequest.to_json())
 
 # convert the object into a dict
 club_request_dict = club_request_instance.to_dict()
 # create an instance of ClubRequest from a dict
-club_request_form_dict = club_request.from_dict(club_request_dict)
+club_request_from_dict = ClubRequest.from_dict(club_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

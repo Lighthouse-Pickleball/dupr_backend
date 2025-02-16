@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **partner_status** | **str** |  | [optional] 
@@ -21,12 +22,12 @@ json = "{}"
 # create an instance of LeagueTeamsRes from a JSON string
 league_teams_res_instance = LeagueTeamsRes.from_json(json)
 # print the JSON string representation of the object
-print LeagueTeamsRes.to_json()
+print(LeagueTeamsRes.to_json())
 
 # convert the object into a dict
 league_teams_res_dict = league_teams_res_instance.to_dict()
 # create an instance of LeagueTeamsRes from a dict
-league_teams_res_form_dict = league_teams_res.from_dict(league_teams_res_dict)
+league_teams_res_from_dict = LeagueTeamsRes.from_dict(league_teams_res_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.user_lookup_response import UserLookupResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.user_lookup_response import UserLookupResponse
 
 class TestUserLookupResponse(unittest.TestCase):
     """UserLookupResponse unit test stubs"""
@@ -28,38 +25,38 @@ class TestUserLookupResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> UserLookupResponse:
         """Test UserLookupResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `UserLookupResponse`
         """
-        model = dupr_backend.models.user_lookup_response.UserLookupResponse()  # noqa: E501
-        if include_optional :
+        model = UserLookupResponse()
+        if include_optional:
             return UserLookupResponse(
-                birthdate = 'Tue Jan 12 19:00:00 EST 2021', 
-                created = '2021-01-13 01:01:01', 
-                email = 'john@qwe.com', 
-                external_id = 'C12345', 
-                full_name = 'John Die', 
-                gender = 'MALE', 
-                hand = 'LEFT', 
-                id = 26518181881, 
-                image_url = 'https://s3.aws.com/image.png', 
-                is_valid_email = True, 
-                is_valid_phone = True, 
-                phone_number = '+18938271', 
-                referral_code = 'ACASC', 
-                registered = False, 
-                restricted = False, 
+                birthdate = 'Tue Jan 12 19:00:00 EST 2021',
+                created = '2021-01-13 01:01:01',
+                email = 'john@qwe.com',
+                external_id = 'C12345',
+                full_name = 'John Die',
+                gender = 'MALE',
+                hand = 'LEFT',
+                id = 26518181881,
+                image_url = 'https://s3.aws.com/image.png',
+                is_valid_email = True,
+                is_valid_phone = True,
+                phone_number = '+18938271',
+                referral_code = 'ACASC',
+                registered = False,
+                restricted = False,
                 role = dupr_backend.models.role_response.RoleResponse(
                     id = 424255123, 
                     permissions = {"USER":["VIEW","MODIFY"],"TOURNAMENT":["OWN_VIEW","OWN_MODIFY","OWN_DELETE"]}, 
-                    role = 'PLAYER', ), 
+                    role = 'PLAYER', ),
                 status = 'ACTIVE'
             )
-        else :
+        else:
             return UserLookupResponse(
         )
         """

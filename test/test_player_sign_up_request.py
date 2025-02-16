@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.player_sign_up_request import PlayerSignUpRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.player_sign_up_request import PlayerSignUpRequest
 
 class TestPlayerSignUpRequest(unittest.TestCase):
     """PlayerSignUpRequest unit test stubs"""
@@ -28,39 +25,39 @@ class TestPlayerSignUpRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> PlayerSignUpRequest:
         """Test PlayerSignUpRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PlayerSignUpRequest`
         """
-        model = dupr_backend.models.player_sign_up_request.PlayerSignUpRequest()  # noqa: E501
-        if include_optional :
+        model = PlayerSignUpRequest()
+        if include_optional:
             return PlayerSignUpRequest(
-                address_id = 10684651007, 
-                ambassador_code = 'DUPR100', 
-                birthdate = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                client_key = 'Y2stYQIDJodujiIhjndf==', 
-                default_rating = 'SINGLES/DOUBLES', 
-                doubles_rating = 2.356, 
-                email = 'user@example.com', 
-                enable_newsletter = False, 
-                first_name = 'John', 
-                full_name = 'John Doe', 
-                gender = 'MALE/FEMALE', 
-                hand = 'LEFT/RIGHT', 
-                identifier = 'unique-identifier', 
-                iso_code = 'US', 
-                last_name = 'Doe', 
-                media_id = 4086274008, 
-                password = 'mySecretPassword', 
-                phone = '+19876543210', 
-                singles_rating = 4.125, 
-                user_id = 6787890, 
+                address_id = 10684651007,
+                ambassador_code = 'DUPR100',
+                birthdate = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
+                client_key = 'Y2stYQIDJodujiIhjndf==',
+                default_rating = 'SINGLES/DOUBLES',
+                doubles_rating = 2.356,
+                email = 'user@example.com',
+                enable_newsletter = False,
+                first_name = 'John',
+                full_name = 'John Doe',
+                gender = 'MALE/FEMALE',
+                hand = 'LEFT/RIGHT',
+                identifier = 'unique-identifier',
+                iso_code = 'US',
+                last_name = 'Doe',
+                media_id = 4086274008,
+                password = 'mySecretPassword',
+                phone = '+19876543210',
+                singles_rating = 4.125,
+                user_id = 6787890,
                 username = 'jhonny'
             )
-        else :
+        else:
             return PlayerSignUpRequest(
                 address_id = 10684651007,
                 birthdate = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),

@@ -17,67 +17,83 @@ import pprint
 import re  # noqa: F401
 import json
 
-
-from typing import Dict, Optional, Union
-from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr, validator
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dupr_backend.models.attribute import Attribute
 from dupr_backend.models.content_request import ContentRequest
+from typing import Optional, Set
+from typing_extensions import Self
 
 class ClubRequest(BaseModel):
     """
     ClubRequest
-    """
-    address_id: Optional[StrictInt] = Field(None, alias="addressId")
+    """ # noqa: E501
+    address_id: Optional[StrictInt] = Field(default=None, alias="addressId")
     attributes: Optional[Dict[str, Attribute]] = None
-    club_id: StrictInt = Field(..., alias="clubId")
-    club_name: StrictStr = Field(..., alias="clubName")
-    club_type_id: StrictInt = Field(..., alias="clubTypeId")
-    currency_code: StrictStr = Field(..., alias="currencyCode")
-    long_description: Optional[ContentRequest] = Field(None, alias="longDescription")
+    club_id: StrictInt = Field(alias="clubId")
+    club_name: StrictStr = Field(alias="clubName")
+    club_type_id: StrictInt = Field(alias="clubTypeId")
+    currency_code: StrictStr = Field(alias="currencyCode")
+    long_description: Optional[ContentRequest] = Field(default=None, alias="longDescription")
     manifest: Optional[ContentRequest] = None
-    media_id: Optional[StrictInt] = Field(None, alias="mediaId")
-    model_type: StrictStr = Field(..., alias="modelType")
-    model_value: Union[StrictFloat, StrictInt] = Field(..., alias="modelValue")
-    short_description: Optional[ContentRequest] = Field(None, alias="shortDescription")
-    __properties = ["addressId", "attributes", "clubId", "clubName", "clubTypeId", "currencyCode", "longDescription", "manifest", "mediaId", "modelType", "modelValue", "shortDescription"]
+    media_id: Optional[StrictInt] = Field(default=None, alias="mediaId")
+    model_type: StrictStr = Field(alias="modelType")
+    model_value: Union[StrictFloat, StrictInt] = Field(alias="modelValue")
+    short_description: Optional[ContentRequest] = Field(default=None, alias="shortDescription")
+    __properties: ClassVar[List[str]] = ["addressId", "attributes", "clubId", "clubName", "clubTypeId", "currencyCode", "longDescription", "manifest", "mediaId", "modelType", "modelValue", "shortDescription"]
 
-    @validator('model_type')
+    @field_validator('model_type')
     def model_type_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in ('ABSOLUTE', 'RELATIVE'):
+        if value not in set(['ABSOLUTE', 'RELATIVE']):
             raise ValueError("must be one of enum values ('ABSOLUTE', 'RELATIVE')")
         return value
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> ClubRequest:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of ClubRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         # override the default output from pydantic by calling `to_dict()` of each value in attributes (dict)
         _field_dict = {}
         if self.attributes:
-            for _key in self.attributes:
-                if self.attributes[_key]:
-                    _field_dict[_key] = self.attributes[_key].to_dict()
+            for _key_attributes in self.attributes:
+                if self.attributes[_key_attributes]:
+                    _field_dict[_key_attributes] = self.attributes[_key_attributes].to_dict()
             _dict['attributes'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of long_description
         if self.long_description:
@@ -91,32 +107,32 @@ class ClubRequest(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> ClubRequest:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of ClubRequest from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return ClubRequest.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = ClubRequest.parse_obj({
-            "address_id": obj.get("addressId"),
+        _obj = cls.model_validate({
+            "addressId": obj.get("addressId"),
             "attributes": dict(
                 (_k, Attribute.from_dict(_v))
-                for _k, _v in obj.get("attributes").items()
+                for _k, _v in obj["attributes"].items()
             )
             if obj.get("attributes") is not None
             else None,
-            "club_id": obj.get("clubId"),
-            "club_name": obj.get("clubName"),
-            "club_type_id": obj.get("clubTypeId"),
-            "currency_code": obj.get("currencyCode"),
-            "long_description": ContentRequest.from_dict(obj.get("longDescription")) if obj.get("longDescription") is not None else None,
-            "manifest": ContentRequest.from_dict(obj.get("manifest")) if obj.get("manifest") is not None else None,
-            "media_id": obj.get("mediaId"),
-            "model_type": obj.get("modelType"),
-            "model_value": obj.get("modelValue"),
-            "short_description": ContentRequest.from_dict(obj.get("shortDescription")) if obj.get("shortDescription") is not None else None
+            "clubId": obj.get("clubId"),
+            "clubName": obj.get("clubName"),
+            "clubTypeId": obj.get("clubTypeId"),
+            "currencyCode": obj.get("currencyCode"),
+            "longDescription": ContentRequest.from_dict(obj["longDescription"]) if obj.get("longDescription") is not None else None,
+            "manifest": ContentRequest.from_dict(obj["manifest"]) if obj.get("manifest") is not None else None,
+            "mediaId": obj.get("mediaId"),
+            "modelType": obj.get("modelType"),
+            "modelValue": obj.get("modelValue"),
+            "shortDescription": ContentRequest.from_dict(obj["shortDescription"]) if obj.get("shortDescription") is not None else None
         })
         return _obj
 

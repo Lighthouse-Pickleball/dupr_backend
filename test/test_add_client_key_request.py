@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.add_client_key_request import AddClientKeyRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.add_client_key_request import AddClientKeyRequest
 
 class TestAddClientKeyRequest(unittest.TestCase):
     """AddClientKeyRequest unit test stubs"""
@@ -28,17 +25,17 @@ class TestAddClientKeyRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> AddClientKeyRequest:
         """Test AddClientKeyRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `AddClientKeyRequest`
         """
-        model = dupr_backend.models.add_client_key_request.AddClientKeyRequest()  # noqa: E501
-        if include_optional :
+        model = AddClientKeyRequest()
+        if include_optional:
             return AddClientKeyRequest(
-                client_id = 123456, 
+                client_id = 123456,
                 permissions = [
                     dupr_backend.models.permission.Permission(
                         operations = [
@@ -47,7 +44,7 @@ class TestAddClientKeyRequest(unittest.TestCase):
                         resource = 'BRACKET', )
                     ]
             )
-        else :
+        else:
             return AddClientKeyRequest(
                 client_id = 123456,
         )

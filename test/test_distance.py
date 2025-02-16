@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.distance import Distance  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.distance import Distance
 
 class TestDistance(unittest.TestCase):
     """Distance unit test stubs"""
@@ -28,20 +25,20 @@ class TestDistance(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> Distance:
         """Test Distance
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `Distance`
         """
-        model = dupr_backend.models.distance.Distance()  # noqa: E501
-        if include_optional :
+        model = Distance()
+        if include_optional:
             return Distance(
-                var_from = 56, 
+                var_from = 56,
                 to = 56
             )
-        else :
+        else:
             return Distance(
         )
         """

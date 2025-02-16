@@ -14,122 +14,120 @@
 
 import unittest
 
-import dupr_backend
-from dupr_backend.api.authentication_api import AuthenticationApi  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.api.authentication_api import AuthenticationApi
 
 
 class TestAuthenticationApi(unittest.TestCase):
     """AuthenticationApi unit test stubs"""
 
-    def setUp(self):
-        self.api = dupr_backend.api.authentication_api.AuthenticationApi()  # noqa: E501
+    def setUp(self) -> None:
+        self.api = AuthenticationApi()
 
-    def tearDown(self):
+    def tearDown(self) -> None:
         pass
 
-    def test_device_registration_using_put(self):
+    def test_device_registration_using_put(self) -> None:
         """Test case for device_registration_using_put
 
-        deviceRegistration  # noqa: E501
+        deviceRegistration
         """
         pass
 
-    def test_email_already_exists_using_get(self):
+    def test_email_already_exists_using_get(self) -> None:
         """Test case for email_already_exists_using_get
 
-        emailAlreadyExists  # noqa: E501
+        emailAlreadyExists
         """
         pass
 
-    def test_email_exists_using_post(self):
+    def test_email_exists_using_post(self) -> None:
         """Test case for email_exists_using_post
 
-        emailExists  # noqa: E501
+        emailExists
         """
         pass
 
-    def test_initiate_reset_password_using_get(self):
+    def test_initiate_reset_password_using_get(self) -> None:
         """Test case for initiate_reset_password_using_get
 
-        initiateResetPassword  # noqa: E501
+        initiateResetPassword
         """
         pass
 
-    def test_login_read_only_token_using_post(self):
+    def test_login_read_only_token_using_post(self) -> None:
         """Test case for login_read_only_token_using_post
 
-        loginReadOnlyToken  # noqa: E501
+        loginReadOnlyToken
         """
         pass
 
-    def test_login_read_only_token_with_full_access_token_using_post(self):
+    def test_login_read_only_token_with_full_access_token_using_post(self) -> None:
         """Test case for login_read_only_token_with_full_access_token_using_post
 
-        loginReadOnlyTokenWithFullAccessToken  # noqa: E501
+        loginReadOnlyTokenWithFullAccessToken
         """
         pass
 
-    def test_login_using_post(self):
+    def test_login_using_post(self) -> None:
         """Test case for login_using_post
 
-        login  # noqa: E501
+        login
         """
         pass
 
-    def test_panel_login_using_post(self):
+    def test_panel_login_using_post(self) -> None:
         """Test case for panel_login_using_post
 
-        panelLogin  # noqa: E501
+        panelLogin
         """
         pass
 
-    def test_refresh_access_token_using_get(self):
+    def test_refresh_access_token_using_get(self) -> None:
         """Test case for refresh_access_token_using_get
 
-        refreshAccessToken  # noqa: E501
+        refreshAccessToken
         """
         pass
 
-    def test_register_using_post(self):
+    def test_register_using_post(self) -> None:
         """Test case for register_using_post
 
-        register  # noqa: E501
+        register
         """
         pass
 
-    def test_reset_password_using_get(self):
+    def test_reset_password_using_get(self) -> None:
         """Test case for reset_password_using_get
 
-        resetPassword  # noqa: E501
+        resetPassword
         """
         pass
 
-    def test_send_verification_email_using_get(self):
+    def test_send_verification_email_using_get(self) -> None:
         """Test case for send_verification_email_using_get
 
-        sendVerificationEmail  # noqa: E501
+        sendVerificationEmail
         """
         pass
 
-    def test_validate_ambassador_code_using_get(self):
+    def test_validate_ambassador_code_using_get(self) -> None:
         """Test case for validate_ambassador_code_using_get
 
-        validateAmbassadorCode  # noqa: E501
+        validateAmbassadorCode
         """
         pass
 
-    def test_verify_email_address_using_get(self):
+    def test_verify_email_address_using_get(self) -> None:
         """Test case for verify_email_address_using_get
 
-        verifyEmailAddress  # noqa: E501
+        verifyEmailAddress
         """
         pass
 
-    def test_verify_user_email_using_post(self):
+    def test_verify_user_email_using_post(self) -> None:
         """Test case for verify_user_email_using_post
 
-        verifyUserEmail  # noqa: E501
+        verifyUserEmail
         """
         pass
 

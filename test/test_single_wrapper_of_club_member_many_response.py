@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_club_member_many_response import SingleWrapperOfClubMemberManyResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_of_club_member_many_response import SingleWrapperOfClubMemberManyResponse
 
 class TestSingleWrapperOfClubMemberManyResponse(unittest.TestCase):
     """SingleWrapperOfClubMemberManyResponse unit test stubs"""
@@ -28,27 +25,27 @@ class TestSingleWrapperOfClubMemberManyResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfClubMemberManyResponse:
         """Test SingleWrapperOfClubMemberManyResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfClubMemberManyResponse`
         """
-        model = dupr_backend.models.single_wrapper_of_club_member_many_response.SingleWrapperOfClubMemberManyResponse()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfClubMemberManyResponse()
+        if include_optional:
             return SingleWrapperOfClubMemberManyResponse(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 result = dupr_backend.models.club_member_many_response.ClubMemberManyResponse(
                     add_members_action_s3_url = 'https://dupr-dev.s3.amazonaws.com/clubs-members-excel/312312-2021-09-11', 
                     in_valid_email = [dupr@gmail.com], 
                     invalid_email = 56, 
                     players_added = 56, 
                     players_invited = 56, 
-                    valid_email = [dupr@gmail.com], ), 
+                    valid_email = [dupr@gmail.com], ),
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfClubMemberManyResponse(
         )
         """

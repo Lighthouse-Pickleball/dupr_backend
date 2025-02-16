@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.team_player_response import TeamPlayerResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.team_player_response import TeamPlayerResponse
 
 class TestTeamPlayerResponse(unittest.TestCase):
     """TeamPlayerResponse unit test stubs"""
@@ -28,27 +25,27 @@ class TestTeamPlayerResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> TeamPlayerResponse:
         """Test TeamPlayerResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `TeamPlayerResponse`
         """
-        model = dupr_backend.models.team_player_response.TeamPlayerResponse()  # noqa: E501
-        if include_optional :
+        model = TeamPlayerResponse()
+        if include_optional:
             return TeamPlayerResponse(
-                allow_substitution = True, 
-                dupr_id = 'https://dupr-dev.s3.amazonaws.com/profile/image.png', 
-                full_name = 'Brian Lara', 
-                id = 26518181881, 
-                image_url = '', 
+                allow_substitution = True,
+                dupr_id = 'https://dupr-dev.s3.amazonaws.com/profile/image.png',
+                full_name = 'Brian Lara',
+                id = 26518181881,
+                image_url = '',
                 post_match_rating = dupr_backend.models.post_match_rating.PostMatchRating(
                     doubles = 1.337, 
-                    singles = 1.337, ), 
+                    singles = 1.337, ),
                 validated_match = True
             )
-        else :
+        else:
             return TeamPlayerResponse(
                 allow_substitution = True,
                 full_name = 'Brian Lara',

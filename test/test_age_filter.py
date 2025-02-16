@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.age_filter import AgeFilter  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.age_filter import AgeFilter
 
 class TestAgeFilter(unittest.TestCase):
     """AgeFilter unit test stubs"""
@@ -28,20 +25,20 @@ class TestAgeFilter(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> AgeFilter:
         """Test AgeFilter
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `AgeFilter`
         """
-        model = dupr_backend.models.age_filter.AgeFilter()  # noqa: E501
-        if include_optional :
+        model = AgeFilter()
+        if include_optional:
             return AgeFilter(
-                max_age = 40.0, 
+                max_age = 40.0,
                 min_age = 20.0
             )
-        else :
+        else:
             return AgeFilter(
         )
         """

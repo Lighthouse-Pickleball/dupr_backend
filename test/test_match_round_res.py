@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.match_round_res import MatchRoundRes  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.match_round_res import MatchRoundRes
 
 class TestMatchRoundRes(unittest.TestCase):
     """MatchRoundRes unit test stubs"""
@@ -28,17 +25,17 @@ class TestMatchRoundRes(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> MatchRoundRes:
         """Test MatchRoundRes
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MatchRoundRes`
         """
-        model = dupr_backend.models.match_round_res.MatchRoundRes()  # noqa: E501
-        if include_optional :
+        model = MatchRoundRes()
+        if include_optional:
             return MatchRoundRes(
-                end_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
+                end_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
                 matches = [
                     dupr_backend.models.seed_match_res.SeedMatchRes(
                         bye = True, 
@@ -147,12 +144,12 @@ class TestMatchRoundRes(unittest.TestCase):
                             payment_status = 'ACTIVE', 
                             registration_id = 56, 
                             team_status = 'ACTIVE', ), )
-                    ], 
-                serial = 1, 
-                start_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
+                    ],
+                serial = 1,
+                start_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
                 team_ids = [9989596696]
             )
-        else :
+        else:
             return MatchRoundRes(
                 matches = [
                     dupr_backend.models.seed_match_res.SeedMatchRes(

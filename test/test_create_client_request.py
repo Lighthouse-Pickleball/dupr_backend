@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.create_client_request import CreateClientRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.create_client_request import CreateClientRequest
 
 class TestCreateClientRequest(unittest.TestCase):
     """CreateClientRequest unit test stubs"""
@@ -28,18 +25,18 @@ class TestCreateClientRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> CreateClientRequest:
         """Test CreateClientRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `CreateClientRequest`
         """
-        model = dupr_backend.models.create_client_request.CreateClientRequest()  # noqa: E501
-        if include_optional :
+        model = CreateClientRequest()
+        if include_optional:
             return CreateClientRequest(
-                email = 'john.doe@yopmail.com', 
-                name = 'John Doe Corporation', 
+                email = 'john.doe@yopmail.com',
+                name = 'John Doe Corporation',
                 permissions = [
                     dupr_backend.models.permission.Permission(
                         operations = [
@@ -48,7 +45,7 @@ class TestCreateClientRequest(unittest.TestCase):
                         resource = 'BRACKET', )
                     ]
             )
-        else :
+        else:
             return CreateClientRequest(
                 email = 'john.doe@yopmail.com',
                 name = 'John Doe Corporation',

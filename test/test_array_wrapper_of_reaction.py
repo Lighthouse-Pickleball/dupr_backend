@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.array_wrapper_of_reaction import ArrayWrapperOfReaction  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.array_wrapper_of_reaction import ArrayWrapperOfReaction
 
 class TestArrayWrapperOfReaction(unittest.TestCase):
     """ArrayWrapperOfReaction unit test stubs"""
@@ -28,17 +25,17 @@ class TestArrayWrapperOfReaction(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ArrayWrapperOfReaction:
         """Test ArrayWrapperOfReaction
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ArrayWrapperOfReaction`
         """
-        model = dupr_backend.models.array_wrapper_of_reaction.ArrayWrapperOfReaction()  # noqa: E501
-        if include_optional :
+        model = ArrayWrapperOfReaction()
+        if include_optional:
             return ArrayWrapperOfReaction(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 results = [
                     dupr_backend.models.reaction.Reaction(
                         activity_id = '', 
@@ -46,10 +43,10 @@ class TestArrayWrapperOfReaction(unittest.TestCase):
                         kind = '', 
                         parent = '', 
                         user_id = '', )
-                    ], 
+                    ],
                 status = 'FAILURE'
             )
-        else :
+        else:
             return ArrayWrapperOfReaction(
         )
         """

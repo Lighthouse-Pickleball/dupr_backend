@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.user_auth_provider_request import UserAuthProviderRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.user_auth_provider_request import UserAuthProviderRequest
 
 class TestUserAuthProviderRequest(unittest.TestCase):
     """UserAuthProviderRequest unit test stubs"""
@@ -28,22 +25,22 @@ class TestUserAuthProviderRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> UserAuthProviderRequest:
         """Test UserAuthProviderRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `UserAuthProviderRequest`
         """
-        model = dupr_backend.models.user_auth_provider_request.UserAuthProviderRequest()  # noqa: E501
-        if include_optional :
+        model = UserAuthProviderRequest()
+        if include_optional:
             return UserAuthProviderRequest(
                 facebook = dupr_backend.models.facebook_request.FacebookRequest(
-                    token = 'facebook token', ), 
+                    token = 'facebook token', ),
                 instagram = dupr_backend.models.instagram_request.InstagramRequest(
                     token = 'instagram token', )
             )
-        else :
+        else:
             return UserAuthProviderRequest(
         )
         """

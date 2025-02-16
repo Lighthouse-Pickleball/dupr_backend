@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.assign_role_request import AssignRoleRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.assign_role_request import AssignRoleRequest
 
 class TestAssignRoleRequest(unittest.TestCase):
     """AssignRoleRequest unit test stubs"""
@@ -28,20 +25,20 @@ class TestAssignRoleRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> AssignRoleRequest:
         """Test AssignRoleRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `AssignRoleRequest`
         """
-        model = dupr_backend.models.assign_role_request.AssignRoleRequest()  # noqa: E501
-        if include_optional :
+        model = AssignRoleRequest()
+        if include_optional:
             return AssignRoleRequest(
-                role_id = 2131312, 
+                role_id = 2131312,
                 user_id = 1231231
             )
-        else :
+        else:
             return AssignRoleRequest(
                 role_id = 2131312,
                 user_id = 1231231,

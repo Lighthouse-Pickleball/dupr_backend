@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.array_wrapper_of_post_response import ArrayWrapperOfPostResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.array_wrapper_of_post_response import ArrayWrapperOfPostResponse
 
 class TestArrayWrapperOfPostResponse(unittest.TestCase):
     """ArrayWrapperOfPostResponse unit test stubs"""
@@ -28,17 +25,17 @@ class TestArrayWrapperOfPostResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ArrayWrapperOfPostResponse:
         """Test ArrayWrapperOfPostResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ArrayWrapperOfPostResponse`
         """
-        model = dupr_backend.models.array_wrapper_of_post_response.ArrayWrapperOfPostResponse()  # noqa: E501
-        if include_optional :
+        model = ArrayWrapperOfPostResponse()
+        if include_optional:
             return ArrayWrapperOfPostResponse(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 results = [
                     dupr_backend.models.post_response.PostResponse(
                         activity_id = '', 
@@ -364,10 +361,10 @@ class TestArrayWrapperOfPostResponse(unittest.TestCase):
                         tags = , 
                         updated_at = 56, 
                         verb = 'MATCH', )
-                    ], 
+                    ],
                 status = 'FAILURE'
             )
-        else :
+        else:
             return ArrayWrapperOfPostResponse(
         )
         """

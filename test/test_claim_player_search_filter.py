@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.claim_player_search_filter import ClaimPlayerSearchFilter  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.claim_player_search_filter import ClaimPlayerSearchFilter
 
 class TestClaimPlayerSearchFilter(unittest.TestCase):
     """ClaimPlayerSearchFilter unit test stubs"""
@@ -28,30 +25,30 @@ class TestClaimPlayerSearchFilter(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ClaimPlayerSearchFilter:
         """Test ClaimPlayerSearchFilter
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ClaimPlayerSearchFilter`
         """
-        model = dupr_backend.models.claim_player_search_filter.ClaimPlayerSearchFilter()  # noqa: E501
-        if include_optional :
+        model = ClaimPlayerSearchFilter()
+        if include_optional:
             return ClaimPlayerSearchFilter(
                 age = dupr_backend.models.age_filter.AgeFilter(
                     max_age = 40.0, 
-                    min_age = 20.0, ), 
-                gender = 'FEMALE', 
-                lat = 72.34654645455, 
-                lng = 19.55151584984, 
-                radius_in_meters = 16093.4, 
+                    min_age = 20.0, ),
+                gender = 'FEMALE',
+                lat = 72.34654645455,
+                lng = 19.55151584984,
+                radius_in_meters = 16093.4,
                 rating = dupr_backend.models.claim_player_rating_filter.ClaimPlayerRatingFilter(
                     max_rating = 3.3, 
                     min_rating = 2.3, 
-                    type = 'DOUBLES', ), 
+                    type = 'DOUBLES', ),
                 short_address = 'King County, WA, US'
             )
-        else :
+        else:
             return ClaimPlayerSearchFilter(
         )
         """

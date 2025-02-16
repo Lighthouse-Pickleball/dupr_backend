@@ -17,192 +17,208 @@ import pprint
 import re  # noqa: F401
 import json
 
-
-from typing import List, Optional, Union
-from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr, conlist, validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dupr_backend.models.club_role import ClubRole
+from typing import Optional, Set
+from typing_extensions import Self
 
 class ClubMemberResponse(BaseModel):
     """
     ClubMemberResponse
-    """
+    """ # noqa: E501
     age: Optional[StrictInt] = None
     birthdate: Optional[StrictStr] = None
-    club_id: StrictInt = Field(..., alias="clubId")
+    club_id: StrictInt = Field(alias="clubId")
     created: Optional[StrictStr] = None
-    default_rating: Optional[StrictStr] = Field(None, alias="defaultRating")
-    display_username: Optional[StrictBool] = Field(None, alias="displayUsername")
+    default_rating: Optional[StrictStr] = Field(default=None, alias="defaultRating")
+    display_username: Optional[StrictBool] = Field(default=None, alias="displayUsername")
     distance: Optional[StrictStr] = None
-    distance_in_miles: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="distanceInMiles")
+    distance_in_miles: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="distanceInMiles")
     doubles: Optional[StrictStr] = None
-    doubles_provisional: Optional[StrictBool] = Field(None, alias="doublesProvisional")
-    doubles_reliability: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="doublesReliability")
-    doubles_verified: Optional[StrictStr] = Field(None, alias="doublesVerified")
-    dupr_id: Optional[StrictStr] = Field(None, alias="duprId")
+    doubles_provisional: Optional[StrictBool] = Field(default=None, alias="doublesProvisional")
+    doubles_reliability: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="doublesReliability")
+    doubles_verified: Optional[StrictStr] = Field(default=None, alias="doublesVerified")
+    dupr_id: Optional[StrictStr] = Field(default=None, alias="duprId")
     email: Optional[StrictStr] = None
-    enable_privacy: StrictBool = Field(..., alias="enablePrivacy")
-    formatted_address: Optional[StrictStr] = Field(None, alias="formattedAddress")
-    full_name: StrictStr = Field(..., alias="fullName")
+    enable_privacy: StrictBool = Field(alias="enablePrivacy")
+    formatted_address: Optional[StrictStr] = Field(default=None, alias="formattedAddress")
+    full_name: StrictStr = Field(alias="fullName")
     gender: Optional[StrictStr] = None
     hand: Optional[StrictStr] = None
-    id: StrictInt = Field(...)
-    image_url: Optional[StrictStr] = Field(None, alias="imageUrl")
-    invitation_type: Optional[StrictStr] = Field(None, alias="invitationType")
-    is_checked: Optional[StrictBool] = Field(None, alias="isChecked")
-    iso_alpha2_code: Optional[StrictStr] = Field(None, alias="isoAlpha2Code")
+    id: StrictInt
+    image_url: Optional[StrictStr] = Field(default=None, alias="imageUrl")
+    invitation_type: Optional[StrictStr] = Field(default=None, alias="invitationType")
+    is_checked: Optional[StrictBool] = Field(default=None, alias="isChecked")
+    iso_alpha2_code: Optional[StrictStr] = Field(default=None, alias="isoAlpha2Code")
     latitude: Optional[Union[StrictFloat, StrictInt]] = None
     location: Optional[StrictStr] = None
     longitude: Optional[Union[StrictFloat, StrictInt]] = None
     phone: Optional[StrictStr] = None
-    provisional_doubles_rating: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="provisionalDoublesRating")
-    provisional_singles_rating: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="provisionalSinglesRating")
-    requested_by: Optional[StrictInt] = Field(None, alias="requestedBy")
-    roles: conlist(ClubRole) = Field(...)
-    short_address: Optional[StrictStr] = Field(None, alias="shortAddress")
+    provisional_doubles_rating: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="provisionalDoublesRating")
+    provisional_singles_rating: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="provisionalSinglesRating")
+    requested_by: Optional[StrictInt] = Field(default=None, alias="requestedBy")
+    roles: List[ClubRole]
+    short_address: Optional[StrictStr] = Field(default=None, alias="shortAddress")
     singles: Optional[StrictStr] = None
-    singles_provisional: Optional[StrictBool] = Field(None, alias="singlesProvisional")
-    singles_reliability: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="singlesReliability")
-    singles_verified: Optional[StrictStr] = Field(None, alias="singlesVerified")
+    singles_provisional: Optional[StrictBool] = Field(default=None, alias="singlesProvisional")
+    singles_reliability: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="singlesReliability")
+    singles_verified: Optional[StrictStr] = Field(default=None, alias="singlesVerified")
     status: Optional[StrictStr] = None
     username: Optional[StrictStr] = None
-    verified_email: Optional[StrictBool] = Field(None, alias="verifiedEmail")
-    verified_phone: Optional[StrictBool] = Field(None, alias="verifiedPhone")
-    __properties = ["age", "birthdate", "clubId", "created", "defaultRating", "displayUsername", "distance", "distanceInMiles", "doubles", "doublesProvisional", "doublesReliability", "doublesVerified", "duprId", "email", "enablePrivacy", "formattedAddress", "fullName", "gender", "hand", "id", "imageUrl", "invitationType", "isChecked", "isoAlpha2Code", "latitude", "location", "longitude", "phone", "provisionalDoublesRating", "provisionalSinglesRating", "requestedBy", "roles", "shortAddress", "singles", "singlesProvisional", "singlesReliability", "singlesVerified", "status", "username", "verifiedEmail", "verifiedPhone"]
+    verified_email: Optional[StrictBool] = Field(default=None, alias="verifiedEmail")
+    verified_phone: Optional[StrictBool] = Field(default=None, alias="verifiedPhone")
+    __properties: ClassVar[List[str]] = ["age", "birthdate", "clubId", "created", "defaultRating", "displayUsername", "distance", "distanceInMiles", "doubles", "doublesProvisional", "doublesReliability", "doublesVerified", "duprId", "email", "enablePrivacy", "formattedAddress", "fullName", "gender", "hand", "id", "imageUrl", "invitationType", "isChecked", "isoAlpha2Code", "latitude", "location", "longitude", "phone", "provisionalDoublesRating", "provisionalSinglesRating", "requestedBy", "roles", "shortAddress", "singles", "singlesProvisional", "singlesReliability", "singlesVerified", "status", "username", "verifiedEmail", "verifiedPhone"]
 
-    @validator('default_rating')
+    @field_validator('default_rating')
     def default_rating_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('DOUBLES', 'SINGLES'):
+        if value not in set(['DOUBLES', 'SINGLES']):
             raise ValueError("must be one of enum values ('DOUBLES', 'SINGLES')")
         return value
 
-    @validator('gender')
+    @field_validator('gender')
     def gender_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('FEMALE', 'MALE'):
+        if value not in set(['FEMALE', 'MALE']):
             raise ValueError("must be one of enum values ('FEMALE', 'MALE')")
         return value
 
-    @validator('hand')
+    @field_validator('hand')
     def hand_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('BOTH', 'LEFT', 'NONE', 'RIGHT'):
+        if value not in set(['BOTH', 'LEFT', 'NONE', 'RIGHT']):
             raise ValueError("must be one of enum values ('BOTH', 'LEFT', 'NONE', 'RIGHT')")
         return value
 
-    @validator('invitation_type')
+    @field_validator('invitation_type')
     def invitation_type_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('INVITATION', 'INVITATION_CSV', 'PARTNER_INVITE', 'REQUEST'):
+        if value not in set(['INVITATION', 'INVITATION_CSV', 'PARTNER_INVITE', 'REQUEST']):
             raise ValueError("must be one of enum values ('INVITATION', 'INVITATION_CSV', 'PARTNER_INVITE', 'REQUEST')")
         return value
 
-    @validator('status')
+    @field_validator('status')
     def status_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING'):
+        if value not in set(['ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING']):
             raise ValueError("must be one of enum values ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING')")
         return value
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> ClubMemberResponse:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of ClubMemberResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         # override the default output from pydantic by calling `to_dict()` of each item in roles (list)
         _items = []
         if self.roles:
-            for _item in self.roles:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_roles in self.roles:
+                if _item_roles:
+                    _items.append(_item_roles.to_dict())
             _dict['roles'] = _items
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> ClubMemberResponse:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of ClubMemberResponse from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return ClubMemberResponse.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = ClubMemberResponse.parse_obj({
+        _obj = cls.model_validate({
             "age": obj.get("age"),
             "birthdate": obj.get("birthdate"),
-            "club_id": obj.get("clubId"),
+            "clubId": obj.get("clubId"),
             "created": obj.get("created"),
-            "default_rating": obj.get("defaultRating"),
-            "display_username": obj.get("displayUsername"),
+            "defaultRating": obj.get("defaultRating"),
+            "displayUsername": obj.get("displayUsername"),
             "distance": obj.get("distance"),
-            "distance_in_miles": obj.get("distanceInMiles"),
+            "distanceInMiles": obj.get("distanceInMiles"),
             "doubles": obj.get("doubles"),
-            "doubles_provisional": obj.get("doublesProvisional"),
-            "doubles_reliability": obj.get("doublesReliability"),
-            "doubles_verified": obj.get("doublesVerified"),
-            "dupr_id": obj.get("duprId"),
+            "doublesProvisional": obj.get("doublesProvisional"),
+            "doublesReliability": obj.get("doublesReliability"),
+            "doublesVerified": obj.get("doublesVerified"),
+            "duprId": obj.get("duprId"),
             "email": obj.get("email"),
-            "enable_privacy": obj.get("enablePrivacy"),
-            "formatted_address": obj.get("formattedAddress"),
-            "full_name": obj.get("fullName"),
+            "enablePrivacy": obj.get("enablePrivacy"),
+            "formattedAddress": obj.get("formattedAddress"),
+            "fullName": obj.get("fullName"),
             "gender": obj.get("gender"),
             "hand": obj.get("hand"),
             "id": obj.get("id"),
-            "image_url": obj.get("imageUrl"),
-            "invitation_type": obj.get("invitationType"),
-            "is_checked": obj.get("isChecked"),
-            "iso_alpha2_code": obj.get("isoAlpha2Code"),
+            "imageUrl": obj.get("imageUrl"),
+            "invitationType": obj.get("invitationType"),
+            "isChecked": obj.get("isChecked"),
+            "isoAlpha2Code": obj.get("isoAlpha2Code"),
             "latitude": obj.get("latitude"),
             "location": obj.get("location"),
             "longitude": obj.get("longitude"),
             "phone": obj.get("phone"),
-            "provisional_doubles_rating": obj.get("provisionalDoublesRating"),
-            "provisional_singles_rating": obj.get("provisionalSinglesRating"),
-            "requested_by": obj.get("requestedBy"),
-            "roles": [ClubRole.from_dict(_item) for _item in obj.get("roles")] if obj.get("roles") is not None else None,
-            "short_address": obj.get("shortAddress"),
+            "provisionalDoublesRating": obj.get("provisionalDoublesRating"),
+            "provisionalSinglesRating": obj.get("provisionalSinglesRating"),
+            "requestedBy": obj.get("requestedBy"),
+            "roles": [ClubRole.from_dict(_item) for _item in obj["roles"]] if obj.get("roles") is not None else None,
+            "shortAddress": obj.get("shortAddress"),
             "singles": obj.get("singles"),
-            "singles_provisional": obj.get("singlesProvisional"),
-            "singles_reliability": obj.get("singlesReliability"),
-            "singles_verified": obj.get("singlesVerified"),
+            "singlesProvisional": obj.get("singlesProvisional"),
+            "singlesReliability": obj.get("singlesReliability"),
+            "singlesVerified": obj.get("singlesVerified"),
             "status": obj.get("status"),
             "username": obj.get("username"),
-            "verified_email": obj.get("verifiedEmail"),
-            "verified_phone": obj.get("verifiedPhone")
+            "verifiedEmail": obj.get("verifiedEmail"),
+            "verifiedPhone": obj.get("verifiedPhone")
         })
         return _obj
 

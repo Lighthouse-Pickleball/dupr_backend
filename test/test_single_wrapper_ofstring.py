@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_ofstring import SingleWrapperOfstring  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_ofstring import SingleWrapperOfstring
 
 class TestSingleWrapperOfstring(unittest.TestCase):
     """SingleWrapperOfstring unit test stubs"""
@@ -28,21 +25,21 @@ class TestSingleWrapperOfstring(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfstring:
         """Test SingleWrapperOfstring
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfstring`
         """
-        model = dupr_backend.models.single_wrapper_ofstring.SingleWrapperOfstring()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfstring()
+        if include_optional:
             return SingleWrapperOfstring(
-                message = 'Show this message to user.', 
-                result = '', 
+                message = 'Show this message to user.',
+                result = '',
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfstring(
         )
         """

@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.registered_event_admin_request import RegisteredEventAdminRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.registered_event_admin_request import RegisteredEventAdminRequest
 
 class TestRegisteredEventAdminRequest(unittest.TestCase):
     """RegisteredEventAdminRequest unit test stubs"""
@@ -28,27 +25,27 @@ class TestRegisteredEventAdminRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> RegisteredEventAdminRequest:
         """Test RegisteredEventAdminRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `RegisteredEventAdminRequest`
         """
-        model = dupr_backend.models.registered_event_admin_request.RegisteredEventAdminRequest()  # noqa: E501
-        if include_optional :
+        model = RegisteredEventAdminRequest()
+        if include_optional:
             return RegisteredEventAdminRequest(
                 dupr_ids = {
                     'key' : ''
-                    }, 
+                    },
                 emails = {
                     'key' : ''
-                    }, 
+                    },
                 user_ids = {
                     'key' : 56
                     }
             )
-        else :
+        else:
             return RegisteredEventAdminRequest(
         )
         """

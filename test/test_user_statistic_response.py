@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.user_statistic_response import UserStatisticResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.user_statistic_response import UserStatisticResponse
 
 class TestUserStatisticResponse(unittest.TestCase):
     """UserStatisticResponse unit test stubs"""
@@ -28,15 +25,15 @@ class TestUserStatisticResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> UserStatisticResponse:
         """Test UserStatisticResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `UserStatisticResponse`
         """
-        model = dupr_backend.models.user_statistic_response.UserStatisticResponse()  # noqa: E501
-        if include_optional :
+        model = UserStatisticResponse()
+        if include_optional:
             return UserStatisticResponse(
                 overview = dupr_backend.models.rating_overview_response.RatingOverviewResponse(
                     all = dupr_backend.models.overview_response.OverviewResponse(
@@ -47,7 +44,7 @@ class TestUserStatisticResponse(unittest.TestCase):
                         losses = 2, 
                         pending = 5, 
                         wins = 3, ), 
-                    singles = , ), 
+                    singles = , ),
                 trends = dupr_backend.models.trend_response.TrendResponse(
                     games_trend = [
                         dupr_backend.models.game_trend_response.GameTrendResponse(
@@ -58,7 +55,7 @@ class TestUserStatisticResponse(unittest.TestCase):
                             total_games = 20, )
                         ], )
             )
-        else :
+        else:
             return UserStatisticResponse(
                 overview = dupr_backend.models.rating_overview_response.RatingOverviewResponse(
                     all = dupr_backend.models.overview_response.OverviewResponse(

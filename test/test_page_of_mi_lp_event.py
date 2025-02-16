@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.page_of_mi_lp_event import PageOfMiLPEvent  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.page_of_mi_lp_event import PageOfMiLPEvent
 
 class TestPageOfMiLPEvent(unittest.TestCase):
     """PageOfMiLPEvent unit test stubs"""
@@ -28,19 +25,19 @@ class TestPageOfMiLPEvent(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> PageOfMiLPEvent:
         """Test PageOfMiLPEvent
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PageOfMiLPEvent`
         """
-        model = dupr_backend.models.page_of_mi_lp_event.PageOfMiLPEvent()  # noqa: E501
-        if include_optional :
+        model = PageOfMiLPEvent()
+        if include_optional:
             return PageOfMiLPEvent(
-                empty = False, 
-                has_more = False, 
-                has_previous = True, 
+                empty = False,
+                has_more = False,
+                has_previous = True,
                 hits = [
                     dupr_backend.models.mi_lp_event.MiLPEvent(
                         address_str = '', 
@@ -86,13 +83,13 @@ class TestPageOfMiLPEvent(unittest.TestCase):
                         event_name = '', 
                         event_type = 'MARQUE', 
                         status = 'ACTIVE', )
-                    ], 
-                limit = 10, 
-                offset = 90, 
-                total = 100, 
+                    ],
+                limit = 10,
+                offset = 90,
+                total = 100,
                 total_value_relation = 'GREATER_THAN_OR_EQUAL_TO'
             )
-        else :
+        else:
             return PageOfMiLPEvent(
                 empty = False,
                 has_more = False,

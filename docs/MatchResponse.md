@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bracket_id** | **int** |  | [optional] 
@@ -45,12 +46,12 @@ json = "{}"
 # create an instance of MatchResponse from a JSON string
 match_response_instance = MatchResponse.from_json(json)
 # print the JSON string representation of the object
-print MatchResponse.to_json()
+print(MatchResponse.to_json())
 
 # convert the object into a dict
 match_response_dict = match_response_instance.to_dict()
 # create an instance of MatchResponse from a dict
-match_response_form_dict = match_response.from_dict(match_response_dict)
+match_response_from_dict = MatchResponse.from_dict(match_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

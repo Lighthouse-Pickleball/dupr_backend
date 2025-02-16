@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **additional_information** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
@@ -39,12 +40,12 @@ json = "{}"
 # create an instance of LeagueRequest from a JSON string
 league_request_instance = LeagueRequest.from_json(json)
 # print the JSON string representation of the object
-print LeagueRequest.to_json()
+print(LeagueRequest.to_json())
 
 # convert the object into a dict
 league_request_dict = league_request_instance.to_dict()
 # create an instance of LeagueRequest from a dict
-league_request_form_dict = league_request.from_dict(league_request_dict)
+league_request_from_dict = LeagueRequest.from_dict(league_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

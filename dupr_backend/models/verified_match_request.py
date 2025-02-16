@@ -17,102 +17,118 @@ import pprint
 import re  # noqa: F401
 import json
 
-
-from typing import Optional
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from typing import Optional, Set
+from typing_extensions import Self
 
 class VerifiedMatchRequest(BaseModel):
     """
     VerifiedMatchRequest
-    """
-    club_id: Optional[StrictInt] = Field(None, alias="clubId")
-    event_date: Optional[StrictStr] = Field(None, alias="eventDate")
-    event_name: Optional[StrictStr] = Field(None, alias="eventName")
+    """ # noqa: E501
+    club_id: Optional[StrictInt] = Field(default=None, alias="clubId")
+    event_date: Optional[StrictStr] = Field(default=None, alias="eventDate")
+    event_name: Optional[StrictStr] = Field(default=None, alias="eventName")
     location: Optional[StrictStr] = None
-    team_a_player1: Optional[StrictStr] = Field(None, alias="teamAPlayer1")
-    team_a_player1_id: Optional[StrictStr] = Field(None, alias="teamAPlayer1ID")
-    team_a_player2: Optional[StrictStr] = Field(None, alias="teamAPlayer2")
-    team_a_player2_id: Optional[StrictStr] = Field(None, alias="teamAPlayer2ID")
-    team_a_points_game1: Optional[StrictInt] = Field(None, alias="teamAPointsGame1")
-    team_a_points_game2: Optional[StrictInt] = Field(None, alias="teamAPointsGame2")
-    team_a_points_game3: Optional[StrictInt] = Field(None, alias="teamAPointsGame3")
-    team_a_points_game4: Optional[StrictInt] = Field(None, alias="teamAPointsGame4")
-    team_a_points_game5: Optional[StrictInt] = Field(None, alias="teamAPointsGame5")
-    team_b_player1: Optional[StrictStr] = Field(None, alias="teamBPlayer1")
-    team_b_player1_id: Optional[StrictStr] = Field(None, alias="teamBPlayer1ID")
-    team_b_player2: Optional[StrictStr] = Field(None, alias="teamBPlayer2")
-    team_b_player2_id: Optional[StrictStr] = Field(None, alias="teamBPlayer2ID")
-    team_b_points_game1: Optional[StrictInt] = Field(None, alias="teamBPointsGame1")
-    team_b_points_game2: Optional[StrictInt] = Field(None, alias="teamBPointsGame2")
-    team_b_points_game3: Optional[StrictInt] = Field(None, alias="teamBPointsGame3")
-    team_b_points_game4: Optional[StrictInt] = Field(None, alias="teamBPointsGame4")
-    team_b_points_game5: Optional[StrictInt] = Field(None, alias="teamBPointsGame5")
-    tournament_name: Optional[StrictStr] = Field(None, alias="tournamentName")
+    team_a_player1: Optional[StrictStr] = Field(default=None, alias="teamAPlayer1")
+    team_a_player1_id: Optional[StrictStr] = Field(default=None, alias="teamAPlayer1ID")
+    team_a_player2: Optional[StrictStr] = Field(default=None, alias="teamAPlayer2")
+    team_a_player2_id: Optional[StrictStr] = Field(default=None, alias="teamAPlayer2ID")
+    team_a_points_game1: Optional[StrictInt] = Field(default=None, alias="teamAPointsGame1")
+    team_a_points_game2: Optional[StrictInt] = Field(default=None, alias="teamAPointsGame2")
+    team_a_points_game3: Optional[StrictInt] = Field(default=None, alias="teamAPointsGame3")
+    team_a_points_game4: Optional[StrictInt] = Field(default=None, alias="teamAPointsGame4")
+    team_a_points_game5: Optional[StrictInt] = Field(default=None, alias="teamAPointsGame5")
+    team_b_player1: Optional[StrictStr] = Field(default=None, alias="teamBPlayer1")
+    team_b_player1_id: Optional[StrictStr] = Field(default=None, alias="teamBPlayer1ID")
+    team_b_player2: Optional[StrictStr] = Field(default=None, alias="teamBPlayer2")
+    team_b_player2_id: Optional[StrictStr] = Field(default=None, alias="teamBPlayer2ID")
+    team_b_points_game1: Optional[StrictInt] = Field(default=None, alias="teamBPointsGame1")
+    team_b_points_game2: Optional[StrictInt] = Field(default=None, alias="teamBPointsGame2")
+    team_b_points_game3: Optional[StrictInt] = Field(default=None, alias="teamBPointsGame3")
+    team_b_points_game4: Optional[StrictInt] = Field(default=None, alias="teamBPointsGame4")
+    team_b_points_game5: Optional[StrictInt] = Field(default=None, alias="teamBPointsGame5")
+    tournament_name: Optional[StrictStr] = Field(default=None, alias="tournamentName")
     venue: Optional[StrictStr] = None
-    winning_team: Optional[StrictStr] = Field(None, alias="winningTeam")
-    __properties = ["clubId", "eventDate", "eventName", "location", "teamAPlayer1", "teamAPlayer1ID", "teamAPlayer2", "teamAPlayer2ID", "teamAPointsGame1", "teamAPointsGame2", "teamAPointsGame3", "teamAPointsGame4", "teamAPointsGame5", "teamBPlayer1", "teamBPlayer1ID", "teamBPlayer2", "teamBPlayer2ID", "teamBPointsGame1", "teamBPointsGame2", "teamBPointsGame3", "teamBPointsGame4", "teamBPointsGame5", "tournamentName", "venue", "winningTeam"]
+    winning_team: Optional[StrictStr] = Field(default=None, alias="winningTeam")
+    __properties: ClassVar[List[str]] = ["clubId", "eventDate", "eventName", "location", "teamAPlayer1", "teamAPlayer1ID", "teamAPlayer2", "teamAPlayer2ID", "teamAPointsGame1", "teamAPointsGame2", "teamAPointsGame3", "teamAPointsGame4", "teamAPointsGame5", "teamBPlayer1", "teamBPlayer1ID", "teamBPlayer2", "teamBPlayer2ID", "teamBPointsGame1", "teamBPointsGame2", "teamBPointsGame3", "teamBPointsGame4", "teamBPointsGame5", "tournamentName", "venue", "winningTeam"]
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> VerifiedMatchRequest:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of VerifiedMatchRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> VerifiedMatchRequest:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of VerifiedMatchRequest from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return VerifiedMatchRequest.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = VerifiedMatchRequest.parse_obj({
-            "club_id": obj.get("clubId"),
-            "event_date": obj.get("eventDate"),
-            "event_name": obj.get("eventName"),
+        _obj = cls.model_validate({
+            "clubId": obj.get("clubId"),
+            "eventDate": obj.get("eventDate"),
+            "eventName": obj.get("eventName"),
             "location": obj.get("location"),
-            "team_a_player1": obj.get("teamAPlayer1"),
-            "team_a_player1_id": obj.get("teamAPlayer1ID"),
-            "team_a_player2": obj.get("teamAPlayer2"),
-            "team_a_player2_id": obj.get("teamAPlayer2ID"),
-            "team_a_points_game1": obj.get("teamAPointsGame1"),
-            "team_a_points_game2": obj.get("teamAPointsGame2"),
-            "team_a_points_game3": obj.get("teamAPointsGame3"),
-            "team_a_points_game4": obj.get("teamAPointsGame4"),
-            "team_a_points_game5": obj.get("teamAPointsGame5"),
-            "team_b_player1": obj.get("teamBPlayer1"),
-            "team_b_player1_id": obj.get("teamBPlayer1ID"),
-            "team_b_player2": obj.get("teamBPlayer2"),
-            "team_b_player2_id": obj.get("teamBPlayer2ID"),
-            "team_b_points_game1": obj.get("teamBPointsGame1"),
-            "team_b_points_game2": obj.get("teamBPointsGame2"),
-            "team_b_points_game3": obj.get("teamBPointsGame3"),
-            "team_b_points_game4": obj.get("teamBPointsGame4"),
-            "team_b_points_game5": obj.get("teamBPointsGame5"),
-            "tournament_name": obj.get("tournamentName"),
+            "teamAPlayer1": obj.get("teamAPlayer1"),
+            "teamAPlayer1ID": obj.get("teamAPlayer1ID"),
+            "teamAPlayer2": obj.get("teamAPlayer2"),
+            "teamAPlayer2ID": obj.get("teamAPlayer2ID"),
+            "teamAPointsGame1": obj.get("teamAPointsGame1"),
+            "teamAPointsGame2": obj.get("teamAPointsGame2"),
+            "teamAPointsGame3": obj.get("teamAPointsGame3"),
+            "teamAPointsGame4": obj.get("teamAPointsGame4"),
+            "teamAPointsGame5": obj.get("teamAPointsGame5"),
+            "teamBPlayer1": obj.get("teamBPlayer1"),
+            "teamBPlayer1ID": obj.get("teamBPlayer1ID"),
+            "teamBPlayer2": obj.get("teamBPlayer2"),
+            "teamBPlayer2ID": obj.get("teamBPlayer2ID"),
+            "teamBPointsGame1": obj.get("teamBPointsGame1"),
+            "teamBPointsGame2": obj.get("teamBPointsGame2"),
+            "teamBPointsGame3": obj.get("teamBPointsGame3"),
+            "teamBPointsGame4": obj.get("teamBPointsGame4"),
+            "teamBPointsGame5": obj.get("teamBPointsGame5"),
+            "tournamentName": obj.get("tournamentName"),
             "venue": obj.get("venue"),
-            "winning_team": obj.get("winningTeam")
+            "winningTeam": obj.get("winningTeam")
         })
         return _obj
 

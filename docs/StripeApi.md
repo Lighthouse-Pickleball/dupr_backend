@@ -22,9 +22,8 @@ accountChargeUpdates
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
@@ -59,6 +58,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -81,6 +81,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -95,9 +96,8 @@ accountCheckoutUpdates
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
@@ -132,6 +132,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -154,6 +155,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -168,9 +170,8 @@ chargeUpdates
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
@@ -205,6 +206,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -227,6 +229,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -241,9 +244,8 @@ checkoutAccountPaymentIntent
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
@@ -278,6 +280,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -300,6 +303,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -314,9 +318,8 @@ checkoutPaymentIntent
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
@@ -351,6 +354,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -373,6 +377,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -387,9 +392,8 @@ checkoutUpdates
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
@@ -424,6 +428,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -446,6 +451,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -460,9 +466,8 @@ clubAccountUpdates
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
@@ -497,6 +502,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -519,6 +525,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -533,9 +540,8 @@ invoiceUpdates
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
@@ -570,6 +576,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -592,6 +599,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -606,9 +614,8 @@ subscriptionUpdates
 
 ### Example
 
+
 ```python
-import time
-import os
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
@@ -643,6 +650,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**|  | [default to &#39;Bearer &#39;]
@@ -665,6 +673,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |

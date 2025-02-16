@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.page_of_player_queue import PageOfPlayerQueue  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.page_of_player_queue import PageOfPlayerQueue
 
 class TestPageOfPlayerQueue(unittest.TestCase):
     """PageOfPlayerQueue unit test stubs"""
@@ -28,19 +25,19 @@ class TestPageOfPlayerQueue(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> PageOfPlayerQueue:
         """Test PageOfPlayerQueue
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PageOfPlayerQueue`
         """
-        model = dupr_backend.models.page_of_player_queue.PageOfPlayerQueue()  # noqa: E501
-        if include_optional :
+        model = PageOfPlayerQueue()
+        if include_optional:
             return PageOfPlayerQueue(
-                empty = False, 
-                has_more = False, 
-                has_previous = True, 
+                empty = False,
+                has_more = False,
+                has_previous = True,
                 hits = [
                     dupr_backend.models.player_queue.PlayerQueue(
                         create_at = 'YYYY-MM-dd', 
@@ -62,13 +59,13 @@ class TestPageOfPlayerQueue(unittest.TestCase):
                             time = dupr_backend.models.time_range_res.TimeRangeRes(
                                 end = 'HH:mm', 
                                 start = 'HH:mm', ), ), )
-                    ], 
-                limit = 10, 
-                offset = 90, 
-                total = 100, 
+                    ],
+                limit = 10,
+                offset = 90,
+                total = 100,
                 total_value_relation = 'GREATER_THAN_OR_EQUAL_TO'
             )
-        else :
+        else:
             return PageOfPlayerQueue(
                 empty = False,
                 has_more = False,

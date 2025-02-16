@@ -14,94 +14,92 @@
 
 import unittest
 
-import dupr_backend
-from dupr_backend.api.activity_admin_newsfeeds_features_api import ActivityAdminNewsfeedsFeaturesApi  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.api.activity_admin_newsfeeds_features_api import ActivityAdminNewsfeedsFeaturesApi
 
 
 class TestActivityAdminNewsfeedsFeaturesApi(unittest.TestCase):
     """ActivityAdminNewsfeedsFeaturesApi unit test stubs"""
 
-    def setUp(self):
-        self.api = dupr_backend.api.activity_admin_newsfeeds_features_api.ActivityAdminNewsfeedsFeaturesApi()  # noqa: E501
+    def setUp(self) -> None:
+        self.api = ActivityAdminNewsfeedsFeaturesApi()
 
-    def tearDown(self):
+    def tearDown(self) -> None:
         pass
 
-    def test_add_user_suggestions_using_post(self):
+    def test_add_user_suggestions_using_post(self) -> None:
         """Test case for add_user_suggestions_using_post
 
-        addUserSuggestions  # noqa: E501
+        addUserSuggestions
         """
         pass
 
-    def test_create_post_using_post(self):
+    def test_create_post_using_post(self) -> None:
         """Test case for create_post_using_post
 
-        createPost  # noqa: E501
+        createPost
         """
         pass
 
-    def test_fetch_feeds_using_get(self):
+    def test_fetch_feeds_using_get(self) -> None:
         """Test case for fetch_feeds_using_get
 
-        fetchFeeds  # noqa: E501
+        fetchFeeds
         """
         pass
 
-    def test_follow_using_post(self):
+    def test_follow_using_post(self) -> None:
         """Test case for follow_using_post
 
-        follow  # noqa: E501
+        follow
         """
         pass
 
-    def test_get_user_suggestion_using_get(self):
+    def test_get_user_suggestion_using_get(self) -> None:
         """Test case for get_user_suggestion_using_get
 
-        getUserSuggestion  # noqa: E501
+        getUserSuggestion
         """
         pass
 
-    def test_react_using_post(self):
+    def test_react_using_post(self) -> None:
         """Test case for react_using_post
 
-        react  # noqa: E501
+        react
         """
         pass
 
-    def test_remove_user_suggestions_using_delete(self):
+    def test_remove_user_suggestions_using_delete(self) -> None:
         """Test case for remove_user_suggestions_using_delete
 
-        removeUserSuggestions  # noqa: E501
+        removeUserSuggestions
         """
         pass
 
-    def test_sync_club_followers_using_post(self):
+    def test_sync_club_followers_using_post(self) -> None:
         """Test case for sync_club_followers_using_post
 
-        syncClubFollowers  # noqa: E501
+        syncClubFollowers
         """
         pass
 
-    def test_sync_feeds_using_post(self):
+    def test_sync_feeds_using_post(self) -> None:
         """Test case for sync_feeds_using_post
 
-        syncFeeds  # noqa: E501
+        syncFeeds
         """
         pass
 
-    def test_unfollow_clubs_with_same_ids_using_post(self):
+    def test_unfollow_clubs_with_same_ids_using_post(self) -> None:
         """Test case for unfollow_clubs_with_same_ids_using_post
 
-        unfollowClubsWithSameIds  # noqa: E501
+        unfollowClubsWithSameIds
         """
         pass
 
-    def test_unfollow_using_delete(self):
+    def test_unfollow_using_delete(self) -> None:
         """Test case for unfollow_using_delete
 
-        unfollow  # noqa: E501
+        unfollow
         """
         pass
 

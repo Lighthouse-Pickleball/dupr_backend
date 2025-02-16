@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.get_client_permissions_request import GetClientPermissionsRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.get_client_permissions_request import GetClientPermissionsRequest
 
 class TestGetClientPermissionsRequest(unittest.TestCase):
     """GetClientPermissionsRequest unit test stubs"""
@@ -28,19 +25,19 @@ class TestGetClientPermissionsRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> GetClientPermissionsRequest:
         """Test GetClientPermissionsRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `GetClientPermissionsRequest`
         """
-        model = dupr_backend.models.get_client_permissions_request.GetClientPermissionsRequest()  # noqa: E501
-        if include_optional :
+        model = GetClientPermissionsRequest()
+        if include_optional:
             return GetClientPermissionsRequest(
                 client_id = 4486863678
             )
-        else :
+        else:
             return GetClientPermissionsRequest(
                 client_id = 4486863678,
         )

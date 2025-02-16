@@ -17,79 +17,95 @@ import pprint
 import re  # noqa: F401
 import json
 
-
-from typing import Optional
-from pydantic import BaseModel, Field, StrictInt, StrictStr, validator
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional
+from typing import Optional, Set
+from typing_extensions import Self
 
 class StaffClubMember(BaseModel):
     """
     StaffClubMember
-    """
-    approval: StrictStr = Field(...)
-    club_id: StrictInt = Field(..., alias="clubId")
-    dupr_id: StrictStr = Field(..., alias="duprId")
-    email: StrictStr = Field(...)
-    iso_alpha2_code: StrictStr = Field(..., alias="isoAlpha2Code")
-    media_url: Optional[StrictStr] = Field(None, alias="mediaUrl")
-    name: StrictStr = Field(...)
+    """ # noqa: E501
+    approval: StrictStr
+    club_id: StrictInt = Field(alias="clubId")
+    dupr_id: StrictStr = Field(alias="duprId")
+    email: StrictStr
+    iso_alpha2_code: StrictStr = Field(alias="isoAlpha2Code")
+    media_url: Optional[StrictStr] = Field(default=None, alias="mediaUrl")
+    name: StrictStr
     phone: Optional[StrictStr] = None
-    role_id: StrictInt = Field(..., alias="roleId")
-    user_id: StrictInt = Field(..., alias="userId")
-    __properties = ["approval", "clubId", "duprId", "email", "isoAlpha2Code", "mediaUrl", "name", "phone", "roleId", "userId"]
+    role_id: StrictInt = Field(alias="roleId")
+    user_id: StrictInt = Field(alias="userId")
+    __properties: ClassVar[List[str]] = ["approval", "clubId", "duprId", "email", "isoAlpha2Code", "mediaUrl", "name", "phone", "roleId", "userId"]
 
-    @validator('approval')
+    @field_validator('approval')
     def approval_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in ('APPROVED', 'IN_REVIEW', 'PENDING', 'REJECTED'):
+        if value not in set(['APPROVED', 'IN_REVIEW', 'PENDING', 'REJECTED']):
             raise ValueError("must be one of enum values ('APPROVED', 'IN_REVIEW', 'PENDING', 'REJECTED')")
         return value
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> StaffClubMember:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of StaffClubMember from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> StaffClubMember:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of StaffClubMember from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return StaffClubMember.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = StaffClubMember.parse_obj({
+        _obj = cls.model_validate({
             "approval": obj.get("approval"),
-            "club_id": obj.get("clubId"),
-            "dupr_id": obj.get("duprId"),
+            "clubId": obj.get("clubId"),
+            "duprId": obj.get("duprId"),
             "email": obj.get("email"),
-            "iso_alpha2_code": obj.get("isoAlpha2Code"),
-            "media_url": obj.get("mediaUrl"),
+            "isoAlpha2Code": obj.get("isoAlpha2Code"),
+            "mediaUrl": obj.get("mediaUrl"),
             "name": obj.get("name"),
             "phone": obj.get("phone"),
-            "role_id": obj.get("roleId"),
-            "user_id": obj.get("userId")
+            "roleId": obj.get("roleId"),
+            "userId": obj.get("userId")
         })
         return _obj
 

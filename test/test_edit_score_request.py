@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.edit_score_request import EditScoreRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.edit_score_request import EditScoreRequest
 
 class TestEditScoreRequest(unittest.TestCase):
     """EditScoreRequest unit test stubs"""
@@ -28,25 +25,25 @@ class TestEditScoreRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> EditScoreRequest:
         """Test EditScoreRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `EditScoreRequest`
         """
-        model = dupr_backend.models.edit_score_request.EditScoreRequest()  # noqa: E501
-        if include_optional :
+        model = EditScoreRequest()
+        if include_optional:
             return EditScoreRequest(
-                game1 = 7, 
-                game2 = 11, 
-                game3 = 0, 
-                game4 = 0, 
-                game5 = 0, 
-                team_id = 56168168161, 
+                game1 = 7,
+                game2 = 11,
+                game3 = 0,
+                game4 = 0,
+                game5 = 0,
+                team_id = 56168168161,
                 winner = True
             )
-        else :
+        else:
             return EditScoreRequest(
                 game1 = 7,
                 team_id = 56168168161,

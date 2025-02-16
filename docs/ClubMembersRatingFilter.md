@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **category** | **str** |  | [optional] 
@@ -18,12 +19,12 @@ json = "{}"
 # create an instance of ClubMembersRatingFilter from a JSON string
 club_members_rating_filter_instance = ClubMembersRatingFilter.from_json(json)
 # print the JSON string representation of the object
-print ClubMembersRatingFilter.to_json()
+print(ClubMembersRatingFilter.to_json())
 
 # convert the object into a dict
 club_members_rating_filter_dict = club_members_rating_filter_instance.to_dict()
 # create an instance of ClubMembersRatingFilter from a dict
-club_members_rating_filter_form_dict = club_members_rating_filter.from_dict(club_members_rating_filter_dict)
+club_members_rating_filter_from_dict = ClubMembersRatingFilter.from_dict(club_members_rating_filter_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.member_request import MemberRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.member_request import MemberRequest
 
 class TestMemberRequest(unittest.TestCase):
     """MemberRequest unit test stubs"""
@@ -28,20 +25,20 @@ class TestMemberRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> MemberRequest:
         """Test MemberRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MemberRequest`
         """
-        model = dupr_backend.models.member_request.MemberRequest()  # noqa: E501
-        if include_optional :
+        model = MemberRequest()
+        if include_optional:
             return MemberRequest(
-                email = 'john@yopmail.com', 
+                email = 'john@yopmail.com',
                 full_name = 'John Doe'
             )
-        else :
+        else:
             return MemberRequest(
         )
         """

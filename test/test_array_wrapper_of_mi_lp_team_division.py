@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.array_wrapper_of_mi_lp_team_division import ArrayWrapperOfMiLPTeamDivision  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.array_wrapper_of_mi_lp_team_division import ArrayWrapperOfMiLPTeamDivision
 
 class TestArrayWrapperOfMiLPTeamDivision(unittest.TestCase):
     """ArrayWrapperOfMiLPTeamDivision unit test stubs"""
@@ -28,17 +25,17 @@ class TestArrayWrapperOfMiLPTeamDivision(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ArrayWrapperOfMiLPTeamDivision:
         """Test ArrayWrapperOfMiLPTeamDivision
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ArrayWrapperOfMiLPTeamDivision`
         """
-        model = dupr_backend.models.array_wrapper_of_mi_lp_team_division.ArrayWrapperOfMiLPTeamDivision()  # noqa: E501
-        if include_optional :
+        model = ArrayWrapperOfMiLPTeamDivision()
+        if include_optional:
             return ArrayWrapperOfMiLPTeamDivision(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 results = [
                     dupr_backend.models.mi_lp_team_division.MiLPTeamDivision(
                         division_type = 'DUPR12', 
@@ -62,10 +59,10 @@ class TestArrayWrapperOfMiLPTeamDivision(unittest.TestCase):
                                     ], 
                                 team_name = '', )
                             ], )
-                    ], 
+                    ],
                 status = 'FAILURE'
             )
-        else :
+        else:
             return ArrayWrapperOfMiLPTeamDivision(
         )
         """

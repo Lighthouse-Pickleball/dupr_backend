@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.league_content_request import LeagueContentRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.league_content_request import LeagueContentRequest
 
 class TestLeagueContentRequest(unittest.TestCase):
     """LeagueContentRequest unit test stubs"""
@@ -28,25 +25,25 @@ class TestLeagueContentRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> LeagueContentRequest:
         """Test LeagueContentRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `LeagueContentRequest`
         """
-        model = dupr_backend.models.league_content_request.LeagueContentRequest()  # noqa: E501
-        if include_optional :
+        model = LeagueContentRequest()
+        if include_optional:
             return LeagueContentRequest(
-                content = '<h1>content</h1>', 
-                content_id = 45785789, 
-                content_type = 'text/html', 
-                footer = '<h1>footer</h1>', 
-                footer_type = 'text/html', 
-                header = '<h1>header</h1>', 
+                content = '<h1>content</h1>',
+                content_id = 45785789,
+                content_type = 'text/html',
+                footer = '<h1>footer</h1>',
+                footer_type = 'text/html',
+                header = '<h1>header</h1>',
                 header_type = 'text/html'
             )
-        else :
+        else:
             return LeagueContentRequest(
                 content = '<h1>content</h1>',
                 content_type = 'text/html',

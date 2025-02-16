@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **new_email** | **str** |  | 
@@ -17,12 +18,12 @@ json = "{}"
 # create an instance of ChangeEmailAdminRequest from a JSON string
 change_email_admin_request_instance = ChangeEmailAdminRequest.from_json(json)
 # print the JSON string representation of the object
-print ChangeEmailAdminRequest.to_json()
+print(ChangeEmailAdminRequest.to_json())
 
 # convert the object into a dict
 change_email_admin_request_dict = change_email_admin_request_instance.to_dict()
 # create an instance of ChangeEmailAdminRequest from a dict
-change_email_admin_request_form_dict = change_email_admin_request.from_dict(change_email_admin_request_dict)
+change_email_admin_request_from_dict = ChangeEmailAdminRequest.from_dict(change_email_admin_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

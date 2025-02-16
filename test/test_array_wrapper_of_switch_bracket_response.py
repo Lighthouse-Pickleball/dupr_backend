@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.array_wrapper_of_switch_bracket_response import ArrayWrapperOfSwitchBracketResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.array_wrapper_of_switch_bracket_response import ArrayWrapperOfSwitchBracketResponse
 
 class TestArrayWrapperOfSwitchBracketResponse(unittest.TestCase):
     """ArrayWrapperOfSwitchBracketResponse unit test stubs"""
@@ -28,17 +25,17 @@ class TestArrayWrapperOfSwitchBracketResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ArrayWrapperOfSwitchBracketResponse:
         """Test ArrayWrapperOfSwitchBracketResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ArrayWrapperOfSwitchBracketResponse`
         """
-        model = dupr_backend.models.array_wrapper_of_switch_bracket_response.ArrayWrapperOfSwitchBracketResponse()  # noqa: E501
-        if include_optional :
+        model = ArrayWrapperOfSwitchBracketResponse()
+        if include_optional:
             return ArrayWrapperOfSwitchBracketResponse(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 results = [
                     dupr_backend.models.switch_bracket_response.SwitchBracketResponse(
                         failed_reason = '', 
@@ -47,10 +44,10 @@ class TestArrayWrapperOfSwitchBracketResponse(unittest.TestCase):
                         is_target_re_seeded = True, 
                         registration_id = 56, 
                         user_id = 56, )
-                    ], 
+                    ],
                 status = 'FAILURE'
             )
-        else :
+        else:
             return ArrayWrapperOfSwitchBracketResponse(
         )
         """

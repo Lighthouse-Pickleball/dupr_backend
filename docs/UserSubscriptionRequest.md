@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **billing_period** | **str** |  | 
@@ -21,12 +22,12 @@ json = "{}"
 # create an instance of UserSubscriptionRequest from a JSON string
 user_subscription_request_instance = UserSubscriptionRequest.from_json(json)
 # print the JSON string representation of the object
-print UserSubscriptionRequest.to_json()
+print(UserSubscriptionRequest.to_json())
 
 # convert the object into a dict
 user_subscription_request_dict = user_subscription_request_instance.to_dict()
 # create an instance of UserSubscriptionRequest from a dict
-user_subscription_request_form_dict = user_subscription_request.from_dict(user_subscription_request_dict)
+user_subscription_request_from_dict = UserSubscriptionRequest.from_dict(user_subscription_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

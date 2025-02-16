@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.share_match_request import ShareMatchRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.share_match_request import ShareMatchRequest
 
 class TestShareMatchRequest(unittest.TestCase):
     """ShareMatchRequest unit test stubs"""
@@ -28,19 +25,19 @@ class TestShareMatchRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ShareMatchRequest:
         """Test ShareMatchRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ShareMatchRequest`
         """
-        model = dupr_backend.models.share_match_request.ShareMatchRequest()  # noqa: E501
-        if include_optional :
+        model = ShareMatchRequest()
+        if include_optional:
             return ShareMatchRequest(
                 content = ''
             )
-        else :
+        else:
             return ShareMatchRequest(
         )
         """

@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.event_announcements_response import EventAnnouncementsResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.event_announcements_response import EventAnnouncementsResponse
 
 class TestEventAnnouncementsResponse(unittest.TestCase):
     """EventAnnouncementsResponse unit test stubs"""
@@ -28,19 +25,19 @@ class TestEventAnnouncementsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> EventAnnouncementsResponse:
         """Test EventAnnouncementsResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `EventAnnouncementsResponse`
         """
-        model = dupr_backend.models.event_announcements_response.EventAnnouncementsResponse()  # noqa: E501
-        if include_optional :
+        model = EventAnnouncementsResponse()
+        if include_optional:
             return EventAnnouncementsResponse(
-                announcement_id = 45785789, 
-                bracket_id = 45785789, 
-                created = '2022-04-27T21:59:57.711772', 
+                announcement_id = 45785789,
+                bracket_id = 45785789,
+                created = '2022-04-27T21:59:57.711772',
                 description = dupr_backend.models.content_response.ContentResponse(
                     content = '<h1>content</h1>', 
                     content_id = 45785789, 
@@ -48,20 +45,20 @@ class TestEventAnnouncementsResponse(unittest.TestCase):
                     footer = '<h1>footer</h1>', 
                     footer_type = 'text/html', 
                     header = '<h1>header</h1>', 
-                    header_type = 'text/html', ), 
-                email_failed = 10, 
-                email_sent = 10, 
-                league_id = 45785789, 
-                notification_count = 10, 
-                push_failed = 10, 
-                push_sent = 10, 
-                registered_members = 10, 
-                sms_failed = 10, 
-                sms_sent = 10, 
-                status = 'ACTIVE/IN_ACTIVE/COMPLETE', 
+                    header_type = 'text/html', ),
+                email_failed = 10,
+                email_sent = 10,
+                league_id = 45785789,
+                notification_count = 10,
+                push_failed = 10,
+                push_sent = 10,
+                registered_members = 10,
+                sms_failed = 10,
+                sms_sent = 10,
+                status = 'ACTIVE/IN_ACTIVE/COMPLETE',
                 title = 'announcement'
             )
-        else :
+        else:
             return EventAnnouncementsResponse(
                 announcement_id = 45785789,
                 bracket_id = 45785789,

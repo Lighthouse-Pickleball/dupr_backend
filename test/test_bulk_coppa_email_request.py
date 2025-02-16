@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.bulk_coppa_email_request import BulkCoppaEmailRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.bulk_coppa_email_request import BulkCoppaEmailRequest
 
 class TestBulkCoppaEmailRequest(unittest.TestCase):
     """BulkCoppaEmailRequest unit test stubs"""
@@ -28,20 +25,20 @@ class TestBulkCoppaEmailRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> BulkCoppaEmailRequest:
         """Test BulkCoppaEmailRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `BulkCoppaEmailRequest`
         """
-        model = dupr_backend.models.bulk_coppa_email_request.BulkCoppaEmailRequest()  # noqa: E501
-        if include_optional :
+        model = BulkCoppaEmailRequest()
+        if include_optional:
             return BulkCoppaEmailRequest(
-                dupr_ids = [3OQKV2], 
+                dupr_ids = [3OQKV2],
                 return_email = 'support@mydupr.com'
             )
-        else :
+        else:
             return BulkCoppaEmailRequest(
                 dupr_ids = [3OQKV2],
         )

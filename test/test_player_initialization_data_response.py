@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.player_initialization_data_response import PlayerInitializationDataResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.player_initialization_data_response import PlayerInitializationDataResponse
 
 class TestPlayerInitializationDataResponse(unittest.TestCase):
     """PlayerInitializationDataResponse unit test stubs"""
@@ -28,24 +25,24 @@ class TestPlayerInitializationDataResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> PlayerInitializationDataResponse:
         """Test PlayerInitializationDataResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PlayerInitializationDataResponse`
         """
-        model = dupr_backend.models.player_initialization_data_response.PlayerInitializationDataResponse()  # noqa: E501
-        if include_optional :
+        model = PlayerInitializationDataResponse()
+        if include_optional:
             return PlayerInitializationDataResponse(
-                days_left_for_initialization = 56, 
-                event_format = '', 
-                initialization_status = '', 
-                player_id = '', 
-                player_name = '', 
+                days_left_for_initialization = 56,
+                event_format = '',
+                initialization_status = '',
+                player_id = '',
+                player_name = '',
                 qualification_score = 1.337
             )
-        else :
+        else:
             return PlayerInitializationDataResponse(
                 event_format = '',
                 initialization_status = '',

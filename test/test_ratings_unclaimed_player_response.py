@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.ratings_unclaimed_player_response import RatingsUnclaimedPlayerResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.ratings_unclaimed_player_response import RatingsUnclaimedPlayerResponse
 
 class TestRatingsUnclaimedPlayerResponse(unittest.TestCase):
     """RatingsUnclaimedPlayerResponse unit test stubs"""
@@ -28,24 +25,24 @@ class TestRatingsUnclaimedPlayerResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> RatingsUnclaimedPlayerResponse:
         """Test RatingsUnclaimedPlayerResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `RatingsUnclaimedPlayerResponse`
         """
-        model = dupr_backend.models.ratings_unclaimed_player_response.RatingsUnclaimedPlayerResponse()  # noqa: E501
-        if include_optional :
+        model = RatingsUnclaimedPlayerResponse()
+        if include_optional:
             return RatingsUnclaimedPlayerResponse(
-                doubles = '2.864', 
-                doubles_provisional = False, 
-                doubles_verified = '2.864', 
-                singles = '4.125', 
-                singles_provisional = False, 
+                doubles = '2.864',
+                doubles_provisional = False,
+                doubles_verified = '2.864',
+                singles = '4.125',
+                singles_provisional = False,
                 singles_verified = '4.125'
             )
-        else :
+        else:
             return RatingsUnclaimedPlayerResponse(
         )
         """

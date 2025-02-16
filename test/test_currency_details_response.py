@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.currency_details_response import CurrencyDetailsResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.currency_details_response import CurrencyDetailsResponse
 
 class TestCurrencyDetailsResponse(unittest.TestCase):
     """CurrencyDetailsResponse unit test stubs"""
@@ -28,22 +25,22 @@ class TestCurrencyDetailsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> CurrencyDetailsResponse:
         """Test CurrencyDetailsResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `CurrencyDetailsResponse`
         """
-        model = dupr_backend.models.currency_details_response.CurrencyDetailsResponse()  # noqa: E501
-        if include_optional :
+        model = CurrencyDetailsResponse()
+        if include_optional:
             return CurrencyDetailsResponse(
-                currency_code = 'USD', 
-                currency_name = 'US Dollar', 
-                currency_symbol = '$', 
+                currency_code = 'USD',
+                currency_name = 'US Dollar',
+                currency_symbol = '$',
                 min_limit = 100.0
             )
-        else :
+        else:
             return CurrencyDetailsResponse(
                 currency_code = 'USD',
                 currency_name = 'US Dollar',

@@ -17,66 +17,82 @@ import pprint
 import re  # noqa: F401
 import json
 
-
-from typing import List, Optional
-from pydantic import BaseModel, Field, StrictStr, conlist
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from dupr_backend.models.matched_substring import MatchedSubstring
+from typing import Optional, Set
+from typing_extensions import Self
 
 class AutocompleteStructuredFormatting(BaseModel):
     """
     AutocompleteStructuredFormatting
-    """
-    main_text: Optional[StrictStr] = Field(None, alias="mainText")
-    main_text_matched_substrings: Optional[conlist(MatchedSubstring)] = Field(None, alias="mainTextMatchedSubstrings")
-    secondary_text: Optional[StrictStr] = Field(None, alias="secondaryText")
-    __properties = ["mainText", "mainTextMatchedSubstrings", "secondaryText"]
+    """ # noqa: E501
+    main_text: Optional[StrictStr] = Field(default=None, alias="mainText")
+    main_text_matched_substrings: Optional[List[MatchedSubstring]] = Field(default=None, alias="mainTextMatchedSubstrings")
+    secondary_text: Optional[StrictStr] = Field(default=None, alias="secondaryText")
+    __properties: ClassVar[List[str]] = ["mainText", "mainTextMatchedSubstrings", "secondaryText"]
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> AutocompleteStructuredFormatting:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of AutocompleteStructuredFormatting from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         # override the default output from pydantic by calling `to_dict()` of each item in main_text_matched_substrings (list)
         _items = []
         if self.main_text_matched_substrings:
-            for _item in self.main_text_matched_substrings:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_main_text_matched_substrings in self.main_text_matched_substrings:
+                if _item_main_text_matched_substrings:
+                    _items.append(_item_main_text_matched_substrings.to_dict())
             _dict['mainTextMatchedSubstrings'] = _items
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> AutocompleteStructuredFormatting:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of AutocompleteStructuredFormatting from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return AutocompleteStructuredFormatting.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = AutocompleteStructuredFormatting.parse_obj({
-            "main_text": obj.get("mainText"),
-            "main_text_matched_substrings": [MatchedSubstring.from_dict(_item) for _item in obj.get("mainTextMatchedSubstrings")] if obj.get("mainTextMatchedSubstrings") is not None else None,
-            "secondary_text": obj.get("secondaryText")
+        _obj = cls.model_validate({
+            "mainText": obj.get("mainText"),
+            "mainTextMatchedSubstrings": [MatchedSubstring.from_dict(_item) for _item in obj["mainTextMatchedSubstrings"]] if obj.get("mainTextMatchedSubstrings") is not None else None,
+            "secondaryText": obj.get("secondaryText")
         })
         return _obj
 

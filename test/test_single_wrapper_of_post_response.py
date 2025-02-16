@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_post_response import SingleWrapperOfPostResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_of_post_response import SingleWrapperOfPostResponse
 
 class TestSingleWrapperOfPostResponse(unittest.TestCase):
     """SingleWrapperOfPostResponse unit test stubs"""
@@ -28,17 +25,17 @@ class TestSingleWrapperOfPostResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfPostResponse:
         """Test SingleWrapperOfPostResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfPostResponse`
         """
-        model = dupr_backend.models.single_wrapper_of_post_response.SingleWrapperOfPostResponse()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfPostResponse()
+        if include_optional:
             return SingleWrapperOfPostResponse(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 result = dupr_backend.models.post_response.PostResponse(
                     activity_id = '', 
                     actor = dupr_backend.models.activity_user.ActivityUser(
@@ -362,10 +359,10 @@ class TestSingleWrapperOfPostResponse(unittest.TestCase):
                     reaction_counts = , 
                     tags = , 
                     updated_at = 56, 
-                    verb = 'MATCH', ), 
+                    verb = 'MATCH', ),
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfPostResponse(
         )
         """

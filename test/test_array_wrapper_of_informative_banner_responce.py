@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.array_wrapper_of_informative_banner_responce import ArrayWrapperOfInformativeBannerResponce  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.array_wrapper_of_informative_banner_responce import ArrayWrapperOfInformativeBannerResponce
 
 class TestArrayWrapperOfInformativeBannerResponce(unittest.TestCase):
     """ArrayWrapperOfInformativeBannerResponce unit test stubs"""
@@ -28,17 +25,17 @@ class TestArrayWrapperOfInformativeBannerResponce(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ArrayWrapperOfInformativeBannerResponce:
         """Test ArrayWrapperOfInformativeBannerResponce
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ArrayWrapperOfInformativeBannerResponce`
         """
-        model = dupr_backend.models.array_wrapper_of_informative_banner_responce.ArrayWrapperOfInformativeBannerResponce()  # noqa: E501
-        if include_optional :
+        model = ArrayWrapperOfInformativeBannerResponce()
+        if include_optional:
             return ArrayWrapperOfInformativeBannerResponce(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 results = [
                     dupr_backend.models.informative_banner_responce.InformativeBannerResponce(
                         banner_id = 56, 
@@ -54,10 +51,10 @@ class TestArrayWrapperOfInformativeBannerResponce(unittest.TestCase):
                         start_date_time = '', 
                         status = 'ACTIVE', 
                         title = '', )
-                    ], 
+                    ],
                 status = 'FAILURE'
             )
-        else :
+        else:
             return ArrayWrapperOfInformativeBannerResponce(
         )
         """

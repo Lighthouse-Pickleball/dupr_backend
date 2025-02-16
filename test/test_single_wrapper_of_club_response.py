@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_club_response import SingleWrapperOfClubResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_of_club_response import SingleWrapperOfClubResponse
 
 class TestSingleWrapperOfClubResponse(unittest.TestCase):
     """SingleWrapperOfClubResponse unit test stubs"""
@@ -28,17 +25,17 @@ class TestSingleWrapperOfClubResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfClubResponse:
         """Test SingleWrapperOfClubResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfClubResponse`
         """
-        model = dupr_backend.models.single_wrapper_of_club_response.SingleWrapperOfClubResponse()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfClubResponse()
+        if include_optional:
             return SingleWrapperOfClubResponse(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 result = dupr_backend.models.club_response.ClubResponse(
                     account_status = dupr_backend.models.account_status_response.AccountStatusResponse(
                         account_id = 6549864065, 
@@ -97,10 +94,10 @@ class TestSingleWrapperOfClubResponse(unittest.TestCase):
                     role = dupr_backend.models.club_role_response.ClubRoleResponse(
                         role_id = 56, ), 
                     short_address = 'Miami-Dade County, FL, US', 
-                    short_description = , ), 
+                    short_description = , ),
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfClubResponse(
         )
         """

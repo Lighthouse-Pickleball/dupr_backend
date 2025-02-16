@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.claim_player_search_sort import ClaimPlayerSearchSort  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.claim_player_search_sort import ClaimPlayerSearchSort
 
 class TestClaimPlayerSearchSort(unittest.TestCase):
     """ClaimPlayerSearchSort unit test stubs"""
@@ -28,20 +25,20 @@ class TestClaimPlayerSearchSort(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ClaimPlayerSearchSort:
         """Test ClaimPlayerSearchSort
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ClaimPlayerSearchSort`
         """
-        model = dupr_backend.models.claim_player_search_sort.ClaimPlayerSearchSort()  # noqa: E501
-        if include_optional :
+        model = ClaimPlayerSearchSort()
+        if include_optional:
             return ClaimPlayerSearchSort(
-                order = 'ASC/DESC', 
+                order = 'ASC/DESC',
                 parameter = 'fullNameSort/singles/doubles'
             )
-        else :
+        else:
             return ClaimPlayerSearchSort(
         )
         """

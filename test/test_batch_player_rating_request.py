@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.batch_player_rating_request import BatchPlayerRatingRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.batch_player_rating_request import BatchPlayerRatingRequest
 
 class TestBatchPlayerRatingRequest(unittest.TestCase):
     """BatchPlayerRatingRequest unit test stubs"""
@@ -28,21 +25,21 @@ class TestBatchPlayerRatingRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> BatchPlayerRatingRequest:
         """Test BatchPlayerRatingRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `BatchPlayerRatingRequest`
         """
-        model = dupr_backend.models.batch_player_rating_request.BatchPlayerRatingRequest()  # noqa: E501
-        if include_optional :
+        model = BatchPlayerRatingRequest()
+        if include_optional:
             return BatchPlayerRatingRequest(
-                bucket = '', 
-                event = 'DOUBLES', 
+                bucket = '',
+                event = 'DOUBLES',
                 key = ''
             )
-        else :
+        else:
             return BatchPlayerRatingRequest(
                 bucket = '',
                 event = 'DOUBLES',

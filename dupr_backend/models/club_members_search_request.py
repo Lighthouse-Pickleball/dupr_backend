@@ -17,50 +17,67 @@ import pprint
 import re  # noqa: F401
 import json
 
-
-from typing import List, Optional
-from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, conint, conlist
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
 from dupr_backend.models.club_members_search_filter import ClubMembersSearchFilter
 from dupr_backend.models.club_members_search_sort import ClubMembersSearchSort
+from typing import Optional, Set
+from typing_extensions import Self
 
 class ClubMembersSearchRequest(BaseModel):
     """
     ClubMembersSearchRequest
-    """
-    exclude: Optional[conlist(StrictInt)] = None
+    """ # noqa: E501
+    exclude: Optional[List[StrictInt]] = None
     filter: Optional[ClubMembersSearchFilter] = None
-    include_pending_players: Optional[StrictBool] = Field(None, alias="includePendingPlayers")
-    include_staff: Optional[StrictBool] = Field(None, alias="includeStaff")
-    limit: conint(strict=True, le=25) = Field(...)
-    offset: StrictInt = Field(...)
-    query: StrictStr = Field(...)
+    include_pending_players: Optional[StrictBool] = Field(default=None, alias="includePendingPlayers")
+    include_staff: Optional[StrictBool] = Field(default=None, alias="includeStaff")
+    limit: Annotated[int, Field(le=25, strict=True)]
+    offset: StrictInt
+    query: StrictStr
     sort: Optional[ClubMembersSearchSort] = None
-    __properties = ["exclude", "filter", "includePendingPlayers", "includeStaff", "limit", "offset", "query", "sort"]
+    __properties: ClassVar[List[str]] = ["exclude", "filter", "includePendingPlayers", "includeStaff", "limit", "offset", "query", "sort"]
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> ClubMembersSearchRequest:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of ClubMembersSearchRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         # override the default output from pydantic by calling `to_dict()` of filter
         if self.filter:
             _dict['filter'] = self.filter.to_dict()
@@ -70,23 +87,23 @@ class ClubMembersSearchRequest(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> ClubMembersSearchRequest:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of ClubMembersSearchRequest from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return ClubMembersSearchRequest.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = ClubMembersSearchRequest.parse_obj({
+        _obj = cls.model_validate({
             "exclude": obj.get("exclude"),
-            "filter": ClubMembersSearchFilter.from_dict(obj.get("filter")) if obj.get("filter") is not None else None,
-            "include_pending_players": obj.get("includePendingPlayers"),
-            "include_staff": obj.get("includeStaff"),
+            "filter": ClubMembersSearchFilter.from_dict(obj["filter"]) if obj.get("filter") is not None else None,
+            "includePendingPlayers": obj.get("includePendingPlayers"),
+            "includeStaff": obj.get("includeStaff"),
             "limit": obj.get("limit"),
             "offset": obj.get("offset"),
             "query": obj.get("query"),
-            "sort": ClubMembersSearchSort.from_dict(obj.get("sort")) if obj.get("sort") is not None else None
+            "sort": ClubMembersSearchSort.from_dict(obj["sort"]) if obj.get("sort") is not None else None
         })
         return _obj
 

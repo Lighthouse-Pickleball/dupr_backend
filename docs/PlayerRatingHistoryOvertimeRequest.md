@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **end_date** | **date** | End date | [optional] 
@@ -21,12 +22,12 @@ json = "{}"
 # create an instance of PlayerRatingHistoryOvertimeRequest from a JSON string
 player_rating_history_overtime_request_instance = PlayerRatingHistoryOvertimeRequest.from_json(json)
 # print the JSON string representation of the object
-print PlayerRatingHistoryOvertimeRequest.to_json()
+print(PlayerRatingHistoryOvertimeRequest.to_json())
 
 # convert the object into a dict
 player_rating_history_overtime_request_dict = player_rating_history_overtime_request_instance.to_dict()
 # create an instance of PlayerRatingHistoryOvertimeRequest from a dict
-player_rating_history_overtime_request_form_dict = player_rating_history_overtime_request.from_dict(player_rating_history_overtime_request_dict)
+player_rating_history_overtime_request_from_dict = PlayerRatingHistoryOvertimeRequest.from_dict(player_rating_history_overtime_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

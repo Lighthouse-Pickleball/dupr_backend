@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **player_id** | **int** |  | 
@@ -18,12 +19,12 @@ json = "{}"
 # create an instance of PlayerRatingOvertime from a JSON string
 player_rating_overtime_instance = PlayerRatingOvertime.from_json(json)
 # print the JSON string representation of the object
-print PlayerRatingOvertime.to_json()
+print(PlayerRatingOvertime.to_json())
 
 # convert the object into a dict
 player_rating_overtime_dict = player_rating_overtime_instance.to_dict()
 # create an instance of PlayerRatingOvertime from a dict
-player_rating_overtime_form_dict = player_rating_overtime.from_dict(player_rating_overtime_dict)
+player_rating_overtime_from_dict = PlayerRatingOvertime.from_dict(player_rating_overtime_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

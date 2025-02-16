@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.match_ratings import MatchRatings  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.match_ratings import MatchRatings
 
 class TestMatchRatings(unittest.TestCase):
     """MatchRatings unit test stubs"""
@@ -28,24 +25,24 @@ class TestMatchRatings(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> MatchRatings:
         """Test MatchRatings
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MatchRatings`
         """
-        model = dupr_backend.models.match_ratings.MatchRatings()  # noqa: E501
-        if include_optional :
+        model = MatchRatings()
+        if include_optional:
             return MatchRatings(
-                average_opponent_dupr = '3.254', 
-                average_partner_dupr = '6.391', 
-                average_points_won_percent = '67%', 
-                half_life = '3.0', 
-                losses = 12, 
+                average_opponent_dupr = '3.254',
+                average_partner_dupr = '6.391',
+                average_points_won_percent = '67%',
+                half_life = '3.0',
+                losses = 12,
                 wins = 4
             )
-        else :
+        else:
             return MatchRatings(
         )
         """

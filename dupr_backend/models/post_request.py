@@ -17,61 +17,77 @@ import pprint
 import re  # noqa: F401
 import json
 
-
-from typing import List, Optional
-from pydantic import BaseModel, StrictInt, StrictStr, conlist, validator
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional
 from dupr_backend.models.check_in_location import CheckInLocation
 from dupr_backend.models.feed import Feed
+from typing import Optional, Set
+from typing_extensions import Self
 
 class PostRequest(BaseModel):
     """
     PostRequest
-    """
+    """ # noqa: E501
     actor: Optional[StrictInt] = None
     checkin: Optional[CheckInLocation] = None
     content: Optional[StrictStr] = None
     feed: Optional[Feed] = None
-    hashtags: Optional[conlist(StrictStr)] = None
-    images: Optional[conlist(StrictStr)] = None
-    matches: Optional[conlist(StrictInt)] = None
-    tags: Optional[conlist(StrictInt)] = None
+    hashtags: Optional[List[StrictStr]] = None
+    images: Optional[List[StrictStr]] = None
+    matches: Optional[List[StrictInt]] = None
+    tags: Optional[List[StrictInt]] = None
     verb: Optional[StrictStr] = None
-    __properties = ["actor", "checkin", "content", "feed", "hashtags", "images", "matches", "tags", "verb"]
+    __properties: ClassVar[List[str]] = ["actor", "checkin", "content", "feed", "hashtags", "images", "matches", "tags", "verb"]
 
-    @validator('verb')
+    @field_validator('verb')
     def verb_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('MATCH', 'POST'):
+        if value not in set(['MATCH', 'POST']):
             raise ValueError("must be one of enum values ('MATCH', 'POST')")
         return value
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> PostRequest:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of PostRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         # override the default output from pydantic by calling `to_dict()` of checkin
         if self.checkin:
             _dict['checkin'] = self.checkin.to_dict()
@@ -81,19 +97,19 @@ class PostRequest(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> PostRequest:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of PostRequest from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return PostRequest.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = PostRequest.parse_obj({
+        _obj = cls.model_validate({
             "actor": obj.get("actor"),
-            "checkin": CheckInLocation.from_dict(obj.get("checkin")) if obj.get("checkin") is not None else None,
+            "checkin": CheckInLocation.from_dict(obj["checkin"]) if obj.get("checkin") is not None else None,
             "content": obj.get("content"),
-            "feed": Feed.from_dict(obj.get("feed")) if obj.get("feed") is not None else None,
+            "feed": Feed.from_dict(obj["feed"]) if obj.get("feed") is not None else None,
             "hashtags": obj.get("hashtags"),
             "images": obj.get("images"),
             "matches": obj.get("matches"),

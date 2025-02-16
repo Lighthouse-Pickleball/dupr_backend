@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_account_status_response import SingleWrapperOfAccountStatusResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_of_account_status_response import SingleWrapperOfAccountStatusResponse
 
 class TestSingleWrapperOfAccountStatusResponse(unittest.TestCase):
     """SingleWrapperOfAccountStatusResponse unit test stubs"""
@@ -28,25 +25,25 @@ class TestSingleWrapperOfAccountStatusResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfAccountStatusResponse:
         """Test SingleWrapperOfAccountStatusResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfAccountStatusResponse`
         """
-        model = dupr_backend.models.single_wrapper_of_account_status_response.SingleWrapperOfAccountStatusResponse()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfAccountStatusResponse()
+        if include_optional:
             return SingleWrapperOfAccountStatusResponse(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 result = dupr_backend.models.account_status_response.AccountStatusResponse(
                     account_id = 6549864065, 
                     details_submitted = False, 
                     errors = [{code=invalid_street_address, reason=The provided street address cannot be found. Please verify the street name and number are correct in "111 Boulevard Street", requirement=individual.address.line1}], 
-                    pending_requirement = False, ), 
+                    pending_requirement = False, ),
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfAccountStatusResponse(
         )
         """

@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_page_of_league_teams_response import SingleWrapperOfPageOfLeagueTeamsResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_of_page_of_league_teams_response import SingleWrapperOfPageOfLeagueTeamsResponse
 
 class TestSingleWrapperOfPageOfLeagueTeamsResponse(unittest.TestCase):
     """SingleWrapperOfPageOfLeagueTeamsResponse unit test stubs"""
@@ -28,17 +25,17 @@ class TestSingleWrapperOfPageOfLeagueTeamsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfPageOfLeagueTeamsResponse:
         """Test SingleWrapperOfPageOfLeagueTeamsResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfPageOfLeagueTeamsResponse`
         """
-        model = dupr_backend.models.single_wrapper_of_page_of_league_teams_response.SingleWrapperOfPageOfLeagueTeamsResponse()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfPageOfLeagueTeamsResponse()
+        if include_optional:
             return SingleWrapperOfPageOfLeagueTeamsResponse(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 result = dupr_backend.models.page_of_league_teams_response.PageOfLeagueTeamsResponse(
                     empty = False, 
                     has_more = False, 
@@ -165,10 +162,10 @@ class TestSingleWrapperOfPageOfLeagueTeamsResponse(unittest.TestCase):
                     limit = 10, 
                     offset = 90, 
                     total = 100, 
-                    total_value_relation = 'GREATER_THAN_OR_EQUAL_TO', ), 
+                    total_value_relation = 'GREATER_THAN_OR_EQUAL_TO', ),
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfPageOfLeagueTeamsResponse(
         )
         """

@@ -17,136 +17,152 @@ import pprint
 import re  # noqa: F401
 import json
 
-
-from typing import List, Optional, Union
-from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr, conlist, validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dupr_backend.models.player_rating_response import PlayerRatingResponse
 from dupr_backend.models.registration_response import RegistrationResponse
 from dupr_backend.models.sponsor_logo_response import SponsorLogoResponse
+from typing import Optional, Set
+from typing_extensions import Self
 
 class PlayerResponse(BaseModel):
     """
     PlayerResponse
-    """
+    """ # noqa: E501
     age: Optional[StrictInt] = None
-    display_username: Optional[StrictBool] = Field(None, alias="displayUsername")
+    display_username: Optional[StrictBool] = Field(default=None, alias="displayUsername")
     distance: Optional[StrictStr] = None
-    distance_in_miles: Optional[Union[StrictFloat, StrictInt]] = Field(None, alias="distanceInMiles")
-    dupr_id: StrictStr = Field(..., alias="duprId")
-    email: StrictStr = Field(...)
-    enable_privacy: Optional[StrictBool] = Field(None, alias="enablePrivacy")
-    first_name: StrictStr = Field(..., alias="firstName")
-    formatted_address: Optional[StrictStr] = Field(None, alias="formattedAddress")
-    full_name: StrictStr = Field(..., alias="fullName")
+    distance_in_miles: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="distanceInMiles")
+    dupr_id: StrictStr = Field(alias="duprId")
+    email: StrictStr
+    enable_privacy: Optional[StrictBool] = Field(default=None, alias="enablePrivacy")
+    first_name: StrictStr = Field(alias="firstName")
+    formatted_address: Optional[StrictStr] = Field(default=None, alias="formattedAddress")
+    full_name: StrictStr = Field(alias="fullName")
     gender: Optional[StrictStr] = None
     hand: Optional[StrictStr] = None
     id: Optional[StrictInt] = None
-    image_url: Optional[StrictStr] = Field(None, alias="imageUrl")
+    image_url: Optional[StrictStr] = Field(default=None, alias="imageUrl")
     invited: Optional[StrictBool] = None
-    is_logged_in_user: Optional[StrictBool] = Field(None, alias="isLoggedInUser")
-    is_player1: Optional[StrictBool] = Field(None, alias="isPlayer1")
-    is_substitute: Optional[StrictBool] = Field(None, alias="isSubstitute")
-    last_name: StrictStr = Field(..., alias="lastName")
+    is_logged_in_user: Optional[StrictBool] = Field(default=None, alias="isLoggedInUser")
+    is_player1: Optional[StrictBool] = Field(default=None, alias="isPlayer1")
+    is_substitute: Optional[StrictBool] = Field(default=None, alias="isSubstitute")
+    last_name: StrictStr = Field(alias="lastName")
     latitude: Optional[Union[StrictFloat, StrictInt]] = None
     longitude: Optional[Union[StrictFloat, StrictInt]] = None
-    lucra_connected: Optional[StrictBool] = Field(None, alias="lucraConnected")
-    partner_status: Optional[StrictStr] = Field(None, alias="partnerStatus")
+    lucra_connected: Optional[StrictBool] = Field(default=None, alias="lucraConnected")
+    partner_status: Optional[StrictStr] = Field(default=None, alias="partnerStatus")
     phone: Optional[StrictStr] = None
     ratings: Optional[PlayerRatingResponse] = None
-    registered: StrictBool = Field(...)
-    registration_details: RegistrationResponse = Field(..., alias="registrationDetails")
-    registration_type: StrictStr = Field(..., alias="registrationType")
-    short_address: Optional[StrictStr] = Field(None, alias="shortAddress")
-    show_rating_banner: Optional[StrictBool] = Field(None, alias="showRatingBanner")
+    registered: StrictBool
+    registration_details: RegistrationResponse = Field(alias="registrationDetails")
+    registration_type: StrictStr = Field(alias="registrationType")
+    short_address: Optional[StrictStr] = Field(default=None, alias="shortAddress")
+    show_rating_banner: Optional[StrictBool] = Field(default=None, alias="showRatingBanner")
     sponsor: Optional[SponsorLogoResponse] = None
     status: Optional[StrictStr] = None
-    substitution_details: Optional[conlist(PlayerResponse)] = Field(None, alias="substitutionDetails")
-    team_status: Optional[StrictStr] = Field(None, alias="teamStatus")
+    substitution_details: Optional[List[PlayerResponse]] = Field(default=None, alias="substitutionDetails")
+    team_status: Optional[StrictStr] = Field(default=None, alias="teamStatus")
     username: Optional[StrictStr] = None
-    verified_email: Optional[StrictBool] = Field(None, alias="verifiedEmail")
-    __properties = ["age", "displayUsername", "distance", "distanceInMiles", "duprId", "email", "enablePrivacy", "firstName", "formattedAddress", "fullName", "gender", "hand", "id", "imageUrl", "invited", "isLoggedInUser", "isPlayer1", "isSubstitute", "lastName", "latitude", "longitude", "lucraConnected", "partnerStatus", "phone", "ratings", "registered", "registrationDetails", "registrationType", "shortAddress", "showRatingBanner", "sponsor", "status", "substitutionDetails", "teamStatus", "username", "verifiedEmail"]
+    verified_email: Optional[StrictBool] = Field(default=None, alias="verifiedEmail")
+    __properties: ClassVar[List[str]] = ["age", "displayUsername", "distance", "distanceInMiles", "duprId", "email", "enablePrivacy", "firstName", "formattedAddress", "fullName", "gender", "hand", "id", "imageUrl", "invited", "isLoggedInUser", "isPlayer1", "isSubstitute", "lastName", "latitude", "longitude", "lucraConnected", "partnerStatus", "phone", "ratings", "registered", "registrationDetails", "registrationType", "shortAddress", "showRatingBanner", "sponsor", "status", "substitutionDetails", "teamStatus", "username", "verifiedEmail"]
 
-    @validator('gender')
+    @field_validator('gender')
     def gender_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('FEMALE', 'MALE'):
+        if value not in set(['FEMALE', 'MALE']):
             raise ValueError("must be one of enum values ('FEMALE', 'MALE')")
         return value
 
-    @validator('hand')
+    @field_validator('hand')
     def hand_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('BOTH', 'LEFT', 'NONE', 'RIGHT'):
+        if value not in set(['BOTH', 'LEFT', 'NONE', 'RIGHT']):
             raise ValueError("must be one of enum values ('BOTH', 'LEFT', 'NONE', 'RIGHT')")
         return value
 
-    @validator('partner_status')
+    @field_validator('partner_status')
     def partner_status_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING'):
+        if value not in set(['ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING']):
             raise ValueError("must be one of enum values ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING')")
         return value
 
-    @validator('registration_type')
+    @field_validator('registration_type')
     def registration_type_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in ('INVITATION', 'UNCLAIMED'):
+        if value not in set(['INVITATION', 'UNCLAIMED']):
             raise ValueError("must be one of enum values ('INVITATION', 'UNCLAIMED')")
         return value
 
-    @validator('status')
+    @field_validator('status')
     def status_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING'):
+        if value not in set(['ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING']):
             raise ValueError("must be one of enum values ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING')")
         return value
 
-    @validator('team_status')
+    @field_validator('team_status')
     def team_status_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING'):
+        if value not in set(['ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING']):
             raise ValueError("must be one of enum values ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING')")
         return value
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> PlayerResponse:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of PlayerResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         # override the default output from pydantic by calling `to_dict()` of ratings
         if self.ratings:
             _dict['ratings'] = self.ratings.to_dict()
@@ -159,60 +175,61 @@ class PlayerResponse(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in substitution_details (list)
         _items = []
         if self.substitution_details:
-            for _item in self.substitution_details:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_substitution_details in self.substitution_details:
+                if _item_substitution_details:
+                    _items.append(_item_substitution_details.to_dict())
             _dict['substitutionDetails'] = _items
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> PlayerResponse:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of PlayerResponse from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return PlayerResponse.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = PlayerResponse.parse_obj({
+        _obj = cls.model_validate({
             "age": obj.get("age"),
-            "display_username": obj.get("displayUsername"),
+            "displayUsername": obj.get("displayUsername"),
             "distance": obj.get("distance"),
-            "distance_in_miles": obj.get("distanceInMiles"),
-            "dupr_id": obj.get("duprId"),
+            "distanceInMiles": obj.get("distanceInMiles"),
+            "duprId": obj.get("duprId"),
             "email": obj.get("email"),
-            "enable_privacy": obj.get("enablePrivacy"),
-            "first_name": obj.get("firstName"),
-            "formatted_address": obj.get("formattedAddress"),
-            "full_name": obj.get("fullName"),
+            "enablePrivacy": obj.get("enablePrivacy"),
+            "firstName": obj.get("firstName"),
+            "formattedAddress": obj.get("formattedAddress"),
+            "fullName": obj.get("fullName"),
             "gender": obj.get("gender"),
             "hand": obj.get("hand"),
             "id": obj.get("id"),
-            "image_url": obj.get("imageUrl"),
+            "imageUrl": obj.get("imageUrl"),
             "invited": obj.get("invited"),
-            "is_logged_in_user": obj.get("isLoggedInUser"),
-            "is_player1": obj.get("isPlayer1"),
-            "is_substitute": obj.get("isSubstitute"),
-            "last_name": obj.get("lastName"),
+            "isLoggedInUser": obj.get("isLoggedInUser"),
+            "isPlayer1": obj.get("isPlayer1"),
+            "isSubstitute": obj.get("isSubstitute"),
+            "lastName": obj.get("lastName"),
             "latitude": obj.get("latitude"),
             "longitude": obj.get("longitude"),
-            "lucra_connected": obj.get("lucraConnected"),
-            "partner_status": obj.get("partnerStatus"),
+            "lucraConnected": obj.get("lucraConnected"),
+            "partnerStatus": obj.get("partnerStatus"),
             "phone": obj.get("phone"),
-            "ratings": PlayerRatingResponse.from_dict(obj.get("ratings")) if obj.get("ratings") is not None else None,
+            "ratings": PlayerRatingResponse.from_dict(obj["ratings"]) if obj.get("ratings") is not None else None,
             "registered": obj.get("registered"),
-            "registration_details": RegistrationResponse.from_dict(obj.get("registrationDetails")) if obj.get("registrationDetails") is not None else None,
-            "registration_type": obj.get("registrationType"),
-            "short_address": obj.get("shortAddress"),
-            "show_rating_banner": obj.get("showRatingBanner"),
-            "sponsor": SponsorLogoResponse.from_dict(obj.get("sponsor")) if obj.get("sponsor") is not None else None,
+            "registrationDetails": RegistrationResponse.from_dict(obj["registrationDetails"]) if obj.get("registrationDetails") is not None else None,
+            "registrationType": obj.get("registrationType"),
+            "shortAddress": obj.get("shortAddress"),
+            "showRatingBanner": obj.get("showRatingBanner"),
+            "sponsor": SponsorLogoResponse.from_dict(obj["sponsor"]) if obj.get("sponsor") is not None else None,
             "status": obj.get("status"),
-            "substitution_details": [PlayerResponse.from_dict(_item) for _item in obj.get("substitutionDetails")] if obj.get("substitutionDetails") is not None else None,
-            "team_status": obj.get("teamStatus"),
+            "substitutionDetails": [PlayerResponse.from_dict(_item) for _item in obj["substitutionDetails"]] if obj.get("substitutionDetails") is not None else None,
+            "teamStatus": obj.get("teamStatus"),
             "username": obj.get("username"),
-            "verified_email": obj.get("verifiedEmail")
+            "verifiedEmail": obj.get("verifiedEmail")
         })
         return _obj
 
-PlayerResponse.update_forward_refs()
+# TODO: Rewrite to not use raise_errors
+PlayerResponse.model_rebuild(raise_errors=False)
 

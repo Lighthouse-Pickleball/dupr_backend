@@ -17,83 +17,99 @@ import pprint
 import re  # noqa: F401
 import json
 
-
-from typing import Optional, Union
-from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr, validator
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from typing import Optional, Set
+from typing_extensions import Self
 
 class CreateClubsRequest(BaseModel):
     """
     CreateClubsRequest
-    """
-    club_name: StrictStr = Field(..., alias="clubName")
-    currency_code: StrictStr = Field(..., alias="currencyCode")
-    director_email: StrictStr = Field(..., alias="directorEmail")
-    director_name: StrictStr = Field(..., alias="directorName")
-    director_phone: Optional[StrictStr] = Field(None, alias="directorPhone")
-    dupr_id: StrictStr = Field(..., alias="duprId")
-    iso_code_club: StrictStr = Field(..., alias="isoCodeClub")
-    iso_code_director: StrictStr = Field(..., alias="isoCodeDirector")
-    phone_number: Optional[StrictStr] = Field(None, alias="phoneNumber")
-    place_id: StrictStr = Field(..., alias="placeId")
-    revenue_type: StrictStr = Field(..., alias="revenueType")
-    revenue_value: Union[StrictFloat, StrictInt] = Field(..., alias="revenueValue")
-    __properties = ["clubName", "currencyCode", "directorEmail", "directorName", "directorPhone", "duprId", "isoCodeClub", "isoCodeDirector", "phoneNumber", "placeId", "revenueType", "revenueValue"]
+    """ # noqa: E501
+    club_name: StrictStr = Field(alias="clubName")
+    currency_code: StrictStr = Field(alias="currencyCode")
+    director_email: StrictStr = Field(alias="directorEmail")
+    director_name: StrictStr = Field(alias="directorName")
+    director_phone: Optional[StrictStr] = Field(default=None, alias="directorPhone")
+    dupr_id: StrictStr = Field(alias="duprId")
+    iso_code_club: StrictStr = Field(alias="isoCodeClub")
+    iso_code_director: StrictStr = Field(alias="isoCodeDirector")
+    phone_number: Optional[StrictStr] = Field(default=None, alias="phoneNumber")
+    place_id: StrictStr = Field(alias="placeId")
+    revenue_type: StrictStr = Field(alias="revenueType")
+    revenue_value: Union[StrictFloat, StrictInt] = Field(alias="revenueValue")
+    __properties: ClassVar[List[str]] = ["clubName", "currencyCode", "directorEmail", "directorName", "directorPhone", "duprId", "isoCodeClub", "isoCodeDirector", "phoneNumber", "placeId", "revenueType", "revenueValue"]
 
-    @validator('revenue_type')
+    @field_validator('revenue_type')
     def revenue_type_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in ('ABSOLUTE', 'RELATIVE'):
+        if value not in set(['ABSOLUTE', 'RELATIVE']):
             raise ValueError("must be one of enum values ('ABSOLUTE', 'RELATIVE')")
         return value
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> CreateClubsRequest:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of CreateClubsRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> CreateClubsRequest:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of CreateClubsRequest from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return CreateClubsRequest.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = CreateClubsRequest.parse_obj({
-            "club_name": obj.get("clubName"),
-            "currency_code": obj.get("currencyCode"),
-            "director_email": obj.get("directorEmail"),
-            "director_name": obj.get("directorName"),
-            "director_phone": obj.get("directorPhone"),
-            "dupr_id": obj.get("duprId"),
-            "iso_code_club": obj.get("isoCodeClub"),
-            "iso_code_director": obj.get("isoCodeDirector"),
-            "phone_number": obj.get("phoneNumber"),
-            "place_id": obj.get("placeId"),
-            "revenue_type": obj.get("revenueType"),
-            "revenue_value": obj.get("revenueValue")
+        _obj = cls.model_validate({
+            "clubName": obj.get("clubName"),
+            "currencyCode": obj.get("currencyCode"),
+            "directorEmail": obj.get("directorEmail"),
+            "directorName": obj.get("directorName"),
+            "directorPhone": obj.get("directorPhone"),
+            "duprId": obj.get("duprId"),
+            "isoCodeClub": obj.get("isoCodeClub"),
+            "isoCodeDirector": obj.get("isoCodeDirector"),
+            "phoneNumber": obj.get("phoneNumber"),
+            "placeId": obj.get("placeId"),
+            "revenueType": obj.get("revenueType"),
+            "revenueValue": obj.get("revenueValue")
         })
         return _obj
 

@@ -14,45 +14,43 @@
 
 import unittest
 
-import dupr_backend
-from dupr_backend.api.user_subscriptions_api import UserSubscriptionsApi  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.api.user_subscriptions_api import UserSubscriptionsApi
 
 
 class TestUserSubscriptionsApi(unittest.TestCase):
     """UserSubscriptionsApi unit test stubs"""
 
-    def setUp(self):
-        self.api = dupr_backend.api.user_subscriptions_api.UserSubscriptionsApi()  # noqa: E501
+    def setUp(self) -> None:
+        self.api = UserSubscriptionsApi()
 
-    def tearDown(self):
+    def tearDown(self) -> None:
         pass
 
-    def test_add_user_subscriptions_using_post(self):
+    def test_add_user_subscriptions_using_post(self) -> None:
         """Test case for add_user_subscriptions_using_post
 
-        addUserSubscriptions  # noqa: E501
+        addUserSubscriptions
         """
         pass
 
-    def test_get_all_user_subscriptions_using_get(self):
+    def test_get_all_user_subscriptions_using_get(self) -> None:
         """Test case for get_all_user_subscriptions_using_get
 
-        getAllUserSubscriptions  # noqa: E501
+        getAllUserSubscriptions
         """
         pass
 
-    def test_remove_user_subscriptions_using_delete(self):
+    def test_remove_user_subscriptions_using_delete(self) -> None:
         """Test case for remove_user_subscriptions_using_delete
 
-        removeUserSubscriptions  # noqa: E501
+        removeUserSubscriptions
         """
         pass
 
-    def test_update_user_subscriptions_using_put(self):
+    def test_update_user_subscriptions_using_put(self) -> None:
         """Test case for update_user_subscriptions_using_put
 
-        updateUserSubscriptions  # noqa: E501
+        updateUserSubscriptions
         """
         pass
 

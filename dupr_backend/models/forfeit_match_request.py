@@ -17,47 +17,63 @@ import pprint
 import re  # noqa: F401
 import json
 
-
-
-from pydantic import BaseModel, Field, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
+from typing import Any, ClassVar, Dict, List
 from dupr_backend.models.forfeit_team_request import ForfeitTeamRequest
+from typing import Optional, Set
+from typing_extensions import Self
 
 class ForfeitMatchRequest(BaseModel):
     """
     ForfeitMatchRequest
-    """
-    bracket_id: StrictInt = Field(..., alias="bracketId")
-    club_id: StrictInt = Field(..., alias="clubId")
-    league_match_id: StrictInt = Field(..., alias="leagueMatchId")
-    match_id: StrictInt = Field(..., alias="matchId")
-    team1: ForfeitTeamRequest = Field(...)
-    team2: ForfeitTeamRequest = Field(...)
-    __properties = ["bracketId", "clubId", "leagueMatchId", "matchId", "team1", "team2"]
+    """ # noqa: E501
+    bracket_id: StrictInt = Field(alias="bracketId")
+    club_id: StrictInt = Field(alias="clubId")
+    league_match_id: StrictInt = Field(alias="leagueMatchId")
+    match_id: StrictInt = Field(alias="matchId")
+    team1: ForfeitTeamRequest
+    team2: ForfeitTeamRequest
+    __properties: ClassVar[List[str]] = ["bracketId", "clubId", "leagueMatchId", "matchId", "team1", "team2"]
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> ForfeitMatchRequest:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of ForfeitMatchRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         # override the default output from pydantic by calling `to_dict()` of team1
         if self.team1:
             _dict['team1'] = self.team1.to_dict()
@@ -67,21 +83,21 @@ class ForfeitMatchRequest(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> ForfeitMatchRequest:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of ForfeitMatchRequest from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return ForfeitMatchRequest.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = ForfeitMatchRequest.parse_obj({
-            "bracket_id": obj.get("bracketId"),
-            "club_id": obj.get("clubId"),
-            "league_match_id": obj.get("leagueMatchId"),
-            "match_id": obj.get("matchId"),
-            "team1": ForfeitTeamRequest.from_dict(obj.get("team1")) if obj.get("team1") is not None else None,
-            "team2": ForfeitTeamRequest.from_dict(obj.get("team2")) if obj.get("team2") is not None else None
+        _obj = cls.model_validate({
+            "bracketId": obj.get("bracketId"),
+            "clubId": obj.get("clubId"),
+            "leagueMatchId": obj.get("leagueMatchId"),
+            "matchId": obj.get("matchId"),
+            "team1": ForfeitTeamRequest.from_dict(obj["team1"]) if obj.get("team1") is not None else None,
+            "team2": ForfeitTeamRequest.from_dict(obj["team2"]) if obj.get("team2") is not None else None
         })
         return _obj
 

@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.mi_lp_register_team_request import MiLPRegisterTeamRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.mi_lp_register_team_request import MiLPRegisterTeamRequest
 
 class TestMiLPRegisterTeamRequest(unittest.TestCase):
     """MiLPRegisterTeamRequest unit test stubs"""
@@ -28,21 +25,21 @@ class TestMiLPRegisterTeamRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> MiLPRegisterTeamRequest:
         """Test MiLPRegisterTeamRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MiLPRegisterTeamRequest`
         """
-        model = dupr_backend.models.mi_lp_register_team_request.MiLPRegisterTeamRequest()  # noqa: E501
-        if include_optional :
+        model = MiLPRegisterTeamRequest()
+        if include_optional:
             return MiLPRegisterTeamRequest(
-                division_id = 45785789, 
-                event_id = 1231242, 
+                division_id = 45785789,
+                event_id = 1231242,
                 team_id = 1231242
             )
-        else :
+        else:
             return MiLPRegisterTeamRequest(
         )
         """

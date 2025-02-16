@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.club_settings import ClubSettings  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.club_settings import ClubSettings
 
 class TestClubSettings(unittest.TestCase):
     """ClubSettings unit test stubs"""
@@ -28,19 +25,19 @@ class TestClubSettings(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ClubSettings:
         """Test ClubSettings
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ClubSettings`
         """
-        model = dupr_backend.models.club_settings.ClubSettings()  # noqa: E501
-        if include_optional :
+        model = ClubSettings()
+        if include_optional:
             return ClubSettings(
                 auto_approve_join_requests = True
             )
-        else :
+        else:
             return ClubSettings(
         )
         """

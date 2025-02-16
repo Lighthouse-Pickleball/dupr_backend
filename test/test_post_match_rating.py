@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.post_match_rating import PostMatchRating  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.post_match_rating import PostMatchRating
 
 class TestPostMatchRating(unittest.TestCase):
     """PostMatchRating unit test stubs"""
@@ -28,20 +25,20 @@ class TestPostMatchRating(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> PostMatchRating:
         """Test PostMatchRating
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PostMatchRating`
         """
-        model = dupr_backend.models.post_match_rating.PostMatchRating()  # noqa: E501
-        if include_optional :
+        model = PostMatchRating()
+        if include_optional:
             return PostMatchRating(
-                doubles = 1.337, 
+                doubles = 1.337,
                 singles = 1.337
             )
-        else :
+        else:
             return PostMatchRating(
         )
         """

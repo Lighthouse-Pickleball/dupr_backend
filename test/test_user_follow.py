@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.user_follow import UserFollow  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.user_follow import UserFollow
 
 class TestUserFollow(unittest.TestCase):
     """UserFollow unit test stubs"""
@@ -28,20 +25,20 @@ class TestUserFollow(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> UserFollow:
         """Test UserFollow
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `UserFollow`
         """
-        model = dupr_backend.models.user_follow.UserFollow()  # noqa: E501
-        if include_optional :
+        model = UserFollow()
+        if include_optional:
             return UserFollow(
-                name = '', 
+                name = '',
                 user_id = 56
             )
-        else :
+        else:
             return UserFollow(
                 name = '',
                 user_id = 56,

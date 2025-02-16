@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **empty** | **bool** | Are results empty | 
@@ -23,12 +24,12 @@ json = "{}"
 # create an instance of PageOfUserSuggestion from a JSON string
 page_of_user_suggestion_instance = PageOfUserSuggestion.from_json(json)
 # print the JSON string representation of the object
-print PageOfUserSuggestion.to_json()
+print(PageOfUserSuggestion.to_json())
 
 # convert the object into a dict
 page_of_user_suggestion_dict = page_of_user_suggestion_instance.to_dict()
 # create an instance of PageOfUserSuggestion from a dict
-page_of_user_suggestion_form_dict = page_of_user_suggestion.from_dict(page_of_user_suggestion_dict)
+page_of_user_suggestion_from_dict = PageOfUserSuggestion.from_dict(page_of_user_suggestion_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

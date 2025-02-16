@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.array_wrapper_of_player_initialization_data_response import ArrayWrapperOfPlayerInitializationDataResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.array_wrapper_of_player_initialization_data_response import ArrayWrapperOfPlayerInitializationDataResponse
 
 class TestArrayWrapperOfPlayerInitializationDataResponse(unittest.TestCase):
     """ArrayWrapperOfPlayerInitializationDataResponse unit test stubs"""
@@ -28,17 +25,17 @@ class TestArrayWrapperOfPlayerInitializationDataResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ArrayWrapperOfPlayerInitializationDataResponse:
         """Test ArrayWrapperOfPlayerInitializationDataResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ArrayWrapperOfPlayerInitializationDataResponse`
         """
-        model = dupr_backend.models.array_wrapper_of_player_initialization_data_response.ArrayWrapperOfPlayerInitializationDataResponse()  # noqa: E501
-        if include_optional :
+        model = ArrayWrapperOfPlayerInitializationDataResponse()
+        if include_optional:
             return ArrayWrapperOfPlayerInitializationDataResponse(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 results = [
                     dupr_backend.models.player_initialization_data_response.PlayerInitializationDataResponse(
                         days_left_for_initialization = 56, 
@@ -47,10 +44,10 @@ class TestArrayWrapperOfPlayerInitializationDataResponse(unittest.TestCase):
                         player_id = '', 
                         player_name = '', 
                         qualification_score = 1.337, )
-                    ], 
+                    ],
                 status = 'FAILURE'
             )
-        else :
+        else:
             return ArrayWrapperOfPlayerInitializationDataResponse(
         )
         """

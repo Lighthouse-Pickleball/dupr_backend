@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.register_to_bracket_request import RegisterToBracketRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.register_to_bracket_request import RegisterToBracketRequest
 
 class TestRegisterToBracketRequest(unittest.TestCase):
     """RegisterToBracketRequest unit test stubs"""
@@ -28,25 +25,25 @@ class TestRegisterToBracketRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> RegisterToBracketRequest:
         """Test RegisterToBracketRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `RegisterToBracketRequest`
         """
-        model = dupr_backend.models.register_to_bracket_request.RegisterToBracketRequest()  # noqa: E501
-        if include_optional :
+        model = RegisterToBracketRequest()
+        if include_optional:
             return RegisterToBracketRequest(
-                bracket_id = 45785789, 
-                club_id = 45785789, 
+                bracket_id = 45785789,
+                club_id = 45785789,
                 users = [
                     dupr_backend.models.register_user_request.RegisterUserRequest(
                         is_club_member = True, 
                         user_id = 45785789, )
                     ]
             )
-        else :
+        else:
             return RegisterToBracketRequest(
                 bracket_id = 45785789,
                 club_id = 45785789,

@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.basic_user_info import BasicUserInfo  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.basic_user_info import BasicUserInfo
 
 class TestBasicUserInfo(unittest.TestCase):
     """BasicUserInfo unit test stubs"""
@@ -28,22 +25,22 @@ class TestBasicUserInfo(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> BasicUserInfo:
         """Test BasicUserInfo
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `BasicUserInfo`
         """
-        model = dupr_backend.models.basic_user_info.BasicUserInfo()  # noqa: E501
-        if include_optional :
+        model = BasicUserInfo()
+        if include_optional:
             return BasicUserInfo(
-                email = '', 
-                id = 56, 
-                name = '', 
+                email = '',
+                id = 56,
+                name = '',
                 referral_code = ''
             )
-        else :
+        else:
             return BasicUserInfo(
                 email = '',
                 id = 56,

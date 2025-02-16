@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_join_league_response import SingleWrapperOfJoinLeagueResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_of_join_league_response import SingleWrapperOfJoinLeagueResponse
 
 class TestSingleWrapperOfJoinLeagueResponse(unittest.TestCase):
     """SingleWrapperOfJoinLeagueResponse unit test stubs"""
@@ -28,27 +25,27 @@ class TestSingleWrapperOfJoinLeagueResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfJoinLeagueResponse:
         """Test SingleWrapperOfJoinLeagueResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfJoinLeagueResponse`
         """
-        model = dupr_backend.models.single_wrapper_of_join_league_response.SingleWrapperOfJoinLeagueResponse()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfJoinLeagueResponse()
+        if include_optional:
             return SingleWrapperOfJoinLeagueResponse(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 result = dupr_backend.models.join_league_response.JoinLeagueResponse(
                     failed = [26518181881], 
                     session = dupr_backend.models.session_response.SessionResponse(
                         checkout_url = '', 
                         previously_paid = True, 
                         session_id = '', ), 
-                    success = [26518181881], ), 
+                    success = [26518181881], ),
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfJoinLeagueResponse(
         )
         """

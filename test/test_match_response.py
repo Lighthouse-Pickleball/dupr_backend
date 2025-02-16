@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.match_response import MatchResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.match_response import MatchResponse
 
 class TestMatchResponse(unittest.TestCase):
     """MatchResponse unit test stubs"""
@@ -28,51 +25,51 @@ class TestMatchResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> MatchResponse:
         """Test MatchResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MatchResponse`
         """
-        model = dupr_backend.models.match_response.MatchResponse()  # noqa: E501
-        if include_optional :
+        model = MatchResponse()
+        if include_optional:
             return MatchResponse(
-                bracket_id = 6806605627, 
-                client_id = 45, 
-                club_id = 7737603024, 
-                confirmed = True, 
-                created = '2020-03-04T17:21:16.000Z', 
+                bracket_id = 6806605627,
+                client_id = 45,
+                club_id = 7737603024,
+                confirmed = True,
+                created = '2020-03-04T17:21:16.000Z',
                 creator = dupr_backend.models.basic_user_info.BasicUserInfo(
                     email = '', 
                     id = 56, 
                     name = '', 
-                    referral_code = '', ), 
-                display_identity = 'IS20MDL2', 
-                elo_calculated = False, 
-                event_date = 'yyyy-MM-dd', 
-                event_format = 'SINGLES', 
-                event_name = 'event name', 
-                id = 7737603024, 
-                initialization = False, 
-                league = 'Example League', 
-                league_id = 7396161624, 
-                league_match_id = 2090230022, 
-                location = 'Newport Beach, CA', 
-                match_id = 7737603024, 
-                match_score_added = True, 
-                match_source = 'DUPR/MANUAL/LEAGUE', 
-                match_type = 'SIDE_OUT/RALLY', 
-                modified = '', 
-                no_of_games = 2, 
+                    referral_code = '', ),
+                display_identity = 'IS20MDL2',
+                elo_calculated = False,
+                event_date = 'yyyy-MM-dd',
+                event_format = 'SINGLES',
+                event_name = 'event name',
+                id = 7737603024,
+                initialization = False,
+                league = 'Example League',
+                league_id = 7396161624,
+                league_match_id = 2090230022,
+                location = 'Newport Beach, CA',
+                match_id = 7737603024,
+                match_score_added = True,
+                match_source = 'DUPR/MANUAL/LEAGUE',
+                match_type = 'SIDE_OUT/RALLY',
+                modified = '',
+                no_of_games = 2,
                 score_format = dupr_backend.models.score_format_response.ScoreFormatResponse(
                     format = 'Best 2 out of 3 Games to 11', 
                     games = 1, 
                     id = 56, 
                     priority = 1, 
                     variant = 'Game 3 to 15 or until win by 2', 
-                    winning_score = 11, ), 
-                status = '2', 
+                    winning_score = 11, ),
+                status = '2',
                 teams = [
                     dupr_backend.models.team_response.TeamResponse(
                         delta = '-0.682', 
@@ -111,17 +108,17 @@ class TestMatchResponse(unittest.TestCase):
                         serial = 1, 
                         team_rating = '4.659', 
                         winner = True, )
-                    ], 
-                tournament = 'Newport Beach Doubles Shootout', 
-                user_id = 231312312312, 
+                    ],
+                tournament = 'Newport Beach Doubles Shootout',
+                user_id = 231312312312,
                 validator = dupr_backend.models.basic_user_info.BasicUserInfo(
                     email = '', 
                     id = 56, 
                     name = '', 
-                    referral_code = '', ), 
+                    referral_code = '', ),
                 venue = 'Dreamland Pickleball'
             )
-        else :
+        else:
             return MatchResponse(
                 confirmed = True,
                 display_identity = 'IS20MDL2',

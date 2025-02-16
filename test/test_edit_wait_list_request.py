@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.edit_wait_list_request import EditWaitListRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.edit_wait_list_request import EditWaitListRequest
 
 class TestEditWaitListRequest(unittest.TestCase):
     """EditWaitListRequest unit test stubs"""
@@ -28,23 +25,23 @@ class TestEditWaitListRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> EditWaitListRequest:
         """Test EditWaitListRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `EditWaitListRequest`
         """
-        model = dupr_backend.models.edit_wait_list_request.EditWaitListRequest()  # noqa: E501
-        if include_optional :
+        model = EditWaitListRequest()
+        if include_optional:
             return EditWaitListRequest(
-                bracket_id = 45785789, 
-                club_id = 45785789, 
-                is_wait_listed = False, 
-                registration_id = 45785789, 
+                bracket_id = 45785789,
+                club_id = 45785789,
+                is_wait_listed = False,
+                registration_id = 45785789,
                 user_id = 45785789
             )
-        else :
+        else:
             return EditWaitListRequest(
                 bracket_id = 45785789,
                 club_id = 45785789,

@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_ofobject import SingleWrapperOfobject  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_ofobject import SingleWrapperOfobject
 
 class TestSingleWrapperOfobject(unittest.TestCase):
     """SingleWrapperOfobject unit test stubs"""
@@ -28,21 +25,21 @@ class TestSingleWrapperOfobject(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfobject:
         """Test SingleWrapperOfobject
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfobject`
         """
-        model = dupr_backend.models.single_wrapper_ofobject.SingleWrapperOfobject()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfobject()
+        if include_optional:
             return SingleWrapperOfobject(
-                message = 'Show this message to user.', 
-                result = None, 
+                message = 'Show this message to user.',
+                result = None,
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfobject(
         )
         """

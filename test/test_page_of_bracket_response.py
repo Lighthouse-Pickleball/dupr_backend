@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.page_of_bracket_response import PageOfBracketResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.page_of_bracket_response import PageOfBracketResponse
 
 class TestPageOfBracketResponse(unittest.TestCase):
     """PageOfBracketResponse unit test stubs"""
@@ -28,19 +25,19 @@ class TestPageOfBracketResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> PageOfBracketResponse:
         """Test PageOfBracketResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PageOfBracketResponse`
         """
-        model = dupr_backend.models.page_of_bracket_response.PageOfBracketResponse()  # noqa: E501
-        if include_optional :
+        model = PageOfBracketResponse()
+        if include_optional:
             return PageOfBracketResponse(
-                empty = False, 
-                has_more = False, 
-                has_previous = True, 
+                empty = False,
+                has_more = False,
+                has_previous = True,
                 hits = [
                     dupr_backend.models.bracket_response.BracketResponse(
                         age_bracket = [27, 35], 
@@ -166,13 +163,13 @@ class TestPageOfBracketResponse(unittest.TestCase):
                         total_rounds = 1, 
                         wait_list = 500, 
                         zone_name = 'IST', )
-                    ], 
-                limit = 10, 
-                offset = 90, 
-                total = 100, 
+                    ],
+                limit = 10,
+                offset = 90,
+                total = 100,
                 total_value_relation = 'GREATER_THAN_OR_EQUAL_TO'
             )
-        else :
+        else:
             return PageOfBracketResponse(
                 empty = False,
                 has_more = False,

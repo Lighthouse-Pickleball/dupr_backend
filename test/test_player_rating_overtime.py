@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.player_rating_overtime import PlayerRatingOvertime  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.player_rating_overtime import PlayerRatingOvertime
 
 class TestPlayerRatingOvertime(unittest.TestCase):
     """PlayerRatingOvertime unit test stubs"""
@@ -28,27 +25,27 @@ class TestPlayerRatingOvertime(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> PlayerRatingOvertime:
         """Test PlayerRatingOvertime
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PlayerRatingOvertime`
         """
-        model = dupr_backend.models.player_rating_overtime.PlayerRatingOvertime()  # noqa: E501
-        if include_optional :
+        model = PlayerRatingOvertime()
+        if include_optional:
             return PlayerRatingOvertime(
-                player_id = 56, 
+                player_id = 56,
                 rating_history = [
                     dupr_backend.models.history.History(
                         changed_by_admin = True, 
                         date = 'yyyy-MM-dd', 
                         match_date = 'yyyy-MM-dd', 
                         rating = 1.337, )
-                    ], 
+                    ],
                 type = 'DOUBLES'
             )
-        else :
+        else:
             return PlayerRatingOvertime(
                 player_id = 56,
                 rating_history = [

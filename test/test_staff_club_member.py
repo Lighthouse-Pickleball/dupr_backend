@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.staff_club_member import StaffClubMember  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.staff_club_member import StaffClubMember
 
 class TestStaffClubMember(unittest.TestCase):
     """StaffClubMember unit test stubs"""
@@ -28,28 +25,28 @@ class TestStaffClubMember(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> StaffClubMember:
         """Test StaffClubMember
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `StaffClubMember`
         """
-        model = dupr_backend.models.staff_club_member.StaffClubMember()  # noqa: E501
-        if include_optional :
+        model = StaffClubMember()
+        if include_optional:
             return StaffClubMember(
-                approval = 'APPROVED', 
-                club_id = 1231231, 
-                dupr_id = 'ALSJD1234', 
-                email = 'john@xyz.com', 
-                iso_alpha2_code = 'US', 
-                media_url = 'https://dupr-dev.s3.us-east-1.amazonaws.com/images/profile-e7718f70-d6a1-11eb-941a-09a499721974.png', 
-                name = 'John Doe', 
-                phone = '211564789', 
-                role_id = 1231231, 
+                approval = 'APPROVED',
+                club_id = 1231231,
+                dupr_id = 'ALSJD1234',
+                email = 'john@xyz.com',
+                iso_alpha2_code = 'US',
+                media_url = 'https://dupr-dev.s3.us-east-1.amazonaws.com/images/profile-e7718f70-d6a1-11eb-941a-09a499721974.png',
+                name = 'John Doe',
+                phone = '211564789',
+                role_id = 1231231,
                 user_id = 1231231
             )
-        else :
+        else:
             return StaffClubMember(
                 approval = 'APPROVED',
                 club_id = 1231231,

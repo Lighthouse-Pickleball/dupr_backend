@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **empty** | **bool** | Are results empty | 
@@ -23,12 +24,12 @@ json = "{}"
 # create an instance of PageOfUserLookupResponse from a JSON string
 page_of_user_lookup_response_instance = PageOfUserLookupResponse.from_json(json)
 # print the JSON string representation of the object
-print PageOfUserLookupResponse.to_json()
+print(PageOfUserLookupResponse.to_json())
 
 # convert the object into a dict
 page_of_user_lookup_response_dict = page_of_user_lookup_response_instance.to_dict()
 # create an instance of PageOfUserLookupResponse from a dict
-page_of_user_lookup_response_form_dict = page_of_user_lookup_response.from_dict(page_of_user_lookup_response_dict)
+page_of_user_lookup_response_from_dict = PageOfUserLookupResponse.from_dict(page_of_user_lookup_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -17,60 +17,77 @@ import pprint
 import re  # noqa: F401
 import json
 
-
-from typing import Union
-from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr, confloat, conint
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Union
+from typing_extensions import Annotated
+from typing import Optional, Set
+from typing_extensions import Self
 
 class ExternalFilterLocation(BaseModel):
     """
     ExternalFilterLocation
-    """
-    address: StrictStr = Field(..., description="Street level address in format county / city, state / region, country")
-    lat: Union[confloat(le=9E+1, ge=-9E+1, strict=True), conint(le=90, ge=-90, strict=True)] = Field(..., description="Earth's latitude value")
-    lng: Union[confloat(le=1.8E+2, ge=-1.8E+2, strict=True), conint(le=180, ge=-180, strict=True)] = Field(..., description="Earth's longitude value")
-    radius_in_meters: Union[StrictFloat, StrictInt] = Field(..., alias="radiusInMeters", description="Radius distance in meters from the point of provided latitude and longitude, default is 40233.6 meters (25 miles)")
-    __properties = ["address", "lat", "lng", "radiusInMeters"]
+    """ # noqa: E501
+    address: StrictStr = Field(description="Street level address in format county / city, state / region, country")
+    lat: Union[Annotated[float, Field(le=9E+1, strict=True, ge=-9E+1)], Annotated[int, Field(le=90, strict=True, ge=-90)]] = Field(description="Earth's latitude value")
+    lng: Union[Annotated[float, Field(le=1.8E+2, strict=True, ge=-1.8E+2)], Annotated[int, Field(le=180, strict=True, ge=-180)]] = Field(description="Earth's longitude value")
+    radius_in_meters: Union[StrictFloat, StrictInt] = Field(description="Radius distance in meters from the point of provided latitude and longitude, default is 40233.6 meters (25 miles)", alias="radiusInMeters")
+    __properties: ClassVar[List[str]] = ["address", "lat", "lng", "radiusInMeters"]
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> ExternalFilterLocation:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of ExternalFilterLocation from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> ExternalFilterLocation:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of ExternalFilterLocation from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return ExternalFilterLocation.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = ExternalFilterLocation.parse_obj({
+        _obj = cls.model_validate({
             "address": obj.get("address"),
             "lat": obj.get("lat"),
             "lng": obj.get("lng"),
-            "radius_in_meters": obj.get("radiusInMeters")
+            "radiusInMeters": obj.get("radiusInMeters")
         })
         return _obj
 

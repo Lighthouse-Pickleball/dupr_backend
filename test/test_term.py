@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.term import Term  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.term import Term
 
 class TestTerm(unittest.TestCase):
     """Term unit test stubs"""
@@ -28,20 +25,20 @@ class TestTerm(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> Term:
         """Test Term
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `Term`
         """
-        model = dupr_backend.models.term.Term()  # noqa: E501
-        if include_optional :
+        model = Term()
+        if include_optional:
             return Term(
-                offset = 56, 
+                offset = 56,
                 value = ''
             )
-        else :
+        else:
             return Term(
         )
         """

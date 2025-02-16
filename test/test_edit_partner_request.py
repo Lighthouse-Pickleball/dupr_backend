@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.edit_partner_request import EditPartnerRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.edit_partner_request import EditPartnerRequest
 
 class TestEditPartnerRequest(unittest.TestCase):
     """EditPartnerRequest unit test stubs"""
@@ -28,22 +25,22 @@ class TestEditPartnerRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> EditPartnerRequest:
         """Test EditPartnerRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `EditPartnerRequest`
         """
-        model = dupr_backend.models.edit_partner_request.EditPartnerRequest()  # noqa: E501
-        if include_optional :
+        model = EditPartnerRequest()
+        if include_optional:
             return EditPartnerRequest(
-                bracket_id = 45785789, 
-                partner_id = 45785789, 
-                partner_status = 'NOT_CONFIRMED/INVITED/CONFIRMED/INACTIVE', 
+                bracket_id = 45785789,
+                partner_id = 45785789,
+                partner_status = 'NOT_CONFIRMED/INVITED/CONFIRMED/INACTIVE',
                 registration_id = 45785789
             )
-        else :
+        else:
             return EditPartnerRequest(
                 bracket_id = 45785789,
                 partner_id = 45785789,

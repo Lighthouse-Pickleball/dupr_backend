@@ -17,44 +17,60 @@ import pprint
 import re  # noqa: F401
 import json
 
-
-from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
+from typing import Any, ClassVar, Dict, List, Optional
 from dupr_backend.models.member_ranking import MemberRanking
 from dupr_backend.models.page_of_member_ranking import PageOfMemberRanking
+from typing import Optional, Set
+from typing_extensions import Self
 
 class ClubMemberRankingResponse(BaseModel):
     """
     ClubMemberRankingResponse
-    """
-    member_ranking: PageOfMemberRanking = Field(..., alias="memberRanking")
-    my_ranking: Optional[MemberRanking] = Field(None, alias="myRanking")
-    __properties = ["memberRanking", "myRanking"]
+    """ # noqa: E501
+    member_ranking: PageOfMemberRanking = Field(alias="memberRanking")
+    my_ranking: Optional[MemberRanking] = Field(default=None, alias="myRanking")
+    __properties: ClassVar[List[str]] = ["memberRanking", "myRanking"]
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> ClubMemberRankingResponse:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of ClubMemberRankingResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         # override the default output from pydantic by calling `to_dict()` of member_ranking
         if self.member_ranking:
             _dict['memberRanking'] = self.member_ranking.to_dict()
@@ -64,17 +80,17 @@ class ClubMemberRankingResponse(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> ClubMemberRankingResponse:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of ClubMemberRankingResponse from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return ClubMemberRankingResponse.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = ClubMemberRankingResponse.parse_obj({
-            "member_ranking": PageOfMemberRanking.from_dict(obj.get("memberRanking")) if obj.get("memberRanking") is not None else None,
-            "my_ranking": MemberRanking.from_dict(obj.get("myRanking")) if obj.get("myRanking") is not None else None
+        _obj = cls.model_validate({
+            "memberRanking": PageOfMemberRanking.from_dict(obj["memberRanking"]) if obj.get("memberRanking") is not None else None,
+            "myRanking": MemberRanking.from_dict(obj["myRanking"]) if obj.get("myRanking") is not None else None
         })
         return _obj
 

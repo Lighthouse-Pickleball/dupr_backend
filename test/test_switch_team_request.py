@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.switch_team_request import SwitchTeamRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.switch_team_request import SwitchTeamRequest
 
 class TestSwitchTeamRequest(unittest.TestCase):
     """SwitchTeamRequest unit test stubs"""
@@ -28,29 +25,29 @@ class TestSwitchTeamRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SwitchTeamRequest:
         """Test SwitchTeamRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SwitchTeamRequest`
         """
-        model = dupr_backend.models.switch_team_request.SwitchTeamRequest()  # noqa: E501
-        if include_optional :
+        model = SwitchTeamRequest()
+        if include_optional:
             return SwitchTeamRequest(
-                club_id = 904958585, 
-                event_id = 904958585, 
-                event_name = 'Event Name', 
-                player1 = 904958585, 
-                player2 = 904958585, 
-                re_seed_bracket = True, 
-                registration_id = 904958585, 
-                source_bracket_id = 904958585, 
-                source_bracket_name = 'bracket 1', 
-                target_bracket_id = 904958585, 
+                club_id = 904958585,
+                event_id = 904958585,
+                event_name = 'Event Name',
+                player1 = 904958585,
+                player2 = 904958585,
+                re_seed_bracket = True,
+                registration_id = 904958585,
+                source_bracket_id = 904958585,
+                source_bracket_name = 'bracket 1',
+                target_bracket_id = 904958585,
                 target_bracket_name = 'bracket 2'
             )
-        else :
+        else:
             return SwitchTeamRequest(
                 club_id = 904958585,
                 event_id = 904958585,

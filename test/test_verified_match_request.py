@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.verified_match_request import VerifiedMatchRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.verified_match_request import VerifiedMatchRequest
 
 class TestVerifiedMatchRequest(unittest.TestCase):
     """VerifiedMatchRequest unit test stubs"""
@@ -28,43 +25,43 @@ class TestVerifiedMatchRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> VerifiedMatchRequest:
         """Test VerifiedMatchRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `VerifiedMatchRequest`
         """
-        model = dupr_backend.models.verified_match_request.VerifiedMatchRequest()  # noqa: E501
-        if include_optional :
+        model = VerifiedMatchRequest()
+        if include_optional:
             return VerifiedMatchRequest(
-                club_id = 56, 
-                event_date = '', 
-                event_name = '', 
-                location = '', 
-                team_a_player1 = '', 
-                team_a_player1_id = '', 
-                team_a_player2 = '', 
-                team_a_player2_id = '', 
-                team_a_points_game1 = 56, 
-                team_a_points_game2 = 56, 
-                team_a_points_game3 = 56, 
-                team_a_points_game4 = 56, 
-                team_a_points_game5 = 56, 
-                team_b_player1 = '', 
-                team_b_player1_id = '', 
-                team_b_player2 = '', 
-                team_b_player2_id = '', 
-                team_b_points_game1 = 56, 
-                team_b_points_game2 = 56, 
-                team_b_points_game3 = 56, 
-                team_b_points_game4 = 56, 
-                team_b_points_game5 = 56, 
-                tournament_name = '', 
-                venue = '', 
+                club_id = 56,
+                event_date = '',
+                event_name = '',
+                location = '',
+                team_a_player1 = '',
+                team_a_player1_id = '',
+                team_a_player2 = '',
+                team_a_player2_id = '',
+                team_a_points_game1 = 56,
+                team_a_points_game2 = 56,
+                team_a_points_game3 = 56,
+                team_a_points_game4 = 56,
+                team_a_points_game5 = 56,
+                team_b_player1 = '',
+                team_b_player1_id = '',
+                team_b_player2 = '',
+                team_b_player2_id = '',
+                team_b_points_game1 = 56,
+                team_b_points_game2 = 56,
+                team_b_points_game3 = 56,
+                team_b_points_game4 = 56,
+                team_b_points_game5 = 56,
+                tournament_name = '',
+                venue = '',
                 winning_team = ''
             )
-        else :
+        else:
             return VerifiedMatchRequest(
         )
         """

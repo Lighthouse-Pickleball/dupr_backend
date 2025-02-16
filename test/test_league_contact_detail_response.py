@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.league_contact_detail_response import LeagueContactDetailResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.league_contact_detail_response import LeagueContactDetailResponse
 
 class TestLeagueContactDetailResponse(unittest.TestCase):
     """LeagueContactDetailResponse unit test stubs"""
@@ -28,24 +25,24 @@ class TestLeagueContactDetailResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> LeagueContactDetailResponse:
         """Test LeagueContactDetailResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `LeagueContactDetailResponse`
         """
-        model = dupr_backend.models.league_contact_detail_response.LeagueContactDetailResponse()  # noqa: E501
-        if include_optional :
+        model = LeagueContactDetailResponse()
+        if include_optional:
             return LeagueContactDetailResponse(
-                address = 'PA 18034, United States', 
-                email = 'hisenberg@yopmail.com', 
-                name = 'Dreamland pickalball', 
-                phone = '18022214966', 
-                priority = 1, 
+                address = 'PA 18034, United States',
+                email = 'hisenberg@yopmail.com',
+                name = 'Dreamland pickalball',
+                phone = '18022214966',
+                priority = 1,
                 type = 'person/club'
             )
-        else :
+        else:
             return LeagueContactDetailResponse(
         )
         """

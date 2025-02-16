@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.player_statistics_update_request import PlayerStatisticsUpdateRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.player_statistics_update_request import PlayerStatisticsUpdateRequest
 
 class TestPlayerStatisticsUpdateRequest(unittest.TestCase):
     """PlayerStatisticsUpdateRequest unit test stubs"""
@@ -28,15 +25,15 @@ class TestPlayerStatisticsUpdateRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> PlayerStatisticsUpdateRequest:
         """Test PlayerStatisticsUpdateRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PlayerStatisticsUpdateRequest`
         """
-        model = dupr_backend.models.player_statistics_update_request.PlayerStatisticsUpdateRequest()  # noqa: E501
-        if include_optional :
+        model = PlayerStatisticsUpdateRequest()
+        if include_optional:
             return PlayerStatisticsUpdateRequest(
                 doubles = dupr_backend.models.match_ratings.MatchRatings(
                     average_opponent_dupr = '3.254', 
@@ -44,8 +41,8 @@ class TestPlayerStatisticsUpdateRequest(unittest.TestCase):
                     average_points_won_percent = '67%', 
                     half_life = '3.0', 
                     losses = 12, 
-                    wins = 4, ), 
-                obfuscated_player_id = 1234, 
+                    wins = 4, ),
+                obfuscated_player_id = 1234,
                 singles = dupr_backend.models.match_ratings.MatchRatings(
                     average_opponent_dupr = '3.254', 
                     average_partner_dupr = '6.391', 
@@ -54,7 +51,7 @@ class TestPlayerStatisticsUpdateRequest(unittest.TestCase):
                     losses = 12, 
                     wins = 4, )
             )
-        else :
+        else:
             return PlayerStatisticsUpdateRequest(
                 obfuscated_player_id = 1234,
         )

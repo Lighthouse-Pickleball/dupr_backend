@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.bounds import Bounds  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.bounds import Bounds
 
 class TestBounds(unittest.TestCase):
     """Bounds unit test stubs"""
@@ -28,24 +25,24 @@ class TestBounds(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> Bounds:
         """Test Bounds
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `Bounds`
         """
-        model = dupr_backend.models.bounds.Bounds()  # noqa: E501
-        if include_optional :
+        model = Bounds()
+        if include_optional:
             return Bounds(
                 northeast = dupr_backend.models.lat_lng.LatLng(
                     lat = 1.337, 
-                    lng = 1.337, ), 
+                    lng = 1.337, ),
                 southwest = dupr_backend.models.lat_lng.LatLng(
                     lat = 1.337, 
                     lng = 1.337, )
             )
-        else :
+        else:
             return Bounds(
         )
         """

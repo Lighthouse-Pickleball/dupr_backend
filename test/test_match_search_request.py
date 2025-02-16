@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.match_search_request import MatchSearchRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.match_search_request import MatchSearchRequest
 
 class TestMatchSearchRequest(unittest.TestCase):
     """MatchSearchRequest unit test stubs"""
@@ -28,15 +25,15 @@ class TestMatchSearchRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> MatchSearchRequest:
         """Test MatchSearchRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MatchSearchRequest`
         """
-        model = dupr_backend.models.match_search_request.MatchSearchRequest()  # noqa: E501
-        if include_optional :
+        model = MatchSearchRequest()
+        if include_optional:
             return MatchSearchRequest(
                 filters = dupr_backend.models.match_filters.MatchFilters(
                     event_date = dupr_backend.models.date_range.DateRange(
@@ -45,14 +42,14 @@ class TestMatchSearchRequest(unittest.TestCase):
                     event_format = [SINGLES, DOUBLES], 
                     event_name = 'Pickle ball', 
                     match_status = [COMPLETE, PENDING], 
-                    player_id = 215254148, ), 
-                limit = 3, 
-                offset = 0, 
+                    player_id = 215254148, ),
+                limit = 3,
+                offset = 0,
                 sort = dupr_backend.models.match_sort.MatchSort(
                     order = 'ASC/DESC', 
                     parameter = 'MATCH_DATE/CREATED_DATE/MODIFIED_DATE', )
             )
-        else :
+        else:
             return MatchSearchRequest(
         )
         """

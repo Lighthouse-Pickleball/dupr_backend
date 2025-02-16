@@ -14,24 +14,22 @@
 
 import unittest
 
-import dupr_backend
-from dupr_backend.api.mi_lp_teams_api import MiLPTeamsApi  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.api.mi_lp_teams_api import MiLPTeamsApi
 
 
 class TestMiLPTeamsApi(unittest.TestCase):
     """MiLPTeamsApi unit test stubs"""
 
-    def setUp(self):
-        self.api = dupr_backend.api.mi_lp_teams_api.MiLPTeamsApi()  # noqa: E501
+    def setUp(self) -> None:
+        self.api = MiLPTeamsApi()
 
-    def tearDown(self):
+    def tearDown(self) -> None:
         pass
 
-    def test_save_using_post3(self):
+    def test_save_using_post3(self) -> None:
         """Test case for save_using_post3
 
-        save  # noqa: E501
+        save
         """
         pass
 

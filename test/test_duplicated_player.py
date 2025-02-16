@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.duplicated_player import DuplicatedPlayer  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.duplicated_player import DuplicatedPlayer
 
 class TestDuplicatedPlayer(unittest.TestCase):
     """DuplicatedPlayer unit test stubs"""
@@ -28,29 +25,29 @@ class TestDuplicatedPlayer(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> DuplicatedPlayer:
         """Test DuplicatedPlayer
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `DuplicatedPlayer`
         """
-        model = dupr_backend.models.duplicated_player.DuplicatedPlayer()  # noqa: E501
-        if include_optional :
+        model = DuplicatedPlayer()
+        if include_optional:
             return DuplicatedPlayer(
-                birthday = '', 
-                dupr_id = '', 
-                email = '', 
-                first_name = '', 
-                full_name = '', 
-                gender = 'FEMALE', 
-                hand = 'BOTH', 
-                id = 56, 
-                last_name = '', 
-                status = 'ACTIVE', 
+                birthday = '',
+                dupr_id = '',
+                email = '',
+                first_name = '',
+                full_name = '',
+                gender = 'FEMALE',
+                hand = 'BOTH',
+                id = 56,
+                last_name = '',
+                status = 'ACTIVE',
                 verified_email = True
             )
-        else :
+        else:
             return DuplicatedPlayer(
                 id = 56,
                 verified_email = True,

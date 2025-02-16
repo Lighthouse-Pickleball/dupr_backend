@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.bracket_unmatched_player_sort import BracketUnmatchedPlayerSort  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.bracket_unmatched_player_sort import BracketUnmatchedPlayerSort
 
 class TestBracketUnmatchedPlayerSort(unittest.TestCase):
     """BracketUnmatchedPlayerSort unit test stubs"""
@@ -28,20 +25,20 @@ class TestBracketUnmatchedPlayerSort(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> BracketUnmatchedPlayerSort:
         """Test BracketUnmatchedPlayerSort
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `BracketUnmatchedPlayerSort`
         """
-        model = dupr_backend.models.bracket_unmatched_player_sort.BracketUnmatchedPlayerSort()  # noqa: E501
-        if include_optional :
+        model = BracketUnmatchedPlayerSort()
+        if include_optional:
             return BracketUnmatchedPlayerSort(
-                order = 'ASC/DESC', 
+                order = 'ASC/DESC',
                 parameter = 'RATINGS'
             )
-        else :
+        else:
             return BracketUnmatchedPlayerSort(
         )
         """

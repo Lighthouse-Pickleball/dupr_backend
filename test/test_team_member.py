@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.team_member import TeamMember  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.team_member import TeamMember
 
 class TestTeamMember(unittest.TestCase):
     """TeamMember unit test stubs"""
@@ -28,27 +25,27 @@ class TestTeamMember(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> TeamMember:
         """Test TeamMember
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `TeamMember`
         """
-        model = dupr_backend.models.team_member.TeamMember()  # noqa: E501
-        if include_optional :
+        model = TeamMember()
+        if include_optional:
             return TeamMember(
-                created = '', 
-                first_name = '', 
-                full_name = '', 
-                image_url = '', 
-                last_name = '', 
-                role = '', 
-                status = 'ACTIVE', 
-                team_id = 56, 
+                created = '',
+                first_name = '',
+                full_name = '',
+                image_url = '',
+                last_name = '',
+                role = '',
+                status = 'ACTIVE',
+                team_id = 56,
                 user_id = 56
             )
-        else :
+        else:
             return TeamMember(
                 role = '',
                 team_id = 56,

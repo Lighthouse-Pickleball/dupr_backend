@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.claim_player_search_request import ClaimPlayerSearchRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.claim_player_search_request import ClaimPlayerSearchRequest
 
 class TestClaimPlayerSearchRequest(unittest.TestCase):
     """ClaimPlayerSearchRequest unit test stubs"""
@@ -28,15 +25,15 @@ class TestClaimPlayerSearchRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ClaimPlayerSearchRequest:
         """Test ClaimPlayerSearchRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ClaimPlayerSearchRequest`
         """
-        model = dupr_backend.models.claim_player_search_request.ClaimPlayerSearchRequest()  # noqa: E501
-        if include_optional :
+        model = ClaimPlayerSearchRequest()
+        if include_optional:
             return ClaimPlayerSearchRequest(
                 filter = dupr_backend.models.claim_player_search_filter.ClaimPlayerSearchFilter(
                     age = dupr_backend.models.age_filter.AgeFilter(
@@ -50,15 +47,15 @@ class TestClaimPlayerSearchRequest(unittest.TestCase):
                         max_rating = 3.3, 
                         min_rating = 2.3, 
                         type = 'DOUBLES', ), 
-                    short_address = 'King County, WA, US', ), 
-                limit = 10, 
-                offset = 0, 
-                query = '*', 
+                    short_address = 'King County, WA, US', ),
+                limit = 10,
+                offset = 0,
+                query = '*',
                 sort = dupr_backend.models.claim_player_search_sort.ClaimPlayerSearchSort(
                     order = 'ASC/DESC', 
                     parameter = 'fullNameSort/singles/doubles', )
             )
-        else :
+        else:
             return ClaimPlayerSearchRequest(
                 limit = 10,
                 offset = 0,

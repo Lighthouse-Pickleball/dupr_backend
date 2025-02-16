@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.address_response import AddressResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.address_response import AddressResponse
 
 class TestAddressResponse(unittest.TestCase):
     """AddressResponse unit test stubs"""
@@ -28,29 +25,29 @@ class TestAddressResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> AddressResponse:
         """Test AddressResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `AddressResponse`
         """
-        model = dupr_backend.models.address_response.AddressResponse()  # noqa: E501
-        if include_optional :
+        model = AddressResponse()
+        if include_optional:
             return AddressResponse(
-                address_line = 'Apartment, Room, PO Box numbers (optional)', 
-                create = '', 
-                formatted_address = '5800 PA-378, Center Valley, PA 18034, United States', 
-                id = 12385789, 
-                latitude = 33.194791, 
-                longitude = -117.048582, 
-                place_id = '', 
-                precision = '', 
-                short_address = 'Center Valley, PA, US', 
-                status = '', 
+                address_line = 'Apartment, Room, PO Box numbers (optional)',
+                create = '',
+                formatted_address = '5800 PA-378, Center Valley, PA 18034, United States',
+                id = 12385789,
+                latitude = 33.194791,
+                longitude = -117.048582,
+                place_id = '',
+                precision = '',
+                short_address = 'Center Valley, PA, US',
+                status = '',
                 types = ''
             )
-        else :
+        else:
             return AddressResponse(
                 create = '',
                 formatted_address = '5800 PA-378, Center Valley, PA 18034, United States',

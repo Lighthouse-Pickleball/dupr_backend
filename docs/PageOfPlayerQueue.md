@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **empty** | **bool** | Are results empty | 
@@ -23,12 +24,12 @@ json = "{}"
 # create an instance of PageOfPlayerQueue from a JSON string
 page_of_player_queue_instance = PageOfPlayerQueue.from_json(json)
 # print the JSON string representation of the object
-print PageOfPlayerQueue.to_json()
+print(PageOfPlayerQueue.to_json())
 
 # convert the object into a dict
 page_of_player_queue_dict = page_of_player_queue_instance.to_dict()
 # create an instance of PageOfPlayerQueue from a dict
-page_of_player_queue_form_dict = page_of_player_queue.from_dict(page_of_player_queue_dict)
+page_of_player_queue_from_dict = PageOfPlayerQueue.from_dict(page_of_player_queue_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

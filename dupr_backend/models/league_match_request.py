@@ -18,61 +18,78 @@ import re  # noqa: F401
 import json
 
 from datetime import date
-from typing import Optional
-from pydantic import BaseModel, Field, StrictInt, StrictStr, validator
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional
 from dupr_backend.models.team import Team
+from typing import Optional, Set
+from typing_extensions import Self
 
 class LeagueMatchRequest(BaseModel):
     """
     LeagueMatchRequest
-    """
-    bracket_id: StrictInt = Field(..., alias="bracketId")
-    club_id: StrictInt = Field(..., alias="clubId")
-    event_name: Optional[StrictStr] = Field(None, alias="eventName")
-    format: StrictStr = Field(...)
+    """ # noqa: E501
+    bracket_id: StrictInt = Field(alias="bracketId")
+    club_id: StrictInt = Field(alias="clubId")
+    event_name: Optional[StrictStr] = Field(default=None, alias="eventName")
+    format: StrictStr
     league: Optional[StrictStr] = None
-    league_id: StrictInt = Field(..., alias="leagueId")
-    league_match_id: StrictInt = Field(..., alias="leagueMatchId")
+    league_id: StrictInt = Field(alias="leagueId")
+    league_match_id: StrictInt = Field(alias="leagueMatchId")
     location: Optional[StrictStr] = None
-    match_date: date = Field(..., alias="matchDate")
-    score_format_id: Optional[StrictInt] = Field(None, alias="scoreFormatId")
-    team1: Team = Field(...)
-    team2: Team = Field(...)
+    match_date: date = Field(alias="matchDate")
+    score_format_id: Optional[StrictInt] = Field(default=None, alias="scoreFormatId")
+    team1: Team
+    team2: Team
     tournament: Optional[StrictStr] = None
     venue: Optional[StrictStr] = None
-    __properties = ["bracketId", "clubId", "eventName", "format", "league", "leagueId", "leagueMatchId", "location", "matchDate", "scoreFormatId", "team1", "team2", "tournament", "venue"]
+    __properties: ClassVar[List[str]] = ["bracketId", "clubId", "eventName", "format", "league", "leagueId", "leagueMatchId", "location", "matchDate", "scoreFormatId", "team1", "team2", "tournament", "venue"]
 
-    @validator('format')
+    @field_validator('format')
     def format_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in ('DOUBLES', 'SINGLES'):
+        if value not in set(['DOUBLES', 'SINGLES']):
             raise ValueError("must be one of enum values ('DOUBLES', 'SINGLES')")
         return value
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> LeagueMatchRequest:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of LeagueMatchRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         # override the default output from pydantic by calling `to_dict()` of team1
         if self.team1:
             _dict['team1'] = self.team1.to_dict()
@@ -82,27 +99,27 @@ class LeagueMatchRequest(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> LeagueMatchRequest:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of LeagueMatchRequest from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return LeagueMatchRequest.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = LeagueMatchRequest.parse_obj({
-            "bracket_id": obj.get("bracketId"),
-            "club_id": obj.get("clubId"),
-            "event_name": obj.get("eventName"),
+        _obj = cls.model_validate({
+            "bracketId": obj.get("bracketId"),
+            "clubId": obj.get("clubId"),
+            "eventName": obj.get("eventName"),
             "format": obj.get("format"),
             "league": obj.get("league"),
-            "league_id": obj.get("leagueId"),
-            "league_match_id": obj.get("leagueMatchId"),
+            "leagueId": obj.get("leagueId"),
+            "leagueMatchId": obj.get("leagueMatchId"),
             "location": obj.get("location"),
-            "match_date": obj.get("matchDate"),
-            "score_format_id": obj.get("scoreFormatId"),
-            "team1": Team.from_dict(obj.get("team1")) if obj.get("team1") is not None else None,
-            "team2": Team.from_dict(obj.get("team2")) if obj.get("team2") is not None else None,
+            "matchDate": obj.get("matchDate"),
+            "scoreFormatId": obj.get("scoreFormatId"),
+            "team1": Team.from_dict(obj["team1"]) if obj.get("team1") is not None else None,
+            "team2": Team.from_dict(obj["team2"]) if obj.get("team2") is not None else None,
             "tournament": obj.get("tournament"),
             "venue": obj.get("venue")
         })

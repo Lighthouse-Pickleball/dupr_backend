@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.rating_overview_response import RatingOverviewResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.rating_overview_response import RatingOverviewResponse
 
 class TestRatingOverviewResponse(unittest.TestCase):
     """RatingOverviewResponse unit test stubs"""
@@ -28,33 +25,33 @@ class TestRatingOverviewResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> RatingOverviewResponse:
         """Test RatingOverviewResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `RatingOverviewResponse`
         """
-        model = dupr_backend.models.rating_overview_response.RatingOverviewResponse()  # noqa: E501
-        if include_optional :
+        model = RatingOverviewResponse()
+        if include_optional:
             return RatingOverviewResponse(
                 all = dupr_backend.models.overview_response.OverviewResponse(
                     all = 10, 
                     losses = 2, 
                     pending = 5, 
-                    wins = 3, ), 
+                    wins = 3, ),
                 doubles = dupr_backend.models.overview_response.OverviewResponse(
                     all = 10, 
                     losses = 2, 
                     pending = 5, 
-                    wins = 3, ), 
+                    wins = 3, ),
                 singles = dupr_backend.models.overview_response.OverviewResponse(
                     all = 10, 
                     losses = 2, 
                     pending = 5, 
                     wins = 3, )
             )
-        else :
+        else:
             return RatingOverviewResponse(
                 all = dupr_backend.models.overview_response.OverviewResponse(
                     all = 10, 

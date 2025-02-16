@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.update_registration_request import UpdateRegistrationRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.update_registration_request import UpdateRegistrationRequest
 
 class TestUpdateRegistrationRequest(unittest.TestCase):
     """UpdateRegistrationRequest unit test stubs"""
@@ -28,26 +25,26 @@ class TestUpdateRegistrationRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> UpdateRegistrationRequest:
         """Test UpdateRegistrationRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `UpdateRegistrationRequest`
         """
-        model = dupr_backend.models.update_registration_request.UpdateRegistrationRequest()  # noqa: E501
-        if include_optional :
+        model = UpdateRegistrationRequest()
+        if include_optional:
             return UpdateRegistrationRequest(
-                bracket_fees_paid = 100.0, 
-                bracket_id = 904958585, 
-                event_fees_paid = 100.0, 
-                is_registered = True, 
-                league_id = 904958585, 
-                payment_status = 'ACTIVE', 
-                registration_status = 'ACTIVE', 
+                bracket_fees_paid = 100.0,
+                bracket_id = 904958585,
+                event_fees_paid = 100.0,
+                is_registered = True,
+                league_id = 904958585,
+                payment_status = 'ACTIVE',
+                registration_status = 'ACTIVE',
                 user_id = 904958585
             )
-        else :
+        else:
             return UpdateRegistrationRequest(
         )
         """

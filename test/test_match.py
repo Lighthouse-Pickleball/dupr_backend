@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.match import Match  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.match import Match
 
 class TestMatch(unittest.TestCase):
     """Match unit test stubs"""
@@ -28,46 +25,46 @@ class TestMatch(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> Match:
         """Test Match
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `Match`
         """
-        model = dupr_backend.models.match.Match()  # noqa: E501
-        if include_optional :
+        model = Match()
+        if include_optional:
             return Match(
-                bracket_id = 56, 
-                client_id = 56, 
-                club_id = 56, 
-                confirmation_threshold = 56, 
-                confirmed = True, 
-                created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                bracket_id = 56,
+                client_id = 56,
+                club_id = 56,
+                confirmation_threshold = 56,
+                confirmed = True,
+                created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 creator = dupr_backend.models.basic_user_info.BasicUserInfo(
                     email = '', 
                     id = 56, 
                     name = '', 
-                    referral_code = '', ), 
-                elo_calculated = True, 
-                elo_rated_match = True, 
-                event = '', 
-                event_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                event_format = 'DOUBLES', 
-                id = 56, 
-                league = '', 
-                league_id = 56, 
-                league_match_id = 56, 
-                location = '', 
-                match_score_added = True, 
-                match_source = 'CLUB', 
-                match_type = 'RALLY', 
-                modified = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                    referral_code = '', ),
+                elo_calculated = True,
+                elo_rated_match = True,
+                event = '',
+                event_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
+                event_format = 'DOUBLES',
+                id = 56,
+                league = '',
+                league_id = 56,
+                league_match_id = 56,
+                location = '',
+                match_score_added = True,
+                match_source = 'CLUB',
+                match_type = 'RALLY',
+                modified = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 player_ids = [
                     56
-                    ], 
-                pre_elo_match = True, 
-                pro_match = True, 
+                    ],
+                pre_elo_match = True,
+                pro_match = True,
                 score_format = dupr_backend.models.score_format.ScoreFormat(
                     format = '', 
                     games = 56, 
@@ -75,8 +72,8 @@ class TestMatch(unittest.TestCase):
                     priority = 56, 
                     status = 'ACTIVE', 
                     variant = '', 
-                    winning_score = 56, ), 
-                status = 'ACTIVE', 
+                    winning_score = 56, ),
+                status = 'ACTIVE',
                 teams = [
                     dupr_backend.models.team.Team(
                         delta = 1.337, 
@@ -222,18 +219,18 @@ class TestMatch(unittest.TestCase):
                             verified_email = True, ), 
                         team_rating = 1.337, 
                         winner = True, )
-                    ], 
-                tournament = '', 
-                used_in_initialization = True, 
-                user_id = 56, 
+                    ],
+                tournament = '',
+                used_in_initialization = True,
+                user_id = 56,
                 validator = dupr_backend.models.basic_user_info.BasicUserInfo(
                     email = '', 
                     id = 56, 
                     name = '', 
-                    referral_code = '', ), 
+                    referral_code = '', ),
                 venue = ''
             )
-        else :
+        else:
             return Match(
                 confirmation_threshold = 56,
                 confirmed = True,

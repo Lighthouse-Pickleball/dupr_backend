@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.react_delete_request import ReactDeleteRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.react_delete_request import ReactDeleteRequest
 
 class TestReactDeleteRequest(unittest.TestCase):
     """ReactDeleteRequest unit test stubs"""
@@ -28,20 +25,20 @@ class TestReactDeleteRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ReactDeleteRequest:
         """Test ReactDeleteRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ReactDeleteRequest`
         """
-        model = dupr_backend.models.react_delete_request.ReactDeleteRequest()  # noqa: E501
-        if include_optional :
+        model = ReactDeleteRequest()
+        if include_optional:
             return ReactDeleteRequest(
-                id = 'React Id from Getstream: db0f3ce2-99ab-4ec0-b006-333de4a3d47b', 
+                id = 'React Id from Getstream: db0f3ce2-99ab-4ec0-b006-333de4a3d47b',
                 react = 'COMMENT|LIKE'
             )
-        else :
+        else:
             return ReactDeleteRequest(
         )
         """

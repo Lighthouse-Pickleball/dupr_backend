@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.game_trend_response import GameTrendResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.game_trend_response import GameTrendResponse
 
 class TestGameTrendResponse(unittest.TestCase):
     """GameTrendResponse unit test stubs"""
@@ -28,23 +25,23 @@ class TestGameTrendResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> GameTrendResponse:
         """Test GameTrendResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `GameTrendResponse`
         """
-        model = dupr_backend.models.game_trend_response.GameTrendResponse()  # noqa: E501
-        if include_optional :
+        model = GameTrendResponse()
+        if include_optional:
             return GameTrendResponse(
-                game_lost = 10, 
-                game_won = 10, 
-                month = 'January', 
-                serial = 1, 
+                game_lost = 10,
+                game_won = 10,
+                month = 'January',
+                serial = 1,
                 total_games = 20
             )
-        else :
+        else:
             return GameTrendResponse(
         )
         """

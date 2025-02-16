@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.page_of_match_response import PageOfMatchResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.page_of_match_response import PageOfMatchResponse
 
 class TestPageOfMatchResponse(unittest.TestCase):
     """PageOfMatchResponse unit test stubs"""
@@ -28,19 +25,19 @@ class TestPageOfMatchResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> PageOfMatchResponse:
         """Test PageOfMatchResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PageOfMatchResponse`
         """
-        model = dupr_backend.models.page_of_match_response.PageOfMatchResponse()  # noqa: E501
-        if include_optional :
+        model = PageOfMatchResponse()
+        if include_optional:
             return PageOfMatchResponse(
-                empty = False, 
-                has_more = False, 
-                has_previous = True, 
+                empty = False,
+                has_more = False,
+                has_previous = True,
                 hits = [
                     dupr_backend.models.match_response.MatchResponse(
                         bracket_id = 6806605627, 
@@ -125,13 +122,13 @@ class TestPageOfMatchResponse(unittest.TestCase):
                             name = '', 
                             referral_code = '', ), 
                         venue = 'Dreamland Pickleball', )
-                    ], 
-                limit = 10, 
-                offset = 90, 
-                total = 100, 
+                    ],
+                limit = 10,
+                offset = 90,
+                total = 100,
                 total_value_relation = 'GREATER_THAN_OR_EQUAL_TO'
             )
-        else :
+        else:
             return PageOfMatchResponse(
                 empty = False,
                 has_more = False,

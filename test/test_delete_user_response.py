@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.delete_user_response import DeleteUserResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.delete_user_response import DeleteUserResponse
 
 class TestDeleteUserResponse(unittest.TestCase):
     """DeleteUserResponse unit test stubs"""
@@ -28,20 +25,20 @@ class TestDeleteUserResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> DeleteUserResponse:
         """Test DeleteUserResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `DeleteUserResponse`
         """
-        model = dupr_backend.models.delete_user_response.DeleteUserResponse()  # noqa: E501
-        if include_optional :
+        model = DeleteUserResponse()
+        if include_optional:
             return DeleteUserResponse(
-                confirmation_code = '200', 
+                confirmation_code = '200',
                 url = 'https://api.gamestoppedout.com/'
             )
-        else :
+        else:
             return DeleteUserResponse(
         )
         """

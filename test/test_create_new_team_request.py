@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.create_new_team_request import CreateNewTeamRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.create_new_team_request import CreateNewTeamRequest
 
 class TestCreateNewTeamRequest(unittest.TestCase):
     """CreateNewTeamRequest unit test stubs"""
@@ -28,22 +25,22 @@ class TestCreateNewTeamRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> CreateNewTeamRequest:
         """Test CreateNewTeamRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `CreateNewTeamRequest`
         """
-        model = dupr_backend.models.create_new_team_request.CreateNewTeamRequest()  # noqa: E501
-        if include_optional :
+        model = CreateNewTeamRequest()
+        if include_optional:
             return CreateNewTeamRequest(
-                bracket_id = 45785789, 
-                club_id = 45785789, 
-                player1 = 45785789, 
+                bracket_id = 45785789,
+                club_id = 45785789,
+                player1 = 45785789,
                 player2 = 45785789
             )
-        else :
+        else:
             return CreateNewTeamRequest(
                 bracket_id = 45785789,
                 club_id = 45785789,

@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **doubles** | **float** |  | [optional] 
@@ -23,12 +24,12 @@ json = "{}"
 # create an instance of AdjustRatingRequest from a JSON string
 adjust_rating_request_instance = AdjustRatingRequest.from_json(json)
 # print the JSON string representation of the object
-print AdjustRatingRequest.to_json()
+print(AdjustRatingRequest.to_json())
 
 # convert the object into a dict
 adjust_rating_request_dict = adjust_rating_request_instance.to_dict()
 # create an instance of AdjustRatingRequest from a dict
-adjust_rating_request_form_dict = adjust_rating_request.from_dict(adjust_rating_request_dict)
+adjust_rating_request_from_dict = AdjustRatingRequest.from_dict(adjust_rating_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

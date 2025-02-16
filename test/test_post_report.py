@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.post_report import PostReport  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.post_report import PostReport
 
 class TestPostReport(unittest.TestCase):
     """PostReport unit test stubs"""
@@ -28,28 +25,28 @@ class TestPostReport(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> PostReport:
         """Test PostReport
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PostReport`
         """
-        model = dupr_backend.models.post_report.PostReport()  # noqa: E501
-        if include_optional :
+        model = PostReport()
+        if include_optional:
             return PostReport(
-                count_report = 56, 
-                created_at = 56, 
-                id = '', 
-                note = '', 
-                report_reason = '', 
-                report_type = 'COMMENT', 
-                reported_id = '', 
-                reporter_id = 56, 
-                status = 'APPROVED', 
+                count_report = 56,
+                created_at = 56,
+                id = '',
+                note = '',
+                report_reason = '',
+                report_type = 'COMMENT',
+                reported_id = '',
+                reporter_id = 56,
+                status = 'APPROVED',
                 updated_at = 56
             )
-        else :
+        else:
             return PostReport(
                 count_report = 56,
                 created_at = 56,

@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.league_request import LeagueRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.league_request import LeagueRequest
 
 class TestLeagueRequest(unittest.TestCase):
     """LeagueRequest unit test stubs"""
@@ -28,15 +25,15 @@ class TestLeagueRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> LeagueRequest:
         """Test LeagueRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `LeagueRequest`
         """
-        model = dupr_backend.models.league_request.LeagueRequest()  # noqa: E501
-        if include_optional :
+        model = LeagueRequest()
+        if include_optional:
             return LeagueRequest(
                 additional_information = dupr_backend.models.league_content_request.LeagueContentRequest(
                     content = '<h1>content</h1>', 
@@ -45,10 +42,10 @@ class TestLeagueRequest(unittest.TestCase):
                     footer = '<h1>footer</h1>', 
                     footer_type = 'text/html', 
                     header = '<h1>header</h1>', 
-                    header_type = 'text/html', ), 
-                address_id = 5156151658, 
-                advertise_end = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                advertise_start = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
+                    header_type = 'text/html', ),
+                address_id = 5156151658,
+                advertise_end = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
+                advertise_start = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
                 attributes = {
                     'key' : dupr_backend.models.attribute.Attribute(
                         _children = {
@@ -58,7 +55,7 @@ class TestLeagueRequest(unittest.TestCase):
                             }, 
                         _comment = 'Contact person name, if provided.', 
                         value = 'String', )
-                    }, 
+                    },
                 brackets = [
                     dupr_backend.models.bracket_request.BracketRequest(
                         age_bracket = [27, 35], 
@@ -91,12 +88,12 @@ class TestLeagueRequest(unittest.TestCase):
                         time_zone = 'IST', 
                         wait_list = 500, 
                         zone_name = 'IST', )
-                    ], 
-                club_id = 45785789, 
-                end_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                league_id = 45785789, 
-                league_name = 'Stillwater Pickleball', 
-                liability_waiver_id = 4684651981, 
+                    ],
+                club_id = 45785789,
+                end_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
+                league_id = 45785789,
+                league_name = 'Stillwater Pickleball',
+                liability_waiver_id = 4684651981,
                 long_description = dupr_backend.models.league_content_request.LeagueContentRequest(
                     content = '<h1>content</h1>', 
                     content_id = 45785789, 
@@ -104,11 +101,11 @@ class TestLeagueRequest(unittest.TestCase):
                     footer = '<h1>footer</h1>', 
                     footer_type = 'text/html', 
                     header = '<h1>header</h1>', 
-                    header_type = 'text/html', ), 
-                media_id = 4684651981, 
-                member_fee = 500.0, 
-                membership_permission = 'OPEN_TO_ALL/CLUB_MEMBERS', 
-                non_member_fee = 500.0, 
+                    header_type = 'text/html', ),
+                media_id = 4684651981,
+                member_fee = 500.0,
+                membership_permission = 'OPEN_TO_ALL/CLUB_MEMBERS',
+                non_member_fee = 500.0,
                 refund_policy = dupr_backend.models.league_content_request.LeagueContentRequest(
                     content = '<h1>content</h1>', 
                     content_id = 45785789, 
@@ -116,8 +113,8 @@ class TestLeagueRequest(unittest.TestCase):
                     footer = '<h1>footer</h1>', 
                     footer_type = 'text/html', 
                     header = '<h1>header</h1>', 
-                    header_type = 'text/html', ), 
-                registration_url = 'https://mydupr.com/register', 
+                    header_type = 'text/html', ),
+                registration_url = 'https://mydupr.com/register',
                 safety_policy = dupr_backend.models.league_content_request.LeagueContentRequest(
                     content = '<h1>content</h1>', 
                     content_id = 45785789, 
@@ -125,7 +122,7 @@ class TestLeagueRequest(unittest.TestCase):
                     footer = '<h1>footer</h1>', 
                     footer_type = 'text/html', 
                     header = '<h1>header</h1>', 
-                    header_type = 'text/html', ), 
+                    header_type = 'text/html', ),
                 short_description = dupr_backend.models.league_content_request.LeagueContentRequest(
                     content = '<h1>content</h1>', 
                     content_id = 45785789, 
@@ -133,13 +130,13 @@ class TestLeagueRequest(unittest.TestCase):
                     footer = '<h1>footer</h1>', 
                     footer_type = 'text/html', 
                     header = '<h1>header</h1>', 
-                    header_type = 'text/html', ), 
-                start_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                status = 'ACTIVE/IN_PROGRESS/COMPLETE/CANCELLED', 
-                type = 'FLEX', 
+                    header_type = 'text/html', ),
+                start_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
+                status = 'ACTIVE/IN_PROGRESS/COMPLETE/CANCELLED',
+                type = 'FLEX',
                 user_id = 45785789
             )
-        else :
+        else:
             return LeagueRequest(
                 address_id = 5156151658,
                 club_id = 45785789,

@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.user_preferences_response import UserPreferencesResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.user_preferences_response import UserPreferencesResponse
 
 class TestUserPreferencesResponse(unittest.TestCase):
     """UserPreferencesResponse unit test stubs"""
@@ -28,23 +25,23 @@ class TestUserPreferencesResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> UserPreferencesResponse:
         """Test UserPreferencesResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `UserPreferencesResponse`
         """
-        model = dupr_backend.models.user_preferences_response.UserPreferencesResponse()  # noqa: E501
-        if include_optional :
+        model = UserPreferencesResponse()
+        if include_optional:
             return UserPreferencesResponse(
-                enable_email = False, 
-                enable_newsletter = False, 
-                enable_privacy = False, 
-                enable_push = False, 
+                enable_email = False,
+                enable_newsletter = False,
+                enable_privacy = False,
+                enable_push = False,
                 enable_sms = False
             )
-        else :
+        else:
             return UserPreferencesResponse(
                 enable_email = False,
                 enable_newsletter = False,

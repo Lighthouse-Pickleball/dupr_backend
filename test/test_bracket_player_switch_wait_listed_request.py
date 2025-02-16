@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.bracket_player_switch_wait_listed_request import BracketPlayerSwitchWaitListedRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.bracket_player_switch_wait_listed_request import BracketPlayerSwitchWaitListedRequest
 
 class TestBracketPlayerSwitchWaitListedRequest(unittest.TestCase):
     """BracketPlayerSwitchWaitListedRequest unit test stubs"""
@@ -28,18 +25,18 @@ class TestBracketPlayerSwitchWaitListedRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> BracketPlayerSwitchWaitListedRequest:
         """Test BracketPlayerSwitchWaitListedRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `BracketPlayerSwitchWaitListedRequest`
         """
-        model = dupr_backend.models.bracket_player_switch_wait_listed_request.BracketPlayerSwitchWaitListedRequest()  # noqa: E501
-        if include_optional :
+        model = BracketPlayerSwitchWaitListedRequest()
+        if include_optional:
             return BracketPlayerSwitchWaitListedRequest(
-                bracket_id = 45785789, 
-                club_id = 23231322, 
+                bracket_id = 45785789,
+                club_id = 23231322,
                 team_source = dupr_backend.models.team0.Team0(
                     delta = 1.337, 
                     game1 = 56, 
@@ -183,7 +180,7 @@ class TestBracketPlayerSwitchWaitListedRequest(unittest.TestCase):
                         validated_match = True, 
                         verified_email = True, ), 
                     team_rating = 1.337, 
-                    winner = True, ), 
+                    winner = True, ),
                 team_target = dupr_backend.models.team0.Team0(
                     delta = 1.337, 
                     game1 = 56, 
@@ -329,7 +326,7 @@ class TestBracketPlayerSwitchWaitListedRequest(unittest.TestCase):
                     team_rating = 1.337, 
                     winner = True, )
             )
-        else :
+        else:
             return BracketPlayerSwitchWaitListedRequest(
                 bracket_id = 45785789,
                 club_id = 23231322,

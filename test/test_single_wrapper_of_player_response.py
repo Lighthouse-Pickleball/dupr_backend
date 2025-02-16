@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_player_response import SingleWrapperOfPlayerResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_of_player_response import SingleWrapperOfPlayerResponse
 
 class TestSingleWrapperOfPlayerResponse(unittest.TestCase):
     """SingleWrapperOfPlayerResponse unit test stubs"""
@@ -28,17 +25,17 @@ class TestSingleWrapperOfPlayerResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfPlayerResponse:
         """Test SingleWrapperOfPlayerResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfPlayerResponse`
         """
-        model = dupr_backend.models.single_wrapper_of_player_response.SingleWrapperOfPlayerResponse()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfPlayerResponse()
+        if include_optional:
             return SingleWrapperOfPlayerResponse(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 result = dupr_backend.models.player_response.PlayerResponse(
                     age = 55, 
                     display_username = True, 
@@ -165,10 +162,10 @@ class TestSingleWrapperOfPlayerResponse(unittest.TestCase):
                         ], 
                     team_status = 'ACTIVE/INACTIVE', 
                     username = 'X AE A-XII', 
-                    verified_email = False, ), 
+                    verified_email = False, ),
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfPlayerResponse(
         )
         """

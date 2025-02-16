@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.league_match_response import LeagueMatchResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.league_match_response import LeagueMatchResponse
 
 class TestLeagueMatchResponse(unittest.TestCase):
     """LeagueMatchResponse unit test stubs"""
@@ -28,53 +25,53 @@ class TestLeagueMatchResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> LeagueMatchResponse:
         """Test LeagueMatchResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `LeagueMatchResponse`
         """
-        model = dupr_backend.models.league_match_response.LeagueMatchResponse()  # noqa: E501
-        if include_optional :
+        model = LeagueMatchResponse()
+        if include_optional:
             return LeagueMatchResponse(
-                bracket_id = 4684651981, 
-                bracket_name = 'Dreamland Pickleball bracket', 
-                confirmed = True, 
-                display_identity = 'IS20MDL2', 
-                end_date = 'yyyy-mm-dd', 
-                event_format = 'SINGLES', 
-                impacted_draw = True, 
-                in_queue = True, 
-                is_bye_match = False, 
-                is_forfeited = True, 
-                is_next_round_confirmed = True, 
-                is_team_1_tbd = False, 
-                is_team_2_tbd = False, 
-                league_id = 4684651981, 
-                league_match_id = 4684651981, 
-                league_match_status = 'ACTIVE', 
-                league_name = 'Dreamland Pickleball', 
-                location = 'Newport Beach, CA', 
-                match_date = 'yyyy-MM-dd', 
-                match_id = 4684651981, 
-                match_score_added = False, 
-                match_slot = 1, 
-                no_of_games = 3, 
-                registration_id = 4684651981, 
-                round = 56, 
+                bracket_id = 4684651981,
+                bracket_name = 'Dreamland Pickleball bracket',
+                confirmed = True,
+                display_identity = 'IS20MDL2',
+                end_date = 'yyyy-mm-dd',
+                event_format = 'SINGLES',
+                impacted_draw = True,
+                in_queue = True,
+                is_bye_match = False,
+                is_forfeited = True,
+                is_next_round_confirmed = True,
+                is_team_1_tbd = False,
+                is_team_2_tbd = False,
+                league_id = 4684651981,
+                league_match_id = 4684651981,
+                league_match_status = 'ACTIVE',
+                league_name = 'Dreamland Pickleball',
+                location = 'Newport Beach, CA',
+                match_date = 'yyyy-MM-dd',
+                match_id = 4684651981,
+                match_score_added = False,
+                match_slot = 1,
+                no_of_games = 3,
+                registration_id = 4684651981,
+                round = 56,
                 score_format = dupr_backend.models.score_format_response.ScoreFormatResponse(
                     format = 'Best 2 out of 3 Games to 11', 
                     games = 1, 
                     id = 56, 
                     priority = 1, 
                     variant = 'Game 3 to 15 or until win by 2', 
-                    winning_score = 11, ), 
-                start_date = 'yyyy-mm-dd', 
-                status = 'ACTIVE', 
-                tag = 'EAST', 
-                tbd_1 = 4684651981, 
-                tbd_2 = 4684651981, 
+                    winning_score = 11, ),
+                start_date = 'yyyy-mm-dd',
+                status = 'ACTIVE',
+                tag = 'EAST',
+                tbd_1 = 4684651981,
+                tbd_2 = 4684651981,
                 teams = [
                     dupr_backend.models.team_response.TeamResponse(
                         delta = '-0.682', 
@@ -113,11 +110,11 @@ class TestLeagueMatchResponse(unittest.TestCase):
                         serial = 1, 
                         team_rating = '4.659', 
                         winner = True, )
-                    ], 
-                user_id = 4684651981, 
+                    ],
+                user_id = 4684651981,
                 venue = 'Dreamland Pickleball'
             )
-        else :
+        else:
             return LeagueMatchResponse(
                 bracket_id = 4684651981,
                 bracket_name = 'Dreamland Pickleball bracket',

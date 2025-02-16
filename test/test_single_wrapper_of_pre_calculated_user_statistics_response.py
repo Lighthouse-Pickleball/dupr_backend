@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_pre_calculated_user_statistics_response import SingleWrapperOfPreCalculatedUserStatisticsResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_of_pre_calculated_user_statistics_response import SingleWrapperOfPreCalculatedUserStatisticsResponse
 
 class TestSingleWrapperOfPreCalculatedUserStatisticsResponse(unittest.TestCase):
     """SingleWrapperOfPreCalculatedUserStatisticsResponse unit test stubs"""
@@ -28,17 +25,17 @@ class TestSingleWrapperOfPreCalculatedUserStatisticsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfPreCalculatedUserStatisticsResponse:
         """Test SingleWrapperOfPreCalculatedUserStatisticsResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfPreCalculatedUserStatisticsResponse`
         """
-        model = dupr_backend.models.single_wrapper_of_pre_calculated_user_statistics_response.SingleWrapperOfPreCalculatedUserStatisticsResponse()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfPreCalculatedUserStatisticsResponse()
+        if include_optional:
             return SingleWrapperOfPreCalculatedUserStatisticsResponse(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 result = dupr_backend.models.pre_calculated_user_statistics_response.PreCalculatedUserStatisticsResponse(
                     doubles = dupr_backend.models.match_ratings.MatchRatings(
                         average_opponent_dupr = '3.254', 
@@ -57,10 +54,10 @@ class TestSingleWrapperOfPreCalculatedUserStatisticsResponse(unittest.TestCase):
                         average_points_won_percent = '67%', 
                         half_life = '3.0', 
                         losses = 12, 
-                        wins = 4, ), ), 
+                        wins = 4, ), ),
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfPreCalculatedUserStatisticsResponse(
         )
         """

@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.notification_history_response import NotificationHistoryResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.notification_history_response import NotificationHistoryResponse
 
 class TestNotificationHistoryResponse(unittest.TestCase):
     """NotificationHistoryResponse unit test stubs"""
@@ -28,23 +25,23 @@ class TestNotificationHistoryResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> NotificationHistoryResponse:
         """Test NotificationHistoryResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `NotificationHistoryResponse`
         """
-        model = dupr_backend.models.notification_history_response.NotificationHistoryResponse()  # noqa: E501
-        if include_optional :
+        model = NotificationHistoryResponse()
+        if include_optional:
             return NotificationHistoryResponse(
                 data = {
                     'key' : dupr_backend.models.notification_response.NotificationResponse()
-                    }, 
-                id = '', 
+                    },
+                id = '',
                 type = ''
             )
-        else :
+        else:
             return NotificationHistoryResponse(
                 data = {
                     'key' : dupr_backend.models.notification_response.NotificationResponse()

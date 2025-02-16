@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.league_fees_request import LeagueFeesRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.league_fees_request import LeagueFeesRequest
 
 class TestLeagueFeesRequest(unittest.TestCase):
     """LeagueFeesRequest unit test stubs"""
@@ -28,20 +25,20 @@ class TestLeagueFeesRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> LeagueFeesRequest:
         """Test LeagueFeesRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `LeagueFeesRequest`
         """
-        model = dupr_backend.models.league_fees_request.LeagueFeesRequest()  # noqa: E501
-        if include_optional :
+        model = LeagueFeesRequest()
+        if include_optional:
             return LeagueFeesRequest(
-                member_fee = 500.0, 
+                member_fee = 500.0,
                 non_member_fee = 500.0
             )
-        else :
+        else:
             return LeagueFeesRequest(
                 member_fee = 500.0,
                 non_member_fee = 500.0,

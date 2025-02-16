@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.geocoding_result import GeocodingResult  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.geocoding_result import GeocodingResult
 
 class TestGeocodingResult(unittest.TestCase):
     """GeocodingResult unit test stubs"""
@@ -28,15 +25,15 @@ class TestGeocodingResult(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> GeocodingResult:
         """Test GeocodingResult
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `GeocodingResult`
         """
-        model = dupr_backend.models.geocoding_result.GeocodingResult()  # noqa: E501
-        if include_optional :
+        model = GeocodingResult()
+        if include_optional:
             return GeocodingResult(
                 address_components = [
                     dupr_backend.models.address_component.AddressComponent(
@@ -45,8 +42,8 @@ class TestGeocodingResult(unittest.TestCase):
                         types = [
                             'ADMINISTRATIVE_AREA_LEVEL_1'
                             ], )
-                    ], 
-                formatted_address = '', 
+                    ],
+                formatted_address = '',
                 geometry = dupr_backend.models.geometry.Geometry(
                     bounds = dupr_backend.models.bounds.Bounds(
                         northeast = dupr_backend.models.lat_lng.LatLng(
@@ -57,20 +54,20 @@ class TestGeocodingResult(unittest.TestCase):
                             lng = 1.337, ), ), 
                     location = , 
                     location_type = 'APPROXIMATE', 
-                    viewport = dupr_backend.models.bounds.Bounds(), ), 
-                partial_match = True, 
-                place_id = '', 
+                    viewport = dupr_backend.models.bounds.Bounds(), ),
+                partial_match = True,
+                place_id = '',
                 plus_code = dupr_backend.models.plus_code.PlusCode(
                     compound_code = '', 
-                    global_code = '', ), 
+                    global_code = '', ),
                 postcode_localities = [
                     ''
-                    ], 
+                    ],
                 types = [
                     'ACCOUNTING'
                     ]
             )
-        else :
+        else:
             return GeocodingResult(
         )
         """

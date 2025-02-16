@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.player_sort import PlayerSort  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.player_sort import PlayerSort
 
 class TestPlayerSort(unittest.TestCase):
     """PlayerSort unit test stubs"""
@@ -28,20 +25,20 @@ class TestPlayerSort(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> PlayerSort:
         """Test PlayerSort
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PlayerSort`
         """
-        model = dupr_backend.models.player_sort.PlayerSort()  # noqa: E501
-        if include_optional :
+        model = PlayerSort()
+        if include_optional:
             return PlayerSort(
-                order = 'ASC/DESC', 
+                order = 'ASC/DESC',
                 parameter = 'RATINGS'
             )
-        else :
+        else:
             return PlayerSort(
         )
         """

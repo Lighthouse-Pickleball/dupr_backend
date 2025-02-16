@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.user_settings_request import UserSettingsRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.user_settings_request import UserSettingsRequest
 
 class TestUserSettingsRequest(unittest.TestCase):
     """UserSettingsRequest unit test stubs"""
@@ -28,21 +25,21 @@ class TestUserSettingsRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> UserSettingsRequest:
         """Test UserSettingsRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `UserSettingsRequest`
         """
-        model = dupr_backend.models.user_settings_request.UserSettingsRequest()  # noqa: E501
-        if include_optional :
+        model = UserSettingsRequest()
+        if include_optional:
             return UserSettingsRequest(
                 settings = {
                     'key' : ''
                     }
             )
-        else :
+        else:
             return UserSettingsRequest(
                 settings = {
                     'key' : ''

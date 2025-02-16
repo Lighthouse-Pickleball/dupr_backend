@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **empty** | **bool** | Are results empty | 
@@ -23,12 +24,12 @@ json = "{}"
 # create an instance of PageOfOpenPlayMember from a JSON string
 page_of_open_play_member_instance = PageOfOpenPlayMember.from_json(json)
 # print the JSON string representation of the object
-print PageOfOpenPlayMember.to_json()
+print(PageOfOpenPlayMember.to_json())
 
 # convert the object into a dict
 page_of_open_play_member_dict = page_of_open_play_member_instance.to_dict()
 # create an instance of PageOfOpenPlayMember from a dict
-page_of_open_play_member_form_dict = page_of_open_play_member.from_dict(page_of_open_play_member_dict)
+page_of_open_play_member_from_dict = PageOfOpenPlayMember.from_dict(page_of_open_play_member_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

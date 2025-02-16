@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **str** |  | [optional] 
@@ -22,12 +23,12 @@ json = "{}"
 # create an instance of AutocompletePrediction from a JSON string
 autocomplete_prediction_instance = AutocompletePrediction.from_json(json)
 # print the JSON string representation of the object
-print AutocompletePrediction.to_json()
+print(AutocompletePrediction.to_json())
 
 # convert the object into a dict
 autocomplete_prediction_dict = autocomplete_prediction_instance.to_dict()
 # create an instance of AutocompletePrediction from a dict
-autocomplete_prediction_form_dict = autocomplete_prediction.from_dict(autocomplete_prediction_dict)
+autocomplete_prediction_from_dict = AutocompletePrediction.from_dict(autocomplete_prediction_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

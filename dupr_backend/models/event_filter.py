@@ -17,80 +17,96 @@ import pprint
 import re  # noqa: F401
 import json
 
-
-from typing import List, Optional
-from pydantic import BaseModel, Field, StrictStr, conlist, validator
+from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional
 from dupr_backend.models.distance import Distance
 from dupr_backend.models.geo_point import GeoPoint
+from typing import Optional, Set
+from typing_extensions import Self
 
 class EventFilter(BaseModel):
     """
     EventFilter
-    """
+    """ # noqa: E501
     distance: Optional[Distance] = None
     division: Optional[StrictStr] = None
-    geo_point: Optional[GeoPoint] = Field(None, alias="geoPoint")
+    geo_point: Optional[GeoPoint] = Field(default=None, alias="geoPoint")
     name: Optional[StrictStr] = None
-    place_id: Optional[StrictStr] = Field(None, alias="placeId")
-    statuses: Optional[conlist(StrictStr)] = None
+    place_id: Optional[StrictStr] = Field(default=None, alias="placeId")
+    statuses: Optional[List[StrictStr]] = None
     type: Optional[StrictStr] = None
-    __properties = ["distance", "division", "geoPoint", "name", "placeId", "statuses", "type"]
+    __properties: ClassVar[List[str]] = ["distance", "division", "geoPoint", "name", "placeId", "statuses", "type"]
 
-    @validator('division')
+    @field_validator('division')
     def division_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('DUPR12', 'DUPR14', 'DUPR16', 'DUPR18', 'DUPR20', 'DUPR22', 'DUPR_OPEN'):
+        if value not in set(['DUPR12', 'DUPR14', 'DUPR16', 'DUPR18', 'DUPR20', 'DUPR22', 'DUPR_OPEN']):
             raise ValueError("must be one of enum values ('DUPR12', 'DUPR14', 'DUPR16', 'DUPR18', 'DUPR20', 'DUPR22', 'DUPR_OPEN')")
         return value
 
-    @validator('statuses')
+    @field_validator('statuses')
     def statuses_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
         for i in value:
-            if i not in ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING'):
+            if i not in set(['ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING']):
                 raise ValueError("each list item must be one of ('ACTIVE', 'CANCELLED', 'COMPLETE', 'CONFIRMED', 'DELETED', 'FORFEITED', 'INACTIVE', 'INVITED', 'IN_PROGRESS', 'MATCH_BYE', 'NOT_CONFIRMED', 'ONGOING', 'PENDING', 'SUSPENDED_TOS_13', 'UPCOMING')")
         return value
 
-    @validator('type')
+    @field_validator('type')
     def type_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('MARQUE', 'SHOWDOWN', 'STANDARD'):
+        if value not in set(['MARQUE', 'SHOWDOWN', 'STANDARD']):
             raise ValueError("must be one of enum values ('MARQUE', 'SHOWDOWN', 'STANDARD')")
         return value
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> EventFilter:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of EventFilter from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         # override the default output from pydantic by calling `to_dict()` of distance
         if self.distance:
             _dict['distance'] = self.distance.to_dict()
@@ -100,20 +116,20 @@ class EventFilter(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> EventFilter:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of EventFilter from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return EventFilter.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = EventFilter.parse_obj({
-            "distance": Distance.from_dict(obj.get("distance")) if obj.get("distance") is not None else None,
+        _obj = cls.model_validate({
+            "distance": Distance.from_dict(obj["distance"]) if obj.get("distance") is not None else None,
             "division": obj.get("division"),
-            "geo_point": GeoPoint.from_dict(obj.get("geoPoint")) if obj.get("geoPoint") is not None else None,
+            "geoPoint": GeoPoint.from_dict(obj["geoPoint"]) if obj.get("geoPoint") is not None else None,
             "name": obj.get("name"),
-            "place_id": obj.get("placeId"),
+            "placeId": obj.get("placeId"),
             "statuses": obj.get("statuses"),
             "type": obj.get("type")
         })

@@ -17,68 +17,84 @@ import pprint
 import re  # noqa: F401
 import json
 
-
-from typing import List, Optional
-from pydantic import BaseModel, Field, StrictStr, conlist, validator
+from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional
+from typing import Optional, Set
+from typing_extensions import Self
 
 class AddressComponent(BaseModel):
     """
     AddressComponent
-    """
-    long_name: Optional[StrictStr] = Field(None, alias="longName")
-    short_name: Optional[StrictStr] = Field(None, alias="shortName")
-    types: Optional[conlist(StrictStr)] = None
-    __properties = ["longName", "shortName", "types"]
+    """ # noqa: E501
+    long_name: Optional[StrictStr] = Field(default=None, alias="longName")
+    short_name: Optional[StrictStr] = Field(default=None, alias="shortName")
+    types: Optional[List[StrictStr]] = None
+    __properties: ClassVar[List[str]] = ["longName", "shortName", "types"]
 
-    @validator('types')
+    @field_validator('types')
     def types_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
         for i in value:
-            if i not in ('ADMINISTRATIVE_AREA_LEVEL_1', 'ADMINISTRATIVE_AREA_LEVEL_2', 'ADMINISTRATIVE_AREA_LEVEL_3', 'ADMINISTRATIVE_AREA_LEVEL_4', 'ADMINISTRATIVE_AREA_LEVEL_5', 'AIRPORT', 'ARCHIPELAGO', 'ART_GALLERY', 'BAR', 'BUS_STATION', 'CAFE', 'CAMPGROUND', 'CAR_RENTAL', 'CAR_REPAIR', 'CLOTHING_STORE', 'COLLOQUIAL_AREA', 'CONTINENT', 'COUNTRY', 'DRUGSTORE', 'ELECTRONICS_STORE', 'ESTABLISHMENT', 'FINANCE', 'FLOOR', 'FOOD', 'GENERAL_CONTRACTOR', 'HEALTH', 'HOME_GOODS_STORE', 'INSURANCE_AGENCY', 'INTERSECTION', 'LAWYER', 'LIGHT_RAIL_STATION', 'LOCALITY', 'LOCAL_GOVERNMENT_OFFICE', 'LODGING', 'MEAL_DELIVERY', 'MEAL_TAKEAWAY', 'MOVING_COMPANY', 'MUSEUM', 'NATURAL_FEATURE', 'NEIGHBORHOOD', 'PAINTER', 'PARK', 'PARKING', 'PLUS_CODE', 'POINT_OF_INTEREST', 'POLITICAL', 'POSTAL_CODE', 'POSTAL_CODE_PREFIX', 'POSTAL_CODE_SUFFIX', 'POSTAL_TOWN', 'POST_BOX', 'PREMISE', 'PRIMARY_SCHOOL', 'REAL_ESTATE_AGENCY', 'RESTAURANT', 'ROOM', 'ROUTE', 'RV_PARK', 'SCHOOL', 'SECONDARY_SCHOOL', 'SHOPPING_MALL', 'STORAGE', 'STORE', 'STREET_ADDRESS', 'STREET_NUMBER', 'SUBLOCALITY', 'SUBLOCALITY_LEVEL_1', 'SUBLOCALITY_LEVEL_2', 'SUBLOCALITY_LEVEL_3', 'SUBLOCALITY_LEVEL_4', 'SUBLOCALITY_LEVEL_5', 'SUBPREMISE', 'SUBWAY_STATION', 'TOURIST_ATTRACTION', 'TOWN_SQUARE', 'TRAIN_STATION', 'TRANSIT_STATION', 'TRAVEL_AGENCY', 'UNKNOWN', 'WARD'):
+            if i not in set(['ADMINISTRATIVE_AREA_LEVEL_1', 'ADMINISTRATIVE_AREA_LEVEL_2', 'ADMINISTRATIVE_AREA_LEVEL_3', 'ADMINISTRATIVE_AREA_LEVEL_4', 'ADMINISTRATIVE_AREA_LEVEL_5', 'AIRPORT', 'ARCHIPELAGO', 'ART_GALLERY', 'BAR', 'BUS_STATION', 'CAFE', 'CAMPGROUND', 'CAR_RENTAL', 'CAR_REPAIR', 'CLOTHING_STORE', 'COLLOQUIAL_AREA', 'CONTINENT', 'COUNTRY', 'DRUGSTORE', 'ELECTRONICS_STORE', 'ESTABLISHMENT', 'FINANCE', 'FLOOR', 'FOOD', 'GENERAL_CONTRACTOR', 'HEALTH', 'HOME_GOODS_STORE', 'INSURANCE_AGENCY', 'INTERSECTION', 'LAWYER', 'LIGHT_RAIL_STATION', 'LOCALITY', 'LOCAL_GOVERNMENT_OFFICE', 'LODGING', 'MEAL_DELIVERY', 'MEAL_TAKEAWAY', 'MOVING_COMPANY', 'MUSEUM', 'NATURAL_FEATURE', 'NEIGHBORHOOD', 'PAINTER', 'PARK', 'PARKING', 'PLUS_CODE', 'POINT_OF_INTEREST', 'POLITICAL', 'POSTAL_CODE', 'POSTAL_CODE_PREFIX', 'POSTAL_CODE_SUFFIX', 'POSTAL_TOWN', 'POST_BOX', 'PREMISE', 'PRIMARY_SCHOOL', 'REAL_ESTATE_AGENCY', 'RESTAURANT', 'ROOM', 'ROUTE', 'RV_PARK', 'SCHOOL', 'SECONDARY_SCHOOL', 'SHOPPING_MALL', 'STORAGE', 'STORE', 'STREET_ADDRESS', 'STREET_NUMBER', 'SUBLOCALITY', 'SUBLOCALITY_LEVEL_1', 'SUBLOCALITY_LEVEL_2', 'SUBLOCALITY_LEVEL_3', 'SUBLOCALITY_LEVEL_4', 'SUBLOCALITY_LEVEL_5', 'SUBPREMISE', 'SUBWAY_STATION', 'TOURIST_ATTRACTION', 'TOWN_SQUARE', 'TRAIN_STATION', 'TRANSIT_STATION', 'TRAVEL_AGENCY', 'UNKNOWN', 'WARD']):
                 raise ValueError("each list item must be one of ('ADMINISTRATIVE_AREA_LEVEL_1', 'ADMINISTRATIVE_AREA_LEVEL_2', 'ADMINISTRATIVE_AREA_LEVEL_3', 'ADMINISTRATIVE_AREA_LEVEL_4', 'ADMINISTRATIVE_AREA_LEVEL_5', 'AIRPORT', 'ARCHIPELAGO', 'ART_GALLERY', 'BAR', 'BUS_STATION', 'CAFE', 'CAMPGROUND', 'CAR_RENTAL', 'CAR_REPAIR', 'CLOTHING_STORE', 'COLLOQUIAL_AREA', 'CONTINENT', 'COUNTRY', 'DRUGSTORE', 'ELECTRONICS_STORE', 'ESTABLISHMENT', 'FINANCE', 'FLOOR', 'FOOD', 'GENERAL_CONTRACTOR', 'HEALTH', 'HOME_GOODS_STORE', 'INSURANCE_AGENCY', 'INTERSECTION', 'LAWYER', 'LIGHT_RAIL_STATION', 'LOCALITY', 'LOCAL_GOVERNMENT_OFFICE', 'LODGING', 'MEAL_DELIVERY', 'MEAL_TAKEAWAY', 'MOVING_COMPANY', 'MUSEUM', 'NATURAL_FEATURE', 'NEIGHBORHOOD', 'PAINTER', 'PARK', 'PARKING', 'PLUS_CODE', 'POINT_OF_INTEREST', 'POLITICAL', 'POSTAL_CODE', 'POSTAL_CODE_PREFIX', 'POSTAL_CODE_SUFFIX', 'POSTAL_TOWN', 'POST_BOX', 'PREMISE', 'PRIMARY_SCHOOL', 'REAL_ESTATE_AGENCY', 'RESTAURANT', 'ROOM', 'ROUTE', 'RV_PARK', 'SCHOOL', 'SECONDARY_SCHOOL', 'SHOPPING_MALL', 'STORAGE', 'STORE', 'STREET_ADDRESS', 'STREET_NUMBER', 'SUBLOCALITY', 'SUBLOCALITY_LEVEL_1', 'SUBLOCALITY_LEVEL_2', 'SUBLOCALITY_LEVEL_3', 'SUBLOCALITY_LEVEL_4', 'SUBLOCALITY_LEVEL_5', 'SUBPREMISE', 'SUBWAY_STATION', 'TOURIST_ATTRACTION', 'TOWN_SQUARE', 'TRAIN_STATION', 'TRANSIT_STATION', 'TRAVEL_AGENCY', 'UNKNOWN', 'WARD')")
         return value
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> AddressComponent:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of AddressComponent from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> AddressComponent:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of AddressComponent from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return AddressComponent.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = AddressComponent.parse_obj({
-            "long_name": obj.get("longName"),
-            "short_name": obj.get("shortName"),
+        _obj = cls.model_validate({
+            "longName": obj.get("longName"),
+            "shortName": obj.get("shortName"),
             "types": obj.get("types")
         })
         return _obj

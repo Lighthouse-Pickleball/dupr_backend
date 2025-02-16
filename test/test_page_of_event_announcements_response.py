@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.page_of_event_announcements_response import PageOfEventAnnouncementsResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.page_of_event_announcements_response import PageOfEventAnnouncementsResponse
 
 class TestPageOfEventAnnouncementsResponse(unittest.TestCase):
     """PageOfEventAnnouncementsResponse unit test stubs"""
@@ -28,19 +25,19 @@ class TestPageOfEventAnnouncementsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> PageOfEventAnnouncementsResponse:
         """Test PageOfEventAnnouncementsResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `PageOfEventAnnouncementsResponse`
         """
-        model = dupr_backend.models.page_of_event_announcements_response.PageOfEventAnnouncementsResponse()  # noqa: E501
-        if include_optional :
+        model = PageOfEventAnnouncementsResponse()
+        if include_optional:
             return PageOfEventAnnouncementsResponse(
-                empty = False, 
-                has_more = False, 
-                has_previous = True, 
+                empty = False,
+                has_more = False,
+                has_previous = True,
                 hits = [
                     dupr_backend.models.event_announcements_response.EventAnnouncementsResponse(
                         announcement_id = 45785789, 
@@ -65,13 +62,13 @@ class TestPageOfEventAnnouncementsResponse(unittest.TestCase):
                         sms_sent = 10, 
                         status = 'ACTIVE/IN_ACTIVE/COMPLETE', 
                         title = 'announcement', )
-                    ], 
-                limit = 10, 
-                offset = 90, 
-                total = 100, 
+                    ],
+                limit = 10,
+                offset = 90,
+                total = 100,
                 total_value_relation = 'GREATER_THAN_OR_EQUAL_TO'
             )
-        else :
+        else:
             return PageOfEventAnnouncementsResponse(
                 empty = False,
                 has_more = False,

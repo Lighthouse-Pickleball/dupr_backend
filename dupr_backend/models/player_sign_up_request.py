@@ -18,116 +18,134 @@ import re  # noqa: F401
 import json
 
 from datetime import date
-from typing import Optional, Union
-from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, confloat, conint, validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from typing_extensions import Annotated
+from typing import Optional, Set
+from typing_extensions import Self
 
 class PlayerSignUpRequest(BaseModel):
     """
     PlayerSignUpRequest
-    """
-    address_id: StrictInt = Field(..., alias="addressId")
-    ambassador_code: Optional[StrictStr] = Field(None, alias="ambassadorCode")
-    birthdate: date = Field(...)
-    client_key: Optional[StrictStr] = Field(None, alias="clientKey")
-    default_rating: Optional[StrictStr] = Field(None, alias="defaultRating")
-    doubles_rating: Optional[Union[confloat(le=8, ge=0.1, strict=True), conint(le=8, ge=1, strict=True)]] = Field(None, alias="doublesRating")
-    email: StrictStr = Field(...)
-    enable_newsletter: StrictBool = Field(..., alias="enableNewsletter")
-    first_name: StrictStr = Field(..., alias="firstName")
-    full_name: StrictStr = Field(..., alias="fullName")
-    gender: StrictStr = Field(...)
-    hand: StrictStr = Field(...)
-    identifier: Optional[StrictStr] = Field(None, description="An unique identifier of this user from your platform")
-    iso_code: Optional[StrictStr] = Field(None, alias="isoCode")
-    last_name: StrictStr = Field(..., alias="lastName")
-    media_id: Optional[StrictInt] = Field(None, alias="mediaId")
-    password: StrictStr = Field(...)
+    """ # noqa: E501
+    address_id: StrictInt = Field(alias="addressId")
+    ambassador_code: Optional[StrictStr] = Field(default=None, alias="ambassadorCode")
+    birthdate: date
+    client_key: Optional[StrictStr] = Field(default=None, alias="clientKey")
+    default_rating: Optional[StrictStr] = Field(default=None, alias="defaultRating")
+    doubles_rating: Optional[Union[Annotated[float, Field(le=8, strict=True, ge=0.1)], Annotated[int, Field(le=8, strict=True, ge=1)]]] = Field(default=None, alias="doublesRating")
+    email: StrictStr
+    enable_newsletter: StrictBool = Field(alias="enableNewsletter")
+    first_name: StrictStr = Field(alias="firstName")
+    full_name: StrictStr = Field(alias="fullName")
+    gender: StrictStr
+    hand: StrictStr
+    identifier: Optional[StrictStr] = Field(default=None, description="An unique identifier of this user from your platform")
+    iso_code: Optional[StrictStr] = Field(default=None, alias="isoCode")
+    last_name: StrictStr = Field(alias="lastName")
+    media_id: Optional[StrictInt] = Field(default=None, alias="mediaId")
+    password: StrictStr
     phone: Optional[StrictStr] = None
-    singles_rating: Optional[Union[confloat(le=8, ge=0.1, strict=True), conint(le=8, ge=1, strict=True)]] = Field(None, alias="singlesRating")
-    user_id: Optional[StrictInt] = Field(None, alias="userId")
+    singles_rating: Optional[Union[Annotated[float, Field(le=8, strict=True, ge=0.1)], Annotated[int, Field(le=8, strict=True, ge=1)]]] = Field(default=None, alias="singlesRating")
+    user_id: Optional[StrictInt] = Field(default=None, alias="userId")
     username: Optional[StrictStr] = None
-    __properties = ["addressId", "ambassadorCode", "birthdate", "clientKey", "defaultRating", "doublesRating", "email", "enableNewsletter", "firstName", "fullName", "gender", "hand", "identifier", "isoCode", "lastName", "mediaId", "password", "phone", "singlesRating", "userId", "username"]
+    __properties: ClassVar[List[str]] = ["addressId", "ambassadorCode", "birthdate", "clientKey", "defaultRating", "doublesRating", "email", "enableNewsletter", "firstName", "fullName", "gender", "hand", "identifier", "isoCode", "lastName", "mediaId", "password", "phone", "singlesRating", "userId", "username"]
 
-    @validator('default_rating')
+    @field_validator('default_rating')
     def default_rating_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in ('DOUBLES', 'SINGLES'):
+        if value not in set(['DOUBLES', 'SINGLES']):
             raise ValueError("must be one of enum values ('DOUBLES', 'SINGLES')")
         return value
 
-    @validator('gender')
+    @field_validator('gender')
     def gender_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in ('FEMALE', 'MALE'):
+        if value not in set(['FEMALE', 'MALE']):
             raise ValueError("must be one of enum values ('FEMALE', 'MALE')")
         return value
 
-    @validator('hand')
+    @field_validator('hand')
     def hand_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in ('BOTH', 'LEFT', 'NONE', 'RIGHT'):
+        if value not in set(['BOTH', 'LEFT', 'NONE', 'RIGHT']):
             raise ValueError("must be one of enum values ('BOTH', 'LEFT', 'NONE', 'RIGHT')")
         return value
 
-    class Config:
-        """Pydantic configuration"""
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.dict(by_alias=True))
+        return pprint.pformat(self.model_dump(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> PlayerSignUpRequest:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of PlayerSignUpRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self):
-        """Returns the dictionary representation of the model using alias"""
-        _dict = self.dict(by_alias=True,
-                          exclude={
-                          },
-                          exclude_none=True)
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> PlayerSignUpRequest:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of PlayerSignUpRequest from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return PlayerSignUpRequest.parse_obj(obj)
+            return cls.model_validate(obj)
 
-        _obj = PlayerSignUpRequest.parse_obj({
-            "address_id": obj.get("addressId"),
-            "ambassador_code": obj.get("ambassadorCode"),
+        _obj = cls.model_validate({
+            "addressId": obj.get("addressId"),
+            "ambassadorCode": obj.get("ambassadorCode"),
             "birthdate": obj.get("birthdate"),
-            "client_key": obj.get("clientKey"),
-            "default_rating": obj.get("defaultRating"),
-            "doubles_rating": obj.get("doublesRating"),
+            "clientKey": obj.get("clientKey"),
+            "defaultRating": obj.get("defaultRating"),
+            "doublesRating": obj.get("doublesRating"),
             "email": obj.get("email"),
-            "enable_newsletter": obj.get("enableNewsletter"),
-            "first_name": obj.get("firstName"),
-            "full_name": obj.get("fullName"),
+            "enableNewsletter": obj.get("enableNewsletter"),
+            "firstName": obj.get("firstName"),
+            "fullName": obj.get("fullName"),
             "gender": obj.get("gender"),
             "hand": obj.get("hand"),
             "identifier": obj.get("identifier"),
-            "iso_code": obj.get("isoCode"),
-            "last_name": obj.get("lastName"),
-            "media_id": obj.get("mediaId"),
+            "isoCode": obj.get("isoCode"),
+            "lastName": obj.get("lastName"),
+            "mediaId": obj.get("mediaId"),
             "password": obj.get("password"),
             "phone": obj.get("phone"),
-            "singles_rating": obj.get("singlesRating"),
-            "user_id": obj.get("userId"),
+            "singlesRating": obj.get("singlesRating"),
+            "userId": obj.get("userId"),
             "username": obj.get("username")
         })
         return _obj

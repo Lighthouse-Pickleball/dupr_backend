@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **client_id** | **int** |  | 
@@ -17,12 +18,12 @@ json = "{}"
 # create an instance of AddClientKeyRequest from a JSON string
 add_client_key_request_instance = AddClientKeyRequest.from_json(json)
 # print the JSON string representation of the object
-print AddClientKeyRequest.to_json()
+print(AddClientKeyRequest.to_json())
 
 # convert the object into a dict
 add_client_key_request_dict = add_client_key_request_instance.to_dict()
 # create an instance of AddClientKeyRequest from a dict
-add_client_key_request_form_dict = add_client_key_request.from_dict(add_client_key_request_dict)
+add_client_key_request_from_dict = AddClientKeyRequest.from_dict(add_client_key_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

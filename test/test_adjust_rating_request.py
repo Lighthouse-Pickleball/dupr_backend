@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.adjust_rating_request import AdjustRatingRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.adjust_rating_request import AdjustRatingRequest
 
 class TestAdjustRatingRequest(unittest.TestCase):
     """AdjustRatingRequest unit test stubs"""
@@ -28,26 +25,26 @@ class TestAdjustRatingRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> AdjustRatingRequest:
         """Test AdjustRatingRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `AdjustRatingRequest`
         """
-        model = dupr_backend.models.adjust_rating_request.AdjustRatingRequest()  # noqa: E501
-        if include_optional :
+        model = AdjustRatingRequest()
+        if include_optional:
             return AdjustRatingRequest(
-                doubles = 3.7, 
-                doubles_verified = 4.3, 
-                dupr_id = 'GB0NV05E', 
-                email = '', 
-                reason = 'rating edit reason', 
-                singles = 3.145, 
-                singles_verified = 4.145, 
+                doubles = 3.7,
+                doubles_verified = 4.3,
+                dupr_id = 'GB0NV05E',
+                email = '',
+                reason = 'rating edit reason',
+                singles = 3.145,
+                singles_verified = 4.145,
                 user_id = 26518181881
             )
-        else :
+        else:
             return AdjustRatingRequest(
                 reason = 'rating edit reason',
         )

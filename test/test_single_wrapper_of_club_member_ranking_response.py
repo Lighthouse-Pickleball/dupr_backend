@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_club_member_ranking_response import SingleWrapperOfClubMemberRankingResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_of_club_member_ranking_response import SingleWrapperOfClubMemberRankingResponse
 
 class TestSingleWrapperOfClubMemberRankingResponse(unittest.TestCase):
     """SingleWrapperOfClubMemberRankingResponse unit test stubs"""
@@ -28,17 +25,17 @@ class TestSingleWrapperOfClubMemberRankingResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfClubMemberRankingResponse:
         """Test SingleWrapperOfClubMemberRankingResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfClubMemberRankingResponse`
         """
-        model = dupr_backend.models.single_wrapper_of_club_member_ranking_response.SingleWrapperOfClubMemberRankingResponse()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfClubMemberRankingResponse()
+        if include_optional:
             return SingleWrapperOfClubMemberRankingResponse(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 result = dupr_backend.models.club_member_ranking_response.ClubMemberRankingResponse(
                     member_ranking = dupr_backend.models.page_of_member_ranking.PageOfMemberRanking(
                         empty = False, 
@@ -63,10 +60,10 @@ class TestSingleWrapperOfClubMemberRankingResponse(unittest.TestCase):
                         image_url = '', 
                         ranking = 56, 
                         rating = '', 
-                        reliability = 56, ), ), 
+                        reliability = 56, ), ),
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfClubMemberRankingResponse(
         )
         """

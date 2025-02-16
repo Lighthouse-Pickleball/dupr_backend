@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.announcements_notifications import AnnouncementsNotifications  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.announcements_notifications import AnnouncementsNotifications
 
 class TestAnnouncementsNotifications(unittest.TestCase):
     """AnnouncementsNotifications unit test stubs"""
@@ -28,25 +25,25 @@ class TestAnnouncementsNotifications(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> AnnouncementsNotifications:
         """Test AnnouncementsNotifications
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `AnnouncementsNotifications`
         """
-        model = dupr_backend.models.announcements_notifications.AnnouncementsNotifications()  # noqa: E501
-        if include_optional :
+        model = AnnouncementsNotifications()
+        if include_optional:
             return AnnouncementsNotifications(
-                announcement_id = 56, 
-                bracket_id = 56, 
-                email_sent = True, 
-                league_id = 56, 
-                push_sent = True, 
-                sms_sent = True, 
+                announcement_id = 56,
+                bracket_id = 56,
+                email_sent = True,
+                league_id = 56,
+                push_sent = True,
+                sms_sent = True,
                 user_id = 56
             )
-        else :
+        else:
             return AnnouncementsNotifications(
         )
         """

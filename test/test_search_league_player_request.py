@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.search_league_player_request import SearchLeaguePlayerRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.search_league_player_request import SearchLeaguePlayerRequest
 
 class TestSearchLeaguePlayerRequest(unittest.TestCase):
     """SearchLeaguePlayerRequest unit test stubs"""
@@ -28,30 +25,30 @@ class TestSearchLeaguePlayerRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SearchLeaguePlayerRequest:
         """Test SearchLeaguePlayerRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SearchLeaguePlayerRequest`
         """
-        model = dupr_backend.models.search_league_player_request.SearchLeaguePlayerRequest()  # noqa: E501
-        if include_optional :
+        model = SearchLeaguePlayerRequest()
+        if include_optional:
             return SearchLeaguePlayerRequest(
-                bracket_id = 7828935307, 
+                bracket_id = 7828935307,
                 filters = dupr_backend.models.filters.Filters(
                     is_registered = True, 
                     is_wait_listed = True, 
                     partner_status = 'NO_PARTNER', 
                     payment_status = 'COMPLETE/PENDING', 
-                    registration_status = 'CLOSED', ), 
-                league_id = 7828935307, 
-                query = '*', 
+                    registration_status = 'CLOSED', ),
+                league_id = 7828935307,
+                query = '*',
                 sort = dupr_backend.models.player_sort.PlayerSort(
                     order = 'ASC/DESC', 
                     parameter = 'RATINGS', )
             )
-        else :
+        else:
             return SearchLeaguePlayerRequest(
                 bracket_id = 7828935307,
                 query = '*',

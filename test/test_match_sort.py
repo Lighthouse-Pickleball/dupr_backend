@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.match_sort import MatchSort  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.match_sort import MatchSort
 
 class TestMatchSort(unittest.TestCase):
     """MatchSort unit test stubs"""
@@ -28,20 +25,20 @@ class TestMatchSort(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> MatchSort:
         """Test MatchSort
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MatchSort`
         """
-        model = dupr_backend.models.match_sort.MatchSort()  # noqa: E501
-        if include_optional :
+        model = MatchSort()
+        if include_optional:
             return MatchSort(
-                order = 'ASC/DESC', 
+                order = 'ASC/DESC',
                 parameter = 'MATCH_DATE/CREATED_DATE/MODIFIED_DATE'
             )
-        else :
+        else:
             return MatchSort(
         )
         """

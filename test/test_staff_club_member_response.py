@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.staff_club_member_response import StaffClubMemberResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.staff_club_member_response import StaffClubMemberResponse
 
 class TestStaffClubMemberResponse(unittest.TestCase):
     """StaffClubMemberResponse unit test stubs"""
@@ -28,15 +25,15 @@ class TestStaffClubMemberResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> StaffClubMemberResponse:
         """Test StaffClubMemberResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `StaffClubMemberResponse`
         """
-        model = dupr_backend.models.staff_club_member_response.StaffClubMemberResponse()  # noqa: E501
-        if include_optional :
+        model = StaffClubMemberResponse()
+        if include_optional:
             return StaffClubMemberResponse(
                 directors = [
                     dupr_backend.models.staff_club_member.StaffClubMember(
@@ -50,9 +47,9 @@ class TestStaffClubMemberResponse(unittest.TestCase):
                         phone = '211564789', 
                         role_id = 1231231, 
                         user_id = 1231231, )
-                    ], 
-                max_director_count = 56, 
-                max_organizer_count = 56, 
+                    ],
+                max_director_count = 56,
+                max_organizer_count = 56,
                 organizers = [
                     dupr_backend.models.staff_club_member.StaffClubMember(
                         approval = 'APPROVED', 
@@ -67,7 +64,7 @@ class TestStaffClubMemberResponse(unittest.TestCase):
                         user_id = 1231231, )
                     ]
             )
-        else :
+        else:
             return StaffClubMemberResponse(
                 directors = [
                     dupr_backend.models.staff_club_member.StaffClubMember(

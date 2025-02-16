@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bye** | **bool** |  | [optional] 
@@ -20,12 +21,12 @@ json = "{}"
 # create an instance of SeedMatchReq from a JSON string
 seed_match_req_instance = SeedMatchReq.from_json(json)
 # print the JSON string representation of the object
-print SeedMatchReq.to_json()
+print(SeedMatchReq.to_json())
 
 # convert the object into a dict
 seed_match_req_dict = seed_match_req_instance.to_dict()
 # create an instance of SeedMatchReq from a dict
-seed_match_req_form_dict = seed_match_req.from_dict(seed_match_req_dict)
+seed_match_req_from_dict = SeedMatchReq.from_dict(seed_match_req_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

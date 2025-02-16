@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **format** | **str** |  | 
@@ -21,12 +22,12 @@ json = "{}"
 # create an instance of ScoreFormatResponse from a JSON string
 score_format_response_instance = ScoreFormatResponse.from_json(json)
 # print the JSON string representation of the object
-print ScoreFormatResponse.to_json()
+print(ScoreFormatResponse.to_json())
 
 # convert the object into a dict
 score_format_response_dict = score_format_response_instance.to_dict()
 # create an instance of ScoreFormatResponse from a dict
-score_format_response_form_dict = score_format_response.from_dict(score_format_response_dict)
+score_format_response_from_dict = ScoreFormatResponse.from_dict(score_format_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

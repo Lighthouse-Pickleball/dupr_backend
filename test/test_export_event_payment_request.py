@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.export_event_payment_request import ExportEventPaymentRequest  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.export_event_payment_request import ExportEventPaymentRequest
 
 class TestExportEventPaymentRequest(unittest.TestCase):
     """ExportEventPaymentRequest unit test stubs"""
@@ -28,21 +25,21 @@ class TestExportEventPaymentRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ExportEventPaymentRequest:
         """Test ExportEventPaymentRequest
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ExportEventPaymentRequest`
         """
-        model = dupr_backend.models.export_event_payment_request.ExportEventPaymentRequest()  # noqa: E501
-        if include_optional :
+        model = ExportEventPaymentRequest()
+        if include_optional:
             return ExportEventPaymentRequest(
-                bracket_id = 7828935307, 
-                club_id = 7828935307, 
+                bracket_id = 7828935307,
+                club_id = 7828935307,
                 league_id = 7828935307
             )
-        else :
+        else:
             return ExportEventPaymentRequest(
                 bracket_id = 7828935307,
         )

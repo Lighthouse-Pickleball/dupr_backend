@@ -14,122 +14,120 @@
 
 import unittest
 
-import dupr_backend
-from dupr_backend.api.activity_newsfeeds_for_club_api import ActivityNewsfeedsForClubApi  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.api.activity_newsfeeds_for_club_api import ActivityNewsfeedsForClubApi
 
 
 class TestActivityNewsfeedsForClubApi(unittest.TestCase):
     """ActivityNewsfeedsForClubApi unit test stubs"""
 
-    def setUp(self):
-        self.api = dupr_backend.api.activity_newsfeeds_for_club_api.ActivityNewsfeedsForClubApi()  # noqa: E501
+    def setUp(self) -> None:
+        self.api = ActivityNewsfeedsForClubApi()
 
-    def tearDown(self):
+    def tearDown(self) -> None:
         pass
 
-    def test_comments_using_get(self):
+    def test_comments_using_get(self) -> None:
         """Test case for comments_using_get
 
-        comments  # noqa: E501
+        comments
         """
         pass
 
-    def test_create_post_using_post1(self):
+    def test_create_post_using_post1(self) -> None:
         """Test case for create_post_using_post1
 
-        createPost  # noqa: E501
+        createPost
         """
         pass
 
-    def test_delete_comment_using_delete(self):
+    def test_delete_comment_using_delete(self) -> None:
         """Test case for delete_comment_using_delete
 
-        deleteComment  # noqa: E501
+        deleteComment
         """
         pass
 
-    def test_edit_post_using_put(self):
+    def test_edit_post_using_put(self) -> None:
         """Test case for edit_post_using_put
 
-        editPost  # noqa: E501
+        editPost
         """
         pass
 
-    def test_fetch_feeds_using_get1(self):
+    def test_fetch_feeds_using_get1(self) -> None:
         """Test case for fetch_feeds_using_get1
 
-        fetchFeeds  # noqa: E501
+        fetchFeeds
         """
         pass
 
-    def test_follow_using_post1(self):
+    def test_follow_using_post1(self) -> None:
         """Test case for follow_using_post1
 
-        follow  # noqa: E501
+        follow
         """
         pass
 
-    def test_get_pinned_posts_using_get(self):
+    def test_get_pinned_posts_using_get(self) -> None:
         """Test case for get_pinned_posts_using_get
 
-        getPinnedPosts  # noqa: E501
+        getPinnedPosts
         """
         pass
 
-    def test_get_post_detail_using_get(self):
+    def test_get_post_detail_using_get(self) -> None:
         """Test case for get_post_detail_using_get
 
-        getPostDetail  # noqa: E501
+        getPostDetail
         """
         pass
 
-    def test_pin_post_using_post(self):
+    def test_pin_post_using_post(self) -> None:
         """Test case for pin_post_using_post
 
-        pinPost  # noqa: E501
+        pinPost
         """
         pass
 
-    def test_react_using_post1(self):
+    def test_react_using_post1(self) -> None:
         """Test case for react_using_post1
 
-        react  # noqa: E501
+        react
         """
         pass
 
-    def test_reactions_using_get(self):
+    def test_reactions_using_get(self) -> None:
         """Test case for reactions_using_get
 
-        reactions  # noqa: E501
+        reactions
         """
         pass
 
-    def test_remove_post_using_delete(self):
+    def test_remove_post_using_delete(self) -> None:
         """Test case for remove_post_using_delete
 
-        removePost  # noqa: E501
+        removePost
         """
         pass
 
-    def test_unfollow_using_delete1(self):
+    def test_unfollow_using_delete1(self) -> None:
         """Test case for unfollow_using_delete1
 
-        unfollow  # noqa: E501
+        unfollow
         """
         pass
 
-    def test_unpin_post_using_delete(self):
+    def test_unpin_post_using_delete(self) -> None:
         """Test case for unpin_post_using_delete
 
-        unpinPost  # noqa: E501
+        unpinPost
         """
         pass
 
-    def test_update_comment_using_put(self):
+    def test_update_comment_using_put(self) -> None:
         """Test case for update_comment_using_put
 
-        updateComment  # noqa: E501
+        updateComment
         """
         pass
 

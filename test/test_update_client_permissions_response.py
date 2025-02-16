@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.update_client_permissions_response import UpdateClientPermissionsResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.update_client_permissions_response import UpdateClientPermissionsResponse
 
 class TestUpdateClientPermissionsResponse(unittest.TestCase):
     """UpdateClientPermissionsResponse unit test stubs"""
@@ -28,20 +25,20 @@ class TestUpdateClientPermissionsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> UpdateClientPermissionsResponse:
         """Test UpdateClientPermissionsResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `UpdateClientPermissionsResponse`
         """
-        model = dupr_backend.models.update_client_permissions_response.UpdateClientPermissionsResponse()  # noqa: E501
-        if include_optional :
+        model = UpdateClientPermissionsResponse()
+        if include_optional:
             return UpdateClientPermissionsResponse(
-                client_id = 56, 
+                client_id = 56,
                 key_id = 56
             )
-        else :
+        else:
             return UpdateClientPermissionsResponse(
                 client_id = 56,
                 key_id = 56,

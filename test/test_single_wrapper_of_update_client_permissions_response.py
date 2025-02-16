@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_update_client_permissions_response import SingleWrapperOfUpdateClientPermissionsResponse  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_of_update_client_permissions_response import SingleWrapperOfUpdateClientPermissionsResponse
 
 class TestSingleWrapperOfUpdateClientPermissionsResponse(unittest.TestCase):
     """SingleWrapperOfUpdateClientPermissionsResponse unit test stubs"""
@@ -28,23 +25,23 @@ class TestSingleWrapperOfUpdateClientPermissionsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfUpdateClientPermissionsResponse:
         """Test SingleWrapperOfUpdateClientPermissionsResponse
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfUpdateClientPermissionsResponse`
         """
-        model = dupr_backend.models.single_wrapper_of_update_client_permissions_response.SingleWrapperOfUpdateClientPermissionsResponse()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfUpdateClientPermissionsResponse()
+        if include_optional:
             return SingleWrapperOfUpdateClientPermissionsResponse(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 result = dupr_backend.models.update_client_permissions_response.UpdateClientPermissionsResponse(
                     client_id = 56, 
-                    key_id = 56, ), 
+                    key_id = 56, ),
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfUpdateClientPermissionsResponse(
         )
         """

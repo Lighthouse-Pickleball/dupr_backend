@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_player_rating_overtime import SingleWrapperOfPlayerRatingOvertime  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.single_wrapper_of_player_rating_overtime import SingleWrapperOfPlayerRatingOvertime
 
 class TestSingleWrapperOfPlayerRatingOvertime(unittest.TestCase):
     """SingleWrapperOfPlayerRatingOvertime unit test stubs"""
@@ -28,17 +25,17 @@ class TestSingleWrapperOfPlayerRatingOvertime(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> SingleWrapperOfPlayerRatingOvertime:
         """Test SingleWrapperOfPlayerRatingOvertime
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `SingleWrapperOfPlayerRatingOvertime`
         """
-        model = dupr_backend.models.single_wrapper_of_player_rating_overtime.SingleWrapperOfPlayerRatingOvertime()  # noqa: E501
-        if include_optional :
+        model = SingleWrapperOfPlayerRatingOvertime()
+        if include_optional:
             return SingleWrapperOfPlayerRatingOvertime(
-                message = 'Show this message to user.', 
+                message = 'Show this message to user.',
                 result = dupr_backend.models.player_rating_overtime.PlayerRatingOvertime(
                     player_id = 56, 
                     rating_history = [
@@ -48,10 +45,10 @@ class TestSingleWrapperOfPlayerRatingOvertime(unittest.TestCase):
                             match_date = 'yyyy-MM-dd', 
                             rating = 1.337, )
                         ], 
-                    type = 'DOUBLES', ), 
+                    type = 'DOUBLES', ),
                 status = 'FAILURE'
             )
-        else :
+        else:
             return SingleWrapperOfPlayerRatingOvertime(
         )
         """

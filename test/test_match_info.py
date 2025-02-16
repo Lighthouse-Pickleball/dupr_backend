@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.match_info import MatchInfo  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.match_info import MatchInfo
 
 class TestMatchInfo(unittest.TestCase):
     """MatchInfo unit test stubs"""
@@ -28,21 +25,21 @@ class TestMatchInfo(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> MatchInfo:
         """Test MatchInfo
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `MatchInfo`
         """
-        model = dupr_backend.models.match_info.MatchInfo()  # noqa: E501
-        if include_optional :
+        model = MatchInfo()
+        if include_optional:
             return MatchInfo(
-                event_format = 'DOUBLES', 
-                event_name = '', 
+                event_format = 'DOUBLES',
+                event_name = '',
                 match_source = 'CLUB'
             )
-        else :
+        else:
             return MatchInfo(
                 event_format = 'DOUBLES',
                 match_source = 'CLUB',

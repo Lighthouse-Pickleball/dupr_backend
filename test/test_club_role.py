@@ -13,11 +13,8 @@
 
 
 import unittest
-import datetime
 
-import dupr_backend
-from dupr_backend.models.club_role import ClubRole  # noqa: E501
-from dupr_backend.rest import ApiException
+from dupr_backend.models.club_role import ClubRole
 
 class TestClubRole(unittest.TestCase):
     """ClubRole unit test stubs"""
@@ -28,25 +25,25 @@ class TestClubRole(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
+    def make_instance(self, include_optional) -> ClubRole:
         """Test ClubRole
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ClubRole`
         """
-        model = dupr_backend.models.club_role.ClubRole()  # noqa: E501
-        if include_optional :
+        model = ClubRole()
+        if include_optional:
             return ClubRole(
-                approval_status = 'APPROVED', 
-                club_id = 56, 
-                created = '', 
-                join_type = 'INVITATION', 
-                request_by = 56, 
-                role = 'ADMIN', 
+                approval_status = 'APPROVED',
+                club_id = 56,
+                created = '',
+                join_type = 'INVITATION',
+                request_by = 56,
+                role = 'ADMIN',
                 role_id = 56
             )
-        else :
+        else:
             return ClubRole(
                 approval_status = 'APPROVED',
                 club_id = 56,
