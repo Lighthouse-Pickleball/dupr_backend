@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **score_format** | [**ScoreFormatResponse**](ScoreFormatResponse.md) |  | [optional] 
 **status** | **str** |  | [optional] 
 **teams** | [**List[TeamResponse]**](TeamResponse.md) |  | 
-**tournament** | **str** |  | 
+**tournament** | **str** |  | [optional] 
 **user_id** | **int** |  | 
 **validator** | [**BasicUserInfo**](BasicUserInfo.md) |  | [optional] 
 **venue** | **str** |  | 

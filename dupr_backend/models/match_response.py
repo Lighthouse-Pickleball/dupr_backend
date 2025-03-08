@@ -55,7 +55,7 @@ class MatchResponse(BaseModel):
     score_format: Optional[ScoreFormatResponse] = Field(default=None, alias="scoreFormat")
     status: Optional[StrictStr] = None
     teams: List[TeamResponse]
-    tournament: StrictStr
+    tournament: Optional[StrictStr] = None
     user_id: StrictInt = Field(alias="userId")
     validator: Optional[BasicUserInfo] = None
     venue: StrictStr

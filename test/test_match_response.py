@@ -165,7 +165,6 @@ class TestMatchResponse(unittest.TestCase):
                         team_rating = '4.659', 
                         winner = True, )
                     ],
-                tournament = 'Newport Beach Doubles Shootout',
                 user_id = 231312312312,
                 venue = 'Dreamland Pickleball',
         )
