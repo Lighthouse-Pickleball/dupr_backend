@@ -305,7 +305,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_match_rating_simulator_using_post**
-> SingleWrapperOfMatchRatingSimulatorResponse get_match_rating_simulator_using_post(version, request, x_forwarded_for=x_forwarded_for)
+> SingleWrapperOfMatchRatingSimulatorResponse get_match_rating_simulator_using_post(authorization, version, request, x_forwarded_for=x_forwarded_for)
 
 getMatchRatingSimulator
 
@@ -330,13 +330,14 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MatchesApi(api_client)
+    authorization = 'Bearer ' # str |  (default to 'Bearer ')
     version = 'v1.2' # str | version (default to 'v1.2')
     request = dupr_backend.MatchRatingSimulatorRequest() # MatchRatingSimulatorRequest | request
     x_forwarded_for = 'x_forwarded_for_example' # str | x-forwarded-for (optional)
 
     try:
         # getMatchRatingSimulator
-        api_response = api_instance.get_match_rating_simulator_using_post(version, request, x_forwarded_for=x_forwarded_for)
+        api_response = api_instance.get_match_rating_simulator_using_post(authorization, version, request, x_forwarded_for=x_forwarded_for)
         print("The response of MatchesApi->get_match_rating_simulator_using_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -350,6 +351,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **authorization** | **str**|  | [default to &#39;Bearer &#39;]
  **version** | **str**| version | [default to &#39;v1.2&#39;]
  **request** | [**MatchRatingSimulatorRequest**](MatchRatingSimulatorRequest.md)| request | 
  **x_forwarded_for** | **str**| x-forwarded-for | [optional] 

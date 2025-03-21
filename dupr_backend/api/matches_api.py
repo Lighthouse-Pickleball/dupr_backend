@@ -1214,6 +1214,7 @@ class MatchesApi:
     @validate_call
     def get_match_rating_simulator_using_post(
         self,
+        authorization: StrictStr,
         version: Annotated[StrictStr, Field(description="version")],
         request: Annotated[MatchRatingSimulatorRequest, Field(description="request")],
         x_forwarded_for: Annotated[Optional[StrictStr], Field(description="x-forwarded-for")] = None,
@@ -1233,6 +1234,8 @@ class MatchesApi:
         """getMatchRatingSimulator
 
 
+        :param authorization: (required)
+        :type authorization: str
         :param version: version (required)
         :type version: str
         :param request: request (required)
@@ -1262,6 +1265,7 @@ class MatchesApi:
         """ # noqa: E501
 
         _param = self._get_match_rating_simulator_using_post_serialize(
+            authorization=authorization,
             version=version,
             request=request,
             x_forwarded_for=x_forwarded_for,
@@ -1289,6 +1293,7 @@ class MatchesApi:
     @validate_call
     def get_match_rating_simulator_using_post_with_http_info(
         self,
+        authorization: StrictStr,
         version: Annotated[StrictStr, Field(description="version")],
         request: Annotated[MatchRatingSimulatorRequest, Field(description="request")],
         x_forwarded_for: Annotated[Optional[StrictStr], Field(description="x-forwarded-for")] = None,
@@ -1308,6 +1313,8 @@ class MatchesApi:
         """getMatchRatingSimulator
 
 
+        :param authorization: (required)
+        :type authorization: str
         :param version: version (required)
         :type version: str
         :param request: request (required)
@@ -1337,6 +1344,7 @@ class MatchesApi:
         """ # noqa: E501
 
         _param = self._get_match_rating_simulator_using_post_serialize(
+            authorization=authorization,
             version=version,
             request=request,
             x_forwarded_for=x_forwarded_for,
@@ -1364,6 +1372,7 @@ class MatchesApi:
     @validate_call
     def get_match_rating_simulator_using_post_without_preload_content(
         self,
+        authorization: StrictStr,
         version: Annotated[StrictStr, Field(description="version")],
         request: Annotated[MatchRatingSimulatorRequest, Field(description="request")],
         x_forwarded_for: Annotated[Optional[StrictStr], Field(description="x-forwarded-for")] = None,
@@ -1383,6 +1392,8 @@ class MatchesApi:
         """getMatchRatingSimulator
 
 
+        :param authorization: (required)
+        :type authorization: str
         :param version: version (required)
         :type version: str
         :param request: request (required)
@@ -1412,6 +1423,7 @@ class MatchesApi:
         """ # noqa: E501
 
         _param = self._get_match_rating_simulator_using_post_serialize(
+            authorization=authorization,
             version=version,
             request=request,
             x_forwarded_for=x_forwarded_for,
@@ -1434,6 +1446,7 @@ class MatchesApi:
 
     def _get_match_rating_simulator_using_post_serialize(
         self,
+        authorization,
         version,
         request,
         x_forwarded_for,
@@ -1462,6 +1475,8 @@ class MatchesApi:
             _path_params['version'] = version
         # process the query parameters
         # process the header parameters
+        if authorization is not None:
+            _header_params['Authorization'] = authorization
         if x_forwarded_for is not None:
             _header_params['x-forwarded-for'] = x_forwarded_for
         # process the form parameters
