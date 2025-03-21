@@ -1214,9 +1214,9 @@ class MatchesApi:
     @validate_call
     def get_match_rating_simulator_using_post(
         self,
-        authorization: StrictStr,
         version: Annotated[StrictStr, Field(description="version")],
         request: Annotated[MatchRatingSimulatorRequest, Field(description="request")],
+        authorization: Optional[StrictStr] = None,
         x_forwarded_for: Annotated[Optional[StrictStr], Field(description="x-forwarded-for")] = None,
         _request_timeout: Union[
             None,
@@ -1234,12 +1234,12 @@ class MatchesApi:
         """getMatchRatingSimulator
 
 
-        :param authorization: (required)
-        :type authorization: str
         :param version: version (required)
         :type version: str
         :param request: request (required)
         :type request: MatchRatingSimulatorRequest
+        :param authorization:
+        :type authorization: str
         :param x_forwarded_for: x-forwarded-for
         :type x_forwarded_for: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1265,9 +1265,9 @@ class MatchesApi:
         """ # noqa: E501
 
         _param = self._get_match_rating_simulator_using_post_serialize(
-            authorization=authorization,
             version=version,
             request=request,
+            authorization=authorization,
             x_forwarded_for=x_forwarded_for,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1293,9 +1293,9 @@ class MatchesApi:
     @validate_call
     def get_match_rating_simulator_using_post_with_http_info(
         self,
-        authorization: StrictStr,
         version: Annotated[StrictStr, Field(description="version")],
         request: Annotated[MatchRatingSimulatorRequest, Field(description="request")],
+        authorization: Optional[StrictStr] = None,
         x_forwarded_for: Annotated[Optional[StrictStr], Field(description="x-forwarded-for")] = None,
         _request_timeout: Union[
             None,
@@ -1313,12 +1313,12 @@ class MatchesApi:
         """getMatchRatingSimulator
 
 
-        :param authorization: (required)
-        :type authorization: str
         :param version: version (required)
         :type version: str
         :param request: request (required)
         :type request: MatchRatingSimulatorRequest
+        :param authorization:
+        :type authorization: str
         :param x_forwarded_for: x-forwarded-for
         :type x_forwarded_for: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1344,9 +1344,9 @@ class MatchesApi:
         """ # noqa: E501
 
         _param = self._get_match_rating_simulator_using_post_serialize(
-            authorization=authorization,
             version=version,
             request=request,
+            authorization=authorization,
             x_forwarded_for=x_forwarded_for,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1372,9 +1372,9 @@ class MatchesApi:
     @validate_call
     def get_match_rating_simulator_using_post_without_preload_content(
         self,
-        authorization: StrictStr,
         version: Annotated[StrictStr, Field(description="version")],
         request: Annotated[MatchRatingSimulatorRequest, Field(description="request")],
+        authorization: Optional[StrictStr] = None,
         x_forwarded_for: Annotated[Optional[StrictStr], Field(description="x-forwarded-for")] = None,
         _request_timeout: Union[
             None,
@@ -1392,12 +1392,12 @@ class MatchesApi:
         """getMatchRatingSimulator
 
 
-        :param authorization: (required)
-        :type authorization: str
         :param version: version (required)
         :type version: str
         :param request: request (required)
         :type request: MatchRatingSimulatorRequest
+        :param authorization:
+        :type authorization: str
         :param x_forwarded_for: x-forwarded-for
         :type x_forwarded_for: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1423,9 +1423,9 @@ class MatchesApi:
         """ # noqa: E501
 
         _param = self._get_match_rating_simulator_using_post_serialize(
-            authorization=authorization,
             version=version,
             request=request,
+            authorization=authorization,
             x_forwarded_for=x_forwarded_for,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1446,9 +1446,9 @@ class MatchesApi:
 
     def _get_match_rating_simulator_using_post_serialize(
         self,
-        authorization,
         version,
         request,
+        authorization,
         x_forwarded_for,
         _request_auth,
         _content_type,
