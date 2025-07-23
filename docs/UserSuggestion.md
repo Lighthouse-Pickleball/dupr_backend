@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**user_id** | **int** |  | 
+**dupr_id** | **str** |  | 
+**status** | **str** |  | 
+**name** | **str** |  | 
+**image_url** | **str** |  | [optional] 
 **address** | **str** |  | [optional] 
 **brief_followers** | [**List[UserFollow]**](UserFollow.md) |  | [optional] 
-**dupr_id** | **str** |  | 
 **follower_count** | **int** |  | [optional] 
-**image_url** | **str** |  | [optional] 
-**name** | **str** |  | 
-**status** | **str** |  | 
-**user_id** | **int** |  | 
 
 ## Example
 

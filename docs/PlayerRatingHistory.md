@@ -5,18 +5,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**changed_by_admin** | **bool** |  | 
-**created** | **str** |  | 
-**doubles** | **float** |  | [optional] 
-**doubles_provisional** | **bool** |  | 
-**match_date** | **str** |  | [optional] 
 **rating_history_id** | **int** |  | 
-**singles** | **float** |  | [optional] 
-**singles_provisional** | **bool** |  | 
-**status** | **str** |  | [optional] 
-**user_email** | **str** |  | 
 **user_id** | **int** |  | 
 **user_name** | **str** |  | 
+**user_email** | **str** |  | 
+**singles** | **float** |  | [optional] 
+**singles_provisional** | **bool** |  | 
+**doubles** | **float** |  | [optional] 
+**doubles_provisional** | **bool** |  | 
+**changed_by_admin** | **bool** |  | 
+**created** | **datetime** |  | 
+**match_date** | **date** |  | [optional] 
+**status** | **str** |  | [optional] 
 
 ## Example
 

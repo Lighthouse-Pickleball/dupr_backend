@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**club_type** | **str** |  | 
 **club_type_id** | **int** |  | 
+**club_type** | **str** |  | 
 
 ## Example
 

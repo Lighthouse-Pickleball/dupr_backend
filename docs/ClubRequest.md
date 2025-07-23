@@ -5,18 +5,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address_id** | **int** |  | [optional] 
-**attributes** | [**Dict[str, Attribute]**](Attribute.md) |  | [optional] 
-**club_id** | **int** |  | 
 **club_name** | **str** |  | 
 **club_type_id** | **int** |  | 
-**currency_code** | **str** |  | 
-**long_description** | [**ContentRequest**](ContentRequest.md) |  | [optional] 
-**manifest** | [**ContentRequest**](ContentRequest.md) |  | [optional] 
 **media_id** | **int** |  | [optional] 
+**address_id** | **int** |  | [optional] 
+**manifest** | [**ContentRequest**](ContentRequest.md) |  | [optional] 
+**short_description** | [**ContentRequest**](ContentRequest.md) |  | [optional] 
+**long_description** | [**ContentRequest**](ContentRequest.md) |  | [optional] 
+**attributes** | [**Dict[str, Attribute]**](Attribute.md) |  | [optional] 
+**club_id** | **int** |  | 
 **model_type** | **str** |  | 
 **model_value** | **float** |  | 
-**short_description** | [**ContentRequest**](ContentRequest.md) |  | [optional] 
+**currency_code** | **str** |  | 
 
 ## Example
 

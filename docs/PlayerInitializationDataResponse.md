@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**days_left_for_initialization** | **int** |  | [optional] 
-**event_format** | **str** |  | 
-**initialization_status** | **str** |  | 
 **player_id** | **str** |  | 
 **player_name** | **str** |  | 
+**initialization_status** | **str** |  | 
+**days_left_for_initialization** | **int** |  | [optional] 
+**event_format** | **str** |  | 
 **qualification_score** | **float** |  | 
 
 ## Example

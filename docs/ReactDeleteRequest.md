@@ -1,12 +1,13 @@
 # ReactDeleteRequest
 
+The react Id
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] 
-**react** | **str** |  | [optional] 
+**id** | **str** |  | 
+**react** | **str** |  | 
 
 ## Example
 

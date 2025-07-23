@@ -5,16 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count_report** | **int** |  | 
-**created_at** | **int** |  | 
 **id** | **str** |  | 
-**note** | **str** |  | [optional] 
-**report_reason** | **str** |  | 
-**report_type** | **str** |  | 
-**reported_id** | **str** |  | 
 **reporter_id** | **int** |  | 
+**reported_id** | **str** |  | 
+**report_type** | **str** |  | 
+**report_reason** | **str** |  | 
+**note** | **str** |  | [optional] 
 **status** | **str** |  | 
+**created_at** | **int** |  | 
 **updated_at** | **int** |  | 
+**count_report** | **int** |  | 
 
 ## Example
 

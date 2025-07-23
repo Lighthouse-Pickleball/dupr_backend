@@ -1,109 +1,40 @@
 # dupr_backend.UserApi
 
-All URIs are relative to *http://https://backend.mydupr.com*
+All URIs are relative to *https://api.dupr.gg*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_user_using_delete**](UserApi.md#delete_user_using_delete) | **DELETE** /user/{version}/delete | deleteUser
-[**delete_using_delete**](UserApi.md#delete_using_delete) | **DELETE** /notifications/history | delete
-[**get_calculated_statistics_using_get**](UserApi.md#get_calculated_statistics_using_get) | **GET** /user/calculated/{version}/stats/{id} | getCalculatedStatistics
-[**get_profile_using_get**](UserApi.md#get_profile_using_get) | **GET** /user/{version}/profile | getProfile
-[**get_rating_using_get**](UserApi.md#get_rating_using_get) | **GET** /user/{version}/rating | getRating
-[**get_settings_using_get**](UserApi.md#get_settings_using_get) | **GET** /user/{version}/settings | getSettings
-[**get_sponsor_logo_using_get**](UserApi.md#get_sponsor_logo_using_get) | **GET** /user/{version}/sponsor | getSponsorLogo
-[**get_statistics_using_get1**](UserApi.md#get_statistics_using_get1) | **GET** /user/{version}/stats | getStatistics
-[**get_user_initialization_information_bulk_using_post**](UserApi.md#get_user_initialization_information_bulk_using_post) | **POST** /user/{version}/initialization/bulk | getUserInitializationInformationBulk
-[**get_user_initialization_information_using_get**](UserApi.md#get_user_initialization_information_using_get) | **GET** /user/{version}/initialization/{userId} | getUserInitializationInformation
-[**get_verfied_statistics_using_get**](UserApi.md#get_verfied_statistics_using_get) | **GET** /user/verified/{version}/stats | getVerfiedStatistics
-[**history_using_get**](UserApi.md#history_using_get) | **GET** /notifications/history | history
-[**is_sole_director_using_get**](UserApi.md#is_sole_director_using_get) | **GET** /user/{version}/sole_director | isSoleDirector
-[**logout_using_post**](UserApi.md#logout_using_post) | **POST** /user/{version}/logout | logout
-[**reset_password_using_post**](UserApi.md#reset_password_using_post) | **POST** /user/password/{version}/reset | resetPassword
-[**send_email_verification_link_using_post**](UserApi.md#send_email_verification_link_using_post) | **POST** /user/email/verify/{version}/initiate | sendEmailVerificationLink
-[**send_phone_otp_using_post**](UserApi.md#send_phone_otp_using_post) | **POST** /user/phone/{version}/resend | sendPhoneOTP
-[**send_verification_email_using_post**](UserApi.md#send_verification_email_using_post) | **POST** /user/email/{version}/resend | sendVerificationEmail
-[**update_lucra_connection_using_put1**](UserApi.md#update_lucra_connection_using_put1) | **PUT** /user/{version}/lucra-connect | updateLucraConnection
-[**update_preferences_using_put**](UserApi.md#update_preferences_using_put) | **PUT** /user/{version}/preferences | updatePreferences
-[**update_profile_using_put**](UserApi.md#update_profile_using_put) | **PUT** /user/{version}/profile | updateProfile
-[**update_settings_using_put**](UserApi.md#update_settings_using_put) | **PUT** /user/{version}/settings | updateSettings
-[**verify_captcha_using_post**](UserApi.md#verify_captcha_using_post) | **POST** /user/open/captcha/{version}/verify | verifyCaptcha
-[**verify_email_address_using_post**](UserApi.md#verify_email_address_using_post) | **POST** /user/email/{version}/verify | verifyEmailAddress
-[**verify_phone_number_using_post**](UserApi.md#verify_phone_number_using_post) | **POST** /user/phone/{version}/verify | verifyPhoneNumber
+[**delete**](UserApi.md#delete) | **DELETE** /notifications/history | 
+[**delete_user1**](UserApi.md#delete_user1) | **DELETE** /user/{version}/delete | 
+[**get_calculated_statistics**](UserApi.md#get_calculated_statistics) | **GET** /user/calculated/{version}/stats/{id} | 
+[**get_club_membership**](UserApi.md#get_club_membership) | **GET** /user/club/membership | 
+[**get_compliance_data**](UserApi.md#get_compliance_data) | **GET** /user/{version}/compliance | 
+[**get_profile**](UserApi.md#get_profile) | **GET** /user/{version}/profile | 
+[**get_rating**](UserApi.md#get_rating) | **GET** /user/{version}/rating | 
+[**get_settings**](UserApi.md#get_settings) | **GET** /user/{version}/settings | 
+[**get_sponsor_logo**](UserApi.md#get_sponsor_logo) | **GET** /user/{version}/sponsor | 
+[**get_statistics**](UserApi.md#get_statistics) | **GET** /user/{version}/stats | 
+[**get_user_initialization_information**](UserApi.md#get_user_initialization_information) | **GET** /user/{version}/initialization/{userId} | 
+[**get_user_initialization_information_bulk**](UserApi.md#get_user_initialization_information_bulk) | **POST** /user/{version}/initialization/bulk | 
+[**get_verfied_statistics**](UserApi.md#get_verfied_statistics) | **GET** /user/verified/{version}/stats | 
+[**history**](UserApi.md#history) | **GET** /notifications/history | 
+[**is_sole_director**](UserApi.md#is_sole_director) | **GET** /user/{version}/sole_director | 
+[**logout**](UserApi.md#logout) | **POST** /user/{version}/logout | 
+[**reset_password**](UserApi.md#reset_password) | **POST** /user/password/{version}/reset | 
+[**send_email_verification_link**](UserApi.md#send_email_verification_link) | **POST** /user/email/verify/{version}/initiate | 
+[**send_phone_otp**](UserApi.md#send_phone_otp) | **POST** /user/phone/{version}/resend | 
+[**send_verification_email**](UserApi.md#send_verification_email) | **POST** /user/email/{version}/resend | 
+[**update_lucra_connection**](UserApi.md#update_lucra_connection) | **PUT** /user/{version}/lucra-connect | 
+[**update_preferences**](UserApi.md#update_preferences) | **PUT** /user/{version}/preferences | 
+[**update_profile**](UserApi.md#update_profile) | **PUT** /user/{version}/profile | 
+[**update_settings**](UserApi.md#update_settings) | **PUT** /user/{version}/settings | 
+[**verify_captcha**](UserApi.md#verify_captcha) | **POST** /user/open/captcha/{version}/verify | 
+[**verify_email_address**](UserApi.md#verify_email_address) | **POST** /user/email/{version}/verify | 
+[**verify_phone_number**](UserApi.md#verify_phone_number) | **POST** /user/phone/{version}/verify | 
 
 
-# **delete_user_using_delete**
-> SingleWrapperOfUnit delete_user_using_delete(authorization, version)
-
-deleteUser
-
-### Example
-
-
-```python
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
-from dupr_backend.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
-)
-
-
-# Enter a context with an instance of the API client
-with dupr_backend.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = dupr_backend.UserApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-
-    try:
-        # deleteUser
-        api_response = api_instance.delete_user_using_delete(authorization, version)
-        print("The response of UserApi->delete_user_using_delete:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling UserApi->delete_user_using_delete: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
-
-### Return type
-
-[**SingleWrapperOfUnit**](SingleWrapperOfUnit.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **delete_using_delete**
-> int delete_using_delete(authorization, id)
-
-delete
+# **delete**
+> int delete(id)
 
 ### Example
 
@@ -113,10 +44,10 @@ import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -124,16 +55,14 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    id = ['id_example'] # List[str] | id
+    id = ['id_example'] # List[str] | 
 
     try:
-        # delete
-        api_response = api_instance.delete_using_delete(authorization, id)
-        print("The response of UserApi->delete_using_delete:\n")
+        api_response = api_instance.delete(id)
+        print("The response of UserApi->delete:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->delete_using_delete: %s\n" % e)
+        print("Exception when calling UserApi->delete: %s\n" % e)
 ```
 
 
@@ -143,8 +72,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **id** | [**List[str]**](str.md)| id | 
+ **id** | [**List[str]**](str.md)|  | 
 
 ### Return type
 
@@ -164,46 +92,50 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_calculated_statistics_using_get**
-> SingleWrapperOfPreCalculatedUserStatisticsResponse get_calculated_statistics_using_get(authorization, id, version)
-
-getCalculatedStatistics
+# **delete_user1**
+> SingleWrapperUnit delete_user1(version)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_pre_calculated_user_statistics_response import SingleWrapperOfPreCalculatedUserStatisticsResponse
+from dupr_backend.models.single_wrapper_unit import SingleWrapperUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    id = 56 # int | id
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
 
     try:
-        # getCalculatedStatistics
-        api_response = api_instance.get_calculated_statistics_using_get(authorization, id, version)
-        print("The response of UserApi->get_calculated_statistics_using_get:\n")
+        api_response = api_instance.delete_user1(version)
+        print("The response of UserApi->delete_user1:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->get_calculated_statistics_using_get: %s\n" % e)
+        print("Exception when calling UserApi->delete_user1: %s\n" % e)
 ```
 
 
@@ -213,17 +145,15 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **id** | **int**| id | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
 
 ### Return type
 
-[**SingleWrapperOfPreCalculatedUserStatisticsResponse**](SingleWrapperOfPreCalculatedUserStatisticsResponse.md)
+[**SingleWrapperUnit**](SingleWrapperUnit.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -235,45 +165,51 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_profile_using_get**
-> SingleWrapperOfUserResponse get_profile_using_get(authorization, version)
-
-getProfile
+# **get_calculated_statistics**
+> SingleWrapperPreCalculatedUserStatisticsResponse get_calculated_statistics(version, id)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_user_response import SingleWrapperOfUserResponse
+from dupr_backend.models.single_wrapper_pre_calculated_user_statistics_response import SingleWrapperPreCalculatedUserStatisticsResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    id = 56 # int | 
 
     try:
-        # getProfile
-        api_response = api_instance.get_profile_using_get(authorization, version)
-        print("The response of UserApi->get_profile_using_get:\n")
+        api_response = api_instance.get_calculated_statistics(version, id)
+        print("The response of UserApi->get_calculated_statistics:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->get_profile_using_get: %s\n" % e)
+        print("Exception when calling UserApi->get_calculated_statistics: %s\n" % e)
 ```
 
 
@@ -283,16 +219,16 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **id** | **int**|  | 
 
 ### Return type
 
-[**SingleWrapperOfUserResponse**](SingleWrapperOfUserResponse.md)
+[**SingleWrapperPreCalculatedUserStatisticsResponse**](SingleWrapperPreCalculatedUserStatisticsResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -304,64 +240,63 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_rating_using_get**
-> SingleWrapperOfPlayerRatingResponse get_rating_using_get(authorization, version)
-
-getRating
+# **get_club_membership**
+> object get_club_membership()
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_player_rating_response import SingleWrapperOfPlayerRatingResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
 
     try:
-        # getRating
-        api_response = api_instance.get_rating_using_get(authorization, version)
-        print("The response of UserApi->get_rating_using_get:\n")
+        api_response = api_instance.get_club_membership()
+        print("The response of UserApi->get_club_membership:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->get_rating_using_get: %s\n" % e)
+        print("Exception when calling UserApi->get_club_membership: %s\n" % e)
 ```
 
 
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**SingleWrapperOfPlayerRatingResponse**](SingleWrapperOfPlayerRatingResponse.md)
+**object**
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -373,45 +308,50 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_settings_using_get**
-> SingleWrapperOfMapOfstringAndstring get_settings_using_get(authorization, version)
-
-getSettings
+# **get_compliance_data**
+> ResultUserComplianceDataResponse get_compliance_data(version)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_map_ofstring_andstring import SingleWrapperOfMapOfstringAndstring
+from dupr_backend.models.result_user_compliance_data_response import ResultUserComplianceDataResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
 
     try:
-        # getSettings
-        api_response = api_instance.get_settings_using_get(authorization, version)
-        print("The response of UserApi->get_settings_using_get:\n")
+        api_response = api_instance.get_compliance_data(version)
+        print("The response of UserApi->get_compliance_data:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->get_settings_using_get: %s\n" % e)
+        print("Exception when calling UserApi->get_compliance_data: %s\n" % e)
 ```
 
 
@@ -421,16 +361,15 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
 
 ### Return type
 
-[**SingleWrapperOfMapOfstringAndstring**](SingleWrapperOfMapOfstringAndstring.md)
+[**ResultUserComplianceDataResponse**](ResultUserComplianceDataResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -442,45 +381,50 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_sponsor_logo_using_get**
-> SingleWrapperOfSponsorLogoResponse get_sponsor_logo_using_get(obfuscated_id, version)
-
-getSponsorLogo
+# **get_profile**
+> SingleWrapperUserResponse get_profile(version)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_sponsor_logo_response import SingleWrapperOfSponsorLogoResponse
+from dupr_backend.models.single_wrapper_user_response import SingleWrapperUserResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    obfuscated_id = 56 # int | obfuscatedId
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
 
     try:
-        # getSponsorLogo
-        api_response = api_instance.get_sponsor_logo_using_get(obfuscated_id, version)
-        print("The response of UserApi->get_sponsor_logo_using_get:\n")
+        api_response = api_instance.get_profile(version)
+        print("The response of UserApi->get_profile:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->get_sponsor_logo_using_get: %s\n" % e)
+        print("Exception when calling UserApi->get_profile: %s\n" % e)
 ```
 
 
@@ -490,16 +434,15 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obfuscated_id** | **int**| obfuscatedId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
 
 ### Return type
 
-[**SingleWrapperOfSponsorLogoResponse**](SingleWrapperOfSponsorLogoResponse.md)
+[**SingleWrapperUserResponse**](SingleWrapperUserResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -511,45 +454,50 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_statistics_using_get1**
-> SingleWrapperOfUserStatisticResponse get_statistics_using_get1(authorization, version)
-
-getStatistics
+# **get_rating**
+> SingleWrapperPlayerRatingResponse get_rating(version)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_user_statistic_response import SingleWrapperOfUserStatisticResponse
+from dupr_backend.models.single_wrapper_player_rating_response import SingleWrapperPlayerRatingResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
 
     try:
-        # getStatistics
-        api_response = api_instance.get_statistics_using_get1(authorization, version)
-        print("The response of UserApi->get_statistics_using_get1:\n")
+        api_response = api_instance.get_rating(version)
+        print("The response of UserApi->get_rating:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->get_statistics_using_get1: %s\n" % e)
+        print("Exception when calling UserApi->get_rating: %s\n" % e)
 ```
 
 
@@ -559,16 +507,15 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
 
 ### Return type
 
-[**SingleWrapperOfUserStatisticResponse**](SingleWrapperOfUserStatisticResponse.md)
+[**SingleWrapperPlayerRatingResponse**](SingleWrapperPlayerRatingResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -580,48 +527,349 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_user_initialization_information_bulk_using_post**
-> ArrayWrapperOfPlayerInitializationDataResponse get_user_initialization_information_bulk_using_post(authorization, format, version, user_list_request)
-
-getUserInitializationInformationBulk
+# **get_settings**
+> SingleWrapperMapStringString get_settings(version)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.array_wrapper_of_player_initialization_data_response import ArrayWrapperOfPlayerInitializationDataResponse
+from dupr_backend.models.single_wrapper_map_string_string import SingleWrapperMapStringString
+from dupr_backend.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dupr.gg
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "https://api.dupr.gg"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.UserApi(api_client)
+    version = 'version_example' # str | 
+
+    try:
+        api_response = api_instance.get_settings(version)
+        print("The response of UserApi->get_settings:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling UserApi->get_settings: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | **str**|  | 
+
+### Return type
+
+[**SingleWrapperMapStringString**](SingleWrapperMapStringString.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_sponsor_logo**
+> SingleWrapperSponsorLogoResponse get_sponsor_logo(version, obfuscated_id)
+
+### Example
+
+* Bearer (JWT) Authentication (bearerAuth):
+
+```python
+import dupr_backend
+from dupr_backend.models.single_wrapper_sponsor_logo_response import SingleWrapperSponsorLogoResponse
+from dupr_backend.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dupr.gg
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "https://api.dupr.gg"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.UserApi(api_client)
+    version = 'version_example' # str | 
+    obfuscated_id = 56 # int | 
+
+    try:
+        api_response = api_instance.get_sponsor_logo(version, obfuscated_id)
+        print("The response of UserApi->get_sponsor_logo:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling UserApi->get_sponsor_logo: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | **str**|  | 
+ **obfuscated_id** | **int**|  | 
+
+### Return type
+
+[**SingleWrapperSponsorLogoResponse**](SingleWrapperSponsorLogoResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_statistics**
+> SingleWrapperUserStatisticResponse get_statistics(version)
+
+### Example
+
+* Bearer (JWT) Authentication (bearerAuth):
+
+```python
+import dupr_backend
+from dupr_backend.models.single_wrapper_user_statistic_response import SingleWrapperUserStatisticResponse
+from dupr_backend.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dupr.gg
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "https://api.dupr.gg"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.UserApi(api_client)
+    version = 'version_example' # str | 
+
+    try:
+        api_response = api_instance.get_statistics(version)
+        print("The response of UserApi->get_statistics:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling UserApi->get_statistics: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | **str**|  | 
+
+### Return type
+
+[**SingleWrapperUserStatisticResponse**](SingleWrapperUserStatisticResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_user_initialization_information**
+> ArrayWrapperPlayerInitializationProgressResponse get_user_initialization_information(version, user_id)
+
+### Example
+
+* Bearer (JWT) Authentication (bearerAuth):
+
+```python
+import dupr_backend
+from dupr_backend.models.array_wrapper_player_initialization_progress_response import ArrayWrapperPlayerInitializationProgressResponse
+from dupr_backend.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dupr.gg
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "https://api.dupr.gg"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.UserApi(api_client)
+    version = 'version_example' # str | 
+    user_id = 56 # int | 
+
+    try:
+        api_response = api_instance.get_user_initialization_information(version, user_id)
+        print("The response of UserApi->get_user_initialization_information:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling UserApi->get_user_initialization_information: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | **str**|  | 
+ **user_id** | **int**|  | 
+
+### Return type
+
+[**ArrayWrapperPlayerInitializationProgressResponse**](ArrayWrapperPlayerInitializationProgressResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_user_initialization_information_bulk**
+> ArrayWrapperPlayerInitializationDataResponse get_user_initialization_information_bulk(version, format, user_list_request)
+
+### Example
+
+* Bearer (JWT) Authentication (bearerAuth):
+
+```python
+import dupr_backend
+from dupr_backend.models.array_wrapper_player_initialization_data_response import ArrayWrapperPlayerInitializationDataResponse
 from dupr_backend.models.user_list_request import UserListRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    format = 'format_example' # str | format
-    version = 'v1.0' # str | version (default to 'v1.0')
-    user_list_request = dupr_backend.UserListRequest() # UserListRequest | userListRequest
+    version = 'version_example' # str | 
+    format = 'format_example' # str | 
+    user_list_request = dupr_backend.UserListRequest() # UserListRequest | 
 
     try:
-        # getUserInitializationInformationBulk
-        api_response = api_instance.get_user_initialization_information_bulk_using_post(authorization, format, version, user_list_request)
-        print("The response of UserApi->get_user_initialization_information_bulk_using_post:\n")
+        api_response = api_instance.get_user_initialization_information_bulk(version, format, user_list_request)
+        print("The response of UserApi->get_user_initialization_information_bulk:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->get_user_initialization_information_bulk_using_post: %s\n" % e)
+        print("Exception when calling UserApi->get_user_initialization_information_bulk: %s\n" % e)
 ```
 
 
@@ -631,18 +879,17 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **format** | **str**| format | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **user_list_request** | [**UserListRequest**](UserListRequest.md)| userListRequest | 
+ **version** | **str**|  | 
+ **format** | **str**|  | 
+ **user_list_request** | [**UserListRequest**](UserListRequest.md)|  | 
 
 ### Return type
 
-[**ArrayWrapperOfPlayerInitializationDataResponse**](ArrayWrapperOfPlayerInitializationDataResponse.md)
+[**ArrayWrapperPlayerInitializationDataResponse**](ArrayWrapperPlayerInitializationDataResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -654,88 +901,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_user_initialization_information_using_get**
-> ArrayWrapperOfPlayerInitializationProgressResponse get_user_initialization_information_using_get(authorization, user_id, version)
-
-getUserInitializationInformation
+# **get_verfied_statistics**
+> Wrapper get_verfied_statistics(version)
 
 ### Example
 
-
-```python
-import dupr_backend
-from dupr_backend.models.array_wrapper_of_player_initialization_progress_response import ArrayWrapperOfPlayerInitializationProgressResponse
-from dupr_backend.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
-)
-
-
-# Enter a context with an instance of the API client
-with dupr_backend.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = dupr_backend.UserApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    user_id = 56 # int | userId
-    version = 'v1.0' # str | version (default to 'v1.0')
-
-    try:
-        # getUserInitializationInformation
-        api_response = api_instance.get_user_initialization_information_using_get(authorization, user_id, version)
-        print("The response of UserApi->get_user_initialization_information_using_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling UserApi->get_user_initialization_information_using_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **user_id** | **int**| userId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
-
-### Return type
-
-[**ArrayWrapperOfPlayerInitializationProgressResponse**](ArrayWrapperOfPlayerInitializationProgressResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_verfied_statistics_using_get**
-> Wrapper get_verfied_statistics_using_get(authorization, version)
-
-getVerfiedStatistics
-
-### Example
-
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -743,27 +917,34 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
 
     try:
-        # getVerfiedStatistics
-        api_response = api_instance.get_verfied_statistics_using_get(authorization, version)
-        print("The response of UserApi->get_verfied_statistics_using_get:\n")
+        api_response = api_instance.get_verfied_statistics(version)
+        print("The response of UserApi->get_verfied_statistics:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->get_verfied_statistics_using_get: %s\n" % e)
+        print("Exception when calling UserApi->get_verfied_statistics: %s\n" % e)
 ```
 
 
@@ -773,8 +954,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
 
 ### Return type
 
@@ -782,7 +962,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -794,14 +974,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **history_using_get**
-> List[NotificationHistoryResponse] history_using_get(authorization, limit, offset)
-
-history
+# **history**
+> List[NotificationHistoryResponse] history(offset=offset, limit=limit)
 
 ### Example
 
@@ -812,10 +989,10 @@ from dupr_backend.models.notification_history_response import NotificationHistor
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -823,17 +1000,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    limit = 56 # int | limit
-    offset = 56 # int | offset
+    offset = 56 # int |  (optional)
+    limit = 56 # int |  (optional)
 
     try:
-        # history
-        api_response = api_instance.history_using_get(authorization, limit, offset)
-        print("The response of UserApi->history_using_get:\n")
+        api_response = api_instance.history(offset=offset, limit=limit)
+        print("The response of UserApi->history:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->history_using_get: %s\n" % e)
+        print("Exception when calling UserApi->history: %s\n" % e)
 ```
 
 
@@ -843,9 +1018,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **limit** | **int**| limit | 
- **offset** | **int**| offset | 
+ **offset** | **int**|  | [optional] 
+ **limit** | **int**|  | [optional] 
 
 ### Return type
 
@@ -865,45 +1039,50 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **is_sole_director_using_get**
-> SingleWrapperOfboolean is_sole_director_using_get(authorization, version)
-
-isSoleDirector
+# **is_sole_director**
+> SingleWrapperBoolean is_sole_director(version)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_ofboolean import SingleWrapperOfboolean
+from dupr_backend.models.single_wrapper_boolean import SingleWrapperBoolean
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
 
     try:
-        # isSoleDirector
-        api_response = api_instance.is_sole_director_using_get(authorization, version)
-        print("The response of UserApi->is_sole_director_using_get:\n")
+        api_response = api_instance.is_sole_director(version)
+        print("The response of UserApi->is_sole_director:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->is_sole_director_using_get: %s\n" % e)
+        print("Exception when calling UserApi->is_sole_director: %s\n" % e)
 ```
 
 
@@ -913,16 +1092,15 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
 
 ### Return type
 
-[**SingleWrapperOfboolean**](SingleWrapperOfboolean.md)
+[**SingleWrapperBoolean**](SingleWrapperBoolean.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -934,17 +1112,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **logout_using_post**
-> Wrapper logout_using_post(authorization, version, request)
-
-logout
+# **logout**
+> Wrapper logout(version, logout_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -953,28 +1129,35 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.LogoutRequest() # LogoutRequest | request
+    version = 'version_example' # str | 
+    logout_request = dupr_backend.LogoutRequest() # LogoutRequest | 
 
     try:
-        # logout
-        api_response = api_instance.logout_using_post(authorization, version, request)
-        print("The response of UserApi->logout_using_post:\n")
+        api_response = api_instance.logout(version, logout_request)
+        print("The response of UserApi->logout:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->logout_using_post: %s\n" % e)
+        print("Exception when calling UserApi->logout: %s\n" % e)
 ```
 
 
@@ -984,9 +1167,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**LogoutRequest**](LogoutRequest.md)| request | 
+ **version** | **str**|  | 
+ **logout_request** | [**LogoutRequest**](LogoutRequest.md)|  | 
 
 ### Return type
 
@@ -994,7 +1176,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1006,17 +1188,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **reset_password_using_post**
-> Wrapper reset_password_using_post(authorization, version, request)
-
-resetPassword
+# **reset_password**
+> Wrapper reset_password(version, reset_password_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -1025,28 +1205,35 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.ResetPasswordRequest() # ResetPasswordRequest | request
+    version = 'version_example' # str | 
+    reset_password_request = dupr_backend.ResetPasswordRequest() # ResetPasswordRequest | 
 
     try:
-        # resetPassword
-        api_response = api_instance.reset_password_using_post(authorization, version, request)
-        print("The response of UserApi->reset_password_using_post:\n")
+        api_response = api_instance.reset_password(version, reset_password_request)
+        print("The response of UserApi->reset_password:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->reset_password_using_post: %s\n" % e)
+        print("Exception when calling UserApi->reset_password: %s\n" % e)
 ```
 
 
@@ -1056,9 +1243,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**ResetPasswordRequest**](ResetPasswordRequest.md)| request | 
+ **version** | **str**|  | 
+ **reset_password_request** | [**ResetPasswordRequest**](ResetPasswordRequest.md)|  | 
 
 ### Return type
 
@@ -1066,7 +1252,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1078,17 +1264,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **send_email_verification_link_using_post**
-> Wrapper send_email_verification_link_using_post(authorization, version, email_exist_request)
-
-sendEmailVerificationLink
+# **send_email_verification_link**
+> Wrapper send_email_verification_link(version, email_exist_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -1097,28 +1281,35 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    email_exist_request = dupr_backend.EmailExistRequest() # EmailExistRequest | emailExistRequest
+    version = 'version_example' # str | 
+    email_exist_request = dupr_backend.EmailExistRequest() # EmailExistRequest | 
 
     try:
-        # sendEmailVerificationLink
-        api_response = api_instance.send_email_verification_link_using_post(authorization, version, email_exist_request)
-        print("The response of UserApi->send_email_verification_link_using_post:\n")
+        api_response = api_instance.send_email_verification_link(version, email_exist_request)
+        print("The response of UserApi->send_email_verification_link:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->send_email_verification_link_using_post: %s\n" % e)
+        print("Exception when calling UserApi->send_email_verification_link: %s\n" % e)
 ```
 
 
@@ -1128,9 +1319,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **email_exist_request** | [**EmailExistRequest**](EmailExistRequest.md)| emailExistRequest | 
+ **version** | **str**|  | 
+ **email_exist_request** | [**EmailExistRequest**](EmailExistRequest.md)|  | 
 
 ### Return type
 
@@ -1138,7 +1328,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1150,17 +1340,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **send_phone_otp_using_post**
-> Wrapper send_phone_otp_using_post(authorization, version, sms_otp, x_forwarded_for=x_forwarded_for)
-
-sendPhoneOTP
+# **send_phone_otp**
+> Wrapper send_phone_otp(version, send_otp_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -1169,29 +1357,35 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    sms_otp = dupr_backend.SendOtpRequest() # SendOtpRequest | smsOtp
-    x_forwarded_for = 'x_forwarded_for_example' # str | x-forwarded-for (optional)
+    version = 'version_example' # str | 
+    send_otp_request = dupr_backend.SendOtpRequest() # SendOtpRequest | 
 
     try:
-        # sendPhoneOTP
-        api_response = api_instance.send_phone_otp_using_post(authorization, version, sms_otp, x_forwarded_for=x_forwarded_for)
-        print("The response of UserApi->send_phone_otp_using_post:\n")
+        api_response = api_instance.send_phone_otp(version, send_otp_request)
+        print("The response of UserApi->send_phone_otp:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->send_phone_otp_using_post: %s\n" % e)
+        print("Exception when calling UserApi->send_phone_otp: %s\n" % e)
 ```
 
 
@@ -1201,10 +1395,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **sms_otp** | [**SendOtpRequest**](SendOtpRequest.md)| smsOtp | 
- **x_forwarded_for** | **str**| x-forwarded-for | [optional] 
+ **version** | **str**|  | 
+ **send_otp_request** | [**SendOtpRequest**](SendOtpRequest.md)|  | 
 
 ### Return type
 
@@ -1212,7 +1404,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1224,17 +1416,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **send_verification_email_using_post**
-> Wrapper send_verification_email_using_post(authorization, version, email_exist_request)
-
-sendVerificationEmail
+# **send_verification_email**
+> Wrapper send_verification_email(version, email_exist_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -1243,28 +1433,35 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    email_exist_request = dupr_backend.EmailExistRequest() # EmailExistRequest | emailExistRequest
+    version = 'version_example' # str | 
+    email_exist_request = dupr_backend.EmailExistRequest() # EmailExistRequest | 
 
     try:
-        # sendVerificationEmail
-        api_response = api_instance.send_verification_email_using_post(authorization, version, email_exist_request)
-        print("The response of UserApi->send_verification_email_using_post:\n")
+        api_response = api_instance.send_verification_email(version, email_exist_request)
+        print("The response of UserApi->send_verification_email:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->send_verification_email_using_post: %s\n" % e)
+        print("Exception when calling UserApi->send_verification_email: %s\n" % e)
 ```
 
 
@@ -1274,9 +1471,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **email_exist_request** | [**EmailExistRequest**](EmailExistRequest.md)| emailExistRequest | 
+ **version** | **str**|  | 
+ **email_exist_request** | [**EmailExistRequest**](EmailExistRequest.md)|  | 
 
 ### Return type
 
@@ -1284,7 +1480,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1296,17 +1492,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_lucra_connection_using_put1**
-> Wrapper update_lucra_connection_using_put1(authorization, version, request)
-
-updateLucraConnection
+# **update_lucra_connection**
+> Wrapper update_lucra_connection(version, user_lucra_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -1315,28 +1509,35 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.UserLucraRequest() # UserLucraRequest | request
+    version = 'version_example' # str | 
+    user_lucra_request = dupr_backend.UserLucraRequest() # UserLucraRequest | 
 
     try:
-        # updateLucraConnection
-        api_response = api_instance.update_lucra_connection_using_put1(authorization, version, request)
-        print("The response of UserApi->update_lucra_connection_using_put1:\n")
+        api_response = api_instance.update_lucra_connection(version, user_lucra_request)
+        print("The response of UserApi->update_lucra_connection:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->update_lucra_connection_using_put1: %s\n" % e)
+        print("Exception when calling UserApi->update_lucra_connection: %s\n" % e)
 ```
 
 
@@ -1346,9 +1547,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**UserLucraRequest**](UserLucraRequest.md)| request | 
+ **version** | **str**|  | 
+ **user_lucra_request** | [**UserLucraRequest**](UserLucraRequest.md)|  | 
 
 ### Return type
 
@@ -1356,7 +1556,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1368,17 +1568,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_preferences_using_put**
-> Wrapper update_preferences_using_put(authorization, version, preference)
-
-updatePreferences
+# **update_preferences**
+> Wrapper update_preferences(version, user_preferences_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -1387,28 +1585,35 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    preference = dupr_backend.UserPreferencesRequest() # UserPreferencesRequest | preference
+    version = 'version_example' # str | 
+    user_preferences_request = dupr_backend.UserPreferencesRequest() # UserPreferencesRequest | 
 
     try:
-        # updatePreferences
-        api_response = api_instance.update_preferences_using_put(authorization, version, preference)
-        print("The response of UserApi->update_preferences_using_put:\n")
+        api_response = api_instance.update_preferences(version, user_preferences_request)
+        print("The response of UserApi->update_preferences:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->update_preferences_using_put: %s\n" % e)
+        print("Exception when calling UserApi->update_preferences: %s\n" % e)
 ```
 
 
@@ -1418,9 +1623,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **preference** | [**UserPreferencesRequest**](UserPreferencesRequest.md)| preference | 
+ **version** | **str**|  | 
+ **user_preferences_request** | [**UserPreferencesRequest**](UserPreferencesRequest.md)|  | 
 
 ### Return type
 
@@ -1428,7 +1632,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1440,47 +1644,52 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_profile_using_put**
-> SingleWrapperOfUserResponse update_profile_using_put(authorization, version, request)
-
-updateProfile
+# **update_profile**
+> SingleWrapperUserResponse update_profile(version, player_profile_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
 from dupr_backend.models.player_profile_request import PlayerProfileRequest
-from dupr_backend.models.single_wrapper_of_user_response import SingleWrapperOfUserResponse
+from dupr_backend.models.single_wrapper_user_response import SingleWrapperUserResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.PlayerProfileRequest() # PlayerProfileRequest | request
+    version = 'version_example' # str | 
+    player_profile_request = dupr_backend.PlayerProfileRequest() # PlayerProfileRequest | 
 
     try:
-        # updateProfile
-        api_response = api_instance.update_profile_using_put(authorization, version, request)
-        print("The response of UserApi->update_profile_using_put:\n")
+        api_response = api_instance.update_profile(version, player_profile_request)
+        print("The response of UserApi->update_profile:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->update_profile_using_put: %s\n" % e)
+        print("Exception when calling UserApi->update_profile: %s\n" % e)
 ```
 
 
@@ -1490,17 +1699,16 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**PlayerProfileRequest**](PlayerProfileRequest.md)| request | 
+ **version** | **str**|  | 
+ **player_profile_request** | [**PlayerProfileRequest**](PlayerProfileRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfUserResponse**](SingleWrapperOfUserResponse.md)
+[**SingleWrapperUserResponse**](SingleWrapperUserResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1512,17 +1720,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_settings_using_put**
-> Wrapper update_settings_using_put(authorization, version, request)
-
-updateSettings
+# **update_settings**
+> Wrapper update_settings(version, user_settings_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -1531,28 +1737,35 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.UserSettingsRequest() # UserSettingsRequest | request
+    version = 'version_example' # str | 
+    user_settings_request = dupr_backend.UserSettingsRequest() # UserSettingsRequest | 
 
     try:
-        # updateSettings
-        api_response = api_instance.update_settings_using_put(authorization, version, request)
-        print("The response of UserApi->update_settings_using_put:\n")
+        api_response = api_instance.update_settings(version, user_settings_request)
+        print("The response of UserApi->update_settings:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->update_settings_using_put: %s\n" % e)
+        print("Exception when calling UserApi->update_settings: %s\n" % e)
 ```
 
 
@@ -1562,9 +1775,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**UserSettingsRequest**](UserSettingsRequest.md)| request | 
+ **version** | **str**|  | 
+ **user_settings_request** | [**UserSettingsRequest**](UserSettingsRequest.md)|  | 
 
 ### Return type
 
@@ -1572,7 +1784,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1584,46 +1796,52 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **verify_captcha_using_post**
-> SingleWrapperOfboolean verify_captcha_using_post(version, verify_token_request)
-
-verifyCaptcha
+# **verify_captcha**
+> SingleWrapperBoolean verify_captcha(version, verify_token_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_ofboolean import SingleWrapperOfboolean
+from dupr_backend.models.single_wrapper_boolean import SingleWrapperBoolean
 from dupr_backend.models.verify_token_request import VerifyTokenRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    version = 'v1.0' # str | version (default to 'v1.0')
-    verify_token_request = dupr_backend.VerifyTokenRequest() # VerifyTokenRequest | verifyTokenRequest
+    version = 'version_example' # str | 
+    verify_token_request = dupr_backend.VerifyTokenRequest() # VerifyTokenRequest | 
 
     try:
-        # verifyCaptcha
-        api_response = api_instance.verify_captcha_using_post(version, verify_token_request)
-        print("The response of UserApi->verify_captcha_using_post:\n")
+        api_response = api_instance.verify_captcha(version, verify_token_request)
+        print("The response of UserApi->verify_captcha:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->verify_captcha_using_post: %s\n" % e)
+        print("Exception when calling UserApi->verify_captcha: %s\n" % e)
 ```
 
 
@@ -1633,16 +1851,16 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **verify_token_request** | [**VerifyTokenRequest**](VerifyTokenRequest.md)| verifyTokenRequest | 
+ **version** | **str**|  | 
+ **verify_token_request** | [**VerifyTokenRequest**](VerifyTokenRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfboolean**](SingleWrapperOfboolean.md)
+[**SingleWrapperBoolean**](SingleWrapperBoolean.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1654,46 +1872,52 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **verify_email_address_using_post**
-> SingleWrapperOfboolean verify_email_address_using_post(version, verify_email_request)
-
-verifyEmailAddress
+# **verify_email_address**
+> SingleWrapperBoolean verify_email_address(version, verify_email_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_ofboolean import SingleWrapperOfboolean
+from dupr_backend.models.single_wrapper_boolean import SingleWrapperBoolean
 from dupr_backend.models.verify_email_request import VerifyEmailRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    version = 'v1.0' # str | version (default to 'v1.0')
-    verify_email_request = dupr_backend.VerifyEmailRequest() # VerifyEmailRequest | verifyEmailRequest
+    version = 'version_example' # str | 
+    verify_email_request = dupr_backend.VerifyEmailRequest() # VerifyEmailRequest | 
 
     try:
-        # verifyEmailAddress
-        api_response = api_instance.verify_email_address_using_post(version, verify_email_request)
-        print("The response of UserApi->verify_email_address_using_post:\n")
+        api_response = api_instance.verify_email_address(version, verify_email_request)
+        print("The response of UserApi->verify_email_address:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->verify_email_address_using_post: %s\n" % e)
+        print("Exception when calling UserApi->verify_email_address: %s\n" % e)
 ```
 
 
@@ -1703,16 +1927,16 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **verify_email_request** | [**VerifyEmailRequest**](VerifyEmailRequest.md)| verifyEmailRequest | 
+ **version** | **str**|  | 
+ **verify_email_request** | [**VerifyEmailRequest**](VerifyEmailRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfboolean**](SingleWrapperOfboolean.md)
+[**SingleWrapperBoolean**](SingleWrapperBoolean.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1724,17 +1948,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **verify_phone_number_using_post**
-> Wrapper verify_phone_number_using_post(authorization, version, sms_otp)
-
-verifyPhoneNumber
+# **verify_phone_number**
+> Wrapper verify_phone_number(version, verify_otp_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -1743,28 +1965,35 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.UserApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    sms_otp = dupr_backend.VerifyOtpRequest() # VerifyOtpRequest | smsOtp
+    version = 'version_example' # str | 
+    verify_otp_request = dupr_backend.VerifyOtpRequest() # VerifyOtpRequest | 
 
     try:
-        # verifyPhoneNumber
-        api_response = api_instance.verify_phone_number_using_post(authorization, version, sms_otp)
-        print("The response of UserApi->verify_phone_number_using_post:\n")
+        api_response = api_instance.verify_phone_number(version, verify_otp_request)
+        print("The response of UserApi->verify_phone_number:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->verify_phone_number_using_post: %s\n" % e)
+        print("Exception when calling UserApi->verify_phone_number: %s\n" % e)
 ```
 
 
@@ -1774,9 +2003,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **sms_otp** | [**VerifyOtpRequest**](VerifyOtpRequest.md)| smsOtp | 
+ **version** | **str**|  | 
+ **verify_otp_request** | [**VerifyOtpRequest**](VerifyOtpRequest.md)|  | 
 
 ### Return type
 
@@ -1784,7 +2012,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1796,7 +2024,6 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

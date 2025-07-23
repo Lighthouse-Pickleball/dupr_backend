@@ -5,34 +5,36 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**active** | **bool** |  | 
-**addresses** | [**List[AddressResponse]**](AddressResponse.md) |  | [optional] 
-**apparel_brand** | **str** |  | [optional] 
-**birthdate** | **str** |  | [optional] 
-**display_username** | **bool** |  | [optional] 
-**email** | **str** |  | 
-**first_name** | **str** |  | 
+**id** | **int** |  | 
 **full_name** | **str** |  | 
+**first_name** | **str** |  | 
+**last_name** | **str** |  | 
+**username** | **str** |  | [optional] 
+**display_username** | **bool** |  | [optional] 
+**iso_code** | **str** |  | [optional] 
+**phone** | **str** |  | [optional] 
+**is_valid_phone** | **bool** |  | [optional] 
+**email** | **str** |  | 
+**is_valid_email** | **bool** |  | [optional] 
+**image_url** | **str** |  | [optional] 
+**referral_code** | **str** |  | [optional] 
+**birthdate** | **date** |  | [optional] 
 **gender** | **str** |  | [optional] 
 **hand** | **str** |  | [optional] 
-**id** | **int** |  | 
-**image_url** | **str** |  | [optional] 
-**is_valid_email** | **bool** |  | [optional] 
-**is_valid_phone** | **bool** |  | [optional] 
-**iso_code** | **str** |  | [optional] 
-**last_name** | **str** |  | 
-**lucra_connected** | **bool** |  | [optional] 
+**role** | [**RoleResponse**](RoleResponse.md) |  | [optional] 
+**stats** | [**PlayerRatingResponse**](PlayerRatingResponse.md) |  | [optional] 
+**addresses** | [**List[AddressResponse]**](AddressResponse.md) |  | [optional] 
+**active** | **bool** |  | 
+**user_preferences** | [**UserPreferencesResponse**](UserPreferencesResponse.md) |  | [optional] 
 **paddle_brand** | **str** |  | [optional] 
-**phone** | **str** |  | [optional] 
+**shoe_brand** | **str** |  | [optional] 
+**apparel_brand** | **str** |  | [optional] 
 **preferred_ball** | **str** |  | [optional] 
 **preferred_side** | **str** |  | [optional] 
-**referral_code** | **str** |  | [optional] 
 **restricted** | **bool** |  | [optional] 
-**role** | [**RoleResponse**](RoleResponse.md) |  | [optional] 
-**shoe_brand** | **str** |  | [optional] 
-**stats** | [**PlayerRatingResponse**](PlayerRatingResponse.md) |  | [optional] 
-**user_preferences** | [**UserPreferencesResponse**](UserPreferencesResponse.md) |  | [optional] 
-**username** | **str** |  | [optional] 
+**lucra_connected** | **bool** |  | [optional] 
+**valid_email** | **bool** |  | [optional] 
+**valid_phone** | **bool** |  | [optional] 
 
 ## Example
 

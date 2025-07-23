@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bracket_id** | **int** |  | 
-**club_id** | **int** |  | [optional] 
-**league_id** | **int** |  | [optional] 
+**league_id** | **int** |  | 
+**club_id** | **int** |  | 
 
 ## Example
 

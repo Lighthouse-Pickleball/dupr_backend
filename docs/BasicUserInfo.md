@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**email** | **str** |  | 
 **id** | **int** |  | 
 **name** | **str** |  | 
+**email** | **str** |  | 
 **referral_code** | **str** |  | [optional] 
 
 ## Example

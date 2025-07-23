@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**registration_id** | **int** |  | 
 **bracket_id** | **int** |  | 
 **partner_id** | **int** |  | 
 **partner_status** | **str** |  | 
-**registration_id** | **int** |  | 
 
 ## Example
 

@@ -1,16 +1,14 @@
 # dupr_backend.MiLPTeamsApi
 
-All URIs are relative to *http://https://backend.mydupr.com*
+All URIs are relative to *https://api.dupr.gg*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**save_using_post3**](MiLPTeamsApi.md#save_using_post3) | **POST** /milp/teams/{version}/save | save
+[**save**](MiLPTeamsApi.md#save) | **POST** /milp/teams/{version}/save | 
 
 
-# **save_using_post3**
-> SingleWrapperOfMiLPTeam save_using_post3(authorization, version, request)
-
-save
+# **save**
+> SingleWrapperMiLPTeam save(version, mi_lp_team_request)
 
 ### Example
 
@@ -18,14 +16,14 @@ save
 ```python
 import dupr_backend
 from dupr_backend.models.mi_lp_team_request import MiLPTeamRequest
-from dupr_backend.models.single_wrapper_of_mi_lp_team import SingleWrapperOfMiLPTeam
+from dupr_backend.models.single_wrapper_mi_lp_team import SingleWrapperMiLPTeam
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -33,17 +31,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MiLPTeamsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.MiLPTeamRequest() # MiLPTeamRequest | request
+    version = 'version_example' # str | 
+    mi_lp_team_request = dupr_backend.MiLPTeamRequest() # MiLPTeamRequest | 
 
     try:
-        # save
-        api_response = api_instance.save_using_post3(authorization, version, request)
-        print("The response of MiLPTeamsApi->save_using_post3:\n")
+        api_response = api_instance.save(version, mi_lp_team_request)
+        print("The response of MiLPTeamsApi->save:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MiLPTeamsApi->save_using_post3: %s\n" % e)
+        print("Exception when calling MiLPTeamsApi->save: %s\n" % e)
 ```
 
 
@@ -53,13 +49,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**MiLPTeamRequest**](MiLPTeamRequest.md)| request | 
+ **version** | **str**|  | 
+ **mi_lp_team_request** | [**MiLPTeamRequest**](MiLPTeamRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfMiLPTeam**](SingleWrapperOfMiLPTeam.md)
+[**SingleWrapperMiLPTeam**](SingleWrapperMiLPTeam.md)
 
 ### Authorization
 
@@ -75,7 +70,6 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

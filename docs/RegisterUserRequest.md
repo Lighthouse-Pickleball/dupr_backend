@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**is_club_member** | **bool** |  | 
 **user_id** | **int** |  | 
+**is_club_member** | **bool** |  | 
 
 ## Example
 

@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**doubles** | **str** |  | [optional] 
-**doubles_provisional** | **bool** |  | [optional] 
-**doubles_verified** | **str** |  | [optional] 
 **singles** | **str** |  | [optional] 
+**doubles** | **str** |  | [optional] 
 **singles_provisional** | **bool** |  | [optional] 
+**doubles_provisional** | **bool** |  | [optional] 
 **singles_verified** | **str** |  | [optional] 
+**doubles_verified** | **str** |  | [optional] 
 
 ## Example
 

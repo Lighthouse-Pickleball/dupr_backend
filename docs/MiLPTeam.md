@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created** | **str** |  | [optional] 
-**status** | **str** |  | [optional] 
-**team_code** | **str** |  | [optional] 
 **team_id** | **int** |  | 
-**team_members** | [**List[TeamMember]**](TeamMember.md) |  | 
+**team_code** | **str** |  | [optional] 
 **team_name** | **str** |  | 
+**status** | **str** |  | [optional] 
+**created** | **datetime** |  | [optional] 
+**team_members** | [**List[TeamMember]**](TeamMember.md) |  | 
 
 ## Example
 

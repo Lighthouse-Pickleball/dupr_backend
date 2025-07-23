@@ -1,57 +1,63 @@
 # dupr_backend.PostReportApi
 
-All URIs are relative to *http://https://backend.mydupr.com*
+All URIs are relative to *https://api.dupr.gg*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_reports_using_get**](PostReportApi.md#get_reports_using_get) | **GET** /report/{version}/{status} | getReports
-[**report_activity_using_post**](PostReportApi.md#report_activity_using_post) | **POST** /report/{version} | reportActivity
-[**report_process_using_post**](PostReportApi.md#report_process_using_post) | **POST** /report/{version}/process/{reportId}/{status} | reportProcess
+[**get_reports**](PostReportApi.md#get_reports) | **GET** /report/{version}/{status} | 
+[**report_activity**](PostReportApi.md#report_activity) | **POST** /report/{version} | 
+[**report_process**](PostReportApi.md#report_process) | **POST** /report/{version}/process/{reportId}/{status} | 
 
 
-# **get_reports_using_get**
-> SingleWrapperOfPageOfPostReport get_reports_using_get(authorization, status, version, from_date=from_date, limit=limit, offset=offset, reason=reason, sort_by=sort_by, sort_direction=sort_direction, to_date=to_date)
-
-getReports
+# **get_reports**
+> SingleWrapperPagePostReport get_reports(version, status, limit=limit, offset=offset, from_date=from_date, to_date=to_date, reason=reason, sort_by=sort_by, sort_direction=sort_direction)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_page_of_post_report import SingleWrapperOfPageOfPostReport
+from dupr_backend.models.single_wrapper_page_post_report import SingleWrapperPagePostReport
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.PostReportApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'version_example' # str | 
     status = 'status_example' # str | PostReport status
-    version = 'v1.0' # str | version (default to 'v1.0')
-    from_date = 'from_date_example' # str | fromDate (optional)
-    limit = 10 # int | limit (optional) (default to 10)
-    offset = 0 # int | offset (optional) (default to 0)
-    reason = 'reason_example' # str | reason (optional)
-    sort_by = 'created_at' # str | sortBy (optional) (default to 'created_at')
-    sort_direction = 'DESC' # str | sortDirection (optional) (default to 'DESC')
-    to_date = 'to_date_example' # str | toDate (optional)
+    limit = 56 # int |  (optional)
+    offset = 56 # int |  (optional)
+    from_date = 'from_date_example' # str |  (optional)
+    to_date = 'to_date_example' # str |  (optional)
+    reason = 'reason_example' # str |  (optional)
+    sort_by = 'sort_by_example' # str |  (optional)
+    sort_direction = 'sort_direction_example' # str |  (optional)
 
     try:
-        # getReports
-        api_response = api_instance.get_reports_using_get(authorization, status, version, from_date=from_date, limit=limit, offset=offset, reason=reason, sort_by=sort_by, sort_direction=sort_direction, to_date=to_date)
-        print("The response of PostReportApi->get_reports_using_get:\n")
+        api_response = api_instance.get_reports(version, status, limit=limit, offset=offset, from_date=from_date, to_date=to_date, reason=reason, sort_by=sort_by, sort_direction=sort_direction)
+        print("The response of PostReportApi->get_reports:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PostReportApi->get_reports_using_get: %s\n" % e)
+        print("Exception when calling PostReportApi->get_reports: %s\n" % e)
 ```
 
 
@@ -61,24 +67,23 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**|  | 
  **status** | **str**| PostReport status | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **from_date** | **str**| fromDate | [optional] 
- **limit** | **int**| limit | [optional] [default to 10]
- **offset** | **int**| offset | [optional] [default to 0]
- **reason** | **str**| reason | [optional] 
- **sort_by** | **str**| sortBy | [optional] [default to &#39;created_at&#39;]
- **sort_direction** | **str**| sortDirection | [optional] [default to &#39;DESC&#39;]
- **to_date** | **str**| toDate | [optional] 
+ **limit** | **int**|  | [optional] 
+ **offset** | **int**|  | [optional] 
+ **from_date** | **str**|  | [optional] 
+ **to_date** | **str**|  | [optional] 
+ **reason** | **str**|  | [optional] 
+ **sort_by** | **str**|  | [optional] 
+ **sort_direction** | **str**|  | [optional] 
 
 ### Return type
 
-[**SingleWrapperOfPageOfPostReport**](SingleWrapperOfPageOfPostReport.md)
+[**SingleWrapperPagePostReport**](SingleWrapperPagePostReport.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -90,47 +95,52 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **report_activity_using_post**
-> SingleWrapperOfPostReport report_activity_using_post(authorization, version, report_request)
-
-reportActivity
+# **report_activity**
+> SingleWrapperPostReport report_activity(version, report_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
 from dupr_backend.models.report_request import ReportRequest
-from dupr_backend.models.single_wrapper_of_post_report import SingleWrapperOfPostReport
+from dupr_backend.models.single_wrapper_post_report import SingleWrapperPostReport
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.PostReportApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    report_request = dupr_backend.ReportRequest() # ReportRequest | reportRequest
+    version = 'version_example' # str | 
+    report_request = dupr_backend.ReportRequest() # ReportRequest | 
 
     try:
-        # reportActivity
-        api_response = api_instance.report_activity_using_post(authorization, version, report_request)
-        print("The response of PostReportApi->report_activity_using_post:\n")
+        api_response = api_instance.report_activity(version, report_request)
+        print("The response of PostReportApi->report_activity:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PostReportApi->report_activity_using_post: %s\n" % e)
+        print("Exception when calling PostReportApi->report_activity: %s\n" % e)
 ```
 
 
@@ -140,17 +150,16 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **report_request** | [**ReportRequest**](ReportRequest.md)| reportRequest | 
+ **version** | **str**|  | 
+ **report_request** | [**ReportRequest**](ReportRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfPostReport**](SingleWrapperOfPostReport.md)
+[**SingleWrapperPostReport**](SingleWrapperPostReport.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -162,17 +171,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **report_process_using_post**
-> Wrapper report_process_using_post(authorization, report_id, status, version)
-
-reportProcess
+# **report_process**
+> Wrapper report_process(version, report_id, status)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -180,29 +187,36 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.PostReportApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
+    version = 'version_example' # str | 
     report_id = 'report_id_example' # str | The report's Id
     status = 'status_example' # str | APPROVE/REJECT
-    version = 'v1.0' # str | version (default to 'v1.0')
 
     try:
-        # reportProcess
-        api_response = api_instance.report_process_using_post(authorization, report_id, status, version)
-        print("The response of PostReportApi->report_process_using_post:\n")
+        api_response = api_instance.report_process(version, report_id, status)
+        print("The response of PostReportApi->report_process:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PostReportApi->report_process_using_post: %s\n" % e)
+        print("Exception when calling PostReportApi->report_process: %s\n" % e)
 ```
 
 
@@ -212,10 +226,9 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
+ **version** | **str**|  | 
  **report_id** | **str**| The report&#39;s Id | 
  **status** | **str**| APPROVE/REJECT | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -223,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -235,7 +248,6 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

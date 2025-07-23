@@ -6,10 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **club_id** | **int** |  | 
-**delete_user_id** | **int** |  | 
 **operation** | **str** |  | 
-**rol_id** | **int** |  | 
 **user_id** | **int** |  | 
+**rol_id** | **int** |  | 
+**delete_user_id** | **int** |  | 
 
 ## Example
 

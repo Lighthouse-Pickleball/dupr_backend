@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**filter** | [**ClaimPlayerSearchFilter**](ClaimPlayerSearchFilter.md) |  | [optional] 
-**limit** | **int** |  | 
 **offset** | **int** |  | 
-**query** | **str** |  | 
+**limit** | **int** |  | 
+**query** | **str** |  | [optional] 
+**filter** | [**ClaimPlayerSearchFilter**](ClaimPlayerSearchFilter.md) |  | [optional] 
 **sort** | [**ClaimPlayerSearchSort**](ClaimPlayerSearchSort.md) |  | [optional] 
 
 ## Example

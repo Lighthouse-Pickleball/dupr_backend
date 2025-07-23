@@ -5,15 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**age** | **int** |  | [optional] 
-**claimed** | **bool** |  | 
 **fullname** | **str** |  | 
-**gender** | **str** |  | [optional] 
-**id** | **int** |  | [optional] 
-**image_url** | **str** |  | [optional] 
 **ratings** | [**RatingsUnclaimedPlayerResponse**](RatingsUnclaimedPlayerResponse.md) |  | 
+**id** | **int** |  | [optional] 
 **referral_code** | **str** |  | [optional] 
+**age** | **int** |  | [optional] 
+**gender** | **str** |  | [optional] 
+**image_url** | **str** |  | [optional] 
 **short_address** | **str** |  | [optional] 
+**claimed** | **bool** |  | 
 **sponsor** | [**SponsorLogoResponse**](SponsorLogoResponse.md) |  | [optional] 
 
 ## Example

@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**league_match_id** | **int** |  | [optional] 
 **match_id** | **int** |  | 
 **user_id** | **int** |  | 
+**league_match_id** | **int** |  | [optional] 
 
 ## Example
 

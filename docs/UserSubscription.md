@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**billing_period** | **str** |  | 
-**cost** | **float** |  | 
-**dupr_id** | **str** |  | 
-**is_active** | **bool** |  | 
-**renewal_date** | **str** |  | 
-**start_date** | **str** |  | 
 **user_id** | **int** |  | 
+**dupr_id** | **str** |  | 
+**cost** | **float** |  | 
+**billing_period** | **str** |  | 
+**start_date** | **date** |  | 
+**renewal_date** | **date** |  | 
+**is_active** | **bool** |  | 
 
 ## Example
 

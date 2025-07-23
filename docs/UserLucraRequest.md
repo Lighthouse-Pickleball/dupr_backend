@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**lucra_connected** | **bool** |  | [optional] 
+**lucra_connected** | **bool** |  | 
 
 ## Example
 

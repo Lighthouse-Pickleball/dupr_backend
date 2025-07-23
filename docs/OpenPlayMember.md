@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**create_at** | **str** |  | [optional] 
-**doubles** | **str** |  | [optional] 
-**dupr_id** | **str** |  | [optional] 
-**event_id** | **int** |  | 
 **id** | **int** |  | 
-**name** | **str** |  | [optional] 
+**dupr_id** | **str** |  | [optional] 
 **singles** | **str** |  | [optional] 
+**doubles** | **str** |  | [optional] 
+**name** | **str** |  | [optional] 
+**create_at** | **date** |  | [optional] 
+**event_id** | **int** |  | 
 
 ## Example
 

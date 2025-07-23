@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**club_id** | **int** |  | 
-**email** | **str** |  | 
-**iso_alpha2_code** | **str** |  | 
-**name** | **str** |  | 
-**phone** | **str** |  | [optional] 
-**role_id** | **int** |  | 
 **user_id** | **int** |  | 
+**role_id** | **int** |  | 
+**club_id** | **int** |  | 
+**name** | **str** |  | 
+**email** | **str** |  | 
+**phone** | **str** |  | [optional] 
+**iso_alpha2_code** | **str** |  | 
 
 ## Example
 

@@ -5,56 +5,61 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**age_bracket** | **List[int]** |  | [optional] 
 **bracket_id** | **int** |  | 
-**can_show_standings** | **bool** |  | [optional] 
-**club_id** | **int** |  | 
-**club_name** | **str** |  | 
-**contact_details** | [**List[LeagueContactDetailResponse]**](LeagueContactDetailResponse.md) |  | [optional] 
-**courts** | **int** |  | [optional] 
-**currency_details** | [**CurrencyDetailsResponse**](CurrencyDetailsResponse.md) |  | [optional] 
-**custom_code** | **str** |  | [optional] 
-**description** | [**LeagueContentResponse**](LeagueContentResponse.md) |  | [optional] 
-**display_status** | **str** |  | [optional] 
-**draw_impacted** | **bool** |  | [optional] 
-**duration** | **List[str]** |  | 
-**duration_date_time** | **List[str]** |  | [optional] 
-**duration_status** | **str** |  | [optional] 
-**elimination** | **str** |  | [optional] 
-**format** | **str** |  | [optional] 
-**has_confirm_match** | **bool** |  | [optional] 
-**has_queue** | **bool** |  | [optional] 
-**is_match_seeded** | **bool** |  | [optional] 
-**is_player_eligible** | **bool** |  | [optional] 
-**is_queue_complete** | **bool** |  | [optional] 
-**is_registered** | **bool** |  | 
-**is_wait_list_full** | **bool** |  | 
-**league_address** | [**AddressResponse**](AddressResponse.md) |  | [optional] 
 **league_id** | **int** |  | 
-**league_name** | **str** |  | 
-**match_bonus_points** | **float** |  | [optional] 
-**max_team** | **int** |  | [optional] 
-**media_url** | **str** |  | [optional] 
-**member_fee** | **float** |  | [optional] 
 **name** | **str** |  | [optional] 
-**non_member_fee** | **float** |  | 
-**payment_details** | [**PaymentDetailsResponse**](PaymentDetailsResponse.md) |  | [optional] 
-**payment_status** | **str** |  | 
+**custom_code** | **str** |  | [optional] 
+**duration** | **List[str]** |  | 
+**format** | **str** |  | [optional] 
+**elimination** | **str** |  | [optional] 
 **player_group** | **str** |  | [optional] 
 **rating_bracket** | **List[float]** |  | [optional] 
-**reg_user_id** | **int** |  | [optional] 
-**registered_members** | **int** |  | [optional] 
+**age_bracket** | **List[int]** |  | [optional] 
+**description** | [**LeagueContentResponse**](LeagueContentResponse.md) |  | [optional] 
+**match_bonus_points** | **float** |  | [optional] 
 **registration_date** | **List[str]** |  | [optional] 
-**registration_date_time** | **List[str]** |  | [optional] 
-**registration_details** | [**RegistrationResponse**](RegistrationResponse.md) |  | [optional] 
-**registration_status** | **str** |  | [optional] 
 **score_format** | **str** |  | 
-**score_format_id** | **int** |  | 
-**status** | **str** |  | [optional] 
-**time_zone** | **str** |  | [optional] 
-**total_rounds** | **int** |  | [optional] 
+**member_fee** | **float** |  | [optional] 
+**non_member_fee** | **float** |  | 
+**max_team** | **int** |  | [optional] 
 **wait_list** | **int** |  | 
+**status** | **str** |  | [optional] 
+**score_format_id** | **int** |  | 
+**registration_status** | **str** |  | [optional] 
+**duration_status** | **str** |  | [optional] 
+**registration_details** | [**RegistrationResponse**](RegistrationResponse.md) |  | [optional] 
+**league_name** | **str** |  | 
+**league_address** | [**AddressResponse**](AddressResponse.md) |  | [optional] 
+**media_url** | **str** |  | [optional] 
+**total_rounds** | **int** |  | [optional] 
+**contact_details** | [**List[LeagueContactDetailResponse]**](LeagueContactDetailResponse.md) |  | [optional] 
+**is_registered** | **bool** |  | 
+**club_name** | **str** |  | 
+**registered_members** | **int** |  | [optional] 
+**is_match_seeded** | **bool** |  | [optional] 
+**club_id** | **int** |  | 
+**is_wait_list_full** | **bool** |  | 
+**display_status** | **str** |  | [optional] 
+**has_confirm_match** | **bool** |  | [optional] 
+**has_queue** | **bool** |  | [optional] 
+**is_queue_complete** | **bool** |  | [optional] 
+**can_show_standings** | **bool** |  | [optional] 
+**courts** | **int** |  | [optional] 
+**registration_date_time** | **List[str]** |  | [optional] 
+**duration_date_time** | **List[str]** |  | [optional] 
+**time_zone** | **str** |  | [optional] 
 **zone_name** | **str** |  | [optional] 
+**is_player_eligible** | **bool** |  | [optional] 
+**draw_impacted** | **bool** |  | [optional] 
+**payment_details** | [**PaymentDetailsResponse**](PaymentDetailsResponse.md) |  | [optional] 
+**reg_user_id** | **int** |  | [optional] 
+**payment_status** | **str** |  | 
+**currency_details** | [**CurrencyDetailsResponse**](CurrencyDetailsResponse.md) |  | [optional] 
+**wait_list_full** | **bool** |  | [optional] 
+**queue_complete** | **bool** |  | [optional] 
+**player_eligible** | **bool** |  | [optional] 
+**match_seeded** | **bool** |  | [optional] 
+**registered** | **bool** |  | [optional] 
 
 ## Example
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bracket_id** | **int** |  | 
 **club_id** | **int** |  | 
-**users** | [**List[RegisterUserRequest]**](RegisterUserRequest.md) |  | [optional] 
+**users** | [**List[RegisterUserRequest]**](RegisterUserRequest.md) |  | 
 
 ## Example
 

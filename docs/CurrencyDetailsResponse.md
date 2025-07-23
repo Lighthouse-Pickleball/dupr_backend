@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **currency_code** | **str** |  | 
-**currency_name** | **str** |  | 
 **currency_symbol** | **str** |  | 
+**currency_name** | **str** |  | 
 **min_limit** | **float** |  | 
 
 ## Example

@@ -5,22 +5,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address_str** | **str** |  | 
-**club_id** | **int** |  | 
-**club_name** | **str** |  | [optional] 
-**creator_email** | **str** |  | [optional] 
-**creator_id** | **int** |  | 
-**creator_name** | **str** |  | [optional] 
-**default_entry_fee** | **float** |  | 
-**default_max_teams** | **int** |  | 
-**default_max_waitlist** | **int** |  | 
-**description** | [**Description**](Description.md) |  | [optional] 
-**divisions** | [**List[Division]**](Division.md) |  | 
-**duration** | **List[str]** |  | [optional] 
 **event_id** | **int** |  | 
 **event_name** | **str** |  | 
+**club_id** | **int** |  | 
+**club_name** | **str** |  | [optional] 
+**creator_id** | **int** |  | 
+**creator_name** | **str** |  | [optional] 
+**creator_email** | **str** |  | [optional] 
 **event_type** | **str** |  | 
+**default_max_teams** | **int** |  | 
+**default_max_waitlist** | **int** |  | 
+**default_entry_fee** | **float** |  | 
 **status** | **str** |  | 
+**duration** | **List[str]** |  | [optional] 
+**address_str** | **str** |  | 
+**description** | [**Description**](Description.md) |  | [optional] 
+**divisions** | [**List[Division]**](Division.md) |  | 
 
 ## Example
 

@@ -5,17 +5,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**club_id** | **int** |  | 
-**event_id** | **int** |  | 
-**event_name** | **str** |  | 
+**registration_id** | **int** |  | 
 **player1** | **int** |  | 
 **player2** | **int** |  | 
-**re_seed_bracket** | **bool** |  | [optional] 
-**registration_id** | **int** |  | 
 **source_bracket_id** | **int** |  | 
-**source_bracket_name** | **str** |  | 
 **target_bracket_id** | **int** |  | 
+**club_id** | **int** |  | 
+**source_bracket_name** | **str** |  | 
 **target_bracket_name** | **str** |  | 
+**event_name** | **str** |  | 
+**event_id** | **int** |  | 
+**re_seed_bracket** | **bool** |  | 
 
 ## Example
 

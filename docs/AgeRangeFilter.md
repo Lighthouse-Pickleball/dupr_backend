@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**max_age** | **int** |  | [optional] 
-**min_age** | **int** |  | [optional] 
+**min_age** | **int** |  | 
+**max_age** | **int** |  | 
 
 ## Example
 

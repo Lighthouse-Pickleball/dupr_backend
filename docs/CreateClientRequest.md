@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**email** | **str** |  | 
 **name** | **str** |  | 
-**permissions** | [**List[Permission]**](Permission.md) | An optional list of permissions to assign to the client key | [optional] 
+**email** | **str** |  | 
+**permissions** | [**List[Permission]**](Permission.md) | An optional list of permissions to assign to the client key | 
 
 ## Example
 

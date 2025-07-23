@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
-**permissions** | **Dict[str, List[str]]** |  | [optional] 
 **role** | **str** |  | 
+**permissions** | **Dict[str, List[str]]** |  | 
 
 ## Example
 

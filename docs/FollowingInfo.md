@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**followers** | **int** |  | [optional] 
-**followings** | **int** |  | [optional] 
-**is_followed** | **bool** |  | [optional] 
+**is_followed** | **bool** |  | 
+**followers** | **int** |  | 
+**followings** | **int** |  | 
 
 ## Example
 

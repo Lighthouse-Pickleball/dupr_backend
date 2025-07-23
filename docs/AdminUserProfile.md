@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**user_id** | **int** |  | 
 **dupr_id** | **str** |  | [optional] 
-**email** | **str** |  | [optional] 
 **external_id** | **str** |  | [optional] 
 **full_name** | **str** |  | 
-**iso_code** | **str** |  | [optional] 
+**email** | **str** |  | [optional] 
 **phone_number** | **str** |  | [optional] 
-**user_id** | **int** |  | 
+**iso_code** | **str** |  | [optional] 
 
 ## Example
 

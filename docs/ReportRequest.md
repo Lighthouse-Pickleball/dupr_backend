@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] 
-**note** | **str** |  | [optional] 
-**reason** | **str** |  | [optional] 
-**type** | **str** |  | [optional] 
+**type** | **str** |  | 
+**id** | **str** |  | 
+**reason** | **str** |  | 
+**note** | **str** |  | 
 
 ## Example
 

@@ -6,12 +6,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **club_id** | **int** |  | 
-**club_member_count** | **int** |  | [optional] 
 **club_name** | **str** |  | 
-**created** | **str** |  | [optional] 
 **media_url** | **str** |  | [optional] 
-**role** | [**ClubRoleResponse**](ClubRoleResponse.md) |  | [optional] 
 **short_address** | **str** |  | [optional] 
+**club_member_count** | **int** |  | 
+**created** | **datetime** |  | [optional] 
+**role** | [**ClubRoleResponse**](ClubRoleResponse.md) |  | [optional] 
 
 ## Example
 

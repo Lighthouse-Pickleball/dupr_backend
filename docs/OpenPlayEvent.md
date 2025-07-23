@@ -5,16 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**creator** | [**Creator**](Creator.md) |  | 
-**var_date** | **str** |  | 
-**description** | **str** |  | [optional] 
 **id** | **int** |  | 
+**name** | **str** |  | [optional] 
+**var_date** | **date** |  | 
+**time** | [**TimeRange**](TimeRange.md) |  | 
 **location** | **str** |  | [optional] 
 **max_players** | **int** |  | 
-**name** | **str** |  | [optional] 
-**rating** | [**RatingRangeRes**](RatingRangeRes.md) |  | [optional] 
+**rating** | [**RatingRange**](RatingRange.md) |  | [optional] 
+**description** | **str** |  | [optional] 
 **registered_players** | **int** |  | [optional] 
-**time** | [**TimeRangeRes**](TimeRangeRes.md) |  | 
+**creator** | [**Creator**](Creator.md) |  | 
 
 ## Example
 

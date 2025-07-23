@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **event_format** | **str** |  | 
-**event_name** | **str** |  | [optional] 
 **match_source** | **str** |  | 
+**event_name** | **str** |  | [optional] 
 
 ## Example
 

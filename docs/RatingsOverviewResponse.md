@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**wins** | **int** |  | 
 **losses** | **int** |  | 
 **pending** | **int** |  | 
-**wins** | **int** |  | 
 
 ## Example
 

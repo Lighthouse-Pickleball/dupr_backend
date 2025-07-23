@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**category** | **str** |  | [optional] 
-**doubles** | [**ClubMembersRatingRange**](ClubMembersRatingRange.md) |  | [optional] 
 **singles** | [**ClubMembersRatingRange**](ClubMembersRatingRange.md) |  | [optional] 
+**doubles** | [**ClubMembersRatingRange**](ClubMembersRatingRange.md) |  | [optional] 
+**category** | **str** |  | [optional] 
 
 ## Example
 

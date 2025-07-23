@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **banner_id** | **int** |  | [optional] 
 **description** | [**BannerContentResponce**](BannerContentResponce.md) |  | [optional] 
-**end_date_time** | **str** |  | [optional] 
-**start_date_time** | **str** |  | [optional] 
-**status** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**status** | **str** |  | [optional] 
+**start_date_time** | **datetime** |  | [optional] 
+**end_date_time** | **datetime** |  | [optional] 
 
 ## Example
 

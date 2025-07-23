@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bracket_id** | **int** |  | 
-**is_club_member** | **bool** |  | 
 **league_match_id** | **int** |  | 
+**bracket_id** | **int** |  | 
 **player_id** | **int** |  | 
 **sub_player_id** | **int** |  | 
+**is_club_member** | **bool** |  | 
 
 ## Example
 

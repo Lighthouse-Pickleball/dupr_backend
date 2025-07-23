@@ -1,59 +1,65 @@
 # dupr_backend.ActivityAdminNewsfeedsFeaturesApi
 
-All URIs are relative to *http://https://backend.mydupr.com*
+All URIs are relative to *https://api.dupr.gg*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_user_suggestions_using_post**](ActivityAdminNewsfeedsFeaturesApi.md#add_user_suggestions_using_post) | **POST** /activity/{version}/admin/user-suggestion | addUserSuggestions
-[**create_post_using_post**](ActivityAdminNewsfeedsFeaturesApi.md#create_post_using_post) | **POST** /activity/{version}/admin/test | createPost
-[**fetch_feeds_using_get**](ActivityAdminNewsfeedsFeaturesApi.md#fetch_feeds_using_get) | **GET** /activity/{version}/admin/test | fetchFeeds
-[**follow_using_post**](ActivityAdminNewsfeedsFeaturesApi.md#follow_using_post) | **POST** /activity/{version}/admin/test/follow | follow
-[**get_user_suggestion_using_get**](ActivityAdminNewsfeedsFeaturesApi.md#get_user_suggestion_using_get) | **GET** /activity/{version}/admin/user-suggestion | getUserSuggestion
-[**react_using_post**](ActivityAdminNewsfeedsFeaturesApi.md#react_using_post) | **POST** /activity/{version}/admin/test/react | react
-[**remove_user_suggestions_using_delete**](ActivityAdminNewsfeedsFeaturesApi.md#remove_user_suggestions_using_delete) | **DELETE** /activity/{version}/admin/user-suggestion | removeUserSuggestions
-[**sync_club_followers_using_post**](ActivityAdminNewsfeedsFeaturesApi.md#sync_club_followers_using_post) | **POST** /activity/{version}/admin/utils/sync/clubFollowers | syncClubFollowers
-[**sync_feeds_using_post**](ActivityAdminNewsfeedsFeaturesApi.md#sync_feeds_using_post) | **POST** /activity/{version}/admin/utils/sync | syncFeeds
-[**unfollow_clubs_with_same_ids_using_post**](ActivityAdminNewsfeedsFeaturesApi.md#unfollow_clubs_with_same_ids_using_post) | **POST** /activity/{version}/admin/utils/club-followers/same-id | unfollowClubsWithSameIds
-[**unfollow_using_delete**](ActivityAdminNewsfeedsFeaturesApi.md#unfollow_using_delete) | **DELETE** /activity/{version}/admin/test/follow | unfollow
+[**add_user_suggestions**](ActivityAdminNewsfeedsFeaturesApi.md#add_user_suggestions) | **POST** /activity/{version}/admin/user-suggestion | 
+[**create_post2**](ActivityAdminNewsfeedsFeaturesApi.md#create_post2) | **POST** /activity/{version}/admin/test | 
+[**fetch_feeds2**](ActivityAdminNewsfeedsFeaturesApi.md#fetch_feeds2) | **GET** /activity/{version}/admin/test | 
+[**follow2**](ActivityAdminNewsfeedsFeaturesApi.md#follow2) | **POST** /activity/{version}/admin/test/follow | 
+[**get_user_suggestion**](ActivityAdminNewsfeedsFeaturesApi.md#get_user_suggestion) | **GET** /activity/{version}/admin/user-suggestion | 
+[**react2**](ActivityAdminNewsfeedsFeaturesApi.md#react2) | **POST** /activity/{version}/admin/test/react | 
+[**remove_user_suggestions**](ActivityAdminNewsfeedsFeaturesApi.md#remove_user_suggestions) | **DELETE** /activity/{version}/admin/user-suggestion | 
+[**sync_club_followers**](ActivityAdminNewsfeedsFeaturesApi.md#sync_club_followers) | **POST** /activity/{version}/admin/utils/sync/clubFollowers | 
+[**sync_feeds**](ActivityAdminNewsfeedsFeaturesApi.md#sync_feeds) | **POST** /activity/{version}/admin/utils/sync | 
+[**unfollow2**](ActivityAdminNewsfeedsFeaturesApi.md#unfollow2) | **DELETE** /activity/{version}/admin/test/follow | 
+[**unfollow_clubs_with_same_ids**](ActivityAdminNewsfeedsFeaturesApi.md#unfollow_clubs_with_same_ids) | **POST** /activity/{version}/admin/utils/club-followers/same-id | 
 
 
-# **add_user_suggestions_using_post**
-> SingleWrapperOfUnit add_user_suggestions_using_post(authorization, version, request)
-
-addUserSuggestions
+# **add_user_suggestions**
+> SingleWrapperUnit add_user_suggestions(version, user_suggestion_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
+from dupr_backend.models.single_wrapper_unit import SingleWrapperUnit
 from dupr_backend.models.user_suggestion_request import UserSuggestionRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.UserSuggestionRequest() # UserSuggestionRequest | request
+    version = 'version_example' # str | 
+    user_suggestion_request = dupr_backend.UserSuggestionRequest() # UserSuggestionRequest | 
 
     try:
-        # addUserSuggestions
-        api_response = api_instance.add_user_suggestions_using_post(authorization, version, request)
-        print("The response of ActivityAdminNewsfeedsFeaturesApi->add_user_suggestions_using_post:\n")
+        api_response = api_instance.add_user_suggestions(version, user_suggestion_request)
+        print("The response of ActivityAdminNewsfeedsFeaturesApi->add_user_suggestions:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ActivityAdminNewsfeedsFeaturesApi->add_user_suggestions_using_post: %s\n" % e)
+        print("Exception when calling ActivityAdminNewsfeedsFeaturesApi->add_user_suggestions: %s\n" % e)
 ```
 
 
@@ -63,17 +69,16 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**UserSuggestionRequest**](UserSuggestionRequest.md)| request | 
+ **version** | **str**|  | 
+ **user_suggestion_request** | [**UserSuggestionRequest**](UserSuggestionRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfUnit**](SingleWrapperOfUnit.md)
+[**SingleWrapperUnit**](SingleWrapperUnit.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -85,49 +90,54 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_post_using_post**
-> SingleWrapperOfPostResponse create_post_using_post(authorization, id, slug, version, request)
-
-createPost
+# **create_post2**
+> SingleWrapperPostResponse create_post2(version, slug, id, post_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
 from dupr_backend.models.post_request import PostRequest
-from dupr_backend.models.single_wrapper_of_post_response import SingleWrapperOfPostResponse
+from dupr_backend.models.single_wrapper_post_response import SingleWrapperPostResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    id = 56 # int | id
-    slug = 'slug_example' # str | slug
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.PostRequest() # PostRequest | request
+    version = 'version_example' # str | 
+    slug = 'slug_example' # str | 
+    id = 56 # int | 
+    post_request = dupr_backend.PostRequest() # PostRequest | 
 
     try:
-        # createPost
-        api_response = api_instance.create_post_using_post(authorization, id, slug, version, request)
-        print("The response of ActivityAdminNewsfeedsFeaturesApi->create_post_using_post:\n")
+        api_response = api_instance.create_post2(version, slug, id, post_request)
+        print("The response of ActivityAdminNewsfeedsFeaturesApi->create_post2:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ActivityAdminNewsfeedsFeaturesApi->create_post_using_post: %s\n" % e)
+        print("Exception when calling ActivityAdminNewsfeedsFeaturesApi->create_post2: %s\n" % e)
 ```
 
 
@@ -137,19 +147,18 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **id** | **int**| id | 
- **slug** | **str**| slug | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**PostRequest**](PostRequest.md)| request | 
+ **version** | **str**|  | 
+ **slug** | **str**|  | 
+ **id** | **int**|  | 
+ **post_request** | [**PostRequest**](PostRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfPostResponse**](SingleWrapperOfPostResponse.md)
+[**SingleWrapperPostResponse**](SingleWrapperPostResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -161,49 +170,54 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **fetch_feeds_using_get**
-> ArrayWrapperOfPostResponse fetch_feeds_using_get(authorization, id, slug, version, limit=limit, ref=ref)
-
-fetchFeeds
+# **fetch_feeds2**
+> ArrayWrapperPostResponse fetch_feeds2(version, slug, id, limit=limit, ref=ref)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.array_wrapper_of_post_response import ArrayWrapperOfPostResponse
+from dupr_backend.models.array_wrapper_post_response import ArrayWrapperPostResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    id = 56 # int | id
-    slug = 'slug_example' # str | slug
-    version = 'v1.0' # str | version (default to 'v1.0')
-    limit = 56 # int | limit (optional)
-    ref = 'ref_example' # str | ref (optional)
+    version = 'version_example' # str | 
+    slug = 'slug_example' # str | 
+    id = 56 # int | 
+    limit = 56 # int |  (optional)
+    ref = 'ref_example' # str |  (optional)
 
     try:
-        # fetchFeeds
-        api_response = api_instance.fetch_feeds_using_get(authorization, id, slug, version, limit=limit, ref=ref)
-        print("The response of ActivityAdminNewsfeedsFeaturesApi->fetch_feeds_using_get:\n")
+        api_response = api_instance.fetch_feeds2(version, slug, id, limit=limit, ref=ref)
+        print("The response of ActivityAdminNewsfeedsFeaturesApi->fetch_feeds2:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ActivityAdminNewsfeedsFeaturesApi->fetch_feeds_using_get: %s\n" % e)
+        print("Exception when calling ActivityAdminNewsfeedsFeaturesApi->fetch_feeds2: %s\n" % e)
 ```
 
 
@@ -213,20 +227,19 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **id** | **int**| id | 
- **slug** | **str**| slug | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **limit** | **int**| limit | [optional] 
- **ref** | **str**| ref | [optional] 
+ **version** | **str**|  | 
+ **slug** | **str**|  | 
+ **id** | **int**|  | 
+ **limit** | **int**|  | [optional] 
+ **ref** | **str**|  | [optional] 
 
 ### Return type
 
-[**ArrayWrapperOfPostResponse**](ArrayWrapperOfPostResponse.md)
+[**ArrayWrapperPostResponse**](ArrayWrapperPostResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -238,17 +251,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **follow_using_post**
-> Wrapper follow_using_post(authorization, followee, followee_type, follower, version)
-
-follow
+# **follow2**
+> Wrapper follow2(version, followee, followee_type, follower)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -256,30 +267,37 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    followee = 56 # int | followee
-    followee_type = 'followee_type_example' # str | followeeType
-    follower = 56 # int | follower
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    followee = 56 # int | 
+    followee_type = 'followee_type_example' # str | 
+    follower = 56 # int | 
 
     try:
-        # follow
-        api_response = api_instance.follow_using_post(authorization, followee, followee_type, follower, version)
-        print("The response of ActivityAdminNewsfeedsFeaturesApi->follow_using_post:\n")
+        api_response = api_instance.follow2(version, followee, followee_type, follower)
+        print("The response of ActivityAdminNewsfeedsFeaturesApi->follow2:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ActivityAdminNewsfeedsFeaturesApi->follow_using_post: %s\n" % e)
+        print("Exception when calling ActivityAdminNewsfeedsFeaturesApi->follow2: %s\n" % e)
 ```
 
 
@@ -289,11 +307,10 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **followee** | **int**| followee | 
- **followee_type** | **str**| followeeType | 
- **follower** | **int**| follower | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **followee** | **int**|  | 
+ **followee_type** | **str**|  | 
+ **follower** | **int**|  | 
 
 ### Return type
 
@@ -301,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -313,47 +330,52 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_user_suggestion_using_get**
-> SingleWrapperOfPageOfUserSuggestion get_user_suggestion_using_get(authorization, version, limit=limit, offset=offset)
-
-getUserSuggestion
+# **get_user_suggestion**
+> SingleWrapperPageUserSuggestion get_user_suggestion(version, limit=limit, offset=offset)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_page_of_user_suggestion import SingleWrapperOfPageOfUserSuggestion
+from dupr_backend.models.single_wrapper_page_user_suggestion import SingleWrapperPageUserSuggestion
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    limit = 10 # int | limit (optional) (default to 10)
-    offset = 0 # int | offset (optional) (default to 0)
+    version = 'version_example' # str | 
+    limit = 10 # int |  (optional) (default to 10)
+    offset = 0 # int |  (optional) (default to 0)
 
     try:
-        # getUserSuggestion
-        api_response = api_instance.get_user_suggestion_using_get(authorization, version, limit=limit, offset=offset)
-        print("The response of ActivityAdminNewsfeedsFeaturesApi->get_user_suggestion_using_get:\n")
+        api_response = api_instance.get_user_suggestion(version, limit=limit, offset=offset)
+        print("The response of ActivityAdminNewsfeedsFeaturesApi->get_user_suggestion:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ActivityAdminNewsfeedsFeaturesApi->get_user_suggestion_using_get: %s\n" % e)
+        print("Exception when calling ActivityAdminNewsfeedsFeaturesApi->get_user_suggestion: %s\n" % e)
 ```
 
 
@@ -363,18 +385,17 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **limit** | **int**| limit | [optional] [default to 10]
- **offset** | **int**| offset | [optional] [default to 0]
+ **version** | **str**|  | 
+ **limit** | **int**|  | [optional] [default to 10]
+ **offset** | **int**|  | [optional] [default to 0]
 
 ### Return type
 
-[**SingleWrapperOfPageOfUserSuggestion**](SingleWrapperOfPageOfUserSuggestion.md)
+[**SingleWrapperPageUserSuggestion**](SingleWrapperPageUserSuggestion.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -386,48 +407,53 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **react_using_post**
-> SingleWrapperOfReaction react_using_post(actor, authorization, version, request)
-
-react
+# **react2**
+> SingleWrapperReaction react2(version, actor, react_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
 from dupr_backend.models.react_request import ReactRequest
-from dupr_backend.models.single_wrapper_of_reaction import SingleWrapperOfReaction
+from dupr_backend.models.single_wrapper_reaction import SingleWrapperReaction
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
-    actor = 56 # int | actor
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.ReactRequest() # ReactRequest | request
+    version = 'version_example' # str | 
+    actor = 56 # int | 
+    react_request = dupr_backend.ReactRequest() # ReactRequest | 
 
     try:
-        # react
-        api_response = api_instance.react_using_post(actor, authorization, version, request)
-        print("The response of ActivityAdminNewsfeedsFeaturesApi->react_using_post:\n")
+        api_response = api_instance.react2(version, actor, react_request)
+        print("The response of ActivityAdminNewsfeedsFeaturesApi->react2:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ActivityAdminNewsfeedsFeaturesApi->react_using_post: %s\n" % e)
+        print("Exception when calling ActivityAdminNewsfeedsFeaturesApi->react2: %s\n" % e)
 ```
 
 
@@ -437,18 +463,17 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **actor** | **int**| actor | 
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**ReactRequest**](ReactRequest.md)| request | 
+ **version** | **str**|  | 
+ **actor** | **int**|  | 
+ **react_request** | [**ReactRequest**](ReactRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfReaction**](SingleWrapperOfReaction.md)
+[**SingleWrapperReaction**](SingleWrapperReaction.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -460,47 +485,52 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **remove_user_suggestions_using_delete**
-> SingleWrapperOfUnit remove_user_suggestions_using_delete(authorization, version, request)
-
-removeUserSuggestions
+# **remove_user_suggestions**
+> SingleWrapperUnit remove_user_suggestions(version, user_suggestion_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
+from dupr_backend.models.single_wrapper_unit import SingleWrapperUnit
 from dupr_backend.models.user_suggestion_request import UserSuggestionRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.UserSuggestionRequest() # UserSuggestionRequest | request
+    version = 'version_example' # str | 
+    user_suggestion_request = dupr_backend.UserSuggestionRequest() # UserSuggestionRequest | 
 
     try:
-        # removeUserSuggestions
-        api_response = api_instance.remove_user_suggestions_using_delete(authorization, version, request)
-        print("The response of ActivityAdminNewsfeedsFeaturesApi->remove_user_suggestions_using_delete:\n")
+        api_response = api_instance.remove_user_suggestions(version, user_suggestion_request)
+        print("The response of ActivityAdminNewsfeedsFeaturesApi->remove_user_suggestions:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ActivityAdminNewsfeedsFeaturesApi->remove_user_suggestions_using_delete: %s\n" % e)
+        print("Exception when calling ActivityAdminNewsfeedsFeaturesApi->remove_user_suggestions: %s\n" % e)
 ```
 
 
@@ -510,21 +540,20 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**UserSuggestionRequest**](UserSuggestionRequest.md)| request | 
+ **version** | **str**|  | 
+ **user_suggestion_request** | [**UserSuggestionRequest**](UserSuggestionRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfUnit**](SingleWrapperOfUnit.md)
+[**SingleWrapperUnit**](SingleWrapperUnit.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: */*
 
 ### HTTP response details
@@ -532,48 +561,53 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **sync_club_followers_using_post**
-> SingleWrapperOfUnit sync_club_followers_using_post(authorization, batch_size, delay, version, offset=offset)
-
-syncClubFollowers
+# **sync_club_followers**
+> SingleWrapperUnit sync_club_followers(version, batch_size, delay, offset=offset)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
+from dupr_backend.models.single_wrapper_unit import SingleWrapperUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    batch_size = 56 # int | batchSize
-    delay = 56 # int | delay
-    version = 'v1.0' # str | version (default to 'v1.0')
-    offset = 56 # int | offset (optional)
+    version = 'version_example' # str | 
+    batch_size = 56 # int | 
+    delay = 56 # int | 
+    offset = 56 # int |  (optional)
 
     try:
-        # syncClubFollowers
-        api_response = api_instance.sync_club_followers_using_post(authorization, batch_size, delay, version, offset=offset)
-        print("The response of ActivityAdminNewsfeedsFeaturesApi->sync_club_followers_using_post:\n")
+        api_response = api_instance.sync_club_followers(version, batch_size, delay, offset=offset)
+        print("The response of ActivityAdminNewsfeedsFeaturesApi->sync_club_followers:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ActivityAdminNewsfeedsFeaturesApi->sync_club_followers_using_post: %s\n" % e)
+        print("Exception when calling ActivityAdminNewsfeedsFeaturesApi->sync_club_followers: %s\n" % e)
 ```
 
 
@@ -583,19 +617,18 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **batch_size** | **int**| batchSize | 
- **delay** | **int**| delay | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **offset** | **int**| offset | [optional] 
+ **version** | **str**|  | 
+ **batch_size** | **int**|  | 
+ **delay** | **int**|  | 
+ **offset** | **int**|  | [optional] 
 
 ### Return type
 
-[**SingleWrapperOfUnit**](SingleWrapperOfUnit.md)
+[**SingleWrapperUnit**](SingleWrapperUnit.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -607,47 +640,52 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **sync_feeds_using_post**
-> SingleWrapperOfUnit sync_feeds_using_post(authorization, id, slug, version)
-
-syncFeeds
+# **sync_feeds**
+> SingleWrapperUnit sync_feeds(version, slug, id)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
+from dupr_backend.models.single_wrapper_unit import SingleWrapperUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    id = 56 # int | id
-    slug = 'slug_example' # str | slug
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    slug = 'slug_example' # str | 
+    id = 56 # int | 
 
     try:
-        # syncFeeds
-        api_response = api_instance.sync_feeds_using_post(authorization, id, slug, version)
-        print("The response of ActivityAdminNewsfeedsFeaturesApi->sync_feeds_using_post:\n")
+        api_response = api_instance.sync_feeds(version, slug, id)
+        print("The response of ActivityAdminNewsfeedsFeaturesApi->sync_feeds:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ActivityAdminNewsfeedsFeaturesApi->sync_feeds_using_post: %s\n" % e)
+        print("Exception when calling ActivityAdminNewsfeedsFeaturesApi->sync_feeds: %s\n" % e)
 ```
 
 
@@ -657,18 +695,17 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **id** | **int**| id | 
- **slug** | **str**| slug | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **slug** | **str**|  | 
+ **id** | **int**|  | 
 
 ### Return type
 
-[**SingleWrapperOfUnit**](SingleWrapperOfUnit.md)
+[**SingleWrapperUnit**](SingleWrapperUnit.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -680,88 +717,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **unfollow_clubs_with_same_ids_using_post**
-> SingleWrapperOfUnit unfollow_clubs_with_same_ids_using_post(authorization, offset, version)
-
-unfollowClubsWithSameIds
+# **unfollow2**
+> Wrapper unfollow2(version, followee, followee_type, follower)
 
 ### Example
 
-
-```python
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
-from dupr_backend.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
-)
-
-
-# Enter a context with an instance of the API client
-with dupr_backend.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    offset = 56 # int | offset
-    version = 'v1.0' # str | version (default to 'v1.0')
-
-    try:
-        # unfollowClubsWithSameIds
-        api_response = api_instance.unfollow_clubs_with_same_ids_using_post(authorization, offset, version)
-        print("The response of ActivityAdminNewsfeedsFeaturesApi->unfollow_clubs_with_same_ids_using_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ActivityAdminNewsfeedsFeaturesApi->unfollow_clubs_with_same_ids_using_post: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **offset** | **int**| offset | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
-
-### Return type
-
-[**SingleWrapperOfUnit**](SingleWrapperOfUnit.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **unfollow_using_delete**
-> Wrapper unfollow_using_delete(authorization, followee, followee_type, follower, version)
-
-unfollow
-
-### Example
-
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -769,30 +733,37 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    followee = 56 # int | followee
-    followee_type = 'followee_type_example' # str | followeeType
-    follower = 56 # int | follower
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    followee = 56 # int | 
+    followee_type = 'followee_type_example' # str | 
+    follower = 56 # int | 
 
     try:
-        # unfollow
-        api_response = api_instance.unfollow_using_delete(authorization, followee, followee_type, follower, version)
-        print("The response of ActivityAdminNewsfeedsFeaturesApi->unfollow_using_delete:\n")
+        api_response = api_instance.unfollow2(version, followee, followee_type, follower)
+        print("The response of ActivityAdminNewsfeedsFeaturesApi->unfollow2:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ActivityAdminNewsfeedsFeaturesApi->unfollow_using_delete: %s\n" % e)
+        print("Exception when calling ActivityAdminNewsfeedsFeaturesApi->unfollow2: %s\n" % e)
 ```
 
 
@@ -802,11 +773,10 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **followee** | **int**| followee | 
- **followee_type** | **str**| followeeType | 
- **follower** | **int**| follower | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **followee** | **int**|  | 
+ **followee_type** | **str**|  | 
+ **follower** | **int**|  | 
 
 ### Return type
 
@@ -814,7 +784,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -826,7 +796,81 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **unfollow_clubs_with_same_ids**
+> SingleWrapperUnit unfollow_clubs_with_same_ids(version, offset)
+
+### Example
+
+* Bearer (JWT) Authentication (bearerAuth):
+
+```python
+import dupr_backend
+from dupr_backend.models.single_wrapper_unit import SingleWrapperUnit
+from dupr_backend.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dupr.gg
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "https://api.dupr.gg"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
+    version = 'version_example' # str | 
+    offset = 56 # int | 
+
+    try:
+        api_response = api_instance.unfollow_clubs_with_same_ids(version, offset)
+        print("The response of ActivityAdminNewsfeedsFeaturesApi->unfollow_clubs_with_same_ids:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ActivityAdminNewsfeedsFeaturesApi->unfollow_clubs_with_same_ids: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | **str**|  | 
+ **offset** | **int**|  | 
+
+### Return type
+
+[**SingleWrapperUnit**](SingleWrapperUnit.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

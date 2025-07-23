@@ -5,20 +5,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**day1_start** | **str** |  | [optional] 
-**day2_start** | **str** |  | [optional] 
-**division_code** | **str** |  | 
+**event_id** | **int** |  | 
 **division_id** | **int** |  | 
 **division_name** | **str** |  | 
-**division_type** | **str** |  | 
-**entry_fee** | **float** |  | [optional] 
-**event_id** | **int** |  | 
+**division_code** | **str** |  | 
+**registration_period** | **List[str]** |  | [optional] 
+**registration_start** | **date** |  | [optional] 
+**registration_end** | **date** |  | [optional] 
+**day1_start** | **date** |  | [optional] 
+**day2_start** | **date** |  | [optional] 
 **max_teams** | **int** |  | [optional] 
 **max_waitlist** | **int** |  | [optional] 
+**entry_fee** | **float** |  | [optional] 
 **prize** | **float** |  | 
-**registration_end** | **str** |  | [optional] 
-**registration_period** | **List[str]** |  | [optional] 
-**registration_start** | **str** |  | [optional] 
+**division_type** | **str** |  | 
 **status** | **str** |  | [optional] 
 
 ## Example

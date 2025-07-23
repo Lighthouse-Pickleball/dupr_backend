@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dupr_id** | **str** |  | [optional] 
-**email** | **str** |  | [optional] 
-**limit** | **int** |  | [optional] 
-**offset** | **int** |  | [optional] 
 **user_id** | **int** |  | [optional] 
+**email** | **str** |  | [optional] 
+**dupr_id** | **str** |  | [optional] 
+**offset** | **int** |  | 
+**limit** | **int** |  | 
 
 ## Example
 

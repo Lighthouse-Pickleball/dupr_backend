@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**compound_code** | **str** |  | [optional] 
 **global_code** | **str** |  | [optional] 
+**compound_code** | **str** |  | [optional] 
 
 ## Example
 

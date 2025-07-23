@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bucket** | **str** |  | 
-**event** | **str** |  | 
 **key** | **str** |  | 
+**event** | **str** |  | 
 
 ## Example
 

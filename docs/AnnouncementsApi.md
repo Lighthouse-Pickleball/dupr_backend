@@ -1,20 +1,18 @@
 # dupr_backend.AnnouncementsApi
 
-All URIs are relative to *http://https://backend.mydupr.com*
+All URIs are relative to *https://api.dupr.gg*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**draft_using_post**](AnnouncementsApi.md#draft_using_post) | **POST** /event/announcement/{version}/draft | draft
-[**edit_using_post**](AnnouncementsApi.md#edit_using_post) | **POST** /event/announcement/{version}/edit | edit
-[**get_announcements_using_post**](AnnouncementsApi.md#get_announcements_using_post) | **POST** /event/announcement/{version}/all | getAnnouncements
-[**save_using_post**](AnnouncementsApi.md#save_using_post) | **POST** /event/announcement/{version}/save | save
-[**sent_notification_using_post**](AnnouncementsApi.md#sent_notification_using_post) | **POST** /event/announcement/send/{version}/test | sentNotification
+[**draft1**](AnnouncementsApi.md#draft1) | **POST** /event/announcement/{version}/draft | 
+[**edit**](AnnouncementsApi.md#edit) | **POST** /event/announcement/{version}/edit | 
+[**get_announcements**](AnnouncementsApi.md#get_announcements) | **POST** /event/announcement/{version}/all | 
+[**save3**](AnnouncementsApi.md#save3) | **POST** /event/announcement/{version}/save | 
+[**sent_notification**](AnnouncementsApi.md#sent_notification) | **POST** /event/announcement/send/{version}/test | 
 
 
-# **draft_using_post**
-> Wrapper draft_using_post(authorization, version, request)
-
-draft
+# **draft1**
+> Wrapper draft1(version, event_announcement_request)
 
 ### Example
 
@@ -26,10 +24,10 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -37,17 +35,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AnnouncementsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.EventAnnouncementRequest() # EventAnnouncementRequest | request
+    version = 'version_example' # str | 
+    event_announcement_request = dupr_backend.EventAnnouncementRequest() # EventAnnouncementRequest | 
 
     try:
-        # draft
-        api_response = api_instance.draft_using_post(authorization, version, request)
-        print("The response of AnnouncementsApi->draft_using_post:\n")
+        api_response = api_instance.draft1(version, event_announcement_request)
+        print("The response of AnnouncementsApi->draft1:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AnnouncementsApi->draft_using_post: %s\n" % e)
+        print("Exception when calling AnnouncementsApi->draft1: %s\n" % e)
 ```
 
 
@@ -57,9 +53,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**EventAnnouncementRequest**](EventAnnouncementRequest.md)| request | 
+ **version** | **str**|  | 
+ **event_announcement_request** | [**EventAnnouncementRequest**](EventAnnouncementRequest.md)|  | 
 
 ### Return type
 
@@ -79,14 +74,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **edit_using_post**
-> Wrapper edit_using_post(authorization, version, request)
-
-edit
+# **edit**
+> Wrapper edit(version, event_announcement_request)
 
 ### Example
 
@@ -98,10 +90,10 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -109,17 +101,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AnnouncementsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.EventAnnouncementRequest() # EventAnnouncementRequest | request
+    version = 'version_example' # str | 
+    event_announcement_request = dupr_backend.EventAnnouncementRequest() # EventAnnouncementRequest | 
 
     try:
-        # edit
-        api_response = api_instance.edit_using_post(authorization, version, request)
-        print("The response of AnnouncementsApi->edit_using_post:\n")
+        api_response = api_instance.edit(version, event_announcement_request)
+        print("The response of AnnouncementsApi->edit:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AnnouncementsApi->edit_using_post: %s\n" % e)
+        print("Exception when calling AnnouncementsApi->edit: %s\n" % e)
 ```
 
 
@@ -129,9 +119,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**EventAnnouncementRequest**](EventAnnouncementRequest.md)| request | 
+ **version** | **str**|  | 
+ **event_announcement_request** | [**EventAnnouncementRequest**](EventAnnouncementRequest.md)|  | 
 
 ### Return type
 
@@ -151,14 +140,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_announcements_using_post**
-> SingleWrapperOfPageOfEventAnnouncementsResponse get_announcements_using_post(authorization, version, request)
-
-getAnnouncements
+# **get_announcements**
+> SingleWrapperPageEventAnnouncementsResponse get_announcements(version, announcement_history_request)
 
 ### Example
 
@@ -166,14 +152,14 @@ getAnnouncements
 ```python
 import dupr_backend
 from dupr_backend.models.announcement_history_request import AnnouncementHistoryRequest
-from dupr_backend.models.single_wrapper_of_page_of_event_announcements_response import SingleWrapperOfPageOfEventAnnouncementsResponse
+from dupr_backend.models.single_wrapper_page_event_announcements_response import SingleWrapperPageEventAnnouncementsResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -181,17 +167,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AnnouncementsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.AnnouncementHistoryRequest() # AnnouncementHistoryRequest | request
+    version = 'version_example' # str | 
+    announcement_history_request = dupr_backend.AnnouncementHistoryRequest() # AnnouncementHistoryRequest | 
 
     try:
-        # getAnnouncements
-        api_response = api_instance.get_announcements_using_post(authorization, version, request)
-        print("The response of AnnouncementsApi->get_announcements_using_post:\n")
+        api_response = api_instance.get_announcements(version, announcement_history_request)
+        print("The response of AnnouncementsApi->get_announcements:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AnnouncementsApi->get_announcements_using_post: %s\n" % e)
+        print("Exception when calling AnnouncementsApi->get_announcements: %s\n" % e)
 ```
 
 
@@ -201,13 +185,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**AnnouncementHistoryRequest**](AnnouncementHistoryRequest.md)| request | 
+ **version** | **str**|  | 
+ **announcement_history_request** | [**AnnouncementHistoryRequest**](AnnouncementHistoryRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfPageOfEventAnnouncementsResponse**](SingleWrapperOfPageOfEventAnnouncementsResponse.md)
+[**SingleWrapperPageEventAnnouncementsResponse**](SingleWrapperPageEventAnnouncementsResponse.md)
 
 ### Authorization
 
@@ -223,14 +206,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **save_using_post**
-> Wrapper save_using_post(authorization, version, request)
-
-save
+# **save3**
+> Wrapper save3(version, event_announcement_request)
 
 ### Example
 
@@ -242,10 +222,10 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -253,17 +233,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AnnouncementsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.EventAnnouncementRequest() # EventAnnouncementRequest | request
+    version = 'version_example' # str | 
+    event_announcement_request = dupr_backend.EventAnnouncementRequest() # EventAnnouncementRequest | 
 
     try:
-        # save
-        api_response = api_instance.save_using_post(authorization, version, request)
-        print("The response of AnnouncementsApi->save_using_post:\n")
+        api_response = api_instance.save3(version, event_announcement_request)
+        print("The response of AnnouncementsApi->save3:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AnnouncementsApi->save_using_post: %s\n" % e)
+        print("Exception when calling AnnouncementsApi->save3: %s\n" % e)
 ```
 
 
@@ -273,9 +251,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**EventAnnouncementRequest**](EventAnnouncementRequest.md)| request | 
+ **version** | **str**|  | 
+ **event_announcement_request** | [**EventAnnouncementRequest**](EventAnnouncementRequest.md)|  | 
 
 ### Return type
 
@@ -295,14 +272,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **sent_notification_using_post**
-> SingleWrapperOfUnit sent_notification_using_post(authorization, version, request)
-
-sentNotification
+# **sent_notification**
+> SingleWrapperUnit sent_notification(version, announcements_notifications)
 
 ### Example
 
@@ -310,14 +284,14 @@ sentNotification
 ```python
 import dupr_backend
 from dupr_backend.models.announcements_notifications import AnnouncementsNotifications
-from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
+from dupr_backend.models.single_wrapper_unit import SingleWrapperUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -325,17 +299,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AnnouncementsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.AnnouncementsNotifications() # AnnouncementsNotifications | request
+    version = 'version_example' # str | 
+    announcements_notifications = dupr_backend.AnnouncementsNotifications() # AnnouncementsNotifications | 
 
     try:
-        # sentNotification
-        api_response = api_instance.sent_notification_using_post(authorization, version, request)
-        print("The response of AnnouncementsApi->sent_notification_using_post:\n")
+        api_response = api_instance.sent_notification(version, announcements_notifications)
+        print("The response of AnnouncementsApi->sent_notification:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AnnouncementsApi->sent_notification_using_post: %s\n" % e)
+        print("Exception when calling AnnouncementsApi->sent_notification: %s\n" % e)
 ```
 
 
@@ -345,13 +317,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**AnnouncementsNotifications**](AnnouncementsNotifications.md)| request | 
+ **version** | **str**|  | 
+ **announcements_notifications** | [**AnnouncementsNotifications**](AnnouncementsNotifications.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfUnit**](SingleWrapperOfUnit.md)
+[**SingleWrapperUnit**](SingleWrapperUnit.md)
 
 ### Authorization
 
@@ -367,7 +338,6 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

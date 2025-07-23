@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **str** |  | [optional] 
-**email** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
+**email** | **str** |  | [optional] 
 **phone** | **str** |  | [optional] 
-**priority** | **int** |  | [optional] 
-**type** | **str** |  | [optional] 
+**address** | **str** |  | [optional] 
+**type** | **str** |  | 
+**priority** | **int** |  | 
 
 ## Example
 

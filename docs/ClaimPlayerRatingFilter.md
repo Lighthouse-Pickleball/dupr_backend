@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**max_rating** | **float** |  | [optional] 
-**min_rating** | **float** |  | [optional] 
+**min_rating** | **float** |  | 
+**max_rating** | **float** |  | 
 **type** | **str** |  | [optional] 
 
 ## Example

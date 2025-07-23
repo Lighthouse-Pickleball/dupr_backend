@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**role_id** | **int** |  | 
+**role** | **str** |  | 
 **approval_status** | **str** |  | 
 **club_id** | **int** |  | 
-**created** | **str** |  | [optional] 
-**join_type** | **str** |  | [optional] 
+**created** | **datetime** |  | [optional] 
 **request_by** | **int** |  | [optional] 
-**role** | **str** |  | 
-**role_id** | **int** |  | 
+**join_type** | **str** |  | [optional] 
 
 ## Example
 

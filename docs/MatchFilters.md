@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**event_date** | [**DateRange**](DateRange.md) |  | [optional] 
 **event_format** | **List[str]** |  | [optional] 
-**event_name** | **str** |  | [optional] 
 **match_status** | **List[str]** |  | [optional] 
+**event_date** | [**DateRange**](DateRange.md) |  | [optional] 
+**event_name** | **str** |  | [optional] 
 **player_id** | **int** |  | [optional] 
 
 ## Example

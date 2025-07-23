@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **player_id** | **int** |  | 
-**rating_history** | [**List[History]**](History.md) |  | 
 **type** | **str** |  | 
+**rating_history** | [**List[History]**](History.md) |  | 
 
 ## Example
 

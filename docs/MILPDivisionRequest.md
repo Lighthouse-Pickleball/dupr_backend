@@ -5,15 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**day1_start** | **datetime** |  | 
-**day2_start** | **datetime** |  | [optional] 
-**division_name** | **str** |  | [optional] 
 **division_type** | **str** |  | 
-**entry_fee** | **float** |  | [optional] 
+**division_name** | **str** |  | [optional] 
 **max_teams** | **int** |  | [optional] 
 **max_waitlist** | **int** |  | [optional] 
-**prize** | **float** |  | 
+**day1_start** | **datetime** |  | 
+**day2_start** | **datetime** |  | [optional] 
 **registration_period** | **List[date]** |  | 
+**entry_fee** | **float** |  | [optional] 
+**prize** | **float** |  | 
 
 ## Example
 

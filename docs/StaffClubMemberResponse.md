@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **directors** | [**List[StaffClubMember]**](StaffClubMember.md) |  | 
+**organizers** | [**List[StaffClubMember]**](StaffClubMember.md) |  | 
 **max_director_count** | **int** |  | 
 **max_organizer_count** | **int** |  | 
-**organizers** | [**List[StaffClubMember]**](StaffClubMember.md) |  | 
 
 ## Example
 

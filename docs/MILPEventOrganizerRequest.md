@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | **str** |  | [optional] 
 **user_id** | **int** |  | 
+**status** | **str** |  | [optional] 
 
 ## Example
 

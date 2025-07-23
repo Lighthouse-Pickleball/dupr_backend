@@ -1,27 +1,26 @@
 # dupr_backend.AdminEventApi
 
-All URIs are relative to *http://https://backend.mydupr.com*
+All URIs are relative to *https://api.dupr.gg*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_all_league_using_delete**](AdminEventApi.md#delete_all_league_using_delete) | **DELETE** /admin/event/{version}/all | deleteAllLeague
-[**delete_event_players_using_delete**](AdminEventApi.md#delete_event_players_using_delete) | **DELETE** /admin/event/player/{version}/all | deleteEventPlayers
-[**force_delete_league_using_delete**](AdminEventApi.md#force_delete_league_using_delete) | **DELETE** /admin/event/{version}/{leagueId} | forceDeleteLeague
-[**index_all_leagues_using_get**](AdminEventApi.md#index_all_leagues_using_get) | **GET** /admin/event/{version}/index | indexAllLeagues
-[**index_league_players_using_get**](AdminEventApi.md#index_league_players_using_get) | **GET** /admin/event/player/{version}/index | indexLeaguePlayers
-[**index_leagues_by_id_using_get**](AdminEventApi.md#index_leagues_by_id_using_get) | **GET** /admin/event/{leagueId}/{version}/index | indexLeaguesById
-[**registered_to_bracket_using_post**](AdminEventApi.md#registered_to_bracket_using_post) | **POST** /admin/event/{bracketId}/{version}/join | registeredToBracket
-[**restore_deleted_league_using_post**](AdminEventApi.md#restore_deleted_league_using_post) | **POST** /admin/event/{version}/restore/{leagueId} | restoreDeletedLeague
-[**update_league_fees_using_put**](AdminEventApi.md#update_league_fees_using_put) | **PUT** /admin/event/{version}/{leagueId}/fees | updateLeagueFees
+[**delete_all_league**](AdminEventApi.md#delete_all_league) | **DELETE** /admin/event/{version}/all | 
+[**delete_event_players**](AdminEventApi.md#delete_event_players) | **DELETE** /admin/event/player/{version}/all | 
+[**force_delete_league**](AdminEventApi.md#force_delete_league) | **DELETE** /admin/event/{version}/{leagueId} | 
+[**index_all_leagues**](AdminEventApi.md#index_all_leagues) | **GET** /admin/event/{version}/index | 
+[**index_league_players**](AdminEventApi.md#index_league_players) | **GET** /admin/event/player/{version}/index | 
+[**index_leagues_by_id**](AdminEventApi.md#index_leagues_by_id) | **GET** /admin/event/{leagueId}/{version}/index | 
+[**registered_to_bracket**](AdminEventApi.md#registered_to_bracket) | **POST** /admin/event/{bracketId}/{version}/join | 
+[**restore_deleted_league**](AdminEventApi.md#restore_deleted_league) | **POST** /admin/event/{version}/restore/{leagueId} | 
+[**update_league_fees**](AdminEventApi.md#update_league_fees) | **PUT** /admin/event/{version}/{leagueId}/fees | 
 
 
-# **delete_all_league_using_delete**
-> Wrapper delete_all_league_using_delete(authorization, version)
-
-deleteAllLeague
+# **delete_all_league**
+> Wrapper delete_all_league(version)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -29,27 +28,34 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminEventApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
 
     try:
-        # deleteAllLeague
-        api_response = api_instance.delete_all_league_using_delete(authorization, version)
-        print("The response of AdminEventApi->delete_all_league_using_delete:\n")
+        api_response = api_instance.delete_all_league(version)
+        print("The response of AdminEventApi->delete_all_league:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AdminEventApi->delete_all_league_using_delete: %s\n" % e)
+        print("Exception when calling AdminEventApi->delete_all_league: %s\n" % e)
 ```
 
 
@@ -59,8 +65,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
 
 ### Return type
 
@@ -68,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -80,17 +85,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_event_players_using_delete**
-> Wrapper delete_event_players_using_delete(authorization, version)
-
-deleteEventPlayers
+# **delete_event_players**
+> Wrapper delete_event_players(version)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -98,27 +101,34 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminEventApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
 
     try:
-        # deleteEventPlayers
-        api_response = api_instance.delete_event_players_using_delete(authorization, version)
-        print("The response of AdminEventApi->delete_event_players_using_delete:\n")
+        api_response = api_instance.delete_event_players(version)
+        print("The response of AdminEventApi->delete_event_players:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AdminEventApi->delete_event_players_using_delete: %s\n" % e)
+        print("Exception when calling AdminEventApi->delete_event_players: %s\n" % e)
 ```
 
 
@@ -128,8 +138,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
 
 ### Return type
 
@@ -137,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -149,17 +158,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **force_delete_league_using_delete**
-> Wrapper force_delete_league_using_delete(authorization, league_id, version)
-
-forceDeleteLeague
+# **force_delete_league**
+> Wrapper force_delete_league(version, league_id)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -167,28 +174,35 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminEventApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    league_id = 56 # int | leagueId
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    league_id = 56 # int | 
 
     try:
-        # forceDeleteLeague
-        api_response = api_instance.force_delete_league_using_delete(authorization, league_id, version)
-        print("The response of AdminEventApi->force_delete_league_using_delete:\n")
+        api_response = api_instance.force_delete_league(version, league_id)
+        print("The response of AdminEventApi->force_delete_league:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AdminEventApi->force_delete_league_using_delete: %s\n" % e)
+        print("Exception when calling AdminEventApi->force_delete_league: %s\n" % e)
 ```
 
 
@@ -198,9 +212,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **league_id** | **int**| leagueId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **league_id** | **int**|  | 
 
 ### Return type
 
@@ -208,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -220,17 +233,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **index_all_leagues_using_get**
-> Wrapper index_all_leagues_using_get(authorization, version)
-
-indexAllLeagues
+# **index_all_leagues**
+> Wrapper index_all_leagues(version)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -238,27 +249,34 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminEventApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
 
     try:
-        # indexAllLeagues
-        api_response = api_instance.index_all_leagues_using_get(authorization, version)
-        print("The response of AdminEventApi->index_all_leagues_using_get:\n")
+        api_response = api_instance.index_all_leagues(version)
+        print("The response of AdminEventApi->index_all_leagues:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AdminEventApi->index_all_leagues_using_get: %s\n" % e)
+        print("Exception when calling AdminEventApi->index_all_leagues: %s\n" % e)
 ```
 
 
@@ -268,8 +286,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
 
 ### Return type
 
@@ -277,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -289,17 +306,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **index_league_players_using_get**
-> Wrapper index_league_players_using_get(authorization, version)
-
-indexLeaguePlayers
+# **index_league_players**
+> Wrapper index_league_players(version)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -307,27 +322,34 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminEventApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
 
     try:
-        # indexLeaguePlayers
-        api_response = api_instance.index_league_players_using_get(authorization, version)
-        print("The response of AdminEventApi->index_league_players_using_get:\n")
+        api_response = api_instance.index_league_players(version)
+        print("The response of AdminEventApi->index_league_players:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AdminEventApi->index_league_players_using_get: %s\n" % e)
+        print("Exception when calling AdminEventApi->index_league_players: %s\n" % e)
 ```
 
 
@@ -337,8 +359,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
 
 ### Return type
 
@@ -346,7 +367,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -358,17 +379,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **index_leagues_by_id_using_get**
-> Wrapper index_leagues_by_id_using_get(authorization, league_id, version)
-
-indexLeaguesById
+# **index_leagues_by_id**
+> Wrapper index_leagues_by_id(version, league_id)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -376,28 +395,35 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminEventApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    league_id = 56 # int | leagueId
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    league_id = 56 # int | 
 
     try:
-        # indexLeaguesById
-        api_response = api_instance.index_leagues_by_id_using_get(authorization, league_id, version)
-        print("The response of AdminEventApi->index_leagues_by_id_using_get:\n")
+        api_response = api_instance.index_leagues_by_id(version, league_id)
+        print("The response of AdminEventApi->index_leagues_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AdminEventApi->index_leagues_by_id_using_get: %s\n" % e)
+        print("Exception when calling AdminEventApi->index_leagues_by_id: %s\n" % e)
 ```
 
 
@@ -407,9 +433,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **league_id** | **int**| leagueId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **league_id** | **int**|  | 
 
 ### Return type
 
@@ -417,7 +442,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -429,48 +454,53 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **registered_to_bracket_using_post**
-> SingleWrapperOfJoinLeagueResponse registered_to_bracket_using_post(authorization, bracket_id, version, request)
-
-registeredToBracket
+# **registered_to_bracket**
+> SingleWrapperJoinLeagueResponse registered_to_bracket(version, bracket_id, registered_event_admin_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
 from dupr_backend.models.registered_event_admin_request import RegisteredEventAdminRequest
-from dupr_backend.models.single_wrapper_of_join_league_response import SingleWrapperOfJoinLeagueResponse
+from dupr_backend.models.single_wrapper_join_league_response import SingleWrapperJoinLeagueResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminEventApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    bracket_id = 56 # int | bracketId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.RegisteredEventAdminRequest() # RegisteredEventAdminRequest | request
+    version = 'version_example' # str | 
+    bracket_id = 56 # int | 
+    registered_event_admin_request = dupr_backend.RegisteredEventAdminRequest() # RegisteredEventAdminRequest | 
 
     try:
-        # registeredToBracket
-        api_response = api_instance.registered_to_bracket_using_post(authorization, bracket_id, version, request)
-        print("The response of AdminEventApi->registered_to_bracket_using_post:\n")
+        api_response = api_instance.registered_to_bracket(version, bracket_id, registered_event_admin_request)
+        print("The response of AdminEventApi->registered_to_bracket:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AdminEventApi->registered_to_bracket_using_post: %s\n" % e)
+        print("Exception when calling AdminEventApi->registered_to_bracket: %s\n" % e)
 ```
 
 
@@ -480,18 +510,17 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **bracket_id** | **int**| bracketId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**RegisteredEventAdminRequest**](RegisteredEventAdminRequest.md)| request | 
+ **version** | **str**|  | 
+ **bracket_id** | **int**|  | 
+ **registered_event_admin_request** | [**RegisteredEventAdminRequest**](RegisteredEventAdminRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfJoinLeagueResponse**](SingleWrapperOfJoinLeagueResponse.md)
+[**SingleWrapperJoinLeagueResponse**](SingleWrapperJoinLeagueResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -503,17 +532,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **restore_deleted_league_using_post**
-> Wrapper restore_deleted_league_using_post(authorization, league_id, version)
-
-restoreDeletedLeague
+# **restore_deleted_league**
+> Wrapper restore_deleted_league(version, league_id)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -521,28 +548,35 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminEventApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    league_id = 56 # int | leagueId
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    league_id = 56 # int | 
 
     try:
-        # restoreDeletedLeague
-        api_response = api_instance.restore_deleted_league_using_post(authorization, league_id, version)
-        print("The response of AdminEventApi->restore_deleted_league_using_post:\n")
+        api_response = api_instance.restore_deleted_league(version, league_id)
+        print("The response of AdminEventApi->restore_deleted_league:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AdminEventApi->restore_deleted_league_using_post: %s\n" % e)
+        print("Exception when calling AdminEventApi->restore_deleted_league: %s\n" % e)
 ```
 
 
@@ -552,9 +586,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **league_id** | **int**| leagueId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **league_id** | **int**|  | 
 
 ### Return type
 
@@ -562,7 +595,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -574,48 +607,53 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_league_fees_using_put**
-> SingleWrapperOfLeagueResponse update_league_fees_using_put(authorization, league_id, version, request)
-
-updateLeagueFees
+# **update_league_fees**
+> SingleWrapperLeagueResponse update_league_fees(version, league_id, league_fees_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
 from dupr_backend.models.league_fees_request import LeagueFeesRequest
-from dupr_backend.models.single_wrapper_of_league_response import SingleWrapperOfLeagueResponse
+from dupr_backend.models.single_wrapper_league_response import SingleWrapperLeagueResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminEventApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    league_id = 56 # int | leagueId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.LeagueFeesRequest() # LeagueFeesRequest | request
+    version = 'version_example' # str | 
+    league_id = 56 # int | 
+    league_fees_request = dupr_backend.LeagueFeesRequest() # LeagueFeesRequest | 
 
     try:
-        # updateLeagueFees
-        api_response = api_instance.update_league_fees_using_put(authorization, league_id, version, request)
-        print("The response of AdminEventApi->update_league_fees_using_put:\n")
+        api_response = api_instance.update_league_fees(version, league_id, league_fees_request)
+        print("The response of AdminEventApi->update_league_fees:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AdminEventApi->update_league_fees_using_put: %s\n" % e)
+        print("Exception when calling AdminEventApi->update_league_fees: %s\n" % e)
 ```
 
 
@@ -625,18 +663,17 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **league_id** | **int**| leagueId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**LeagueFeesRequest**](LeagueFeesRequest.md)| request | 
+ **version** | **str**|  | 
+ **league_id** | **int**|  | 
+ **league_fees_request** | [**LeagueFeesRequest**](LeagueFeesRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfLeagueResponse**](SingleWrapperOfLeagueResponse.md)
+[**SingleWrapperLeagueResponse**](SingleWrapperLeagueResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -648,7 +685,6 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

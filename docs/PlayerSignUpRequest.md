@@ -5,27 +5,29 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address_id** | **int** |  | 
-**ambassador_code** | **str** |  | [optional] 
-**birthdate** | **date** |  | 
-**client_key** | **str** |  | [optional] 
-**default_rating** | **str** |  | [optional] 
-**doubles_rating** | **float** |  | [optional] 
-**email** | **str** |  | 
-**enable_newsletter** | **bool** |  | 
-**first_name** | **str** |  | 
 **full_name** | **str** |  | 
-**gender** | **str** |  | 
-**hand** | **str** |  | 
-**identifier** | **str** | An unique identifier of this user from your platform | [optional] 
-**iso_code** | **str** |  | [optional] 
+**first_name** | **str** |  | 
 **last_name** | **str** |  | 
-**media_id** | **int** |  | [optional] 
-**password** | **str** |  | 
+**email** | **str** |  | 
+**iso_code** | **str** |  | [optional] 
 **phone** | **str** |  | [optional] 
+**password** | **str** |  | 
+**ambassador_code** | **str** |  | [optional] 
+**media_id** | **int** |  | [optional] 
+**gender** | **str** |  | 
+**birthdate** | **date** |  | 
+**address_id** | **int** |  | 
+**hand** | **str** |  | 
 **singles_rating** | **float** |  | [optional] 
-**user_id** | **int** |  | [optional] 
+**doubles_rating** | **float** |  | [optional] 
+**default_rating** | **str** |  | [optional] 
+**enable_newsletter** | **bool** |  | 
 **username** | **str** |  | [optional] 
+**user_id** | **int** |  | [optional] 
+**client_key** | **str** |  | [optional] 
+**identifier** | **str** | An unique identifier of this user from your platform | [optional] 
+**marketing_opt_in** | **bool** |  | [optional] 
+**terms_of_service** | **bool** |  | [optional] 
 
 ## Example
 

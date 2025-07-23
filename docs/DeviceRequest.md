@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **platform** | **str** |  | 
+**uuid** | **str** |  | 
 **token** | **str** |  | 
 **user_id** | **int** |  | [optional] 
-**uuid** | **str** |  | 
 
 ## Example
 

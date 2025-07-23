@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **iso_code** | **str** |  | 
-**otp** | **str** |  | 
 **phone_number** | **str** |  | 
+**otp** | **str** |  | 
 
 ## Example
 

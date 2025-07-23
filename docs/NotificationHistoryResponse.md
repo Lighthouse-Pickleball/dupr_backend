@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | **Dict[str, object]** |  | 
-**id** | **str** |  | 
 **type** | **str** |  | 
+**id** | **str** |  | 
+**data** | [**Dict[str, NotificationHistoryResponseDataValue]**](NotificationHistoryResponseDataValue.md) |  | 
 
 ## Example
 

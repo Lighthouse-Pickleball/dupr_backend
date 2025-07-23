@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**url** | **str** |  | 
 **created** | **int** |  | 
 **expires_at** | **int** |  | [optional] 
-**url** | **str** |  | 
 
 ## Example
 

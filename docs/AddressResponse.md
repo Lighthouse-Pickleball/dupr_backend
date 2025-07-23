@@ -5,17 +5,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address_line** | **str** |  | [optional] 
-**create** | **str** |  | 
-**formatted_address** | **str** |  | 
 **id** | **int** |  | [optional] 
+**address_line** | **str** |  | [optional] 
+**short_address** | **str** |  | 
+**formatted_address** | **str** |  | 
 **latitude** | **float** |  | 
 **longitude** | **float** |  | 
 **place_id** | **str** |  | [optional] 
 **precision** | **str** |  | [optional] 
-**short_address** | **str** |  | 
 **status** | **str** |  | [optional] 
 **types** | **str** |  | [optional] 
+**create** | **datetime** |  | 
 
 ## Example
 

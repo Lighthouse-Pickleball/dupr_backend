@@ -5,20 +5,24 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**club_member** | **bool** |  | 
-**display_username** | **bool** |  | [optional] 
-**full_name** | **str** |  | 
 **id** | **int** |  | [optional] 
-**is_registered** | **bool** |  | [optional] 
-**is_substitute** | **bool** |  | 
-**is_wait_listed** | **bool** |  | 
-**partner_status** | **str** |  | [optional] 
-**payment_due** | **str** |  | [optional] 
-**payment_refunded** | **bool** |  | 
-**payment_status** | **str** |  | [optional] 
-**refund_amount** | **float** |  | 
-**status** | **str** |  | [optional] 
+**full_name** | **str** |  | 
 **username** | **str** |  | [optional] 
+**display_username** | **bool** |  | [optional] 
+**partner_status** | **str** |  | 
+**status** | **str** |  | [optional] 
+**payment_due** | **str** |  | [optional] 
+**payment_status** | **str** |  | [optional] 
+**is_registered** | **bool** |  | 
+**is_wait_listed** | **bool** |  | 
+**is_c_lub_member** | **bool** |  | 
+**payment_refunded** | **bool** |  | 
+**refund_amount** | **float** |  | 
+**is_substitute** | **bool** |  | 
+**substitute** | **bool** |  | [optional] 
+**club_member** | **bool** |  | [optional] 
+**registered** | **bool** |  | [optional] 
+**wait_listed** | **bool** |  | [optional] 
 
 ## Example
 

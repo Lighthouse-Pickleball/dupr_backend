@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **banner_id** | **int** |  | 
 **content_id** | **int** |  | 
 **description** | [**BannerContent**](BannerContent.md) |  | 
-**end_date_time** | **datetime** |  | [optional] 
-**start_date_time** | **datetime** |  | [optional] 
-**status** | **str** |  | 
 **title** | **str** |  | 
+**status** | **str** |  | 
+**start_date_time** | **datetime** |  | [optional] 
+**end_date_time** | **datetime** |  | [optional] 
 
 ## Example
 

@@ -5,9 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | [**AddressRequest**](AddressRequest.md) |  | [optional] 
-**id** | **int** |  | [optional] 
-**type** | **str** |  | [optional] 
+**address** | [**AddressRequest**](AddressRequest.md) |  | 
+**type** | **str** |  | 
+**id** | **int** |  | 
+**is_empty** | **bool** |  | 
 
 ## Example
 

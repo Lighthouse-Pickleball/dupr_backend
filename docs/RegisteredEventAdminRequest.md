@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dupr_ids** | **Dict[str, str]** |  | [optional] 
 **emails** | **Dict[str, str]** |  | [optional] 
+**dupr_ids** | **Dict[str, str]** |  | [optional] 
 **user_ids** | **Dict[str, int]** |  | [optional] 
 
 ## Example

@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**team_name** | **str** |  | 
 **team_captain_dupr_id** | **str** |  | 
 **team_members_dupr_ids** | **List[str]** |  | 
-**team_name** | **str** |  | 
 
 ## Example
 

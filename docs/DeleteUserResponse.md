@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**confirmation_code** | **str** |  | [optional] 
-**url** | **str** |  | [optional] 
+**url** | **str** |  | 
+**confirmation_code** | **str** |  | 
 
 ## Example
 

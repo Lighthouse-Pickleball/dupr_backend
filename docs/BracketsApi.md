@@ -1,72 +1,70 @@
 # dupr_backend.BracketsApi
 
-All URIs are relative to *http://https://backend.mydupr.com*
+All URIs are relative to *https://api.dupr.gg*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_match_score_by_director_using_post**](BracketsApi.md#add_match_score_by_director_using_post) | **POST** /brackets/director/match/{version}/save | addMatchScoreByDirector
-[**add_match_score_using_post**](BracketsApi.md#add_match_score_using_post) | **POST** /brackets/match/{version}/save | addMatchScore
-[**confirm_match_director_using_post**](BracketsApi.md#confirm_match_director_using_post) | **POST** /brackets/director/match/{version}/confirm | confirmMatchDirector
-[**confirm_match_using_post**](BracketsApi.md#confirm_match_using_post) | **POST** /brackets/match/{version}/confirm | confirmMatch
-[**confirm_team_by_director_using_post**](BracketsApi.md#confirm_team_by_director_using_post) | **POST** /brackets/director/teams/{version}/confirm | confirmTeamByDirector
-[**delete_league_using_delete**](BracketsApi.md#delete_league_using_delete) | **DELETE** /brackets/{version}/{leagueId}/{bracketId} | deleteLeague
-[**edit_bracket_status_using_put**](BracketsApi.md#edit_bracket_status_using_put) | **PUT** /brackets/director/{version}/edit/bracket_status | editBracketStatus
-[**edit_bracket_using_put**](BracketsApi.md#edit_bracket_using_put) | **PUT** /brackets/{version}/edit | editBracket
-[**edit_confirmed_matches_using_post**](BracketsApi.md#edit_confirmed_matches_using_post) | **POST** /brackets/director/confirm/match/{version}/edit | editConfirmedMatches
-[**edit_match_score_by_director_using_post**](BracketsApi.md#edit_match_score_by_director_using_post) | **POST** /brackets/director/match/{version}/edit | editMatchScoreByDirector
-[**edit_match_score_using_post**](BracketsApi.md#edit_match_score_using_post) | **POST** /brackets/match/{version}/edit | editMatchScore
-[**edit_partner_using_post**](BracketsApi.md#edit_partner_using_post) | **POST** /brackets/partner/{version}/edit | editPartner
-[**edit_player_wait_list_using_post**](BracketsApi.md#edit_player_wait_list_using_post) | **POST** /brackets/director/waitlist/{version}/edit | editPlayerWaitList
-[**edit_teams_using_post**](BracketsApi.md#edit_teams_using_post) | **POST** /brackets/director/{bracketId}/teams/{version}/edit | editTeams
-[**end_league_using_get**](BracketsApi.md#end_league_using_get) | **GET** /brackets/{leagueId}/{bracketId}/{version}/end | endLeague
-[**export_bracket_participants_using_get**](BracketsApi.md#export_bracket_participants_using_get) | **GET** /brackets/director/{bracketId}/participant/{version}/export | exportBracketParticipants
-[**forfeit_match_using_post**](BracketsApi.md#forfeit_match_using_post) | **POST** /brackets/director/match/{version}/forfeit | forfeitMatch
-[**get_all_bracket_matches_using_get**](BracketsApi.md#get_all_bracket_matches_using_get) | **GET** /brackets/{bracketId}/match/{version}/all | getAllBracketMatches
-[**get_all_event_players_using_post**](BracketsApi.md#get_all_event_players_using_post) | **POST** /brackets/director/participant/{version}/all | getAllEventPlayers
-[**get_bracket_by_id_using_get**](BracketsApi.md#get_bracket_by_id_using_get) | **GET** /brackets/{version}/{bracketId} | getBracketById
-[**get_bracket_details_teams_using_get**](BracketsApi.md#get_bracket_details_teams_using_get) | **GET** /brackets/{bracketId}/{version}/read | getBracketDetailsTeams
-[**get_bracket_match_queue_using_get**](BracketsApi.md#get_bracket_match_queue_using_get) | **GET** /brackets/{bracketId}/queue/{version}/all | getBracketMatchQueue
-[**get_bracket_matches_post_using_post**](BracketsApi.md#get_bracket_matches_post_using_post) | **POST** /brackets/match/{version}/history | getBracketMatchesPost
-[**get_bracket_matches_using_get**](BracketsApi.md#get_bracket_matches_using_get) | **GET** /brackets/match/{version}/history | getBracketMatches
-[**get_bracket_players_using_get**](BracketsApi.md#get_bracket_players_using_get) | **GET** /brackets/{bracketId}/participant/{version}/all | getBracketPlayers
-[**get_bracket_players_using_post**](BracketsApi.md#get_bracket_players_using_post) | **POST** /brackets/participant/{version}/all | getBracketPlayers
-[**get_bracket_standing_using_get**](BracketsApi.md#get_bracket_standing_using_get) | **GET** /brackets/{version}/standing | getBracketStanding
-[**get_bracket_teams_using_get**](BracketsApi.md#get_bracket_teams_using_get) | **GET** /brackets/{bracketId}/{version}/teams | getBracketTeams
-[**get_bracket_teams_using_post**](BracketsApi.md#get_bracket_teams_using_post) | **POST** /brackets/{version}/teams | getBracketTeams
-[**get_bracket_waitlisted_teams_using_post**](BracketsApi.md#get_bracket_waitlisted_teams_using_post) | **POST** /brackets/{version}/waitlist/teams | getBracketWaitlistedTeams
-[**get_director_bracket_teams_using_get**](BracketsApi.md#get_director_bracket_teams_using_get) | **GET** /brackets/director/{bracketId}/{version}/teams | getDirectorBracketTeams
-[**get_pending_confirmation_using_get**](BracketsApi.md#get_pending_confirmation_using_get) | **GET** /brackets/teams/{version}/pending | getPendingConfirmation
-[**get_pending_teams_to_replace_using_get**](BracketsApi.md#get_pending_teams_to_replace_using_get) | **GET** /brackets/{bracketId}/director/teams/pending/{version}/all | getPendingTeamsToReplace
-[**get_registration_details_using_get**](BracketsApi.md#get_registration_details_using_get) | **GET** /brackets/{bracketId}/participant/{version}/details | getRegistrationDetails
-[**get_unmatched_players_using_get**](BracketsApi.md#get_unmatched_players_using_get) | **GET** /brackets/{bracketId}/participant/unmatched/{version}/all | getUnmatchedPlayers
-[**get_unmatched_players_using_post**](BracketsApi.md#get_unmatched_players_using_post) | **POST** /brackets/participant/unmatched/{version}/all | getUnmatchedPlayers
-[**get_user_brackets_using_get**](BracketsApi.md#get_user_brackets_using_get) | **GET** /brackets/{version}/all | getUserBrackets
-[**get_user_club_role_using_post**](BracketsApi.md#get_user_club_role_using_post) | **POST** /brackets/club/roles/{version}/details | getUserClubRole
-[**get_user_event_brackets_using_get**](BracketsApi.md#get_user_event_brackets_using_get) | **GET** /brackets/director/{leagueId}/{userId}/{version}/all | getUserEventBrackets
-[**get_user_matches_using_post**](BracketsApi.md#get_user_matches_using_post) | **POST** /brackets/match/participant/{version}/history | getUserMatches
-[**get_valid_user_bracket_id_using_get**](BracketsApi.md#get_valid_user_bracket_id_using_get) | **GET** /brackets/valid/{version}/{leagueId} | getValidUserBracketId
-[**get_waterfall_matches_using_get**](BracketsApi.md#get_waterfall_matches_using_get) | **GET** /brackets/match/{bracketId}/{version}/structure | getWaterfallMatches
-[**player_withdraw_by_director_using_post**](BracketsApi.md#player_withdraw_by_director_using_post) | **POST** /brackets/director/{version}/withdraw | playerWithdrawByDirector
-[**player_withdraw_using_post**](BracketsApi.md#player_withdraw_using_post) | **POST** /brackets/player/{version}/withdraw | playerWithdraw
-[**process_refunds_using_post**](BracketsApi.md#process_refunds_using_post) | **POST** /brackets/director/{version}/refund | processRefunds
-[**register_users_to_bracket_using_post**](BracketsApi.md#register_users_to_bracket_using_post) | **POST** /brackets/director/user/{version}/add | registerUsersToBracket
-[**remove_match_from_queue_using_get**](BracketsApi.md#remove_match_from_queue_using_get) | **GET** /brackets/match/{leagueMatchId}/queue/{version}/remove | removeMatchFromQueue
-[**save_bracket_using_put**](BracketsApi.md#save_bracket_using_put) | **PUT** /brackets/{version}/save | saveBracket
-[**save_match_seeding_using_post**](BracketsApi.md#save_match_seeding_using_post) | **POST** /brackets/{version}/seed | saveMatchSeeding
-[**save_teams_using_post**](BracketsApi.md#save_teams_using_post) | **POST** /brackets/director/{bracketId}/teams/{version}/save | saveTeams
-[**seed_matches_using_get**](BracketsApi.md#seed_matches_using_get) | **GET** /brackets/{version}/seed | seedMatches
-[**substitute_players_using_post**](BracketsApi.md#substitute_players_using_post) | **POST** /brackets/director/participant/{version}/substitute | substitutePlayers
-[**switch_player_using_post**](BracketsApi.md#switch_player_using_post) | **POST** /brackets/director/player/{version}/switch | switchPlayer
-[**switch_teams_using_post**](BracketsApi.md#switch_teams_using_post) | **POST** /brackets/director/team/{version}/switch | switchTeams
-[**switch_wait_listed_teams_using_post**](BracketsApi.md#switch_wait_listed_teams_using_post) | **POST** /brackets/director/teams/waitlist/{version}/update | switchWaitListedTeams
-[**switch_wait_listed_using_post**](BracketsApi.md#switch_wait_listed_using_post) | **POST** /brackets/director/team/{version}/switchWaitlisted | switchWaitListed
-[**update_bracket_approval_using_get**](BracketsApi.md#update_bracket_approval_using_get) | **GET** /brackets/approval/{version}/update | updateBracketApproval
+[**add_match_score**](BracketsApi.md#add_match_score) | **POST** /brackets/match/{version}/save | 
+[**add_match_score_by_director**](BracketsApi.md#add_match_score_by_director) | **POST** /brackets/director/match/{version}/save | 
+[**confirm_match1**](BracketsApi.md#confirm_match1) | **POST** /brackets/match/{version}/confirm | 
+[**confirm_match_director**](BracketsApi.md#confirm_match_director) | **POST** /brackets/director/match/{version}/confirm | 
+[**confirm_team_by_director**](BracketsApi.md#confirm_team_by_director) | **POST** /brackets/director/teams/{version}/confirm | 
+[**delete_league1**](BracketsApi.md#delete_league1) | **DELETE** /brackets/{version}/{leagueId}/{bracketId} | 
+[**edit_bracket**](BracketsApi.md#edit_bracket) | **PUT** /brackets/{version}/edit | 
+[**edit_bracket_status**](BracketsApi.md#edit_bracket_status) | **PUT** /brackets/director/{version}/edit/bracket_status | 
+[**edit_confirmed_matches**](BracketsApi.md#edit_confirmed_matches) | **POST** /brackets/director/confirm/match/{version}/edit | 
+[**edit_match_score**](BracketsApi.md#edit_match_score) | **POST** /brackets/match/{version}/edit | 
+[**edit_match_score_by_director**](BracketsApi.md#edit_match_score_by_director) | **POST** /brackets/director/match/{version}/edit | 
+[**edit_partner**](BracketsApi.md#edit_partner) | **POST** /brackets/partner/{version}/edit | 
+[**edit_player_wait_list**](BracketsApi.md#edit_player_wait_list) | **POST** /brackets/director/waitlist/{version}/edit | 
+[**edit_teams**](BracketsApi.md#edit_teams) | **POST** /brackets/director/{bracketId}/teams/{version}/edit | 
+[**end_league1**](BracketsApi.md#end_league1) | **GET** /brackets/{leagueId}/{bracketId}/{version}/end | 
+[**export_bracket_participants**](BracketsApi.md#export_bracket_participants) | **GET** /brackets/director/{bracketId}/participant/{version}/export | 
+[**forfeit_match**](BracketsApi.md#forfeit_match) | **POST** /brackets/director/match/{version}/forfeit | 
+[**get_all_bracket_matches**](BracketsApi.md#get_all_bracket_matches) | **GET** /brackets/{bracketId}/match/{version}/all | 
+[**get_all_event_players1**](BracketsApi.md#get_all_event_players1) | **POST** /brackets/director/participant/{version}/all | 
+[**get_bracket_by_id**](BracketsApi.md#get_bracket_by_id) | **GET** /brackets/{version}/{bracketId} | 
+[**get_bracket_details_teams**](BracketsApi.md#get_bracket_details_teams) | **GET** /brackets/{bracketId}/{version}/read | 
+[**get_bracket_match_queue**](BracketsApi.md#get_bracket_match_queue) | **GET** /brackets/{bracketId}/queue/{version}/all | 
+[**get_bracket_matches**](BracketsApi.md#get_bracket_matches) | **GET** /brackets/match/{version}/history | 
+[**get_bracket_matches_post**](BracketsApi.md#get_bracket_matches_post) | **POST** /brackets/match/{version}/history | 
+[**get_bracket_players**](BracketsApi.md#get_bracket_players) | **POST** /brackets/participant/{version}/all | 
+[**get_bracket_players1**](BracketsApi.md#get_bracket_players1) | **GET** /brackets/{bracketId}/participant/{version}/all | 
+[**get_bracket_standing**](BracketsApi.md#get_bracket_standing) | **GET** /brackets/{version}/standing | 
+[**get_bracket_teams**](BracketsApi.md#get_bracket_teams) | **POST** /brackets/{version}/teams | 
+[**get_bracket_teams1**](BracketsApi.md#get_bracket_teams1) | **GET** /brackets/{bracketId}/{version}/teams | 
+[**get_bracket_waitlisted_teams**](BracketsApi.md#get_bracket_waitlisted_teams) | **POST** /brackets/{version}/waitlist/teams | 
+[**get_director_bracket_teams**](BracketsApi.md#get_director_bracket_teams) | **GET** /brackets/director/{bracketId}/{version}/teams | 
+[**get_pending_confirmation**](BracketsApi.md#get_pending_confirmation) | **GET** /brackets/teams/{version}/pending | 
+[**get_pending_teams_to_replace**](BracketsApi.md#get_pending_teams_to_replace) | **GET** /brackets/{bracketId}/director/teams/pending/{version}/all | 
+[**get_registration_details**](BracketsApi.md#get_registration_details) | **GET** /brackets/{bracketId}/participant/{version}/details | 
+[**get_unmatched_players**](BracketsApi.md#get_unmatched_players) | **POST** /brackets/participant/unmatched/{version}/all | 
+[**get_unmatched_players1**](BracketsApi.md#get_unmatched_players1) | **GET** /brackets/{bracketId}/participant/unmatched/{version}/all | 
+[**get_user_brackets**](BracketsApi.md#get_user_brackets) | **GET** /brackets/{version}/all | 
+[**get_user_club_role**](BracketsApi.md#get_user_club_role) | **POST** /brackets/club/roles/{version}/details | 
+[**get_user_event_brackets**](BracketsApi.md#get_user_event_brackets) | **GET** /brackets/director/{leagueId}/{userId}/{version}/all | 
+[**get_user_matches**](BracketsApi.md#get_user_matches) | **POST** /brackets/match/participant/{version}/history | 
+[**get_valid_user_bracket_id**](BracketsApi.md#get_valid_user_bracket_id) | **GET** /brackets/valid/{version}/{leagueId} | 
+[**get_waterfall_matches**](BracketsApi.md#get_waterfall_matches) | **GET** /brackets/match/{bracketId}/{version}/structure | 
+[**player_withdraw**](BracketsApi.md#player_withdraw) | **POST** /brackets/player/{version}/withdraw | 
+[**player_withdraw_by_director**](BracketsApi.md#player_withdraw_by_director) | **POST** /brackets/director/{version}/withdraw | 
+[**process_refunds**](BracketsApi.md#process_refunds) | **POST** /brackets/director/{version}/refund | 
+[**register_users_to_bracket**](BracketsApi.md#register_users_to_bracket) | **POST** /brackets/director/user/{version}/add | 
+[**remove_match_from_queue**](BracketsApi.md#remove_match_from_queue) | **GET** /brackets/match/{leagueMatchId}/queue/{version}/remove | 
+[**save_bracket**](BracketsApi.md#save_bracket) | **PUT** /brackets/{version}/save | 
+[**save_match_seeding**](BracketsApi.md#save_match_seeding) | **POST** /brackets/{version}/seed | 
+[**save_teams**](BracketsApi.md#save_teams) | **POST** /brackets/director/{bracketId}/teams/{version}/save | 
+[**seed_matches**](BracketsApi.md#seed_matches) | **GET** /brackets/{version}/seed | 
+[**substitute_players**](BracketsApi.md#substitute_players) | **POST** /brackets/director/participant/{version}/substitute | 
+[**switch_player**](BracketsApi.md#switch_player) | **POST** /brackets/director/player/{version}/switch | 
+[**switch_teams**](BracketsApi.md#switch_teams) | **POST** /brackets/director/team/{version}/switch | 
+[**switch_wait_listed**](BracketsApi.md#switch_wait_listed) | **POST** /brackets/director/team/{version}/switchWaitlisted | 
+[**switch_wait_listed_teams**](BracketsApi.md#switch_wait_listed_teams) | **POST** /brackets/director/teams/waitlist/{version}/update | 
+[**update_bracket_approval**](BracketsApi.md#update_bracket_approval) | **GET** /brackets/approval/{version}/update | 
 
 
-# **add_match_score_by_director_using_post**
-> Wrapper add_match_score_by_director_using_post(authorization, version, request)
-
-addMatchScoreByDirector
+# **add_match_score**
+> Wrapper add_match_score(version, league_match_request)
 
 ### Example
 
@@ -78,10 +76,10 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -89,17 +87,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.LeagueMatchRequest() # LeagueMatchRequest | request
+    version = 'version_example' # str | 
+    league_match_request = dupr_backend.LeagueMatchRequest() # LeagueMatchRequest | 
 
     try:
-        # addMatchScoreByDirector
-        api_response = api_instance.add_match_score_by_director_using_post(authorization, version, request)
-        print("The response of BracketsApi->add_match_score_by_director_using_post:\n")
+        api_response = api_instance.add_match_score(version, league_match_request)
+        print("The response of BracketsApi->add_match_score:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->add_match_score_by_director_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->add_match_score: %s\n" % e)
 ```
 
 
@@ -109,9 +105,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**LeagueMatchRequest**](LeagueMatchRequest.md)| request | 
+ **version** | **str**|  | 
+ **league_match_request** | [**LeagueMatchRequest**](LeagueMatchRequest.md)|  | 
 
 ### Return type
 
@@ -131,14 +126,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **add_match_score_using_post**
-> Wrapper add_match_score_using_post(authorization, version, request)
-
-addMatchScore
+# **add_match_score_by_director**
+> Wrapper add_match_score_by_director(version, league_match_request)
 
 ### Example
 
@@ -150,10 +142,10 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -161,17 +153,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.LeagueMatchRequest() # LeagueMatchRequest | request
+    version = 'version_example' # str | 
+    league_match_request = dupr_backend.LeagueMatchRequest() # LeagueMatchRequest | 
 
     try:
-        # addMatchScore
-        api_response = api_instance.add_match_score_using_post(authorization, version, request)
-        print("The response of BracketsApi->add_match_score_using_post:\n")
+        api_response = api_instance.add_match_score_by_director(version, league_match_request)
+        print("The response of BracketsApi->add_match_score_by_director:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->add_match_score_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->add_match_score_by_director: %s\n" % e)
 ```
 
 
@@ -181,9 +171,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**LeagueMatchRequest**](LeagueMatchRequest.md)| request | 
+ **version** | **str**|  | 
+ **league_match_request** | [**LeagueMatchRequest**](LeagueMatchRequest.md)|  | 
 
 ### Return type
 
@@ -203,14 +192,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **confirm_match_director_using_post**
-> Wrapper confirm_match_director_using_post(authorization, version, request)
-
-confirmMatchDirector
+# **confirm_match1**
+> Wrapper confirm_match1(version, league_match_confirm_request)
 
 ### Example
 
@@ -222,10 +208,10 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -233,17 +219,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.LeagueMatchConfirmRequest() # LeagueMatchConfirmRequest | request
+    version = 'version_example' # str | 
+    league_match_confirm_request = dupr_backend.LeagueMatchConfirmRequest() # LeagueMatchConfirmRequest | 
 
     try:
-        # confirmMatchDirector
-        api_response = api_instance.confirm_match_director_using_post(authorization, version, request)
-        print("The response of BracketsApi->confirm_match_director_using_post:\n")
+        api_response = api_instance.confirm_match1(version, league_match_confirm_request)
+        print("The response of BracketsApi->confirm_match1:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->confirm_match_director_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->confirm_match1: %s\n" % e)
 ```
 
 
@@ -253,9 +237,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**LeagueMatchConfirmRequest**](LeagueMatchConfirmRequest.md)| request | 
+ **version** | **str**|  | 
+ **league_match_confirm_request** | [**LeagueMatchConfirmRequest**](LeagueMatchConfirmRequest.md)|  | 
 
 ### Return type
 
@@ -275,14 +258,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **confirm_match_using_post**
-> Wrapper confirm_match_using_post(authorization, version, request)
-
-confirmMatch
+# **confirm_match_director**
+> Wrapper confirm_match_director(version, league_match_confirm_request)
 
 ### Example
 
@@ -294,10 +274,10 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -305,17 +285,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.LeagueMatchConfirmRequest() # LeagueMatchConfirmRequest | request
+    version = 'version_example' # str | 
+    league_match_confirm_request = dupr_backend.LeagueMatchConfirmRequest() # LeagueMatchConfirmRequest | 
 
     try:
-        # confirmMatch
-        api_response = api_instance.confirm_match_using_post(authorization, version, request)
-        print("The response of BracketsApi->confirm_match_using_post:\n")
+        api_response = api_instance.confirm_match_director(version, league_match_confirm_request)
+        print("The response of BracketsApi->confirm_match_director:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->confirm_match_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->confirm_match_director: %s\n" % e)
 ```
 
 
@@ -325,9 +303,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**LeagueMatchConfirmRequest**](LeagueMatchConfirmRequest.md)| request | 
+ **version** | **str**|  | 
+ **league_match_confirm_request** | [**LeagueMatchConfirmRequest**](LeagueMatchConfirmRequest.md)|  | 
 
 ### Return type
 
@@ -347,14 +324,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **confirm_team_by_director_using_post**
-> Wrapper confirm_team_by_director_using_post(authorization, version, confirm_team_request)
-
-confirmTeamByDirector
+# **confirm_team_by_director**
+> Wrapper confirm_team_by_director(version, confirm_team_request)
 
 ### Example
 
@@ -366,10 +340,10 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -377,17 +351,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    confirm_team_request = dupr_backend.ConfirmTeamRequest() # ConfirmTeamRequest | confirmTeamRequest
+    version = 'version_example' # str | 
+    confirm_team_request = dupr_backend.ConfirmTeamRequest() # ConfirmTeamRequest | 
 
     try:
-        # confirmTeamByDirector
-        api_response = api_instance.confirm_team_by_director_using_post(authorization, version, confirm_team_request)
-        print("The response of BracketsApi->confirm_team_by_director_using_post:\n")
+        api_response = api_instance.confirm_team_by_director(version, confirm_team_request)
+        print("The response of BracketsApi->confirm_team_by_director:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->confirm_team_by_director_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->confirm_team_by_director: %s\n" % e)
 ```
 
 
@@ -397,9 +369,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **confirm_team_request** | [**ConfirmTeamRequest**](ConfirmTeamRequest.md)| confirmTeamRequest | 
+ **version** | **str**|  | 
+ **confirm_team_request** | [**ConfirmTeamRequest**](ConfirmTeamRequest.md)|  | 
 
 ### Return type
 
@@ -419,14 +390,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_league_using_delete**
-> Wrapper delete_league_using_delete(authorization, bracket_id, league_id, version)
-
-deleteLeague
+# **delete_league1**
+> Wrapper delete_league1(version, league_id, bracket_id)
 
 ### Example
 
@@ -437,10 +405,10 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -448,18 +416,16 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    bracket_id = 56 # int | bracketId
-    league_id = 56 # int | leagueId
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    league_id = 56 # int | 
+    bracket_id = 56 # int | 
 
     try:
-        # deleteLeague
-        api_response = api_instance.delete_league_using_delete(authorization, bracket_id, league_id, version)
-        print("The response of BracketsApi->delete_league_using_delete:\n")
+        api_response = api_instance.delete_league1(version, league_id, bracket_id)
+        print("The response of BracketsApi->delete_league1:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->delete_league_using_delete: %s\n" % e)
+        print("Exception when calling BracketsApi->delete_league1: %s\n" % e)
 ```
 
 
@@ -469,10 +435,9 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **bracket_id** | **int**| bracketId | 
- **league_id** | **int**| leagueId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **league_id** | **int**|  | 
+ **bracket_id** | **int**|  | 
 
 ### Return type
 
@@ -492,28 +457,26 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **edit_bracket_status_using_put**
-> SingleWrapperOfUnit edit_bracket_status_using_put(authorization, bracket_id, club_id, league_id, status, version)
-
-editBracketStatus
+# **edit_bracket**
+> SingleWrapperLeagueResponse edit_bracket(version, edit_bracket_request)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
+from dupr_backend.models.edit_bracket_request import EditBracketRequest
+from dupr_backend.models.single_wrapper_league_response import SingleWrapperLeagueResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -521,20 +484,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    bracket_id = 56 # int | bracketId
-    club_id = 56 # int | clubId
-    league_id = 56 # int | leagueId
-    status = 'status_example' # str | status
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    edit_bracket_request = dupr_backend.EditBracketRequest() # EditBracketRequest | 
 
     try:
-        # editBracketStatus
-        api_response = api_instance.edit_bracket_status_using_put(authorization, bracket_id, club_id, league_id, status, version)
-        print("The response of BracketsApi->edit_bracket_status_using_put:\n")
+        api_response = api_instance.edit_bracket(version, edit_bracket_request)
+        print("The response of BracketsApi->edit_bracket:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->edit_bracket_status_using_put: %s\n" % e)
+        print("Exception when calling BracketsApi->edit_bracket: %s\n" % e)
 ```
 
 
@@ -544,16 +502,83 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **bracket_id** | **int**| bracketId | 
- **club_id** | **int**| clubId | 
- **league_id** | **int**| leagueId | 
- **status** | **str**| status | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **edit_bracket_request** | [**EditBracketRequest**](EditBracketRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfUnit**](SingleWrapperOfUnit.md)
+[**SingleWrapperLeagueResponse**](SingleWrapperLeagueResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **edit_bracket_status**
+> SingleWrapperUnit edit_bracket_status(version, league_id, bracket_id, status, club_id)
+
+### Example
+
+
+```python
+import dupr_backend
+from dupr_backend.models.single_wrapper_unit import SingleWrapperUnit
+from dupr_backend.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dupr.gg
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "https://api.dupr.gg"
+)
+
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.BracketsApi(api_client)
+    version = 'version_example' # str | 
+    league_id = 56 # int | 
+    bracket_id = 56 # int | 
+    status = 'status_example' # str | 
+    club_id = 56 # int | 
+
+    try:
+        api_response = api_instance.edit_bracket_status(version, league_id, bracket_id, status, club_id)
+        print("The response of BracketsApi->edit_bracket_status:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BracketsApi->edit_bracket_status: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | **str**|  | 
+ **league_id** | **int**|  | 
+ **bracket_id** | **int**|  | 
+ **status** | **str**|  | 
+ **club_id** | **int**|  | 
+
+### Return type
+
+[**SingleWrapperUnit**](SingleWrapperUnit.md)
 
 ### Authorization
 
@@ -569,86 +594,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **edit_bracket_using_put**
-> SingleWrapperOfLeagueResponse edit_bracket_using_put(authorization, version, request)
-
-editBracket
-
-### Example
-
-
-```python
-import dupr_backend
-from dupr_backend.models.edit_bracket_request import EditBracketRequest
-from dupr_backend.models.single_wrapper_of_league_response import SingleWrapperOfLeagueResponse
-from dupr_backend.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
-)
-
-
-# Enter a context with an instance of the API client
-with dupr_backend.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.EditBracketRequest() # EditBracketRequest | request
-
-    try:
-        # editBracket
-        api_response = api_instance.edit_bracket_using_put(authorization, version, request)
-        print("The response of BracketsApi->edit_bracket_using_put:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling BracketsApi->edit_bracket_using_put: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**EditBracketRequest**](EditBracketRequest.md)| request | 
-
-### Return type
-
-[**SingleWrapperOfLeagueResponse**](SingleWrapperOfLeagueResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **edit_confirmed_matches_using_post**
-> Wrapper edit_confirmed_matches_using_post(authorization, version, edit_match_request)
-
-editConfirmedMatches
+# **edit_confirmed_matches**
+> Wrapper edit_confirmed_matches(version, edit_match_request)
 
 ### Example
 
@@ -660,10 +610,10 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -671,17 +621,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    edit_match_request = dupr_backend.EditMatchRequest() # EditMatchRequest | editMatchRequest
+    version = 'version_example' # str | 
+    edit_match_request = dupr_backend.EditMatchRequest() # EditMatchRequest | 
 
     try:
-        # editConfirmedMatches
-        api_response = api_instance.edit_confirmed_matches_using_post(authorization, version, edit_match_request)
-        print("The response of BracketsApi->edit_confirmed_matches_using_post:\n")
+        api_response = api_instance.edit_confirmed_matches(version, edit_match_request)
+        print("The response of BracketsApi->edit_confirmed_matches:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->edit_confirmed_matches_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->edit_confirmed_matches: %s\n" % e)
 ```
 
 
@@ -691,9 +639,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **edit_match_request** | [**EditMatchRequest**](EditMatchRequest.md)| editMatchRequest | 
+ **version** | **str**|  | 
+ **edit_match_request** | [**EditMatchRequest**](EditMatchRequest.md)|  | 
 
 ### Return type
 
@@ -713,14 +660,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **edit_match_score_by_director_using_post**
-> Wrapper edit_match_score_by_director_using_post(authorization, version, request)
-
-editMatchScoreByDirector
+# **edit_match_score**
+> Wrapper edit_match_score(version, edit_match_request)
 
 ### Example
 
@@ -732,10 +676,10 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -743,17 +687,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.EditMatchRequest() # EditMatchRequest | request
+    version = 'version_example' # str | 
+    edit_match_request = dupr_backend.EditMatchRequest() # EditMatchRequest | 
 
     try:
-        # editMatchScoreByDirector
-        api_response = api_instance.edit_match_score_by_director_using_post(authorization, version, request)
-        print("The response of BracketsApi->edit_match_score_by_director_using_post:\n")
+        api_response = api_instance.edit_match_score(version, edit_match_request)
+        print("The response of BracketsApi->edit_match_score:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->edit_match_score_by_director_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->edit_match_score: %s\n" % e)
 ```
 
 
@@ -763,9 +705,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**EditMatchRequest**](EditMatchRequest.md)| request | 
+ **version** | **str**|  | 
+ **edit_match_request** | [**EditMatchRequest**](EditMatchRequest.md)|  | 
 
 ### Return type
 
@@ -785,14 +726,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **edit_match_score_using_post**
-> Wrapper edit_match_score_using_post(authorization, version, request)
-
-editMatchScore
+# **edit_match_score_by_director**
+> Wrapper edit_match_score_by_director(version, edit_match_request)
 
 ### Example
 
@@ -804,10 +742,10 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -815,17 +753,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.EditMatchRequest() # EditMatchRequest | request
+    version = 'version_example' # str | 
+    edit_match_request = dupr_backend.EditMatchRequest() # EditMatchRequest | 
 
     try:
-        # editMatchScore
-        api_response = api_instance.edit_match_score_using_post(authorization, version, request)
-        print("The response of BracketsApi->edit_match_score_using_post:\n")
+        api_response = api_instance.edit_match_score_by_director(version, edit_match_request)
+        print("The response of BracketsApi->edit_match_score_by_director:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->edit_match_score_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->edit_match_score_by_director: %s\n" % e)
 ```
 
 
@@ -835,9 +771,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**EditMatchRequest**](EditMatchRequest.md)| request | 
+ **version** | **str**|  | 
+ **edit_match_request** | [**EditMatchRequest**](EditMatchRequest.md)|  | 
 
 ### Return type
 
@@ -857,14 +792,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **edit_partner_using_post**
-> Wrapper edit_partner_using_post(authorization, version, request)
-
-editPartner
+# **edit_partner**
+> Wrapper edit_partner(version, edit_partner_request)
 
 ### Example
 
@@ -876,10 +808,10 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -887,17 +819,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.EditPartnerRequest() # EditPartnerRequest | request
+    version = 'version_example' # str | 
+    edit_partner_request = dupr_backend.EditPartnerRequest() # EditPartnerRequest | 
 
     try:
-        # editPartner
-        api_response = api_instance.edit_partner_using_post(authorization, version, request)
-        print("The response of BracketsApi->edit_partner_using_post:\n")
+        api_response = api_instance.edit_partner(version, edit_partner_request)
+        print("The response of BracketsApi->edit_partner:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->edit_partner_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->edit_partner: %s\n" % e)
 ```
 
 
@@ -907,9 +837,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**EditPartnerRequest**](EditPartnerRequest.md)| request | 
+ **version** | **str**|  | 
+ **edit_partner_request** | [**EditPartnerRequest**](EditPartnerRequest.md)|  | 
 
 ### Return type
 
@@ -929,14 +858,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **edit_player_wait_list_using_post**
-> Wrapper edit_player_wait_list_using_post(authorization, version, edit_wait_list_request)
-
-editPlayerWaitList
+# **edit_player_wait_list**
+> Wrapper edit_player_wait_list(version, edit_wait_list_request)
 
 ### Example
 
@@ -948,10 +874,10 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -959,17 +885,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    edit_wait_list_request = [dupr_backend.EditWaitListRequest()] # List[EditWaitListRequest] | editWaitListRequest
+    version = 'version_example' # str | 
+    edit_wait_list_request = [dupr_backend.EditWaitListRequest()] # List[EditWaitListRequest] | 
 
     try:
-        # editPlayerWaitList
-        api_response = api_instance.edit_player_wait_list_using_post(authorization, version, edit_wait_list_request)
-        print("The response of BracketsApi->edit_player_wait_list_using_post:\n")
+        api_response = api_instance.edit_player_wait_list(version, edit_wait_list_request)
+        print("The response of BracketsApi->edit_player_wait_list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->edit_player_wait_list_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->edit_player_wait_list: %s\n" % e)
 ```
 
 
@@ -979,9 +903,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **edit_wait_list_request** | [**List[EditWaitListRequest]**](EditWaitListRequest.md)| editWaitListRequest | 
+ **version** | **str**|  | 
+ **edit_wait_list_request** | [**List[EditWaitListRequest]**](EditWaitListRequest.md)|  | 
 
 ### Return type
 
@@ -1001,14 +924,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **edit_teams_using_post**
-> Wrapper edit_teams_using_post(authorization, version, edit_event_team_request)
-
-editTeams
+# **edit_teams**
+> Wrapper edit_teams(version, edit_event_team_request)
 
 ### Example
 
@@ -1020,10 +940,10 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -1031,17 +951,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    edit_event_team_request = dupr_backend.EditEventTeamRequest() # EditEventTeamRequest | editEventTeamRequest
+    version = 'version_example' # str | 
+    edit_event_team_request = dupr_backend.EditEventTeamRequest() # EditEventTeamRequest | 
 
     try:
-        # editTeams
-        api_response = api_instance.edit_teams_using_post(authorization, version, edit_event_team_request)
-        print("The response of BracketsApi->edit_teams_using_post:\n")
+        api_response = api_instance.edit_teams(version, edit_event_team_request)
+        print("The response of BracketsApi->edit_teams:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->edit_teams_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->edit_teams: %s\n" % e)
 ```
 
 
@@ -1051,9 +969,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **edit_event_team_request** | [**EditEventTeamRequest**](EditEventTeamRequest.md)| editEventTeamRequest | 
+ **version** | **str**|  | 
+ **edit_event_team_request** | [**EditEventTeamRequest**](EditEventTeamRequest.md)|  | 
 
 ### Return type
 
@@ -1073,14 +990,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **end_league_using_get**
-> Wrapper end_league_using_get(authorization, bracket_id, league_id, version)
-
-endLeague
+# **end_league1**
+> Wrapper end_league1(version, league_id, bracket_id)
 
 ### Example
 
@@ -1091,10 +1005,10 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -1102,18 +1016,16 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    bracket_id = 56 # int | bracketId
-    league_id = 56 # int | leagueId
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    league_id = 56 # int | 
+    bracket_id = 56 # int | 
 
     try:
-        # endLeague
-        api_response = api_instance.end_league_using_get(authorization, bracket_id, league_id, version)
-        print("The response of BracketsApi->end_league_using_get:\n")
+        api_response = api_instance.end_league1(version, league_id, bracket_id)
+        print("The response of BracketsApi->end_league1:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->end_league_using_get: %s\n" % e)
+        print("Exception when calling BracketsApi->end_league1: %s\n" % e)
 ```
 
 
@@ -1123,10 +1035,9 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **bracket_id** | **int**| bracketId | 
- **league_id** | **int**| leagueId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **league_id** | **int**|  | 
+ **bracket_id** | **int**|  | 
 
 ### Return type
 
@@ -1146,28 +1057,25 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **export_bracket_participants_using_get**
-> SingleWrapperOfDownloadS3Response export_bracket_participants_using_get(authorization, bracket_id, version)
-
-exportBracketParticipants
+# **export_bracket_participants**
+> SingleWrapperDownloadS3Response export_bracket_participants(version, bracket_id)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_download_s3_response import SingleWrapperOfDownloadS3Response
+from dupr_backend.models.single_wrapper_download_s3_response import SingleWrapperDownloadS3Response
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -1175,17 +1083,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    bracket_id = 56 # int | bracketId
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    bracket_id = 56 # int | 
 
     try:
-        # exportBracketParticipants
-        api_response = api_instance.export_bracket_participants_using_get(authorization, bracket_id, version)
-        print("The response of BracketsApi->export_bracket_participants_using_get:\n")
+        api_response = api_instance.export_bracket_participants(version, bracket_id)
+        print("The response of BracketsApi->export_bracket_participants:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->export_bracket_participants_using_get: %s\n" % e)
+        print("Exception when calling BracketsApi->export_bracket_participants: %s\n" % e)
 ```
 
 
@@ -1195,13 +1101,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **bracket_id** | **int**| bracketId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **bracket_id** | **int**|  | 
 
 ### Return type
 
-[**SingleWrapperOfDownloadS3Response**](SingleWrapperOfDownloadS3Response.md)
+[**SingleWrapperDownloadS3Response**](SingleWrapperDownloadS3Response.md)
 
 ### Authorization
 
@@ -1217,14 +1122,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **forfeit_match_using_post**
-> Wrapper forfeit_match_using_post(authorization, version, request)
-
-forfeitMatch
+# **forfeit_match**
+> Wrapper forfeit_match(version, forfeit_match_request)
 
 ### Example
 
@@ -1236,10 +1138,10 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -1247,17 +1149,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.ForfeitMatchRequest() # ForfeitMatchRequest | request
+    version = 'version_example' # str | 
+    forfeit_match_request = dupr_backend.ForfeitMatchRequest() # ForfeitMatchRequest | 
 
     try:
-        # forfeitMatch
-        api_response = api_instance.forfeit_match_using_post(authorization, version, request)
-        print("The response of BracketsApi->forfeit_match_using_post:\n")
+        api_response = api_instance.forfeit_match(version, forfeit_match_request)
+        print("The response of BracketsApi->forfeit_match:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->forfeit_match_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->forfeit_match: %s\n" % e)
 ```
 
 
@@ -1267,9 +1167,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**ForfeitMatchRequest**](ForfeitMatchRequest.md)| request | 
+ **version** | **str**|  | 
+ **forfeit_match_request** | [**ForfeitMatchRequest**](ForfeitMatchRequest.md)|  | 
 
 ### Return type
 
@@ -1289,28 +1188,25 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_bracket_matches_using_get**
-> ArrayWrapperOfLeagueMatchResponse get_all_bracket_matches_using_get(authorization, bracket_id, version)
-
-getAllBracketMatches
+# **get_all_bracket_matches**
+> ArrayWrapperLeagueMatchResponse get_all_bracket_matches(version, bracket_id)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.array_wrapper_of_league_match_response import ArrayWrapperOfLeagueMatchResponse
+from dupr_backend.models.array_wrapper_league_match_response import ArrayWrapperLeagueMatchResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -1318,17 +1214,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    bracket_id = 56 # int | bracketId
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    bracket_id = 56 # int | 
 
     try:
-        # getAllBracketMatches
-        api_response = api_instance.get_all_bracket_matches_using_get(authorization, bracket_id, version)
-        print("The response of BracketsApi->get_all_bracket_matches_using_get:\n")
+        api_response = api_instance.get_all_bracket_matches(version, bracket_id)
+        print("The response of BracketsApi->get_all_bracket_matches:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->get_all_bracket_matches_using_get: %s\n" % e)
+        print("Exception when calling BracketsApi->get_all_bracket_matches: %s\n" % e)
 ```
 
 
@@ -1338,13 +1232,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **bracket_id** | **int**| bracketId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **bracket_id** | **int**|  | 
 
 ### Return type
 
-[**ArrayWrapperOfLeagueMatchResponse**](ArrayWrapperOfLeagueMatchResponse.md)
+[**ArrayWrapperLeagueMatchResponse**](ArrayWrapperLeagueMatchResponse.md)
 
 ### Authorization
 
@@ -1360,14 +1253,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_event_players_using_post**
-> SingleWrapperOfPageOfPlayerPaymentResponse get_all_event_players_using_post(authorization, limit, offset, version, search_league_player_request)
-
-getAllEventPlayers
+# **get_all_event_players1**
+> SingleWrapperPagePlayerPaymentResponse get_all_event_players1(version, offset, limit, search_league_player_request)
 
 ### Example
 
@@ -1375,14 +1265,14 @@ getAllEventPlayers
 ```python
 import dupr_backend
 from dupr_backend.models.search_league_player_request import SearchLeaguePlayerRequest
-from dupr_backend.models.single_wrapper_of_page_of_player_payment_response import SingleWrapperOfPageOfPlayerPaymentResponse
+from dupr_backend.models.single_wrapper_page_player_payment_response import SingleWrapperPagePlayerPaymentResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -1390,19 +1280,17 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    limit = 56 # int | limit
-    offset = 56 # int | offset
-    version = 'v1.0' # str | version (default to 'v1.0')
-    search_league_player_request = dupr_backend.SearchLeaguePlayerRequest() # SearchLeaguePlayerRequest | searchLeaguePlayerRequest
+    version = 'version_example' # str | 
+    offset = 56 # int | 
+    limit = 56 # int | 
+    search_league_player_request = dupr_backend.SearchLeaguePlayerRequest() # SearchLeaguePlayerRequest | 
 
     try:
-        # getAllEventPlayers
-        api_response = api_instance.get_all_event_players_using_post(authorization, limit, offset, version, search_league_player_request)
-        print("The response of BracketsApi->get_all_event_players_using_post:\n")
+        api_response = api_instance.get_all_event_players1(version, offset, limit, search_league_player_request)
+        print("The response of BracketsApi->get_all_event_players1:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->get_all_event_players_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->get_all_event_players1: %s\n" % e)
 ```
 
 
@@ -1412,15 +1300,14 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **limit** | **int**| limit | 
- **offset** | **int**| offset | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **search_league_player_request** | [**SearchLeaguePlayerRequest**](SearchLeaguePlayerRequest.md)| searchLeaguePlayerRequest | 
+ **version** | **str**|  | 
+ **offset** | **int**|  | 
+ **limit** | **int**|  | 
+ **search_league_player_request** | [**SearchLeaguePlayerRequest**](SearchLeaguePlayerRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfPageOfPlayerPaymentResponse**](SingleWrapperOfPageOfPlayerPaymentResponse.md)
+[**SingleWrapperPagePlayerPaymentResponse**](SingleWrapperPagePlayerPaymentResponse.md)
 
 ### Authorization
 
@@ -1436,28 +1323,25 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_bracket_by_id_using_get**
-> SingleWrapperOfBracketResponse get_bracket_by_id_using_get(bracket_id, version, authorization=authorization)
-
-getBracketById
+# **get_bracket_by_id**
+> SingleWrapperBracketResponse get_bracket_by_id(version, bracket_id)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_bracket_response import SingleWrapperOfBracketResponse
+from dupr_backend.models.single_wrapper_bracket_response import SingleWrapperBracketResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -1465,17 +1349,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    bracket_id = 56 # int | bracketId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    authorization = 'Bearer ' # str |  (optional) (default to 'Bearer ')
+    version = 'version_example' # str | 
+    bracket_id = 56 # int | 
 
     try:
-        # getBracketById
-        api_response = api_instance.get_bracket_by_id_using_get(bracket_id, version, authorization=authorization)
-        print("The response of BracketsApi->get_bracket_by_id_using_get:\n")
+        api_response = api_instance.get_bracket_by_id(version, bracket_id)
+        print("The response of BracketsApi->get_bracket_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->get_bracket_by_id_using_get: %s\n" % e)
+        print("Exception when calling BracketsApi->get_bracket_by_id: %s\n" % e)
 ```
 
 
@@ -1485,13 +1367,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bracket_id** | **int**| bracketId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **authorization** | **str**|  | [optional] [default to &#39;Bearer &#39;]
+ **version** | **str**|  | 
+ **bracket_id** | **int**|  | 
 
 ### Return type
 
-[**SingleWrapperOfBracketResponse**](SingleWrapperOfBracketResponse.md)
+[**SingleWrapperBracketResponse**](SingleWrapperBracketResponse.md)
 
 ### Authorization
 
@@ -1507,28 +1388,25 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_bracket_details_teams_using_get**
-> SingleWrapperOfBracketDetailsResponse get_bracket_details_teams_using_get(authorization, bracket_id, version)
-
-getBracketDetailsTeams
+# **get_bracket_details_teams**
+> SingleWrapperBracketDetailsResponse get_bracket_details_teams(version, bracket_id)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_bracket_details_response import SingleWrapperOfBracketDetailsResponse
+from dupr_backend.models.single_wrapper_bracket_details_response import SingleWrapperBracketDetailsResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -1536,17 +1414,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    bracket_id = 56 # int | bracketId
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    bracket_id = 56 # int | 
 
     try:
-        # getBracketDetailsTeams
-        api_response = api_instance.get_bracket_details_teams_using_get(authorization, bracket_id, version)
-        print("The response of BracketsApi->get_bracket_details_teams_using_get:\n")
+        api_response = api_instance.get_bracket_details_teams(version, bracket_id)
+        print("The response of BracketsApi->get_bracket_details_teams:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->get_bracket_details_teams_using_get: %s\n" % e)
+        print("Exception when calling BracketsApi->get_bracket_details_teams: %s\n" % e)
 ```
 
 
@@ -1556,13 +1432,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **bracket_id** | **int**| bracketId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **bracket_id** | **int**|  | 
 
 ### Return type
 
-[**SingleWrapperOfBracketDetailsResponse**](SingleWrapperOfBracketDetailsResponse.md)
+[**SingleWrapperBracketDetailsResponse**](SingleWrapperBracketDetailsResponse.md)
 
 ### Authorization
 
@@ -1578,28 +1453,25 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_bracket_match_queue_using_get**
-> SingleWrapperOfPageOfLeagueMatchResponse get_bracket_match_queue_using_get(authorization, bracket_id, version, limit=limit, offset=offset)
-
-getBracketMatchQueue
+# **get_bracket_match_queue**
+> SingleWrapperPageLeagueMatchResponse get_bracket_match_queue(version, bracket_id, offset=offset, limit=limit)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_page_of_league_match_response import SingleWrapperOfPageOfLeagueMatchResponse
+from dupr_backend.models.single_wrapper_page_league_match_response import SingleWrapperPageLeagueMatchResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -1607,19 +1479,17 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    bracket_id = 56 # int | bracketId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    limit = 10 # int | limit (optional) (default to 10)
-    offset = 0 # int | offset (optional) (default to 0)
+    version = 'version_example' # str | 
+    bracket_id = 56 # int | 
+    offset = 0 # int |  (optional) (default to 0)
+    limit = 10 # int |  (optional) (default to 10)
 
     try:
-        # getBracketMatchQueue
-        api_response = api_instance.get_bracket_match_queue_using_get(authorization, bracket_id, version, limit=limit, offset=offset)
-        print("The response of BracketsApi->get_bracket_match_queue_using_get:\n")
+        api_response = api_instance.get_bracket_match_queue(version, bracket_id, offset=offset, limit=limit)
+        print("The response of BracketsApi->get_bracket_match_queue:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->get_bracket_match_queue_using_get: %s\n" % e)
+        print("Exception when calling BracketsApi->get_bracket_match_queue: %s\n" % e)
 ```
 
 
@@ -1629,15 +1499,14 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **bracket_id** | **int**| bracketId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **limit** | **int**| limit | [optional] [default to 10]
- **offset** | **int**| offset | [optional] [default to 0]
+ **version** | **str**|  | 
+ **bracket_id** | **int**|  | 
+ **offset** | **int**|  | [optional] [default to 0]
+ **limit** | **int**|  | [optional] [default to 10]
 
 ### Return type
 
-[**SingleWrapperOfPageOfLeagueMatchResponse**](SingleWrapperOfPageOfLeagueMatchResponse.md)
+[**SingleWrapperPageLeagueMatchResponse**](SingleWrapperPageLeagueMatchResponse.md)
 
 ### Authorization
 
@@ -1653,14 +1522,84 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_bracket_matches_post_using_post**
-> SingleWrapperOfPageOfLeagueMatchResponse get_bracket_matches_post_using_post(authorization, bracket_id, version, bracket_match_request, limit=limit, offset=offset, round=round)
+# **get_bracket_matches**
+> SingleWrapperPageLeagueMatchResponse get_bracket_matches(version, bracket_id, round=round, offset=offset, limit=limit, tags=tags)
 
-getBracketMatchesPost
+### Example
+
+
+```python
+import dupr_backend
+from dupr_backend.models.single_wrapper_page_league_match_response import SingleWrapperPageLeagueMatchResponse
+from dupr_backend.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dupr.gg
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "https://api.dupr.gg"
+)
+
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.BracketsApi(api_client)
+    version = 'version_example' # str | 
+    bracket_id = 56 # int | 
+    round = 0 # int |  (optional) (default to 0)
+    offset = 0 # int |  (optional) (default to 0)
+    limit = 10 # int |  (optional) (default to 10)
+    tags = '10' # str |  (optional) (default to '10')
+
+    try:
+        api_response = api_instance.get_bracket_matches(version, bracket_id, round=round, offset=offset, limit=limit, tags=tags)
+        print("The response of BracketsApi->get_bracket_matches:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BracketsApi->get_bracket_matches: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | **str**|  | 
+ **bracket_id** | **int**|  | 
+ **round** | **int**|  | [optional] [default to 0]
+ **offset** | **int**|  | [optional] [default to 0]
+ **limit** | **int**|  | [optional] [default to 10]
+ **tags** | **str**|  | [optional] [default to &#39;10&#39;]
+
+### Return type
+
+[**SingleWrapperPageLeagueMatchResponse**](SingleWrapperPageLeagueMatchResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_bracket_matches_post**
+> SingleWrapperPageLeagueMatchResponse get_bracket_matches_post(version, bracket_id, bracket_match_request, round=round, offset=offset, limit=limit)
 
 ### Example
 
@@ -1668,14 +1607,14 @@ getBracketMatchesPost
 ```python
 import dupr_backend
 from dupr_backend.models.bracket_match_request import BracketMatchRequest
-from dupr_backend.models.single_wrapper_of_page_of_league_match_response import SingleWrapperOfPageOfLeagueMatchResponse
+from dupr_backend.models.single_wrapper_page_league_match_response import SingleWrapperPageLeagueMatchResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -1683,21 +1622,19 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    bracket_id = 56 # int | bracketId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    bracket_match_request = dupr_backend.BracketMatchRequest() # BracketMatchRequest | bracketMatchRequest
-    limit = 10 # int | limit (optional) (default to 10)
-    offset = 0 # int | offset (optional) (default to 0)
-    round = 0 # int | round (optional) (default to 0)
+    version = 'version_example' # str | 
+    bracket_id = 56 # int | 
+    bracket_match_request = dupr_backend.BracketMatchRequest() # BracketMatchRequest | 
+    round = 0 # int |  (optional) (default to 0)
+    offset = 0 # int |  (optional) (default to 0)
+    limit = 10 # int |  (optional) (default to 10)
 
     try:
-        # getBracketMatchesPost
-        api_response = api_instance.get_bracket_matches_post_using_post(authorization, bracket_id, version, bracket_match_request, limit=limit, offset=offset, round=round)
-        print("The response of BracketsApi->get_bracket_matches_post_using_post:\n")
+        api_response = api_instance.get_bracket_matches_post(version, bracket_id, bracket_match_request, round=round, offset=offset, limit=limit)
+        print("The response of BracketsApi->get_bracket_matches_post:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->get_bracket_matches_post_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->get_bracket_matches_post: %s\n" % e)
 ```
 
 
@@ -1707,17 +1644,16 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **bracket_id** | **int**| bracketId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **bracket_match_request** | [**BracketMatchRequest**](BracketMatchRequest.md)| bracketMatchRequest | 
- **limit** | **int**| limit | [optional] [default to 10]
- **offset** | **int**| offset | [optional] [default to 0]
- **round** | **int**| round | [optional] [default to 0]
+ **version** | **str**|  | 
+ **bracket_id** | **int**|  | 
+ **bracket_match_request** | [**BracketMatchRequest**](BracketMatchRequest.md)|  | 
+ **round** | **int**|  | [optional] [default to 0]
+ **offset** | **int**|  | [optional] [default to 0]
+ **limit** | **int**|  | [optional] [default to 10]
 
 ### Return type
 
-[**SingleWrapperOfPageOfLeagueMatchResponse**](SingleWrapperOfPageOfLeagueMatchResponse.md)
+[**SingleWrapperPageLeagueMatchResponse**](SingleWrapperPageLeagueMatchResponse.md)
 
 ### Authorization
 
@@ -1733,170 +1669,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_bracket_matches_using_get**
-> SingleWrapperOfPageOfLeagueMatchResponse get_bracket_matches_using_get(authorization, bracket_id, version, limit=limit, offset=offset, round=round, tags=tags)
-
-getBracketMatches
-
-### Example
-
-
-```python
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_page_of_league_match_response import SingleWrapperOfPageOfLeagueMatchResponse
-from dupr_backend.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
-)
-
-
-# Enter a context with an instance of the API client
-with dupr_backend.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    bracket_id = 56 # int | bracketId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    limit = 10 # int | limit (optional) (default to 10)
-    offset = 0 # int | offset (optional) (default to 0)
-    round = 0 # int | round (optional) (default to 0)
-    tags = '10' # str | tags (optional) (default to '10')
-
-    try:
-        # getBracketMatches
-        api_response = api_instance.get_bracket_matches_using_get(authorization, bracket_id, version, limit=limit, offset=offset, round=round, tags=tags)
-        print("The response of BracketsApi->get_bracket_matches_using_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling BracketsApi->get_bracket_matches_using_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **bracket_id** | **int**| bracketId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **limit** | **int**| limit | [optional] [default to 10]
- **offset** | **int**| offset | [optional] [default to 0]
- **round** | **int**| round | [optional] [default to 0]
- **tags** | **str**| tags | [optional] [default to &#39;10&#39;]
-
-### Return type
-
-[**SingleWrapperOfPageOfLeagueMatchResponse**](SingleWrapperOfPageOfLeagueMatchResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_bracket_players_using_get**
-> SingleWrapperOfPageOfPlayerResponse get_bracket_players_using_get(authorization, bracket_id, limit, offset, version, query=query)
-
-getBracketPlayers
-
-### Example
-
-
-```python
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_page_of_player_response import SingleWrapperOfPageOfPlayerResponse
-from dupr_backend.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
-)
-
-
-# Enter a context with an instance of the API client
-with dupr_backend.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    bracket_id = 56 # int | bracketId
-    limit = 56 # int | limit
-    offset = 56 # int | offset
-    version = 'v1.0' # str | version (default to 'v1.0')
-    query = 'query_example' # str | query (optional)
-
-    try:
-        # getBracketPlayers
-        api_response = api_instance.get_bracket_players_using_get(authorization, bracket_id, limit, offset, version, query=query)
-        print("The response of BracketsApi->get_bracket_players_using_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling BracketsApi->get_bracket_players_using_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **bracket_id** | **int**| bracketId | 
- **limit** | **int**| limit | 
- **offset** | **int**| offset | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **query** | **str**| query | [optional] 
-
-### Return type
-
-[**SingleWrapperOfPageOfPlayerResponse**](SingleWrapperOfPageOfPlayerResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_bracket_players_using_post**
-> SingleWrapperOfPageOfPlayerResponse get_bracket_players_using_post(authorization, limit, offset, version, search_league_player_request)
-
-getBracketPlayers
+# **get_bracket_players**
+> SingleWrapperPagePlayerResponse get_bracket_players(version, offset, limit, search_league_player_request)
 
 ### Example
 
@@ -1904,14 +1681,14 @@ getBracketPlayers
 ```python
 import dupr_backend
 from dupr_backend.models.search_league_player_request import SearchLeaguePlayerRequest
-from dupr_backend.models.single_wrapper_of_page_of_player_response import SingleWrapperOfPageOfPlayerResponse
+from dupr_backend.models.single_wrapper_page_player_response import SingleWrapperPagePlayerResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -1919,19 +1696,17 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    limit = 56 # int | limit
-    offset = 56 # int | offset
-    version = 'v1.0' # str | version (default to 'v1.0')
-    search_league_player_request = dupr_backend.SearchLeaguePlayerRequest() # SearchLeaguePlayerRequest | searchLeaguePlayerRequest
+    version = 'version_example' # str | 
+    offset = 56 # int | 
+    limit = 56 # int | 
+    search_league_player_request = dupr_backend.SearchLeaguePlayerRequest() # SearchLeaguePlayerRequest | 
 
     try:
-        # getBracketPlayers
-        api_response = api_instance.get_bracket_players_using_post(authorization, limit, offset, version, search_league_player_request)
-        print("The response of BracketsApi->get_bracket_players_using_post:\n")
+        api_response = api_instance.get_bracket_players(version, offset, limit, search_league_player_request)
+        print("The response of BracketsApi->get_bracket_players:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->get_bracket_players_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->get_bracket_players: %s\n" % e)
 ```
 
 
@@ -1941,15 +1716,14 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **limit** | **int**| limit | 
- **offset** | **int**| offset | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **search_league_player_request** | [**SearchLeaguePlayerRequest**](SearchLeaguePlayerRequest.md)| searchLeaguePlayerRequest | 
+ **version** | **str**|  | 
+ **offset** | **int**|  | 
+ **limit** | **int**|  | 
+ **search_league_player_request** | [**SearchLeaguePlayerRequest**](SearchLeaguePlayerRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfPageOfPlayerResponse**](SingleWrapperOfPageOfPlayerResponse.md)
+[**SingleWrapperPagePlayerResponse**](SingleWrapperPagePlayerResponse.md)
 
 ### Authorization
 
@@ -1965,28 +1739,25 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_bracket_standing_using_get**
-> SingleWrapperOfPageOfLeagueStandingResponse get_bracket_standing_using_get(authorization, bracket_id, limit, version, offset=offset, round=round)
-
-getBracketStanding
+# **get_bracket_players1**
+> SingleWrapperPagePlayerResponse get_bracket_players1(version, bracket_id, offset, limit, query=query)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_page_of_league_standing_response import SingleWrapperOfPageOfLeagueStandingResponse
+from dupr_backend.models.single_wrapper_page_player_response import SingleWrapperPagePlayerResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -1994,20 +1765,18 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    bracket_id = 56 # int | bracketId
-    limit = 56 # int | limit
-    version = 'v1.0' # str | version (default to 'v1.0')
-    offset = 0 # int | offset (optional) (default to 0)
-    round = 0 # int | round (optional) (default to 0)
+    version = 'version_example' # str | 
+    bracket_id = 56 # int | 
+    offset = 56 # int | 
+    limit = 56 # int | 
+    query = 'query_example' # str |  (optional)
 
     try:
-        # getBracketStanding
-        api_response = api_instance.get_bracket_standing_using_get(authorization, bracket_id, limit, version, offset=offset, round=round)
-        print("The response of BracketsApi->get_bracket_standing_using_get:\n")
+        api_response = api_instance.get_bracket_players1(version, bracket_id, offset, limit, query=query)
+        print("The response of BracketsApi->get_bracket_players1:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->get_bracket_standing_using_get: %s\n" % e)
+        print("Exception when calling BracketsApi->get_bracket_players1: %s\n" % e)
 ```
 
 
@@ -2017,16 +1786,15 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **bracket_id** | **int**| bracketId | 
- **limit** | **int**| limit | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **offset** | **int**| offset | [optional] [default to 0]
- **round** | **int**| round | [optional] [default to 0]
+ **version** | **str**|  | 
+ **bracket_id** | **int**|  | 
+ **offset** | **int**|  | 
+ **limit** | **int**|  | 
+ **query** | **str**|  | [optional] 
 
 ### Return type
 
-[**SingleWrapperOfPageOfLeagueStandingResponse**](SingleWrapperOfPageOfLeagueStandingResponse.md)
+[**SingleWrapperPagePlayerResponse**](SingleWrapperPagePlayerResponse.md)
 
 ### Authorization
 
@@ -2042,28 +1810,25 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_bracket_teams_using_get**
-> SingleWrapperOfPageOfLeagueTeamsResponse get_bracket_teams_using_get(authorization, bracket_id, format, limit, offset, version)
-
-getBracketTeams
+# **get_bracket_standing**
+> SingleWrapperPageLeagueStandingResponse get_bracket_standing(version, bracket_id, limit, round=round, offset=offset)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_page_of_league_teams_response import SingleWrapperOfPageOfLeagueTeamsResponse
+from dupr_backend.models.single_wrapper_page_league_standing_response import SingleWrapperPageLeagueStandingResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -2071,20 +1836,18 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    bracket_id = 56 # int | bracketId
-    format = 'format_example' # str | format
-    limit = 56 # int | limit
-    offset = 56 # int | offset
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    bracket_id = 56 # int | 
+    limit = 56 # int | 
+    round = 0 # int |  (optional) (default to 0)
+    offset = 0 # int |  (optional) (default to 0)
 
     try:
-        # getBracketTeams
-        api_response = api_instance.get_bracket_teams_using_get(authorization, bracket_id, format, limit, offset, version)
-        print("The response of BracketsApi->get_bracket_teams_using_get:\n")
+        api_response = api_instance.get_bracket_standing(version, bracket_id, limit, round=round, offset=offset)
+        print("The response of BracketsApi->get_bracket_standing:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->get_bracket_teams_using_get: %s\n" % e)
+        print("Exception when calling BracketsApi->get_bracket_standing: %s\n" % e)
 ```
 
 
@@ -2094,16 +1857,15 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **bracket_id** | **int**| bracketId | 
- **format** | **str**| format | 
- **limit** | **int**| limit | 
- **offset** | **int**| offset | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **bracket_id** | **int**|  | 
+ **limit** | **int**|  | 
+ **round** | **int**|  | [optional] [default to 0]
+ **offset** | **int**|  | [optional] [default to 0]
 
 ### Return type
 
-[**SingleWrapperOfPageOfLeagueTeamsResponse**](SingleWrapperOfPageOfLeagueTeamsResponse.md)
+[**SingleWrapperPageLeagueStandingResponse**](SingleWrapperPageLeagueStandingResponse.md)
 
 ### Authorization
 
@@ -2119,14 +1881,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_bracket_teams_using_post**
-> SingleWrapperOfPageOfLeagueTeamsResponse get_bracket_teams_using_post(authorization, format, version, bracket_search_teams_request)
-
-getBracketTeams
+# **get_bracket_teams**
+> SingleWrapperPageLeagueTeamsResponse get_bracket_teams(version, format, bracket_search_teams_request)
 
 ### Example
 
@@ -2134,14 +1893,14 @@ getBracketTeams
 ```python
 import dupr_backend
 from dupr_backend.models.bracket_search_teams_request import BracketSearchTeamsRequest
-from dupr_backend.models.single_wrapper_of_page_of_league_teams_response import SingleWrapperOfPageOfLeagueTeamsResponse
+from dupr_backend.models.single_wrapper_page_league_teams_response import SingleWrapperPageLeagueTeamsResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -2149,18 +1908,16 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    format = 'format_example' # str | format
-    version = 'v1.0' # str | version (default to 'v1.0')
-    bracket_search_teams_request = dupr_backend.BracketSearchTeamsRequest() # BracketSearchTeamsRequest | bracketSearchTeamsRequest
+    version = 'version_example' # str | 
+    format = 'format_example' # str | 
+    bracket_search_teams_request = dupr_backend.BracketSearchTeamsRequest() # BracketSearchTeamsRequest | 
 
     try:
-        # getBracketTeams
-        api_response = api_instance.get_bracket_teams_using_post(authorization, format, version, bracket_search_teams_request)
-        print("The response of BracketsApi->get_bracket_teams_using_post:\n")
+        api_response = api_instance.get_bracket_teams(version, format, bracket_search_teams_request)
+        print("The response of BracketsApi->get_bracket_teams:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->get_bracket_teams_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->get_bracket_teams: %s\n" % e)
 ```
 
 
@@ -2170,14 +1927,13 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **format** | **str**| format | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **bracket_search_teams_request** | [**BracketSearchTeamsRequest**](BracketSearchTeamsRequest.md)| bracketSearchTeamsRequest | 
+ **version** | **str**|  | 
+ **format** | **str**|  | 
+ **bracket_search_teams_request** | [**BracketSearchTeamsRequest**](BracketSearchTeamsRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfPageOfLeagueTeamsResponse**](SingleWrapperOfPageOfLeagueTeamsResponse.md)
+[**SingleWrapperPageLeagueTeamsResponse**](SingleWrapperPageLeagueTeamsResponse.md)
 
 ### Authorization
 
@@ -2193,14 +1949,82 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_bracket_waitlisted_teams_using_post**
-> SingleWrapperOfPageOfLeagueTeamsResponse get_bracket_waitlisted_teams_using_post(authorization, format, version, bracket_search_teams_request)
+# **get_bracket_teams1**
+> SingleWrapperPageLeagueTeamsResponse get_bracket_teams1(version, bracket_id, offset, limit, format)
 
-getBracketWaitlistedTeams
+### Example
+
+
+```python
+import dupr_backend
+from dupr_backend.models.single_wrapper_page_league_teams_response import SingleWrapperPageLeagueTeamsResponse
+from dupr_backend.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dupr.gg
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "https://api.dupr.gg"
+)
+
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.BracketsApi(api_client)
+    version = 'version_example' # str | 
+    bracket_id = 56 # int | 
+    offset = 56 # int | 
+    limit = 56 # int | 
+    format = 'format_example' # str | 
+
+    try:
+        api_response = api_instance.get_bracket_teams1(version, bracket_id, offset, limit, format)
+        print("The response of BracketsApi->get_bracket_teams1:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BracketsApi->get_bracket_teams1: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | **str**|  | 
+ **bracket_id** | **int**|  | 
+ **offset** | **int**|  | 
+ **limit** | **int**|  | 
+ **format** | **str**|  | 
+
+### Return type
+
+[**SingleWrapperPageLeagueTeamsResponse**](SingleWrapperPageLeagueTeamsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_bracket_waitlisted_teams**
+> SingleWrapperPageLeagueTeamsResponse get_bracket_waitlisted_teams(version, format, bracket_search_teams_request)
 
 ### Example
 
@@ -2208,14 +2032,14 @@ getBracketWaitlistedTeams
 ```python
 import dupr_backend
 from dupr_backend.models.bracket_search_teams_request import BracketSearchTeamsRequest
-from dupr_backend.models.single_wrapper_of_page_of_league_teams_response import SingleWrapperOfPageOfLeagueTeamsResponse
+from dupr_backend.models.single_wrapper_page_league_teams_response import SingleWrapperPageLeagueTeamsResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -2223,18 +2047,16 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    format = 'format_example' # str | format
-    version = 'v1.0' # str | version (default to 'v1.0')
-    bracket_search_teams_request = dupr_backend.BracketSearchTeamsRequest() # BracketSearchTeamsRequest | bracketSearchTeamsRequest
+    version = 'version_example' # str | 
+    format = 'format_example' # str | 
+    bracket_search_teams_request = dupr_backend.BracketSearchTeamsRequest() # BracketSearchTeamsRequest | 
 
     try:
-        # getBracketWaitlistedTeams
-        api_response = api_instance.get_bracket_waitlisted_teams_using_post(authorization, format, version, bracket_search_teams_request)
-        print("The response of BracketsApi->get_bracket_waitlisted_teams_using_post:\n")
+        api_response = api_instance.get_bracket_waitlisted_teams(version, format, bracket_search_teams_request)
+        print("The response of BracketsApi->get_bracket_waitlisted_teams:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->get_bracket_waitlisted_teams_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->get_bracket_waitlisted_teams: %s\n" % e)
 ```
 
 
@@ -2244,14 +2066,13 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **format** | **str**| format | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **bracket_search_teams_request** | [**BracketSearchTeamsRequest**](BracketSearchTeamsRequest.md)| bracketSearchTeamsRequest | 
+ **version** | **str**|  | 
+ **format** | **str**|  | 
+ **bracket_search_teams_request** | [**BracketSearchTeamsRequest**](BracketSearchTeamsRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfPageOfLeagueTeamsResponse**](SingleWrapperOfPageOfLeagueTeamsResponse.md)
+[**SingleWrapperPageLeagueTeamsResponse**](SingleWrapperPageLeagueTeamsResponse.md)
 
 ### Authorization
 
@@ -2267,28 +2088,25 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_director_bracket_teams_using_get**
-> SingleWrapperOfPageOfLeagueTeamsResponse get_director_bracket_teams_using_get(authorization, bracket_id, format, limit, offset, version)
-
-getDirectorBracketTeams
+# **get_director_bracket_teams**
+> SingleWrapperPageLeagueTeamsResponse get_director_bracket_teams(version, bracket_id, offset, limit, format)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_page_of_league_teams_response import SingleWrapperOfPageOfLeagueTeamsResponse
+from dupr_backend.models.single_wrapper_page_league_teams_response import SingleWrapperPageLeagueTeamsResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -2296,20 +2114,18 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    bracket_id = 56 # int | bracketId
-    format = 'format_example' # str | format
-    limit = 56 # int | limit
-    offset = 56 # int | offset
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    bracket_id = 56 # int | 
+    offset = 56 # int | 
+    limit = 56 # int | 
+    format = 'format_example' # str | 
 
     try:
-        # getDirectorBracketTeams
-        api_response = api_instance.get_director_bracket_teams_using_get(authorization, bracket_id, format, limit, offset, version)
-        print("The response of BracketsApi->get_director_bracket_teams_using_get:\n")
+        api_response = api_instance.get_director_bracket_teams(version, bracket_id, offset, limit, format)
+        print("The response of BracketsApi->get_director_bracket_teams:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->get_director_bracket_teams_using_get: %s\n" % e)
+        print("Exception when calling BracketsApi->get_director_bracket_teams: %s\n" % e)
 ```
 
 
@@ -2319,16 +2135,15 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **bracket_id** | **int**| bracketId | 
- **format** | **str**| format | 
- **limit** | **int**| limit | 
- **offset** | **int**| offset | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **bracket_id** | **int**|  | 
+ **offset** | **int**|  | 
+ **limit** | **int**|  | 
+ **format** | **str**|  | 
 
 ### Return type
 
-[**SingleWrapperOfPageOfLeagueTeamsResponse**](SingleWrapperOfPageOfLeagueTeamsResponse.md)
+[**SingleWrapperPageLeagueTeamsResponse**](SingleWrapperPageLeagueTeamsResponse.md)
 
 ### Authorization
 
@@ -2344,28 +2159,25 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_pending_confirmation_using_get**
-> ArrayWrapperOfLeagueTeamsResponse get_pending_confirmation_using_get(authorization, bracket_id, version)
-
-getPendingConfirmation
+# **get_pending_confirmation**
+> ArrayWrapperLeagueTeamsResponse get_pending_confirmation(version, bracket_id)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.array_wrapper_of_league_teams_response import ArrayWrapperOfLeagueTeamsResponse
+from dupr_backend.models.array_wrapper_league_teams_response import ArrayWrapperLeagueTeamsResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -2373,17 +2185,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    bracket_id = 56 # int | bracketId
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    bracket_id = 56 # int | 
 
     try:
-        # getPendingConfirmation
-        api_response = api_instance.get_pending_confirmation_using_get(authorization, bracket_id, version)
-        print("The response of BracketsApi->get_pending_confirmation_using_get:\n")
+        api_response = api_instance.get_pending_confirmation(version, bracket_id)
+        print("The response of BracketsApi->get_pending_confirmation:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->get_pending_confirmation_using_get: %s\n" % e)
+        print("Exception when calling BracketsApi->get_pending_confirmation: %s\n" % e)
 ```
 
 
@@ -2393,13 +2203,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **bracket_id** | **int**| bracketId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **bracket_id** | **int**|  | 
 
 ### Return type
 
-[**ArrayWrapperOfLeagueTeamsResponse**](ArrayWrapperOfLeagueTeamsResponse.md)
+[**ArrayWrapperLeagueTeamsResponse**](ArrayWrapperLeagueTeamsResponse.md)
 
 ### Authorization
 
@@ -2415,28 +2224,25 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_pending_teams_to_replace_using_get**
-> ArrayWrapperOfPendingTeamsResponse get_pending_teams_to_replace_using_get(authorization, bracket_id, version)
-
-getPendingTeamsToReplace
+# **get_pending_teams_to_replace**
+> ArrayWrapperPendingTeamsResponse get_pending_teams_to_replace(version, bracket_id)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.array_wrapper_of_pending_teams_response import ArrayWrapperOfPendingTeamsResponse
+from dupr_backend.models.array_wrapper_pending_teams_response import ArrayWrapperPendingTeamsResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -2444,17 +2250,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    bracket_id = 56 # int | bracketId
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    bracket_id = 56 # int | 
 
     try:
-        # getPendingTeamsToReplace
-        api_response = api_instance.get_pending_teams_to_replace_using_get(authorization, bracket_id, version)
-        print("The response of BracketsApi->get_pending_teams_to_replace_using_get:\n")
+        api_response = api_instance.get_pending_teams_to_replace(version, bracket_id)
+        print("The response of BracketsApi->get_pending_teams_to_replace:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->get_pending_teams_to_replace_using_get: %s\n" % e)
+        print("Exception when calling BracketsApi->get_pending_teams_to_replace: %s\n" % e)
 ```
 
 
@@ -2464,13 +2268,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **bracket_id** | **int**| bracketId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **bracket_id** | **int**|  | 
 
 ### Return type
 
-[**ArrayWrapperOfPendingTeamsResponse**](ArrayWrapperOfPendingTeamsResponse.md)
+[**ArrayWrapperPendingTeamsResponse**](ArrayWrapperPendingTeamsResponse.md)
 
 ### Authorization
 
@@ -2486,28 +2289,25 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_registration_details_using_get**
-> SingleWrapperOfRegistrationResponse get_registration_details_using_get(authorization, bracket_id, version)
-
-getRegistrationDetails
+# **get_registration_details**
+> SingleWrapperRegistrationResponse get_registration_details(version, bracket_id)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_registration_response import SingleWrapperOfRegistrationResponse
+from dupr_backend.models.single_wrapper_registration_response import SingleWrapperRegistrationResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -2515,17 +2315,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    bracket_id = 56 # int | bracketId
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    bracket_id = 56 # int | 
 
     try:
-        # getRegistrationDetails
-        api_response = api_instance.get_registration_details_using_get(authorization, bracket_id, version)
-        print("The response of BracketsApi->get_registration_details_using_get:\n")
+        api_response = api_instance.get_registration_details(version, bracket_id)
+        print("The response of BracketsApi->get_registration_details:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->get_registration_details_using_get: %s\n" % e)
+        print("Exception when calling BracketsApi->get_registration_details: %s\n" % e)
 ```
 
 
@@ -2535,13 +2333,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **bracket_id** | **int**| bracketId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **bracket_id** | **int**|  | 
 
 ### Return type
 
-[**SingleWrapperOfRegistrationResponse**](SingleWrapperOfRegistrationResponse.md)
+[**SingleWrapperRegistrationResponse**](SingleWrapperRegistrationResponse.md)
 
 ### Authorization
 
@@ -2557,91 +2354,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_unmatched_players_using_get**
-> SingleWrapperOfPageOfPlayerResponse get_unmatched_players_using_get(authorization, bracket_id, limit, offset, version, query=query)
-
-getUnmatchedPlayers
-
-### Example
-
-
-```python
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_page_of_player_response import SingleWrapperOfPageOfPlayerResponse
-from dupr_backend.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
-)
-
-
-# Enter a context with an instance of the API client
-with dupr_backend.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    bracket_id = 56 # int | bracketId
-    limit = 56 # int | limit
-    offset = 56 # int | offset
-    version = 'v1.0' # str | version (default to 'v1.0')
-    query = 'query_example' # str | query (optional)
-
-    try:
-        # getUnmatchedPlayers
-        api_response = api_instance.get_unmatched_players_using_get(authorization, bracket_id, limit, offset, version, query=query)
-        print("The response of BracketsApi->get_unmatched_players_using_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling BracketsApi->get_unmatched_players_using_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **bracket_id** | **int**| bracketId | 
- **limit** | **int**| limit | 
- **offset** | **int**| offset | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **query** | **str**| query | [optional] 
-
-### Return type
-
-[**SingleWrapperOfPageOfPlayerResponse**](SingleWrapperOfPageOfPlayerResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_unmatched_players_using_post**
-> SingleWrapperOfPageOfPlayerResponse get_unmatched_players_using_post(authorization, version, search_unmatched_players_request)
-
-getUnmatchedPlayers
+# **get_unmatched_players**
+> SingleWrapperPagePlayerResponse get_unmatched_players(version, search_unmatched_players_request)
 
 ### Example
 
@@ -2649,14 +2366,14 @@ getUnmatchedPlayers
 ```python
 import dupr_backend
 from dupr_backend.models.search_unmatched_players_request import SearchUnmatchedPlayersRequest
-from dupr_backend.models.single_wrapper_of_page_of_player_response import SingleWrapperOfPageOfPlayerResponse
+from dupr_backend.models.single_wrapper_page_player_response import SingleWrapperPagePlayerResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -2664,17 +2381,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    search_unmatched_players_request = dupr_backend.SearchUnmatchedPlayersRequest() # SearchUnmatchedPlayersRequest | searchUnmatchedPlayersRequest
+    version = 'version_example' # str | 
+    search_unmatched_players_request = dupr_backend.SearchUnmatchedPlayersRequest() # SearchUnmatchedPlayersRequest | 
 
     try:
-        # getUnmatchedPlayers
-        api_response = api_instance.get_unmatched_players_using_post(authorization, version, search_unmatched_players_request)
-        print("The response of BracketsApi->get_unmatched_players_using_post:\n")
+        api_response = api_instance.get_unmatched_players(version, search_unmatched_players_request)
+        print("The response of BracketsApi->get_unmatched_players:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->get_unmatched_players_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->get_unmatched_players: %s\n" % e)
 ```
 
 
@@ -2684,13 +2399,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **search_unmatched_players_request** | [**SearchUnmatchedPlayersRequest**](SearchUnmatchedPlayersRequest.md)| searchUnmatchedPlayersRequest | 
+ **version** | **str**|  | 
+ **search_unmatched_players_request** | [**SearchUnmatchedPlayersRequest**](SearchUnmatchedPlayersRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfPageOfPlayerResponse**](SingleWrapperOfPageOfPlayerResponse.md)
+[**SingleWrapperPagePlayerResponse**](SingleWrapperPagePlayerResponse.md)
 
 ### Authorization
 
@@ -2706,28 +2420,25 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_user_brackets_using_get**
-> SingleWrapperOfPageOfBracketResponse get_user_brackets_using_get(authorization, limit, offset, version, status=status)
-
-getUserBrackets
+# **get_unmatched_players1**
+> SingleWrapperPagePlayerResponse get_unmatched_players1(version, bracket_id, offset, limit, query=query)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_page_of_bracket_response import SingleWrapperOfPageOfBracketResponse
+from dupr_backend.models.single_wrapper_page_player_response import SingleWrapperPagePlayerResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -2735,19 +2446,18 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    limit = 56 # int | limit
-    offset = 56 # int | offset
-    version = 'v1.0' # str | version (default to 'v1.0')
-    status = 'status_example' # str | status (optional)
+    version = 'version_example' # str | 
+    bracket_id = 56 # int | 
+    offset = 56 # int | 
+    limit = 56 # int | 
+    query = 'query_example' # str |  (optional)
 
     try:
-        # getUserBrackets
-        api_response = api_instance.get_user_brackets_using_get(authorization, limit, offset, version, status=status)
-        print("The response of BracketsApi->get_user_brackets_using_get:\n")
+        api_response = api_instance.get_unmatched_players1(version, bracket_id, offset, limit, query=query)
+        print("The response of BracketsApi->get_unmatched_players1:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->get_user_brackets_using_get: %s\n" % e)
+        print("Exception when calling BracketsApi->get_unmatched_players1: %s\n" % e)
 ```
 
 
@@ -2757,15 +2467,15 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **limit** | **int**| limit | 
- **offset** | **int**| offset | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **status** | **str**| status | [optional] 
+ **version** | **str**|  | 
+ **bracket_id** | **int**|  | 
+ **offset** | **int**|  | 
+ **limit** | **int**|  | 
+ **query** | **str**|  | [optional] 
 
 ### Return type
 
-[**SingleWrapperOfPageOfBracketResponse**](SingleWrapperOfPageOfBracketResponse.md)
+[**SingleWrapperPagePlayerResponse**](SingleWrapperPagePlayerResponse.md)
 
 ### Authorization
 
@@ -2781,29 +2491,95 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_user_club_role_using_post**
-> SingleWrapperOfBracketClubRoleResponse get_user_club_role_using_post(authorization, version, request)
-
-getUserClubRole
+# **get_user_brackets**
+> SingleWrapperPageBracketResponse get_user_brackets(version, offset, limit, status=status)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_bracket_club_role_response import SingleWrapperOfBracketClubRoleResponse
+from dupr_backend.models.single_wrapper_page_bracket_response import SingleWrapperPageBracketResponse
+from dupr_backend.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dupr.gg
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "https://api.dupr.gg"
+)
+
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.BracketsApi(api_client)
+    version = 'version_example' # str | 
+    offset = 56 # int | 
+    limit = 56 # int | 
+    status = 'status_example' # str |  (optional)
+
+    try:
+        api_response = api_instance.get_user_brackets(version, offset, limit, status=status)
+        print("The response of BracketsApi->get_user_brackets:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BracketsApi->get_user_brackets: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | **str**|  | 
+ **offset** | **int**|  | 
+ **limit** | **int**|  | 
+ **status** | **str**|  | [optional] 
+
+### Return type
+
+[**SingleWrapperPageBracketResponse**](SingleWrapperPageBracketResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_user_club_role**
+> SingleWrapperBracketClubRoleResponse get_user_club_role(version, user_club_role_request)
+
+### Example
+
+
+```python
+import dupr_backend
+from dupr_backend.models.single_wrapper_bracket_club_role_response import SingleWrapperBracketClubRoleResponse
 from dupr_backend.models.user_club_role_request import UserClubRoleRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -2811,17 +2587,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.UserClubRoleRequest() # UserClubRoleRequest | request
+    version = 'version_example' # str | 
+    user_club_role_request = dupr_backend.UserClubRoleRequest() # UserClubRoleRequest | 
 
     try:
-        # getUserClubRole
-        api_response = api_instance.get_user_club_role_using_post(authorization, version, request)
-        print("The response of BracketsApi->get_user_club_role_using_post:\n")
+        api_response = api_instance.get_user_club_role(version, user_club_role_request)
+        print("The response of BracketsApi->get_user_club_role:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->get_user_club_role_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->get_user_club_role: %s\n" % e)
 ```
 
 
@@ -2831,13 +2605,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**UserClubRoleRequest**](UserClubRoleRequest.md)| request | 
+ **version** | **str**|  | 
+ **user_club_role_request** | [**UserClubRoleRequest**](UserClubRoleRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfBracketClubRoleResponse**](SingleWrapperOfBracketClubRoleResponse.md)
+[**SingleWrapperBracketClubRoleResponse**](SingleWrapperBracketClubRoleResponse.md)
 
 ### Authorization
 
@@ -2853,28 +2626,25 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_user_event_brackets_using_get**
-> ArrayWrapperOfBracketResponse get_user_event_brackets_using_get(authorization, league_id, user_id, version)
-
-getUserEventBrackets
+# **get_user_event_brackets**
+> ArrayWrapperBracketResponse get_user_event_brackets(version, league_id, user_id)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.array_wrapper_of_bracket_response import ArrayWrapperOfBracketResponse
+from dupr_backend.models.array_wrapper_bracket_response import ArrayWrapperBracketResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -2882,18 +2652,16 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    league_id = 56 # int | leagueId
-    user_id = 56 # int | userId
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    league_id = 56 # int | 
+    user_id = 56 # int | 
 
     try:
-        # getUserEventBrackets
-        api_response = api_instance.get_user_event_brackets_using_get(authorization, league_id, user_id, version)
-        print("The response of BracketsApi->get_user_event_brackets_using_get:\n")
+        api_response = api_instance.get_user_event_brackets(version, league_id, user_id)
+        print("The response of BracketsApi->get_user_event_brackets:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->get_user_event_brackets_using_get: %s\n" % e)
+        print("Exception when calling BracketsApi->get_user_event_brackets: %s\n" % e)
 ```
 
 
@@ -2903,14 +2671,13 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **league_id** | **int**| leagueId | 
- **user_id** | **int**| userId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **league_id** | **int**|  | 
+ **user_id** | **int**|  | 
 
 ### Return type
 
-[**ArrayWrapperOfBracketResponse**](ArrayWrapperOfBracketResponse.md)
+[**ArrayWrapperBracketResponse**](ArrayWrapperBracketResponse.md)
 
 ### Authorization
 
@@ -2926,29 +2693,26 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_user_matches_using_post**
-> SingleWrapperOfPageOfLeagueMatchResponse get_user_matches_using_post(authorization, version, user_matches_request)
-
-getUserMatches
+# **get_user_matches**
+> SingleWrapperPageLeagueMatchResponse get_user_matches(version, user_matches_request)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_page_of_league_match_response import SingleWrapperOfPageOfLeagueMatchResponse
+from dupr_backend.models.single_wrapper_page_league_match_response import SingleWrapperPageLeagueMatchResponse
 from dupr_backend.models.user_matches_request import UserMatchesRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -2956,17 +2720,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    user_matches_request = dupr_backend.UserMatchesRequest() # UserMatchesRequest | userMatchesRequest
+    version = 'version_example' # str | 
+    user_matches_request = dupr_backend.UserMatchesRequest() # UserMatchesRequest | 
 
     try:
-        # getUserMatches
-        api_response = api_instance.get_user_matches_using_post(authorization, version, user_matches_request)
-        print("The response of BracketsApi->get_user_matches_using_post:\n")
+        api_response = api_instance.get_user_matches(version, user_matches_request)
+        print("The response of BracketsApi->get_user_matches:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->get_user_matches_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->get_user_matches: %s\n" % e)
 ```
 
 
@@ -2976,13 +2738,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **user_matches_request** | [**UserMatchesRequest**](UserMatchesRequest.md)| userMatchesRequest | 
+ **version** | **str**|  | 
+ **user_matches_request** | [**UserMatchesRequest**](UserMatchesRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfPageOfLeagueMatchResponse**](SingleWrapperOfPageOfLeagueMatchResponse.md)
+[**SingleWrapperPageLeagueMatchResponse**](SingleWrapperPageLeagueMatchResponse.md)
 
 ### Authorization
 
@@ -2998,28 +2759,25 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_valid_user_bracket_id_using_get**
-> ArrayWrapperOfBracketResponse get_valid_user_bracket_id_using_get(authorization, league_id, version)
-
-getValidUserBracketId
+# **get_valid_user_bracket_id**
+> ArrayWrapperBracketResponse get_valid_user_bracket_id(version, league_id)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.array_wrapper_of_bracket_response import ArrayWrapperOfBracketResponse
+from dupr_backend.models.array_wrapper_bracket_response import ArrayWrapperBracketResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -3027,17 +2785,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    league_id = 56 # int | leagueId
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    league_id = 56 # int | 
 
     try:
-        # getValidUserBracketId
-        api_response = api_instance.get_valid_user_bracket_id_using_get(authorization, league_id, version)
-        print("The response of BracketsApi->get_valid_user_bracket_id_using_get:\n")
+        api_response = api_instance.get_valid_user_bracket_id(version, league_id)
+        print("The response of BracketsApi->get_valid_user_bracket_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->get_valid_user_bracket_id_using_get: %s\n" % e)
+        print("Exception when calling BracketsApi->get_valid_user_bracket_id: %s\n" % e)
 ```
 
 
@@ -3047,13 +2803,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **league_id** | **int**| leagueId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **league_id** | **int**|  | 
 
 ### Return type
 
-[**ArrayWrapperOfBracketResponse**](ArrayWrapperOfBracketResponse.md)
+[**ArrayWrapperBracketResponse**](ArrayWrapperBracketResponse.md)
 
 ### Authorization
 
@@ -3069,28 +2824,25 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_waterfall_matches_using_get**
-> ArrayWrapperOfLeagueMatchResponse get_waterfall_matches_using_get(authorization, bracket_id, version)
-
-getWaterfallMatches
+# **get_waterfall_matches**
+> ArrayWrapperLeagueMatchResponse get_waterfall_matches(version, bracket_id)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.array_wrapper_of_league_match_response import ArrayWrapperOfLeagueMatchResponse
+from dupr_backend.models.array_wrapper_league_match_response import ArrayWrapperLeagueMatchResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -3098,17 +2850,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    bracket_id = 56 # int | bracketId
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    bracket_id = 56 # int | 
 
     try:
-        # getWaterfallMatches
-        api_response = api_instance.get_waterfall_matches_using_get(authorization, bracket_id, version)
-        print("The response of BracketsApi->get_waterfall_matches_using_get:\n")
+        api_response = api_instance.get_waterfall_matches(version, bracket_id)
+        print("The response of BracketsApi->get_waterfall_matches:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->get_waterfall_matches_using_get: %s\n" % e)
+        print("Exception when calling BracketsApi->get_waterfall_matches: %s\n" % e)
 ```
 
 
@@ -3118,13 +2868,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **bracket_id** | **int**| bracketId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **bracket_id** | **int**|  | 
 
 ### Return type
 
-[**ArrayWrapperOfLeagueMatchResponse**](ArrayWrapperOfLeagueMatchResponse.md)
+[**ArrayWrapperLeagueMatchResponse**](ArrayWrapperLeagueMatchResponse.md)
 
 ### Authorization
 
@@ -3140,14 +2889,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **player_withdraw_by_director_using_post**
-> Wrapper player_withdraw_by_director_using_post(authorization, version, withdraw_player_request)
-
-playerWithdrawByDirector
+# **player_withdraw**
+> Wrapper player_withdraw(version, withdraw_player_request)
 
 ### Example
 
@@ -3159,10 +2905,10 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -3170,17 +2916,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    withdraw_player_request = dupr_backend.WithdrawPlayerRequest() # WithdrawPlayerRequest | withdrawPlayerRequest
+    version = 'version_example' # str | 
+    withdraw_player_request = dupr_backend.WithdrawPlayerRequest() # WithdrawPlayerRequest | 
 
     try:
-        # playerWithdrawByDirector
-        api_response = api_instance.player_withdraw_by_director_using_post(authorization, version, withdraw_player_request)
-        print("The response of BracketsApi->player_withdraw_by_director_using_post:\n")
+        api_response = api_instance.player_withdraw(version, withdraw_player_request)
+        print("The response of BracketsApi->player_withdraw:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->player_withdraw_by_director_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->player_withdraw: %s\n" % e)
 ```
 
 
@@ -3190,9 +2934,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **withdraw_player_request** | [**WithdrawPlayerRequest**](WithdrawPlayerRequest.md)| withdrawPlayerRequest | 
+ **version** | **str**|  | 
+ **withdraw_player_request** | [**WithdrawPlayerRequest**](WithdrawPlayerRequest.md)|  | 
 
 ### Return type
 
@@ -3212,14 +2955,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **player_withdraw_using_post**
-> Wrapper player_withdraw_using_post(authorization, version, withdraw_player_request)
-
-playerWithdraw
+# **player_withdraw_by_director**
+> Wrapper player_withdraw_by_director(version, withdraw_player_request)
 
 ### Example
 
@@ -3231,10 +2971,10 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -3242,17 +2982,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    withdraw_player_request = dupr_backend.WithdrawPlayerRequest() # WithdrawPlayerRequest | withdrawPlayerRequest
+    version = 'version_example' # str | 
+    withdraw_player_request = dupr_backend.WithdrawPlayerRequest() # WithdrawPlayerRequest | 
 
     try:
-        # playerWithdraw
-        api_response = api_instance.player_withdraw_using_post(authorization, version, withdraw_player_request)
-        print("The response of BracketsApi->player_withdraw_using_post:\n")
+        api_response = api_instance.player_withdraw_by_director(version, withdraw_player_request)
+        print("The response of BracketsApi->player_withdraw_by_director:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->player_withdraw_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->player_withdraw_by_director: %s\n" % e)
 ```
 
 
@@ -3262,9 +3000,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **withdraw_player_request** | [**WithdrawPlayerRequest**](WithdrawPlayerRequest.md)| withdrawPlayerRequest | 
+ **version** | **str**|  | 
+ **withdraw_player_request** | [**WithdrawPlayerRequest**](WithdrawPlayerRequest.md)|  | 
 
 ### Return type
 
@@ -3284,14 +3021,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **process_refunds_using_post**
-> Wrapper process_refunds_using_post(authorization, version, request)
-
-processRefunds
+# **process_refunds**
+> Wrapper process_refunds(version, event_refund_request)
 
 ### Example
 
@@ -3303,10 +3037,10 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -3314,17 +3048,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.EventRefundRequest() # EventRefundRequest | request
+    version = 'version_example' # str | 
+    event_refund_request = dupr_backend.EventRefundRequest() # EventRefundRequest | 
 
     try:
-        # processRefunds
-        api_response = api_instance.process_refunds_using_post(authorization, version, request)
-        print("The response of BracketsApi->process_refunds_using_post:\n")
+        api_response = api_instance.process_refunds(version, event_refund_request)
+        print("The response of BracketsApi->process_refunds:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->process_refunds_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->process_refunds: %s\n" % e)
 ```
 
 
@@ -3334,9 +3066,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**EventRefundRequest**](EventRefundRequest.md)| request | 
+ **version** | **str**|  | 
+ **event_refund_request** | [**EventRefundRequest**](EventRefundRequest.md)|  | 
 
 ### Return type
 
@@ -3356,14 +3087,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **register_users_to_bracket_using_post**
-> SingleWrapperOfJoinLeagueResponse register_users_to_bracket_using_post(authorization, version, request)
-
-registerUsersToBracket
+# **register_users_to_bracket**
+> SingleWrapperJoinLeagueResponse register_users_to_bracket(version, register_to_bracket_request)
 
 ### Example
 
@@ -3371,14 +3099,14 @@ registerUsersToBracket
 ```python
 import dupr_backend
 from dupr_backend.models.register_to_bracket_request import RegisterToBracketRequest
-from dupr_backend.models.single_wrapper_of_join_league_response import SingleWrapperOfJoinLeagueResponse
+from dupr_backend.models.single_wrapper_join_league_response import SingleWrapperJoinLeagueResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -3386,17 +3114,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.RegisterToBracketRequest() # RegisterToBracketRequest | request
+    version = 'version_example' # str | 
+    register_to_bracket_request = dupr_backend.RegisterToBracketRequest() # RegisterToBracketRequest | 
 
     try:
-        # registerUsersToBracket
-        api_response = api_instance.register_users_to_bracket_using_post(authorization, version, request)
-        print("The response of BracketsApi->register_users_to_bracket_using_post:\n")
+        api_response = api_instance.register_users_to_bracket(version, register_to_bracket_request)
+        print("The response of BracketsApi->register_users_to_bracket:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->register_users_to_bracket_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->register_users_to_bracket: %s\n" % e)
 ```
 
 
@@ -3406,13 +3132,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**RegisterToBracketRequest**](RegisterToBracketRequest.md)| request | 
+ **version** | **str**|  | 
+ **register_to_bracket_request** | [**RegisterToBracketRequest**](RegisterToBracketRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfJoinLeagueResponse**](SingleWrapperOfJoinLeagueResponse.md)
+[**SingleWrapperJoinLeagueResponse**](SingleWrapperJoinLeagueResponse.md)
 
 ### Authorization
 
@@ -3428,14 +3153,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **remove_match_from_queue_using_get**
-> Wrapper remove_match_from_queue_using_get(authorization, league_match_id, version)
-
-removeMatchFromQueue
+# **remove_match_from_queue**
+> Wrapper remove_match_from_queue(version, league_match_id)
 
 ### Example
 
@@ -3446,10 +3168,10 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -3457,17 +3179,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    league_match_id = 56 # int | leagueMatchId
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    league_match_id = 56 # int | 
 
     try:
-        # removeMatchFromQueue
-        api_response = api_instance.remove_match_from_queue_using_get(authorization, league_match_id, version)
-        print("The response of BracketsApi->remove_match_from_queue_using_get:\n")
+        api_response = api_instance.remove_match_from_queue(version, league_match_id)
+        print("The response of BracketsApi->remove_match_from_queue:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->remove_match_from_queue_using_get: %s\n" % e)
+        print("Exception when calling BracketsApi->remove_match_from_queue: %s\n" % e)
 ```
 
 
@@ -3477,9 +3197,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **league_match_id** | **int**| leagueMatchId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **league_match_id** | **int**|  | 
 
 ### Return type
 
@@ -3499,14 +3218,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **save_bracket_using_put**
-> SingleWrapperOfLeagueResponse save_bracket_using_put(authorization, version, request)
-
-saveBracket
+# **save_bracket**
+> SingleWrapperLeagueResponse save_bracket(version, bracket_request)
 
 ### Example
 
@@ -3514,14 +3230,14 @@ saveBracket
 ```python
 import dupr_backend
 from dupr_backend.models.bracket_request import BracketRequest
-from dupr_backend.models.single_wrapper_of_league_response import SingleWrapperOfLeagueResponse
+from dupr_backend.models.single_wrapper_league_response import SingleWrapperLeagueResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -3529,17 +3245,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.BracketRequest() # BracketRequest | request
+    version = 'version_example' # str | 
+    bracket_request = dupr_backend.BracketRequest() # BracketRequest | 
 
     try:
-        # saveBracket
-        api_response = api_instance.save_bracket_using_put(authorization, version, request)
-        print("The response of BracketsApi->save_bracket_using_put:\n")
+        api_response = api_instance.save_bracket(version, bracket_request)
+        print("The response of BracketsApi->save_bracket:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->save_bracket_using_put: %s\n" % e)
+        print("Exception when calling BracketsApi->save_bracket: %s\n" % e)
 ```
 
 
@@ -3549,13 +3263,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**BracketRequest**](BracketRequest.md)| request | 
+ **version** | **str**|  | 
+ **bracket_request** | [**BracketRequest**](BracketRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfLeagueResponse**](SingleWrapperOfLeagueResponse.md)
+[**SingleWrapperLeagueResponse**](SingleWrapperLeagueResponse.md)
 
 ### Authorization
 
@@ -3571,29 +3284,26 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **save_match_seeding_using_post**
-> Wrapper save_match_seeding_using_post(authorization, bracket_id, version, request)
-
-saveMatchSeeding
+# **save_match_seeding**
+> Wrapper save_match_seeding(version, bracket_id, match_round)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.match_round_req import MatchRoundReq
+from dupr_backend.models.match_round import MatchRound
 from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -3601,18 +3311,16 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    bracket_id = 56 # int | bracketId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = [dupr_backend.MatchRoundReq()] # List[MatchRoundReq] | request
+    version = 'version_example' # str | 
+    bracket_id = 56 # int | 
+    match_round = [dupr_backend.MatchRound()] # List[MatchRound] | 
 
     try:
-        # saveMatchSeeding
-        api_response = api_instance.save_match_seeding_using_post(authorization, bracket_id, version, request)
-        print("The response of BracketsApi->save_match_seeding_using_post:\n")
+        api_response = api_instance.save_match_seeding(version, bracket_id, match_round)
+        print("The response of BracketsApi->save_match_seeding:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->save_match_seeding_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->save_match_seeding: %s\n" % e)
 ```
 
 
@@ -3622,10 +3330,9 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **bracket_id** | **int**| bracketId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**List[MatchRoundReq]**](MatchRoundReq.md)| request | 
+ **version** | **str**|  | 
+ **bracket_id** | **int**|  | 
+ **match_round** | [**List[MatchRound]**](MatchRound.md)|  | 
 
 ### Return type
 
@@ -3645,14 +3352,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **save_teams_using_post**
-> Wrapper save_teams_using_post(authorization, version, create_new_team_request)
-
-saveTeams
+# **save_teams**
+> Wrapper save_teams(version, create_new_team_request)
 
 ### Example
 
@@ -3664,10 +3368,10 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -3675,17 +3379,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    create_new_team_request = dupr_backend.CreateNewTeamRequest() # CreateNewTeamRequest | createNewTeamRequest
+    version = 'version_example' # str | 
+    create_new_team_request = dupr_backend.CreateNewTeamRequest() # CreateNewTeamRequest | 
 
     try:
-        # saveTeams
-        api_response = api_instance.save_teams_using_post(authorization, version, create_new_team_request)
-        print("The response of BracketsApi->save_teams_using_post:\n")
+        api_response = api_instance.save_teams(version, create_new_team_request)
+        print("The response of BracketsApi->save_teams:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->save_teams_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->save_teams: %s\n" % e)
 ```
 
 
@@ -3695,9 +3397,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **create_new_team_request** | [**CreateNewTeamRequest**](CreateNewTeamRequest.md)| createNewTeamRequest | 
+ **version** | **str**|  | 
+ **create_new_team_request** | [**CreateNewTeamRequest**](CreateNewTeamRequest.md)|  | 
 
 ### Return type
 
@@ -3717,28 +3418,25 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **seed_matches_using_get**
-> ArrayWrapperOfMatchRound seed_matches_using_get(authorization, bracket_id, version, type=type)
-
-seedMatches
+# **seed_matches**
+> ArrayWrapperMatchRound seed_matches(version, bracket_id, type=type)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.array_wrapper_of_match_round import ArrayWrapperOfMatchRound
+from dupr_backend.models.array_wrapper_match_round import ArrayWrapperMatchRound
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -3746,18 +3444,16 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    bracket_id = 56 # int | bracketId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    type = 'ROUND_ROBIN' # str | type (optional) (default to 'ROUND_ROBIN')
+    version = 'version_example' # str | 
+    bracket_id = 56 # int | 
+    type = 'ROUND_ROBIN' # str |  (optional) (default to 'ROUND_ROBIN')
 
     try:
-        # seedMatches
-        api_response = api_instance.seed_matches_using_get(authorization, bracket_id, version, type=type)
-        print("The response of BracketsApi->seed_matches_using_get:\n")
+        api_response = api_instance.seed_matches(version, bracket_id, type=type)
+        print("The response of BracketsApi->seed_matches:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->seed_matches_using_get: %s\n" % e)
+        print("Exception when calling BracketsApi->seed_matches: %s\n" % e)
 ```
 
 
@@ -3767,14 +3463,13 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **bracket_id** | **int**| bracketId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **type** | **str**| type | [optional] [default to &#39;ROUND_ROBIN&#39;]
+ **version** | **str**|  | 
+ **bracket_id** | **int**|  | 
+ **type** | **str**|  | [optional] [default to &#39;ROUND_ROBIN&#39;]
 
 ### Return type
 
-[**ArrayWrapperOfMatchRound**](ArrayWrapperOfMatchRound.md)
+[**ArrayWrapperMatchRound**](ArrayWrapperMatchRound.md)
 
 ### Authorization
 
@@ -3790,29 +3485,26 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **substitute_players_using_post**
-> SingleWrapperOfUnit substitute_players_using_post(authorization, version, request)
-
-substitutePlayers
+# **substitute_players**
+> SingleWrapperUnit substitute_players(version, substitute_player_request)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
+from dupr_backend.models.single_wrapper_unit import SingleWrapperUnit
 from dupr_backend.models.substitute_player_request import SubstitutePlayerRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -3820,17 +3512,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = [dupr_backend.SubstitutePlayerRequest()] # List[SubstitutePlayerRequest] | request
+    version = 'version_example' # str | 
+    substitute_player_request = [dupr_backend.SubstitutePlayerRequest()] # List[SubstitutePlayerRequest] | 
 
     try:
-        # substitutePlayers
-        api_response = api_instance.substitute_players_using_post(authorization, version, request)
-        print("The response of BracketsApi->substitute_players_using_post:\n")
+        api_response = api_instance.substitute_players(version, substitute_player_request)
+        print("The response of BracketsApi->substitute_players:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->substitute_players_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->substitute_players: %s\n" % e)
 ```
 
 
@@ -3840,13 +3530,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**List[SubstitutePlayerRequest]**](SubstitutePlayerRequest.md)| request | 
+ **version** | **str**|  | 
+ **substitute_player_request** | [**List[SubstitutePlayerRequest]**](SubstitutePlayerRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfUnit**](SingleWrapperOfUnit.md)
+[**SingleWrapperUnit**](SingleWrapperUnit.md)
 
 ### Authorization
 
@@ -3862,29 +3551,26 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **switch_player_using_post**
-> ArrayWrapperOfSwitchBracketResponse switch_player_using_post(authorization, version, request)
-
-switchPlayer
+# **switch_player**
+> ArrayWrapperSwitchBracketResponse switch_player(version, switch_bracket_request)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.array_wrapper_of_switch_bracket_response import ArrayWrapperOfSwitchBracketResponse
+from dupr_backend.models.array_wrapper_switch_bracket_response import ArrayWrapperSwitchBracketResponse
 from dupr_backend.models.switch_bracket_request import SwitchBracketRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -3892,17 +3578,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = [dupr_backend.SwitchBracketRequest()] # List[SwitchBracketRequest] | request
+    version = 'version_example' # str | 
+    switch_bracket_request = [dupr_backend.SwitchBracketRequest()] # List[SwitchBracketRequest] | 
 
     try:
-        # switchPlayer
-        api_response = api_instance.switch_player_using_post(authorization, version, request)
-        print("The response of BracketsApi->switch_player_using_post:\n")
+        api_response = api_instance.switch_player(version, switch_bracket_request)
+        print("The response of BracketsApi->switch_player:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->switch_player_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->switch_player: %s\n" % e)
 ```
 
 
@@ -3912,13 +3596,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**List[SwitchBracketRequest]**](SwitchBracketRequest.md)| request | 
+ **version** | **str**|  | 
+ **switch_bracket_request** | [**List[SwitchBracketRequest]**](SwitchBracketRequest.md)|  | 
 
 ### Return type
 
-[**ArrayWrapperOfSwitchBracketResponse**](ArrayWrapperOfSwitchBracketResponse.md)
+[**ArrayWrapperSwitchBracketResponse**](ArrayWrapperSwitchBracketResponse.md)
 
 ### Authorization
 
@@ -3934,29 +3617,26 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **switch_teams_using_post**
-> ArrayWrapperOfSwitchBracketResponse switch_teams_using_post(authorization, version, request)
-
-switchTeams
+# **switch_teams**
+> ArrayWrapperSwitchBracketResponse switch_teams(version, switch_team_request)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.array_wrapper_of_switch_bracket_response import ArrayWrapperOfSwitchBracketResponse
+from dupr_backend.models.array_wrapper_switch_bracket_response import ArrayWrapperSwitchBracketResponse
 from dupr_backend.models.switch_team_request import SwitchTeamRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -3964,17 +3644,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = [dupr_backend.SwitchTeamRequest()] # List[SwitchTeamRequest] | request
+    version = 'version_example' # str | 
+    switch_team_request = [dupr_backend.SwitchTeamRequest()] # List[SwitchTeamRequest] | 
 
     try:
-        # switchTeams
-        api_response = api_instance.switch_teams_using_post(authorization, version, request)
-        print("The response of BracketsApi->switch_teams_using_post:\n")
+        api_response = api_instance.switch_teams(version, switch_team_request)
+        print("The response of BracketsApi->switch_teams:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->switch_teams_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->switch_teams: %s\n" % e)
 ```
 
 
@@ -3984,13 +3662,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**List[SwitchTeamRequest]**](SwitchTeamRequest.md)| request | 
+ **version** | **str**|  | 
+ **switch_team_request** | [**List[SwitchTeamRequest]**](SwitchTeamRequest.md)|  | 
 
 ### Return type
 
-[**ArrayWrapperOfSwitchBracketResponse**](ArrayWrapperOfSwitchBracketResponse.md)
+[**ArrayWrapperSwitchBracketResponse**](ArrayWrapperSwitchBracketResponse.md)
 
 ### Authorization
 
@@ -4006,14 +3683,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **switch_wait_listed_teams_using_post**
-> SingleWrapperOfUnit switch_wait_listed_teams_using_post(authorization, version, request)
-
-switchWaitListedTeams
+# **switch_wait_listed**
+> SingleWrapperUnit switch_wait_listed(version, bracket_player_switch_wait_listed_request)
 
 ### Example
 
@@ -4021,14 +3695,14 @@ switchWaitListedTeams
 ```python
 import dupr_backend
 from dupr_backend.models.bracket_player_switch_wait_listed_request import BracketPlayerSwitchWaitListedRequest
-from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
+from dupr_backend.models.single_wrapper_unit import SingleWrapperUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -4036,17 +3710,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = [dupr_backend.BracketPlayerSwitchWaitListedRequest()] # List[BracketPlayerSwitchWaitListedRequest] | request
+    version = 'version_example' # str | 
+    bracket_player_switch_wait_listed_request = dupr_backend.BracketPlayerSwitchWaitListedRequest() # BracketPlayerSwitchWaitListedRequest | 
 
     try:
-        # switchWaitListedTeams
-        api_response = api_instance.switch_wait_listed_teams_using_post(authorization, version, request)
-        print("The response of BracketsApi->switch_wait_listed_teams_using_post:\n")
+        api_response = api_instance.switch_wait_listed(version, bracket_player_switch_wait_listed_request)
+        print("The response of BracketsApi->switch_wait_listed:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->switch_wait_listed_teams_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->switch_wait_listed: %s\n" % e)
 ```
 
 
@@ -4056,13 +3728,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**List[BracketPlayerSwitchWaitListedRequest]**](BracketPlayerSwitchWaitListedRequest.md)| request | 
+ **version** | **str**|  | 
+ **bracket_player_switch_wait_listed_request** | [**BracketPlayerSwitchWaitListedRequest**](BracketPlayerSwitchWaitListedRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfUnit**](SingleWrapperOfUnit.md)
+[**SingleWrapperUnit**](SingleWrapperUnit.md)
 
 ### Authorization
 
@@ -4078,14 +3749,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **switch_wait_listed_using_post**
-> SingleWrapperOfUnit switch_wait_listed_using_post(authorization, version, request)
-
-switchWaitListed
+# **switch_wait_listed_teams**
+> SingleWrapperUnit switch_wait_listed_teams(version, bracket_player_switch_wait_listed_request)
 
 ### Example
 
@@ -4093,14 +3761,14 @@ switchWaitListed
 ```python
 import dupr_backend
 from dupr_backend.models.bracket_player_switch_wait_listed_request import BracketPlayerSwitchWaitListedRequest
-from dupr_backend.models.single_wrapper_of_unit import SingleWrapperOfUnit
+from dupr_backend.models.single_wrapper_unit import SingleWrapperUnit
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -4108,17 +3776,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.BracketPlayerSwitchWaitListedRequest() # BracketPlayerSwitchWaitListedRequest | request
+    version = 'version_example' # str | 
+    bracket_player_switch_wait_listed_request = [dupr_backend.BracketPlayerSwitchWaitListedRequest()] # List[BracketPlayerSwitchWaitListedRequest] | 
 
     try:
-        # switchWaitListed
-        api_response = api_instance.switch_wait_listed_using_post(authorization, version, request)
-        print("The response of BracketsApi->switch_wait_listed_using_post:\n")
+        api_response = api_instance.switch_wait_listed_teams(version, bracket_player_switch_wait_listed_request)
+        print("The response of BracketsApi->switch_wait_listed_teams:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->switch_wait_listed_using_post: %s\n" % e)
+        print("Exception when calling BracketsApi->switch_wait_listed_teams: %s\n" % e)
 ```
 
 
@@ -4128,13 +3794,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**BracketPlayerSwitchWaitListedRequest**](BracketPlayerSwitchWaitListedRequest.md)| request | 
+ **version** | **str**|  | 
+ **bracket_player_switch_wait_listed_request** | [**List[BracketPlayerSwitchWaitListedRequest]**](BracketPlayerSwitchWaitListedRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfUnit**](SingleWrapperOfUnit.md)
+[**SingleWrapperUnit**](SingleWrapperUnit.md)
 
 ### Authorization
 
@@ -4150,28 +3815,25 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_bracket_approval_using_get**
-> SingleWrapperOfSessionResponse update_bracket_approval_using_get(authorization, bracket_id, is_club_member, registration_id, status, version, x_forwarded_for=x_forwarded_for)
-
-updateBracketApproval
+# **update_bracket_approval**
+> SingleWrapperSessionResponse update_bracket_approval(version, registration_id, bracket_id, status, is_club_member=is_club_member)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_session_response import SingleWrapperOfSessionResponse
+from dupr_backend.models.single_wrapper_session_response import SingleWrapperSessionResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -4179,21 +3841,18 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    bracket_id = 56 # int | bracketId
-    is_club_member = True # bool | isClubMember
-    registration_id = 56 # int | registrationId
-    status = 'status_example' # str | status
-    version = 'v1.0' # str | version (default to 'v1.0')
-    x_forwarded_for = 'x_forwarded_for_example' # str | x-forwarded-for (optional)
+    version = 'version_example' # str | 
+    registration_id = 56 # int | 
+    bracket_id = 56 # int | 
+    status = 'status_example' # str | 
+    is_club_member = True # bool |  (optional)
 
     try:
-        # updateBracketApproval
-        api_response = api_instance.update_bracket_approval_using_get(authorization, bracket_id, is_club_member, registration_id, status, version, x_forwarded_for=x_forwarded_for)
-        print("The response of BracketsApi->update_bracket_approval_using_get:\n")
+        api_response = api_instance.update_bracket_approval(version, registration_id, bracket_id, status, is_club_member=is_club_member)
+        print("The response of BracketsApi->update_bracket_approval:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BracketsApi->update_bracket_approval_using_get: %s\n" % e)
+        print("Exception when calling BracketsApi->update_bracket_approval: %s\n" % e)
 ```
 
 
@@ -4203,17 +3862,15 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **bracket_id** | **int**| bracketId | 
- **is_club_member** | **bool**| isClubMember | 
- **registration_id** | **int**| registrationId | 
- **status** | **str**| status | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **x_forwarded_for** | **str**| x-forwarded-for | [optional] 
+ **version** | **str**|  | 
+ **registration_id** | **int**|  | 
+ **bracket_id** | **int**|  | 
+ **status** | **str**|  | 
+ **is_club_member** | **bool**|  | [optional] 
 
 ### Return type
 
-[**SingleWrapperOfSessionResponse**](SingleWrapperOfSessionResponse.md)
+[**SingleWrapperSessionResponse**](SingleWrapperSessionResponse.md)
 
 ### Authorization
 
@@ -4229,7 +3886,6 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

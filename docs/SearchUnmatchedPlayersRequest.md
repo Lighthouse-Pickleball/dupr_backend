@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bracket_id** | **int** |  | 
-**limit** | **int** |  | 
 **offset** | **int** |  | 
+**limit** | **int** |  | 
 **query** | **str** |  | [optional] 
+**bracket_id** | **int** |  | 
 **sort** | [**BracketUnmatchedPlayerSort**](BracketUnmatchedPlayerSort.md) |  | [optional] 
 
 ## Example

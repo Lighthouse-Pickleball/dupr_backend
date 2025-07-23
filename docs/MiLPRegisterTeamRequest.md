@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**division_id** | **int** |  | [optional] 
-**event_id** | **int** |  | [optional] 
-**team_id** | **int** |  | [optional] 
+**division_id** | **int** |  | 
+**event_id** | **int** |  | 
+**team_id** | **int** |  | 
 
 ## Example
 

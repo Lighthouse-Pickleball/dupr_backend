@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**var_from** | **int** |  | [optional] 
-**to** | **int** |  | [optional] 
+**var_from** | **int** |  | 
+**to** | **int** |  | 
 
 ## Example
 

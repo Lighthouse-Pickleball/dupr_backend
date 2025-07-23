@@ -5,40 +5,43 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bracket_id** | **int** |  | 
-**bracket_name** | **str** |  | 
-**confirmed** | **bool** |  | [optional] 
-**display_identity** | **str** |  | 
-**end_date** | **str** |  | 
-**event_format** | **str** |  | 
-**impacted_draw** | **bool** |  | 
-**in_queue** | **bool** |  | [optional] 
-**is_bye_match** | **bool** |  | 
-**is_forfeited** | **bool** |  | [optional] 
-**is_next_round_confirmed** | **bool** |  | 
-**is_team_1_tbd** | **bool** |  | [optional] 
-**is_team_2_tbd** | **bool** |  | [optional] 
-**league_id** | **int** |  | 
 **league_match_id** | **int** |  | 
-**league_match_status** | **str** |  | [optional] 
-**league_name** | **str** |  | 
-**location** | **str** |  | 
-**match_date** | **str** |  | 
 **match_id** | **int** |  | [optional] 
-**match_score_added** | **bool** |  | [optional] 
-**match_slot** | **int** |  | 
-**no_of_games** | **int** |  | [optional] 
 **registration_id** | **int** |  | 
-**round** | **int** |  | [optional] 
+**league_id** | **int** |  | 
+**bracket_id** | **int** |  | 
+**user_id** | **int** |  | [optional] 
+**league_name** | **str** |  | 
+**bracket_name** | **str** |  | 
+**event_format** | **str** |  | 
 **score_format** | [**ScoreFormatResponse**](ScoreFormatResponse.md) |  | 
-**start_date** | **str** |  | 
+**match_date** | **date** |  | 
+**confirmed** | **bool** |  | 
+**teams** | [**List[TeamResponse]**](TeamResponse.md) |  | 
 **status** | **str** |  | [optional] 
+**match_score_added** | **bool** |  | 
+**league_match_status** | **str** |  | [optional] 
+**round** | **int** |  | [optional] 
+**start_date** | **str** |  | 
+**end_date** | **str** |  | 
+**venue** | **str** |  | 
+**location** | **str** |  | 
+**is_forfeited** | **bool** |  | 
 **tag** | **str** |  | [optional] 
+**in_queue** | **bool** |  | 
+**no_of_games** | **int** |  | 
 **tbd_1** | **int** |  | 
 **tbd_2** | **int** |  | 
-**teams** | [**List[TeamResponse]**](TeamResponse.md) |  | 
-**user_id** | **int** |  | [optional] 
-**venue** | **str** |  | 
+**match_slot** | **int** |  | 
+**is_bye_match** | **bool** |  | 
+**is_team_1_tbd** | **bool** |  | [optional] 
+**is_team_2_tbd** | **bool** |  | [optional] 
+**display_identity** | **str** |  | 
+**is_next_round_confirmed** | **bool** |  | 
+**impacted_draw** | **bool** |  | 
+**forfeited** | **bool** |  | [optional] 
+**bye_match** | **bool** |  | [optional] 
+**next_round_confirmed** | **bool** |  | [optional] 
 
 ## Example
 

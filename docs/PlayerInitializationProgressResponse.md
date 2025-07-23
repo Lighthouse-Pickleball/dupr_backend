@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**status** | **str** |  | 
 **data** | [**PlayerInitializationDataResponse**](PlayerInitializationDataResponse.md) |  | [optional] 
 **message** | **str** |  | 
-**status** | **str** |  | 
 
 ## Example
 

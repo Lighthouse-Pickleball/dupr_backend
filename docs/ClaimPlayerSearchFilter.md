@@ -6,12 +6,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **age** | [**AgeFilter**](AgeFilter.md) |  | [optional] 
+**rating** | [**ClaimPlayerRatingFilter**](ClaimPlayerRatingFilter.md) |  | [optional] 
 **gender** | **str** |  | [optional] 
+**short_address** | **str** |  | [optional] 
 **lat** | **float** |  | [optional] 
 **lng** | **float** |  | [optional] 
 **radius_in_meters** | **float** |  | [optional] 
-**rating** | [**ClaimPlayerRatingFilter**](ClaimPlayerRatingFilter.md) |  | [optional] 
-**short_address** | **str** |  | [optional] 
 
 ## Example
 

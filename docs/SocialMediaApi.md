@@ -1,23 +1,22 @@
 # dupr_backend.SocialMediaApi
 
-All URIs are relative to *http://https://backend.mydupr.com*
+All URIs are relative to *https://api.dupr.gg*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_provider_data_using_post**](SocialMediaApi.md#delete_provider_data_using_post) | **POST** /social/{version}/{provider}/delete | deleteProviderData
-[**get_instagram_login_using_get**](SocialMediaApi.md#get_instagram_login_using_get) | **GET** /social/{version}/instagram/login | getInstagramLogin
-[**get_login_detail_using_get**](SocialMediaApi.md#get_login_detail_using_get) | **GET** /social/{version}/login | getLoginDetail
-[**get_share_messages_using_get**](SocialMediaApi.md#get_share_messages_using_get) | **GET** /social/share/{version}/message | getShareMessages
-[**update_social_login_details_using_put**](SocialMediaApi.md#update_social_login_details_using_put) | **PUT** /social/{version}/login | updateSocialLoginDetails
+[**delete_provider_data**](SocialMediaApi.md#delete_provider_data) | **POST** /social/{version}/{provider}/delete | 
+[**get_instagram_login**](SocialMediaApi.md#get_instagram_login) | **GET** /social/{version}/instagram/login | 
+[**get_login_detail**](SocialMediaApi.md#get_login_detail) | **GET** /social/{version}/login | 
+[**get_share_messages**](SocialMediaApi.md#get_share_messages) | **GET** /social/share/{version}/message | 
+[**update_social_login_details**](SocialMediaApi.md#update_social_login_details) | **PUT** /social/{version}/login | 
 
 
-# **delete_provider_data_using_post**
-> DeleteUserResponse delete_provider_data_using_post(provider, version, request)
-
-deleteProviderData
+# **delete_provider_data**
+> DeleteUserResponse delete_provider_data(version, provider, body)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -25,28 +24,36 @@ from dupr_backend.models.delete_user_response import DeleteUserResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.SocialMediaApi(api_client)
-    provider = 'provider_example' # str | provider
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = 'request_example' # str | request
+    version = 'version_example' # str | 
+    provider = 'provider_example' # str | 
+    body = 'body_example' # str | 
 
     try:
-        # deleteProviderData
-        api_response = api_instance.delete_provider_data_using_post(provider, version, request)
-        print("The response of SocialMediaApi->delete_provider_data_using_post:\n")
+        api_response = api_instance.delete_provider_data(version, provider, body)
+        print("The response of SocialMediaApi->delete_provider_data:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SocialMediaApi->delete_provider_data_using_post: %s\n" % e)
+        print("Exception when calling SocialMediaApi->delete_provider_data: %s\n" % e)
 ```
 
 
@@ -56,9 +63,9 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **provider** | **str**| provider | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | **str**| request | 
+ **version** | **str**|  | 
+ **provider** | **str**|  | 
+ **body** | **str**|  | 
 
 ### Return type
 
@@ -66,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -78,48 +85,54 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_instagram_login_using_get**
-> object get_instagram_login_using_get(code, state, version, error=error, error_description=error_description, error_reason=error_reason)
-
-getInstagramLogin
+# **get_instagram_login**
+> object get_instagram_login(version, code=code, error=error, error_reason=error_reason, error_description=error_description, state=state)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.SocialMediaApi(api_client)
-    code = 'code_example' # str | code
-    state = 56 # int | state
-    version = 'v1.0' # str | version (default to 'v1.0')
-    error = 'error_example' # str | error (optional)
-    error_description = 'error_description_example' # str | error_description (optional)
-    error_reason = 'error_reason_example' # str | error_reason (optional)
+    version = 'version_example' # str | 
+    code = 'code_example' # str |  (optional)
+    error = 'error_example' # str |  (optional)
+    error_reason = 'error_reason_example' # str |  (optional)
+    error_description = 'error_description_example' # str |  (optional)
+    state = 56 # int |  (optional)
 
     try:
-        # getInstagramLogin
-        api_response = api_instance.get_instagram_login_using_get(code, state, version, error=error, error_description=error_description, error_reason=error_reason)
-        print("The response of SocialMediaApi->get_instagram_login_using_get:\n")
+        api_response = api_instance.get_instagram_login(version, code=code, error=error, error_reason=error_reason, error_description=error_description, state=state)
+        print("The response of SocialMediaApi->get_instagram_login:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SocialMediaApi->get_instagram_login_using_get: %s\n" % e)
+        print("Exception when calling SocialMediaApi->get_instagram_login: %s\n" % e)
 ```
 
 
@@ -129,12 +142,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **code** | **str**| code | 
- **state** | **int**| state | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **error** | **str**| error | [optional] 
- **error_description** | **str**| error_description | [optional] 
- **error_reason** | **str**| error_reason | [optional] 
+ **version** | **str**|  | 
+ **code** | **str**|  | [optional] 
+ **error** | **str**|  | [optional] 
+ **error_reason** | **str**|  | [optional] 
+ **error_description** | **str**|  | [optional] 
+ **state** | **int**|  | [optional] 
 
 ### Return type
 
@@ -142,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -154,17 +167,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_login_detail_using_get**
-> Wrapper get_login_detail_using_get(authorization, version)
-
-getLoginDetail
+# **get_login_detail**
+> Wrapper get_login_detail(version)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -172,27 +183,34 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.SocialMediaApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
 
     try:
-        # getLoginDetail
-        api_response = api_instance.get_login_detail_using_get(authorization, version)
-        print("The response of SocialMediaApi->get_login_detail_using_get:\n")
+        api_response = api_instance.get_login_detail(version)
+        print("The response of SocialMediaApi->get_login_detail:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SocialMediaApi->get_login_detail_using_get: %s\n" % e)
+        print("Exception when calling SocialMediaApi->get_login_detail: %s\n" % e)
 ```
 
 
@@ -202,8 +220,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
 
 ### Return type
 
@@ -211,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -223,17 +240,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_share_messages_using_get**
-> Wrapper get_share_messages_using_get(authorization, version)
-
-getShareMessages
+# **get_share_messages**
+> Wrapper get_share_messages(version)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -241,27 +256,34 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.SocialMediaApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
 
     try:
-        # getShareMessages
-        api_response = api_instance.get_share_messages_using_get(authorization, version)
-        print("The response of SocialMediaApi->get_share_messages_using_get:\n")
+        api_response = api_instance.get_share_messages(version)
+        print("The response of SocialMediaApi->get_share_messages:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SocialMediaApi->get_share_messages_using_get: %s\n" % e)
+        print("Exception when calling SocialMediaApi->get_share_messages: %s\n" % e)
 ```
 
 
@@ -271,8 +293,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
 
 ### Return type
 
@@ -280,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -292,17 +313,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_social_login_details_using_put**
-> Wrapper update_social_login_details_using_put(authorization, version, request)
-
-updateSocialLoginDetails
+# **update_social_login_details**
+> Wrapper update_social_login_details(version, user_auth_provider_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -311,28 +330,35 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.SocialMediaApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.UserAuthProviderRequest() # UserAuthProviderRequest | request
+    version = 'version_example' # str | 
+    user_auth_provider_request = dupr_backend.UserAuthProviderRequest() # UserAuthProviderRequest | 
 
     try:
-        # updateSocialLoginDetails
-        api_response = api_instance.update_social_login_details_using_put(authorization, version, request)
-        print("The response of SocialMediaApi->update_social_login_details_using_put:\n")
+        api_response = api_instance.update_social_login_details(version, user_auth_provider_request)
+        print("The response of SocialMediaApi->update_social_login_details:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SocialMediaApi->update_social_login_details_using_put: %s\n" % e)
+        print("Exception when calling SocialMediaApi->update_social_login_details: %s\n" % e)
 ```
 
 
@@ -342,9 +368,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**UserAuthProviderRequest**](UserAuthProviderRequest.md)| request | 
+ **version** | **str**|  | 
+ **user_auth_provider_request** | [**UserAuthProviderRequest**](UserAuthProviderRequest.md)|  | 
 
 ### Return type
 
@@ -352,7 +377,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -364,7 +389,6 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

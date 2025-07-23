@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**category** | **str** |  | [optional] 
-**max_rating** | **float** |  | [optional] 
-**min_rating** | **float** |  | [optional] 
+**min_rating** | **float** |  | 
+**max_rating** | **float** |  | 
 **type** | **str** |  | [optional] 
+**category** | **str** |  | [optional] 
 
 ## Example
 

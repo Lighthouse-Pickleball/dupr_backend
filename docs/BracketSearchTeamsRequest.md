@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bracket_id** | **int** |  | 
-**limit** | **int** |  | 
 **offset** | **int** |  | 
-**only_non_wait_listed** | **bool** |  | [optional] 
-**only_wait_listed** | **bool** |  | [optional] 
+**limit** | **int** |  | 
+**bracket_id** | **int** |  | 
 **sort** | [**BracketTeamSort**](BracketTeamSort.md) |  | [optional] 
+**only_wait_listed** | **bool** |  | 
+**only_non_wait_listed** | **bool** |  | 
 
 ## Example
 

@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**end_date** | **str** |  | 
-**start_date** | **str** |  | 
+**start_date** | **date** |  | 
+**end_date** | **date** |  | 
 
 ## Example
 

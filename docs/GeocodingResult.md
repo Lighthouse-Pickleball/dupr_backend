@@ -7,12 +7,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address_components** | [**List[AddressComponent]**](AddressComponent.md) |  | [optional] 
 **formatted_address** | **str** |  | [optional] 
+**postcode_localities** | **List[str]** |  | [optional] 
 **geometry** | [**Geometry**](Geometry.md) |  | [optional] 
+**types** | **List[str]** |  | [optional] 
 **partial_match** | **bool** |  | [optional] 
 **place_id** | **str** |  | [optional] 
 **plus_code** | [**PlusCode**](PlusCode.md) |  | [optional] 
-**postcode_localities** | **List[str]** |  | [optional] 
-**types** | **List[str]** |  | [optional] 
 
 ## Example
 

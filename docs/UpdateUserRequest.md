@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**users** | **object** |  | 
+**users** | **Dict[str, object]** |  | 
 
 ## Example
 

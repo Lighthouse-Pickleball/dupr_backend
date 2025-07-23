@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address_id** | **int** |  | 
-**description** | **str** |  | [optional] 
+**name** | **str** |  | 
 **event_date** | **date** |  | 
+**time** | [**TimeRange**](TimeRange.md) |  | 
+**address_id** | **int** |  | 
 **invited_players** | **List[str]** |  | [optional] 
 **max_players** | **int** |  | 
-**name** | **str** |  | 
-**rating** | [**RatingRangeReq**](RatingRangeReq.md) |  | 
-**time** | [**TimeRangeReq**](TimeRangeReq.md) |  | 
+**rating** | [**RatingRange**](RatingRange.md) |  | 
+**description** | **str** |  | [optional] 
 
 ## Example
 

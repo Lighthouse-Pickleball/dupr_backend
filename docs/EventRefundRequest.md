@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**brackets** | [**List[BracketRefundRequest]**](BracketRefundRequest.md) |  | [optional] 
 **club_id** | **int** |  | 
 **event_id** | **int** |  | 
 **event_name** | **str** |  | 
-**player_id** | **int** |  | 
 **process_refund** | **bool** |  | 
 **refund_amount** | **float** |  | 
+**player_id** | **int** |  | 
+**brackets** | [**List[BracketRefundRequest]**](BracketRefundRequest.md) |  | 
 
 ## Example
 

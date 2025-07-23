@@ -5,49 +5,49 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**age** | **int** |  | [optional] 
-**birthdate** | **str** |  | [optional] 
-**created** | **str** |  | [optional] 
-**default_rating** | **str** |  | [optional] 
+**id** | **int** |  | 
+**full_name** | **str** |  | 
+**first_name** | **str** |  | [optional] 
+**last_name** | **str** |  | [optional] 
+**username** | **str** |  | [optional] 
 **display_username** | **bool** |  | 
+**email** | **str** |  | 
+**verified_email** | **bool** |  | 
+**iso_alpha2_code** | **str** |  | [optional] 
+**phone** | **str** |  | [optional] 
+**verified_phone** | **bool** |  | 
+**short_address** | **str** |  | [optional] 
+**formatted_address** | **str** |  | [optional] 
+**latitude** | **float** |  | [optional] 
+**longitude** | **float** |  | [optional] 
+**gender** | **str** |  | [optional] 
+**birthdate** | **date** |  | [optional] 
+**age** | **int** |  | [optional] 
+**hand** | **str** |  | [optional] 
+**reliability_score** | **int** |  | [optional] 
+**image_url** | **str** |  | [optional] 
+**singles** | **float** |  | [optional] 
+**singles_verified** | **float** |  | [optional] 
+**singles_provisional** | **bool** |  | [optional] 
+**doubles** | **float** |  | [optional] 
+**doubles_verified** | **float** |  | [optional] 
+**doubles_provisional** | **bool** |  | [optional] 
+**default_rating** | **str** |  | [optional] 
+**registration_type** | **str** |  | [optional] 
+**registered** | **bool** |  | 
+**referral_code** | **str** |  | [optional] 
+**sponsor** | [**Sponsor**](Sponsor.md) |  | [optional] 
 **distance** | **str** |  | [optional] 
 **distance_in_miles** | **float** |  | [optional] 
-**doubles** | **float** |  | [optional] 
-**doubles_provisional** | **bool** |  | [optional] 
-**doubles_reliability** | **float** |  | [optional] 
-**doubles_verified** | **float** |  | [optional] 
-**email** | **str** |  | 
 **enable_privacy** | **bool** |  | 
-**first_name** | **str** |  | [optional] 
-**formatted_address** | **str** |  | [optional] 
-**full_name** | **str** |  | 
-**gender** | **str** |  | [optional] 
-**hand** | **str** |  | [optional] 
-**id** | **int** |  | 
-**image_url** | **str** |  | [optional] 
-**iso_alpha2_code** | **str** |  | [optional] 
-**last_name** | **str** |  | [optional] 
-**latitude** | **float** |  | [optional] 
-**location** | **str** |  | [optional] 
-**longitude** | **float** |  | [optional] 
-**lucra_connected** | **bool** |  | [optional] 
-**phone** | **str** |  | [optional] 
-**provisional_doubles_rating** | **float** |  | [optional] 
-**provisional_singles_rating** | **float** |  | [optional] 
-**referral_code** | **str** |  | [optional] 
-**registered** | **bool** |  | 
-**registration_type** | **str** |  | [optional] 
-**reliability_score** | **int** |  | [optional] 
-**short_address** | **str** |  | [optional] 
-**singles** | **float** |  | [optional] 
-**singles_provisional** | **bool** |  | [optional] 
-**singles_reliability** | **float** |  | [optional] 
-**singles_verified** | **float** |  | [optional] 
-**sponsor** | [**Sponsor**](Sponsor.md) |  | [optional] 
 **status** | **str** |  | [optional] 
-**username** | **str** |  | [optional] 
-**verified_email** | **bool** |  | 
-**verified_phone** | **bool** |  | 
+**created** | **datetime** |  | [optional] 
+**lucra_connected** | **bool** |  | [optional] 
+**singles_reliability** | **float** |  | [optional] 
+**doubles_reliability** | **float** |  | [optional] 
+**provisional_singles_rating** | **float** |  | [optional] 
+**provisional_doubles_rating** | **float** |  | [optional] 
+**location** | **str** |  | [optional] 
 
 ## Example
 

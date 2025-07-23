@@ -5,15 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bracket_id** | **int** |  | [optional] 
-**exclude** | **List[int]** |  | [optional] 
-**exclude_club_members** | [**ExcludeClubMembers**](ExcludeClubMembers.md) |  | [optional] 
-**filter** | [**SearchFilter**](SearchFilter.md) |  | 
-**include_unclaimed_players** | **bool** |  | [optional] 
-**limit** | **int** |  | 
 **offset** | **int** |  | 
+**limit** | **int** |  | 
+**query** | **str** |  | [optional] 
+**exclude** | **List[int]** |  | [optional] 
+**filter** | [**SearchFilter**](SearchFilter.md) |  | 
+**exclude_club_members** | [**ExcludeClubMembers**](ExcludeClubMembers.md) |  | [optional] 
+**include_unclaimed_players** | **bool** |  | 
+**bracket_id** | **int** |  | [optional] 
 **page_source** | **str** |  | [optional] 
-**query** | **str** |  | 
 **verified_email** | **bool** |  | [optional] 
 
 ## Example

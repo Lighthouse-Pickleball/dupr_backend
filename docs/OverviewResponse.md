@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**all** | **int** |  | [optional] 
-**losses** | **int** |  | [optional] 
-**pending** | **int** |  | [optional] 
-**wins** | **int** |  | [optional] 
+**all** | **int** |  | 
+**wins** | **int** |  | 
+**losses** | **int** |  | 
+**pending** | **int** |  | 
 
 ## Example
 

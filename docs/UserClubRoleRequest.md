@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bracket_id** | **int** |  | 
 **user_id** | **int** |  | 
+**bracket_id** | **int** |  | 
 
 ## Example
 

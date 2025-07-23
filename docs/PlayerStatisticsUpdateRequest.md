@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**doubles** | [**MatchRatings**](MatchRatings.md) |  | [optional] 
 **obfuscated_player_id** | **int** |  | 
 **singles** | [**MatchRatings**](MatchRatings.md) |  | [optional] 
+**doubles** | [**MatchRatings**](MatchRatings.md) |  | [optional] 
 
 ## Example
 

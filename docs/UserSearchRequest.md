@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**limit** | **int** |  | 
 **offset** | **int** |  | 
-**query** | **str** |  | 
+**limit** | **int** |  | 
+**query** | **str** |  | [optional] 
 **search_field** | **str** |  | [optional] 
 
 ## Example

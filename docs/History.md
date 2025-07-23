@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**changed_by_admin** | **bool** |  | 
-**var_date** | **str** |  | 
-**match_date** | **str** |  | [optional] 
+**var_date** | **datetime** |  | 
+**match_date** | **date** |  | [optional] 
 **rating** | **float** |  | [optional] 
+**changed_by_admin** | **bool** |  | 
 
 ## Example
 

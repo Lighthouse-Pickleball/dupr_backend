@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**doubles_rating** | **float** |  | [optional] 
 **singles_rating** | **float** |  | [optional] 
+**doubles_rating** | **float** |  | [optional] 
+**coach** | [**RatingCoach**](RatingCoach.md) |  | [optional] 
 
 ## Example
 

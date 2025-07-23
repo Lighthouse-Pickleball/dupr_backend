@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**create_at** | **str** |  | [optional] 
 **event** | [**OpenPlayEvent**](OpenPlayEvent.md) |  | [optional] 
+**create_at** | **date** |  | [optional] 
 
 ## Example
 

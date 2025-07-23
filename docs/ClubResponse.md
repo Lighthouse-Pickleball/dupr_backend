@@ -5,28 +5,28 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_status** | [**AccountStatusResponse**](AccountStatusResponse.md) |  | [optional] 
-**address** | [**AddressResponse**](AddressResponse.md) |  | [optional] 
-**attributes** | **object** |  | [optional] 
 **club_id** | **int** |  | 
-**club_join_type** | **str** |  | [optional] 
-**club_member_count** | **int** |  | [optional] 
 **club_name** | **str** |  | 
 **club_type** | [**ClubTypeResponse**](ClubTypeResponse.md) |  | 
-**created** | **str** |  | [optional] 
-**currency_details** | [**CurrencyDetailsResponse**](CurrencyDetailsResponse.md) |  | [optional] 
-**distance_in_miles** | **float** |  | [optional] 
-**is_payment_setup** | **bool** |  | [optional] 
-**long_description** | [**ContentResponse**](ContentResponse.md) |  | [optional] 
-**manifest** | [**ContentResponse**](ContentResponse.md) |  | [optional] 
 **media_url** | **str** |  | [optional] 
+**address** | [**AddressResponse**](AddressResponse.md) |  | [optional] 
+**short_address** | **str** |  | [optional] 
+**club_member_count** | **int** |  | 
+**manifest** | [**ContentResponse**](ContentResponse.md) |  | [optional] 
+**short_description** | [**ContentResponse**](ContentResponse.md) |  | [optional] 
+**long_description** | [**ContentResponse**](ContentResponse.md) |  | [optional] 
+**attributes** | **object** |  | [optional] 
+**role** | [**ClubRoleResponse**](ClubRoleResponse.md) |  | [optional] 
+**is_payment_setup** | **bool** |  | [optional] 
+**account_status** | [**AccountStatusResponse**](AccountStatusResponse.md) |  | [optional] 
 **model_type** | **str** |  | [optional] 
 **model_value** | **float** |  | [optional] 
-**pending_request_list** | **List[int]** |  | [optional] 
+**currency_details** | [**CurrencyDetailsResponse**](CurrencyDetailsResponse.md) |  | [optional] 
+**created** | **datetime** |  | [optional] 
 **requested_by** | **int** |  | [optional] 
-**role** | [**ClubRoleResponse**](ClubRoleResponse.md) |  | [optional] 
-**short_address** | **str** |  | [optional] 
-**short_description** | [**ContentResponse**](ContentResponse.md) |  | [optional] 
+**club_join_type** | **str** |  | [optional] 
+**pending_request_list** | **List[int]** |  | [optional] 
+**distance_in_miles** | **float** |  | 
 
 ## Example
 

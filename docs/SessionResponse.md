@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**session_id** | **str** |  | 
 **checkout_url** | **str** |  | 
 **previously_paid** | **bool** |  | [optional] 
-**session_id** | **str** |  | 
 
 ## Example
 

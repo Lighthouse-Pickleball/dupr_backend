@@ -5,29 +5,29 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**age_bracket** | **List[int]** |  | [optional] 
 **bracket_id** | **int** |  | 
-**courts** | **int** |  | 
-**custom_code** | **str** |  | [optional] 
-**description** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
-**duration** | **List[date]** |  | [optional] 
-**duration_date_time** | **List[str]** |  | [optional] 
-**elimination** | **str** |  | [optional] 
-**format** | **str** |  | [optional] 
 **league_id** | **int** |  | 
-**match_bonus_points** | **float** |  | [optional] 
-**max_team** | **int** |  | [optional] 
-**member_fee** | **float** |  | [optional] 
 **name** | **str** |  | [optional] 
-**non_member_fee** | **float** |  | 
+**custom_code** | **str** |  | [optional] 
+**duration** | **List[date]** |  | [optional] 
+**format** | **str** |  | [optional] 
+**elimination** | **str** |  | [optional] 
 **player_group** | **str** |  | [optional] 
 **rating_bracket** | **List[float]** |  | [optional] 
+**age_bracket** | **List[int]** |  | [optional] 
+**description** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
+**match_bonus_points** | **float** |  | [optional] 
 **registration_date** | **List[date]** |  | [optional] 
-**registration_date_time** | **List[str]** |  | [optional] 
-**score_format** | **int** |  | 
 **status** | **str** |  | [optional] 
-**time_zone** | **str** |  | [optional] 
+**score_format** | **int** |  | 
+**member_fee** | **float** |  | [optional] 
+**non_member_fee** | **float** |  | 
+**max_team** | **int** |  | [optional] 
 **wait_list** | **int** |  | 
+**courts** | **int** |  | 
+**registration_date_time** | **List[datetime]** |  | [optional] 
+**duration_date_time** | **List[datetime]** |  | [optional] 
+**time_zone** | **str** |  | [optional] 
 **zone_name** | **str** |  | [optional] 
 
 ## Example

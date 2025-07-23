@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**club_id** | **int** |  | [optional] 
+**offset** | **int** |  | 
+**limit** | **int** |  | 
+**club_id** | **int** |  | 
 **filters** | [**ClubMatchFilters**](ClubMatchFilters.md) |  | [optional] 
-**limit** | **int** |  | [optional] 
-**offset** | **int** |  | [optional] 
 **sort** | [**ClubMatchSort**](ClubMatchSort.md) |  | [optional] 
 
 ## Example

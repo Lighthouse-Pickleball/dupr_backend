@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **int** |  | [optional] 
 **details_submitted** | **bool** |  | 
-**errors** | **List[object]** |  | 
 **pending_requirement** | **bool** |  | 
+**errors** | **List[object]** |  | 
 
 ## Example
 

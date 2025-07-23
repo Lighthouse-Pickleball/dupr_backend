@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **str** | Street level address in format county / city, state / region, country | 
 **lat** | **float** | Earth&#39;s latitude value | 
 **lng** | **float** | Earth&#39;s longitude value | 
+**address** | **str** | Street level address in format county / city, state / region, country | 
 **radius_in_meters** | **float** | Radius distance in meters from the point of provided latitude and longitude, default is 40233.6 meters (25 miles) | 
 
 ## Example

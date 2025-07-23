@@ -5,16 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**approval** | **str** |  | 
-**club_id** | **int** |  | 
-**dupr_id** | **str** |  | 
-**email** | **str** |  | 
-**iso_alpha2_code** | **str** |  | 
-**media_url** | **str** |  | [optional] 
-**name** | **str** |  | 
-**phone** | **str** |  | [optional] 
-**role_id** | **int** |  | 
 **user_id** | **int** |  | 
+**club_id** | **int** |  | 
+**role_id** | **int** |  | 
+**approval** | **str** |  | 
+**name** | **str** |  | 
+**email** | **str** |  | 
+**phone** | **str** |  | [optional] 
+**media_url** | **str** |  | [optional] 
+**dupr_id** | **str** |  | 
+**iso_alpha2_code** | **str** |  | 
 
 ## Example
 

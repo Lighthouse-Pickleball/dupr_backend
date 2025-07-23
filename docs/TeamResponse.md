@@ -5,19 +5,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**delta** | **str** |  | 
+**id** | **int** |  | [optional] 
+**serial** | **int** |  | 
+**player1** | [**TeamPlayerResponse**](TeamPlayerResponse.md) |  | 
+**player2** | [**TeamPlayerResponse**](TeamPlayerResponse.md) |  | [optional] 
 **game1** | **int** |  | 
 **game2** | **int** |  | 
 **game3** | **int** |  | 
 **game4** | **int** |  | 
 **game5** | **int** |  | 
-**id** | **int** |  | [optional] 
-**player1** | [**TeamPlayerResponse**](TeamPlayerResponse.md) |  | 
-**player2** | [**TeamPlayerResponse**](TeamPlayerResponse.md) |  | [optional] 
-**pre_match_rating_and_impact** | [**PreMatchRatingAndImpact**](PreMatchRatingAndImpact.md) |  | 
-**serial** | **int** |  | 
-**team_rating** | **str** |  | 
 **winner** | **bool** |  | 
+**delta** | **str** |  | 
+**team_rating** | **str** |  | 
+**pre_match_rating_and_impact** | [**PreMatchRatingAndImpact**](PreMatchRatingAndImpact.md) |  | 
 
 ## Example
 

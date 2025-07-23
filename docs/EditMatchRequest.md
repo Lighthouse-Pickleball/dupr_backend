@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bracket_id** | **int** |  | [optional] 
-**is_forfeited** | **bool** |  | [optional] 
-**league_match_id** | **int** |  | [optional] 
 **match_date** | **date** |  | 
-**match_id** | **int** |  | 
 **team1_score** | [**EditScoreRequest**](EditScoreRequest.md) |  | 
 **team2_score** | [**EditScoreRequest**](EditScoreRequest.md) |  | 
+**match_id** | **int** |  | 
+**league_match_id** | **int** |  | [optional] 
+**bracket_id** | **int** |  | [optional] 
+**is_forfeited** | **bool** |  | [optional] 
 
 ## Example
 

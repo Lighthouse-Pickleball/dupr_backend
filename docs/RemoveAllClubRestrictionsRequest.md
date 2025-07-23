@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**club_id** | **int** |  | [optional] 
+**club_id** | **int** |  | 
 
 ## Example
 

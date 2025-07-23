@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bracket_id** | **int** |  | 
-**is_club_member** | **bool** |  | [optional] 
+**is_club_member** | **bool** |  | 
 **partner_details** | [**AddPartnerRequest**](AddPartnerRequest.md) |  | [optional] 
 
 ## Example

@@ -5,15 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created** | **str** |  | [optional] 
-**first_name** | **str** |  | [optional] 
+**team_id** | **int** |  | 
+**user_id** | **int** |  | 
 **full_name** | **str** |  | [optional] 
-**image_url** | **str** |  | [optional] 
+**first_name** | **str** |  | [optional] 
 **last_name** | **str** |  | [optional] 
 **role** | **str** |  | 
 **status** | **str** |  | [optional] 
-**team_id** | **int** |  | 
-**user_id** | **int** |  | 
+**created** | **datetime** |  | [optional] 
+**image_url** | **str** |  | [optional] 
 
 ## Example
 

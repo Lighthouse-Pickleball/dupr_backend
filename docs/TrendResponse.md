@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**games_trend** | [**List[GameTrendResponse]**](GameTrendResponse.md) |  | [optional] 
+**games_trend** | [**List[GameTrendResponse]**](GameTrendResponse.md) |  | 
 
 ## Example
 

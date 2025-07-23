@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**type** | **str** | Match event format | 
+**start_date** | **date** | Start date | [optional] 
 **end_date** | **date** | End date | [optional] 
 **limit** | **int** | Data limitation | [optional] 
 **offset** | **int** | Data offset | [optional] 
 **sort_by** | **str** | Sort by type | [optional] 
-**start_date** | **date** | Start date | [optional] 
-**type** | **str** | Match event format | 
 
 ## Example
 

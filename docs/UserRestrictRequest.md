@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**restricted** | **bool** |  | 
 **notes** | **str** |  | [optional] 
-**restricted** | **bool** |  | [optional] 
 
 ## Example
 

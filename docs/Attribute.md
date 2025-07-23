@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**children** | [**Dict[str, Attribute]**](Attribute.md) |  | [optional] 
-**comment** | **str** |  | 
 **value** | **str** |  | 
+**get_comment** | **str** |  | 
+**get_children** | [**Dict[str, Attribute]**](Attribute.md) |  | [optional] 
 
 ## Example
 

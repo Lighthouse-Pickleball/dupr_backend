@@ -5,20 +5,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **str** |  | 
 **activity_id** | **str** |  | 
 **actor** | [**ActivityUser**](ActivityUser.md) |  | 
-**content** | **str** |  | 
-**created_at** | **int** |  | 
-**hashtags** | **List[str]** |  | 
-**id** | **str** |  | 
-**images** | **List[str]** |  | 
-**location** | **object** |  | 
-**matches** | [**List[Match]**](Match.md) |  | 
-**own_reactions** | **Dict[str, List[PostReactionResponse]]** |  | 
-**reaction_counts** | **Dict[str, object]** |  | 
-**tags** | [**List[ActivityUser]**](ActivityUser.md) |  | 
-**updated_at** | **int** |  | 
 **verb** | **str** |  | 
+**content** | **str** |  | 
+**reaction_counts** | **Dict[str, float]** |  | 
+**own_reactions** | **Dict[str, List[PostReactionResponse]]** |  | 
+**tags** | [**List[ActivityUser]**](ActivityUser.md) |  | 
+**hashtags** | **List[str]** |  | 
+**images** | **List[str]** |  | 
+**matches** | [**List[Match]**](Match.md) |  | 
+**location** | **Dict[str, object]** |  | 
+**created_at** | **int** |  | 
+**updated_at** | **int** |  | 
 
 ## Example
 

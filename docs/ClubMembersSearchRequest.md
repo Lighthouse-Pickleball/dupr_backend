@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**offset** | **int** |  | 
+**limit** | **int** |  | 
+**query** | **str** |  | [optional] 
 **exclude** | **List[int]** |  | [optional] 
 **filter** | [**ClubMembersSearchFilter**](ClubMembersSearchFilter.md) |  | [optional] 
-**include_pending_players** | **bool** |  | [optional] 
-**include_staff** | **bool** |  | [optional] 
-**limit** | **int** |  | 
-**offset** | **int** |  | 
-**query** | **str** |  | 
 **sort** | [**ClubMembersSearchSort**](ClubMembersSearchSort.md) |  | [optional] 
+**include_staff** | **bool** |  | [optional] 
+**include_pending_players** | **bool** |  | [optional] 
 
 ## Example
 

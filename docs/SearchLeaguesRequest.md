@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**offset** | **int** |  | 
+**limit** | **int** |  | 
+**query** | **str** |  | [optional] 
+**lat** | **float** |  | 
+**lng** | **float** |  | 
+**radius_in_meters** | **float** |  | [optional] 
 **filters** | [**LeagueFilter**](LeagueFilter.md) |  | [optional] 
 **is_near_me** | **bool** |  | [optional] 
-**lat** | **float** |  | [optional] 
-**limit** | **int** |  | 
-**lng** | **float** |  | [optional] 
-**offset** | **int** |  | 
-**query** | **str** |  | 
-**radius_in_meters** | **float** |  | [optional] 
 
 ## Example
 

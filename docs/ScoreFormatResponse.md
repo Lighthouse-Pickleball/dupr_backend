@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**format** | **str** |  | 
-**games** | **int** |  | 
 **id** | **int** |  | 
-**priority** | **int** |  | [optional] 
+**format** | **str** |  | 
 **variant** | **str** |  | 
+**games** | **int** |  | 
 **winning_score** | **int** |  | 
+**priority** | **int** |  | [optional] 
 
 ## Example
 

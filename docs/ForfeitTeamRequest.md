@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**is_forfeited** | **bool** |  | 
+**team_id** | **int** |  | 
 **player1** | **int** |  | 
 **player2** | **int** |  | [optional] 
-**team_id** | **int** |  | 
+**is_forfeited** | **bool** |  | 
 
 ## Example
 

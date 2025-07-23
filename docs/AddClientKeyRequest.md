@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **client_id** | **int** |  | 
-**permissions** | [**List[Permission]**](Permission.md) | An optional list of permissions to assign to the new client key | [optional] 
+**permissions** | [**List[Permission]**](Permission.md) | An optional list of permissions to assign to the new client key | 
 
 ## Example
 

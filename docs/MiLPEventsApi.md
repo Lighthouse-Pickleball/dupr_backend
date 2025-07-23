@@ -1,34 +1,32 @@
 # dupr_backend.MiLPEventsApi
 
-All URIs are relative to *http://https://backend.mydupr.com*
+All URIs are relative to *https://api.dupr.gg*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_event_info_using_get**](MiLPEventsApi.md#get_event_info_using_get) | **GET** /milp/event/{version}/{id} | getEventInfo
-[**get_teams_using_get**](MiLPEventsApi.md#get_teams_using_get) | **GET** /milp/event/{version}/{id}/teams | getTeams
-[**register_team_using_post**](MiLPEventsApi.md#register_team_using_post) | **POST** /milp/event/{version}/teams/checkout | registerTeam
-[**save_using_post2**](MiLPEventsApi.md#save_using_post2) | **POST** /milp/event/{version}/save | save
-[**search_event_using_post**](MiLPEventsApi.md#search_event_using_post) | **POST** /milp/event/{version}/search | searchEvent
+[**get_event_info**](MiLPEventsApi.md#get_event_info) | **GET** /milp/event/{version}/{id} | 
+[**get_teams**](MiLPEventsApi.md#get_teams) | **GET** /milp/event/{version}/{id}/teams | 
+[**register_team**](MiLPEventsApi.md#register_team) | **POST** /milp/event/{version}/teams/checkout | 
+[**save1**](MiLPEventsApi.md#save1) | **POST** /milp/event/{version}/save | 
+[**search_event**](MiLPEventsApi.md#search_event) | **POST** /milp/event/{version}/search | 
 
 
-# **get_event_info_using_get**
-> SingleWrapperOfMiLPEvent get_event_info_using_get(authorization, id, version)
-
-getEventInfo
+# **get_event_info**
+> SingleWrapperMiLPEvent get_event_info(version, id)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_mi_lp_event import SingleWrapperOfMiLPEvent
+from dupr_backend.models.single_wrapper_mi_lp_event import SingleWrapperMiLPEvent
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -36,17 +34,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MiLPEventsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    id = 56 # int | id
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    id = 56 # int | 
 
     try:
-        # getEventInfo
-        api_response = api_instance.get_event_info_using_get(authorization, id, version)
-        print("The response of MiLPEventsApi->get_event_info_using_get:\n")
+        api_response = api_instance.get_event_info(version, id)
+        print("The response of MiLPEventsApi->get_event_info:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MiLPEventsApi->get_event_info_using_get: %s\n" % e)
+        print("Exception when calling MiLPEventsApi->get_event_info: %s\n" % e)
 ```
 
 
@@ -56,13 +52,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **id** | **int**| id | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **id** | **int**|  | 
 
 ### Return type
 
-[**SingleWrapperOfMiLPEvent**](SingleWrapperOfMiLPEvent.md)
+[**SingleWrapperMiLPEvent**](SingleWrapperMiLPEvent.md)
 
 ### Authorization
 
@@ -78,28 +73,25 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_teams_using_get**
-> ArrayWrapperOfMiLPTeamDivision get_teams_using_get(authorization, id, version)
-
-getTeams
+# **get_teams**
+> ArrayWrapperMiLPTeamDivision get_teams(version, id)
 
 ### Example
 
 
 ```python
 import dupr_backend
-from dupr_backend.models.array_wrapper_of_mi_lp_team_division import ArrayWrapperOfMiLPTeamDivision
+from dupr_backend.models.array_wrapper_mi_lp_team_division import ArrayWrapperMiLPTeamDivision
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -107,17 +99,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MiLPEventsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    id = 56 # int | id
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    id = 56 # int | 
 
     try:
-        # getTeams
-        api_response = api_instance.get_teams_using_get(authorization, id, version)
-        print("The response of MiLPEventsApi->get_teams_using_get:\n")
+        api_response = api_instance.get_teams(version, id)
+        print("The response of MiLPEventsApi->get_teams:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MiLPEventsApi->get_teams_using_get: %s\n" % e)
+        print("Exception when calling MiLPEventsApi->get_teams: %s\n" % e)
 ```
 
 
@@ -127,13 +117,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **id** | **int**| id | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **id** | **int**|  | 
 
 ### Return type
 
-[**ArrayWrapperOfMiLPTeamDivision**](ArrayWrapperOfMiLPTeamDivision.md)
+[**ArrayWrapperMiLPTeamDivision**](ArrayWrapperMiLPTeamDivision.md)
 
 ### Authorization
 
@@ -149,14 +138,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **register_team_using_post**
-> SingleWrapperOfSessionResponse register_team_using_post(authorization, version, request, x_forwarded_for=x_forwarded_for)
-
-registerTeam
+# **register_team**
+> SingleWrapperSessionResponse register_team(version, mi_lp_register_team_request)
 
 ### Example
 
@@ -164,14 +150,14 @@ registerTeam
 ```python
 import dupr_backend
 from dupr_backend.models.mi_lp_register_team_request import MiLPRegisterTeamRequest
-from dupr_backend.models.single_wrapper_of_session_response import SingleWrapperOfSessionResponse
+from dupr_backend.models.single_wrapper_session_response import SingleWrapperSessionResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -179,18 +165,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MiLPEventsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.MiLPRegisterTeamRequest() # MiLPRegisterTeamRequest | request
-    x_forwarded_for = 'x_forwarded_for_example' # str | x-forwarded-for (optional)
+    version = 'version_example' # str | 
+    mi_lp_register_team_request = dupr_backend.MiLPRegisterTeamRequest() # MiLPRegisterTeamRequest | 
 
     try:
-        # registerTeam
-        api_response = api_instance.register_team_using_post(authorization, version, request, x_forwarded_for=x_forwarded_for)
-        print("The response of MiLPEventsApi->register_team_using_post:\n")
+        api_response = api_instance.register_team(version, mi_lp_register_team_request)
+        print("The response of MiLPEventsApi->register_team:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MiLPEventsApi->register_team_using_post: %s\n" % e)
+        print("Exception when calling MiLPEventsApi->register_team: %s\n" % e)
 ```
 
 
@@ -200,14 +183,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**MiLPRegisterTeamRequest**](MiLPRegisterTeamRequest.md)| request | 
- **x_forwarded_for** | **str**| x-forwarded-for | [optional] 
+ **version** | **str**|  | 
+ **mi_lp_register_team_request** | [**MiLPRegisterTeamRequest**](MiLPRegisterTeamRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfSessionResponse**](SingleWrapperOfSessionResponse.md)
+[**SingleWrapperSessionResponse**](SingleWrapperSessionResponse.md)
 
 ### Authorization
 
@@ -223,14 +204,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **save_using_post2**
-> SingleWrapperOflong save_using_post2(authorization, version, request)
-
-save
+# **save1**
+> SingleWrapperLong save1(version, mi_lp_event_request)
 
 ### Example
 
@@ -238,14 +216,14 @@ save
 ```python
 import dupr_backend
 from dupr_backend.models.mi_lp_event_request import MiLPEventRequest
-from dupr_backend.models.single_wrapper_oflong import SingleWrapperOflong
+from dupr_backend.models.single_wrapper_long import SingleWrapperLong
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -253,17 +231,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MiLPEventsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.MiLPEventRequest() # MiLPEventRequest | request
+    version = 'version_example' # str | 
+    mi_lp_event_request = dupr_backend.MiLPEventRequest() # MiLPEventRequest | 
 
     try:
-        # save
-        api_response = api_instance.save_using_post2(authorization, version, request)
-        print("The response of MiLPEventsApi->save_using_post2:\n")
+        api_response = api_instance.save1(version, mi_lp_event_request)
+        print("The response of MiLPEventsApi->save1:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MiLPEventsApi->save_using_post2: %s\n" % e)
+        print("Exception when calling MiLPEventsApi->save1: %s\n" % e)
 ```
 
 
@@ -273,13 +249,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**MiLPEventRequest**](MiLPEventRequest.md)| request | 
+ **version** | **str**|  | 
+ **mi_lp_event_request** | [**MiLPEventRequest**](MiLPEventRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOflong**](SingleWrapperOflong.md)
+[**SingleWrapperLong**](SingleWrapperLong.md)
 
 ### Authorization
 
@@ -295,14 +270,11 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_event_using_post**
-> SingleWrapperOfPageOfMiLPEvent search_event_using_post(authorization, version, request)
-
-searchEvent
+# **search_event**
+> SingleWrapperPageMiLPEvent search_event(version, mi_lp_event_search_request)
 
 ### Example
 
@@ -310,14 +282,14 @@ searchEvent
 ```python
 import dupr_backend
 from dupr_backend.models.mi_lp_event_search_request import MiLPEventSearchRequest
-from dupr_backend.models.single_wrapper_of_page_of_mi_lp_event import SingleWrapperOfPageOfMiLPEvent
+from dupr_backend.models.single_wrapper_page_mi_lp_event import SingleWrapperPageMiLPEvent
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
 
@@ -325,17 +297,15 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MiLPEventsApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.MiLPEventSearchRequest() # MiLPEventSearchRequest | request
+    version = 'version_example' # str | 
+    mi_lp_event_search_request = dupr_backend.MiLPEventSearchRequest() # MiLPEventSearchRequest | 
 
     try:
-        # searchEvent
-        api_response = api_instance.search_event_using_post(authorization, version, request)
-        print("The response of MiLPEventsApi->search_event_using_post:\n")
+        api_response = api_instance.search_event(version, mi_lp_event_search_request)
+        print("The response of MiLPEventsApi->search_event:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MiLPEventsApi->search_event_using_post: %s\n" % e)
+        print("Exception when calling MiLPEventsApi->search_event: %s\n" % e)
 ```
 
 
@@ -345,13 +315,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**MiLPEventSearchRequest**](MiLPEventSearchRequest.md)| request | 
+ **version** | **str**|  | 
+ **mi_lp_event_search_request** | [**MiLPEventSearchRequest**](MiLPEventSearchRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfPageOfMiLPEvent**](SingleWrapperOfPageOfMiLPEvent.md)
+[**SingleWrapperPageMiLPEvent**](SingleWrapperPageMiLPEvent.md)
 
 ### Authorization
 
@@ -367,7 +336,6 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

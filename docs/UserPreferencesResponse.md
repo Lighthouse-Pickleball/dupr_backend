@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**enable_email** | **bool** |  | 
-**enable_newsletter** | **bool** |  | 
-**enable_privacy** | **bool** |  | 
-**enable_push** | **bool** |  | 
 **enable_sms** | **bool** |  | 
+**enable_email** | **bool** |  | 
+**enable_push** | **bool** |  | 
+**enable_privacy** | **bool** |  | 
+**enable_newsletter** | **bool** |  | 
 
 ## Example
 

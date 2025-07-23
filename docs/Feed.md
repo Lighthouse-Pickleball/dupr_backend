@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**feed_id** | **int** |  | [optional] 
-**slug** | **str** |  | [optional] 
+**feed_id** | **int** |  | 
+**slug** | **str** |  | 
 
 ## Example
 

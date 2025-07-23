@@ -5,26 +5,26 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**additional_information** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
-**address_id** | **int** |  | [optional] 
-**advertise_end** | **date** |  | [optional] 
-**advertise_start** | **date** |  | [optional] 
-**attributes** | [**Dict[str, Attribute]**](Attribute.md) |  | [optional] 
-**brackets** | [**List[DraftBracketRequest]**](DraftBracketRequest.md) |  | [optional] 
 **club_id** | **int** |  | 
-**league_id** | **int** |  | 
+**user_id** | **int** |  | 
 **league_name** | **str** |  | [optional] 
-**liability_waiver_id** | **int** |  | [optional] 
-**long_description** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
 **media_id** | **int** |  | [optional] 
+**liability_waiver_id** | **int** |  | [optional] 
 **member_fee** | **float** |  | [optional] 
-**membership_permission** | **str** |  | [optional] 
 **non_member_fee** | **float** |  | [optional] 
+**long_description** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
+**short_description** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
+**additional_information** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
 **refund_policy** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
 **safety_policy** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
-**short_description** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
+**address_id** | **int** |  | [optional] 
 **type** | **str** |  | [optional] 
-**user_id** | **int** |  | 
+**attributes** | [**Dict[str, Attribute]**](Attribute.md) |  | [optional] 
+**membership_permission** | **str** |  | [optional] 
+**advertise_start** | **date** |  | [optional] 
+**advertise_end** | **date** |  | [optional] 
+**brackets** | [**List[DraftBracketRequest]**](DraftBracketRequest.md) |  | [optional] 
+**league_id** | **int** |  | 
 
 ## Example
 

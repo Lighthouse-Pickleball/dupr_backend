@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**email** | **str** |  | 
 **full_name** | **str** |  | 
-**identifier** | **str** | An unique identifier of this user from your platform | [optional] 
+**email** | **str** |  | 
 **iso_code** | **str** |  | [optional] 
 **phone** | **str** |  | [optional] 
+**identifier** | **str** | An unique identifier of this user from your platform | [optional] 
 
 ## Example
 

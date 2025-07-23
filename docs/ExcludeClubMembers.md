@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**club_id** | **int** |  | [optional] 
-**roles** | **List[str]** |  | [optional] 
+**club_id** | **int** |  | 
+**roles** | **List[str]** |  | 
 
 ## Example
 

@@ -6,12 +6,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **str** |  | [optional] 
+**place_id** | **str** |  | [optional] 
+**types** | **List[str]** |  | [optional] 
+**terms** | [**List[Term]**](Term.md) |  | [optional] 
 **distance_meters** | **int** |  | [optional] 
 **matched_substrings** | [**List[MatchedSubstring]**](MatchedSubstring.md) |  | [optional] 
-**place_id** | **str** |  | [optional] 
 **structured_formatting** | [**AutocompleteStructuredFormatting**](AutocompleteStructuredFormatting.md) |  | [optional] 
-**terms** | [**List[Term]**](Term.md) |  | [optional] 
-**types** | **List[str]** |  | [optional] 
 
 ## Example
 

@@ -5,17 +5,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**birthday** | **str** |  | [optional] 
-**dupr_id** | **str** |  | [optional] 
-**email** | **str** |  | [optional] 
-**first_name** | **str** |  | [optional] 
+**id** | **int** |  | 
 **full_name** | **str** |  | [optional] 
+**first_name** | **str** |  | [optional] 
+**last_name** | **str** |  | [optional] 
 **gender** | **str** |  | [optional] 
 **hand** | **str** |  | [optional] 
-**id** | **int** |  | 
-**last_name** | **str** |  | [optional] 
-**status** | **str** |  | [optional] 
+**dupr_id** | **str** |  | [optional] 
+**birthday** | **str** |  | [optional] 
 **verified_email** | **bool** |  | 
+**email** | **str** |  | [optional] 
+**status** | **str** |  | [optional] 
 
 ## Example
 

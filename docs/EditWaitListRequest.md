@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**user_id** | **int** |  | 
 **bracket_id** | **int** |  | 
+**registration_id** | **int** |  | [optional] 
 **club_id** | **int** |  | 
 **is_wait_listed** | **bool** |  | 
-**registration_id** | **int** |  | [optional] 
-**user_id** | **int** |  | 
 
 ## Example
 

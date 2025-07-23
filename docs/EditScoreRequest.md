@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**team_id** | **int** |  | 
 **game1** | **int** |  | 
 **game2** | **int** |  | [optional] 
 **game3** | **int** |  | [optional] 
 **game4** | **int** |  | [optional] 
 **game5** | **int** |  | [optional] 
-**team_id** | **int** |  | 
 **winner** | **bool** |  | 
 
 ## Example

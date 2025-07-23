@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**actor** | **int** | Obfuscated Id of user do the reaction | [optional] 
-**comment** | **str** | If the react type is comment, then put the contain here | [optional] 
-**id** | **str** | The post&#39;s id | [optional] 
-**images** | **List[str]** |  | [optional] 
-**matches** | **List[int]** |  | [optional] 
-**react** | **str** | type of reaction, if COMMENT then add the contain in the &#39;comment&#39;, else let it empty | [optional] 
-**react_on** | **str** | if react on comment, add this comment getstreamId here, if not lets empty | [optional] 
-**tags** | **List[int]** |  | [optional] 
+**actor** | **int** | Obfuscated Id of user do the reaction | 
+**id** | **str** | The post&#39;s id | 
+**react** | **str** | type of reaction, if COMMENT then add the contain in the &#39;comment&#39;, else let it empty | 
+**comment** | **str** | If the react type is comment, then put the contain here | 
+**tags** | **List[int]** |  | 
+**images** | **List[str]** |  | 
+**matches** | **List[int]** |  | 
+**react_on** | **str** | if react on comment, add this comment getstreamId here, if not lets empty | 
 
 ## Example
 

@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**doubles** | **float** |  | [optional] 
 **singles** | **float** |  | [optional] 
+**doubles** | **float** |  | [optional] 
 
 ## Example
 

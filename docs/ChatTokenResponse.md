@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**full_name** | **str** |  | 
 **id** | **int** |  | [optional] 
-**image_url** | **str** |  | [optional] 
+**full_name** | **str** |  | 
 **token** | **str** |  | 
+**image_url** | **str** |  | [optional] 
 
 ## Example
 

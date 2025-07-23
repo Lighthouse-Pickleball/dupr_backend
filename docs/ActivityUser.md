@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
-**is_follow** | **bool** |  | 
 **name** | **str** |  | 
 **profile_image** | **str** |  | 
+**is_follow** | **bool** |  | 
 
 ## Example
 

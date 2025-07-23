@@ -1,55 +1,55 @@
 # dupr_backend.ClubApi
 
-All URIs are relative to *http://https://backend.mydupr.com*
+All URIs are relative to *https://api.dupr.gg*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_club_using_put**](ClubApi.md#add_club_using_put) | **PUT** /club/{version}/add | addClub
-[**add_member_admin_using_put**](ClubApi.md#add_member_admin_using_put) | **PUT** /club/{clubId}/members/{version}/add | addMemberAdmin
-[**add_member_multiple_admin_using_put**](ClubApi.md#add_member_multiple_admin_using_put) | **PUT** /club/{clubId}/members/{version}/multiple/add | addMemberMultipleAdmin
-[**add_member_multiple_csv_admin_using_put**](ClubApi.md#add_member_multiple_csv_admin_using_put) | **PUT** /club/{clubId}/members/{version}/csv/add | addMemberMultipleCsvAdmin
-[**add_member_request_using_put**](ClubApi.md#add_member_request_using_put) | **PUT** /club/{clubId}/members/{version}/join | addMemberRequest
-[**approve_roles_using_post**](ClubApi.md#approve_roles_using_post) | **POST** /club/{clubId}/{version}/approve | approveRoles
-[**assign_roles_using_post**](ClubApi.md#assign_roles_using_post) | **POST** /club/{clubId}/roles/{version}/assign | assignRoles
-[**club_match_history_by_filters_using_post**](ClubApi.md#club_match_history_by_filters_using_post) | **POST** /club/match/{version}/history | clubMatchHistoryByFilters
-[**club_match_history_using_get**](ClubApi.md#club_match_history_using_get) | **GET** /club/{clubId}/{version}/history | clubMatchHistory
-[**club_save_match_using_put**](ClubApi.md#club_save_match_using_put) | **PUT** /club/{clubId}/match/{version}/save | clubSaveMatch
-[**delete_club_match_using_post**](ClubApi.md#delete_club_match_using_post) | **POST** /club/{clubId}/match/{id}/{version}/delete | deleteClubMatch
-[**delete_member_admin_using_delete**](ClubApi.md#delete_member_admin_using_delete) | **DELETE** /club/{clubId}/members/{version}/remove | deleteMemberAdmin
-[**delete_member_request_using_delete**](ClubApi.md#delete_member_request_using_delete) | **DELETE** /club/{clubId}/members/{version}/leave | deleteMemberRequest
-[**edit_club_match_using_put**](ClubApi.md#edit_club_match_using_put) | **PUT** /club/{clubId}/match/{id}/{version}/edit | editClubMatch
-[**get_all_club_roles_using_get**](ClubApi.md#get_all_club_roles_using_get) | **GET** /club/roles/{version}/all | getAllClubRoles
-[**get_all_currency_details_using_get**](ClubApi.md#get_all_currency_details_using_get) | **GET** /club/currency/{version}/all | getAllCurrencyDetails
-[**get_all_members_download_using_post**](ClubApi.md#get_all_members_download_using_post) | **POST** /club/{clubId}/members/{version}/all/download | getAllMembersDownload
-[**get_all_members_using_post**](ClubApi.md#get_all_members_using_post) | **POST** /club/{clubId}/members/{version}/all | getAllMembers
-[**get_all_roles_using_get1**](ClubApi.md#get_all_roles_using_get1) | **GET** /club/{clubId}/roles/{version}/all | getAllRoles
-[**get_all_staff_members_using_get**](ClubApi.md#get_all_staff_members_using_get) | **GET** /club/{clubId}/members/{version}/staff | getAllStaffMembers
-[**get_club_pending_invites_using_post**](ClubApi.md#get_club_pending_invites_using_post) | **POST** /club/{clubId}/members/{version}/pending/invites | getClubPendingInvites
-[**get_club_restrictions_using_post1**](ClubApi.md#get_club_restrictions_using_post1) | **POST** /club/{clubId}/{version}/restrictions | getClubRestrictions
-[**get_club_roles_player_using_post**](ClubApi.md#get_club_roles_player_using_post) | **POST** /club/{clubId}/roles/{version}/permission | getClubRolesPlayer
-[**get_club_roles_staff_using_get**](ClubApi.md#get_club_roles_staff_using_get) | **GET** /club/roles/{version}/staff | getClubRolesStaff
-[**get_club_roles_using_post**](ClubApi.md#get_club_roles_using_post) | **POST** /club/{clubId}/roles/{version}/user | getClubRoles
-[**get_club_using_get**](ClubApi.md#get_club_using_get) | **GET** /club/{version}/{clubId} | getClub
-[**get_clubs_using_get**](ClubApi.md#get_clubs_using_get) | **GET** /club/{version}/all | getClubs
-[**get_clubs_using_post**](ClubApi.md#get_clubs_using_post) | **POST** /club/{version}/all | getClubs
-[**get_currency_details_using_get**](ClubApi.md#get_currency_details_using_get) | **GET** /club/currency/{version}/{currencyCode} | getCurrencyDetails
-[**get_match_using_get1**](ClubApi.md#get_match_using_get1) | **GET** /club/{clubId}/match/{id}/{version}/get | getMatch
-[**get_members_ranking_using_post**](ClubApi.md#get_members_ranking_using_post) | **POST** /club/{clubId}/{version}/ranking | getMembersRanking
-[**invite_single_member_using_put**](ClubApi.md#invite_single_member_using_put) | **PUT** /club/{clubId}/members/{version}/invite | inviteSingleMember
-[**remove_roles_using_post**](ClubApi.md#remove_roles_using_post) | **POST** /club/{clubId}/roles/{version}/remove | removeRoles
-[**save_verified_club_match_csv_using_put**](ClubApi.md#save_verified_club_match_csv_using_put) | **PUT** /club/{id}/match/verified/{version}/save/csv/add | saveVerifiedClubMatchCSV
-[**update_approval_status_using_post**](ClubApi.md#update_approval_status_using_post) | **POST** /club/{clubId}/{version}/approval | updateApprovalStatus
-[**update_club_using_post**](ClubApi.md#update_club_using_post) | **POST** /club/{version}/update | updateClub
-[**update_staff_members_using_put**](ClubApi.md#update_staff_members_using_put) | **PUT** /club/{clubId}/members/{version}/staff | updateStaffMembers
+[**add_club**](ClubApi.md#add_club) | **PUT** /club/{version}/add | 
+[**add_member_admin**](ClubApi.md#add_member_admin) | **PUT** /club/{clubId}/members/{version}/add | 
+[**add_member_multiple_admin**](ClubApi.md#add_member_multiple_admin) | **PUT** /club/{clubId}/members/{version}/multiple/add | 
+[**add_member_multiple_csv_admin**](ClubApi.md#add_member_multiple_csv_admin) | **PUT** /club/{clubId}/members/{version}/csv/add | 
+[**add_member_request**](ClubApi.md#add_member_request) | **PUT** /club/{clubId}/members/{version}/join | 
+[**approve_roles**](ClubApi.md#approve_roles) | **POST** /club/{clubId}/{version}/approve | 
+[**assign_roles**](ClubApi.md#assign_roles) | **POST** /club/{clubId}/roles/{version}/assign | 
+[**club_match_history**](ClubApi.md#club_match_history) | **GET** /club/{clubId}/{version}/history | 
+[**club_match_history_by_filters**](ClubApi.md#club_match_history_by_filters) | **POST** /club/match/{version}/history | 
+[**club_save_match**](ClubApi.md#club_save_match) | **PUT** /club/{clubId}/match/{version}/save | 
+[**delete_club_match**](ClubApi.md#delete_club_match) | **POST** /club/{clubId}/match/{id}/{version}/delete | 
+[**delete_member_admin**](ClubApi.md#delete_member_admin) | **DELETE** /club/{clubId}/members/{version}/remove | 
+[**delete_member_request**](ClubApi.md#delete_member_request) | **DELETE** /club/{clubId}/members/{version}/leave | 
+[**edit_club_match**](ClubApi.md#edit_club_match) | **PUT** /club/{clubId}/match/{id}/{version}/edit | 
+[**get_all_club_roles**](ClubApi.md#get_all_club_roles) | **GET** /club/roles/{version}/all | 
+[**get_all_currency_details**](ClubApi.md#get_all_currency_details) | **GET** /club/currency/{version}/all | 
+[**get_all_members**](ClubApi.md#get_all_members) | **POST** /club/{clubId}/members/{version}/all | 
+[**get_all_members_download**](ClubApi.md#get_all_members_download) | **POST** /club/{clubId}/members/{version}/all/download | 
+[**get_all_roles**](ClubApi.md#get_all_roles) | **GET** /club/{clubId}/roles/{version}/all | 
+[**get_all_staff_members**](ClubApi.md#get_all_staff_members) | **GET** /club/{clubId}/members/{version}/staff | 
+[**get_club**](ClubApi.md#get_club) | **GET** /club/{version}/{clubId} | 
+[**get_club_pending_invites**](ClubApi.md#get_club_pending_invites) | **POST** /club/{clubId}/members/{version}/pending/invites | 
+[**get_club_restrictions1**](ClubApi.md#get_club_restrictions1) | **POST** /club/{clubId}/{version}/restrictions | 
+[**get_club_roles**](ClubApi.md#get_club_roles) | **POST** /club/{clubId}/roles/{version}/user | 
+[**get_club_roles_player**](ClubApi.md#get_club_roles_player) | **POST** /club/{clubId}/roles/{version}/permission | 
+[**get_club_roles_staff**](ClubApi.md#get_club_roles_staff) | **GET** /club/roles/{version}/staff | 
+[**get_clubs**](ClubApi.md#get_clubs) | **GET** /club/{version}/all | 
+[**get_clubs1**](ClubApi.md#get_clubs1) | **POST** /club/{version}/all | 
+[**get_currency_details**](ClubApi.md#get_currency_details) | **GET** /club/currency/{version}/{currencyCode} | 
+[**get_match**](ClubApi.md#get_match) | **GET** /club/{clubId}/match/{id}/{version}/get | 
+[**get_members_ranking**](ClubApi.md#get_members_ranking) | **POST** /club/{clubId}/{version}/ranking | 
+[**invite_single_member**](ClubApi.md#invite_single_member) | **PUT** /club/{clubId}/members/{version}/invite | 
+[**remove_roles**](ClubApi.md#remove_roles) | **POST** /club/{clubId}/roles/{version}/remove | 
+[**save_verified_club_match_csv**](ClubApi.md#save_verified_club_match_csv) | **PUT** /club/{id}/match/verified/{version}/save/csv/add | 
+[**save_verified_multi_club_match_csv**](ClubApi.md#save_verified_multi_club_match_csv) | **PUT** /club/match/bulk | 
+[**update_approval_status**](ClubApi.md#update_approval_status) | **POST** /club/{clubId}/{version}/approval | 
+[**update_club**](ClubApi.md#update_club) | **POST** /club/{version}/update | 
+[**update_staff_members**](ClubApi.md#update_staff_members) | **PUT** /club/{clubId}/members/{version}/staff | 
 
 
-# **add_club_using_put**
-> Wrapper add_club_using_put(authorization, version, request)
-
-addClub
+# **add_club**
+> Wrapper add_club(version, club_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -58,28 +58,35 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.ClubRequest() # ClubRequest | request
+    version = 'version_example' # str | 
+    club_request = dupr_backend.ClubRequest() # ClubRequest | 
 
     try:
-        # addClub
-        api_response = api_instance.add_club_using_put(authorization, version, request)
-        print("The response of ClubApi->add_club_using_put:\n")
+        api_response = api_instance.add_club(version, club_request)
+        print("The response of ClubApi->add_club:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->add_club_using_put: %s\n" % e)
+        print("Exception when calling ClubApi->add_club: %s\n" % e)
 ```
 
 
@@ -89,9 +96,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**ClubRequest**](ClubRequest.md)| request | 
+ **version** | **str**|  | 
+ **club_request** | [**ClubRequest**](ClubRequest.md)|  | 
 
 ### Return type
 
@@ -99,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -111,17 +117,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **add_member_admin_using_put**
-> Wrapper add_member_admin_using_put(authorization, club_id, version, request)
-
-addMemberAdmin
+# **add_member_admin**
+> Wrapper add_member_admin(version, club_id, user_list_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -130,29 +134,36 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.UserListRequest() # UserListRequest | request
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
+    user_list_request = dupr_backend.UserListRequest() # UserListRequest | 
 
     try:
-        # addMemberAdmin
-        api_response = api_instance.add_member_admin_using_put(authorization, club_id, version, request)
-        print("The response of ClubApi->add_member_admin_using_put:\n")
+        api_response = api_instance.add_member_admin(version, club_id, user_list_request)
+        print("The response of ClubApi->add_member_admin:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->add_member_admin_using_put: %s\n" % e)
+        print("Exception when calling ClubApi->add_member_admin: %s\n" % e)
 ```
 
 
@@ -162,10 +173,9 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**UserListRequest**](UserListRequest.md)| request | 
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
+ **user_list_request** | [**UserListRequest**](UserListRequest.md)|  | 
 
 ### Return type
 
@@ -173,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -185,48 +195,53 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **add_member_multiple_admin_using_put**
-> SingleWrapperOfClubMemberManyResponse add_member_multiple_admin_using_put(authorization, club_id, version, request)
-
-addMemberMultipleAdmin
+# **add_member_multiple_admin**
+> SingleWrapperClubMemberManyResponse add_member_multiple_admin(version, club_id, club_member_add_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
 from dupr_backend.models.club_member_add_request import ClubMemberAddRequest
-from dupr_backend.models.single_wrapper_of_club_member_many_response import SingleWrapperOfClubMemberManyResponse
+from dupr_backend.models.single_wrapper_club_member_many_response import SingleWrapperClubMemberManyResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.ClubMemberAddRequest() # ClubMemberAddRequest | request
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
+    club_member_add_request = dupr_backend.ClubMemberAddRequest() # ClubMemberAddRequest | 
 
     try:
-        # addMemberMultipleAdmin
-        api_response = api_instance.add_member_multiple_admin_using_put(authorization, club_id, version, request)
-        print("The response of ClubApi->add_member_multiple_admin_using_put:\n")
+        api_response = api_instance.add_member_multiple_admin(version, club_id, club_member_add_request)
+        print("The response of ClubApi->add_member_multiple_admin:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->add_member_multiple_admin_using_put: %s\n" % e)
+        print("Exception when calling ClubApi->add_member_multiple_admin: %s\n" % e)
 ```
 
 
@@ -236,18 +251,17 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**ClubMemberAddRequest**](ClubMemberAddRequest.md)| request | 
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
+ **club_member_add_request** | [**ClubMemberAddRequest**](ClubMemberAddRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfClubMemberManyResponse**](SingleWrapperOfClubMemberManyResponse.md)
+[**SingleWrapperClubMemberManyResponse**](SingleWrapperClubMemberManyResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -259,46 +273,52 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **add_member_multiple_csv_admin_using_put**
-> object add_member_multiple_csv_admin_using_put(authorization, club_id, version, request=request)
-
-addMemberMultipleCsvAdmin
+# **add_member_multiple_csv_admin**
+> object add_member_multiple_csv_admin(version, club_id, save_verified_match_cvs_request=save_verified_match_cvs_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
+from dupr_backend.models.save_verified_match_cvs_request import SaveVerifiedMatchCVSRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = None # bytearray |  (optional)
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
+    save_verified_match_cvs_request = dupr_backend.SaveVerifiedMatchCVSRequest() # SaveVerifiedMatchCVSRequest |  (optional)
 
     try:
-        # addMemberMultipleCsvAdmin
-        api_response = api_instance.add_member_multiple_csv_admin_using_put(authorization, club_id, version, request=request)
-        print("The response of ClubApi->add_member_multiple_csv_admin_using_put:\n")
+        api_response = api_instance.add_member_multiple_csv_admin(version, club_id, save_verified_match_cvs_request=save_verified_match_cvs_request)
+        print("The response of ClubApi->add_member_multiple_csv_admin:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->add_member_multiple_csv_admin_using_put: %s\n" % e)
+        print("Exception when calling ClubApi->add_member_multiple_csv_admin: %s\n" % e)
 ```
 
 
@@ -308,10 +328,9 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | **bytearray**|  | [optional] 
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
+ **save_verified_match_cvs_request** | [**SaveVerifiedMatchCVSRequest**](SaveVerifiedMatchCVSRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -319,11 +338,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -331,45 +350,50 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **add_member_request_using_put**
-> object add_member_request_using_put(authorization, club_id, version)
-
-addMemberRequest
+# **add_member_request**
+> object add_member_request(version, club_id)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
 
     try:
-        # addMemberRequest
-        api_response = api_instance.add_member_request_using_put(authorization, club_id, version)
-        print("The response of ClubApi->add_member_request_using_put:\n")
+        api_response = api_instance.add_member_request(version, club_id)
+        print("The response of ClubApi->add_member_request:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->add_member_request_using_put: %s\n" % e)
+        print("Exception when calling ClubApi->add_member_request: %s\n" % e)
 ```
 
 
@@ -379,9 +403,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
 
 ### Return type
 
@@ -389,7 +412,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -401,17 +424,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **approve_roles_using_post**
-> Wrapper approve_roles_using_post(authorization, club_id, version, request)
-
-approveRoles
+# **approve_roles**
+> Wrapper approve_roles(version, club_id, ids_list_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -420,29 +441,36 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.IdsListRequest() # IdsListRequest | request
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
+    ids_list_request = dupr_backend.IdsListRequest() # IdsListRequest | 
 
     try:
-        # approveRoles
-        api_response = api_instance.approve_roles_using_post(authorization, club_id, version, request)
-        print("The response of ClubApi->approve_roles_using_post:\n")
+        api_response = api_instance.approve_roles(version, club_id, ids_list_request)
+        print("The response of ClubApi->approve_roles:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->approve_roles_using_post: %s\n" % e)
+        print("Exception when calling ClubApi->approve_roles: %s\n" % e)
 ```
 
 
@@ -452,10 +480,9 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**IdsListRequest**](IdsListRequest.md)| request | 
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
+ **ids_list_request** | [**IdsListRequest**](IdsListRequest.md)|  | 
 
 ### Return type
 
@@ -463,7 +490,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -475,17 +502,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **assign_roles_using_post**
-> Wrapper assign_roles_using_post(authorization, club_id, version, request)
-
-assignRoles
+# **assign_roles**
+> Wrapper assign_roles(version, club_id, assign_role_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -494,29 +519,36 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.AssignRoleRequest() # AssignRoleRequest | request
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
+    assign_role_request = dupr_backend.AssignRoleRequest() # AssignRoleRequest | 
 
     try:
-        # assignRoles
-        api_response = api_instance.assign_roles_using_post(authorization, club_id, version, request)
-        print("The response of ClubApi->assign_roles_using_post:\n")
+        api_response = api_instance.assign_roles(version, club_id, assign_role_request)
+        print("The response of ClubApi->assign_roles:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->assign_roles_using_post: %s\n" % e)
+        print("Exception when calling ClubApi->assign_roles: %s\n" % e)
 ```
 
 
@@ -526,10 +558,9 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**AssignRoleRequest**](AssignRoleRequest.md)| request | 
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
+ **assign_role_request** | [**AssignRoleRequest**](AssignRoleRequest.md)|  | 
 
 ### Return type
 
@@ -537,7 +568,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -549,47 +580,53 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **club_match_history_by_filters_using_post**
-> SingleWrapperOfPageOfMatchResponse club_match_history_by_filters_using_post(authorization, version, request)
-
-clubMatchHistoryByFilters
+# **club_match_history**
+> SingleWrapperPageMatchResponse club_match_history(version, offset, limit, club_id)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.club_match_history_request import ClubMatchHistoryRequest
-from dupr_backend.models.single_wrapper_of_page_of_match_response import SingleWrapperOfPageOfMatchResponse
+from dupr_backend.models.single_wrapper_page_match_response import SingleWrapperPageMatchResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.ClubMatchHistoryRequest() # ClubMatchHistoryRequest | request
+    version = 'version_example' # str | 
+    offset = 56 # int | 
+    limit = 56 # int | 
+    club_id = 56 # int | 
 
     try:
-        # clubMatchHistoryByFilters
-        api_response = api_instance.club_match_history_by_filters_using_post(authorization, version, request)
-        print("The response of ClubApi->club_match_history_by_filters_using_post:\n")
+        api_response = api_instance.club_match_history(version, offset, limit, club_id)
+        print("The response of ClubApi->club_match_history:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->club_match_history_by_filters_using_post: %s\n" % e)
+        print("Exception when calling ClubApi->club_match_history: %s\n" % e)
 ```
 
 
@@ -599,92 +636,18 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**ClubMatchHistoryRequest**](ClubMatchHistoryRequest.md)| request | 
+ **version** | **str**|  | 
+ **offset** | **int**|  | 
+ **limit** | **int**|  | 
+ **club_id** | **int**|  | 
 
 ### Return type
 
-[**SingleWrapperOfPageOfMatchResponse**](SingleWrapperOfPageOfMatchResponse.md)
+[**SingleWrapperPageMatchResponse**](SingleWrapperPageMatchResponse.md)
 
 ### Authorization
 
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **club_match_history_using_get**
-> SingleWrapperOfPageOfMatchResponse club_match_history_using_get(authorization, club_id, limit, offset, version)
-
-clubMatchHistory
-
-### Example
-
-
-```python
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_page_of_match_response import SingleWrapperOfPageOfMatchResponse
-from dupr_backend.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
-)
-
-
-# Enter a context with an instance of the API client
-with dupr_backend.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    limit = 56 # int | limit
-    offset = 56 # int | offset
-    version = 'v1.0' # str | version (default to 'v1.0')
-
-    try:
-        # clubMatchHistory
-        api_response = api_instance.club_match_history_using_get(authorization, club_id, limit, offset, version)
-        print("The response of ClubApi->club_match_history_using_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ClubApi->club_match_history_using_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **limit** | **int**| limit | 
- **offset** | **int**| offset | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
-
-### Return type
-
-[**SingleWrapperOfPageOfMatchResponse**](SingleWrapperOfPageOfMatchResponse.md)
-
-### Authorization
-
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -696,17 +659,91 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **club_save_match_using_put**
-> object club_save_match_using_put(authorization, club_id, version, request)
-
-clubSaveMatch
+# **club_match_history_by_filters**
+> SingleWrapperPageMatchResponse club_match_history_by_filters(version, club_match_history_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
+
+```python
+import dupr_backend
+from dupr_backend.models.club_match_history_request import ClubMatchHistoryRequest
+from dupr_backend.models.single_wrapper_page_match_response import SingleWrapperPageMatchResponse
+from dupr_backend.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dupr.gg
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "https://api.dupr.gg"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.ClubApi(api_client)
+    version = 'version_example' # str | 
+    club_match_history_request = dupr_backend.ClubMatchHistoryRequest() # ClubMatchHistoryRequest | 
+
+    try:
+        api_response = api_instance.club_match_history_by_filters(version, club_match_history_request)
+        print("The response of ClubApi->club_match_history_by_filters:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ClubApi->club_match_history_by_filters: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | **str**|  | 
+ **club_match_history_request** | [**ClubMatchHistoryRequest**](ClubMatchHistoryRequest.md)|  | 
+
+### Return type
+
+[**SingleWrapperPageMatchResponse**](SingleWrapperPageMatchResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **club_save_match**
+> object club_save_match(version, club_id, match_request)
+
+### Example
+
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -714,29 +751,36 @@ from dupr_backend.models.match_request import MatchRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.MatchRequest() # MatchRequest | request
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
+    match_request = dupr_backend.MatchRequest() # MatchRequest | 
 
     try:
-        # clubSaveMatch
-        api_response = api_instance.club_save_match_using_put(authorization, club_id, version, request)
-        print("The response of ClubApi->club_save_match_using_put:\n")
+        api_response = api_instance.club_save_match(version, club_id, match_request)
+        print("The response of ClubApi->club_save_match:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->club_save_match_using_put: %s\n" % e)
+        print("Exception when calling ClubApi->club_save_match: %s\n" % e)
 ```
 
 
@@ -746,10 +790,9 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**MatchRequest**](MatchRequest.md)| request | 
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
+ **match_request** | [**MatchRequest**](MatchRequest.md)|  | 
 
 ### Return type
 
@@ -757,7 +800,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -769,17 +812,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_club_match_using_post**
-> object delete_club_match_using_post(authorization, club_id, version, request)
-
-deleteClubMatch
+# **delete_club_match**
+> object delete_club_match(version, club_id, delete_match_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -787,29 +828,36 @@ from dupr_backend.models.delete_match_request import DeleteMatchRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.DeleteMatchRequest() # DeleteMatchRequest | request
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
+    delete_match_request = dupr_backend.DeleteMatchRequest() # DeleteMatchRequest | 
 
     try:
-        # deleteClubMatch
-        api_response = api_instance.delete_club_match_using_post(authorization, club_id, version, request)
-        print("The response of ClubApi->delete_club_match_using_post:\n")
+        api_response = api_instance.delete_club_match(version, club_id, delete_match_request)
+        print("The response of ClubApi->delete_club_match:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->delete_club_match_using_post: %s\n" % e)
+        print("Exception when calling ClubApi->delete_club_match: %s\n" % e)
 ```
 
 
@@ -819,10 +867,9 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**DeleteMatchRequest**](DeleteMatchRequest.md)| request | 
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
+ **delete_match_request** | [**DeleteMatchRequest**](DeleteMatchRequest.md)|  | 
 
 ### Return type
 
@@ -830,7 +877,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -842,17 +889,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_member_admin_using_delete**
-> Wrapper delete_member_admin_using_delete(authorization, club_id, user_ids, version)
-
-deleteMemberAdmin
+# **delete_member_admin**
+> Wrapper delete_member_admin(version, club_id, user_ids)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -860,29 +905,36 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    user_ids = [56] # List[int] | userIds
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
+    user_ids = [56] # List[int] | 
 
     try:
-        # deleteMemberAdmin
-        api_response = api_instance.delete_member_admin_using_delete(authorization, club_id, user_ids, version)
-        print("The response of ClubApi->delete_member_admin_using_delete:\n")
+        api_response = api_instance.delete_member_admin(version, club_id, user_ids)
+        print("The response of ClubApi->delete_member_admin:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->delete_member_admin_using_delete: %s\n" % e)
+        print("Exception when calling ClubApi->delete_member_admin: %s\n" % e)
 ```
 
 
@@ -892,10 +944,9 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **user_ids** | [**List[int]**](int.md)| userIds | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
+ **user_ids** | [**List[int]**](int.md)|  | 
 
 ### Return type
 
@@ -903,7 +954,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -915,45 +966,50 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_member_request_using_delete**
-> object delete_member_request_using_delete(authorization, club_id, version)
-
-deleteMemberRequest
+# **delete_member_request**
+> object delete_member_request(version, club_id)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
 
     try:
-        # deleteMemberRequest
-        api_response = api_instance.delete_member_request_using_delete(authorization, club_id, version)
-        print("The response of ClubApi->delete_member_request_using_delete:\n")
+        api_response = api_instance.delete_member_request(version, club_id)
+        print("The response of ClubApi->delete_member_request:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->delete_member_request_using_delete: %s\n" % e)
+        print("Exception when calling ClubApi->delete_member_request: %s\n" % e)
 ```
 
 
@@ -963,9 +1019,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
 
 ### Return type
 
@@ -973,7 +1028,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -985,48 +1040,53 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **edit_club_match_using_put**
-> SingleWrapperOfMatchResponse edit_club_match_using_put(authorization, club_id, version, match_update_request)
-
-editClubMatch
+# **edit_club_match**
+> SingleWrapperMatchResponse edit_club_match(version, club_id, match_update_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
 from dupr_backend.models.match_update_request import MatchUpdateRequest
-from dupr_backend.models.single_wrapper_of_match_response import SingleWrapperOfMatchResponse
+from dupr_backend.models.single_wrapper_match_response import SingleWrapperMatchResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    match_update_request = dupr_backend.MatchUpdateRequest() # MatchUpdateRequest | matchUpdateRequest
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
+    match_update_request = dupr_backend.MatchUpdateRequest() # MatchUpdateRequest | 
 
     try:
-        # editClubMatch
-        api_response = api_instance.edit_club_match_using_put(authorization, club_id, version, match_update_request)
-        print("The response of ClubApi->edit_club_match_using_put:\n")
+        api_response = api_instance.edit_club_match(version, club_id, match_update_request)
+        print("The response of ClubApi->edit_club_match:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->edit_club_match_using_put: %s\n" % e)
+        print("Exception when calling ClubApi->edit_club_match: %s\n" % e)
 ```
 
 
@@ -1036,18 +1096,17 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **match_update_request** | [**MatchUpdateRequest**](MatchUpdateRequest.md)| matchUpdateRequest | 
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
+ **match_update_request** | [**MatchUpdateRequest**](MatchUpdateRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfMatchResponse**](SingleWrapperOfMatchResponse.md)
+[**SingleWrapperMatchResponse**](SingleWrapperMatchResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1059,45 +1118,50 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_club_roles_using_get**
-> ArrayWrapperOfClubListingResponse get_all_club_roles_using_get(authorization, version)
-
-getAllClubRoles
+# **get_all_club_roles**
+> ArrayWrapperClubListingResponse get_all_club_roles(version)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.array_wrapper_of_club_listing_response import ArrayWrapperOfClubListingResponse
+from dupr_backend.models.array_wrapper_club_listing_response import ArrayWrapperClubListingResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
 
     try:
-        # getAllClubRoles
-        api_response = api_instance.get_all_club_roles_using_get(authorization, version)
-        print("The response of ClubApi->get_all_club_roles_using_get:\n")
+        api_response = api_instance.get_all_club_roles(version)
+        print("The response of ClubApi->get_all_club_roles:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->get_all_club_roles_using_get: %s\n" % e)
+        print("Exception when calling ClubApi->get_all_club_roles: %s\n" % e)
 ```
 
 
@@ -1107,16 +1171,15 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
 
 ### Return type
 
-[**ArrayWrapperOfClubListingResponse**](ArrayWrapperOfClubListingResponse.md)
+[**ArrayWrapperClubListingResponse**](ArrayWrapperClubListingResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1128,45 +1191,50 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_currency_details_using_get**
-> ArrayWrapperOfCurrencyDetailsResponse get_all_currency_details_using_get(authorization, version)
-
-getAllCurrencyDetails
+# **get_all_currency_details**
+> ArrayWrapperCurrencyDetailsResponse get_all_currency_details(version)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.array_wrapper_of_currency_details_response import ArrayWrapperOfCurrencyDetailsResponse
+from dupr_backend.models.array_wrapper_currency_details_response import ArrayWrapperCurrencyDetailsResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
 
     try:
-        # getAllCurrencyDetails
-        api_response = api_instance.get_all_currency_details_using_get(authorization, version)
-        print("The response of ClubApi->get_all_currency_details_using_get:\n")
+        api_response = api_instance.get_all_currency_details(version)
+        print("The response of ClubApi->get_all_currency_details:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->get_all_currency_details_using_get: %s\n" % e)
+        print("Exception when calling ClubApi->get_all_currency_details: %s\n" % e)
 ```
 
 
@@ -1176,16 +1244,15 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
 
 ### Return type
 
-[**ArrayWrapperOfCurrencyDetailsResponse**](ArrayWrapperOfCurrencyDetailsResponse.md)
+[**ArrayWrapperCurrencyDetailsResponse**](ArrayWrapperCurrencyDetailsResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1197,119 +1264,53 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_members_download_using_post**
-> SingleWrapperOfDownloadS3Response get_all_members_download_using_post(authorization, club_id, version)
-
-getAllMembersDownload
+# **get_all_members**
+> SingleWrapperPageClubMemberResponse get_all_members(version, club_id, club_members_search_request)
 
 ### Example
 
-
-```python
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_download_s3_response import SingleWrapperOfDownloadS3Response
-from dupr_backend.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
-)
-
-
-# Enter a context with an instance of the API client
-with dupr_backend.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    version = 'v1.0' # str | version (default to 'v1.0')
-
-    try:
-        # getAllMembersDownload
-        api_response = api_instance.get_all_members_download_using_post(authorization, club_id, version)
-        print("The response of ClubApi->get_all_members_download_using_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ClubApi->get_all_members_download_using_post: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
-
-### Return type
-
-[**SingleWrapperOfDownloadS3Response**](SingleWrapperOfDownloadS3Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_all_members_using_post**
-> SingleWrapperOfPageOfClubMemberResponse get_all_members_using_post(authorization, club_id, version, request)
-
-getAllMembers
-
-### Example
-
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
 from dupr_backend.models.club_members_search_request import ClubMembersSearchRequest
-from dupr_backend.models.single_wrapper_of_page_of_club_member_response import SingleWrapperOfPageOfClubMemberResponse
+from dupr_backend.models.single_wrapper_page_club_member_response import SingleWrapperPageClubMemberResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.ClubMembersSearchRequest() # ClubMembersSearchRequest | request
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
+    club_members_search_request = dupr_backend.ClubMembersSearchRequest() # ClubMembersSearchRequest | 
 
     try:
-        # getAllMembers
-        api_response = api_instance.get_all_members_using_post(authorization, club_id, version, request)
-        print("The response of ClubApi->get_all_members_using_post:\n")
+        api_response = api_instance.get_all_members(version, club_id, club_members_search_request)
+        print("The response of ClubApi->get_all_members:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->get_all_members_using_post: %s\n" % e)
+        print("Exception when calling ClubApi->get_all_members: %s\n" % e)
 ```
 
 
@@ -1319,18 +1320,17 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**ClubMembersSearchRequest**](ClubMembersSearchRequest.md)| request | 
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
+ **club_members_search_request** | [**ClubMembersSearchRequest**](ClubMembersSearchRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfPageOfClubMemberResponse**](SingleWrapperOfPageOfClubMemberResponse.md)
+[**SingleWrapperPageClubMemberResponse**](SingleWrapperPageClubMemberResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1342,45 +1342,51 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_roles_using_get1**
-> ArrayWrapperOfRoleResponse get_all_roles_using_get1(authorization, version)
-
-getAllRoles
+# **get_all_members_download**
+> SingleWrapperDownloadS3Response get_all_members_download(version, club_id)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.array_wrapper_of_role_response import ArrayWrapperOfRoleResponse
+from dupr_backend.models.single_wrapper_download_s3_response import SingleWrapperDownloadS3Response
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
 
     try:
-        # getAllRoles
-        api_response = api_instance.get_all_roles_using_get1(authorization, version)
-        print("The response of ClubApi->get_all_roles_using_get1:\n")
+        api_response = api_instance.get_all_members_download(version, club_id)
+        print("The response of ClubApi->get_all_members_download:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->get_all_roles_using_get1: %s\n" % e)
+        print("Exception when calling ClubApi->get_all_members_download: %s\n" % e)
 ```
 
 
@@ -1390,16 +1396,16 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
 
 ### Return type
 
-[**ArrayWrapperOfRoleResponse**](ArrayWrapperOfRoleResponse.md)
+[**SingleWrapperDownloadS3Response**](SingleWrapperDownloadS3Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1411,46 +1417,50 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_staff_members_using_get**
-> SingleWrapperOfStaffClubMemberResponse get_all_staff_members_using_get(authorization, club_id, version)
-
-getAllStaffMembers
+# **get_all_roles**
+> ArrayWrapperRoleResponse get_all_roles(version)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_staff_club_member_response import SingleWrapperOfStaffClubMemberResponse
+from dupr_backend.models.array_wrapper_role_response import ArrayWrapperRoleResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
 
     try:
-        # getAllStaffMembers
-        api_response = api_instance.get_all_staff_members_using_get(authorization, club_id, version)
-        print("The response of ClubApi->get_all_staff_members_using_get:\n")
+        api_response = api_instance.get_all_roles(version)
+        print("The response of ClubApi->get_all_roles:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->get_all_staff_members_using_get: %s\n" % e)
+        print("Exception when calling ClubApi->get_all_roles: %s\n" % e)
 ```
 
 
@@ -1460,17 +1470,15 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
 
 ### Return type
 
-[**SingleWrapperOfStaffClubMemberResponse**](SingleWrapperOfStaffClubMemberResponse.md)
+[**ArrayWrapperRoleResponse**](ArrayWrapperRoleResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1482,48 +1490,203 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_club_pending_invites_using_post**
-> SingleWrapperOfPageOfClubMemberResponse get_club_pending_invites_using_post(authorization, club_id, version, request)
-
-getClubPendingInvites
+# **get_all_staff_members**
+> SingleWrapperStaffClubMemberResponse get_all_staff_members(version, club_id)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
+
+```python
+import dupr_backend
+from dupr_backend.models.single_wrapper_staff_club_member_response import SingleWrapperStaffClubMemberResponse
+from dupr_backend.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dupr.gg
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "https://api.dupr.gg"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.ClubApi(api_client)
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
+
+    try:
+        api_response = api_instance.get_all_staff_members(version, club_id)
+        print("The response of ClubApi->get_all_staff_members:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ClubApi->get_all_staff_members: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
+
+### Return type
+
+[**SingleWrapperStaffClubMemberResponse**](SingleWrapperStaffClubMemberResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_club**
+> SingleWrapperClubResponse get_club(version, club_id)
+
+### Example
+
+* Bearer (JWT) Authentication (bearerAuth):
+
+```python
+import dupr_backend
+from dupr_backend.models.single_wrapper_club_response import SingleWrapperClubResponse
+from dupr_backend.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dupr.gg
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "https://api.dupr.gg"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.ClubApi(api_client)
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
+
+    try:
+        api_response = api_instance.get_club(version, club_id)
+        print("The response of ClubApi->get_club:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ClubApi->get_club: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
+
+### Return type
+
+[**SingleWrapperClubResponse**](SingleWrapperClubResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_club_pending_invites**
+> SingleWrapperPageClubMemberResponse get_club_pending_invites(version, club_id, club_members_search_request)
+
+### Example
+
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
 from dupr_backend.models.club_members_search_request import ClubMembersSearchRequest
-from dupr_backend.models.single_wrapper_of_page_of_club_member_response import SingleWrapperOfPageOfClubMemberResponse
+from dupr_backend.models.single_wrapper_page_club_member_response import SingleWrapperPageClubMemberResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.ClubMembersSearchRequest() # ClubMembersSearchRequest | request
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
+    club_members_search_request = dupr_backend.ClubMembersSearchRequest() # ClubMembersSearchRequest | 
 
     try:
-        # getClubPendingInvites
-        api_response = api_instance.get_club_pending_invites_using_post(authorization, club_id, version, request)
-        print("The response of ClubApi->get_club_pending_invites_using_post:\n")
+        api_response = api_instance.get_club_pending_invites(version, club_id, club_members_search_request)
+        print("The response of ClubApi->get_club_pending_invites:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->get_club_pending_invites_using_post: %s\n" % e)
+        print("Exception when calling ClubApi->get_club_pending_invites: %s\n" % e)
 ```
 
 
@@ -1533,18 +1696,17 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**ClubMembersSearchRequest**](ClubMembersSearchRequest.md)| request | 
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
+ **club_members_search_request** | [**ClubMembersSearchRequest**](ClubMembersSearchRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfPageOfClubMemberResponse**](SingleWrapperOfPageOfClubMemberResponse.md)
+[**SingleWrapperPageClubMemberResponse**](SingleWrapperPageClubMemberResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1556,45 +1718,50 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_club_restrictions_using_post1**
-> object get_club_restrictions_using_post1(authorization, club_id, version)
-
-getClubRestrictions
+# **get_club_restrictions1**
+> object get_club_restrictions1(version, club_id)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
 
     try:
-        # getClubRestrictions
-        api_response = api_instance.get_club_restrictions_using_post1(authorization, club_id, version)
-        print("The response of ClubApi->get_club_restrictions_using_post1:\n")
+        api_response = api_instance.get_club_restrictions1(version, club_id)
+        print("The response of ClubApi->get_club_restrictions1:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->get_club_restrictions_using_post1: %s\n" % e)
+        print("Exception when calling ClubApi->get_club_restrictions1: %s\n" % e)
 ```
 
 
@@ -1604,9 +1771,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
 
 ### Return type
 
@@ -1614,7 +1780,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1626,48 +1792,53 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_club_roles_player_using_post**
-> SingleWrapperOfRoleResponse get_club_roles_player_using_post(authorization, club_id, version, request)
-
-getClubRolesPlayer
+# **get_club_roles**
+> SingleWrapperRoleResponse get_club_roles(version, club_id, user_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_role_response import SingleWrapperOfRoleResponse
+from dupr_backend.models.single_wrapper_role_response import SingleWrapperRoleResponse
 from dupr_backend.models.user_request import UserRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.UserRequest() # UserRequest | request
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
+    user_request = dupr_backend.UserRequest() # UserRequest | 
 
     try:
-        # getClubRolesPlayer
-        api_response = api_instance.get_club_roles_player_using_post(authorization, club_id, version, request)
-        print("The response of ClubApi->get_club_roles_player_using_post:\n")
+        api_response = api_instance.get_club_roles(version, club_id, user_request)
+        print("The response of ClubApi->get_club_roles:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->get_club_roles_player_using_post: %s\n" % e)
+        print("Exception when calling ClubApi->get_club_roles: %s\n" % e)
 ```
 
 
@@ -1677,18 +1848,17 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**UserRequest**](UserRequest.md)| request | 
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
+ **user_request** | [**UserRequest**](UserRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfRoleResponse**](SingleWrapperOfRoleResponse.md)
+[**SingleWrapperRoleResponse**](SingleWrapperRoleResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1700,117 +1870,53 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_club_roles_staff_using_get**
-> SingleWrapperOfMapOfstringAndobject get_club_roles_staff_using_get(authorization, version)
-
-getClubRolesStaff
+# **get_club_roles_player**
+> SingleWrapperRoleResponse get_club_roles_player(version, club_id, user_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_map_ofstring_andobject import SingleWrapperOfMapOfstringAndobject
-from dupr_backend.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
-)
-
-
-# Enter a context with an instance of the API client
-with dupr_backend.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-
-    try:
-        # getClubRolesStaff
-        api_response = api_instance.get_club_roles_staff_using_get(authorization, version)
-        print("The response of ClubApi->get_club_roles_staff_using_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ClubApi->get_club_roles_staff_using_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
-
-### Return type
-
-[**SingleWrapperOfMapOfstringAndobject**](SingleWrapperOfMapOfstringAndobject.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_club_roles_using_post**
-> SingleWrapperOfRoleResponse get_club_roles_using_post(authorization, club_id, version, request)
-
-getClubRoles
-
-### Example
-
-
-```python
-import dupr_backend
-from dupr_backend.models.single_wrapper_of_role_response import SingleWrapperOfRoleResponse
+from dupr_backend.models.single_wrapper_role_response import SingleWrapperRoleResponse
 from dupr_backend.models.user_request import UserRequest
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.UserRequest() # UserRequest | request
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
+    user_request = dupr_backend.UserRequest() # UserRequest | 
 
     try:
-        # getClubRoles
-        api_response = api_instance.get_club_roles_using_post(authorization, club_id, version, request)
-        print("The response of ClubApi->get_club_roles_using_post:\n")
+        api_response = api_instance.get_club_roles_player(version, club_id, user_request)
+        print("The response of ClubApi->get_club_roles_player:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->get_club_roles_using_post: %s\n" % e)
+        print("Exception when calling ClubApi->get_club_roles_player: %s\n" % e)
 ```
 
 
@@ -1820,18 +1926,17 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**UserRequest**](UserRequest.md)| request | 
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
+ **user_request** | [**UserRequest**](UserRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfRoleResponse**](SingleWrapperOfRoleResponse.md)
+[**SingleWrapperRoleResponse**](SingleWrapperRoleResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1843,46 +1948,50 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_club_using_get**
-> SingleWrapperOfClubResponse get_club_using_get(authorization, club_id, version)
-
-getClub
+# **get_club_roles_staff**
+> SingleWrapperMapStringObject get_club_roles_staff(version)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_club_response import SingleWrapperOfClubResponse
+from dupr_backend.models.single_wrapper_map_string_object import SingleWrapperMapStringObject
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
 
     try:
-        # getClub
-        api_response = api_instance.get_club_using_get(authorization, club_id, version)
-        print("The response of ClubApi->get_club_using_get:\n")
+        api_response = api_instance.get_club_roles_staff(version)
+        print("The response of ClubApi->get_club_roles_staff:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->get_club_using_get: %s\n" % e)
+        print("Exception when calling ClubApi->get_club_roles_staff: %s\n" % e)
 ```
 
 
@@ -1892,17 +2001,15 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
 
 ### Return type
 
-[**SingleWrapperOfClubResponse**](SingleWrapperOfClubResponse.md)
+[**SingleWrapperMapStringObject**](SingleWrapperMapStringObject.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1914,49 +2021,54 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_clubs_using_get**
-> SingleWrapperOfPageOfClubResponse get_clubs_using_get(authorization, limit, offset, own, q, version)
-
-getClubs
+# **get_clubs**
+> SingleWrapperPageClubResponse get_clubs(version, q, own, offset, limit)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_page_of_club_response import SingleWrapperOfPageOfClubResponse
+from dupr_backend.models.single_wrapper_page_club_response import SingleWrapperPageClubResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    limit = 56 # int | limit
-    offset = 56 # int | offset
-    own = True # bool | own
-    q = 'q_example' # str | q
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    q = 'q_example' # str | 
+    own = True # bool | 
+    offset = 56 # int | 
+    limit = 56 # int | 
 
     try:
-        # getClubs
-        api_response = api_instance.get_clubs_using_get(authorization, limit, offset, own, q, version)
-        print("The response of ClubApi->get_clubs_using_get:\n")
+        api_response = api_instance.get_clubs(version, q, own, offset, limit)
+        print("The response of ClubApi->get_clubs:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->get_clubs_using_get: %s\n" % e)
+        print("Exception when calling ClubApi->get_clubs: %s\n" % e)
 ```
 
 
@@ -1966,20 +2078,19 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **limit** | **int**| limit | 
- **offset** | **int**| offset | 
- **own** | **bool**| own | 
- **q** | **str**| q | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **q** | **str**|  | 
+ **own** | **bool**|  | 
+ **offset** | **int**|  | 
+ **limit** | **int**|  | 
 
 ### Return type
 
-[**SingleWrapperOfPageOfClubResponse**](SingleWrapperOfPageOfClubResponse.md)
+[**SingleWrapperPageClubResponse**](SingleWrapperPageClubResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1991,47 +2102,52 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_clubs_using_post**
-> SingleWrapperOfPageOfClubResponse get_clubs_using_post(authorization, version, club_search)
-
-getClubs
+# **get_clubs1**
+> SingleWrapperPageClubResponse get_clubs1(version, club_search)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
 from dupr_backend.models.club_search import ClubSearch
-from dupr_backend.models.single_wrapper_of_page_of_club_response import SingleWrapperOfPageOfClubResponse
+from dupr_backend.models.single_wrapper_page_club_response import SingleWrapperPageClubResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    club_search = dupr_backend.ClubSearch() # ClubSearch | clubSearch
+    version = 'version_example' # str | 
+    club_search = dupr_backend.ClubSearch() # ClubSearch | 
 
     try:
-        # getClubs
-        api_response = api_instance.get_clubs_using_post(authorization, version, club_search)
-        print("The response of ClubApi->get_clubs_using_post:\n")
+        api_response = api_instance.get_clubs1(version, club_search)
+        print("The response of ClubApi->get_clubs1:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->get_clubs_using_post: %s\n" % e)
+        print("Exception when calling ClubApi->get_clubs1: %s\n" % e)
 ```
 
 
@@ -2041,17 +2157,16 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **club_search** | [**ClubSearch**](ClubSearch.md)| clubSearch | 
+ **version** | **str**|  | 
+ **club_search** | [**ClubSearch**](ClubSearch.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfPageOfClubResponse**](SingleWrapperOfPageOfClubResponse.md)
+[**SingleWrapperPageClubResponse**](SingleWrapperPageClubResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2063,46 +2178,51 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_currency_details_using_get**
-> SingleWrapperOfCurrencyDetailsResponse get_currency_details_using_get(authorization, currency_code, version)
-
-getCurrencyDetails
+# **get_currency_details**
+> SingleWrapperCurrencyDetailsResponse get_currency_details(version, currency_code)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_currency_details_response import SingleWrapperOfCurrencyDetailsResponse
+from dupr_backend.models.single_wrapper_currency_details_response import SingleWrapperCurrencyDetailsResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    currency_code = 'currency_code_example' # str | currencyCode
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    currency_code = 'currency_code_example' # str | 
 
     try:
-        # getCurrencyDetails
-        api_response = api_instance.get_currency_details_using_get(authorization, currency_code, version)
-        print("The response of ClubApi->get_currency_details_using_get:\n")
+        api_response = api_instance.get_currency_details(version, currency_code)
+        print("The response of ClubApi->get_currency_details:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->get_currency_details_using_get: %s\n" % e)
+        print("Exception when calling ClubApi->get_currency_details: %s\n" % e)
 ```
 
 
@@ -2112,17 +2232,16 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **currency_code** | **str**| currencyCode | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **currency_code** | **str**|  | 
 
 ### Return type
 
-[**SingleWrapperOfCurrencyDetailsResponse**](SingleWrapperOfCurrencyDetailsResponse.md)
+[**SingleWrapperCurrencyDetailsResponse**](SingleWrapperCurrencyDetailsResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2134,47 +2253,52 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_match_using_get1**
-> SingleWrapperOfMatchResponse get_match_using_get1(authorization, club_id, id, version)
-
-getMatch
+# **get_match**
+> SingleWrapperMatchResponse get_match(version, club_id, id)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_match_response import SingleWrapperOfMatchResponse
+from dupr_backend.models.single_wrapper_match_response import SingleWrapperMatchResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    id = 56 # int | id
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
+    id = 56 # int | 
 
     try:
-        # getMatch
-        api_response = api_instance.get_match_using_get1(authorization, club_id, id, version)
-        print("The response of ClubApi->get_match_using_get1:\n")
+        api_response = api_instance.get_match(version, club_id, id)
+        print("The response of ClubApi->get_match:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->get_match_using_get1: %s\n" % e)
+        print("Exception when calling ClubApi->get_match: %s\n" % e)
 ```
 
 
@@ -2184,18 +2308,17 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **id** | **int**| id | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
+ **id** | **int**|  | 
 
 ### Return type
 
-[**SingleWrapperOfMatchResponse**](SingleWrapperOfMatchResponse.md)
+[**SingleWrapperMatchResponse**](SingleWrapperMatchResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2207,48 +2330,53 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_members_ranking_using_post**
-> SingleWrapperOfClubMemberRankingResponse get_members_ranking_using_post(authorization, club_id, version, request)
-
-getMembersRanking
+# **get_members_ranking**
+> SingleWrapperClubMemberRankingResponse get_members_ranking(version, club_id, club_members_search_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
 from dupr_backend.models.club_members_search_request import ClubMembersSearchRequest
-from dupr_backend.models.single_wrapper_of_club_member_ranking_response import SingleWrapperOfClubMemberRankingResponse
+from dupr_backend.models.single_wrapper_club_member_ranking_response import SingleWrapperClubMemberRankingResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.ClubMembersSearchRequest() # ClubMembersSearchRequest | request
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
+    club_members_search_request = dupr_backend.ClubMembersSearchRequest() # ClubMembersSearchRequest | 
 
     try:
-        # getMembersRanking
-        api_response = api_instance.get_members_ranking_using_post(authorization, club_id, version, request)
-        print("The response of ClubApi->get_members_ranking_using_post:\n")
+        api_response = api_instance.get_members_ranking(version, club_id, club_members_search_request)
+        print("The response of ClubApi->get_members_ranking:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->get_members_ranking_using_post: %s\n" % e)
+        print("Exception when calling ClubApi->get_members_ranking: %s\n" % e)
 ```
 
 
@@ -2258,18 +2386,17 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**ClubMembersSearchRequest**](ClubMembersSearchRequest.md)| request | 
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
+ **club_members_search_request** | [**ClubMembersSearchRequest**](ClubMembersSearchRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfClubMemberRankingResponse**](SingleWrapperOfClubMemberRankingResponse.md)
+[**SingleWrapperClubMemberRankingResponse**](SingleWrapperClubMemberRankingResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2281,48 +2408,53 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **invite_single_member_using_put**
-> SingleWrapperOfstring invite_single_member_using_put(authorization, club_id, version, request)
-
-inviteSingleMember
+# **invite_single_member**
+> SingleWrapperString invite_single_member(version, club_id, invite_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
 from dupr_backend.models.invite_request import InviteRequest
-from dupr_backend.models.single_wrapper_ofstring import SingleWrapperOfstring
+from dupr_backend.models.single_wrapper_string import SingleWrapperString
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.InviteRequest() # InviteRequest | request
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
+    invite_request = dupr_backend.InviteRequest() # InviteRequest | 
 
     try:
-        # inviteSingleMember
-        api_response = api_instance.invite_single_member_using_put(authorization, club_id, version, request)
-        print("The response of ClubApi->invite_single_member_using_put:\n")
+        api_response = api_instance.invite_single_member(version, club_id, invite_request)
+        print("The response of ClubApi->invite_single_member:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->invite_single_member_using_put: %s\n" % e)
+        print("Exception when calling ClubApi->invite_single_member: %s\n" % e)
 ```
 
 
@@ -2332,18 +2464,17 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**InviteRequest**](InviteRequest.md)| request | 
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
+ **invite_request** | [**InviteRequest**](InviteRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperOfstring**](SingleWrapperOfstring.md)
+[**SingleWrapperString**](SingleWrapperString.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2355,17 +2486,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **remove_roles_using_post**
-> Wrapper remove_roles_using_post(authorization, club_id, version, request)
-
-removeRoles
+# **remove_roles**
+> Wrapper remove_roles(version, club_id, assign_role_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -2374,29 +2503,36 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.AssignRoleRequest() # AssignRoleRequest | request
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
+    assign_role_request = dupr_backend.AssignRoleRequest() # AssignRoleRequest | 
 
     try:
-        # removeRoles
-        api_response = api_instance.remove_roles_using_post(authorization, club_id, version, request)
-        print("The response of ClubApi->remove_roles_using_post:\n")
+        api_response = api_instance.remove_roles(version, club_id, assign_role_request)
+        print("The response of ClubApi->remove_roles:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->remove_roles_using_post: %s\n" % e)
+        print("Exception when calling ClubApi->remove_roles: %s\n" % e)
 ```
 
 
@@ -2406,10 +2542,9 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**AssignRoleRequest**](AssignRoleRequest.md)| request | 
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
+ **assign_role_request** | [**AssignRoleRequest**](AssignRoleRequest.md)|  | 
 
 ### Return type
 
@@ -2417,7 +2552,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2429,46 +2564,51 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **save_verified_club_match_csv_using_put**
-> object save_verified_club_match_csv_using_put(authorization, id, version, request=request)
-
-saveVerifiedClubMatchCSV
+# **save_verified_club_match_csv**
+> object save_verified_club_match_csv(version, id, request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    id = 56 # int | id
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = None # bytearray |  (optional)
+    version = 'version_example' # str | 
+    id = 56 # int | 
+    request = None # bytearray | 
 
     try:
-        # saveVerifiedClubMatchCSV
-        api_response = api_instance.save_verified_club_match_csv_using_put(authorization, id, version, request=request)
-        print("The response of ClubApi->save_verified_club_match_csv_using_put:\n")
+        api_response = api_instance.save_verified_club_match_csv(version, id, request)
+        print("The response of ClubApi->save_verified_club_match_csv:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->save_verified_club_match_csv_using_put: %s\n" % e)
+        print("Exception when calling ClubApi->save_verified_club_match_csv: %s\n" % e)
 ```
 
 
@@ -2478,10 +2618,9 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **id** | **int**| id | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | **bytearray**|  | [optional] 
+ **version** | **str**|  | 
+ **id** | **int**|  | 
+ **request** | **bytearray**|  | 
 
 ### Return type
 
@@ -2489,7 +2628,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2501,17 +2640,87 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_approval_status_using_post**
-> Wrapper update_approval_status_using_post(authorization, club_id, version, request)
-
-updateApprovalStatus
+# **save_verified_multi_club_match_csv**
+> object save_verified_multi_club_match_csv(request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
+
+```python
+import dupr_backend
+from dupr_backend.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dupr.gg
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "https://api.dupr.gg"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.ClubApi(api_client)
+    request = None # bytearray | 
+
+    try:
+        api_response = api_instance.save_verified_multi_club_match_csv(request)
+        print("The response of ClubApi->save_verified_multi_club_match_csv:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ClubApi->save_verified_multi_club_match_csv: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | **bytearray**|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_approval_status**
+> Wrapper update_approval_status(version, club_id, status_request)
+
+### Example
+
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -2520,29 +2729,36 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    club_id = 56 # int | clubId
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.StatusRequest() # StatusRequest | request
+    version = 'version_example' # str | 
+    club_id = 56 # int | 
+    status_request = dupr_backend.StatusRequest() # StatusRequest | 
 
     try:
-        # updateApprovalStatus
-        api_response = api_instance.update_approval_status_using_post(authorization, club_id, version, request)
-        print("The response of ClubApi->update_approval_status_using_post:\n")
+        api_response = api_instance.update_approval_status(version, club_id, status_request)
+        print("The response of ClubApi->update_approval_status:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->update_approval_status_using_post: %s\n" % e)
+        print("Exception when calling ClubApi->update_approval_status: %s\n" % e)
 ```
 
 
@@ -2552,10 +2768,9 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **club_id** | **int**| clubId | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**StatusRequest**](StatusRequest.md)| request | 
+ **version** | **str**|  | 
+ **club_id** | **int**|  | 
+ **status_request** | [**StatusRequest**](StatusRequest.md)|  | 
 
 ### Return type
 
@@ -2563,7 +2778,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2575,17 +2790,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_club_using_post**
-> Wrapper update_club_using_post(authorization, version, request)
-
-updateClub
+# **update_club**
+> Wrapper update_club(version, club_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -2594,28 +2807,35 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.ClubRequest() # ClubRequest | request
+    version = 'version_example' # str | 
+    club_request = dupr_backend.ClubRequest() # ClubRequest | 
 
     try:
-        # updateClub
-        api_response = api_instance.update_club_using_post(authorization, version, request)
-        print("The response of ClubApi->update_club_using_post:\n")
+        api_response = api_instance.update_club(version, club_request)
+        print("The response of ClubApi->update_club:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->update_club_using_post: %s\n" % e)
+        print("Exception when calling ClubApi->update_club: %s\n" % e)
 ```
 
 
@@ -2625,9 +2845,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**ClubRequest**](ClubRequest.md)| request | 
+ **version** | **str**|  | 
+ **club_request** | [**ClubRequest**](ClubRequest.md)|  | 
 
 ### Return type
 
@@ -2635,7 +2854,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2647,17 +2866,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_staff_members_using_put**
-> Wrapper update_staff_members_using_put(authorization, version, request)
-
-updateStaffMembers
+# **update_staff_members**
+> Wrapper update_staff_members(version, staff_club_member_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -2666,28 +2883,35 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.StaffClubMemberRequest() # StaffClubMemberRequest | request
+    version = 'version_example' # str | 
+    staff_club_member_request = dupr_backend.StaffClubMemberRequest() # StaffClubMemberRequest | 
 
     try:
-        # updateStaffMembers
-        api_response = api_instance.update_staff_members_using_put(authorization, version, request)
-        print("The response of ClubApi->update_staff_members_using_put:\n")
+        api_response = api_instance.update_staff_members(version, staff_club_member_request)
+        print("The response of ClubApi->update_staff_members:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClubApi->update_staff_members_using_put: %s\n" % e)
+        print("Exception when calling ClubApi->update_staff_members: %s\n" % e)
 ```
 
 
@@ -2697,9 +2921,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**StaffClubMemberRequest**](StaffClubMemberRequest.md)| request | 
+ **version** | **str**|  | 
+ **staff_club_member_request** | [**StaffClubMemberRequest**](StaffClubMemberRequest.md)|  | 
 
 ### Return type
 
@@ -2707,7 +2930,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2719,7 +2942,6 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

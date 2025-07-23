@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**new_email** | **str** |  | 
 **old_email** | **str** |  | 
+**new_email** | **str** |  | 
 
 ## Example
 

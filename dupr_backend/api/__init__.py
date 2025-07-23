@@ -25,7 +25,7 @@ from dupr_backend.api.players_api import PlayersApi
 from dupr_backend.api.post_report_api import PostReportApi
 from dupr_backend.api.social_media_api import SocialMediaApi
 from dupr_backend.api.stripe_api import StripeApi
-from dupr_backend.api.subscriptions_api import SubscriptionsApi
+from dupr_backend.api.subscriptions_controller_api import SubscriptionsControllerApi
 from dupr_backend.api.user_api import UserApi
 from dupr_backend.api.user_subscriptions_api import UserSubscriptionsApi
 from dupr_backend.api.root_path_controller_api import RootPathControllerApi

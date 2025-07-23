@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address_id** | **int** |  | 
-**description** | **str** |  | [optional] 
-**event_date** | **date** |  | 
 **name** | **str** |  | 
-**rating** | [**RatingRangeReq**](RatingRangeReq.md) |  | 
+**event_date** | **date** |  | 
+**time** | [**TimeRange**](TimeRange.md) |  | 
+**address_id** | **int** |  | 
 **status** | **str** |  | 
-**time** | [**TimeRangeReq**](TimeRangeReq.md) |  | 
+**rating** | [**RatingRange**](RatingRange.md) |  | 
+**description** | **str** |  | [optional] 
 
 ## Example
 

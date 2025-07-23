@@ -5,16 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **str** |  | [optional] 
-**birthdate** | **date** |  | [optional] 
-**doubles_rating** | **float** |  | [optional] 
-**dupr_id** | **str** |  | [optional] 
 **email** | **str** |  | 
+**player_name** | **str** |  | 
 **external_id** | **str** |  | [optional] 
+**birthdate** | **date** |  | [optional] 
+**singles_rating** | **float** |  | [optional] 
+**doubles_rating** | **float** |  | [optional] 
 **gender** | **str** |  | [optional] 
 **phone_number** | **str** |  | [optional] 
-**player_name** | **str** |  | 
-**singles_rating** | **float** |  | [optional] 
+**dupr_id** | **str** |  | [optional] 
+**address** | **str** |  | [optional] 
 
 ## Example
 

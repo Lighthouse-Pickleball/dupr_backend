@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**add_members_action_s3_url** | **str** |  | [optional] 
-**in_valid_email** | **List[str]** |  | [optional] 
-**invalid_email** | **int** |  | 
 **players_added** | **int** |  | 
 **players_invited** | **int** |  | 
+**invalid_email** | **int** |  | 
+**add_members_action_s3_url** | **str** |  | [optional] 
 **valid_email** | **List[str]** |  | [optional] 
+**in_valid_email** | **List[str]** |  | [optional] 
 
 ## Example
 

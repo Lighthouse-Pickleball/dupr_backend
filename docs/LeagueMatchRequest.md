@@ -5,20 +5,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bracket_id** | **int** |  | 
-**club_id** | **int** |  | 
-**event_name** | **str** |  | [optional] 
-**format** | **str** |  | 
-**league** | **str** |  | [optional] 
-**league_id** | **int** |  | 
-**league_match_id** | **int** |  | 
+**venue** | **str** |  | [optional] 
 **location** | **str** |  | [optional] 
+**tournament** | **str** |  | [optional] 
+**event_name** | **str** |  | [optional] 
+**league** | **str** |  | [optional] 
 **match_date** | **date** |  | 
-**score_format_id** | **int** |  | [optional] 
 **team1** | [**Team**](Team.md) |  | 
 **team2** | [**Team**](Team.md) |  | 
-**tournament** | **str** |  | [optional] 
-**venue** | **str** |  | [optional] 
+**score_format_id** | **int** |  | [optional] 
+**format** | **str** |  | 
+**league_match_id** | **int** |  | 
+**bracket_id** | **int** |  | 
+**club_id** | **int** |  | 
+**league_id** | **int** |  | 
 
 ## Example
 

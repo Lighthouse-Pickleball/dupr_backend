@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**event_id** | **int** |  | 
 **message** | **str** |  | [optional] 
+**event_id** | **int** |  | 
 **waitlist_position** | **int** |  | 
 
 ## Example

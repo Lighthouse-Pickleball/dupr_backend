@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bracket_id** | **int** |  | 
 **bracket_name** | **str** |  | 
-**process_refund** | **bool** |  | 
-**refund_amount** | **float** |  | 
 **registration_id** | **int** |  | 
+**process_refund** | **bool** |  | 
 **withdraw_player** | **bool** |  | 
+**refund_amount** | **float** |  | 
 
 ## Example
 

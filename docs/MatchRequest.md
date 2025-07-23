@@ -5,20 +5,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**club_id** | **int** |  | [optional] 
-**event** | **str** |  | [optional] 
-**event_date** | **date** |  | 
-**format** | **str** |  | 
-**league** | **str** |  | [optional] 
+**venue** | **str** | Since 2022, we are only using location field based on autocomplete | [optional] 
 **location** | **str** |  | [optional] 
-**match_type** | **str** |  | [optional] 
-**notify** | **bool** |  | [optional] 
-**score_format_id** | **int** |  | [optional] 
-**scores** | [**List[PairOfintAndint]**](PairOfintAndint.md) |  | 
+**tournament** | **str** |  | [optional] 
+**league** | **str** |  | [optional] 
+**event_date** | **date** |  | 
 **team1** | [**Team**](Team.md) |  | 
 **team2** | [**Team**](Team.md) |  | 
-**tournament** | **str** |  | [optional] 
-**venue** | **str** |  | [optional] 
+**score_format_id** | **int** |  | [optional] 
+**format** | **str** |  | 
+**event** | **str** |  | [optional] 
+**match_type** | **str** |  | [optional] 
+**club_id** | **int** |  | [optional] 
+**notify** | **bool** |  | 
+**scores** | [**List[PairIntegerInteger]**](PairIntegerInteger.md) |  | 
 
 ## Example
 

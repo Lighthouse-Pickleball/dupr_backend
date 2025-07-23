@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**auto_approve_join_requests** | **bool** |  | [optional] 
+**auto_approve_join_requests** | **bool** |  | 
 
 ## Example
 

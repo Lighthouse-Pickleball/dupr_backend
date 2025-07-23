@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**member_ranking** | [**PageOfMemberRanking**](PageOfMemberRanking.md) |  | 
 **my_ranking** | [**MemberRanking**](MemberRanking.md) |  | [optional] 
+**member_ranking** | [**PageMemberRanking**](PageMemberRanking.md) |  | 
 
 ## Example
 

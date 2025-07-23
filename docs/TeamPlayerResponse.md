@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**allow_substitution** | **bool** |  | 
-**dupr_id** | **str** |  | [optional] 
-**full_name** | **str** |  | 
 **id** | **int** |  | [optional] 
+**full_name** | **str** |  | 
+**dupr_id** | **str** |  | [optional] 
 **image_url** | **str** |  | [optional] 
+**allow_substitution** | **bool** |  | 
 **post_match_rating** | [**PostMatchRating**](PostMatchRating.md) |  | [optional] 
 **validated_match** | **bool** |  | [optional] 
 

@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**distance** | [**Distance**](Distance.md) |  | [optional] 
-**division** | **str** |  | [optional] 
-**geo_point** | [**GeoPoint**](GeoPoint.md) |  | [optional] 
 **name** | **str** |  | [optional] 
-**place_id** | **str** |  | [optional] 
 **statuses** | **List[str]** |  | [optional] 
+**place_id** | **str** |  | [optional] 
+**distance** | [**Distance**](Distance.md) |  | [optional] 
+**geo_point** | [**GeoPoint**](GeoPoint.md) |  | [optional] 
+**division** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
 
 ## Example

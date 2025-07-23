@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **match_id** | **str** |  | 
 **match_id_type** | **str** |  | 
-**notify** | **bool** |  | [optional] 
-**reason** | **str** |  | [optional] 
 **requested_by_dupr_id** | **str** |  | 
+**reason** | **str** |  | 
+**notify** | **bool** |  | 
 
 ## Example
 

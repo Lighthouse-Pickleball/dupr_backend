@@ -5,15 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **int** |  | 
+**player1** | **int** |  | 
+**player2** | **int** |  | [optional] 
 **game1** | **int** |  | [optional] 
 **game2** | **int** |  | [optional] 
 **game3** | **int** |  | [optional] 
 **game4** | **int** |  | [optional] 
 **game5** | **int** |  | [optional] 
-**id** | **int** |  | [optional] 
-**player1** | **int** |  | 
-**player2** | **int** |  | [optional] 
 **winner** | **bool** |  | [optional] 
+**player_ids** | **List[int]** |  | 
 
 ## Example
 

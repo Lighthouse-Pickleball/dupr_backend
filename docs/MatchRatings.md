@@ -5,12 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**average_opponent_dupr** | **str** |  | [optional] 
-**average_partner_dupr** | **str** |  | [optional] 
-**average_points_won_percent** | **str** |  | [optional] 
-**half_life** | **str** |  | [optional] 
-**losses** | **int** |  | [optional] 
-**wins** | **int** |  | [optional] 
+**average_partner_dupr** | **float** |  | 
+**average_opponent_dupr** | **float** |  | 
+**average_points_won_percent** | **float** |  | 
+**half_life** | **float** |  | 
 
 ## Example
 

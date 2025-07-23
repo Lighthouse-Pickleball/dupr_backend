@@ -1,50 +1,56 @@
 # dupr_backend.ChatApi
 
-All URIs are relative to *http://https://backend.mydupr.com*
+All URIs are relative to *https://api.dupr.gg*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**chat_token_using_get**](ChatApi.md#chat_token_using_get) | **GET** /chat/{version}/token/{id} | chatToken
-[**get_self_token_using_get**](ChatApi.md#get_self_token_using_get) | **GET** /chat/{version}/token/self | getSelfToken
-[**update_user_using_post**](ChatApi.md#update_user_using_post) | **POST** /chat/{version}/update/user | updateUser
+[**chat_token**](ChatApi.md#chat_token) | **GET** /chat/{version}/token/{id} | 
+[**get_self_token**](ChatApi.md#get_self_token) | **GET** /chat/{version}/token/self | 
+[**update_user**](ChatApi.md#update_user) | **POST** /chat/{version}/update/user | 
 
 
-# **chat_token_using_get**
-> SingleWrapperOfChatTokenResponse chat_token_using_get(authorization, id, version)
-
-chatToken
+# **chat_token**
+> SingleWrapperChatTokenResponse chat_token(version, id)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_chat_token_response import SingleWrapperOfChatTokenResponse
+from dupr_backend.models.single_wrapper_chat_token_response import SingleWrapperChatTokenResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ChatApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    id = 56 # int | id
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    id = 56 # int | 
 
     try:
-        # chatToken
-        api_response = api_instance.chat_token_using_get(authorization, id, version)
-        print("The response of ChatApi->chat_token_using_get:\n")
+        api_response = api_instance.chat_token(version, id)
+        print("The response of ChatApi->chat_token:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ChatApi->chat_token_using_get: %s\n" % e)
+        print("Exception when calling ChatApi->chat_token: %s\n" % e)
 ```
 
 
@@ -54,17 +60,16 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **id** | **int**| id | 
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **id** | **int**|  | 
 
 ### Return type
 
-[**SingleWrapperOfChatTokenResponse**](SingleWrapperOfChatTokenResponse.md)
+[**SingleWrapperChatTokenResponse**](SingleWrapperChatTokenResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -76,45 +81,50 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_self_token_using_get**
-> SingleWrapperOfChatTokenResponse get_self_token_using_get(authorization, version)
-
-getSelfToken
+# **get_self_token**
+> SingleWrapperChatTokenResponse get_self_token(version)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_chat_token_response import SingleWrapperOfChatTokenResponse
+from dupr_backend.models.single_wrapper_chat_token_response import SingleWrapperChatTokenResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ChatApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
 
     try:
-        # getSelfToken
-        api_response = api_instance.get_self_token_using_get(authorization, version)
-        print("The response of ChatApi->get_self_token_using_get:\n")
+        api_response = api_instance.get_self_token(version)
+        print("The response of ChatApi->get_self_token:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ChatApi->get_self_token_using_get: %s\n" % e)
+        print("Exception when calling ChatApi->get_self_token: %s\n" % e)
 ```
 
 
@@ -124,16 +134,15 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
 
 ### Return type
 
-[**SingleWrapperOfChatTokenResponse**](SingleWrapperOfChatTokenResponse.md)
+[**SingleWrapperChatTokenResponse**](SingleWrapperChatTokenResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -145,17 +154,15 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_user_using_post**
-> Wrapper update_user_using_post(authorization, version, request)
-
-updateUser
+# **update_user**
+> Wrapper update_user(version, update_user_request)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
@@ -164,28 +171,35 @@ from dupr_backend.models.wrapper import Wrapper
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ChatApi(api_client)
-    authorization = 'Bearer ' # str |  (default to 'Bearer ')
-    version = 'v1.0' # str | version (default to 'v1.0')
-    request = dupr_backend.UpdateUserRequest() # UpdateUserRequest | request
+    version = 'version_example' # str | 
+    update_user_request = dupr_backend.UpdateUserRequest() # UpdateUserRequest | 
 
     try:
-        # updateUser
-        api_response = api_instance.update_user_using_post(authorization, version, request)
-        print("The response of ChatApi->update_user_using_post:\n")
+        api_response = api_instance.update_user(version, update_user_request)
+        print("The response of ChatApi->update_user:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ChatApi->update_user_using_post: %s\n" % e)
+        print("Exception when calling ChatApi->update_user: %s\n" % e)
 ```
 
 
@@ -195,9 +209,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **str**|  | [default to &#39;Bearer &#39;]
- **version** | **str**| version | [default to &#39;v1.0&#39;]
- **request** | [**UpdateUserRequest**](UpdateUserRequest.md)| request | 
+ **version** | **str**|  | 
+ **update_user_request** | [**UpdateUserRequest**](UpdateUserRequest.md)|  | 
 
 ### Return type
 
@@ -205,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -217,7 +230,6 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

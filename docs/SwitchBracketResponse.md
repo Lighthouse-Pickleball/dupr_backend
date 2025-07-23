@@ -5,12 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**failed_reason** | **str** |  | [optional] 
-**is_source_re_seeded** | **bool** |  | [optional] 
-**is_success** | **bool** |  | [optional] 
-**is_target_re_seeded** | **bool** |  | [optional] 
-**registration_id** | **int** |  | [optional] 
 **user_id** | **int** |  | [optional] 
+**is_success** | **bool** |  | 
+**failed_reason** | **str** |  | [optional] 
+**registration_id** | **int** |  | [optional] 
+**is_source_re_seeded** | **bool** |  | 
+**is_target_re_seeded** | **bool** |  | 
+**source_re_seeded** | **bool** |  | [optional] 
+**target_re_seeded** | **bool** |  | [optional] 
 
 ## Example
 

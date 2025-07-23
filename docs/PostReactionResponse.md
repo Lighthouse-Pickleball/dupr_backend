@@ -5,21 +5,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**activity_id** | **str** |  | 
+**id** | **str** |  | 
+**post_id** | **str** |  | 
 **actor** | [**ActivityUser**](ActivityUser.md) |  | 
-**children** | **Dict[str, List[PostReactionResponse]]** |  | 
+**react** | **str** |  | 
 **comment** | **str** |  | 
 **created_at** | **int** |  | 
+**updated_at** | **int** |  | 
 **getstream_id** | **str** |  | 
-**id** | **str** |  | 
+**activity_id** | **str** |  | 
+**parent_id** | **str** |  | 
+**reaction_counts** | **Dict[str, float]** |  | 
+**tags** | [**List[ActivityUser]**](ActivityUser.md) |  | 
 **images** | **List[str]** |  | 
 **matches** | [**List[Match]**](Match.md) |  | 
-**parent_id** | **str** |  | 
-**post_id** | **str** |  | 
-**react** | **str** |  | 
-**reaction_counts** | **Dict[str, object]** |  | 
-**tags** | [**List[ActivityUser]**](ActivityUser.md) |  | 
-**updated_at** | **int** |  | 
 
 ## Example
 

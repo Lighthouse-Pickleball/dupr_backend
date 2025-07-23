@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**failed** | **List[int]** |  | [optional] 
+**success** | **List[int]** |  | 
+**failed** | **List[int]** |  | 
 **session** | [**SessionResponse**](SessionResponse.md) |  | [optional] 
-**success** | **List[int]** |  | [optional] 
 
 ## Example
 

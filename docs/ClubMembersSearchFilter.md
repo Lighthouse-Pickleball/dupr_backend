@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**age** | [**ClubMembersAgeFilter**](ClubMembersAgeFilter.md) |  | [optional] 
-**club_invitation_type** | **List[str]** |  | [optional] 
 **gender** | **str** |  | [optional] 
+**age** | [**ClubMembersAgeFilter**](ClubMembersAgeFilter.md) |  | [optional] 
+**rating** | [**ClubMembersRatingFilter**](ClubMembersRatingFilter.md) |  | [optional] 
+**status** | **str** |  | [optional] 
 **lat** | **float** |  | [optional] 
 **lng** | **float** |  | [optional] 
 **radius_in_meters** | **float** |  | [optional] 
-**rating** | [**ClubMembersRatingFilter**](ClubMembersRatingFilter.md) |  | [optional] 
-**status** | **str** |  | [optional] 
+**club_invitation_type** | **List[str]** |  | [optional] 
 
 ## Example
 

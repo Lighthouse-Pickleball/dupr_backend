@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**role** | **str** |  | [optional] 
-**role_id** | **int** |  | [optional] 
+**role_id** | **int** |  | 
+**role** | **str** |  | 
 
 ## Example
 

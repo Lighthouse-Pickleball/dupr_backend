@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bracket_id** | **int** |  | 
 **club_id** | **int** |  | 
 **league_match_id** | **int** |  | 
+**bracket_id** | **int** |  | 
 **limit** | **int** |  | 
 **offset** | **int** |  | 
 

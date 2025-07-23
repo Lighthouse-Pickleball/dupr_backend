@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**full_name** | **str** |  | 
 **id** | **int** |  | 
+**full_name** | **str** |  | 
 **image_url** | **str** |  | [optional] 
-**ranking** | **int** |  | 
 **rating** | **str** |  | [optional] 
+**ranking** | **int** |  | 
 **reliability** | **int** |  | 
 
 ## Example

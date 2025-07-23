@@ -5,19 +5,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address_id** | **int** |  | 
-**club_id** | **int** |  | 
+**event_name** | **str** |  | 
+**organizers** | [**List[MILPEventOrganizerRequest]**](MILPEventOrganizerRequest.md) |  | 
 **default_entry_fee** | **float** |  | 
 **default_max_teams** | **int** |  | 
 **default_max_waitlist** | **int** |  | 
 **description** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
-**divisions** | [**List[MILPDivisionRequest]**](MILPDivisionRequest.md) |  | 
-**duration** | **List[date]** |  | 
-**event_name** | **str** |  | 
+**address_id** | **int** |  | 
 **event_type** | **str** |  | 
-**organizers** | [**List[MILPEventOrganizerRequest]**](MILPEventOrganizerRequest.md) |  | 
-**status** | **str** |  | [optional] 
 **time_zone** | **str** |  | 
+**duration** | **List[date]** |  | 
+**divisions** | [**List[MILPDivisionRequest]**](MILPDivisionRequest.md) |  | 
+**club_id** | **int** |  | 
+**status** | **str** |  | [optional] 
 
 ## Example
 

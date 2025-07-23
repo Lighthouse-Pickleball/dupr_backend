@@ -6,10 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bracket_id** | **int** |  | 
-**filters** | [**Filters**](Filters.md) |  | [optional] 
-**league_id** | **int** |  | [optional] 
 **query** | **str** |  | 
+**filters** | [**Filters**](Filters.md) |  | [optional] 
 **sort** | [**PlayerSort**](PlayerSort.md) |  | [optional] 
+**league_id** | **int** |  | 
 
 ## Example
 

@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error** | **str** |  | [optional] 
-**filename** | **str** |  | [optional] 
 **id** | **int** |  | 
 **url** | **str** |  | 
+**filename** | **str** |  | [optional] 
+**error** | **str** |  | [optional] 
 
 ## Example
 

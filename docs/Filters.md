@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**registration_status** | **str** |  | [optional] 
+**payment_status** | **str** |  | [optional] 
+**partner_status** | **str** |  | [optional] 
 **is_registered** | **bool** |  | [optional] 
 **is_wait_listed** | **bool** |  | [optional] 
-**partner_status** | **str** |  | [optional] 
-**payment_status** | **str** |  | [optional] 
-**registration_status** | **str** |  | [optional] 
 
 ## Example
 

@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**singles** | [**MatchRatings**](MatchRatings.md) |  | 
 **doubles** | [**MatchRatings**](MatchRatings.md) |  | 
 **resul_overview** | [**RatingsOverviewResponse**](RatingsOverviewResponse.md) |  | 
-**singles** | [**MatchRatings**](MatchRatings.md) |  | 
 
 ## Example
 

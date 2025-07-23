@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**activity_id** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **kind** | **str** |  | [optional] 
 **parent** | **str** |  | [optional] 
 **user_id** | **str** |  | [optional] 
+**activity_id** | **str** |  | [optional] 
 
 ## Example
 

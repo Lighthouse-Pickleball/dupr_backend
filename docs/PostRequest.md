@@ -5,15 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**actor** | **int** |  | [optional] 
-**checkin** | [**CheckInLocation**](CheckInLocation.md) |  | [optional] 
-**content** | **str** |  | [optional] 
-**feed** | [**Feed**](Feed.md) |  | [optional] 
-**hashtags** | **List[str]** |  | [optional] 
-**images** | **List[str]** |  | [optional] 
-**matches** | **List[int]** |  | [optional] 
-**tags** | **List[int]** |  | [optional] 
-**verb** | **str** |  | [optional] 
+**actor** | **int** |  | 
+**feed** | [**Feed**](Feed.md) |  | 
+**verb** | **str** |  | 
+**content** | **str** |  | 
+**tags** | **List[int]** |  | 
+**hashtags** | **List[str]** |  | 
+**images** | **List[str]** |  | 
+**matches** | **List[int]** |  | 
+**checkin** | [**CheckInLocation**](CheckInLocation.md) |  | 
 
 ## Example
 

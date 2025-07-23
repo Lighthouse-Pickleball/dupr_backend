@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**user_id** | **int** |  | 
+**bracket_id** | **int** |  | 
+**league_id** | **int** |  | 
+**payment_status** | **str** |  | 
+**registration_status** | **str** |  | 
 **bracket_fees_paid** | **float** |  | [optional] 
-**bracket_id** | **int** |  | [optional] 
 **event_fees_paid** | **float** |  | [optional] 
 **is_registered** | **bool** |  | [optional] 
-**league_id** | **int** |  | [optional] 
-**payment_status** | **str** |  | [optional] 
-**registration_status** | **str** |  | [optional] 
-**user_id** | **int** |  | [optional] 
 
 ## Example
 

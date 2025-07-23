@@ -5,12 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**event_refunded_amount** | **float** |  | 
-**is_participant1** | **bool** |  | 
-**is_wait_listed** | **bool** |  | 
+**registration_id** | **int** |  | 
 **player1** | [**Participant**](Participant.md) |  | [optional] 
 **player2** | [**Participant**](Participant.md) |  | [optional] 
-**registration_id** | **int** |  | 
+**is_participant1** | **bool** |  | 
+**is_wait_listed** | **bool** |  | 
+**event_refunded_amount** | **float** |  | 
+**participant1** | **bool** |  | [optional] 
+**wait_listed** | **bool** |  | [optional] 
 
 ## Example
 

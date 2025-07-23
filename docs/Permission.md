@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**operations** | **List[str]** |  | [optional] 
 **resource** | **str** |  | 
+**operations** | **List[str]** |  | 
 
 ## Example
 

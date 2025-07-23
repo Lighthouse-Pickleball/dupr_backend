@@ -5,16 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**default_rating** | **str** |  | [optional] 
-**doubles** | **str** |  | [optional] 
-**doubles_provisional** | **bool** |  | [optional] 
-**doubles_reliability_score** | **float** |  | [optional] 
-**doubles_verified** | **str** |  | [optional] 
-**provisional_ratings** | [**ProvisionalRating**](ProvisionalRating.md) |  | [optional] 
 **singles** | **str** |  | [optional] 
+**singles_verified** | **str** |  | [optional] 
 **singles_provisional** | **bool** |  | [optional] 
 **singles_reliability_score** | **float** |  | [optional] 
-**singles_verified** | **str** |  | [optional] 
+**doubles** | **str** |  | [optional] 
+**doubles_verified** | **str** |  | [optional] 
+**doubles_provisional** | **bool** |  | [optional] 
+**doubles_reliability_score** | **float** |  | [optional] 
+**default_rating** | **str** |  | [optional] 
+**provisional_ratings** | [**ProvisionalRating**](ProvisionalRating.md) |  | [optional] 
 
 ## Example
 

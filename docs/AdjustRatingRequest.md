@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**doubles** | **float** |  | [optional] 
-**doubles_verified** | **float** |  | [optional] 
-**dupr_id** | **str** |  | [optional] 
+**user_id** | **int** |  | [optional] 
 **email** | **str** |  | [optional] 
-**reason** | **str** |  | 
+**dupr_id** | **str** |  | [optional] 
 **singles** | **float** |  | [optional] 
 **singles_verified** | **float** |  | [optional] 
-**user_id** | **int** |  | [optional] 
+**doubles** | **float** |  | [optional] 
+**doubles_verified** | **float** |  | [optional] 
+**reason** | **str** |  | 
 
 ## Example
 

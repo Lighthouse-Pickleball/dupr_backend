@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**filters** | [**EventFilter**](EventFilter.md) |  | [optional] 
-**limit** | **int** |  | [optional] 
 **offset** | **int** |  | [optional] 
+**limit** | **int** |  | [optional] 
+**filters** | [**EventFilter**](EventFilter.md) |  | [optional] 
 
 ## Example
 

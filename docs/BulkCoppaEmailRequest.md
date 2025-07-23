@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dupr_ids** | **List[str]** |  | 
 **return_email** | **str** |  | [optional] 
+**dupr_ids** | **List[str]** |  | 
 
 ## Example
 

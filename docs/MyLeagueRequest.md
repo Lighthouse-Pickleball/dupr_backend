@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**limit** | **int** |  | [optional] 
 **offset** | **int** |  | [optional] 
+**limit** | **int** |  | [optional] 
 **status** | **str** |  | [optional] 
 
 ## Example

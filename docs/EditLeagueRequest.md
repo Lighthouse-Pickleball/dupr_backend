@@ -5,26 +5,28 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**additional_information** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
-**address_id** | **int** |  | 
-**advertise_end** | **date** |  | [optional] 
-**advertise_start** | **date** |  | [optional] 
-**attributes** | [**Dict[str, Attribute]**](Attribute.md) |  | [optional] 
 **league_id** | **int** |  | 
-**league_name** | **str** |  | 
-**liability_waiver_id** | **int** |  | [optional] 
-**long_description** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
-**media_id** | **int** |  | [optional] 
-**member_fee** | **float** |  | [optional] 
-**membership_permission** | **str** |  | [optional] 
-**non_member_fee** | **float** |  | 
-**refund_policy** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
-**registration_url** | **str** |  | [optional] 
-**safety_policy** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
-**short_description** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
-**status** | **str** |  | [optional] 
-**type** | **str** |  | [optional] 
 **user_id** | **int** |  | 
+**league_name** | **str** |  | 
+**media_id** | **int** |  | [optional] 
+**liability_waiver_id** | **int** |  | [optional] 
+**member_fee** | **float** |  | [optional] 
+**non_member_fee** | **float** |  | 
+**long_description** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
+**short_description** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
+**additional_information** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
+**refund_policy** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
+**safety_policy** | [**LeagueContentRequest**](LeagueContentRequest.md) |  | [optional] 
+**address_id** | **int** |  | 
+**type** | **str** |  | [optional] 
+**attributes** | [**Dict[str, Attribute]**](Attribute.md) |  | [optional] 
+**membership_permission** | **str** |  | [optional] 
+**advertise_start** | **date** |  | [optional] 
+**advertise_end** | **date** |  | [optional] 
+**status** | **str** |  | [optional] 
+**registration_url** | **str** |  | [optional] 
+**start_date** | **date** |  | [optional] 
+**end_date** | **date** |  | [optional] 
 
 ## Example
 

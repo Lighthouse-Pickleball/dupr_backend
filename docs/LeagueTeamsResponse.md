@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**partner_status** | **str** |  | [optional] 
+**registration_id** | **int** |  | 
 **player1** | [**PlayerResponse**](PlayerResponse.md) |  | 
 **player2** | [**PlayerResponse**](PlayerResponse.md) |  | [optional] 
-**registration_id** | **int** |  | 
 **team_status** | **str** |  | [optional] 
+**partner_status** | **str** |  | [optional] 
 
 ## Example
 

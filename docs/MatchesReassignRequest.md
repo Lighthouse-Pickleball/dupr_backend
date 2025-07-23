@@ -6,11 +6,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **match_code** | **str** |  | 
-**notify** | **bool** |  | [optional] 
 **source** | **str** |  | 
 **source_merge_input_type** | **str** |  | 
 **target** | **str** |  | 
 **target_merge_input_type** | **str** |  | 
+**notify** | **bool** |  | [optional] 
 
 ## Example
 

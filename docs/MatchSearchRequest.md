@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**offset** | **int** |  | 
+**limit** | **int** |  | 
 **filters** | [**MatchFilters**](MatchFilters.md) |  | [optional] 
-**limit** | **int** |  | [optional] 
-**offset** | **int** |  | [optional] 
 **sort** | [**MatchSort**](MatchSort.md) |  | [optional] 
 
 ## Example

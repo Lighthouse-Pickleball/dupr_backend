@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**limit** | **int** |  | 
-**location** | [**ExternalFilterLocation**](ExternalFilterLocation.md) |  | [optional] 
-**offset** | **int** |  | 
-**own** | **bool** |  | 
 **query** | **str** |  | 
+**own** | **bool** |  | 
+**offset** | **int** |  | 
+**limit** | **int** |  | 
+**location** | [**ExternalFilterLocation**](ExternalFilterLocation.md) | Latitude and longitude of a place with radius to filter by approximate area | [optional] 
 
 ## Example
 

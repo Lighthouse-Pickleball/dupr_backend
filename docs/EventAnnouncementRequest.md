@@ -6,11 +6,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **announcement_id** | **int** |  | 
-**bracket_id** | **int** |  | 
-**club_id** | **int** |  | 
-**description** | [**AnnouncementContent**](AnnouncementContent.md) |  | 
 **league_id** | **int** |  | 
+**bracket_id** | **int** |  | 
 **title** | **str** |  | 
+**description** | [**AnnouncementContent**](AnnouncementContent.md) |  | 
+**club_id** | **int** |  | 
 
 ## Example
 

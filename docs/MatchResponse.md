@@ -5,36 +5,36 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bracket_id** | **int** |  | [optional] 
-**client_id** | **int** |  | [optional] 
-**club_id** | **int** |  | [optional] 
-**confirmed** | **bool** |  | 
-**created** | **str** |  | [optional] 
-**creator** | [**BasicUserInfo**](BasicUserInfo.md) |  | [optional] 
-**display_identity** | **str** |  | 
-**elo_calculated** | **bool** |  | [optional] 
-**event_date** | **str** |  | 
-**event_format** | **str** |  | 
-**event_name** | **str** |  | [optional] 
 **id** | **int** |  | [optional] 
-**initialization** | **bool** |  | [optional] 
-**league** | **str** |  | [optional] 
-**league_id** | **int** |  | [optional] 
-**league_match_id** | **int** |  | [optional] 
-**location** | **str** |  | 
 **match_id** | **int** |  | [optional] 
-**match_score_added** | **bool** |  | 
-**match_source** | **str** |  | [optional] 
-**match_type** | **str** |  | [optional] 
-**modified** | **str** |  | [optional] 
-**no_of_games** | **int** |  | [optional] 
-**score_format** | [**ScoreFormatResponse**](ScoreFormatResponse.md) |  | [optional] 
-**status** | **str** |  | [optional] 
-**teams** | [**List[TeamResponse]**](TeamResponse.md) |  | 
-**tournament** | **str** |  | [optional] 
 **user_id** | **int** |  | 
-**validator** | [**BasicUserInfo**](BasicUserInfo.md) |  | [optional] 
+**display_identity** | **str** |  | 
 **venue** | **str** |  | 
+**location** | **str** |  | 
+**match_score_added** | **bool** |  | 
+**tournament** | **str** |  | 
+**league** | **str** |  | [optional] 
+**event_date** | **date** |  | 
+**event_format** | **str** |  | 
+**score_format** | [**ScoreFormatResponse**](ScoreFormatResponse.md) |  | [optional] 
+**confirmed** | **bool** |  | 
+**teams** | [**List[TeamResponse]**](TeamResponse.md) |  | 
+**created** | **datetime** |  | [optional] 
+**modified** | **datetime** |  | [optional] 
+**event_name** | **str** |  | [optional] 
+**match_source** | **str** |  | [optional] 
+**club_id** | **int** |  | [optional] 
+**league_id** | **int** |  | [optional] 
+**bracket_id** | **int** |  | [optional] 
+**league_match_id** | **int** |  | [optional] 
+**no_of_games** | **int** |  | 
+**status** | **str** |  | [optional] 
+**match_type** | **str** |  | [optional] 
+**elo_calculated** | **bool** |  | [optional] 
+**initialization** | **bool** |  | [optional] 
+**validator** | [**BasicUserInfo**](BasicUserInfo.md) |  | [optional] 
+**creator** | [**BasicUserInfo**](BasicUserInfo.md) |  | [optional] 
+**client_id** | **int** |  | [optional] 
 
 ## Example
 

@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**announcement_id** | **int** |  | [optional] 
+**announcement_id** | **int** |  | 
+**league_id** | **int** |  | 
 **bracket_id** | **int** |  | [optional] 
-**email_sent** | **bool** |  | [optional] 
-**league_id** | **int** |  | [optional] 
-**push_sent** | **bool** |  | [optional] 
-**sms_sent** | **bool** |  | [optional] 
-**user_id** | **int** |  | [optional] 
+**user_id** | **int** |  | 
+**email_sent** | **bool** |  | 
+**push_sent** | **bool** |  | 
+**sms_sent** | **bool** |  | 
 
 ## Example
 

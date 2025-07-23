@@ -1,47 +1,55 @@
 # dupr_backend.MediaApi
 
-All URIs are relative to *http://https://backend.mydupr.com*
+All URIs are relative to *https://api.dupr.gg*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**upload_document_using_put**](MediaApi.md#upload_document_using_put) | **PUT** /media/{version}/document | uploadDocument
-[**upload_using_put**](MediaApi.md#upload_using_put) | **PUT** /media/{version}/image | upload
+[**upload**](MediaApi.md#upload) | **PUT** /media/{version}/image | 
+[**upload_document**](MediaApi.md#upload_document) | **PUT** /media/{version}/document | 
 
 
-# **upload_document_using_put**
-> SingleWrapperOfMediaResponse upload_document_using_put(version)
-
-uploadDocument
+# **upload**
+> SingleWrapperMediaResponse upload(version, file)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_media_response import SingleWrapperOfMediaResponse
+from dupr_backend.models.single_wrapper_media_response import SingleWrapperMediaResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MediaApi(api_client)
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    file = None # bytearray | 
 
     try:
-        # uploadDocument
-        api_response = api_instance.upload_document_using_put(version)
-        print("The response of MediaApi->upload_document_using_put:\n")
+        api_response = api_instance.upload(version, file)
+        print("The response of MediaApi->upload:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MediaApi->upload_document_using_put: %s\n" % e)
+        print("Exception when calling MediaApi->upload: %s\n" % e)
 ```
 
 
@@ -51,15 +59,16 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **file** | **bytearray**|  | 
 
 ### Return type
 
-[**SingleWrapperOfMediaResponse**](SingleWrapperOfMediaResponse.md)
+[**SingleWrapperMediaResponse**](SingleWrapperMediaResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -71,44 +80,51 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **upload_using_put**
-> SingleWrapperOfMediaResponse upload_using_put(version)
-
-upload
+# **upload_document**
+> SingleWrapperMediaResponse upload_document(version, file)
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_of_media_response import SingleWrapperOfMediaResponse
+from dupr_backend.models.single_wrapper_media_response import SingleWrapperMediaResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://https://backend.mydupr.com
+# Defining the host is optional and defaults to https://api.dupr.gg
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dupr_backend.Configuration(
-    host = "http://https://backend.mydupr.com"
+    host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MediaApi(api_client)
-    version = 'v1.0' # str | version (default to 'v1.0')
+    version = 'version_example' # str | 
+    file = None # bytearray | 
 
     try:
-        # upload
-        api_response = api_instance.upload_using_put(version)
-        print("The response of MediaApi->upload_using_put:\n")
+        api_response = api_instance.upload_document(version, file)
+        print("The response of MediaApi->upload_document:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MediaApi->upload_using_put: %s\n" % e)
+        print("Exception when calling MediaApi->upload_document: %s\n" % e)
 ```
 
 
@@ -118,15 +134,16 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**| version | [default to &#39;v1.0&#39;]
+ **version** | **str**|  | 
+ **file** | **bytearray**|  | 
 
 ### Return type
 
-[**SingleWrapperOfMediaResponse**](SingleWrapperOfMediaResponse.md)
+[**SingleWrapperMediaResponse**](SingleWrapperMediaResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -138,7 +155,6 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

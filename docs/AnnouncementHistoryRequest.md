@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**offset** | **int** |  | 
+**limit** | **int** |  | 
+**league_id** | **int** |  | 
 **bracket_id** | **int** |  | 
 **club_id** | **int** |  | 
-**league_id** | **int** |  | 
-**limit** | **int** |  | 
-**offset** | **int** |  | 
 
 ## Example
 

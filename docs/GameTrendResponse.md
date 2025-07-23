@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**game_lost** | **int** |  | [optional] 
-**game_won** | **int** |  | [optional] 
+**serial** | **int** |  | 
 **month** | **str** |  | [optional] 
-**serial** | **int** |  | [optional] 
-**total_games** | **int** |  | [optional] 
+**game_won** | **int** |  | 
+**game_lost** | **int** |  | 
+**total_games** | **int** |  | 
 
 ## Example
 

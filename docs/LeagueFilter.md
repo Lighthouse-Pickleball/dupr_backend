@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**city** | **List[str]** |  | [optional] 
-**duration_status** | **List[str]** |  | [optional] 
+**skill_level** | [**SkillLevelFilter**](SkillLevelFilter.md) |  | [optional] 
 **elimination** | **List[str]** |  | [optional] 
 **event_format** | **List[str]** |  | [optional] 
 **player_group** | **List[str]** |  | [optional] 
-**registration_status** | **List[str]** |  | [optional] 
-**skill_level** | [**SkillLevelFilter**](SkillLevelFilter.md) |  | [optional] 
+**city** | **List[str]** |  | [optional] 
 **status** | **List[str]** |  | [optional] 
+**duration_status** | **List[str]** |  | [optional] 
+**registration_status** | **List[str]** |  | [optional] 
 
 ## Example
 

@@ -5,15 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount_paid** | **float** |  | 
-**event_fee** | **float** |  | 
-**is_club_member** | **bool** |  | 
-**is_registered** | **bool** |  | 
-**is_wait_listed** | **bool** |  | 
-**payment_capture** | **bool** |  | 
 **payment_status** | **str** |  | 
-**player_status** | **str** |  | 
+**is_club_member** | **bool** |  | 
+**is_wait_listed** | **bool** |  | 
 **refunded_amount** | **float** |  | 
+**amount_paid** | **float** |  | 
+**payment_capture** | **bool** |  | 
+**player_status** | **str** |  | 
+**is_registered** | **bool** |  | 
+**event_fee** | **float** |  | 
 
 ## Example
 

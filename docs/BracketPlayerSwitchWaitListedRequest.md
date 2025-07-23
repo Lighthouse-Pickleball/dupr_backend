@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bracket_id** | **int** |  | 
 **club_id** | **int** |  | 
-**team_source** | [**Team0**](Team0.md) |  | 
-**team_target** | [**Team0**](Team0.md) |  | 
+**team_source** | [**Team**](Team.md) |  | 
+**team_target** | [**Team**](Team.md) |  | 
 
 ## Example
 

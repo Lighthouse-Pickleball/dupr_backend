@@ -5,21 +5,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bracket_id** | **int** |  | [optional] 
-**confirmed** | **bool** |  | [optional] 
-**created** | **str** |  | [optional] 
-**event_date** | **str** |  | [optional] 
-**event_name** | **str** |  | [optional] 
-**league** | **str** |  | [optional] 
+**match_source** | **str** |  | 
+**match_id** | **int** |  | 
+**requested_by** | **str** |  | 
+**reason** | **str** |  | 
 **league_id** | **int** |  | [optional] 
+**bracket_id** | **int** |  | [optional] 
 **league_match_id** | **int** |  | [optional] 
-**location** | **str** |  | [optional] 
-**match_id** | **int** |  | [optional] 
-**match_source** | **str** |  | [optional] 
-**reason** | **str** |  | [optional] 
-**requested_by** | **str** |  | [optional] 
-**teams** | [**List[TeamUpdateRequest]**](TeamUpdateRequest.md) |  | 
 **venue** | **str** |  | [optional] 
+**location** | **str** |  | [optional] 
+**league** | **str** |  | [optional] 
+**event_date** | **date** |  | [optional] 
+**confirmed** | **bool** |  | [optional] 
+**teams** | [**List[TeamUpdateRequest]**](TeamUpdateRequest.md) |  | 
+**created** | **datetime** |  | [optional] 
+**event_name** | **str** |  | [optional] 
+**player_ids** | **List[int]** |  | 
 
 ## Example
 

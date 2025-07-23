@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**billing_period** | **str** |  | 
-**cost** | **float** |  | 
-**is_active** | **bool** |  | 
-**renewal_date** | **str** |  | 
-**start_date** | **str** |  | 
 **user_id** | **int** |  | 
+**cost** | **float** |  | 
+**start_date** | **date** |  | 
+**renewal_date** | **date** |  | 
+**billing_period** | **str** |  | 
+**is_active** | **bool** |  | 
 
 ## Example
 

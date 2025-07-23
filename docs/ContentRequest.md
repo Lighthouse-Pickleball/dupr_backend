@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**header** | **str** |  | 
+**header_type** | **str** |  | 
 **content** | **str** |  | 
-**content_id** | **int** |  | 
 **content_type** | **str** |  | 
 **footer** | **str** |  | 
 **footer_type** | **str** |  | 
-**header** | **str** |  | 
-**header_type** | **str** |  | 
+**content_id** | **int** |  | 
 
 ## Example
 

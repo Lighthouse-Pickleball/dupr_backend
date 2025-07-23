@@ -5,56 +5,57 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**additional_information** | [**LeagueContentResponse**](LeagueContentResponse.md) |  | [optional] 
-**address** | [**AddressResponse**](AddressResponse.md) |  | [optional] 
-**age_string** | **str** |  | [optional] 
-**attributes** | **object** |  | [optional] 
-**brackets** | [**List[BracketResponse]**](BracketResponse.md) |  | 
-**can_show_standings** | **bool** |  | [optional] 
+**league_id** | **int** |  | 
 **club_id** | **int** |  | 
-**club_name** | **str** |  | [optional] 
-**contact_details** | [**List[LeagueContactDetailResponse]**](LeagueContactDetailResponse.md) |  | [optional] 
-**currency_details** | [**CurrencyDetailsResponse**](CurrencyDetailsResponse.md) |  | [optional] 
-**display_status** | **str** |  | [optional] 
+**user_id** | **int** |  | 
+**league_name** | **str** |  | 
+**media_url** | **str** |  | [optional] 
+**liability_waiver_url** | **str** |  | [optional] 
+**member_fee** | **float** |  | [optional] 
+**non_member_fee** | **float** |  | 
+**membership_permission** | **str** |  | [optional] 
+**short_description** | [**LeagueContentResponse**](LeagueContentResponse.md) |  | [optional] 
+**long_description** | [**LeagueContentResponse**](LeagueContentResponse.md) |  | [optional] 
+**additional_information** | [**LeagueContentResponse**](LeagueContentResponse.md) |  | [optional] 
+**refund_policy** | [**LeagueContentResponse**](LeagueContentResponse.md) |  | [optional] 
+**safety_policy** | [**LeagueContentResponse**](LeagueContentResponse.md) |  | [optional] 
+**address** | [**AddressResponse**](AddressResponse.md) |  | [optional] 
+**duration** | **List[str]** |  | 
+**registration_date** | **List[str]** |  | 
+**type** | **str** |  | [optional] 
+**attributes** | **Dict[str, object]** |  | [optional] 
+**brackets** | [**List[BracketResponse]**](BracketResponse.md) |  | 
+**status** | **str** |  | [optional] 
 **distance** | **str** |  | [optional] 
 **distance_in_miles** | **float** |  | [optional] 
-**duration** | **List[str]** |  | 
-**duration_date_time** | **List[str]** |  | [optional] 
-**duration_date_time_utc** | **List[str]** |  | [optional] 
-**duration_status** | **str** |  | [optional] 
-**duration_string** | **str** |  | [optional] 
-**elimination_string** | **str** |  | [optional] 
-**end_date** | **datetime** |  | 
-**event_format_string** | **str** |  | [optional] 
-**is_registered** | **bool** |  | [optional] 
-**league_id** | **int** |  | 
-**league_name** | **str** |  | 
 **league_price** | **str** |  | [optional] 
-**liability_waiver_id** | **int** |  | 
-**liability_waiver_url** | **str** |  | [optional] 
-**long_description** | [**LeagueContentResponse**](LeagueContentResponse.md) |  | [optional] 
-**media_id** | **int** |  | 
-**media_url** | **str** |  | [optional] 
-**member_fee** | **float** |  | [optional] 
-**membership_permission** | **str** |  | [optional] 
-**non_member_fee** | **float** |  | 
-**player_group** | **str** |  | [optional] 
-**refund_policy** | [**LeagueContentResponse**](LeagueContentResponse.md) |  | [optional] 
-**registered_members** | **int** |  | [optional] 
-**registration_date** | **List[str]** |  | 
-**registration_date_time** | **List[str]** |  | [optional] 
-**registration_date_time_utc** | **List[str]** |  | [optional] 
-**registration_status** | **str** |  | [optional] 
-**registration_string** | **str** |  | [optional] 
-**registration_url** | **str** |  | [optional] 
-**safety_policy** | [**LeagueContentResponse**](LeagueContentResponse.md) |  | [optional] 
-**short_address** | **str** |  | [optional] 
-**short_description** | [**LeagueContentResponse**](LeagueContentResponse.md) |  | [optional] 
 **skill_level** | **str** |  | [optional] 
+**age_string** | **str** |  | [optional] 
+**player_group** | **str** |  | [optional] 
+**duration_string** | **str** |  | [optional] 
+**registration_string** | **str** |  | [optional] 
+**registration_status** | **str** |  | [optional] 
+**event_format_string** | **str** |  | [optional] 
+**elimination_string** | **str** |  | [optional] 
+**short_address** | **str** |  | [optional] 
+**club_name** | **str** |  | [optional] 
+**contact_details** | [**List[LeagueContactDetailResponse]**](LeagueContactDetailResponse.md) |  | [optional] 
+**registered_members** | **int** |  | [optional] 
+**duration_status** | **str** |  | [optional] 
+**display_status** | **str** |  | [optional] 
+**is_registered** | **bool** |  | [optional] 
+**can_show_standings** | **bool** |  | [optional] 
+**liability_waiver_id** | **int** |  | 
+**media_id** | **int** |  | 
+**registration_date_time** | **List[str]** |  | [optional] 
+**duration_date_time** | **List[str]** |  | [optional] 
+**registration_date_time_utc** | **List[str]** |  | [optional] 
+**duration_date_time_utc** | **List[str]** |  | [optional] 
+**currency_details** | [**CurrencyDetailsResponse**](CurrencyDetailsResponse.md) |  | [optional] 
+**registration_url** | **str** |  | [optional] 
 **start_date** | **datetime** |  | 
-**status** | **str** |  | [optional] 
-**type** | **str** |  | [optional] 
-**user_id** | **int** |  | 
+**end_date** | **datetime** |  | 
+**registered** | **bool** |  | [optional] 
 
 ## Example
 

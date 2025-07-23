@@ -5,26 +5,26 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address_id** | **int** |  | [optional] 
-**apparel_brand** | **str** |  | [optional] 
-**birthdate** | **date** |  | [optional] 
-**default_rating** | **str** |  | [optional] 
-**display_username** | **bool** |  | [optional] 
-**first_name** | **str** |  | [optional] 
 **full_name** | **str** |  | 
-**gender** | **str** |  | [optional] 
-**hand** | **str** |  | [optional] 
-**is_valid_phone** | **bool** |  | [optional] 
-**iso_code** | **str** |  | [optional] 
+**first_name** | **str** |  | [optional] 
 **last_name** | **str** |  | [optional] 
+**iso_code** | **str** |  | [optional] 
+**phone** | **str** |  | [optional] 
+**username** | **str** |  | [optional] 
+**display_username** | **bool** |  | [optional] 
+**gender** | **str** |  | 
+**birthdate** | **date** |  | 
+**hand** | **str** |  | 
+**default_rating** | **str** |  | 
+**address_id** | **int** |  | 
 **media_id** | **int** |  | [optional] 
 **paddle_brand** | **str** |  | [optional] 
-**phone** | **str** |  | [optional] 
-**place_id** | **str** |  | [optional] 
+**shoe_brand** | **str** |  | [optional] 
+**apparel_brand** | **str** |  | [optional] 
 **preferred_ball** | **str** |  | [optional] 
 **preferred_side** | **str** |  | [optional] 
-**shoe_brand** | **str** |  | [optional] 
-**username** | **str** |  | [optional] 
+**place_id** | **str** |  | [optional] 
+**is_valid_phone** | **bool** |  | [optional] 
 
 ## Example
 
