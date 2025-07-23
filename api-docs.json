@@ -31743,21 +31743,6 @@
                         "format": "int64",
                         "example": 45785789
                     },
-                    "RoleName": {
-                        "type": "string",
-                        "enum": [
-                            "ADMIN",
-                            "PLAYER",
-                            "DIRECTOR",
-                            "ORGANIZER",
-                            "SUPPORT_EXECUTIVE",
-                            "MARKETING_EXECUTIVE",
-                            "PENDING_PLAYER",
-                            "MANAGER",
-                            "CAPTAIN"
-                        ],
-                        "writeOnly": true
-                    },
                     "isClubMember": {
                         "type": "boolean"
                     },
@@ -31777,7 +31762,7 @@
                     }
                 },
                 "required": [
-                    "RoleName",
+                    "roleName",
                     "isClubMember",
                     "roleId"
                 ]

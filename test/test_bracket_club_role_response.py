@@ -36,15 +36,14 @@ class TestBracketClubRoleResponse(unittest.TestCase):
         if include_optional:
             return BracketClubRoleResponse(
                 role_id = 45785789,
-                role_name = 'ADMIN',
                 is_club_member = True,
                 role_name = 'ADMIN'
             )
         else:
             return BracketClubRoleResponse(
                 role_id = 45785789,
-                role_name = 'ADMIN',
                 is_club_member = True,
+                role_name = 'ADMIN',
         )
         """
 
