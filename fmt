@@ -1,0 +1,13 @@
+import json
+
+# To format 'input.json' and save it to 'output.json':
+try:
+    with open('api-docs.json', 'r') as infile:
+        json_data = json.load(infile)
+
+    with open('output.json', 'w') as outfile:
+        json.dump(json_data, outfile, indent=4)
+    print("JSON file formatted successfully and saved to 'output.json'.")
+
+except FileNotFoundError:
+    print("Error: json file not found. Please create the file or provide the correct path.")
