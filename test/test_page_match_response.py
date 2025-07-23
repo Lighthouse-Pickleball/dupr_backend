@@ -125,7 +125,6 @@ class TestPageMatchResponse(unittest.TestCase):
                 offset = 90,
                 limit = 10,
                 total = 100,
-                total_value_relation = 'GREATER_THAN_OR_EQUAL_TO',
                 has_previous = True,
                 empty = False,
                 has_more = False,

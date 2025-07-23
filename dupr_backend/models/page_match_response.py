@@ -31,7 +31,7 @@ class PageMatchResponse(BaseModel):
     limit: StrictInt = Field(description="Limit value you sent in the request")
     total: StrictInt = Field(description="Total number of results available in database")
     hits: Optional[List[MatchResponse]] = Field(default=None, description="Array of results, can be empty.")
-    total_value_relation: StrictStr = Field(description="Relation to total results available.", alias="totalValueRelation")
+    total_value_relation: Optional[StrictStr] = Field(default=None, description="Relation to total results available.", alias="totalValueRelation")
     has_previous: StrictBool = Field(description="Is there any previous page", alias="hasPrevious")
     empty: StrictBool = Field(description="Are results empty")
     has_more: StrictBool = Field(description="Are there any more results to fetch", alias="hasMore")
@@ -40,6 +40,9 @@ class PageMatchResponse(BaseModel):
     @field_validator('total_value_relation')
     def total_value_relation_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['EQUAL_TO', 'GREATER_THAN_OR_EQUAL_TO']):
             raise ValueError("must be one of enum values ('EQUAL_TO', 'GREATER_THAN_OR_EQUAL_TO')")
         return value
