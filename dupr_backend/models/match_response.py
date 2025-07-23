@@ -37,7 +37,7 @@ class MatchResponse(BaseModel):
     venue: StrictStr
     location: StrictStr
     match_score_added: StrictBool = Field(alias="matchScoreAdded")
-    tournament: StrictStr
+    tournament: Optional[StrictStr] = None
     league: Optional[StrictStr] = None
     event_date: date = Field(alias="eventDate")
     event_format: StrictStr = Field(alias="eventFormat")
