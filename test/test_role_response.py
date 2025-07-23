@@ -43,7 +43,6 @@ class TestRoleResponse(unittest.TestCase):
             return RoleResponse(
                 id = 424255123,
                 role = 'PLAYER',
-                permissions = {USER=[VIEW, MODIFY], TOURNAMENT=[OWN_VIEW, OWN_MODIFY, OWN_DELETE]},
         )
         """
 

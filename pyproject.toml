@@ -5,7 +5,7 @@ description = "DUPR Backend APIs"
 authors = [
   {name = "OpenAPI Generator Community",email = "team@openapitools.org"},
 ]
-license = "Unlicense"
+license = "NoLicense"
 readme = "README.md"
 keywords = ["OpenAPI", "OpenAPI-Generator", "DUPR Backend APIs"]
 requires-python = ">=3.9"
