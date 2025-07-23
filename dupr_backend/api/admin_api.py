@@ -1778,11 +1778,9 @@ class AdminApi:
         # process the path parameters
         if version is not None:
             _path_params['version'] = version
-        # process the query parameters
         if club_id is not None:
-            
-            _query_params.append(('clubId', club_id))
-            
+            _path_params['clubId'] = club_id
+        # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -17521,6 +17519,7 @@ class AdminApi:
     @validate_call
     def populate_unknown_player_pre_ratings(
         self,
+        version: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17537,6 +17536,8 @@ class AdminApi:
         """populate_unknown_player_pre_ratings
 
 
+        :param version: (required)
+        :type version: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17560,6 +17561,7 @@ class AdminApi:
         """ # noqa: E501
 
         _param = self._populate_unknown_player_pre_ratings_serialize(
+            version=version,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -17583,6 +17585,7 @@ class AdminApi:
     @validate_call
     def populate_unknown_player_pre_ratings_with_http_info(
         self,
+        version: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17599,6 +17602,8 @@ class AdminApi:
         """populate_unknown_player_pre_ratings
 
 
+        :param version: (required)
+        :type version: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17622,6 +17627,7 @@ class AdminApi:
         """ # noqa: E501
 
         _param = self._populate_unknown_player_pre_ratings_serialize(
+            version=version,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -17645,6 +17651,7 @@ class AdminApi:
     @validate_call
     def populate_unknown_player_pre_ratings_without_preload_content(
         self,
+        version: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17661,6 +17668,8 @@ class AdminApi:
         """populate_unknown_player_pre_ratings
 
 
+        :param version: (required)
+        :type version: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17684,6 +17693,7 @@ class AdminApi:
         """ # noqa: E501
 
         _param = self._populate_unknown_player_pre_ratings_serialize(
+            version=version,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -17702,6 +17712,7 @@ class AdminApi:
 
     def _populate_unknown_player_pre_ratings_serialize(
         self,
+        version,
         _request_auth,
         _content_type,
         _headers,
@@ -17723,6 +17734,8 @@ class AdminApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if version is not None:
+            _path_params['version'] = version
         # process the query parameters
         # process the header parameters
         # process the form parameters

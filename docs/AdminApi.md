@@ -4762,7 +4762,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **populate_unknown_player_pre_ratings**
-> Wrapper populate_unknown_player_pre_ratings()
+> Wrapper populate_unknown_player_pre_ratings(version)
 
 ### Example
 
@@ -4794,9 +4794,10 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
+    version = 'version_example' # str | 
 
     try:
-        api_response = api_instance.populate_unknown_player_pre_ratings()
+        api_response = api_instance.populate_unknown_player_pre_ratings(version)
         print("The response of AdminApi->populate_unknown_player_pre_ratings:\n")
         pprint(api_response)
     except Exception as e:
@@ -4807,7 +4808,10 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | **str**|  | 
 
 ### Return type
 

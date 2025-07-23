@@ -928,7 +928,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **edit_teams**
-> Wrapper edit_teams(version, edit_event_team_request)
+> Wrapper edit_teams(bracket_id, version, edit_event_team_request)
 
 ### Example
 
@@ -951,11 +951,12 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
+    bracket_id = 56 # int | 
     version = 'version_example' # str | 
     edit_event_team_request = dupr_backend.EditEventTeamRequest() # EditEventTeamRequest | 
 
     try:
-        api_response = api_instance.edit_teams(version, edit_event_team_request)
+        api_response = api_instance.edit_teams(bracket_id, version, edit_event_team_request)
         print("The response of BracketsApi->edit_teams:\n")
         pprint(api_response)
     except Exception as e:
@@ -969,6 +970,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **bracket_id** | **int**|  | 
  **version** | **str**|  | 
  **edit_event_team_request** | [**EditEventTeamRequest**](EditEventTeamRequest.md)|  | 
 
@@ -3356,7 +3358,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **save_teams**
-> Wrapper save_teams(version, create_new_team_request)
+> Wrapper save_teams(bracket_id, version, create_new_team_request)
 
 ### Example
 
@@ -3379,11 +3381,12 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
+    bracket_id = 56 # int | 
     version = 'version_example' # str | 
     create_new_team_request = dupr_backend.CreateNewTeamRequest() # CreateNewTeamRequest | 
 
     try:
-        api_response = api_instance.save_teams(version, create_new_team_request)
+        api_response = api_instance.save_teams(bracket_id, version, create_new_team_request)
         print("The response of BracketsApi->save_teams:\n")
         pprint(api_response)
     except Exception as e:
@@ -3397,6 +3400,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **bracket_id** | **int**|  | 
  **version** | **str**|  | 
  **create_new_team_request** | [**CreateNewTeamRequest**](CreateNewTeamRequest.md)|  | 
 

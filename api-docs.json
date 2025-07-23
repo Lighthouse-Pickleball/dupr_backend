@@ -815,93 +815,6 @@
                 ]
             }
         },
-        "/club/{clubId}/members/{version}/staff": {
-            "get": {
-                "tags": [
-                    "Club"
-                ],
-                "operationId": "getAllStaffMembers",
-                "parameters": [
-                    {
-                        "name": "version",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "clubId",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int64"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/SingleWrapperStaffClubMemberResponse"
-                                }
-                            }
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "bearerAuth": []
-                    }
-                ]
-            },
-            "put": {
-                "tags": [
-                    "Club"
-                ],
-                "operationId": "updateStaffMembers",
-                "parameters": [
-                    {
-                        "name": "version",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/StaffClubMemberRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Wrapper"
-                                }
-                            }
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "bearerAuth": []
-                    }
-                ]
-            }
-        },
         "/club/{clubId}/members/{version}/multiple/add": {
             "put": {
                 "tags": [
@@ -1241,6 +1154,15 @@
                     },
                     {
                         "name": "clubId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "id",
                         "in": "path",
                         "required": true,
                         "schema": {
@@ -7778,6 +7700,15 @@
                             "type": "integer",
                             "format": "int64"
                         }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
                     }
                 ],
                 "requestBody": {
@@ -8726,6 +8657,15 @@
                 "operationId": "saveTeams",
                 "parameters": [
                     {
+                        "name": "bracketId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
                         "name": "version",
                         "in": "path",
                         "required": true,
@@ -8765,6 +8705,15 @@
                 ],
                 "operationId": "editTeams",
                 "parameters": [
+                    {
+                        "name": "bracketId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
                     {
                         "name": "version",
                         "in": "path",
@@ -9851,6 +9800,16 @@
                     "Admin"
                 ],
                 "operationId": "populateUnknownPlayerPreRatings",
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -10866,7 +10825,7 @@
                     },
                     {
                         "name": "clubId",
-                        "in": "query",
+                        "in": "path",
                         "required": true,
                         "schema": {
                             "type": "integer",
@@ -15098,6 +15057,15 @@
                 "operationId": "getAllRoles",
                 "parameters": [
                     {
+                        "name": "clubId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
                         "name": "version",
                         "in": "path",
                         "required": true,
@@ -17905,7 +17873,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/SingleWrapperAutocompletePrediction[]"
+                                    "$ref": "#/components/schemas/SingleWrapperAutocompletePrediction"
                                 }
                             }
                         }
@@ -29418,8 +29386,8 @@
                     "order": {
                         "type": "string",
                         "enum": [
-                            "asc",
-                            "desc"
+                            "ASC",
+                            "DESC"
                         ],
                         "example": "ASC/DESC"
                     }
@@ -36604,7 +36572,7 @@
                     }
                 }
             },
-            "SingleWrapperAutocompletePrediction[]": {
+            "SingleWrapperAutocompletePrediction": {
                 "type": "object",
                 "properties": {
                     "status": {
@@ -37031,3 +36999,4 @@
         }
     }
 }
+

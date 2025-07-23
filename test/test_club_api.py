@@ -140,12 +140,6 @@ class TestClubApi(unittest.TestCase):
         """
         pass
 
-    def test_get_all_staff_members(self) -> None:
-        """Test case for get_all_staff_members
-
-        """
-        pass
-
     def test_get_club(self) -> None:
         """Test case for get_club
 
@@ -244,12 +238,6 @@ class TestClubApi(unittest.TestCase):
 
     def test_update_club(self) -> None:
         """Test case for update_club
-
-        """
-        pass
-
-    def test_update_staff_members(self) -> None:
-        """Test case for update_staff_members
 
         """
         pass

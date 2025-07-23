@@ -353,7 +353,6 @@ Class | Method | HTTP request | Description
 *ClubApi* | [**get_all_members**](docs/ClubApi.md#get_all_members) | **POST** /club/{clubId}/members/{version}/all | 
 *ClubApi* | [**get_all_members_download**](docs/ClubApi.md#get_all_members_download) | **POST** /club/{clubId}/members/{version}/all/download | 
 *ClubApi* | [**get_all_roles**](docs/ClubApi.md#get_all_roles) | **GET** /club/{clubId}/roles/{version}/all | 
-*ClubApi* | [**get_all_staff_members**](docs/ClubApi.md#get_all_staff_members) | **GET** /club/{clubId}/members/{version}/staff | 
 *ClubApi* | [**get_club**](docs/ClubApi.md#get_club) | **GET** /club/{version}/{clubId} | 
 *ClubApi* | [**get_club_pending_invites**](docs/ClubApi.md#get_club_pending_invites) | **POST** /club/{clubId}/members/{version}/pending/invites | 
 *ClubApi* | [**get_club_restrictions1**](docs/ClubApi.md#get_club_restrictions1) | **POST** /club/{clubId}/{version}/restrictions | 
@@ -371,7 +370,6 @@ Class | Method | HTTP request | Description
 *ClubApi* | [**save_verified_multi_club_match_csv**](docs/ClubApi.md#save_verified_multi_club_match_csv) | **PUT** /club/match/bulk | 
 *ClubApi* | [**update_approval_status**](docs/ClubApi.md#update_approval_status) | **POST** /club/{clubId}/{version}/approval | 
 *ClubApi* | [**update_club**](docs/ClubApi.md#update_club) | **POST** /club/{version}/update | 
-*ClubApi* | [**update_staff_members**](docs/ClubApi.md#update_staff_members) | **PUT** /club/{clubId}/members/{version}/staff | 
 *EventsApi* | [**checkout_event**](docs/EventsApi.md#checkout_event) | **GET** /event/{leagueId}/{version}/checkout | 
 *EventsApi* | [**delete_league**](docs/EventsApi.md#delete_league) | **DELETE** /event/{version}/{leagueId} | 
 *EventsApi* | [**delete_text_content**](docs/EventsApi.md#delete_text_content) | **DELETE** /event/{version}/media | 

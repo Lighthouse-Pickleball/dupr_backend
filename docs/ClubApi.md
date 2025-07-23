@@ -23,7 +23,6 @@ Method | HTTP request | Description
 [**get_all_members**](ClubApi.md#get_all_members) | **POST** /club/{clubId}/members/{version}/all | 
 [**get_all_members_download**](ClubApi.md#get_all_members_download) | **POST** /club/{clubId}/members/{version}/all/download | 
 [**get_all_roles**](ClubApi.md#get_all_roles) | **GET** /club/{clubId}/roles/{version}/all | 
-[**get_all_staff_members**](ClubApi.md#get_all_staff_members) | **GET** /club/{clubId}/members/{version}/staff | 
 [**get_club**](ClubApi.md#get_club) | **GET** /club/{version}/{clubId} | 
 [**get_club_pending_invites**](ClubApi.md#get_club_pending_invites) | **POST** /club/{clubId}/members/{version}/pending/invites | 
 [**get_club_restrictions1**](ClubApi.md#get_club_restrictions1) | **POST** /club/{clubId}/{version}/restrictions | 
@@ -41,7 +40,6 @@ Method | HTTP request | Description
 [**save_verified_multi_club_match_csv**](ClubApi.md#save_verified_multi_club_match_csv) | **PUT** /club/match/bulk | 
 [**update_approval_status**](ClubApi.md#update_approval_status) | **POST** /club/{clubId}/{version}/approval | 
 [**update_club**](ClubApi.md#update_club) | **POST** /club/{version}/update | 
-[**update_staff_members**](ClubApi.md#update_staff_members) | **PUT** /club/{clubId}/members/{version}/staff | 
 
 
 # **add_club**
@@ -816,7 +814,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_club_match**
-> object delete_club_match(version, club_id, delete_match_request)
+> object delete_club_match(version, club_id, id, delete_match_request)
 
 ### Example
 
@@ -850,10 +848,11 @@ with dupr_backend.ApiClient(configuration) as api_client:
     api_instance = dupr_backend.ClubApi(api_client)
     version = 'version_example' # str | 
     club_id = 56 # int | 
+    id = 56 # int | 
     delete_match_request = dupr_backend.DeleteMatchRequest() # DeleteMatchRequest | 
 
     try:
-        api_response = api_instance.delete_club_match(version, club_id, delete_match_request)
+        api_response = api_instance.delete_club_match(version, club_id, id, delete_match_request)
         print("The response of ClubApi->delete_club_match:\n")
         pprint(api_response)
     except Exception as e:
@@ -869,6 +868,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **version** | **str**|  | 
  **club_id** | **int**|  | 
+ **id** | **int**|  | 
  **delete_match_request** | [**DeleteMatchRequest**](DeleteMatchRequest.md)|  | 
 
 ### Return type
@@ -1044,7 +1044,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **edit_club_match**
-> SingleWrapperMatchResponse edit_club_match(version, club_id, match_update_request)
+> SingleWrapperMatchResponse edit_club_match(version, club_id, id, match_update_request)
 
 ### Example
 
@@ -1079,10 +1079,11 @@ with dupr_backend.ApiClient(configuration) as api_client:
     api_instance = dupr_backend.ClubApi(api_client)
     version = 'version_example' # str | 
     club_id = 56 # int | 
+    id = 56 # int | 
     match_update_request = dupr_backend.MatchUpdateRequest() # MatchUpdateRequest | 
 
     try:
-        api_response = api_instance.edit_club_match(version, club_id, match_update_request)
+        api_response = api_instance.edit_club_match(version, club_id, id, match_update_request)
         print("The response of ClubApi->edit_club_match:\n")
         pprint(api_response)
     except Exception as e:
@@ -1098,6 +1099,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **version** | **str**|  | 
  **club_id** | **int**|  | 
+ **id** | **int**|  | 
  **match_update_request** | [**MatchUpdateRequest**](MatchUpdateRequest.md)|  | 
 
 ### Return type
@@ -1421,7 +1423,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_all_roles**
-> ArrayWrapperRoleResponse get_all_roles(version)
+> ArrayWrapperRoleResponse get_all_roles(club_id, version)
 
 ### Example
 
@@ -1453,10 +1455,11 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
+    club_id = 56 # int | 
     version = 'version_example' # str | 
 
     try:
-        api_response = api_instance.get_all_roles(version)
+        api_response = api_instance.get_all_roles(club_id, version)
         print("The response of ClubApi->get_all_roles:\n")
         pprint(api_response)
     except Exception as e:
@@ -1470,86 +1473,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **club_id** | **int**|  | 
  **version** | **str**|  | 
 
 ### Return type
 
 [**ArrayWrapperRoleResponse**](ArrayWrapperRoleResponse.md)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_all_staff_members**
-> SingleWrapperStaffClubMemberResponse get_all_staff_members(version, club_id)
-
-### Example
-
-* Bearer (JWT) Authentication (bearerAuth):
-
-```python
-import dupr_backend
-from dupr_backend.models.single_wrapper_staff_club_member_response import SingleWrapperStaffClubMemberResponse
-from dupr_backend.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.dupr.gg
-# See configuration.py for a list of all supported configuration parameters.
-configuration = dupr_backend.Configuration(
-    host = "https://api.dupr.gg"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization (JWT): bearerAuth
-configuration = dupr_backend.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with dupr_backend.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
-    club_id = 56 # int | 
-
-    try:
-        api_response = api_instance.get_all_staff_members(version, club_id)
-        print("The response of ClubApi->get_all_staff_members:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ClubApi->get_all_staff_members: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
- **club_id** | **int**|  | 
-
-### Return type
-
-[**SingleWrapperStaffClubMemberResponse**](SingleWrapperStaffClubMemberResponse.md)
 
 ### Authorization
 
@@ -2847,82 +2776,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **version** | **str**|  | 
  **club_request** | [**ClubRequest**](ClubRequest.md)|  | 
-
-### Return type
-
-[**Wrapper**](Wrapper.md)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_staff_members**
-> Wrapper update_staff_members(version, staff_club_member_request)
-
-### Example
-
-* Bearer (JWT) Authentication (bearerAuth):
-
-```python
-import dupr_backend
-from dupr_backend.models.staff_club_member_request import StaffClubMemberRequest
-from dupr_backend.models.wrapper import Wrapper
-from dupr_backend.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.dupr.gg
-# See configuration.py for a list of all supported configuration parameters.
-configuration = dupr_backend.Configuration(
-    host = "https://api.dupr.gg"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization (JWT): bearerAuth
-configuration = dupr_backend.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with dupr_backend.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
-    staff_club_member_request = dupr_backend.StaffClubMemberRequest() # StaffClubMemberRequest | 
-
-    try:
-        api_response = api_instance.update_staff_members(version, staff_club_member_request)
-        print("The response of ClubApi->update_staff_members:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ClubApi->update_staff_members: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
- **staff_club_member_request** | [**StaffClubMemberRequest**](StaffClubMemberRequest.md)|  | 
 
 ### Return type
 
