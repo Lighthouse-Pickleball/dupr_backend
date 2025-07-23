@@ -25552,15 +25552,12 @@
                 },
                 "required": [
                     "duprId",
-                    "email",
                     "enablePrivacy",
                     "firstName",
                     "fullName",
                     "isPlayer1",
                     "lastName",
                     "registered",
-                    "registrationDetails",
-                    "registrationType",
                     "showRatingBanner"
                 ]
             },

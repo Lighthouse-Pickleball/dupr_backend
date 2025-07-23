@@ -28,11 +28,11 @@ Name | Type | Description | Notes
 **partner_status** | **str** |  | [optional] 
 **team_status** | **str** |  | [optional] 
 **is_player1** | **bool** |  | 
-**registration_details** | [**RegistrationResponse**](RegistrationResponse.md) |  | 
+**registration_details** | [**RegistrationResponse**](RegistrationResponse.md) |  | [optional] 
 **phone** | **str** |  | [optional] 
-**email** | **str** |  | 
+**email** | **str** |  | [optional] 
 **verified_email** | **bool** |  | [optional] 
-**registration_type** | **str** |  | 
+**registration_type** | **str** |  | [optional] 
 **registered** | **bool** |  | 
 **dupr_id** | **str** |  | 
 **show_rating_banner** | **bool** |  | 
