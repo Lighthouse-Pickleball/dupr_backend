@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **venue** | **str** |  | 
 **location** | **str** |  | 
 **match_score_added** | **bool** |  | 
-**tournament** | **str** |  | 
+**tournament** | **str** |  | [optional] 
 **league** | **str** |  | [optional] 
 **event_date** | **date** |  | 
 **event_format** | **str** |  | 

@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
 **full_name** | **str** |  | 
-**first_name** | **str** |  | 
-**last_name** | **str** |  | 
+**first_name** | **str** |  | [optional] 
+**last_name** | **str** |  | [optional] 
 **username** | **str** |  | [optional] 
 **display_username** | **bool** |  | [optional] 
 **iso_code** | **str** |  | [optional] 

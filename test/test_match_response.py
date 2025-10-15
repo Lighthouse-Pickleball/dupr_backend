@@ -119,7 +119,6 @@ class TestMatchResponse(unittest.TestCase):
                 venue = 'Dreamland Pickleball',
                 location = 'Newport Beach, CA',
                 match_score_added = True,
-                tournament = 'Newport Beach Doubles Shootout',
                 event_date = 'yyyy-MM-dd',
                 event_format = 'SINGLES',
                 confirmed = True,

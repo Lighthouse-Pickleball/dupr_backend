@@ -33,8 +33,8 @@ class UserResponse(BaseModel):
     """ # noqa: E501
     id: StrictInt
     full_name: StrictStr = Field(alias="fullName")
-    first_name: StrictStr = Field(alias="firstName")
-    last_name: StrictStr = Field(alias="lastName")
+    first_name: Optional[StrictStr] = Field(default=None, alias="firstName")
+    last_name: Optional[StrictStr] = Field(default=None, alias="lastName")
     username: Optional[StrictStr] = None
     display_username: Optional[StrictBool] = Field(default=None, alias="displayUsername")
     iso_code: Optional[StrictStr] = Field(default=None, alias="isoCode")

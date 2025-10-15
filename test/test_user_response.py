@@ -104,8 +104,6 @@ class TestUserResponse(unittest.TestCase):
             return UserResponse(
                 id = 45785789,
                 full_name = 'John Doe',
-                first_name = 'John',
-                last_name = 'Doe',
                 email = 'user@exmaple.com',
                 active = True,
         )

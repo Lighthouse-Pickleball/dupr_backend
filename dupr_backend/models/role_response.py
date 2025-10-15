@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class RoleResponse(BaseModel):
     """ # noqa: E501
     id: StrictInt
     role: StrictStr
-    permissions: Dict[str, List[StrictStr]]
+    permissions: Optional[Dict[str, List[StrictStr]]] = None
     __properties: ClassVar[List[str]] = ["id", "role", "permissions"]
 
     model_config = ConfigDict(
