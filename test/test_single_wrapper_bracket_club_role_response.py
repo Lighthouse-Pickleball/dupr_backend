@@ -39,8 +39,9 @@ class TestSingleWrapperBracketClubRoleResponse(unittest.TestCase):
                 message = 'Show this message to user.',
                 result = dupr_backend.models.bracket_club_role_response.BracketClubRoleResponse(
                     role_id = 45785789, 
+                    role_name = 'PLAYER', 
                     is_club_member = True, 
-                    role_name = 'ADMIN', )
+                    role_name = 'PLAYER', )
             )
         else:
             return SingleWrapperBracketClubRoleResponse(

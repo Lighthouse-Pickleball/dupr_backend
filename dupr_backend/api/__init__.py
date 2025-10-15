@@ -23,6 +23,8 @@ from dupr_backend.api.payment_api import PaymentApi
 from dupr_backend.api.player_rating_history_api import PlayerRatingHistoryApi
 from dupr_backend.api.players_api import PlayersApi
 from dupr_backend.api.post_report_api import PostReportApi
+from dupr_backend.api.promotion_campaigns_api import PromotionCampaignsApi
+from dupr_backend.api.public_api import PublicApi
 from dupr_backend.api.social_media_api import SocialMediaApi
 from dupr_backend.api.stripe_api import StripeApi
 from dupr_backend.api.subscriptions_controller_api import SubscriptionsControllerApi

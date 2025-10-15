@@ -51,7 +51,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     user_suggestion_request = dupr_backend.UserSuggestionRequest() # UserSuggestionRequest | 
 
     try:
@@ -69,7 +69,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **user_suggestion_request** | [**UserSuggestionRequest**](UserSuggestionRequest.md)|  | 
 
 ### Return type
@@ -127,7 +127,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     slug = 'slug_example' # str | 
     id = 56 # int | 
     post_request = dupr_backend.PostRequest() # PostRequest | 
@@ -147,7 +147,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **slug** | **str**|  | 
  **id** | **int**|  | 
  **post_request** | [**PostRequest**](PostRequest.md)|  | 
@@ -206,7 +206,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     slug = 'slug_example' # str | 
     id = 56 # int | 
     limit = 56 # int |  (optional)
@@ -227,7 +227,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **slug** | **str**|  | 
  **id** | **int**|  | 
  **limit** | **int**|  | [optional] 
@@ -287,7 +287,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     followee = 56 # int | 
     followee_type = 'followee_type_example' # str | 
     follower = 56 # int | 
@@ -307,7 +307,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **followee** | **int**|  | 
  **followee_type** | **str**|  | 
  **follower** | **int**|  | 
@@ -366,7 +366,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     limit = 10 # int |  (optional) (default to 10)
     offset = 0 # int |  (optional) (default to 0)
 
@@ -385,7 +385,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **limit** | **int**|  | [optional] [default to 10]
  **offset** | **int**|  | [optional] [default to 0]
 
@@ -444,7 +444,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     actor = 56 # int | 
     react_request = dupr_backend.ReactRequest() # ReactRequest | 
 
@@ -463,7 +463,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **actor** | **int**|  | 
  **react_request** | [**ReactRequest**](ReactRequest.md)|  | 
 
@@ -522,7 +522,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     user_suggestion_request = dupr_backend.UserSuggestionRequest() # UserSuggestionRequest | 
 
     try:
@@ -540,7 +540,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **user_suggestion_request** | [**UserSuggestionRequest**](UserSuggestionRequest.md)|  | 
 
 ### Return type
@@ -597,7 +597,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     batch_size = 56 # int | 
     delay = 56 # int | 
     offset = 56 # int |  (optional)
@@ -617,7 +617,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **batch_size** | **int**|  | 
  **delay** | **int**|  | 
  **offset** | **int**|  | [optional] 
@@ -676,7 +676,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     slug = 'slug_example' # str | 
     id = 56 # int | 
 
@@ -695,7 +695,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **slug** | **str**|  | 
  **id** | **int**|  | 
 
@@ -753,7 +753,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     followee = 56 # int | 
     followee_type = 'followee_type_example' # str | 
     follower = 56 # int | 
@@ -773,7 +773,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **followee** | **int**|  | 
  **followee_type** | **str**|  | 
  **follower** | **int**|  | 
@@ -832,7 +832,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityAdminNewsfeedsFeaturesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     offset = 56 # int | 
 
     try:
@@ -850,7 +850,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **offset** | **int**|  | 
 
 ### Return type

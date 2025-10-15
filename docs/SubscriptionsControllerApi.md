@@ -4,76 +4,13 @@ All URIs are relative to *https://api.dupr.gg*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_checkout_session**](SubscriptionsControllerApi.md#create_checkout_session) | **PUT** /subscription/checkout/session | 
 [**create_customer_portal_session**](SubscriptionsControllerApi.md#create_customer_portal_session) | **POST** /subscription/manage | 
+[**get_active_products**](SubscriptionsControllerApi.md#get_active_products) | **POST** /subscription/checkout/products/active | 
 [**get_customer_status**](SubscriptionsControllerApi.md#get_customer_status) | **GET** /subscription | 
 [**get_session_payment_status**](SubscriptionsControllerApi.md#get_session_payment_status) | **POST** /subscription/checkout/session/status | 
 [**get_subscriptions**](SubscriptionsControllerApi.md#get_subscriptions) | **POST** /subscription/active | 
 [**track_successful_payment**](SubscriptionsControllerApi.md#track_successful_payment) | **POST** /subscription/track | 
 
-
-# **create_checkout_session**
-> object create_checkout_session(create_stripe_session_request)
-
-### Example
-
-
-```python
-import dupr_backend
-from dupr_backend.models.create_stripe_session_request import CreateStripeSessionRequest
-from dupr_backend.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.dupr.gg
-# See configuration.py for a list of all supported configuration parameters.
-configuration = dupr_backend.Configuration(
-    host = "https://api.dupr.gg"
-)
-
-
-# Enter a context with an instance of the API client
-with dupr_backend.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = dupr_backend.SubscriptionsControllerApi(api_client)
-    create_stripe_session_request = dupr_backend.CreateStripeSessionRequest() # CreateStripeSessionRequest | 
-
-    try:
-        api_response = api_instance.create_checkout_session(create_stripe_session_request)
-        print("The response of SubscriptionsControllerApi->create_checkout_session:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SubscriptionsControllerApi->create_checkout_session: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_stripe_session_request** | [**CreateStripeSessionRequest**](CreateStripeSessionRequest.md)|  | 
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_customer_portal_session**
 > object create_customer_portal_session()
@@ -124,6 +61,70 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_active_products**
+> ResultGetActiveProductsResponse get_active_products(get_products_for_client_key_request)
+
+### Example
+
+
+```python
+import dupr_backend
+from dupr_backend.models.get_products_for_client_key_request import GetProductsForClientKeyRequest
+from dupr_backend.models.result_get_active_products_response import ResultGetActiveProductsResponse
+from dupr_backend.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dupr.gg
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "https://api.dupr.gg"
+)
+
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.SubscriptionsControllerApi(api_client)
+    get_products_for_client_key_request = dupr_backend.GetProductsForClientKeyRequest() # GetProductsForClientKeyRequest | 
+
+    try:
+        api_response = api_instance.get_active_products(get_products_for_client_key_request)
+        print("The response of SubscriptionsControllerApi->get_active_products:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SubscriptionsControllerApi->get_active_products: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **get_products_for_client_key_request** | [**GetProductsForClientKeyRequest**](GetProductsForClientKeyRequest.md)|  | 
+
+### Return type
+
+[**ResultGetActiveProductsResponse**](ResultGetActiveProductsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
 
 ### HTTP response details
 
@@ -255,13 +256,15 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_subscriptions**
-> object get_subscriptions()
+> SubscriptionResponse get_subscriptions()
 
 ### Example
 
+* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import dupr_backend
+from dupr_backend.models.subscription_response import SubscriptionResponse
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
@@ -271,6 +274,15 @@ configuration = dupr_backend.Configuration(
     host = "https://api.dupr.gg"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with dupr_backend.ApiClient(configuration) as api_client:
@@ -293,11 +305,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**object**
+[**SubscriptionResponse**](SubscriptionResponse.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -308,7 +320,7 @@ No authorization required
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Returns a list of Subscription objects that indicate the level of access the user has to each resource |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

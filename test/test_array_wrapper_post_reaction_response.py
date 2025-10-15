@@ -121,6 +121,8 @@ class TestArrayWrapperPostReactionResponse(unittest.TestCase):
                                     email = '', 
                                     referral_code = '', ), 
                                 client_id = 56, 
+                                club_name = '', 
+                                client_name = '', 
                                 is_pro_match = True, 
                                 player_ids = [
                                     56

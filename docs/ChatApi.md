@@ -42,7 +42,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ChatApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     id = 56 # int | 
 
     try:
@@ -60,7 +60,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **id** | **int**|  | 
 
 ### Return type
@@ -117,7 +117,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ChatApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
 
     try:
         api_response = api_instance.get_self_token(version)
@@ -134,7 +134,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -191,7 +191,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ChatApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     update_user_request = dupr_backend.UpdateUserRequest() # UpdateUserRequest | 
 
     try:
@@ -209,7 +209,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **update_user_request** | [**UpdateUserRequest**](UpdateUserRequest.md)|  | 
 
 ### Return type

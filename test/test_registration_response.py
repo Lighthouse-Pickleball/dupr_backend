@@ -52,9 +52,9 @@ class TestRegistrationResponse(unittest.TestCase):
                     refund_amount = true, 
                     is_substitute = True, 
                     substitute = True, 
-                    club_member = True, 
                     registered = True, 
-                    wait_listed = True, ),
+                    wait_listed = True, 
+                    club_member = True, ),
                 player2 = dupr_backend.models.participant.Participant(
                     id = 26518181881, 
                     full_name = 'Brian Lara', 
@@ -71,14 +71,14 @@ class TestRegistrationResponse(unittest.TestCase):
                     refund_amount = true, 
                     is_substitute = True, 
                     substitute = True, 
-                    club_member = True, 
                     registered = True, 
-                    wait_listed = True, ),
+                    wait_listed = True, 
+                    club_member = True, ),
                 is_participant1 = True,
                 is_wait_listed = True,
                 event_refunded_amount = true,
-                participant1 = True,
-                wait_listed = True
+                wait_listed = True,
+                participant1 = True
             )
         else:
             return RegistrationResponse(

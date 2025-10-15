@@ -12,7 +12,6 @@
     Do not edit the class manually.
 """  # noqa: E501
 
-
 # import models into model package
 from dupr_backend.models.account_link_response import AccountLinkResponse
 from dupr_backend.models.account_status_response import AccountStatusResponse
@@ -61,10 +60,12 @@ from dupr_backend.models.autocomplete_prediction import AutocompletePrediction
 from dupr_backend.models.autocomplete_structured_formatting import AutocompleteStructuredFormatting
 from dupr_backend.models.banner_content import BannerContent
 from dupr_backend.models.banner_content_responce import BannerContentResponce
+from dupr_backend.models.basic_info import BasicInfo
 from dupr_backend.models.basic_user_info import BasicUserInfo
 from dupr_backend.models.batch_get_clients_request import BatchGetClientsRequest
 from dupr_backend.models.batch_player_rating_provisional_request import BatchPlayerRatingProvisionalRequest
 from dupr_backend.models.batch_player_rating_request import BatchPlayerRatingRequest
+from dupr_backend.models.benefactor import Benefactor
 from dupr_backend.models.bounds import Bounds
 from dupr_backend.models.bracket_club_role_response import BracketClubRoleResponse
 from dupr_backend.models.bracket_details_response import BracketDetailsResponse
@@ -83,6 +84,7 @@ from dupr_backend.models.change_email_admin_request import ChangeEmailAdminReque
 from dupr_backend.models.change_role_request import ChangeRoleRequest
 from dupr_backend.models.chat_token_response import ChatTokenResponse
 from dupr_backend.models.check_in_location import CheckInLocation
+from dupr_backend.models.check_promotion_eligibility_request import CheckPromotionEligibilityRequest
 from dupr_backend.models.claim_player_rating_filter import ClaimPlayerRatingFilter
 from dupr_backend.models.claim_player_search_filter import ClaimPlayerSearchFilter
 from dupr_backend.models.claim_player_search_request import ClaimPlayerSearchRequest
@@ -124,13 +126,14 @@ from dupr_backend.models.create_client_request import CreateClientRequest
 from dupr_backend.models.create_client_response import CreateClientResponse
 from dupr_backend.models.create_clubs_request import CreateClubsRequest
 from dupr_backend.models.create_new_team_request import CreateNewTeamRequest
-from dupr_backend.models.create_stripe_session_request import CreateStripeSessionRequest
 from dupr_backend.models.creator import Creator
+from dupr_backend.models.criteria_definition import CriteriaDefinition
 from dupr_backend.models.currency_details import CurrencyDetails
 from dupr_backend.models.currency_details_response import CurrencyDetailsResponse
 from dupr_backend.models.date_range import DateRange
 from dupr_backend.models.delete_event_media_request import DeleteEventMediaRequest
 from dupr_backend.models.delete_match_request import DeleteMatchRequest
+from dupr_backend.models.delete_promotion_request import DeletePromotionRequest
 from dupr_backend.models.delete_user_response import DeleteUserResponse
 from dupr_backend.models.description import Description
 from dupr_backend.models.device_request import DeviceRequest
@@ -141,6 +144,8 @@ from dupr_backend.models.draft_bracket_request import DraftBracketRequest
 from dupr_backend.models.draft_league_request import DraftLeagueRequest
 from dupr_backend.models.duplicated_account_response import DuplicatedAccountResponse
 from dupr_backend.models.duplicated_player import DuplicatedPlayer
+from dupr_backend.models.dupr_discount import DuprDiscount
+from dupr_backend.models.dupr_product import DuprProduct
 from dupr_backend.models.dynamic_user_identity_type import DynamicUserIdentityType
 from dupr_backend.models.edit_bracket_request import EditBracketRequest
 from dupr_backend.models.edit_club_staff_request import EditClubStaffRequest
@@ -170,9 +175,13 @@ from dupr_backend.models.game_trend_response import GameTrendResponse
 from dupr_backend.models.geo_point import GeoPoint
 from dupr_backend.models.geocoding_result import GeocodingResult
 from dupr_backend.models.geometry import Geometry
+from dupr_backend.models.get_active_products_response import GetActiveProductsResponse
 from dupr_backend.models.get_client_permissions_request import GetClientPermissionsRequest
 from dupr_backend.models.get_club_restrictions_request import GetClubRestrictionsRequest
 from dupr_backend.models.get_club_settings_request import GetClubSettingsRequest
+from dupr_backend.models.get_eligible_promotions_request import GetEligiblePromotionsRequest
+from dupr_backend.models.get_products_for_client_key_request import GetProductsForClientKeyRequest
+from dupr_backend.models.get_promotions_request import GetPromotionsRequest
 from dupr_backend.models.get_stream_comment_response import GetStreamCommentResponse
 from dupr_backend.models.get_stream_comment_response_v1_urn import GetStreamCommentResponseV1Urn
 from dupr_backend.models.get_stream_post_response import GetStreamPostResponse
@@ -207,6 +216,8 @@ from dupr_backend.models.milp_division_request import MILPDivisionRequest
 from dupr_backend.models.milp_event_organizer_request import MILPEventOrganizerRequest
 from dupr_backend.models.match import Match
 from dupr_backend.models.match_confirm_request import MatchConfirmRequest
+from dupr_backend.models.match_expected_score_request import MatchExpectedScoreRequest
+from dupr_backend.models.match_expected_score_response import MatchExpectedScoreResponse
 from dupr_backend.models.match_filters import MatchFilters
 from dupr_backend.models.match_info import MatchInfo
 from dupr_backend.models.match_rating_simulator_request import MatchRatingSimulatorRequest
@@ -292,6 +303,11 @@ from dupr_backend.models.post_request import PostRequest
 from dupr_backend.models.post_response import PostResponse
 from dupr_backend.models.pre_calculated_user_statistics_response import PreCalculatedUserStatisticsResponse
 from dupr_backend.models.pre_match_rating_and_impact import PreMatchRatingAndImpact
+from dupr_backend.models.product_request import ProductRequest
+from dupr_backend.models.promotion import Promotion
+from dupr_backend.models.promotion_campaign import PromotionCampaign
+from dupr_backend.models.promotion_campaign_request import PromotionCampaignRequest
+from dupr_backend.models.promotion_product_create_request import PromotionProductCreateRequest
 from dupr_backend.models.provisional_rating import ProvisionalRating
 from dupr_backend.models.rating_coach import RatingCoach
 from dupr_backend.models.rating_filter import RatingFilter
@@ -311,6 +327,10 @@ from dupr_backend.models.remove_all_club_restrictions_request import RemoveAllCl
 from dupr_backend.models.remove_club_restrictions_request import RemoveClubRestrictionsRequest
 from dupr_backend.models.report_request import ReportRequest
 from dupr_backend.models.reset_password_request import ResetPasswordRequest
+from dupr_backend.models.result_basic_info import ResultBasicInfo
+from dupr_backend.models.result_boolean import ResultBoolean
+from dupr_backend.models.result_get_active_products_response import ResultGetActiveProductsResponse
+from dupr_backend.models.result_string import ResultString
 from dupr_backend.models.result_unclaimed_player_details_response import ResultUnclaimedPlayerDetailsResponse
 from dupr_backend.models.result_unit import ResultUnit
 from dupr_backend.models.result_user_by_dupr_id_response import ResultUserByDuprIdResponse
@@ -332,6 +352,7 @@ from dupr_backend.models.send_otp_request import SendOtpRequest
 from dupr_backend.models.session_response import SessionResponse
 from dupr_backend.models.set_club_restrictions_request import SetClubRestrictionsRequest
 from dupr_backend.models.set_club_settings_request import SetClubSettingsRequest
+from dupr_backend.models.set_dupr_ids_inactive_request import SetDuprIdsInactiveRequest
 from dupr_backend.models.share_match_request import ShareMatchRequest
 from dupr_backend.models.sign_up_request import SignUpRequest
 from dupr_backend.models.signup_batch_request import SignupBatchRequest
@@ -364,7 +385,6 @@ from dupr_backend.models.single_wrapper_media_response import SingleWrapperMedia
 from dupr_backend.models.single_wrapper_merge_users_response import SingleWrapperMergeUsersResponse
 from dupr_backend.models.single_wrapper_mi_lp_event import SingleWrapperMiLPEvent
 from dupr_backend.models.single_wrapper_mi_lp_team import SingleWrapperMiLPTeam
-from dupr_backend.models.single_wrapper_object import SingleWrapperObject
 from dupr_backend.models.single_wrapper_open_play_event import SingleWrapperOpenPlayEvent
 from dupr_backend.models.single_wrapper_open_play_event_waitlist import SingleWrapperOpenPlayEventWaitlist
 from dupr_backend.models.single_wrapper_page_bracket_response import SingleWrapperPageBracketResponse
@@ -415,16 +435,20 @@ from dupr_backend.models.staff_club_member import StaffClubMember
 from dupr_backend.models.staff_club_member_request import StaffClubMemberRequest
 from dupr_backend.models.staff_club_member_response import StaffClubMemberResponse
 from dupr_backend.models.status_request import StatusRequest
+from dupr_backend.models.subscription import Subscription
+from dupr_backend.models.subscription_response import SubscriptionResponse
 from dupr_backend.models.substitute_player_request import SubstitutePlayerRequest
 from dupr_backend.models.switch_bracket_request import SwitchBracketRequest
 from dupr_backend.models.switch_bracket_response import SwitchBracketResponse
 from dupr_backend.models.switch_team_request import SwitchTeamRequest
 from dupr_backend.models.team import Team
+from dupr_backend.models.team_ids import TeamIds
 from dupr_backend.models.team_info import TeamInfo
 from dupr_backend.models.team_member import TeamMember
 from dupr_backend.models.team_player_response import TeamPlayerResponse
 from dupr_backend.models.team_response import TeamResponse
 from dupr_backend.models.team_update_request import TeamUpdateRequest
+from dupr_backend.models.teams_response import TeamsResponse
 from dupr_backend.models.term import Term
 from dupr_backend.models.text_content import TextContent
 from dupr_backend.models.time_range import TimeRange
@@ -478,3 +502,4 @@ from dupr_backend.models.verify_otp_request import VerifyOtpRequest
 from dupr_backend.models.verify_token_request import VerifyTokenRequest
 from dupr_backend.models.withdraw_player_request import WithdrawPlayerRequest
 from dupr_backend.models.wrapper import Wrapper
+

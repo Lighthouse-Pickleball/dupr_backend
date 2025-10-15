@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
-from typing import Any, Dict, Optional
+from typing import Any, Dict
 from typing_extensions import Annotated
 from dupr_backend.models.device_request import DeviceRequest
 from dupr_backend.models.email_exist_request import EmailExistRequest
@@ -25,7 +25,6 @@ from dupr_backend.models.login_request import LoginRequest
 from dupr_backend.models.player_sign_up_request import PlayerSignUpRequest
 from dupr_backend.models.single_wrapper_auth_response import SingleWrapperAuthResponse
 from dupr_backend.models.single_wrapper_boolean import SingleWrapperBoolean
-from dupr_backend.models.single_wrapper_object import SingleWrapperObject
 from dupr_backend.models.single_wrapper_user_response import SingleWrapperUserResponse
 from dupr_backend.models.verify_token_request import VerifyTokenRequest
 from dupr_backend.models.wrapper import Wrapper
@@ -1474,7 +1473,7 @@ class AuthenticationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> SingleWrapperObject:
+    ) -> object:
         """login_read_only_token
 
 
@@ -1517,7 +1516,7 @@ class AuthenticationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SingleWrapperObject",
+            '200': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1548,7 +1547,7 @@ class AuthenticationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[SingleWrapperObject]:
+    ) -> ApiResponse[object]:
         """login_read_only_token
 
 
@@ -1591,7 +1590,7 @@ class AuthenticationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SingleWrapperObject",
+            '200': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1665,7 +1664,7 @@ class AuthenticationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SingleWrapperObject",
+            '200': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1761,7 +1760,7 @@ class AuthenticationApi:
     def login_read_only_token_with_full_access_token(
         self,
         version: StrictStr,
-        x_authorization: Optional[StrictStr] = None,
+        x_authorization: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1774,13 +1773,13 @@ class AuthenticationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> SingleWrapperObject:
+    ) -> object:
         """login_read_only_token_with_full_access_token
 
 
         :param version: (required)
         :type version: str
-        :param x_authorization:
+        :param x_authorization: (required)
         :type x_authorization: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1814,7 +1813,7 @@ class AuthenticationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SingleWrapperObject",
+            '200': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1831,7 +1830,7 @@ class AuthenticationApi:
     def login_read_only_token_with_full_access_token_with_http_info(
         self,
         version: StrictStr,
-        x_authorization: Optional[StrictStr] = None,
+        x_authorization: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1844,13 +1843,13 @@ class AuthenticationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[SingleWrapperObject]:
+    ) -> ApiResponse[object]:
         """login_read_only_token_with_full_access_token
 
 
         :param version: (required)
         :type version: str
-        :param x_authorization:
+        :param x_authorization: (required)
         :type x_authorization: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1884,7 +1883,7 @@ class AuthenticationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SingleWrapperObject",
+            '200': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1901,7 +1900,7 @@ class AuthenticationApi:
     def login_read_only_token_with_full_access_token_without_preload_content(
         self,
         version: StrictStr,
-        x_authorization: Optional[StrictStr] = None,
+        x_authorization: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1920,7 +1919,7 @@ class AuthenticationApi:
 
         :param version: (required)
         :type version: str
-        :param x_authorization:
+        :param x_authorization: (required)
         :type x_authorization: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1954,7 +1953,7 @@ class AuthenticationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SingleWrapperObject",
+            '200': "object",
         }
         response_data = self.api_client.call_api(
             *_param,

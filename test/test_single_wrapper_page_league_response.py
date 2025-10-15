@@ -129,9 +129,9 @@ class TestSingleWrapperPageLeagueResponse(unittest.TestCase):
                                             refund_amount = true, 
                                             is_substitute = True, 
                                             substitute = True, 
-                                            club_member = True, 
                                             registered = True, 
-                                            wait_listed = True, ), 
+                                            wait_listed = True, 
+                                            club_member = True, ), 
                                         player2 = dupr_backend.models.participant.Participant(
                                             id = 26518181881, 
                                             full_name = 'Brian Lara', 
@@ -148,14 +148,14 @@ class TestSingleWrapperPageLeagueResponse(unittest.TestCase):
                                             refund_amount = true, 
                                             is_substitute = True, 
                                             substitute = True, 
-                                            club_member = True, 
                                             registered = True, 
-                                            wait_listed = True, ), 
+                                            wait_listed = True, 
+                                            club_member = True, ), 
                                         is_participant1 = True, 
                                         is_wait_listed = True, 
                                         event_refunded_amount = true, 
-                                        participant1 = True, 
-                                        wait_listed = True, ), 
+                                        wait_listed = True, 
+                                        participant1 = True, ), 
                                     league_name = 'Stillwater Pickleball', 
                                     league_address = dupr_backend.models.address_response.AddressResponse(
                                         id = 12385789, 
@@ -214,11 +214,11 @@ class TestSingleWrapperPageLeagueResponse(unittest.TestCase):
                                         currency_symbol = '$', 
                                         currency_name = 'US Dollar', 
                                         min_limit = 100, ), 
+                                    match_seeded = True, 
+                                    registered = True, 
                                     wait_list_full = True, 
                                     queue_complete = True, 
-                                    player_eligible = True, 
-                                    match_seeded = True, 
-                                    registered = True, )
+                                    player_eligible = True, )
                                 ], 
                             status = 'ACTIVE/IN_PROGRESS/COMPLETE/CANCELLED', 
                             distance = 'Nearby', 
@@ -260,8 +260,8 @@ class TestSingleWrapperPageLeagueResponse(unittest.TestCase):
                             registered = True, )
                         ], 
                     total_value_relation = 'GREATER_THAN_OR_EQUAL_TO', 
-                    has_previous = True, 
                     empty = False, 
+                    has_previous = True, 
                     has_more = False, )
             )
         else:

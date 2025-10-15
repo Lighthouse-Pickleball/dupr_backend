@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
 **role** | **str** |  | 
-**permissions** | **Dict[str, List[str]]** |  | [optional] 
+**permissions** | **Dict[str, List[str]]** |  | 
 
 ## Example
 

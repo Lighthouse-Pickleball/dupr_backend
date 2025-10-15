@@ -55,7 +55,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AuthenticationApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     device_request = dupr_backend.DeviceRequest() # DeviceRequest | 
 
     try:
@@ -73,7 +73,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **device_request** | [**DeviceRequest**](DeviceRequest.md)|  | 
 
 ### Return type
@@ -130,7 +130,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AuthenticationApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     email = 'user@example.com' # str | 
 
     try:
@@ -148,7 +148,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **email** | **str**|  | 
 
 ### Return type
@@ -206,7 +206,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AuthenticationApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     email_exist_request = dupr_backend.EmailExistRequest() # EmailExistRequest | 
 
     try:
@@ -224,7 +224,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **email_exist_request** | [**EmailExistRequest**](EmailExistRequest.md)|  | 
 
 ### Return type
@@ -281,7 +281,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AuthenticationApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     email = 'email_example' # str | 
 
     try:
@@ -299,7 +299,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **email** | **str**|  | 
 
 ### Return type
@@ -357,7 +357,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AuthenticationApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     login_request = dupr_backend.LoginRequest() # LoginRequest | 
 
     try:
@@ -375,7 +375,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **login_request** | [**LoginRequest**](LoginRequest.md)|  | 
 
 ### Return type
@@ -400,7 +400,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **login_read_only_token**
-> SingleWrapperObject login_read_only_token(version, x_authorization, login_request)
+> object login_read_only_token(version, x_authorization, login_request)
 
 ### Example
 
@@ -409,7 +409,6 @@ Name | Type | Description  | Notes
 ```python
 import dupr_backend
 from dupr_backend.models.login_request import LoginRequest
-from dupr_backend.models.single_wrapper_object import SingleWrapperObject
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
@@ -433,7 +432,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AuthenticationApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     x_authorization = 'x_authorization_example' # str | 
     login_request = dupr_backend.LoginRequest() # LoginRequest | 
 
@@ -452,13 +451,13 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **x_authorization** | **str**|  | 
  **login_request** | [**LoginRequest**](LoginRequest.md)|  | 
 
 ### Return type
 
-[**SingleWrapperObject**](SingleWrapperObject.md)
+**object**
 
 ### Authorization
 
@@ -478,7 +477,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **login_read_only_token_with_full_access_token**
-> SingleWrapperObject login_read_only_token_with_full_access_token(version, x_authorization=x_authorization)
+> object login_read_only_token_with_full_access_token(version, x_authorization)
 
 ### Example
 
@@ -486,7 +485,6 @@ Name | Type | Description  | Notes
 
 ```python
 import dupr_backend
-from dupr_backend.models.single_wrapper_object import SingleWrapperObject
 from dupr_backend.rest import ApiException
 from pprint import pprint
 
@@ -510,11 +508,11 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AuthenticationApi(api_client)
-    version = 'version_example' # str | 
-    x_authorization = 'x_authorization_example' # str |  (optional)
+    version = 'v1.0' # str |  (default to 'v1.0')
+    x_authorization = 'x_authorization_example' # str | 
 
     try:
-        api_response = api_instance.login_read_only_token_with_full_access_token(version, x_authorization=x_authorization)
+        api_response = api_instance.login_read_only_token_with_full_access_token(version, x_authorization)
         print("The response of AuthenticationApi->login_read_only_token_with_full_access_token:\n")
         pprint(api_response)
     except Exception as e:
@@ -528,12 +526,12 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
- **x_authorization** | **str**|  | [optional] 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
+ **x_authorization** | **str**|  | 
 
 ### Return type
 
-[**SingleWrapperObject**](SingleWrapperObject.md)
+**object**
 
 ### Authorization
 
@@ -586,7 +584,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AuthenticationApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     login_request = dupr_backend.LoginRequest() # LoginRequest | 
 
     try:
@@ -604,7 +602,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **login_request** | [**LoginRequest**](LoginRequest.md)|  | 
 
 ### Return type
@@ -660,7 +658,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AuthenticationApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     x_refresh_token = 'x_refresh_token_example' # str | 
 
     try:
@@ -678,7 +676,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **x_refresh_token** | **str**|  | 
 
 ### Return type
@@ -736,7 +734,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AuthenticationApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     player_sign_up_request = dupr_backend.PlayerSignUpRequest() # PlayerSignUpRequest | 
 
     try:
@@ -754,7 +752,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **player_sign_up_request** | [**PlayerSignUpRequest**](PlayerSignUpRequest.md)|  | 
 
 ### Return type
@@ -811,7 +809,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AuthenticationApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     email = 'email_example' # str | 
     code = 'code_example' # str | 
     x_password = 'x_password_example' # str | 
@@ -831,7 +829,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **email** | **str**|  | 
  **code** | **str**|  | 
  **x_password** | **str**|  | 
@@ -890,7 +888,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AuthenticationApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     email = 'email_example' # str | 
 
     try:
@@ -908,7 +906,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **email** | **str**|  | 
 
 ### Return type
@@ -965,7 +963,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AuthenticationApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     code = 'DUPR100' # str | 
 
     try:
@@ -983,7 +981,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **code** | **str**|  | 
 
 ### Return type
@@ -1040,7 +1038,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AuthenticationApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     email = 'email_example' # str | 
     code = 'code_example' # str | 
 
@@ -1059,7 +1057,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **email** | **str**|  | 
  **code** | **str**|  | 
 
@@ -1118,7 +1116,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AuthenticationApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     verify_token_request = dupr_backend.VerifyTokenRequest() # VerifyTokenRequest | 
 
     try:
@@ -1136,7 +1134,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **verify_token_request** | [**VerifyTokenRequest**](VerifyTokenRequest.md)|  | 
 
 ### Return type

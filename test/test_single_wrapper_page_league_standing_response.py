@@ -150,8 +150,8 @@ class TestSingleWrapperPageLeagueStandingResponse(unittest.TestCase):
                             rank = 1, )
                         ], 
                     total_value_relation = 'GREATER_THAN_OR_EQUAL_TO', 
-                    has_previous = True, 
                     empty = False, 
+                    has_previous = True, 
                     has_more = False, )
             )
         else:

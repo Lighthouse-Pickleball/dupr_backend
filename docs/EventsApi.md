@@ -48,7 +48,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.EventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     league_id = 56 # int | 
 
     try:
@@ -66,7 +66,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **league_id** | **int**|  | 
 
 ### Return type
@@ -113,7 +113,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.EventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     league_id = 56 # int | 
 
     try:
@@ -131,7 +131,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **league_id** | **int**|  | 
 
 ### Return type
@@ -179,7 +179,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.EventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     delete_event_media_request = dupr_backend.DeleteEventMediaRequest() # DeleteEventMediaRequest | 
 
     try:
@@ -197,7 +197,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **delete_event_media_request** | [**DeleteEventMediaRequest**](DeleteEventMediaRequest.md)|  | 
 
 ### Return type
@@ -245,7 +245,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.EventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     draft_league_request = dupr_backend.DraftLeagueRequest() # DraftLeagueRequest | 
 
     try:
@@ -263,7 +263,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **draft_league_request** | [**DraftLeagueRequest**](DraftLeagueRequest.md)|  | 
 
 ### Return type
@@ -311,7 +311,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.EventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     edit_league_request = dupr_backend.EditLeagueRequest() # EditLeagueRequest | 
 
     try:
@@ -329,7 +329,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **edit_league_request** | [**EditLeagueRequest**](EditLeagueRequest.md)|  | 
 
 ### Return type
@@ -376,7 +376,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.EventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     league_id = 56 # int | 
 
     try:
@@ -394,7 +394,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **league_id** | **int**|  | 
 
 ### Return type
@@ -441,7 +441,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.EventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     league_id = 56 # int | 
 
     try:
@@ -459,7 +459,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **league_id** | **int**|  | 
 
 ### Return type
@@ -507,7 +507,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.EventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     export_event_payment_request = dupr_backend.ExportEventPaymentRequest() # ExportEventPaymentRequest | 
 
     try:
@@ -525,7 +525,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **export_event_payment_request** | [**ExportEventPaymentRequest**](ExportEventPaymentRequest.md)|  | 
 
 ### Return type
@@ -573,7 +573,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.EventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     offset = 56 # int | 
     limit = 56 # int | 
     search_league_player_request = dupr_backend.SearchLeaguePlayerRequest() # SearchLeaguePlayerRequest | 
@@ -593,7 +593,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **offset** | **int**|  | 
  **limit** | **int**|  | 
  **search_league_player_request** | [**SearchLeaguePlayerRequest**](SearchLeaguePlayerRequest.md)|  | 
@@ -642,7 +642,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.EventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     search = 'search_example' # str |  (optional)
 
     try:
@@ -660,7 +660,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **search** | **str**|  | [optional] 
 
 ### Return type
@@ -707,7 +707,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.EventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
     offset = 56 # int | 
     limit = 56 # int | 
@@ -728,7 +728,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
  **offset** | **int**|  | 
  **limit** | **int**|  | 
@@ -778,7 +778,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.EventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     league_id = 56 # int | 
 
     try:
@@ -796,7 +796,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **league_id** | **int**|  | 
 
 ### Return type
@@ -843,7 +843,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.EventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     league_id = 56 # int | 
 
     try:
@@ -861,7 +861,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **league_id** | **int**|  | 
 
 ### Return type
@@ -909,7 +909,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.EventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     id = 56 # int | 
     my_league_request = dupr_backend.MyLeagueRequest() # MyLeagueRequest | 
 
@@ -928,7 +928,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **id** | **int**|  | 
  **my_league_request** | [**MyLeagueRequest**](MyLeagueRequest.md)|  | 
 
@@ -977,7 +977,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.EventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     my_league_request = dupr_backend.MyLeagueRequest() # MyLeagueRequest | 
 
     try:
@@ -995,7 +995,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **my_league_request** | [**MyLeagueRequest**](MyLeagueRequest.md)|  | 
 
 ### Return type
@@ -1111,7 +1111,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.EventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     league_id = 56 # int | 
     join_league_request = [dupr_backend.JoinLeagueRequest()] # List[JoinLeagueRequest] | 
 
@@ -1130,7 +1130,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **league_id** | **int**|  | 
  **join_league_request** | [**List[JoinLeagueRequest]**](JoinLeagueRequest.md)|  | 
 
@@ -1179,7 +1179,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.EventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     league_request = dupr_backend.LeagueRequest() # LeagueRequest | 
 
     try:
@@ -1197,7 +1197,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **league_request** | [**LeagueRequest**](LeagueRequest.md)|  | 
 
 ### Return type
@@ -1245,7 +1245,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.EventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     search_leagues_request = dupr_backend.SearchLeaguesRequest() # SearchLeaguesRequest | 
 
     try:
@@ -1263,7 +1263,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **search_leagues_request** | [**SearchLeaguesRequest**](SearchLeaguesRequest.md)|  | 
 
 ### Return type

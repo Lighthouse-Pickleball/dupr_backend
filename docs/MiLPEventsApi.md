@@ -34,7 +34,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MiLPEventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     id = 56 # int | 
 
     try:
@@ -52,7 +52,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **id** | **int**|  | 
 
 ### Return type
@@ -99,7 +99,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MiLPEventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     id = 56 # int | 
 
     try:
@@ -117,7 +117,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **id** | **int**|  | 
 
 ### Return type
@@ -165,7 +165,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MiLPEventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     mi_lp_register_team_request = dupr_backend.MiLPRegisterTeamRequest() # MiLPRegisterTeamRequest | 
 
     try:
@@ -183,7 +183,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **mi_lp_register_team_request** | [**MiLPRegisterTeamRequest**](MiLPRegisterTeamRequest.md)|  | 
 
 ### Return type
@@ -231,7 +231,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MiLPEventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     mi_lp_event_request = dupr_backend.MiLPEventRequest() # MiLPEventRequest | 
 
     try:
@@ -249,7 +249,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **mi_lp_event_request** | [**MiLPEventRequest**](MiLPEventRequest.md)|  | 
 
 ### Return type
@@ -297,7 +297,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MiLPEventsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     mi_lp_event_search_request = dupr_backend.MiLPEventSearchRequest() # MiLPEventSearchRequest | 
 
     try:
@@ -315,7 +315,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **mi_lp_event_search_request** | [**MiLPEventSearchRequest**](MiLPEventSearchRequest.md)|  | 
 
 ### Return type

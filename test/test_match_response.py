@@ -108,7 +108,9 @@ class TestMatchResponse(unittest.TestCase):
                     name = '', 
                     email = '', 
                     referral_code = '', ),
-                client_id = 45
+                client_id = 45,
+                club_name = 'event name',
+                client_name = 'event name'
             )
         else:
             return MatchResponse(
@@ -117,6 +119,7 @@ class TestMatchResponse(unittest.TestCase):
                 venue = 'Dreamland Pickleball',
                 location = 'Newport Beach, CA',
                 match_score_added = True,
+                tournament = 'Newport Beach Doubles Shootout',
                 event_date = 'yyyy-MM-dd',
                 event_format = 'SINGLES',
                 confirmed = True,

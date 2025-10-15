@@ -50,9 +50,9 @@ class TestParticipant(unittest.TestCase):
                 refund_amount = true,
                 is_substitute = True,
                 substitute = True,
-                club_member = True,
                 registered = True,
-                wait_listed = True
+                wait_listed = True,
+                club_member = True
             )
         else:
             return Participant(

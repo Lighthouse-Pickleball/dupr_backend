@@ -482,6 +482,18 @@ class TestAdminApi(unittest.TestCase):
         """
         pass
 
+    def test_set_users_active_by_dupr_id(self) -> None:
+        """Test case for set_users_active_by_dupr_id
+
+        """
+        pass
+
+    def test_set_users_inactive_by_dupr_id(self) -> None:
+        """Test case for set_users_inactive_by_dupr_id
+
+        """
+        pass
+
     def test_signup(self) -> None:
         """Test case for signup
 

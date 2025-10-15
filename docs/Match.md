@@ -33,6 +33,8 @@ Name | Type | Description | Notes
 **validator** | [**BasicUserInfo**](BasicUserInfo.md) |  | [optional] 
 **creator** | [**BasicUserInfo**](BasicUserInfo.md) |  | [optional] 
 **client_id** | **int** |  | [optional] 
+**club_name** | **str** |  | [optional] 
+**client_name** | **str** |  | [optional] 
 **is_pro_match** | **bool** |  | 
 **player_ids** | **List[int]** |  | 
 **is_elo_rated_match** | **bool** |  | 

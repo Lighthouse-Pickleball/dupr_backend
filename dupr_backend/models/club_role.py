@@ -39,8 +39,8 @@ class ClubRole(BaseModel):
     @field_validator('role')
     def role_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['ADMIN', 'PLAYER', 'DIRECTOR', 'ORGANIZER', 'SUPPORT_EXECUTIVE', 'MARKETING_EXECUTIVE', 'PENDING_PLAYER', 'MANAGER', 'CAPTAIN']):
-            raise ValueError("must be one of enum values ('ADMIN', 'PLAYER', 'DIRECTOR', 'ORGANIZER', 'SUPPORT_EXECUTIVE', 'MARKETING_EXECUTIVE', 'PENDING_PLAYER', 'MANAGER', 'CAPTAIN')")
+        if value not in set(['PLAYER', 'DIRECTOR', 'ORGANIZER', 'PENDING_PLAYER']):
+            raise ValueError("must be one of enum values ('PLAYER', 'DIRECTOR', 'ORGANIZER', 'PENDING_PLAYER')")
         return value
 
     @field_validator('approval_status')

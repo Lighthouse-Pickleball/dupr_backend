@@ -31,7 +31,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.PlayerRatingHistoryApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     offset = 56 # int | 
     limit = 56 # int | 
 
@@ -50,7 +50,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **offset** | **int**|  | 
  **limit** | **int**|  | 
 
@@ -98,7 +98,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.PlayerRatingHistoryApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     obfuscated_user_id = 56 # int | 
     offset = 56 # int | 
     limit = 56 # int | 
@@ -118,7 +118,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **obfuscated_user_id** | **int**|  | 
  **offset** | **int**|  | 
  **limit** | **int**|  | 

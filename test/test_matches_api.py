@@ -50,6 +50,12 @@ class TestMatchesApi(unittest.TestCase):
         """
         pass
 
+    def test_get_match_expected_score(self) -> None:
+        """Test case for get_match_expected_score
+
+        """
+        pass
+
     def test_get_match_rating_simulator(self) -> None:
         """Test case for get_match_rating_simulator
 

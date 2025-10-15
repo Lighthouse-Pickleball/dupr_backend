@@ -111,7 +111,9 @@ class TestSingleWrapperMatchResponse(unittest.TestCase):
                         name = '', 
                         email = '', 
                         referral_code = '', ), 
-                    client_id = 45, )
+                    client_id = 45, 
+                    club_name = 'event name', 
+                    client_name = 'event name', )
             )
         else:
             return SingleWrapperMatchResponse(

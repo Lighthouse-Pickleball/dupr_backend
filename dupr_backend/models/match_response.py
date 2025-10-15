@@ -37,7 +37,7 @@ class MatchResponse(BaseModel):
     venue: StrictStr
     location: StrictStr
     match_score_added: StrictBool = Field(alias="matchScoreAdded")
-    tournament: Optional[StrictStr] = None
+    tournament: StrictStr
     league: Optional[StrictStr] = None
     event_date: date = Field(alias="eventDate")
     event_format: StrictStr = Field(alias="eventFormat")
@@ -60,7 +60,9 @@ class MatchResponse(BaseModel):
     validator: Optional[BasicUserInfo] = None
     creator: Optional[BasicUserInfo] = None
     client_id: Optional[StrictInt] = Field(default=None, alias="clientId")
-    __properties: ClassVar[List[str]] = ["id", "matchId", "userId", "displayIdentity", "venue", "location", "matchScoreAdded", "tournament", "league", "eventDate", "eventFormat", "scoreFormat", "confirmed", "teams", "created", "modified", "eventName", "matchSource", "clubId", "leagueId", "bracketId", "leagueMatchId", "noOfGames", "status", "matchType", "eloCalculated", "initialization", "validator", "creator", "clientId"]
+    club_name: Optional[StrictStr] = Field(default=None, alias="clubName")
+    client_name: Optional[StrictStr] = Field(default=None, alias="clientName")
+    __properties: ClassVar[List[str]] = ["id", "matchId", "userId", "displayIdentity", "venue", "location", "matchScoreAdded", "tournament", "league", "eventDate", "eventFormat", "scoreFormat", "confirmed", "teams", "created", "modified", "eventName", "matchSource", "clubId", "leagueId", "bracketId", "leagueMatchId", "noOfGames", "status", "matchType", "eloCalculated", "initialization", "validator", "creator", "clientId", "clubName", "clientName"]
 
     @field_validator('event_format')
     def event_format_validate_enum(cls, value):
@@ -195,7 +197,9 @@ class MatchResponse(BaseModel):
             "initialization": obj.get("initialization"),
             "validator": BasicUserInfo.from_dict(obj["validator"]) if obj.get("validator") is not None else None,
             "creator": BasicUserInfo.from_dict(obj["creator"]) if obj.get("creator") is not None else None,
-            "clientId": obj.get("clientId")
+            "clientId": obj.get("clientId"),
+            "clubName": obj.get("clubName"),
+            "clientName": obj.get("clientName")
         })
         return _obj
 

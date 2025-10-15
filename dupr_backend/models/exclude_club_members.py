@@ -34,8 +34,8 @@ class ExcludeClubMembers(BaseModel):
     def roles_validate_enum(cls, value):
         """Validates the enum"""
         for i in value:
-            if i not in set(['ADMIN', 'PLAYER', 'DIRECTOR', 'ORGANIZER', 'SUPPORT_EXECUTIVE', 'MARKETING_EXECUTIVE', 'PENDING_PLAYER', 'MANAGER', 'CAPTAIN']):
-                raise ValueError("each list item must be one of ('ADMIN', 'PLAYER', 'DIRECTOR', 'ORGANIZER', 'SUPPORT_EXECUTIVE', 'MARKETING_EXECUTIVE', 'PENDING_PLAYER', 'MANAGER', 'CAPTAIN')")
+            if i not in set(['PLAYER', 'DIRECTOR', 'ORGANIZER', 'PENDING_PLAYER']):
+                raise ValueError("each list item must be one of ('PLAYER', 'DIRECTOR', 'ORGANIZER', 'PENDING_PLAYER')")
         return value
 
     model_config = ConfigDict(

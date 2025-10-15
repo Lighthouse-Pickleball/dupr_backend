@@ -55,11 +55,11 @@ Name | Type | Description | Notes
 **reg_user_id** | **int** |  | [optional] 
 **payment_status** | **str** |  | 
 **currency_details** | [**CurrencyDetailsResponse**](CurrencyDetailsResponse.md) |  | [optional] 
+**match_seeded** | **bool** |  | [optional] 
+**registered** | **bool** |  | [optional] 
 **wait_list_full** | **bool** |  | [optional] 
 **queue_complete** | **bool** |  | [optional] 
 **player_eligible** | **bool** |  | [optional] 
-**match_seeded** | **bool** |  | [optional] 
-**registered** | **bool** |  | [optional] 
 
 ## Example
 

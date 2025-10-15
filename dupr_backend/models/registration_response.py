@@ -33,9 +33,9 @@ class RegistrationResponse(BaseModel):
     is_participant1: StrictBool = Field(alias="isParticipant1")
     is_wait_listed: StrictBool = Field(alias="isWaitListed")
     event_refunded_amount: Union[StrictFloat, StrictInt] = Field(alias="eventRefundedAmount")
-    participant1: Optional[StrictBool] = None
     wait_listed: Optional[StrictBool] = Field(default=None, alias="waitListed")
-    __properties: ClassVar[List[str]] = ["registrationId", "player1", "player2", "isParticipant1", "isWaitListed", "eventRefundedAmount", "participant1", "waitListed"]
+    participant1: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["registrationId", "player1", "player2", "isParticipant1", "isWaitListed", "eventRefundedAmount", "waitListed", "participant1"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -100,8 +100,8 @@ class RegistrationResponse(BaseModel):
             "isParticipant1": obj.get("isParticipant1"),
             "isWaitListed": obj.get("isWaitListed"),
             "eventRefundedAmount": obj.get("eventRefundedAmount"),
-            "participant1": obj.get("participant1"),
-            "waitListed": obj.get("waitListed")
+            "waitListed": obj.get("waitListed"),
+            "participant1": obj.get("participant1")
         })
         return _obj
 

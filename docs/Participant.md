@@ -20,9 +20,9 @@ Name | Type | Description | Notes
 **refund_amount** | **float** |  | 
 **is_substitute** | **bool** |  | 
 **substitute** | **bool** |  | [optional] 
-**club_member** | **bool** |  | [optional] 
 **registered** | **bool** |  | [optional] 
 **wait_listed** | **bool** |  | [optional] 
+**club_member** | **bool** |  | [optional] 
 
 ## Example
 

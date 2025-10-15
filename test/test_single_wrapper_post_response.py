@@ -131,6 +131,8 @@ class TestSingleWrapperPostResponse(unittest.TestCase):
                                             email = '', 
                                             referral_code = '', ), 
                                         client_id = 56, 
+                                        club_name = '', 
+                                        client_name = '', 
                                         is_pro_match = True, 
                                         player_ids = [
                                             56
@@ -186,6 +188,8 @@ class TestSingleWrapperPostResponse(unittest.TestCase):
                             used_in_initialization = True, 
                             elo_calculated = True, 
                             client_id = 56, 
+                            club_name = '', 
+                            client_name = '', 
                             is_pro_match = True, 
                             player_ids = [
                                 56

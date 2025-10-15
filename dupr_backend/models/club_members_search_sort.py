@@ -40,8 +40,8 @@ class ClubMembersSearchSort(BaseModel):
     @field_validator('order')
     def order_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['ASC', 'DESC']):
-            raise ValueError("must be one of enum values ('ASC', 'DESC')")
+        if value not in set(['asc', 'desc']):
+            raise ValueError("must be one of enum values ('asc', 'desc')")
         return value
 
     model_config = ConfigDict(

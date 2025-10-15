@@ -4907,7 +4907,7 @@ class UserApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> Wrapper:
+    ) -> object:
         """send_phone_otp
 
 
@@ -4947,7 +4947,7 @@ class UserApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Wrapper",
+            '200': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4977,7 +4977,7 @@ class UserApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[Wrapper]:
+    ) -> ApiResponse[object]:
         """send_phone_otp
 
 
@@ -5017,7 +5017,7 @@ class UserApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Wrapper",
+            '200': "object",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5087,7 +5087,7 @@ class UserApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Wrapper",
+            '200': "object",
         }
         response_data = self.api_client.call_api(
             *_param,

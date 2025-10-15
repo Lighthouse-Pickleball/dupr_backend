@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,7 +27,7 @@ class PostReport(BaseModel):
     """
     PostReport
     """ # noqa: E501
-    id: StrictStr
+    id: UUID
     reporter_id: StrictInt = Field(alias="reporterId")
     reported_id: StrictStr = Field(alias="reportedId")
     report_type: StrictStr = Field(alias="reportType")

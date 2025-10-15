@@ -41,10 +41,10 @@ class Participant(BaseModel):
     refund_amount: Union[StrictFloat, StrictInt] = Field(alias="refundAmount")
     is_substitute: StrictBool = Field(alias="isSubstitute")
     substitute: Optional[StrictBool] = None
-    club_member: Optional[StrictBool] = Field(default=None, alias="clubMember")
     registered: Optional[StrictBool] = None
     wait_listed: Optional[StrictBool] = Field(default=None, alias="waitListed")
-    __properties: ClassVar[List[str]] = ["id", "fullName", "username", "displayUsername", "partnerStatus", "status", "paymentDue", "paymentStatus", "isRegistered", "isWaitListed", "isCLubMember", "paymentRefunded", "refundAmount", "isSubstitute", "substitute", "clubMember", "registered", "waitListed"]
+    club_member: Optional[StrictBool] = Field(default=None, alias="clubMember")
+    __properties: ClassVar[List[str]] = ["id", "fullName", "username", "displayUsername", "partnerStatus", "status", "paymentDue", "paymentStatus", "isRegistered", "isWaitListed", "isCLubMember", "paymentRefunded", "refundAmount", "isSubstitute", "substitute", "registered", "waitListed", "clubMember"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -132,9 +132,9 @@ class Participant(BaseModel):
             "refundAmount": obj.get("refundAmount"),
             "isSubstitute": obj.get("isSubstitute"),
             "substitute": obj.get("substitute"),
-            "clubMember": obj.get("clubMember"),
             "registered": obj.get("registered"),
-            "waitListed": obj.get("waitListed")
+            "waitListed": obj.get("waitListed"),
+            "clubMember": obj.get("clubMember")
         })
         return _obj
 

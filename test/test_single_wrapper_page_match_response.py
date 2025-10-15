@@ -116,11 +116,13 @@ class TestSingleWrapperPageMatchResponse(unittest.TestCase):
                                 name = '', 
                                 email = '', 
                                 referral_code = '', ), 
-                            client_id = 45, )
+                            client_id = 45, 
+                            club_name = 'event name', 
+                            client_name = 'event name', )
                         ], 
                     total_value_relation = 'GREATER_THAN_OR_EQUAL_TO', 
-                    has_previous = True, 
                     empty = False, 
+                    has_previous = True, 
                     has_more = False, )
             )
         else:

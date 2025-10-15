@@ -6,8 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **role_id** | **int** |  | 
-**is_club_member** | **bool** |  | 
 **role_name** | **str** |  | 
+**is_club_member** | **bool** |  | 
+**role_name** | **str** |  | [optional] 
 
 ## Example
 

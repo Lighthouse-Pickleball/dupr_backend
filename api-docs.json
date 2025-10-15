@@ -860,6 +860,15 @@
                             "type": "string",
                             "default": "v1.0"
                         }
+                    },
+                    {
+                        "name": "clubId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
                     }
                 ],
                 "requestBody": {
@@ -1219,7 +1228,7 @@
                 ]
             }
         },
-        "/club/{clubId}/match/{id}/{version}/edit": {
+        "/club/{clubId}/match/{version}/edit": {
             "put": {
                 "tags": [
                     "Club"
@@ -8061,7 +8070,7 @@
                 ]
             }
         },
-        "/club/{clubId}/match/{id}/{version}/delete": {
+        "/club/{clubId}/match/{version}/delete": {
             "post": {
                 "tags": [
                     "Club"
@@ -9044,7 +9053,7 @@
                 }
             }
         },
-        "/brackets/director/{bracketId}/teams/{version}/save": {
+        "/brackets/director/teams/{version}/save": {
             "post": {
                 "tags": [
                     "Brackets"
@@ -9085,7 +9094,7 @@
                 }
             }
         },
-        "/brackets/director/{bracketId}/teams/{version}/edit": {
+        "/brackets/director/teams/{version}/edit": {
             "post": {
                 "tags": [
                     "Brackets"
@@ -10203,6 +10212,17 @@
                     "Admin"
                 ],
                 "operationId": "populateUnknownPlayerPreRatings",
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": "v1.0"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -11241,7 +11261,7 @@
                     },
                     {
                         "name": "clubId",
-                        "in": "query",
+                        "in": "path",
                         "required": true,
                         "schema": {
                             "type": "integer",
@@ -15724,6 +15744,15 @@
                             "type": "string",
                             "default": "v1.0"
                         }
+                    },
+                    {
+                        "name": "clubId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
                     }
                 ],
                 "responses": {
@@ -18694,7 +18723,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/SingleWrapperAutocompletePrediction[]"
+                                    "$ref": "#/components/schemas/SingleWrapperAutocompletePrediction"
                                 }
                             }
                         }
@@ -37976,7 +38005,7 @@
                     }
                 }
             },
-            "SingleWrapperAutocompletePrediction[]": {
+            "SingleWrapperAutocompletePrediction": {
                 "type": "object",
                 "properties": {
                     "status": {

@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**delete_match1**](MatchesApi.md#delete_match1) | **DELETE** /match/{version}/delete/{id} | 
 [**get_dupr_performance_data**](MatchesApi.md#get_dupr_performance_data) | **GET** /match/{version}/performance | 
 [**get_dupr_performance_data_user**](MatchesApi.md#get_dupr_performance_data_user) | **GET** /match/{version}/performance/{id} | 
+[**get_match_expected_score**](MatchesApi.md#get_match_expected_score) | **POST** /match/{version}/expected-score | 
 [**get_match_rating_simulator**](MatchesApi.md#get_match_rating_simulator) | **POST** /match/{version}/rating-simulator | 
 [**get_user_match_history**](MatchesApi.md#get_user_match_history) | **GET** /match/{version}/history/unauthenticated/{id} | 
 [**match_details**](MatchesApi.md#match_details) | **GET** /match/{id} | 
@@ -55,7 +56,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MatchesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     match_confirm_request = dupr_backend.MatchConfirmRequest() # MatchConfirmRequest | 
 
     try:
@@ -73,7 +74,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **match_confirm_request** | [**MatchConfirmRequest**](MatchConfirmRequest.md)|  | 
 
 ### Return type
@@ -130,7 +131,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MatchesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     id = 56 # int | 
 
     try:
@@ -148,7 +149,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **id** | **int**|  | 
 
 ### Return type
@@ -205,7 +206,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MatchesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
 
     try:
         api_response = api_instance.get_dupr_performance_data(version)
@@ -222,7 +223,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -278,7 +279,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MatchesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     id = 56 # int | 
 
     try:
@@ -296,7 +297,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **id** | **int**|  | 
 
 ### Return type
@@ -317,6 +318,82 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_match_expected_score**
+> MatchExpectedScoreResponse get_match_expected_score(version, match_expected_score_request)
+
+### Example
+
+* Bearer (JWT) Authentication (bearerAuth):
+
+```python
+import dupr_backend
+from dupr_backend.models.match_expected_score_request import MatchExpectedScoreRequest
+from dupr_backend.models.match_expected_score_response import MatchExpectedScoreResponse
+from dupr_backend.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dupr.gg
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "https://api.dupr.gg"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.MatchesApi(api_client)
+    version = 'v1.0' # str |  (default to 'v1.0')
+    match_expected_score_request = dupr_backend.MatchExpectedScoreRequest() # MatchExpectedScoreRequest | 
+
+    try:
+        api_response = api_instance.get_match_expected_score(version, match_expected_score_request)
+        print("The response of MatchesApi->get_match_expected_score:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MatchesApi->get_match_expected_score: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
+ **match_expected_score_request** | [**MatchExpectedScoreRequest**](MatchExpectedScoreRequest.md)|  | 
+
+### Return type
+
+[**MatchExpectedScoreResponse**](MatchExpectedScoreResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -353,7 +430,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MatchesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     match_rating_simulator_request = dupr_backend.MatchRatingSimulatorRequest() # MatchRatingSimulatorRequest | 
 
     try:
@@ -371,7 +448,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **match_rating_simulator_request** | [**MatchRatingSimulatorRequest**](MatchRatingSimulatorRequest.md)|  | 
 
 ### Return type
@@ -428,7 +505,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MatchesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     id = 56 # int | 
     offset = 56 # int | 
     limit = 56 # int | 
@@ -448,7 +525,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **id** | **int**|  | 
  **offset** | **int**|  | 
  **limit** | **int**|  | 
@@ -580,7 +657,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MatchesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
 
     try:
         api_response = api_instance.pending_match_details(version)
@@ -597,7 +674,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -654,7 +731,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MatchesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     match_request = dupr_backend.MatchRequest() # MatchRequest | 
 
     try:
@@ -672,7 +749,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **match_request** | [**MatchRequest**](MatchRequest.md)|  | 
 
 ### Return type
@@ -730,7 +807,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MatchesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     verified_match_request = dupr_backend.VerifiedMatchRequest() # VerifiedMatchRequest | 
 
     try:
@@ -748,7 +825,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **verified_match_request** | [**VerifiedMatchRequest**](VerifiedMatchRequest.md)|  | 
 
 ### Return type
@@ -805,7 +882,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MatchesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     request = None # bytearray | 
 
     try:
@@ -823,7 +900,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **request** | **bytearray**|  | 
 
 ### Return type
@@ -880,7 +957,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MatchesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
 
     try:
         api_response = api_instance.score_formats(version)
@@ -897,7 +974,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -954,7 +1031,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MatchesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     id = 56 # int | 
     share_match_request = dupr_backend.ShareMatchRequest() # ShareMatchRequest | 
 
@@ -973,7 +1050,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **id** | **int**|  | 
  **share_match_request** | [**ShareMatchRequest**](ShareMatchRequest.md)|  | 
 
@@ -1031,7 +1108,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MatchesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     offset = 56 # int | 
     limit = 56 # int | 
 
@@ -1050,7 +1127,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **offset** | **int**|  | 
  **limit** | **int**|  | 
 
@@ -1109,7 +1186,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.MatchesApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     match_search_request = dupr_backend.MatchSearchRequest() # MatchSearchRequest | 
 
     try:
@@ -1127,7 +1204,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **match_search_request** | [**MatchSearchRequest**](MatchSearchRequest.md)|  | 
 
 ### Return type

@@ -56,7 +56,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityNewsfeedsForUserApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     feed_id = 56 # int | The user's feed Id
     post_id = 'post_id_example' # str | The post Id
     limit = 56 # int |  (optional)
@@ -77,7 +77,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **feed_id** | **int**| The user&#39;s feed Id | 
  **post_id** | **str**| The post Id | 
  **limit** | **int**|  | [optional] 
@@ -138,7 +138,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityNewsfeedsForUserApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     feed_id = 56 # int | The user's feed Id
     post_request = dupr_backend.PostRequest() # PostRequest | 
 
@@ -157,7 +157,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **feed_id** | **int**| The user&#39;s feed Id | 
  **post_request** | [**PostRequest**](PostRequest.md)|  | 
 
@@ -216,7 +216,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityNewsfeedsForUserApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     feed_id = 56 # int | The user's feed Id
     post_id = 'post_id_example' # str | The post Id
     react_delete_request = dupr_backend.ReactDeleteRequest() # ReactDeleteRequest | 
@@ -236,7 +236,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **feed_id** | **int**| The user&#39;s feed Id | 
  **post_id** | **str**| The post Id | 
  **react_delete_request** | [**ReactDeleteRequest**](ReactDeleteRequest.md)|  | 
@@ -296,7 +296,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityNewsfeedsForUserApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     feed_id = 56 # int | The user's feed Id
     post_id = 'post_id_example' # str | The post Id
     post_request = dupr_backend.PostRequest() # PostRequest | 
@@ -316,7 +316,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **feed_id** | **int**| The user&#39;s feed Id | 
  **post_id** | **str**| The post Id | 
  **post_request** | [**PostRequest**](PostRequest.md)|  | 
@@ -375,7 +375,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityNewsfeedsForUserApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     feed_id = 56 # int | The user's feed Id
     limit = 56 # int |  (optional)
     ref = 'ref_example' # str |  (optional)
@@ -395,7 +395,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **feed_id** | **int**| The user&#39;s feed Id | 
  **limit** | **int**|  | [optional] 
  **ref** | **str**|  | [optional] 
@@ -454,7 +454,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityNewsfeedsForUserApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     feed_id = 56 # int | The user's feed Id
 
     try:
@@ -472,7 +472,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **feed_id** | **int**| The user&#39;s feed Id | 
 
 ### Return type
@@ -529,7 +529,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityNewsfeedsForUserApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     feed_id = 56 # int | The user's feed Id
 
     try:
@@ -547,7 +547,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **feed_id** | **int**| The user&#39;s feed Id | 
 
 ### Return type
@@ -604,7 +604,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityNewsfeedsForUserApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     feed_id = 56 # int | The user's feed Id
     limit = 56 # int |  (optional)
     offset = 56 # int |  (optional)
@@ -624,7 +624,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **feed_id** | **int**| The user&#39;s feed Id | 
  **limit** | **int**|  | [optional] 
  **offset** | **int**|  | [optional] 
@@ -683,7 +683,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityNewsfeedsForUserApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     feed_id = 56 # int | The user's feed Id
     limit = 56 # int |  (optional)
     offset = 56 # int |  (optional)
@@ -703,7 +703,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **feed_id** | **int**| The user&#39;s feed Id | 
  **limit** | **int**|  | [optional] 
  **offset** | **int**|  | [optional] 
@@ -762,7 +762,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityNewsfeedsForUserApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     feed_id = 56 # int | The user's feed Id
     post_id = 'post_id_example' # str | The post Id
 
@@ -781,7 +781,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **feed_id** | **int**| The user&#39;s feed Id | 
  **post_id** | **str**| The post Id | 
 
@@ -839,7 +839,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityNewsfeedsForUserApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     feed_id = 56 # int | The user's feed Id
     limit = 56 # int |  (optional)
     offset = 56 # int |  (optional)
@@ -859,7 +859,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **feed_id** | **int**| The user&#39;s feed Id | 
  **limit** | **int**|  | [optional] 
  **offset** | **int**|  | [optional] 
@@ -919,7 +919,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityNewsfeedsForUserApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     feed_id = 56 # int | The user's feed Id
     post_id = 'post_id_example' # str | The post Id
     react_request = dupr_backend.ReactRequest() # ReactRequest | 
@@ -939,7 +939,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **feed_id** | **int**| The user&#39;s feed Id | 
  **post_id** | **str**| The post Id | 
  **react_request** | [**ReactRequest**](ReactRequest.md)|  | 
@@ -998,7 +998,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityNewsfeedsForUserApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     feed_id = 56 # int | The user's feed Id
     post_id = 'post_id_example' # str | The post Id
     limit = 56 # int |  (optional)
@@ -1019,7 +1019,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **feed_id** | **int**| The user&#39;s feed Id | 
  **post_id** | **str**| The post Id | 
  **limit** | **int**|  | [optional] 
@@ -1079,7 +1079,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityNewsfeedsForUserApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     feed_id = 56 # int | The user's feed Id
     post_id = 'post_id_example' # str | The post Id
 
@@ -1098,7 +1098,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **feed_id** | **int**| The user&#39;s feed Id | 
  **post_id** | **str**| The post Id | 
 
@@ -1156,7 +1156,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityNewsfeedsForUserApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     feed_id = 56 # int | The user's feed Id
     limit = 56 # int |  (optional)
     ref = 'ref_example' # str |  (optional)
@@ -1176,7 +1176,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **feed_id** | **int**| The user&#39;s feed Id | 
  **limit** | **int**|  | [optional] 
  **ref** | **str**|  | [optional] 
@@ -1235,7 +1235,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityNewsfeedsForUserApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     feed_id = 56 # int | The user's feed Id
 
     try:
@@ -1253,7 +1253,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **feed_id** | **int**| The user&#39;s feed Id | 
 
 ### Return type
@@ -1311,7 +1311,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ActivityNewsfeedsForUserApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     feed_id = 56 # int | The user's feed Id
     post_id = 'post_id_example' # str | The post Id
     react_request = dupr_backend.ReactRequest() # ReactRequest | 
@@ -1331,7 +1331,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **feed_id** | **int**| The user&#39;s feed Id | 
  **post_id** | **str**| The post Id | 
  **react_request** | [**ReactRequest**](ReactRequest.md)|  | 

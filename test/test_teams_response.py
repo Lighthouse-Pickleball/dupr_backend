@@ -14,10 +14,10 @@
 
 import unittest
 
-from dupr_backend.models.single_wrapper_object import SingleWrapperObject
+from dupr_backend.models.teams_response import TeamsResponse
 
-class TestSingleWrapperObject(unittest.TestCase):
-    """SingleWrapperObject unit test stubs"""
+class TestTeamsResponse(unittest.TestCase):
+    """TeamsResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,27 +25,29 @@ class TestSingleWrapperObject(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SingleWrapperObject:
-        """Test SingleWrapperObject
+    def make_instance(self, include_optional) -> TeamsResponse:
+        """Test TeamsResponse
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `SingleWrapperObject`
+        # uncomment below to create an instance of `TeamsResponse`
         """
-        model = SingleWrapperObject()
+        model = TeamsResponse()
         if include_optional:
-            return SingleWrapperObject(
-                status = 'SUCCESS',
-                message = 'Show this message to user.',
-                result = None
+            return TeamsResponse(
+                player1_id = 56,
+                player2_id = 56,
+                score = 1.337
             )
         else:
-            return SingleWrapperObject(
+            return TeamsResponse(
+                player1_id = 56,
+                score = 1.337,
         )
         """
 
-    def testSingleWrapperObject(self):
-        """Test SingleWrapperObject"""
+    def testTeamsResponse(self):
+        """Test TeamsResponse"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

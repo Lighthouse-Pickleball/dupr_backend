@@ -80,6 +80,8 @@ Method | HTTP request | Description
 [**save_verified_match1**](AdminApi.md#save_verified_match1) | **PUT** /admin/match/{version}/save | 
 [**set_club_restrictions**](AdminApi.md#set_club_restrictions) | **PUT** /admin/{version}/clubs/restrictions | 
 [**set_club_settings**](AdminApi.md#set_club_settings) | **PUT** /admin/{version}/clubs/settings | 
+[**set_users_active_by_dupr_id**](AdminApi.md#set_users_active_by_dupr_id) | **POST** /admin/users/enable | 
+[**set_users_inactive_by_dupr_id**](AdminApi.md#set_users_inactive_by_dupr_id) | **POST** /admin/users/disable | 
 [**signup**](AdminApi.md#signup) | **PUT** /admin/{version}/panel/user/signup | 
 [**signup_batch**](AdminApi.md#signup_batch) | **PUT** /admin/{version}/panel/user/signup/batch | 
 [**trigger_missing_elo_rating_for_players**](AdminApi.md#trigger_missing_elo_rating_for_players) | **POST** /admin/{version}/player-rating-history | 
@@ -142,7 +144,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     delete_match_request = dupr_backend.DeleteMatchRequest() # DeleteMatchRequest | 
 
     try:
@@ -160,7 +162,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **delete_match_request** | [**DeleteMatchRequest**](DeleteMatchRequest.md)|  | 
 
 ### Return type
@@ -217,7 +219,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     add_client_key_request = dupr_backend.AddClientKeyRequest() # AddClientKeyRequest | 
 
     try:
@@ -235,7 +237,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **add_client_key_request** | [**AddClientKeyRequest**](AddClientKeyRequest.md)|  | 
 
 ### Return type
@@ -293,7 +295,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     adjust_rating_request = dupr_backend.AdjustRatingRequest() # AdjustRatingRequest | 
 
     try:
@@ -311,7 +313,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **adjust_rating_request** | [**AdjustRatingRequest**](AdjustRatingRequest.md)|  | 
 
 ### Return type
@@ -368,7 +370,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     offset = 56 # int | 
     limit = 56 # int | 
 
@@ -387,7 +389,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **offset** | **int**|  | 
  **limit** | **int**|  | 
 
@@ -445,7 +447,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     s3_object = dupr_backend.S3Object() # S3Object | 
 
     try:
@@ -461,7 +463,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **s3_object** | [**S3Object**](S3Object.md)|  | 
 
 ### Return type
@@ -519,7 +521,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
     s3_object = dupr_backend.S3Object() # S3Object | 
 
@@ -538,7 +540,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
  **s3_object** | [**S3Object**](S3Object.md)|  | 
 
@@ -597,7 +599,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     s3_object = dupr_backend.S3Object() # S3Object | 
 
     try:
@@ -615,7 +617,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **s3_object** | [**S3Object**](S3Object.md)|  | 
 
 ### Return type
@@ -673,7 +675,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     s3_object = dupr_backend.S3Object() # S3Object | 
 
     try:
@@ -691,7 +693,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **s3_object** | [**S3Object**](S3Object.md)|  | 
 
 ### Return type
@@ -749,7 +751,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     batch_player_rating_request = dupr_backend.BatchPlayerRatingRequest() # BatchPlayerRatingRequest | 
 
     try:
@@ -767,7 +769,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **batch_player_rating_request** | [**BatchPlayerRatingRequest**](BatchPlayerRatingRequest.md)|  | 
 
 ### Return type
@@ -825,7 +827,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     batch_player_rating_provisional_request = dupr_backend.BatchPlayerRatingProvisionalRequest() # BatchPlayerRatingProvisionalRequest | 
 
     try:
@@ -843,7 +845,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **batch_player_rating_provisional_request** | [**BatchPlayerRatingProvisionalRequest**](BatchPlayerRatingProvisionalRequest.md)|  | 
 
 ### Return type
@@ -900,7 +902,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     s3_object = dupr_backend.S3Object() # S3Object | 
 
     try:
@@ -916,7 +918,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **s3_object** | [**S3Object**](S3Object.md)|  | 
 
 ### Return type
@@ -972,7 +974,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     flag = True # bool | 
 
     try:
@@ -990,7 +992,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **flag** | **bool**|  | 
 
 ### Return type
@@ -1047,7 +1049,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     type = 'type_example' # str | 
     document = None # bytearray | 
 
@@ -1066,7 +1068,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **type** | **str**|  | 
  **document** | **bytearray**|  | 
 
@@ -1201,7 +1203,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     request = None # bytearray | 
 
     try:
@@ -1219,7 +1221,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **request** | **bytearray**|  | 
 
 ### Return type
@@ -1276,7 +1278,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bulk_coppa_email_request = dupr_backend.BulkCoppaEmailRequest() # BulkCoppaEmailRequest | 
 
     try:
@@ -1294,7 +1296,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bulk_coppa_email_request** | [**BulkCoppaEmailRequest**](BulkCoppaEmailRequest.md)|  | 
 
 ### Return type
@@ -1351,7 +1353,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bulk_coppa_email_request = dupr_backend.BulkCoppaEmailRequest() # BulkCoppaEmailRequest | 
 
     try:
@@ -1369,7 +1371,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bulk_coppa_email_request** | [**BulkCoppaEmailRequest**](BulkCoppaEmailRequest.md)|  | 
 
 ### Return type
@@ -1426,7 +1428,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bulk_set_club_restrictions_request = dupr_backend.BulkSetClubRestrictionsRequest() # BulkSetClubRestrictionsRequest | 
 
     try:
@@ -1444,7 +1446,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bulk_set_club_restrictions_request** | [**BulkSetClubRestrictionsRequest**](BulkSetClubRestrictionsRequest.md)|  | 
 
 ### Return type
@@ -1500,7 +1502,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     page_size = 56 # int |  (optional)
     delay = 56 # int |  (optional)
     current_page = 56 # int |  (optional)
@@ -1521,7 +1523,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **page_size** | **int**|  | [optional] 
  **delay** | **int**|  | [optional] 
  **current_page** | **int**|  | [optional] 
@@ -1582,7 +1584,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     change_email_admin_request = dupr_backend.ChangeEmailAdminRequest() # ChangeEmailAdminRequest | 
 
     try:
@@ -1600,7 +1602,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **change_email_admin_request** | [**ChangeEmailAdminRequest**](ChangeEmailAdminRequest.md)|  | 
 
 ### Return type
@@ -1658,7 +1660,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     change_role_request = dupr_backend.ChangeRoleRequest() # ChangeRoleRequest | 
 
     try:
@@ -1676,7 +1678,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **change_role_request** | [**ChangeRoleRequest**](ChangeRoleRequest.md)|  | 
 
 ### Return type
@@ -1734,7 +1736,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     create_clubs_request = dupr_backend.CreateClubsRequest() # CreateClubsRequest | 
 
     try:
@@ -1752,7 +1754,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **create_clubs_request** | [**CreateClubsRequest**](CreateClubsRequest.md)|  | 
 
 ### Return type
@@ -1810,7 +1812,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     create_banner_request = dupr_backend.CreateBannerRequest() # CreateBannerRequest | 
 
     try:
@@ -1828,7 +1830,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **create_banner_request** | [**CreateBannerRequest**](CreateBannerRequest.md)|  | 
 
 ### Return type
@@ -1885,7 +1887,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     document = None # bytearray | 
 
     try:
@@ -1903,7 +1905,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **document** | **bytearray**|  | 
 
 ### Return type
@@ -1961,7 +1963,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     create_client_request = dupr_backend.CreateClientRequest() # CreateClientRequest | 
 
     try:
@@ -1979,7 +1981,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **create_client_request** | [**CreateClientRequest**](CreateClientRequest.md)|  | 
 
 ### Return type
@@ -2110,7 +2112,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
 
     try:
@@ -2128,7 +2130,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
 
 ### Return type
@@ -2186,7 +2188,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     delete_match_request = dupr_backend.DeleteMatchRequest() # DeleteMatchRequest | 
 
     try:
@@ -2204,7 +2206,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **delete_match_request** | [**DeleteMatchRequest**](DeleteMatchRequest.md)|  | 
 
 ### Return type
@@ -2262,7 +2264,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     request = dupr_backend.DynamicUserIdentityType() # DynamicUserIdentityType | 
 
     try:
@@ -2280,7 +2282,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **request** | [**DynamicUserIdentityType**](.md)|  | 
 
 ### Return type
@@ -2337,7 +2339,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     user_id = 56 # int | 
 
     try:
@@ -2355,7 +2357,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **user_id** | **int**|  | 
 
 ### Return type
@@ -2412,7 +2414,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     dupr_id = 'dupr_id_example' # str |  (optional)
     user_id = 56 # int |  (optional)
     external_id = 'external_id_example' # str |  (optional)
@@ -2432,7 +2434,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **dupr_id** | **str**|  | [optional] 
  **user_id** | **int**|  | [optional] 
  **external_id** | **str**|  | [optional] 
@@ -2492,7 +2494,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     edit_club_staff_request = dupr_backend.EditClubStaffRequest() # EditClubStaffRequest | 
 
     try:
@@ -2510,7 +2512,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **edit_club_staff_request** | [**EditClubStaffRequest**](EditClubStaffRequest.md)|  | 
 
 ### Return type
@@ -2641,7 +2643,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
 
     try:
         api_response = api_instance.export_matches_missing_team_player(version)
@@ -2658,7 +2660,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -2782,7 +2784,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
 
     try:
         api_response = api_instance.export_users_via_mail(version)
@@ -2799,7 +2801,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -2855,7 +2857,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
 
     try:
         api_response = api_instance.find_duplicated_account_for_players(version)
@@ -2872,7 +2874,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -2928,7 +2930,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
 
     try:
         api_response = api_instance.get_active_banner(version)
@@ -2945,7 +2947,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -3001,7 +3003,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
 
     try:
         api_response = api_instance.get_all_banner(version)
@@ -3018,7 +3020,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -3074,7 +3076,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
 
     try:
         api_response = api_instance.get_all_roles1(version)
@@ -3091,7 +3093,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -3147,7 +3149,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     get_club_restrictions_request = dupr_backend.GetClubRestrictionsRequest() # GetClubRestrictionsRequest | 
 
     try:
@@ -3165,7 +3167,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **get_club_restrictions_request** | [**GetClubRestrictionsRequest**](GetClubRestrictionsRequest.md)|  | 
 
 ### Return type
@@ -3222,7 +3224,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     get_club_settings_request = dupr_backend.GetClubSettingsRequest() # GetClubSettingsRequest | 
 
     try:
@@ -3240,7 +3242,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **get_club_settings_request** | [**GetClubSettingsRequest**](GetClubSettingsRequest.md)|  | 
 
 ### Return type
@@ -3297,7 +3299,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     get_client_permissions_request = dupr_backend.GetClientPermissionsRequest() # GetClientPermissionsRequest | 
 
     try:
@@ -3315,7 +3317,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **get_client_permissions_request** | [**GetClientPermissionsRequest**](GetClientPermissionsRequest.md)|  | 
 
 ### Return type
@@ -3372,7 +3374,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     batch_get_clients_request = dupr_backend.BatchGetClientsRequest() # BatchGetClientsRequest | 
 
     try:
@@ -3390,7 +3392,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **batch_get_clients_request** | [**BatchGetClientsRequest**](BatchGetClientsRequest.md)|  | 
 
 ### Return type
@@ -3447,7 +3449,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     id = 'id_example' # str | 
 
     try:
@@ -3465,7 +3467,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **id** | **str**|  | 
 
 ### Return type
@@ -3522,7 +3524,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     request = dupr_backend.RatingLeaderboardRequest() # RatingLeaderboardRequest | 
 
     try:
@@ -3540,7 +3542,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **request** | [**RatingLeaderboardRequest**](.md)|  | 
 
 ### Return type
@@ -3598,7 +3600,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     user_bracket_admin_request = dupr_backend.UserBracketAdminRequest() # UserBracketAdminRequest | 
 
     try:
@@ -3616,7 +3618,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **user_bracket_admin_request** | [**UserBracketAdminRequest**](UserBracketAdminRequest.md)|  | 
 
 ### Return type
@@ -3673,7 +3675,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     user_id = 56 # int | 
 
     try:
@@ -3691,7 +3693,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **user_id** | **int**|  | 
 
 ### Return type
@@ -3822,7 +3824,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
 
     try:
         api_response = api_instance.index_club_members(version)
@@ -3839,7 +3841,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -3895,7 +3897,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
 
     try:
         api_response = api_instance.index_clubs(version)
@@ -3912,7 +3914,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -3967,7 +3969,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     id = 'id_example' # str | 
 
     try:
@@ -3985,7 +3987,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **id** | **str**|  | 
 
 ### Return type
@@ -4042,7 +4044,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
 
     try:
         api_response = api_instance.index_players(version)
@@ -4059,7 +4061,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -4187,7 +4189,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     sources = ['sources_example'] # List[str] |  (optional)
 
     try:
@@ -4205,7 +4207,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **sources** | [**List[str]**](str.md)|  | [optional] 
 
 ### Return type
@@ -4263,7 +4265,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     matches_reassign_request = dupr_backend.MatchesReassignRequest() # MatchesReassignRequest | 
 
     try:
@@ -4281,7 +4283,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **matches_reassign_request** | [**MatchesReassignRequest**](MatchesReassignRequest.md)|  | 
 
 ### Return type
@@ -4339,7 +4341,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     notify = True # bool |  (optional)
     signup_batch_request = dupr_backend.SignupBatchRequest() # SignupBatchRequest |  (optional)
 
@@ -4358,7 +4360,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **notify** | **bool**|  | [optional] 
  **signup_batch_request** | [**SignupBatchRequest**](SignupBatchRequest.md)|  | [optional] 
 
@@ -4416,7 +4418,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     all = True # bool | 
     sources = ['sources_example'] # List[str] |  (optional)
 
@@ -4435,7 +4437,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **all** | **bool**|  | 
  **sources** | [**List[str]**](str.md)|  | [optional] 
 
@@ -4494,7 +4496,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     merge_users_request = dupr_backend.MergeUsersRequest() # MergeUsersRequest | 
 
     try:
@@ -4512,7 +4514,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **merge_users_request** | [**MergeUsersRequest**](MergeUsersRequest.md)|  | 
 
 ### Return type
@@ -4569,7 +4571,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     document = None # bytearray | 
 
     try:
@@ -4587,7 +4589,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **document** | **bytearray**|  | 
 
 ### Return type
@@ -4794,7 +4796,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
 
     try:
         api_response = api_instance.populate_unknown_player_pre_ratings(version)
@@ -4811,7 +4813,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -4867,7 +4869,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     id = 'id_example' # str | 
 
     try:
@@ -4885,7 +4887,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **id** | **str**|  | 
 
 ### Return type
@@ -4943,7 +4945,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     type = 'type_example' # str | 
     signup_batch_request = dupr_backend.SignupBatchRequest() # SignupBatchRequest |  (optional)
 
@@ -4962,7 +4964,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **type** | **str**|  | 
  **signup_batch_request** | [**SignupBatchRequest**](SignupBatchRequest.md)|  | [optional] 
 
@@ -5021,7 +5023,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     calculate_matches_range = dupr_backend.CalculateMatchesRange() # CalculateMatchesRange | 
 
     try:
@@ -5039,7 +5041,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **calculate_matches_range** | [**CalculateMatchesRange**](CalculateMatchesRange.md)|  | 
 
 ### Return type
@@ -5097,7 +5099,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     type = 'type_example' # str | 
     signup_batch_request = dupr_backend.SignupBatchRequest() # SignupBatchRequest |  (optional)
 
@@ -5116,7 +5118,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **type** | **str**|  | 
  **signup_batch_request** | [**SignupBatchRequest**](SignupBatchRequest.md)|  | [optional] 
 
@@ -5174,7 +5176,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     remove_all_club_restrictions_request = dupr_backend.RemoveAllClubRestrictionsRequest() # RemoveAllClubRestrictionsRequest | 
 
     try:
@@ -5192,7 +5194,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **remove_all_club_restrictions_request** | [**RemoveAllClubRestrictionsRequest**](RemoveAllClubRestrictionsRequest.md)|  | 
 
 ### Return type
@@ -5249,7 +5251,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     remove_club_restrictions_request = dupr_backend.RemoveClubRestrictionsRequest() # RemoveClubRestrictionsRequest | 
 
     try:
@@ -5267,7 +5269,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **remove_club_restrictions_request** | [**RemoveClubRestrictionsRequest**](RemoveClubRestrictionsRequest.md)|  | 
 
 ### Return type
@@ -5396,7 +5398,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     client_id = 56 # int | 
 
     try:
@@ -5414,7 +5416,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **client_id** | **int**|  | 
 
 ### Return type
@@ -5472,7 +5474,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     id = 56 # int | 
     user_restrict_request = dupr_backend.UserRestrictRequest() # UserRestrictRequest | 
 
@@ -5491,7 +5493,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **id** | **int**|  | 
  **user_restrict_request** | [**UserRestrictRequest**](UserRestrictRequest.md)|  | 
 
@@ -5550,7 +5552,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     topic_request = dupr_backend.TopicRequest() # TopicRequest | 
 
     try:
@@ -5568,7 +5570,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **topic_request** | [**TopicRequest**](TopicRequest.md)|  | 
 
 ### Return type
@@ -5626,7 +5628,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     match_request = dupr_backend.MatchRequest() # MatchRequest | 
 
     try:
@@ -5644,7 +5646,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **match_request** | [**MatchRequest**](MatchRequest.md)|  | 
 
 ### Return type
@@ -5701,7 +5703,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     set_club_restrictions_request = dupr_backend.SetClubRestrictionsRequest() # SetClubRestrictionsRequest | 
 
     try:
@@ -5719,7 +5721,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **set_club_restrictions_request** | [**SetClubRestrictionsRequest**](SetClubRestrictionsRequest.md)|  | 
 
 ### Return type
@@ -5776,7 +5778,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     set_club_settings_request = dupr_backend.SetClubSettingsRequest() # SetClubSettingsRequest | 
 
     try:
@@ -5794,12 +5796,160 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **set_club_settings_request** | [**SetClubSettingsRequest**](SetClubSettingsRequest.md)|  | 
 
 ### Return type
 
 **object**
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_users_active_by_dupr_id**
+> ResultString set_users_active_by_dupr_id(set_dupr_ids_inactive_request)
+
+### Example
+
+* Bearer (JWT) Authentication (bearerAuth):
+
+```python
+import dupr_backend
+from dupr_backend.models.result_string import ResultString
+from dupr_backend.models.set_dupr_ids_inactive_request import SetDuprIdsInactiveRequest
+from dupr_backend.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dupr.gg
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "https://api.dupr.gg"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    set_dupr_ids_inactive_request = dupr_backend.SetDuprIdsInactiveRequest() # SetDuprIdsInactiveRequest | 
+
+    try:
+        api_response = api_instance.set_users_active_by_dupr_id(set_dupr_ids_inactive_request)
+        print("The response of AdminApi->set_users_active_by_dupr_id:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->set_users_active_by_dupr_id: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **set_dupr_ids_inactive_request** | [**SetDuprIdsInactiveRequest**](SetDuprIdsInactiveRequest.md)|  | 
+
+### Return type
+
+[**ResultString**](ResultString.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_users_inactive_by_dupr_id**
+> ResultString set_users_inactive_by_dupr_id(set_dupr_ids_inactive_request)
+
+### Example
+
+* Bearer (JWT) Authentication (bearerAuth):
+
+```python
+import dupr_backend
+from dupr_backend.models.result_string import ResultString
+from dupr_backend.models.set_dupr_ids_inactive_request import SetDuprIdsInactiveRequest
+from dupr_backend.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dupr.gg
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "https://api.dupr.gg"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.AdminApi(api_client)
+    set_dupr_ids_inactive_request = dupr_backend.SetDuprIdsInactiveRequest() # SetDuprIdsInactiveRequest | 
+
+    try:
+        api_response = api_instance.set_users_inactive_by_dupr_id(set_dupr_ids_inactive_request)
+        print("The response of AdminApi->set_users_inactive_by_dupr_id:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->set_users_inactive_by_dupr_id: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **set_dupr_ids_inactive_request** | [**SetDuprIdsInactiveRequest**](SetDuprIdsInactiveRequest.md)|  | 
+
+### Return type
+
+[**ResultString**](ResultString.md)
 
 ### Authorization
 
@@ -5852,7 +6002,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     sign_up_request = dupr_backend.SignUpRequest() # SignUpRequest | 
 
     try:
@@ -5870,7 +6020,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **sign_up_request** | [**SignUpRequest**](SignUpRequest.md)|  | 
 
 ### Return type
@@ -5927,7 +6077,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     document = None # bytearray | 
 
     try:
@@ -5945,7 +6095,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **document** | **bytearray**|  | 
 
 ### Return type
@@ -6002,7 +6152,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
 
     try:
         api_response = api_instance.trigger_missing_elo_rating_for_players(version)
@@ -6019,7 +6169,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -6076,7 +6226,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     request = dupr_backend.DynamicUserIdentityType() # DynamicUserIdentityType | 
 
     try:
@@ -6094,7 +6244,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **request** | [**DynamicUserIdentityType**](.md)|  | 
 
 ### Return type
@@ -6300,7 +6450,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     create_banner_request = dupr_backend.CreateBannerRequest() # CreateBannerRequest | 
 
     try:
@@ -6318,7 +6468,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **create_banner_request** | [**CreateBannerRequest**](CreateBannerRequest.md)|  | 
 
 ### Return type
@@ -6376,7 +6526,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
     club_currency_request = dupr_backend.ClubCurrencyRequest() # ClubCurrencyRequest | 
 
@@ -6395,7 +6545,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
  **club_currency_request** | [**ClubCurrencyRequest**](ClubCurrencyRequest.md)|  | 
 
@@ -6454,7 +6604,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
     club_revenue_model_request = dupr_backend.ClubRevenueModelRequest() # ClubRevenueModelRequest | 
 
@@ -6473,7 +6623,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
  **club_revenue_model_request** | [**ClubRevenueModelRequest**](ClubRevenueModelRequest.md)|  | 
 
@@ -6531,7 +6681,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
 
     try:
         api_response = api_instance.update_currency_rates(version)
@@ -6548,7 +6698,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -6604,7 +6754,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     id = 'id_example' # str | 
     body = 'body_example' # str | 
 
@@ -6623,7 +6773,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **id** | **str**|  | 
  **body** | **str**|  | 
 
@@ -6682,7 +6832,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     update_client_permissions_request = dupr_backend.UpdateClientPermissionsRequest() # UpdateClientPermissionsRequest | 
 
     try:
@@ -6700,7 +6850,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **update_client_permissions_request** | [**UpdateClientPermissionsRequest**](UpdateClientPermissionsRequest.md)|  | 
 
 ### Return type
@@ -6757,7 +6907,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     s3_object = dupr_backend.S3Object() # S3Object | 
 
     try:
@@ -6775,7 +6925,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **s3_object** | [**S3Object**](S3Object.md)|  | 
 
 ### Return type
@@ -6833,7 +6983,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     id = 56 # int | 
     user_lucra_request = dupr_backend.UserLucraRequest() # UserLucraRequest | 
 
@@ -6852,7 +7002,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **id** | **int**|  | 
  **user_lucra_request** | [**UserLucraRequest**](UserLucraRequest.md)|  | 
 
@@ -6911,7 +7061,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     match_update_request = dupr_backend.MatchUpdateRequest() # MatchUpdateRequest | 
 
     try:
@@ -6929,7 +7079,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **match_update_request** | [**MatchUpdateRequest**](MatchUpdateRequest.md)|  | 
 
 ### Return type
@@ -6987,7 +7137,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     update_registration_request = [dupr_backend.UpdateRegistrationRequest()] # List[UpdateRegistrationRequest] | 
 
     try:
@@ -7005,7 +7155,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **update_registration_request** | [**List[UpdateRegistrationRequest]**](UpdateRegistrationRequest.md)|  | 
 
 ### Return type
@@ -7063,7 +7213,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     id = 56 # int | 
     player_rating_update_request = dupr_backend.PlayerRatingUpdateRequest() # PlayerRatingUpdateRequest | 
 
@@ -7082,7 +7232,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **id** | **int**|  | 
  **player_rating_update_request** | [**PlayerRatingUpdateRequest**](PlayerRatingUpdateRequest.md)|  | 
 
@@ -7141,7 +7291,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     player_statistics_update_request = dupr_backend.PlayerStatisticsUpdateRequest() # PlayerStatisticsUpdateRequest | 
 
     try:
@@ -7159,7 +7309,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **player_statistics_update_request** | [**PlayerStatisticsUpdateRequest**](PlayerStatisticsUpdateRequest.md)|  | 
 
 ### Return type
@@ -7217,7 +7367,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     s3_object = dupr_backend.S3Object() # S3Object | 
 
     try:
@@ -7235,7 +7385,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **s3_object** | [**S3Object**](S3Object.md)|  | 
 
 ### Return type
@@ -7292,7 +7442,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
 
     try:
         api_response = api_instance.update_referral_code(version)
@@ -7309,7 +7459,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -7365,7 +7515,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     user_status_update_request = dupr_backend.UserStatusUpdateRequest() # UserStatusUpdateRequest | 
 
     try:
@@ -7383,7 +7533,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **user_status_update_request** | [**UserStatusUpdateRequest**](UserStatusUpdateRequest.md)|  | 
 
 ### Return type
@@ -7441,7 +7591,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     user_id = 56 # int | 
     player_profile_request = dupr_backend.PlayerProfileRequest() # PlayerProfileRequest | 
 
@@ -7460,7 +7610,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **user_id** | **int**|  | 
  **player_profile_request** | [**PlayerProfileRequest**](PlayerProfileRequest.md)|  | 
 
@@ -7519,7 +7669,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     s3_object = dupr_backend.S3Object() # S3Object | 
 
     try:
@@ -7537,7 +7687,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **s3_object** | [**S3Object**](S3Object.md)|  | 
 
 ### Return type
@@ -7667,7 +7817,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     user_search_request = dupr_backend.UserSearchRequest() # UserSearchRequest | 
 
     try:
@@ -7685,7 +7835,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **user_search_request** | [**UserSearchRequest**](UserSearchRequest.md)|  | 
 
 ### Return type
@@ -7743,7 +7893,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.AdminApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     verify_email_request = dupr_backend.VerifyEmailRequest() # VerifyEmailRequest | 
 
     try:
@@ -7761,7 +7911,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **verify_email_request** | [**VerifyEmailRequest**](VerifyEmailRequest.md)|  | 
 
 ### Return type

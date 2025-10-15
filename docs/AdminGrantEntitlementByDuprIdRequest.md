@@ -5,9 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**user_ids** | **List[str]** |  | 
+**dupr_ids** | **List[str]** |  | 
 **entitlements** | **List[str]** |  | 
 **end_date** | **int** |  | 
+**club_id** | **int** |  | [optional] 
 
 ## Example
 

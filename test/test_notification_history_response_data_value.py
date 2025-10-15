@@ -168,17 +168,17 @@ class TestNotificationHistoryResponseDataValue(unittest.TestCase):
                         lucra_connected = True, 
                         is_enabled = True, 
                         password = '', 
-                        is_admin = True, 
-                        valid_email = True, 
-                        valid_phone = True, 
+                        authorities = [
+                            dupr_backend.models.granted_authority.GrantedAuthority(
+                                authority = '', )
+                            ], 
                         is_account_non_expired = True, 
                         is_account_non_locked = True, 
                         is_credentials_non_expired = True, 
                         username = '', 
-                        authorities = [
-                            dupr_backend.models.granted_authority.GrantedAuthority(
-                                authority = '', )
-                            ], ), )
+                        is_admin = True, 
+                        valid_email = True, 
+                        valid_phone = True, ), )
             )
         else:
             return NotificationHistoryResponseDataValue(
@@ -309,17 +309,17 @@ class TestNotificationHistoryResponseDataValue(unittest.TestCase):
                         lucra_connected = True, 
                         is_enabled = True, 
                         password = '', 
-                        is_admin = True, 
-                        valid_email = True, 
-                        valid_phone = True, 
+                        authorities = [
+                            dupr_backend.models.granted_authority.GrantedAuthority(
+                                authority = '', )
+                            ], 
                         is_account_non_expired = True, 
                         is_account_non_locked = True, 
                         is_credentials_non_expired = True, 
                         username = '', 
-                        authorities = [
-                            dupr_backend.models.granted_authority.GrantedAuthority(
-                                authority = '', )
-                            ], ), ),
+                        is_admin = True, 
+                        valid_email = True, 
+                        valid_phone = True, ), ),
         )
         """
 

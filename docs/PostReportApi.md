@@ -42,7 +42,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.PostReportApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     status = 'status_example' # str | PostReport status
     limit = 56 # int |  (optional)
     offset = 56 # int |  (optional)
@@ -67,7 +67,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **status** | **str**| PostReport status | 
  **limit** | **int**|  | [optional] 
  **offset** | **int**|  | [optional] 
@@ -132,7 +132,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.PostReportApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     report_request = dupr_backend.ReportRequest() # ReportRequest | 
 
     try:
@@ -150,7 +150,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **report_request** | [**ReportRequest**](ReportRequest.md)|  | 
 
 ### Return type
@@ -207,7 +207,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.PostReportApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     report_id = 'report_id_example' # str | The report's Id
     status = 'status_example' # str | APPROVE/REJECT
 
@@ -226,7 +226,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **report_id** | **str**| The report&#39;s Id | 
  **status** | **str**| APPROVE/REJECT | 
 

@@ -14,10 +14,10 @@
 
 import unittest
 
-from dupr_backend.models.create_stripe_session_request import CreateStripeSessionRequest
+from dupr_backend.models.benefactor import Benefactor
 
-class TestCreateStripeSessionRequest(unittest.TestCase):
-    """CreateStripeSessionRequest unit test stubs"""
+class TestBenefactor(unittest.TestCase):
+    """Benefactor unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,30 +25,28 @@ class TestCreateStripeSessionRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> CreateStripeSessionRequest:
-        """Test CreateStripeSessionRequest
+    def make_instance(self, include_optional) -> Benefactor:
+        """Test Benefactor
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `CreateStripeSessionRequest`
+        # uncomment below to create an instance of `Benefactor`
         """
-        model = CreateStripeSessionRequest()
+        model = Benefactor()
         if include_optional:
-            return CreateStripeSessionRequest(
-                client_key = '',
-                return_url = '',
-                success_url = '',
-                canceled_url = ''
+            return Benefactor(
+                id = 56,
+                display_name = ''
             )
         else:
-            return CreateStripeSessionRequest(
-                client_key = '',
-                return_url = '',
+            return Benefactor(
+                id = 56,
+                display_name = '',
         )
         """
 
-    def testCreateStripeSessionRequest(self):
-        """Test CreateStripeSessionRequest"""
+    def testBenefactor(self):
+        """Test Benefactor"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

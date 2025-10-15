@@ -36,7 +36,7 @@ class TestClubRole(unittest.TestCase):
         if include_optional:
             return ClubRole(
                 role_id = 56,
-                role = 'ADMIN',
+                role = 'PLAYER',
                 approval_status = 'PENDING',
                 club_id = 56,
                 created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
@@ -46,7 +46,7 @@ class TestClubRole(unittest.TestCase):
         else:
             return ClubRole(
                 role_id = 56,
-                role = 'ADMIN',
+                role = 'PLAYER',
                 approval_status = 'PENDING',
                 club_id = 56,
         )

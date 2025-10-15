@@ -26,14 +26,14 @@ class TestSubscriptionsControllerApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_create_checkout_session(self) -> None:
-        """Test case for create_checkout_session
+    def test_create_customer_portal_session(self) -> None:
+        """Test case for create_customer_portal_session
 
         """
         pass
 
-    def test_create_customer_portal_session(self) -> None:
-        """Test case for create_customer_portal_session
+    def test_get_active_products(self) -> None:
+        """Test case for get_active_products
 
         """
         pass

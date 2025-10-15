@@ -17,7 +17,7 @@ Method | HTTP request | Description
 [**edit_match_score_by_director**](BracketsApi.md#edit_match_score_by_director) | **POST** /brackets/director/match/{version}/edit | 
 [**edit_partner**](BracketsApi.md#edit_partner) | **POST** /brackets/partner/{version}/edit | 
 [**edit_player_wait_list**](BracketsApi.md#edit_player_wait_list) | **POST** /brackets/director/waitlist/{version}/edit | 
-[**edit_teams**](BracketsApi.md#edit_teams) | **POST** /brackets/director/{bracketId}/teams/{version}/edit | 
+[**edit_teams**](BracketsApi.md#edit_teams) | **POST** /brackets/director/teams/{version}/edit | 
 [**end_league1**](BracketsApi.md#end_league1) | **GET** /brackets/{leagueId}/{bracketId}/{version}/end | 
 [**export_bracket_participants**](BracketsApi.md#export_bracket_participants) | **GET** /brackets/director/{bracketId}/participant/{version}/export | 
 [**forfeit_match**](BracketsApi.md#forfeit_match) | **POST** /brackets/director/match/{version}/forfeit | 
@@ -53,7 +53,7 @@ Method | HTTP request | Description
 [**remove_match_from_queue**](BracketsApi.md#remove_match_from_queue) | **GET** /brackets/match/{leagueMatchId}/queue/{version}/remove | 
 [**save_bracket**](BracketsApi.md#save_bracket) | **PUT** /brackets/{version}/save | 
 [**save_match_seeding**](BracketsApi.md#save_match_seeding) | **POST** /brackets/{version}/seed | 
-[**save_teams**](BracketsApi.md#save_teams) | **POST** /brackets/director/{bracketId}/teams/{version}/save | 
+[**save_teams**](BracketsApi.md#save_teams) | **POST** /brackets/director/teams/{version}/save | 
 [**seed_matches**](BracketsApi.md#seed_matches) | **GET** /brackets/{version}/seed | 
 [**substitute_players**](BracketsApi.md#substitute_players) | **POST** /brackets/director/participant/{version}/substitute | 
 [**switch_player**](BracketsApi.md#switch_player) | **POST** /brackets/director/player/{version}/switch | 
@@ -87,7 +87,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     league_match_request = dupr_backend.LeagueMatchRequest() # LeagueMatchRequest | 
 
     try:
@@ -105,7 +105,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **league_match_request** | [**LeagueMatchRequest**](LeagueMatchRequest.md)|  | 
 
 ### Return type
@@ -153,7 +153,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     league_match_request = dupr_backend.LeagueMatchRequest() # LeagueMatchRequest | 
 
     try:
@@ -171,7 +171,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **league_match_request** | [**LeagueMatchRequest**](LeagueMatchRequest.md)|  | 
 
 ### Return type
@@ -219,7 +219,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     league_match_confirm_request = dupr_backend.LeagueMatchConfirmRequest() # LeagueMatchConfirmRequest | 
 
     try:
@@ -237,7 +237,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **league_match_confirm_request** | [**LeagueMatchConfirmRequest**](LeagueMatchConfirmRequest.md)|  | 
 
 ### Return type
@@ -285,7 +285,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     league_match_confirm_request = dupr_backend.LeagueMatchConfirmRequest() # LeagueMatchConfirmRequest | 
 
     try:
@@ -303,7 +303,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **league_match_confirm_request** | [**LeagueMatchConfirmRequest**](LeagueMatchConfirmRequest.md)|  | 
 
 ### Return type
@@ -351,7 +351,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     confirm_team_request = dupr_backend.ConfirmTeamRequest() # ConfirmTeamRequest | 
 
     try:
@@ -369,7 +369,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **confirm_team_request** | [**ConfirmTeamRequest**](ConfirmTeamRequest.md)|  | 
 
 ### Return type
@@ -416,7 +416,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     league_id = 56 # int | 
     bracket_id = 56 # int | 
 
@@ -435,7 +435,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **league_id** | **int**|  | 
  **bracket_id** | **int**|  | 
 
@@ -484,7 +484,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     edit_bracket_request = dupr_backend.EditBracketRequest() # EditBracketRequest | 
 
     try:
@@ -502,7 +502,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **edit_bracket_request** | [**EditBracketRequest**](EditBracketRequest.md)|  | 
 
 ### Return type
@@ -549,7 +549,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     league_id = 56 # int | 
     bracket_id = 56 # int | 
     status = 'status_example' # str | 
@@ -570,7 +570,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **league_id** | **int**|  | 
  **bracket_id** | **int**|  | 
  **status** | **str**|  | 
@@ -621,7 +621,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     edit_match_request = dupr_backend.EditMatchRequest() # EditMatchRequest | 
 
     try:
@@ -639,7 +639,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **edit_match_request** | [**EditMatchRequest**](EditMatchRequest.md)|  | 
 
 ### Return type
@@ -687,7 +687,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     edit_match_request = dupr_backend.EditMatchRequest() # EditMatchRequest | 
 
     try:
@@ -705,7 +705,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **edit_match_request** | [**EditMatchRequest**](EditMatchRequest.md)|  | 
 
 ### Return type
@@ -753,7 +753,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     edit_match_request = dupr_backend.EditMatchRequest() # EditMatchRequest | 
 
     try:
@@ -771,7 +771,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **edit_match_request** | [**EditMatchRequest**](EditMatchRequest.md)|  | 
 
 ### Return type
@@ -819,7 +819,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     edit_partner_request = dupr_backend.EditPartnerRequest() # EditPartnerRequest | 
 
     try:
@@ -837,7 +837,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **edit_partner_request** | [**EditPartnerRequest**](EditPartnerRequest.md)|  | 
 
 ### Return type
@@ -885,7 +885,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     edit_wait_list_request = [dupr_backend.EditWaitListRequest()] # List[EditWaitListRequest] | 
 
     try:
@@ -903,7 +903,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **edit_wait_list_request** | [**List[EditWaitListRequest]**](EditWaitListRequest.md)|  | 
 
 ### Return type
@@ -928,7 +928,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **edit_teams**
-> Wrapper edit_teams(bracket_id, version, edit_event_team_request)
+> Wrapper edit_teams(version, edit_event_team_request)
 
 ### Example
 
@@ -951,12 +951,11 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    bracket_id = 56 # int | 
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     edit_event_team_request = dupr_backend.EditEventTeamRequest() # EditEventTeamRequest | 
 
     try:
-        api_response = api_instance.edit_teams(bracket_id, version, edit_event_team_request)
+        api_response = api_instance.edit_teams(version, edit_event_team_request)
         print("The response of BracketsApi->edit_teams:\n")
         pprint(api_response)
     except Exception as e:
@@ -970,8 +969,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bracket_id** | **int**|  | 
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **edit_event_team_request** | [**EditEventTeamRequest**](EditEventTeamRequest.md)|  | 
 
 ### Return type
@@ -1018,7 +1016,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     league_id = 56 # int | 
     bracket_id = 56 # int | 
 
@@ -1037,7 +1035,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **league_id** | **int**|  | 
  **bracket_id** | **int**|  | 
 
@@ -1085,7 +1083,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bracket_id = 56 # int | 
 
     try:
@@ -1103,7 +1101,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bracket_id** | **int**|  | 
 
 ### Return type
@@ -1151,7 +1149,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     forfeit_match_request = dupr_backend.ForfeitMatchRequest() # ForfeitMatchRequest | 
 
     try:
@@ -1169,7 +1167,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **forfeit_match_request** | [**ForfeitMatchRequest**](ForfeitMatchRequest.md)|  | 
 
 ### Return type
@@ -1216,7 +1214,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bracket_id = 56 # int | 
 
     try:
@@ -1234,7 +1232,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bracket_id** | **int**|  | 
 
 ### Return type
@@ -1282,7 +1280,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     offset = 56 # int | 
     limit = 56 # int | 
     search_league_player_request = dupr_backend.SearchLeaguePlayerRequest() # SearchLeaguePlayerRequest | 
@@ -1302,7 +1300,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **offset** | **int**|  | 
  **limit** | **int**|  | 
  **search_league_player_request** | [**SearchLeaguePlayerRequest**](SearchLeaguePlayerRequest.md)|  | 
@@ -1351,7 +1349,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bracket_id = 56 # int | 
 
     try:
@@ -1369,7 +1367,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bracket_id** | **int**|  | 
 
 ### Return type
@@ -1416,7 +1414,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bracket_id = 56 # int | 
 
     try:
@@ -1434,7 +1432,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bracket_id** | **int**|  | 
 
 ### Return type
@@ -1481,7 +1479,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bracket_id = 56 # int | 
     offset = 0 # int |  (optional) (default to 0)
     limit = 10 # int |  (optional) (default to 10)
@@ -1501,7 +1499,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bracket_id** | **int**|  | 
  **offset** | **int**|  | [optional] [default to 0]
  **limit** | **int**|  | [optional] [default to 10]
@@ -1550,7 +1548,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bracket_id = 56 # int | 
     round = 0 # int |  (optional) (default to 0)
     offset = 0 # int |  (optional) (default to 0)
@@ -1572,7 +1570,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bracket_id** | **int**|  | 
  **round** | **int**|  | [optional] [default to 0]
  **offset** | **int**|  | [optional] [default to 0]
@@ -1624,7 +1622,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bracket_id = 56 # int | 
     bracket_match_request = dupr_backend.BracketMatchRequest() # BracketMatchRequest | 
     round = 0 # int |  (optional) (default to 0)
@@ -1646,7 +1644,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bracket_id** | **int**|  | 
  **bracket_match_request** | [**BracketMatchRequest**](BracketMatchRequest.md)|  | 
  **round** | **int**|  | [optional] [default to 0]
@@ -1698,7 +1696,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     offset = 56 # int | 
     limit = 56 # int | 
     search_league_player_request = dupr_backend.SearchLeaguePlayerRequest() # SearchLeaguePlayerRequest | 
@@ -1718,7 +1716,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **offset** | **int**|  | 
  **limit** | **int**|  | 
  **search_league_player_request** | [**SearchLeaguePlayerRequest**](SearchLeaguePlayerRequest.md)|  | 
@@ -1767,7 +1765,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bracket_id = 56 # int | 
     offset = 56 # int | 
     limit = 56 # int | 
@@ -1788,7 +1786,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bracket_id** | **int**|  | 
  **offset** | **int**|  | 
  **limit** | **int**|  | 
@@ -1838,7 +1836,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bracket_id = 56 # int | 
     limit = 56 # int | 
     round = 0 # int |  (optional) (default to 0)
@@ -1859,7 +1857,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bracket_id** | **int**|  | 
  **limit** | **int**|  | 
  **round** | **int**|  | [optional] [default to 0]
@@ -1910,7 +1908,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     format = 'format_example' # str | 
     bracket_search_teams_request = dupr_backend.BracketSearchTeamsRequest() # BracketSearchTeamsRequest | 
 
@@ -1929,7 +1927,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **format** | **str**|  | 
  **bracket_search_teams_request** | [**BracketSearchTeamsRequest**](BracketSearchTeamsRequest.md)|  | 
 
@@ -1977,7 +1975,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bracket_id = 56 # int | 
     offset = 56 # int | 
     limit = 56 # int | 
@@ -1998,7 +1996,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bracket_id** | **int**|  | 
  **offset** | **int**|  | 
  **limit** | **int**|  | 
@@ -2049,7 +2047,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     format = 'format_example' # str | 
     bracket_search_teams_request = dupr_backend.BracketSearchTeamsRequest() # BracketSearchTeamsRequest | 
 
@@ -2068,7 +2066,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **format** | **str**|  | 
  **bracket_search_teams_request** | [**BracketSearchTeamsRequest**](BracketSearchTeamsRequest.md)|  | 
 
@@ -2116,7 +2114,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bracket_id = 56 # int | 
     offset = 56 # int | 
     limit = 56 # int | 
@@ -2137,7 +2135,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bracket_id** | **int**|  | 
  **offset** | **int**|  | 
  **limit** | **int**|  | 
@@ -2187,7 +2185,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bracket_id = 56 # int | 
 
     try:
@@ -2205,7 +2203,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bracket_id** | **int**|  | 
 
 ### Return type
@@ -2252,7 +2250,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bracket_id = 56 # int | 
 
     try:
@@ -2270,7 +2268,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bracket_id** | **int**|  | 
 
 ### Return type
@@ -2317,7 +2315,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bracket_id = 56 # int | 
 
     try:
@@ -2335,7 +2333,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bracket_id** | **int**|  | 
 
 ### Return type
@@ -2383,7 +2381,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     search_unmatched_players_request = dupr_backend.SearchUnmatchedPlayersRequest() # SearchUnmatchedPlayersRequest | 
 
     try:
@@ -2401,7 +2399,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **search_unmatched_players_request** | [**SearchUnmatchedPlayersRequest**](SearchUnmatchedPlayersRequest.md)|  | 
 
 ### Return type
@@ -2448,7 +2446,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bracket_id = 56 # int | 
     offset = 56 # int | 
     limit = 56 # int | 
@@ -2469,7 +2467,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bracket_id** | **int**|  | 
  **offset** | **int**|  | 
  **limit** | **int**|  | 
@@ -2519,7 +2517,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     offset = 56 # int | 
     limit = 56 # int | 
     status = 'status_example' # str |  (optional)
@@ -2539,7 +2537,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **offset** | **int**|  | 
  **limit** | **int**|  | 
  **status** | **str**|  | [optional] 
@@ -2589,7 +2587,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     user_club_role_request = dupr_backend.UserClubRoleRequest() # UserClubRoleRequest | 
 
     try:
@@ -2607,7 +2605,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **user_club_role_request** | [**UserClubRoleRequest**](UserClubRoleRequest.md)|  | 
 
 ### Return type
@@ -2654,7 +2652,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     league_id = 56 # int | 
     user_id = 56 # int | 
 
@@ -2673,7 +2671,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **league_id** | **int**|  | 
  **user_id** | **int**|  | 
 
@@ -2722,7 +2720,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     user_matches_request = dupr_backend.UserMatchesRequest() # UserMatchesRequest | 
 
     try:
@@ -2740,7 +2738,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **user_matches_request** | [**UserMatchesRequest**](UserMatchesRequest.md)|  | 
 
 ### Return type
@@ -2787,7 +2785,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     league_id = 56 # int | 
 
     try:
@@ -2805,7 +2803,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **league_id** | **int**|  | 
 
 ### Return type
@@ -2852,7 +2850,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bracket_id = 56 # int | 
 
     try:
@@ -2870,7 +2868,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bracket_id** | **int**|  | 
 
 ### Return type
@@ -2918,7 +2916,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     withdraw_player_request = dupr_backend.WithdrawPlayerRequest() # WithdrawPlayerRequest | 
 
     try:
@@ -2936,7 +2934,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **withdraw_player_request** | [**WithdrawPlayerRequest**](WithdrawPlayerRequest.md)|  | 
 
 ### Return type
@@ -2984,7 +2982,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     withdraw_player_request = dupr_backend.WithdrawPlayerRequest() # WithdrawPlayerRequest | 
 
     try:
@@ -3002,7 +3000,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **withdraw_player_request** | [**WithdrawPlayerRequest**](WithdrawPlayerRequest.md)|  | 
 
 ### Return type
@@ -3050,7 +3048,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     event_refund_request = dupr_backend.EventRefundRequest() # EventRefundRequest | 
 
     try:
@@ -3068,7 +3066,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **event_refund_request** | [**EventRefundRequest**](EventRefundRequest.md)|  | 
 
 ### Return type
@@ -3116,7 +3114,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     register_to_bracket_request = dupr_backend.RegisterToBracketRequest() # RegisterToBracketRequest | 
 
     try:
@@ -3134,7 +3132,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **register_to_bracket_request** | [**RegisterToBracketRequest**](RegisterToBracketRequest.md)|  | 
 
 ### Return type
@@ -3181,7 +3179,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     league_match_id = 56 # int | 
 
     try:
@@ -3199,7 +3197,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **league_match_id** | **int**|  | 
 
 ### Return type
@@ -3247,7 +3245,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bracket_request = dupr_backend.BracketRequest() # BracketRequest | 
 
     try:
@@ -3265,7 +3263,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bracket_request** | [**BracketRequest**](BracketRequest.md)|  | 
 
 ### Return type
@@ -3313,7 +3311,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bracket_id = 56 # int | 
     match_round = [dupr_backend.MatchRound()] # List[MatchRound] | 
 
@@ -3332,7 +3330,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bracket_id** | **int**|  | 
  **match_round** | [**List[MatchRound]**](MatchRound.md)|  | 
 
@@ -3358,7 +3356,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **save_teams**
-> Wrapper save_teams(bracket_id, version, create_new_team_request)
+> Wrapper save_teams(version, create_new_team_request)
 
 ### Example
 
@@ -3381,12 +3379,11 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    bracket_id = 56 # int | 
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     create_new_team_request = dupr_backend.CreateNewTeamRequest() # CreateNewTeamRequest | 
 
     try:
-        api_response = api_instance.save_teams(bracket_id, version, create_new_team_request)
+        api_response = api_instance.save_teams(version, create_new_team_request)
         print("The response of BracketsApi->save_teams:\n")
         pprint(api_response)
     except Exception as e:
@@ -3400,8 +3397,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bracket_id** | **int**|  | 
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **create_new_team_request** | [**CreateNewTeamRequest**](CreateNewTeamRequest.md)|  | 
 
 ### Return type
@@ -3448,7 +3444,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bracket_id = 56 # int | 
     type = 'ROUND_ROBIN' # str |  (optional) (default to 'ROUND_ROBIN')
 
@@ -3467,7 +3463,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bracket_id** | **int**|  | 
  **type** | **str**|  | [optional] [default to &#39;ROUND_ROBIN&#39;]
 
@@ -3516,7 +3512,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     substitute_player_request = [dupr_backend.SubstitutePlayerRequest()] # List[SubstitutePlayerRequest] | 
 
     try:
@@ -3534,7 +3530,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **substitute_player_request** | [**List[SubstitutePlayerRequest]**](SubstitutePlayerRequest.md)|  | 
 
 ### Return type
@@ -3582,7 +3578,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     switch_bracket_request = [dupr_backend.SwitchBracketRequest()] # List[SwitchBracketRequest] | 
 
     try:
@@ -3600,7 +3596,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **switch_bracket_request** | [**List[SwitchBracketRequest]**](SwitchBracketRequest.md)|  | 
 
 ### Return type
@@ -3648,7 +3644,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     switch_team_request = [dupr_backend.SwitchTeamRequest()] # List[SwitchTeamRequest] | 
 
     try:
@@ -3666,7 +3662,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **switch_team_request** | [**List[SwitchTeamRequest]**](SwitchTeamRequest.md)|  | 
 
 ### Return type
@@ -3714,7 +3710,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bracket_player_switch_wait_listed_request = dupr_backend.BracketPlayerSwitchWaitListedRequest() # BracketPlayerSwitchWaitListedRequest | 
 
     try:
@@ -3732,7 +3728,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bracket_player_switch_wait_listed_request** | [**BracketPlayerSwitchWaitListedRequest**](BracketPlayerSwitchWaitListedRequest.md)|  | 
 
 ### Return type
@@ -3780,7 +3776,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     bracket_player_switch_wait_listed_request = [dupr_backend.BracketPlayerSwitchWaitListedRequest()] # List[BracketPlayerSwitchWaitListedRequest] | 
 
     try:
@@ -3798,7 +3794,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **bracket_player_switch_wait_listed_request** | [**List[BracketPlayerSwitchWaitListedRequest]**](BracketPlayerSwitchWaitListedRequest.md)|  | 
 
 ### Return type
@@ -3845,7 +3841,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.BracketsApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     registration_id = 56 # int | 
     bracket_id = 56 # int | 
     status = 'status_example' # str | 
@@ -3866,7 +3862,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **registration_id** | **int**|  | 
  **bracket_id** | **int**|  | 
  **status** | **str**|  | 

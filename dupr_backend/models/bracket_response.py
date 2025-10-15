@@ -82,12 +82,12 @@ class BracketResponse(BaseModel):
     reg_user_id: Optional[StrictInt] = Field(default=None, alias="regUserId")
     payment_status: StrictStr = Field(alias="paymentStatus")
     currency_details: Optional[CurrencyDetailsResponse] = Field(default=None, alias="currencyDetails")
+    match_seeded: Optional[StrictBool] = Field(default=None, alias="matchSeeded")
+    registered: Optional[StrictBool] = None
     wait_list_full: Optional[StrictBool] = Field(default=None, alias="waitListFull")
     queue_complete: Optional[StrictBool] = Field(default=None, alias="queueComplete")
     player_eligible: Optional[StrictBool] = Field(default=None, alias="playerEligible")
-    match_seeded: Optional[StrictBool] = Field(default=None, alias="matchSeeded")
-    registered: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["bracketId", "leagueId", "name", "customCode", "duration", "format", "elimination", "playerGroup", "ratingBracket", "ageBracket", "description", "matchBonusPoints", "registrationDate", "scoreFormat", "memberFee", "nonMemberFee", "maxTeam", "waitList", "status", "scoreFormatId", "registrationStatus", "durationStatus", "registrationDetails", "leagueName", "leagueAddress", "mediaUrl", "totalRounds", "contactDetails", "isRegistered", "clubName", "registeredMembers", "isMatchSeeded", "clubId", "isWaitListFull", "displayStatus", "hasConfirmMatch", "hasQueue", "isQueueComplete", "canShowStandings", "courts", "registrationDateTime", "durationDateTime", "timeZone", "zoneName", "isPlayerEligible", "drawImpacted", "paymentDetails", "regUserId", "paymentStatus", "currencyDetails", "waitListFull", "queueComplete", "playerEligible", "matchSeeded", "registered"]
+    __properties: ClassVar[List[str]] = ["bracketId", "leagueId", "name", "customCode", "duration", "format", "elimination", "playerGroup", "ratingBracket", "ageBracket", "description", "matchBonusPoints", "registrationDate", "scoreFormat", "memberFee", "nonMemberFee", "maxTeam", "waitList", "status", "scoreFormatId", "registrationStatus", "durationStatus", "registrationDetails", "leagueName", "leagueAddress", "mediaUrl", "totalRounds", "contactDetails", "isRegistered", "clubName", "registeredMembers", "isMatchSeeded", "clubId", "isWaitListFull", "displayStatus", "hasConfirmMatch", "hasQueue", "isQueueComplete", "canShowStandings", "courts", "registrationDateTime", "durationDateTime", "timeZone", "zoneName", "isPlayerEligible", "drawImpacted", "paymentDetails", "regUserId", "paymentStatus", "currencyDetails", "matchSeeded", "registered", "waitListFull", "queueComplete", "playerEligible"]
 
     @field_validator('format')
     def format_validate_enum(cls, value):
@@ -259,11 +259,11 @@ class BracketResponse(BaseModel):
             "regUserId": obj.get("regUserId"),
             "paymentStatus": obj.get("paymentStatus"),
             "currencyDetails": CurrencyDetailsResponse.from_dict(obj["currencyDetails"]) if obj.get("currencyDetails") is not None else None,
+            "matchSeeded": obj.get("matchSeeded"),
+            "registered": obj.get("registered"),
             "waitListFull": obj.get("waitListFull"),
             "queueComplete": obj.get("queueComplete"),
-            "playerEligible": obj.get("playerEligible"),
-            "matchSeeded": obj.get("matchSeeded"),
-            "registered": obj.get("registered")
+            "playerEligible": obj.get("playerEligible")
         })
         return _obj
 

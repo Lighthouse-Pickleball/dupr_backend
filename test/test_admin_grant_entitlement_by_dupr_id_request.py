@@ -35,17 +35,18 @@ class TestAdminGrantEntitlementByDuprIdRequest(unittest.TestCase):
         model = AdminGrantEntitlementByDuprIdRequest()
         if include_optional:
             return AdminGrantEntitlementByDuprIdRequest(
-                user_ids = [
+                dupr_ids = [
                     ''
                     ],
                 entitlements = [
                     'FREE_L1'
                     ],
-                end_date = 56
+                end_date = 56,
+                club_id = 56
             )
         else:
             return AdminGrantEntitlementByDuprIdRequest(
-                user_ids = [
+                dupr_ids = [
                     ''
                     ],
                 entitlements = [

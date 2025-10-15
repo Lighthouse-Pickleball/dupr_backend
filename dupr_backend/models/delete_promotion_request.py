@@ -17,29 +17,17 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
-class SingleWrapperObject(BaseModel):
+class DeletePromotionRequest(BaseModel):
     """
-    SingleWrapperObject
+    DeletePromotionRequest
     """ # noqa: E501
-    status: Optional[StrictStr] = None
-    message: Optional[StrictStr] = None
-    result: Optional[Dict[str, Any]] = None
-    __properties: ClassVar[List[str]] = ["status", "message", "result"]
-
-    @field_validator('status')
-    def status_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['SUCCESS', 'FAILURE', 'REDIRECT', 'PARTIAL']):
-            raise ValueError("must be one of enum values ('SUCCESS', 'FAILURE', 'REDIRECT', 'PARTIAL')")
-        return value
+    promotion_id: StrictStr = Field(alias="promotionId")
+    __properties: ClassVar[List[str]] = ["promotionId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -59,7 +47,7 @@ class SingleWrapperObject(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of SingleWrapperObject from a JSON string"""
+        """Create an instance of DeletePromotionRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -84,7 +72,7 @@ class SingleWrapperObject(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of SingleWrapperObject from a dict"""
+        """Create an instance of DeletePromotionRequest from a dict"""
         if obj is None:
             return None
 
@@ -92,9 +80,7 @@ class SingleWrapperObject(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "status": obj.get("status"),
-            "message": obj.get("message"),
-            "result": obj.get("result")
+            "promotionId": obj.get("promotionId")
         })
         return _obj
 

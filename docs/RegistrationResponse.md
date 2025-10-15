@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **is_participant1** | **bool** |  | 
 **is_wait_listed** | **bool** |  | 
 **event_refunded_amount** | **float** |  | 
-**participant1** | **bool** |  | [optional] 
 **wait_listed** | **bool** |  | [optional] 
+**participant1** | **bool** |  | [optional] 
 
 ## Example
 

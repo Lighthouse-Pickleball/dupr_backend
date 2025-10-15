@@ -52,11 +52,11 @@ class PlayerResponse(BaseModel):
     partner_status: Optional[StrictStr] = Field(default=None, alias="partnerStatus")
     team_status: Optional[StrictStr] = Field(default=None, alias="teamStatus")
     is_player1: StrictBool = Field(alias="isPlayer1")
-    registration_details: Optional[RegistrationResponse] = Field(default=None, alias="registrationDetails")
+    registration_details: RegistrationResponse = Field(alias="registrationDetails")
     phone: Optional[StrictStr] = None
-    email: Optional[StrictStr] = None
+    email: StrictStr
     verified_email: Optional[StrictBool] = Field(default=None, alias="verifiedEmail")
-    registration_type: Optional[StrictStr] = Field(default=None, alias="registrationType")
+    registration_type: StrictStr = Field(alias="registrationType")
     registered: StrictBool
     dupr_id: StrictStr = Field(alias="duprId")
     show_rating_banner: StrictBool = Field(alias="showRatingBanner")
@@ -111,9 +111,6 @@ class PlayerResponse(BaseModel):
     @field_validator('registration_type')
     def registration_type_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['INVITATION', 'UNCLAIMED']):
             raise ValueError("must be one of enum values ('INVITATION', 'UNCLAIMED')")
         return value

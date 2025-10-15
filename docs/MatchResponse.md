@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **venue** | **str** |  | 
 **location** | **str** |  | 
 **match_score_added** | **bool** |  | 
-**tournament** | **str** |  | [optional] 
+**tournament** | **str** |  | 
 **league** | **str** |  | [optional] 
 **event_date** | **date** |  | 
 **event_format** | **str** |  | 
@@ -35,6 +35,8 @@ Name | Type | Description | Notes
 **validator** | [**BasicUserInfo**](BasicUserInfo.md) |  | [optional] 
 **creator** | [**BasicUserInfo**](BasicUserInfo.md) |  | [optional] 
 **client_id** | **int** |  | [optional] 
+**club_name** | **str** |  | [optional] 
+**client_name** | **str** |  | [optional] 
 
 ## Example
 

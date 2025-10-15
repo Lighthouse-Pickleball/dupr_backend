@@ -33,14 +33,14 @@ Name | Type | Description | Notes
 **lucra_connected** | **bool** |  | [optional] 
 **is_enabled** | **bool** |  | 
 **password** | **str** |  | 
-**is_admin** | **bool** |  | 
-**valid_email** | **bool** |  | [optional] 
-**valid_phone** | **bool** |  | [optional] 
+**authorities** | [**List[GrantedAuthority]**](GrantedAuthority.md) |  | 
 **is_account_non_expired** | **bool** |  | 
 **is_account_non_locked** | **bool** |  | 
 **is_credentials_non_expired** | **bool** |  | 
 **username** | **str** |  | 
-**authorities** | [**List[GrantedAuthority]**](GrantedAuthority.md) |  | 
+**is_admin** | **bool** |  | 
+**valid_email** | **bool** |  | [optional] 
+**valid_phone** | **bool** |  | [optional] 
 
 ## Example
 

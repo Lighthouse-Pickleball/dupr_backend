@@ -69,7 +69,7 @@ class TestClubMemberResponse(unittest.TestCase):
                 roles = [
                     dupr_backend.models.club_role.ClubRole(
                         role_id = 56, 
-                        role = 'ADMIN', 
+                        role = 'PLAYER', 
                         approval_status = 'PENDING', 
                         club_id = 56, 
                         created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -96,7 +96,7 @@ class TestClubMemberResponse(unittest.TestCase):
                 roles = [
                     dupr_backend.models.club_role.ClubRole(
                         role_id = 56, 
-                        role = 'ADMIN', 
+                        role = 'PLAYER', 
                         approval_status = 'PENDING', 
                         club_id = 56, 
                         created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 

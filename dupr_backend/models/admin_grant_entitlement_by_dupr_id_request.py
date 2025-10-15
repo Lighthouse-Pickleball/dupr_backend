@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,17 +26,18 @@ class AdminGrantEntitlementByDuprIdRequest(BaseModel):
     """
     AdminGrantEntitlementByDuprIdRequest
     """ # noqa: E501
-    user_ids: List[StrictStr] = Field(alias="userIds")
+    dupr_ids: List[StrictStr] = Field(alias="duprIds")
     entitlements: List[StrictStr]
     end_date: StrictInt = Field(alias="endDate")
-    __properties: ClassVar[List[str]] = ["userIds", "entitlements", "endDate"]
+    club_id: Optional[StrictInt] = Field(default=None, alias="clubId")
+    __properties: ClassVar[List[str]] = ["duprIds", "entitlements", "endDate", "clubId"]
 
     @field_validator('entitlements')
     def entitlements_validate_enum(cls, value):
         """Validates the enum"""
         for i in value:
-            if i not in set(['FREE_L1', 'PREMIUM_L1', 'PREMIUM_L2']):
-                raise ValueError("each list item must be one of ('FREE_L1', 'PREMIUM_L1', 'PREMIUM_L2')")
+            if i not in set(['FREE_L1', 'PREMIUM_L1', 'PREMIUM_L2', 'VERIFIED_L1']):
+                raise ValueError("each list item must be one of ('FREE_L1', 'PREMIUM_L1', 'PREMIUM_L2', 'VERIFIED_L1')")
         return value
 
     model_config = ConfigDict(
@@ -90,9 +91,10 @@ class AdminGrantEntitlementByDuprIdRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "userIds": obj.get("userIds"),
+            "duprIds": obj.get("duprIds"),
             "entitlements": obj.get("entitlements"),
-            "endDate": obj.get("endDate")
+            "endDate": obj.get("endDate"),
+            "clubId": obj.get("clubId")
         })
         return _obj
 

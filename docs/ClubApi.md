@@ -14,15 +14,16 @@ Method | HTTP request | Description
 [**club_match_history**](ClubApi.md#club_match_history) | **GET** /club/{clubId}/{version}/history | 
 [**club_match_history_by_filters**](ClubApi.md#club_match_history_by_filters) | **POST** /club/match/{version}/history | 
 [**club_save_match**](ClubApi.md#club_save_match) | **PUT** /club/{clubId}/match/{version}/save | 
-[**delete_club_match**](ClubApi.md#delete_club_match) | **POST** /club/{clubId}/match/{id}/{version}/delete | 
+[**delete_club_match**](ClubApi.md#delete_club_match) | **POST** /club/{clubId}/match/{version}/delete | 
 [**delete_member_admin**](ClubApi.md#delete_member_admin) | **DELETE** /club/{clubId}/members/{version}/remove | 
 [**delete_member_request**](ClubApi.md#delete_member_request) | **DELETE** /club/{clubId}/members/{version}/leave | 
-[**edit_club_match**](ClubApi.md#edit_club_match) | **PUT** /club/{clubId}/match/{id}/{version}/edit | 
+[**edit_club_match**](ClubApi.md#edit_club_match) | **PUT** /club/{clubId}/match/{version}/edit | 
 [**get_all_club_roles**](ClubApi.md#get_all_club_roles) | **GET** /club/roles/{version}/all | 
 [**get_all_currency_details**](ClubApi.md#get_all_currency_details) | **GET** /club/currency/{version}/all | 
 [**get_all_members**](ClubApi.md#get_all_members) | **POST** /club/{clubId}/members/{version}/all | 
 [**get_all_members_download**](ClubApi.md#get_all_members_download) | **POST** /club/{clubId}/members/{version}/all/download | 
 [**get_all_roles**](ClubApi.md#get_all_roles) | **GET** /club/{clubId}/roles/{version}/all | 
+[**get_all_staff_members**](ClubApi.md#get_all_staff_members) | **GET** /club/{clubId}/members/{version}/staff | 
 [**get_club**](ClubApi.md#get_club) | **GET** /club/{version}/{clubId} | 
 [**get_club_pending_invites**](ClubApi.md#get_club_pending_invites) | **POST** /club/{clubId}/members/{version}/pending/invites | 
 [**get_club_restrictions1**](ClubApi.md#get_club_restrictions1) | **POST** /club/{clubId}/{version}/restrictions | 
@@ -37,9 +38,10 @@ Method | HTTP request | Description
 [**invite_single_member**](ClubApi.md#invite_single_member) | **PUT** /club/{clubId}/members/{version}/invite | 
 [**remove_roles**](ClubApi.md#remove_roles) | **POST** /club/{clubId}/roles/{version}/remove | 
 [**save_verified_club_match_csv**](ClubApi.md#save_verified_club_match_csv) | **PUT** /club/{id}/match/verified/{version}/save/csv/add | 
-[**save_verified_multi_club_match_csv**](ClubApi.md#save_verified_multi_club_match_csv) | **PUT** /club/match/bulk | 
+[**save_verified_multi_club_match_csv**](ClubApi.md#save_verified_multi_club_match_csv) | **PUT** /club/match/csv/add/bulk | 
 [**update_approval_status**](ClubApi.md#update_approval_status) | **POST** /club/{clubId}/{version}/approval | 
 [**update_club**](ClubApi.md#update_club) | **POST** /club/{version}/update | 
+[**update_staff_members**](ClubApi.md#update_staff_members) | **PUT** /club/{clubId}/members/{version}/staff | 
 
 
 # **add_club**
@@ -76,7 +78,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_request = dupr_backend.ClubRequest() # ClubRequest | 
 
     try:
@@ -94,7 +96,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_request** | [**ClubRequest**](ClubRequest.md)|  | 
 
 ### Return type
@@ -152,7 +154,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
     user_list_request = dupr_backend.UserListRequest() # UserListRequest | 
 
@@ -171,7 +173,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
  **user_list_request** | [**UserListRequest**](UserListRequest.md)|  | 
 
@@ -230,7 +232,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
     club_member_add_request = dupr_backend.ClubMemberAddRequest() # ClubMemberAddRequest | 
 
@@ -249,7 +251,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
  **club_member_add_request** | [**ClubMemberAddRequest**](ClubMemberAddRequest.md)|  | 
 
@@ -307,7 +309,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
     save_verified_match_cvs_request = dupr_backend.SaveVerifiedMatchCVSRequest() # SaveVerifiedMatchCVSRequest |  (optional)
 
@@ -326,7 +328,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
  **save_verified_match_cvs_request** | [**SaveVerifiedMatchCVSRequest**](SaveVerifiedMatchCVSRequest.md)|  | [optional] 
 
@@ -383,7 +385,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
 
     try:
@@ -401,7 +403,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
 
 ### Return type
@@ -459,7 +461,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
     ids_list_request = dupr_backend.IdsListRequest() # IdsListRequest | 
 
@@ -478,7 +480,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
  **ids_list_request** | [**IdsListRequest**](IdsListRequest.md)|  | 
 
@@ -537,7 +539,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
     assign_role_request = dupr_backend.AssignRoleRequest() # AssignRoleRequest | 
 
@@ -556,7 +558,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
  **assign_role_request** | [**AssignRoleRequest**](AssignRoleRequest.md)|  | 
 
@@ -614,7 +616,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     offset = 56 # int | 
     limit = 56 # int | 
     club_id = 56 # int | 
@@ -634,7 +636,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **offset** | **int**|  | 
  **limit** | **int**|  | 
  **club_id** | **int**|  | 
@@ -694,7 +696,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_match_history_request = dupr_backend.ClubMatchHistoryRequest() # ClubMatchHistoryRequest | 
 
     try:
@@ -712,7 +714,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_match_history_request** | [**ClubMatchHistoryRequest**](ClubMatchHistoryRequest.md)|  | 
 
 ### Return type
@@ -769,7 +771,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
     match_request = dupr_backend.MatchRequest() # MatchRequest | 
 
@@ -788,7 +790,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
  **match_request** | [**MatchRequest**](MatchRequest.md)|  | 
 
@@ -814,7 +816,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_club_match**
-> object delete_club_match(version, club_id, id, delete_match_request)
+> object delete_club_match(version, club_id, delete_match_request)
 
 ### Example
 
@@ -846,13 +848,12 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
-    id = 56 # int | 
     delete_match_request = dupr_backend.DeleteMatchRequest() # DeleteMatchRequest | 
 
     try:
-        api_response = api_instance.delete_club_match(version, club_id, id, delete_match_request)
+        api_response = api_instance.delete_club_match(version, club_id, delete_match_request)
         print("The response of ClubApi->delete_club_match:\n")
         pprint(api_response)
     except Exception as e:
@@ -866,9 +867,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
- **id** | **int**|  | 
  **delete_match_request** | [**DeleteMatchRequest**](DeleteMatchRequest.md)|  | 
 
 ### Return type
@@ -925,7 +925,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
     user_ids = [56] # List[int] | 
 
@@ -944,7 +944,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
  **user_ids** | [**List[int]**](int.md)|  | 
 
@@ -1001,7 +1001,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
 
     try:
@@ -1019,7 +1019,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
 
 ### Return type
@@ -1044,7 +1044,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **edit_club_match**
-> SingleWrapperMatchResponse edit_club_match(version, club_id, id, match_update_request)
+> SingleWrapperMatchResponse edit_club_match(version, club_id, match_update_request)
 
 ### Example
 
@@ -1077,13 +1077,12 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
-    id = 56 # int | 
     match_update_request = dupr_backend.MatchUpdateRequest() # MatchUpdateRequest | 
 
     try:
-        api_response = api_instance.edit_club_match(version, club_id, id, match_update_request)
+        api_response = api_instance.edit_club_match(version, club_id, match_update_request)
         print("The response of ClubApi->edit_club_match:\n")
         pprint(api_response)
     except Exception as e:
@@ -1097,9 +1096,8 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
- **id** | **int**|  | 
  **match_update_request** | [**MatchUpdateRequest**](MatchUpdateRequest.md)|  | 
 
 ### Return type
@@ -1156,7 +1154,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
 
     try:
         api_response = api_instance.get_all_club_roles(version)
@@ -1173,7 +1171,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -1229,7 +1227,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
 
     try:
         api_response = api_instance.get_all_currency_details(version)
@@ -1246,7 +1244,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -1303,7 +1301,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
     club_members_search_request = dupr_backend.ClubMembersSearchRequest() # ClubMembersSearchRequest | 
 
@@ -1322,7 +1320,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
  **club_members_search_request** | [**ClubMembersSearchRequest**](ClubMembersSearchRequest.md)|  | 
 
@@ -1380,7 +1378,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
 
     try:
@@ -1398,7 +1396,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
 
 ### Return type
@@ -1423,7 +1421,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_all_roles**
-> ArrayWrapperRoleResponse get_all_roles(club_id, version)
+> ArrayWrapperRoleResponse get_all_roles(version, club_id)
 
 ### Example
 
@@ -1455,11 +1453,11 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
-    version = 'version_example' # str | 
 
     try:
-        api_response = api_instance.get_all_roles(club_id, version)
+        api_response = api_instance.get_all_roles(version, club_id)
         print("The response of ClubApi->get_all_roles:\n")
         pprint(api_response)
     except Exception as e:
@@ -1473,12 +1471,87 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
- **version** | **str**|  | 
 
 ### Return type
 
 [**ArrayWrapperRoleResponse**](ArrayWrapperRoleResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_all_staff_members**
+> SingleWrapperStaffClubMemberResponse get_all_staff_members(version, club_id)
+
+### Example
+
+* Bearer (JWT) Authentication (bearerAuth):
+
+```python
+import dupr_backend
+from dupr_backend.models.single_wrapper_staff_club_member_response import SingleWrapperStaffClubMemberResponse
+from dupr_backend.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dupr.gg
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "https://api.dupr.gg"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.ClubApi(api_client)
+    version = 'v1.0' # str |  (default to 'v1.0')
+    club_id = 56 # int | 
+
+    try:
+        api_response = api_instance.get_all_staff_members(version, club_id)
+        print("The response of ClubApi->get_all_staff_members:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ClubApi->get_all_staff_members: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
+ **club_id** | **int**|  | 
+
+### Return type
+
+[**SingleWrapperStaffClubMemberResponse**](SingleWrapperStaffClubMemberResponse.md)
 
 ### Authorization
 
@@ -1530,7 +1603,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
 
     try:
@@ -1548,7 +1621,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
 
 ### Return type
@@ -1606,7 +1679,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
     club_members_search_request = dupr_backend.ClubMembersSearchRequest() # ClubMembersSearchRequest | 
 
@@ -1625,7 +1698,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
  **club_members_search_request** | [**ClubMembersSearchRequest**](ClubMembersSearchRequest.md)|  | 
 
@@ -1682,7 +1755,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
 
     try:
@@ -1700,7 +1773,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
 
 ### Return type
@@ -1758,7 +1831,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
     user_request = dupr_backend.UserRequest() # UserRequest | 
 
@@ -1777,7 +1850,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
  **user_request** | [**UserRequest**](UserRequest.md)|  | 
 
@@ -1836,7 +1909,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
     user_request = dupr_backend.UserRequest() # UserRequest | 
 
@@ -1855,7 +1928,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
  **user_request** | [**UserRequest**](UserRequest.md)|  | 
 
@@ -1913,7 +1986,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
 
     try:
         api_response = api_instance.get_club_roles_staff(version)
@@ -1930,7 +2003,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
 
 ### Return type
 
@@ -1986,7 +2059,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     q = 'q_example' # str | 
     own = True # bool | 
     offset = 56 # int | 
@@ -2007,7 +2080,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **q** | **str**|  | 
  **own** | **bool**|  | 
  **offset** | **int**|  | 
@@ -2068,7 +2141,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_search = dupr_backend.ClubSearch() # ClubSearch | 
 
     try:
@@ -2086,7 +2159,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_search** | [**ClubSearch**](ClubSearch.md)|  | 
 
 ### Return type
@@ -2143,7 +2216,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     currency_code = 'currency_code_example' # str | 
 
     try:
@@ -2161,7 +2234,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **currency_code** | **str**|  | 
 
 ### Return type
@@ -2218,7 +2291,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
     id = 56 # int | 
 
@@ -2237,7 +2310,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
  **id** | **int**|  | 
 
@@ -2296,7 +2369,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
     club_members_search_request = dupr_backend.ClubMembersSearchRequest() # ClubMembersSearchRequest | 
 
@@ -2315,7 +2388,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
  **club_members_search_request** | [**ClubMembersSearchRequest**](ClubMembersSearchRequest.md)|  | 
 
@@ -2374,7 +2447,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
     invite_request = dupr_backend.InviteRequest() # InviteRequest | 
 
@@ -2393,7 +2466,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
  **invite_request** | [**InviteRequest**](InviteRequest.md)|  | 
 
@@ -2452,7 +2525,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
     assign_role_request = dupr_backend.AssignRoleRequest() # AssignRoleRequest | 
 
@@ -2471,7 +2544,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
  **assign_role_request** | [**AssignRoleRequest**](AssignRoleRequest.md)|  | 
 
@@ -2528,7 +2601,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     id = 56 # int | 
     request = None # bytearray | 
 
@@ -2547,7 +2620,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **id** | **int**|  | 
  **request** | **bytearray**|  | 
 
@@ -2678,7 +2751,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_id = 56 # int | 
     status_request = dupr_backend.StatusRequest() # StatusRequest | 
 
@@ -2697,7 +2770,7 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_id** | **int**|  | 
  **status_request** | [**StatusRequest**](StatusRequest.md)|  | 
 
@@ -2756,7 +2829,7 @@ configuration = dupr_backend.Configuration(
 with dupr_backend.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dupr_backend.ClubApi(api_client)
-    version = 'version_example' # str | 
+    version = 'v1.0' # str |  (default to 'v1.0')
     club_request = dupr_backend.ClubRequest() # ClubRequest | 
 
     try:
@@ -2774,8 +2847,86 @@ with dupr_backend.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **str**|  | 
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
  **club_request** | [**ClubRequest**](ClubRequest.md)|  | 
+
+### Return type
+
+[**Wrapper**](Wrapper.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_staff_members**
+> Wrapper update_staff_members(version, club_id, staff_club_member_request)
+
+### Example
+
+* Bearer (JWT) Authentication (bearerAuth):
+
+```python
+import dupr_backend
+from dupr_backend.models.staff_club_member_request import StaffClubMemberRequest
+from dupr_backend.models.wrapper import Wrapper
+from dupr_backend.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dupr.gg
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dupr_backend.Configuration(
+    host = "https://api.dupr.gg"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = dupr_backend.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with dupr_backend.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dupr_backend.ClubApi(api_client)
+    version = 'v1.0' # str |  (default to 'v1.0')
+    club_id = 56 # int | 
+    staff_club_member_request = dupr_backend.StaffClubMemberRequest() # StaffClubMemberRequest | 
+
+    try:
+        api_response = api_instance.update_staff_members(version, club_id, staff_club_member_request)
+        print("The response of ClubApi->update_staff_members:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ClubApi->update_staff_members: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | **str**|  | [default to &#39;v1.0&#39;]
+ **club_id** | **int**|  | 
+ **staff_club_member_request** | [**StaffClubMemberRequest**](StaffClubMemberRequest.md)|  | 
 
 ### Return type
 

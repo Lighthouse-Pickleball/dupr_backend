@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,15 +27,26 @@ class BracketClubRoleResponse(BaseModel):
     BracketClubRoleResponse
     """ # noqa: E501
     role_id: StrictInt = Field(alias="roleId")
+    role_name: StrictStr = Field(alias="RoleName")
     is_club_member: StrictBool = Field(alias="isClubMember")
-    role_name: StrictStr = Field(alias="roleName")
-    __properties: ClassVar[List[str]] = ["roleId", "isClubMember", "roleName"]
+    role_name: Optional[StrictStr] = Field(default=None, alias="roleName")
+    __properties: ClassVar[List[str]] = ["roleId", "RoleName", "isClubMember", "roleName"]
 
     @field_validator('role_name')
     def role_name_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['ADMIN', 'PLAYER', 'DIRECTOR', 'ORGANIZER', 'SUPPORT_EXECUTIVE', 'MARKETING_EXECUTIVE', 'PENDING_PLAYER', 'MANAGER', 'CAPTAIN']):
-            raise ValueError("must be one of enum values ('ADMIN', 'PLAYER', 'DIRECTOR', 'ORGANIZER', 'SUPPORT_EXECUTIVE', 'MARKETING_EXECUTIVE', 'PENDING_PLAYER', 'MANAGER', 'CAPTAIN')")
+        if value not in set(['PLAYER', 'DIRECTOR', 'ORGANIZER', 'PENDING_PLAYER']):
+            raise ValueError("must be one of enum values ('PLAYER', 'DIRECTOR', 'ORGANIZER', 'PENDING_PLAYER')")
+        return value
+
+    @field_validator('role_name')
+    def role_name_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['PLAYER', 'DIRECTOR', 'ORGANIZER', 'PENDING_PLAYER']):
+            raise ValueError("must be one of enum values ('PLAYER', 'DIRECTOR', 'ORGANIZER', 'PENDING_PLAYER')")
         return value
 
     model_config = ConfigDict(
@@ -90,6 +101,7 @@ class BracketClubRoleResponse(BaseModel):
 
         _obj = cls.model_validate({
             "roleId": obj.get("roleId"),
+            "RoleName": obj.get("RoleName"),
             "isClubMember": obj.get("isClubMember"),
             "roleName": obj.get("roleName")
         })

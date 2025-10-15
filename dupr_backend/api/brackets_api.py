@@ -3835,7 +3835,6 @@ class BracketsApi:
     @validate_call
     def edit_teams(
         self,
-        bracket_id: StrictInt,
         version: StrictStr,
         edit_event_team_request: EditEventTeamRequest,
         _request_timeout: Union[
@@ -3854,8 +3853,6 @@ class BracketsApi:
         """edit_teams
 
 
-        :param bracket_id: (required)
-        :type bracket_id: int
         :param version: (required)
         :type version: str
         :param edit_event_team_request: (required)
@@ -3883,7 +3880,6 @@ class BracketsApi:
         """ # noqa: E501
 
         _param = self._edit_teams_serialize(
-            bracket_id=bracket_id,
             version=version,
             edit_event_team_request=edit_event_team_request,
             _request_auth=_request_auth,
@@ -3909,7 +3905,6 @@ class BracketsApi:
     @validate_call
     def edit_teams_with_http_info(
         self,
-        bracket_id: StrictInt,
         version: StrictStr,
         edit_event_team_request: EditEventTeamRequest,
         _request_timeout: Union[
@@ -3928,8 +3923,6 @@ class BracketsApi:
         """edit_teams
 
 
-        :param bracket_id: (required)
-        :type bracket_id: int
         :param version: (required)
         :type version: str
         :param edit_event_team_request: (required)
@@ -3957,7 +3950,6 @@ class BracketsApi:
         """ # noqa: E501
 
         _param = self._edit_teams_serialize(
-            bracket_id=bracket_id,
             version=version,
             edit_event_team_request=edit_event_team_request,
             _request_auth=_request_auth,
@@ -3983,7 +3975,6 @@ class BracketsApi:
     @validate_call
     def edit_teams_without_preload_content(
         self,
-        bracket_id: StrictInt,
         version: StrictStr,
         edit_event_team_request: EditEventTeamRequest,
         _request_timeout: Union[
@@ -4002,8 +3993,6 @@ class BracketsApi:
         """edit_teams
 
 
-        :param bracket_id: (required)
-        :type bracket_id: int
         :param version: (required)
         :type version: str
         :param edit_event_team_request: (required)
@@ -4031,7 +4020,6 @@ class BracketsApi:
         """ # noqa: E501
 
         _param = self._edit_teams_serialize(
-            bracket_id=bracket_id,
             version=version,
             edit_event_team_request=edit_event_team_request,
             _request_auth=_request_auth,
@@ -4052,7 +4040,6 @@ class BracketsApi:
 
     def _edit_teams_serialize(
         self,
-        bracket_id,
         version,
         edit_event_team_request,
         _request_auth,
@@ -4076,8 +4063,6 @@ class BracketsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if bracket_id is not None:
-            _path_params['bracketId'] = bracket_id
         if version is not None:
             _path_params['version'] = version
         # process the query parameters
@@ -4116,7 +4101,7 @@ class BracketsApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/brackets/director/{bracketId}/teams/{version}/edit',
+            resource_path='/brackets/director/teams/{version}/edit',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -14467,7 +14452,6 @@ class BracketsApi:
     @validate_call
     def save_teams(
         self,
-        bracket_id: StrictInt,
         version: StrictStr,
         create_new_team_request: CreateNewTeamRequest,
         _request_timeout: Union[
@@ -14486,8 +14470,6 @@ class BracketsApi:
         """save_teams
 
 
-        :param bracket_id: (required)
-        :type bracket_id: int
         :param version: (required)
         :type version: str
         :param create_new_team_request: (required)
@@ -14515,7 +14497,6 @@ class BracketsApi:
         """ # noqa: E501
 
         _param = self._save_teams_serialize(
-            bracket_id=bracket_id,
             version=version,
             create_new_team_request=create_new_team_request,
             _request_auth=_request_auth,
@@ -14541,7 +14522,6 @@ class BracketsApi:
     @validate_call
     def save_teams_with_http_info(
         self,
-        bracket_id: StrictInt,
         version: StrictStr,
         create_new_team_request: CreateNewTeamRequest,
         _request_timeout: Union[
@@ -14560,8 +14540,6 @@ class BracketsApi:
         """save_teams
 
 
-        :param bracket_id: (required)
-        :type bracket_id: int
         :param version: (required)
         :type version: str
         :param create_new_team_request: (required)
@@ -14589,7 +14567,6 @@ class BracketsApi:
         """ # noqa: E501
 
         _param = self._save_teams_serialize(
-            bracket_id=bracket_id,
             version=version,
             create_new_team_request=create_new_team_request,
             _request_auth=_request_auth,
@@ -14615,7 +14592,6 @@ class BracketsApi:
     @validate_call
     def save_teams_without_preload_content(
         self,
-        bracket_id: StrictInt,
         version: StrictStr,
         create_new_team_request: CreateNewTeamRequest,
         _request_timeout: Union[
@@ -14634,8 +14610,6 @@ class BracketsApi:
         """save_teams
 
 
-        :param bracket_id: (required)
-        :type bracket_id: int
         :param version: (required)
         :type version: str
         :param create_new_team_request: (required)
@@ -14663,7 +14637,6 @@ class BracketsApi:
         """ # noqa: E501
 
         _param = self._save_teams_serialize(
-            bracket_id=bracket_id,
             version=version,
             create_new_team_request=create_new_team_request,
             _request_auth=_request_auth,
@@ -14684,7 +14657,6 @@ class BracketsApi:
 
     def _save_teams_serialize(
         self,
-        bracket_id,
         version,
         create_new_team_request,
         _request_auth,
@@ -14708,8 +14680,6 @@ class BracketsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if bracket_id is not None:
-            _path_params['bracketId'] = bracket_id
         if version is not None:
             _path_params['version'] = version
         # process the query parameters
@@ -14748,7 +14718,7 @@ class BracketsApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/brackets/director/{bracketId}/teams/{version}/save',
+            resource_path='/brackets/director/teams/{version}/save',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

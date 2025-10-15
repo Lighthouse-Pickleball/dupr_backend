@@ -32,10 +32,10 @@ class PagePlayerRatingHistory(BaseModel):
     total: StrictInt = Field(description="Total number of results available in database")
     hits: Optional[List[PlayerRatingHistory]] = Field(default=None, description="Array of results, can be empty.")
     total_value_relation: StrictStr = Field(description="Relation to total results available.", alias="totalValueRelation")
-    has_previous: StrictBool = Field(description="Is there any previous page", alias="hasPrevious")
     empty: StrictBool = Field(description="Are results empty")
+    has_previous: StrictBool = Field(description="Is there any previous page", alias="hasPrevious")
     has_more: StrictBool = Field(description="Are there any more results to fetch", alias="hasMore")
-    __properties: ClassVar[List[str]] = ["offset", "limit", "total", "hits", "totalValueRelation", "hasPrevious", "empty", "hasMore"]
+    __properties: ClassVar[List[str]] = ["offset", "limit", "total", "hits", "totalValueRelation", "empty", "hasPrevious", "hasMore"]
 
     @field_validator('total_value_relation')
     def total_value_relation_validate_enum(cls, value):
@@ -107,8 +107,8 @@ class PagePlayerRatingHistory(BaseModel):
             "total": obj.get("total"),
             "hits": [PlayerRatingHistory.from_dict(_item) for _item in obj["hits"]] if obj.get("hits") is not None else None,
             "totalValueRelation": obj.get("totalValueRelation"),
-            "hasPrevious": obj.get("hasPrevious"),
             "empty": obj.get("empty"),
+            "hasPrevious": obj.get("hasPrevious"),
             "hasMore": obj.get("hasMore")
         })
         return _obj

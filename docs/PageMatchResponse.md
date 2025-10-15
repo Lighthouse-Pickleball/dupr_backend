@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **limit** | **int** | Limit value you sent in the request | 
 **total** | **int** | Total number of results available in database | 
 **hits** | [**List[MatchResponse]**](MatchResponse.md) | Array of results, can be empty. | [optional] 
-**total_value_relation** | **str** | Relation to total results available. | [optional] 
-**has_previous** | **bool** | Is there any previous page | 
+**total_value_relation** | **str** | Relation to total results available. | 
 **empty** | **bool** | Are results empty | 
+**has_previous** | **bool** | Is there any previous page | 
 **has_more** | **bool** | Are there any more results to fetch | 
 
 ## Example

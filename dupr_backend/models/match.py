@@ -58,11 +58,13 @@ class Match(BaseModel):
     validator: Optional[BasicUserInfo] = None
     creator: Optional[BasicUserInfo] = None
     client_id: Optional[StrictInt] = Field(default=None, alias="clientId")
+    club_name: Optional[StrictStr] = Field(default=None, alias="clubName")
+    client_name: Optional[StrictStr] = Field(default=None, alias="clientName")
     is_pro_match: StrictBool = Field(alias="isProMatch")
     player_ids: List[StrictInt] = Field(alias="playerIds")
     is_elo_rated_match: StrictBool = Field(alias="isEloRatedMatch")
     is_pre_elo_match: StrictBool = Field(alias="isPreEloMatch")
-    __properties: ClassVar[List[str]] = ["id", "userId", "venue", "location", "matchScoreAdded", "tournament", "league", "eventDate", "eventFormat", "scoreFormat", "confirmed", "confirmationThreshold", "teams", "status", "modified", "created", "event", "matchSource", "clubId", "leagueId", "bracketId", "leagueMatchId", "matchType", "usedInInitialization", "eloCalculated", "validator", "creator", "clientId", "isProMatch", "playerIds", "isEloRatedMatch", "isPreEloMatch"]
+    __properties: ClassVar[List[str]] = ["id", "userId", "venue", "location", "matchScoreAdded", "tournament", "league", "eventDate", "eventFormat", "scoreFormat", "confirmed", "confirmationThreshold", "teams", "status", "modified", "created", "event", "matchSource", "clubId", "leagueId", "bracketId", "leagueMatchId", "matchType", "usedInInitialization", "eloCalculated", "validator", "creator", "clientId", "clubName", "clientName", "isProMatch", "playerIds", "isEloRatedMatch", "isPreEloMatch"]
 
     @field_validator('event_format')
     def event_format_validate_enum(cls, value):
@@ -196,6 +198,8 @@ class Match(BaseModel):
             "validator": BasicUserInfo.from_dict(obj["validator"]) if obj.get("validator") is not None else None,
             "creator": BasicUserInfo.from_dict(obj["creator"]) if obj.get("creator") is not None else None,
             "clientId": obj.get("clientId"),
+            "clubName": obj.get("clubName"),
+            "clientName": obj.get("clientName"),
             "isProMatch": obj.get("isProMatch"),
             "playerIds": obj.get("playerIds"),
             "isEloRatedMatch": obj.get("isEloRatedMatch"),

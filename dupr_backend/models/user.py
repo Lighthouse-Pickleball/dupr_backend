@@ -57,15 +57,15 @@ class User(BaseModel):
     lucra_connected: Optional[StrictBool] = Field(default=None, alias="lucraConnected")
     is_enabled: StrictBool = Field(alias="isEnabled")
     password: StrictStr
-    is_admin: StrictBool = Field(alias="isAdmin")
-    valid_email: Optional[StrictBool] = Field(default=None, alias="validEmail")
-    valid_phone: Optional[StrictBool] = Field(default=None, alias="validPhone")
+    authorities: List[GrantedAuthority]
     is_account_non_expired: StrictBool = Field(alias="isAccountNonExpired")
     is_account_non_locked: StrictBool = Field(alias="isAccountNonLocked")
     is_credentials_non_expired: StrictBool = Field(alias="isCredentialsNonExpired")
     username: StrictStr
-    authorities: List[GrantedAuthority]
-    __properties: ClassVar[List[str]] = ["id", "fullName", "firstName", "lastName", "email", "isValidEmail", "secret", "isoCode", "phoneNumber", "isValidPhone", "nickname", "displayUsername", "mediaId", "imageUrl", "referralCode", "gender", "birthdate", "hand", "role", "customerKey", "status", "created", "externalId", "restricted", "reliabilityScore", "lucraConnected", "isEnabled", "password", "isAdmin", "validEmail", "validPhone", "isAccountNonExpired", "isAccountNonLocked", "isCredentialsNonExpired", "username", "authorities"]
+    is_admin: StrictBool = Field(alias="isAdmin")
+    valid_email: Optional[StrictBool] = Field(default=None, alias="validEmail")
+    valid_phone: Optional[StrictBool] = Field(default=None, alias="validPhone")
+    __properties: ClassVar[List[str]] = ["id", "fullName", "firstName", "lastName", "email", "isValidEmail", "secret", "isoCode", "phoneNumber", "isValidPhone", "nickname", "displayUsername", "mediaId", "imageUrl", "referralCode", "gender", "birthdate", "hand", "role", "customerKey", "status", "created", "externalId", "restricted", "reliabilityScore", "lucraConnected", "isEnabled", "password", "authorities", "isAccountNonExpired", "isAccountNonLocked", "isCredentialsNonExpired", "username", "isAdmin", "validEmail", "validPhone"]
 
     @field_validator('gender')
     def gender_validate_enum(cls, value):
@@ -186,14 +186,14 @@ class User(BaseModel):
             "lucraConnected": obj.get("lucraConnected"),
             "isEnabled": obj.get("isEnabled"),
             "password": obj.get("password"),
-            "isAdmin": obj.get("isAdmin"),
-            "validEmail": obj.get("validEmail"),
-            "validPhone": obj.get("validPhone"),
+            "authorities": [GrantedAuthority.from_dict(_item) for _item in obj["authorities"]] if obj.get("authorities") is not None else None,
             "isAccountNonExpired": obj.get("isAccountNonExpired"),
             "isAccountNonLocked": obj.get("isAccountNonLocked"),
             "isCredentialsNonExpired": obj.get("isCredentialsNonExpired"),
             "username": obj.get("username"),
-            "authorities": [GrantedAuthority.from_dict(_item) for _item in obj["authorities"]] if obj.get("authorities") is not None else None
+            "isAdmin": obj.get("isAdmin"),
+            "validEmail": obj.get("validEmail"),
+            "validPhone": obj.get("validPhone")
         })
         return _obj
 
