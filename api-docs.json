@@ -30691,8 +30691,8 @@
                     "order": {
                         "type": "string",
                         "enum": [
-                            "asc",
-                            "desc"
+                            "ASC",
+                            "DESC"
                         ],
                         "example": "ASC/DESC"
                     }
