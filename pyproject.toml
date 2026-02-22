@@ -1,6 +1,6 @@
 [project]
 name = "dupr_backend"
-version = "1.0.0"
+version = "1.0.5"
 description = "DUPR Backend APIs"
 authors = [
   {name = "OpenAPI Generator Community",email = "team@openapitools.org"},
@@ -18,7 +18,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/GIT_USER_ID/GIT_REPO_ID"
+Repository = "https://github.com/Lighthouse-Pickleball/dupr_backend.git"
 
 [tool.poetry]
 requires-poetry = ">=2.0"
